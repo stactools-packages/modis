@@ -1,3 +1,5 @@
+# flake8: noqa: E251
+
 import datetime
 import pystac
 from pystac.extensions.eo import Band
