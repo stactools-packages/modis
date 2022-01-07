@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 
 import pystac
 from pystac.utils import str_to_datetime
+from pystac.extensions.eo import EOExtension
 from shapely.geometry import shape
 
 from stactools.modis.constants import (ITEM_TIF_IMAGE_NAME, ITEM_METADATA_NAME,
@@ -114,9 +115,8 @@ def create_item(metadata_href):
                      title='FGDC Metdata'))
 
     # Bands
-    item.ext.enable('eo')
-
+    eo = EOExtension.ext(item, add_if_missing=True)
     if item_id in MODIS_BAND_DATA:
-        item.ext.eo.bands = MODIS_BAND_DATA[item_id]
+        eo.bands = MODIS_BAND_DATA[item_id]
 
     return item
