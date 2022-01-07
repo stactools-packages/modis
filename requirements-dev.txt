@@ -1,6 +1,7 @@
 codespell
 coverage
 flake8
+mypy
 pylint
 sphinx
 sphinx-autobuild

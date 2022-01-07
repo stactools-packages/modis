@@ -1,8 +1,10 @@
 import logging
 import os
-from subprocess import Popen, PIPE, STDOUT
+from typing import Optional
 
 import pystac
+from pystac import Item
+import stactools.core.utils.convert
 
 from stactools.modis.constants import (ITEM_COG_IMAGE_NAME,
                                        ITEM_TIF_IMAGE_NAME)
@@ -10,33 +12,15 @@ from stactools.modis.constants import (ITEM_COG_IMAGE_NAME,
 logger = logging.getLogger(__name__)
 
 
-def call(command):
-
-    def log_subprocess_output(pipe):
-        for line in iter(pipe.readline, b''):  # b'\n'-separated lines
-            logger.info(line.decode("utf-8").strip('\n'))
-
-    process = Popen(command, stdout=PIPE, stderr=STDOUT)
-    with process.stdout:
-        log_subprocess_output(process.stdout)
-    return process.wait()  # 0 means success
-
-
-def cogify(input_path, output_path):
-    call([
-        'gdal_translate', '-of', 'COG', '-co', 'compress=deflate', input_path,
-        output_path
-    ])
-
-
-def _create_cog(item, cog_directory):
+def _create_cog(item: Item, cog_directory: str) -> str:
     hdf_asset = item.assets.get(ITEM_TIF_IMAGE_NAME)
-    cogify(hdf_asset.href, cog_directory)
+    assert hdf_asset
+    stactools.core.utils.convert.cogify(hdf_asset.href, cog_directory)
 
     return cog_directory
 
 
-def create_cogs(item, cog_directory=None):
+def create_cogs(item: Item, cog_directory: Optional[str] = None) -> None:
     """Create COGs from the HDF asset contained in the passed in STAC item.
 
     Args:
@@ -52,10 +36,16 @@ def create_cogs(item, cog_directory=None):
         pystac.Item: The same item, mutated to include assets for the
             new COGs.
     """
-    if cog_directory is None:
-        cog_directory = os.path.dirname(item.get_self_href())
+    file_name = f"{item.id}-cog.tif"
+    if cog_directory:
+        cog_href = os.path.join(cog_directory, file_name)
+    else:
+        item_href = item.get_self_href()
+        if not item_href:
+            raise ValueError(
+                "COG directory not provided, and item has no self href")
+        cog_href = os.path.join(item_href, file_name)
 
-    cog_href = os.path.join(cog_directory, '{}-cog.tif'.format(item.id))
     _create_cog(item, cog_href)
 
     asset = pystac.Asset(href=cog_href,
