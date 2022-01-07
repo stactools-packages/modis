@@ -12,7 +12,9 @@ def create_modis_command(cli):
     """Creates a command group for commands working with
     MODIS.
     """
-    @cli.group('modis', short_help=("Commands for working with " "MODIS."))
+
+    @cli.group('modis', short_help=("Commands for working with "
+                                    "MODIS."))
     def modis():
         pass
 
