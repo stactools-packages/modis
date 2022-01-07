@@ -8,6 +8,7 @@ from stactools.modis.constants import (ITEM_TIF_IMAGE_NAME, ITEM_METADATA_NAME,
                                        MODIS_CATALOG_ELEMENTS, MODIS_BAND_DATA,
                                        ADDITIONAL_MODIS_PROPERTIES)
 
+
 def create_collection(catalog_id) -> pystac.Collection:
     """Creates a STAC Collection for MODIS data.
     """
@@ -31,6 +32,7 @@ def create_collection(catalog_id) -> pystac.Collection:
         })
 
     return collection
+
 
 def create_item(metadata_href):
     """Creates a STAC Item from modis data.

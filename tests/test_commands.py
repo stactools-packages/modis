@@ -8,6 +8,7 @@ from tests.utils import (TestData, CliTestCase)
 
 
 class CreateItemTest(CliTestCase):
+
     def create_subcommand_functions(self):
         return [create_modis_command]
 

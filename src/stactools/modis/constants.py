@@ -35,12 +35,12 @@ MODIS_CATALOG_ELEMENTS = {
         pystac.Provider(name='NASA LP DAAC at the USGS EROS Center',
                         url=('https://lpdaac.usgs.gov/'),
                         roles=['producer', 'licensor']),
-        'extent': pystac.Extent(
+        'extent':
+        pystac.Extent(
             spatial=pystac.SpatialExtent([[-180.0, 180.0, -90.0, 90.0]]),
             temporal=pystac.TemporalExtent(
                 intervals=[[datetime.date(2000, 2, 16),
-                datetime.date.today()]])
-        )
+                            datetime.date.today()]]))
     },
     'MODIS/006/MOD10A1': {
         'links': [
@@ -70,12 +70,12 @@ MODIS_CATALOG_ELEMENTS = {
         pystac.Provider(name='NASA NSIDC DAAC at CIRES',
                         url=('https://doi.org/10.5067/MODIS/MOD10A1.006'),
                         roles=['producer', 'licensor']),
-        'extent': pystac.Extent(
+        'extent':
+        pystac.Extent(
             spatial=pystac.SpatialExtent([[-180.0, 180.0, -90.0, 90.0]]),
             temporal=pystac.TemporalExtent(
                 intervals=[[datetime.date(2000, 2, 24),
-                datetime.date.today()]])
-        )
+                            datetime.date.today()]]))
     },
     'MODIS/006/MOD11A1': {
         'links': [
@@ -107,12 +107,12 @@ MODIS_CATALOG_ELEMENTS = {
         pystac.Provider(name='NASA LP DAAC at the USGS EROS Center',
                         url=('https://doi.org/10.5067/MODIS/MOD11A1.006'),
                         roles=['producer', 'licensor']),
-        'extent': pystac.Extent(
+        'extent':
+        pystac.Extent(
             spatial=pystac.SpatialExtent([[-180.0, 180.0, -90.0, 90.0]]),
             temporal=pystac.TemporalExtent(
                 intervals=[[datetime.date(2000, 2, 24),
-                datetime.date.today()]])
-        )
+                            datetime.date.today()]]))
     },
     'MODIS/006/MOD11A2': {
         'links': [
@@ -145,12 +145,12 @@ MODIS_CATALOG_ELEMENTS = {
         pystac.Provider(name='NASA LP DAAC at the USGS EROS Center',
                         url=('https://doi.org/10.5067/MODIS/MOD11A2.006'),
                         roles=['producer', 'licensor']),
-        'extent': pystac.Extent(
+        'extent':
+        pystac.Extent(
             spatial=pystac.SpatialExtent([[-180.0, 180.0, -90.0, 90.0]]),
             temporal=pystac.TemporalExtent(
                 intervals=[[datetime.date(2000, 2, 18),
-                datetime.date.today()]])
-        )
+                            datetime.date.today()]]))
     },
     'MODIS/006/MOD21A2': {
         'links': [
@@ -196,12 +196,13 @@ MODIS_CATALOG_ELEMENTS = {
         pystac.Provider(name='NASA LP DAAC at the USGS EROS Center',
                         url=('https://doi.org/10.5067/MODIS/MOD21A2.006'),
                         roles=['producer', 'licensor']),
-        'extent': pystac.Extent(
-            spatial=pystac.SpatialExtent([[-180.0, 180.0, -90.0, 90.0]]),
-            temporal=pystac.TemporalExtent(
-                intervals=[[datetime.date(2000, 2, 16),
-                datetime.date(2005, 12, 31)]])
-        )
+        'extent':
+        pystac.Extent(spatial=pystac.SpatialExtent(
+            [[-180.0, 180.0, -90.0, 90.0]]),
+                      temporal=pystac.TemporalExtent(intervals=[[
+                          datetime.date(2000, 2, 16),
+                          datetime.date(2005, 12, 31)
+                      ]]))
     },
     'MODIS/006/MOD13Q1': {
         'links': [
@@ -236,12 +237,12 @@ MODIS_CATALOG_ELEMENTS = {
         pystac.Provider(name='NASA LP DAAC at the USGS EROS Center',
                         url=('https://doi.org/10.5067/MODIS/MOD13Q1.006'),
                         roles=['producer', 'licensor']),
-        'extent': pystac.Extent(
+        'extent':
+        pystac.Extent(
             spatial=pystac.SpatialExtent([[-180.0, 180.0, -90.0, 90.0]]),
             temporal=pystac.TemporalExtent(
                 intervals=[[datetime.date(2000, 2, 18),
-                datetime.date.today()]])
-        )
+                            datetime.date.today()]]))
     },
     'MODIS/006/MOD13A1': {
         'links': [
@@ -275,12 +276,12 @@ layers.""",
         pystac.Provider(name='NASA LP DAAC at the USGS EROS Center',
                         url=('https://doi.org/10.5067/MODIS/MOD13A1.006'),
                         roles=['producer', 'licensor']),
-        'extent': pystac.Extent(
+        'extent':
+        pystac.Extent(
             spatial=pystac.SpatialExtent([[-180.0, 180.0, -90.0, 90.0]]),
             temporal=pystac.TemporalExtent(
                 intervals=[[datetime.date(2000, 2, 18),
-                datetime.date.today()]])
-        )
+                            datetime.date.today()]]))
     },
     'MODIS/006/MOD15A2H': {
         'links': [
@@ -315,12 +316,12 @@ available for each MOD15A2H granule.""",
         pystac.Provider(name='NASA LP DAAC at the USGS EROS Center',
                         url=('https://doi.org/10.5067/MODIS/MOD15A2H.006'),
                         roles=['producer', 'licensor']),
-        'extent': pystac.Extent(
+        'extent':
+        pystac.Extent(
             spatial=pystac.SpatialExtent([[-180.0, 180.0, -90.0, 90.0]]),
             temporal=pystac.TemporalExtent(
                 intervals=[[datetime.date(2000, 2, 18),
-                datetime.date.today()]])
-        )
+                            datetime.date.today()]]))
     },
     'MODIS/006/MOD16A3GF': {
         'links': [
@@ -364,12 +365,12 @@ the average of all days within the defined year.""",
         pystac.Provider(name='NASA LP DAAC at the USGS EROS Center',
                         url=('https://doi.org/10.5067/MODIS/MOD16A3GF.006'),
                         roles=['producer', 'licensor']),
-        'extent': pystac.Extent(
+        'extent':
+        pystac.Extent(
             spatial=pystac.SpatialExtent([[-180.0, 180.0, -90.0, 90.0]]),
             temporal=pystac.TemporalExtent(
                 intervals=[[datetime.date(2000, 2, 18),
-                datetime.date.today()]])
-        )
+                            datetime.date.today()]]))
     },
     'MODIS/006/MOD17A2H': {
         'links': [
@@ -399,12 +400,12 @@ contains quality information for both the GPP and thePSN.""",
         pystac.Provider(name='NASA LP DAAC at the USGS EROS Center',
                         url=('https://doi.org/10.5067/MODIS/MOD17A2H.006'),
                         roles=['producer', 'licensor']),
-        'extent': pystac.Extent(
+        'extent':
+        pystac.Extent(
             spatial=pystac.SpatialExtent([[-180.0, 180.0, -90.0, 90.0]]),
             temporal=pystac.TemporalExtent(
                 intervals=[[datetime.date(2000, 2, 18),
-                datetime.date.today()]])
-        )
+                            datetime.date.today()]]))
     },
     'MODIS/006/MOD17A2HGF': {
         'links': [
@@ -442,12 +443,12 @@ generated only at the end of a given year.""",
         pystac.Provider(name='NASA LP DAAC at the USGS EROS Center',
                         url=('https://doi.org/10.5067/MODIS/MOD17A2HGF.006'),
                         roles=['producer', 'licensor']),
-        'extent': pystac.Extent(
+        'extent':
+        pystac.Extent(
             spatial=pystac.SpatialExtent([[-180.0, 180.0, -90.0, 90.0]]),
             temporal=pystac.TemporalExtent(
                 intervals=[[datetime.date(2000, 1, 1),
-                datetime.date.today()]])
-        )
+                            datetime.date.today()]]))
     },
     'MODIS/006/MOD17A3HGF': {
         'links': [
@@ -483,12 +484,12 @@ end of a given year.""",
         pystac.Provider(name='NASA LP DAAC at the USGS EROS Center',
                         url=('https://doi.org/10.5067/MODIS/MOD17A2HGF.006'),
                         roles=['producer', 'licensor']),
-        'extent': pystac.Extent(
+        'extent':
+        pystac.Extent(
             spatial=pystac.SpatialExtent([[-180.0, 180.0, -90.0, 90.0]]),
             temporal=pystac.TemporalExtent(
                 intervals=[[datetime.date(2000, 1, 1),
-                datetime.date.today()]])
-        )
+                            datetime.date.today()]]))
     },
     'MODIS/006/MOD44B': {
         'links': [
@@ -523,12 +524,13 @@ annual period for this product begins with day of year (DOY) 65 (March 5).""",
         pystac.Provider(name='NASA LP DAAC at the USGS EROS Center',
                         url=('https://doi.org/10.5067/MODIS/MOD44B.006'),
                         roles=['producer', 'licensor']),
-        'extent': pystac.Extent(
-            spatial=pystac.SpatialExtent([[-180.0, 180.0, -90.0, 90.0]]),
-            temporal=pystac.TemporalExtent(
-                intervals=[[datetime.date(2000, 3, 5),
-                datetime.date(2020, 3, 5)]])
-        )
+        'extent':
+        pystac.Extent(spatial=pystac.SpatialExtent(
+            [[-180.0, 180.0, -90.0, 90.0]]),
+                      temporal=pystac.TemporalExtent(intervals=[[
+                          datetime.date(2000, 3, 5),
+                          datetime.date(2020, 3, 5)
+                      ]]))
     },
     'MODIS/006/MCD12Q1': {
         'links': [
@@ -562,12 +564,13 @@ provided in each MCD12Q1 Version 6 Hierarchical Data Format 4 (HDF4) file.""",
         pystac.Provider(name='NASA LP DAAC at the USGS EROS Center',
                         url=('https://doi.org/10.5067/MODIS/MCD12Q1.006'),
                         roles=['producer', 'licensor']),
-        'extent': pystac.Extent(
-            spatial=pystac.SpatialExtent([[-180.0, 180.0, -90.0, 90.0]]),
-            temporal=pystac.TemporalExtent(
-                intervals=[[datetime.date(2001, 1, 1),
-                datetime.date(2019, 12, 31)]])
-        )
+        'extent':
+        pystac.Extent(spatial=pystac.SpatialExtent(
+            [[-180.0, 180.0, -90.0, 90.0]]),
+                      temporal=pystac.TemporalExtent(intervals=[[
+                          datetime.date(2001, 1, 1),
+                          datetime.date(2019, 12, 31)
+                      ]]))
     },
     'MODIS/006/MOD44W': {
         'links': [
@@ -598,12 +601,13 @@ that provides users with information on the determination of water.""",
         pystac.Provider(name='NASA LP DAAC at the USGS EROS Center',
                         url=('https://doi.org/10.5067/MODIS/MOD44W.006'),
                         roles=['producer', 'licensor']),
-        'extent': pystac.Extent(
-            spatial=pystac.SpatialExtent([[-180.0, 180.0, -90.0, 90.0]]),
-            temporal=pystac.TemporalExtent(
-                intervals=[[datetime.date(2000, 1, 1),
-                datetime.date(2015, 12, 31)]])
-        )
+        'extent':
+        pystac.Extent(spatial=pystac.SpatialExtent(
+            [[-180.0, 180.0, -90.0, 90.0]]),
+                      temporal=pystac.TemporalExtent(intervals=[[
+                          datetime.date(2000, 1, 1),
+                          datetime.date(2015, 12, 31)
+                      ]]))
     },
     'MODIS/006/MOD14A1': {
         'links': [
@@ -634,12 +638,13 @@ daily per pixel information for each of the eight days of data acquisition.""",
         pystac.Provider(name='NASA LP DAAC at the USGS EROS Center',
                         url=('https://doi.org/10.5067/MODIS/MOD44W.006'),
                         roles=['producer', 'licensor']),
-        'extent': pystac.Extent(
-            spatial=pystac.SpatialExtent([[-180.0, 180.0, -90.0, 90.0]]),
-            temporal=pystac.TemporalExtent(
-                intervals=[[datetime.date(2000, 1, 1),
-                datetime.date(2015, 12, 31)]])
-        )
+        'extent':
+        pystac.Extent(spatial=pystac.SpatialExtent(
+            [[-180.0, 180.0, -90.0, 90.0]]),
+                      temporal=pystac.TemporalExtent(intervals=[[
+                          datetime.date(2000, 1, 1),
+                          datetime.date(2015, 12, 31)
+                      ]]))
     },
     'MODIS/006/MOD14A2': {
         'links': [
@@ -668,12 +673,12 @@ The Science Dataset (SDS) layers include the fire mask and pixel quality indicat
         pystac.Provider(name='NASA LP DAAC at the USGS EROS Center',
                         url=('https://doi.org/10.5067/MODIS/MOD14A2.006'),
                         roles=['producer', 'licensor']),
-        'extent': pystac.Extent(
+        'extent':
+        pystac.Extent(
             spatial=pystac.SpatialExtent([[-180.0, 180.0, -90.0, 90.0]]),
             temporal=pystac.TemporalExtent(
                 intervals=[[datetime.date(2000, 2, 18),
-                datetime.date.today()]])
-        )
+                            datetime.date.today()]]))
     }
 }
 
