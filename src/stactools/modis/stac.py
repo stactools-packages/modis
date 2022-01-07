@@ -1,6 +1,8 @@
+from typing import cast
 import xml.etree.ElementTree as ET
 
 import pystac
+from pystac import Extent, Provider
 from pystac.utils import str_to_datetime
 from pystac.extensions.eo import EOExtension
 from shapely.geometry import shape
@@ -10,16 +12,21 @@ from stactools.modis.constants import (ITEM_TIF_IMAGE_NAME, ITEM_METADATA_NAME,
                                        ADDITIONAL_MODIS_PROPERTIES)
 
 
-def create_collection(catalog_id) -> pystac.Collection:
+def create_collection(catalog_id: str) -> pystac.Collection:
     """Creates a STAC Collection for MODIS data.
     """
 
     collection = pystac.Collection(
         id=catalog_id,
-        description=MODIS_CATALOG_ELEMENTS[catalog_id].description,
-        extent=MODIS_CATALOG_ELEMENTS[catalog_id].extent,
-        title=MODIS_CATALOG_ELEMENTS[catalog_id].title,
-        providers=MODIS_CATALOG_ELEMENTS[catalog_id].provider,
+        description=cast(
+            str,
+            MODIS_CATALOG_ELEMENTS[catalog_id]["description"],
+        ),
+        extent=cast(Extent, MODIS_CATALOG_ELEMENTS[catalog_id]["extent"]),
+        title=cast(str, MODIS_CATALOG_ELEMENTS[catalog_id]["title"]),
+        providers=[
+            cast(Provider, MODIS_CATALOG_ELEMENTS[catalog_id]["provider"])
+        ],
         stac_extensions=['item-assets'],
         extra_fields={
             'item_assets': {
@@ -35,7 +42,7 @@ def create_collection(catalog_id) -> pystac.Collection:
     return collection
 
 
-def create_item(metadata_href):
+def create_item(metadata_href: str) -> pystac.Item:
     """Creates a STAC Item from modis data.
     Args:
         metadata_href (str): The href to the metadata for this hdf.
@@ -48,25 +55,31 @@ def create_item(metadata_href):
     metadata_root = ET.parse(metadata_href).getroot()
 
     # Item id
-    name = metadata_root.find(
-        'GranuleURMetaData/CollectionMetaData/ShortName').text
+    name = metadata_root.find('GranuleURMetaData/CollectionMetaData/ShortName')
+    assert name is not None
     version = metadata_root.find(
-        'GranuleURMetaData/CollectionMetaData/VersionID').text
-    short_item_id = '{}/00{}/{}'.format('MODIS', version, name)
+        'GranuleURMetaData/CollectionMetaData/VersionID')
+    assert version is not None
+    short_item_id = '{}/00{}/{}'.format('MODIS', version.text, name.text)
 
     image_name = metadata_root.find(
-        'GranuleURMetaData/DataFiles/DataFileContainer/DistributedFileName'
-    ).text
-    item_id = image_name.replace('.hdf', '')
+        'GranuleURMetaData/DataFiles/DataFileContainer/DistributedFileName')
+    assert image_name is not None
+    assert image_name.text is not None
+    item_id = image_name.text.replace('.hdf', '')
 
     coordinates = []
     point_ele = '{}/{}'.format(
         'GranuleURMetaData/SpatialDomainContainer/',
         'HorizontalSpatialDomainContainer/GPolygon/Boundary/Point')
     for point in metadata_root.findall(point_ele):
-        lon = float(point.find('PointLongitude').text)
-        lat = float(point.find('PointLatitude').text)
-        coordinates.append([lon, lat])
+        lon = point.find('PointLongitude')
+        assert lon is not None
+        assert lon.text is not None
+        lat = point.find('PointLatitude')
+        assert lat is not None
+        assert lat.text is not None
+        coordinates.append([float(lon.text), float(lat.text)])
 
     geom = {'type': 'Polygon', 'coordinates': [coordinates]}
 
@@ -74,8 +87,10 @@ def create_item(metadata_href):
 
     # Item date
     prod_node = 'GranuleURMetaData/ECSDataGranule/ProductionDateTime'
-    prod_dt_text = metadata_root.find(prod_node).text
-    prod_dt = str_to_datetime(prod_dt_text)
+    prod_dt_text = metadata_root.find(prod_node)
+    assert prod_dt_text is not None
+    assert prod_dt_text.text is not None
+    prod_dt = str_to_datetime(prod_dt_text.text)
 
     item = pystac.Item(id=item_id,
                        geometry=geom,
@@ -85,23 +100,27 @@ def create_item(metadata_href):
 
     # Common metadata
     item.common_metadata.providers = [
-        MODIS_CATALOG_ELEMENTS[short_item_id]['provider']
+        cast(Provider, MODIS_CATALOG_ELEMENTS[short_item_id]['provider'])
     ]
-    item.common_metadata.description = MODIS_CATALOG_ELEMENTS[short_item_id][
-        'description']
+    item.common_metadata.description = cast(
+        str, MODIS_CATALOG_ELEMENTS[short_item_id]['description'])
 
-    item.common_metadata.instruments = [
-        metadata_root.find(
-            'GranuleURMetaData/Platform/Instrument/InstrumentShortName').text
-    ]
-    item.common_metadata.platform = metadata_root.find(
-        'GranuleURMetaData/Platform/PlatformShortName').text
-    item.common_metadata.title = MODIS_CATALOG_ELEMENTS[short_item_id]['title']
+    instrument_short_name = metadata_root.find(
+        'GranuleURMetaData/Platform/Instrument/InstrumentShortName')
+    assert instrument_short_name is not None
+    assert instrument_short_name.text is not None
+    item.common_metadata.instruments = [instrument_short_name.text]
+    platform_short_name = metadata_root.find(
+        'GranuleURMetaData/Platform/PlatformShortName')
+    assert platform_short_name is not None
+    item.common_metadata.platform = platform_short_name.text
+    item.common_metadata.title = cast(
+        str, MODIS_CATALOG_ELEMENTS[short_item_id]['title'])
 
     # Hdf
     item.add_asset(
         ITEM_TIF_IMAGE_NAME,
-        pystac.Asset(href=image_name,
+        pystac.Asset(href=image_name.text,
                      media_type=pystac.MediaType.HDF,
                      roles=['data'],
                      title="hdf image"))
@@ -109,7 +128,7 @@ def create_item(metadata_href):
     # Metadata
     item.add_asset(
         ITEM_METADATA_NAME,
-        pystac.Asset(href=image_name + '.xml',
+        pystac.Asset(href=image_name.text + '.xml',
                      media_type=pystac.MediaType.TEXT,
                      roles=['metadata'],
                      title='FGDC Metdata'))

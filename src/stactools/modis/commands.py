@@ -2,20 +2,21 @@ import logging
 import os
 
 import click
+from click import Group, Command
 
 from stactools.modis import stac, cog
 
 logger = logging.getLogger(__name__)
 
 
-def create_modis_command(cli):
+def create_modis_command(cli: Group) -> Command:
     """Creates a command group for commands working with
     MODIS.
     """
 
     @cli.group('modis', short_help=("Commands for working with "
                                     "MODIS."))
-    def modis():
+    def modis() -> None:
         pass
 
     @modis.command('create-item',
@@ -26,7 +27,8 @@ def create_modis_command(cli):
                   '--cogify',
                   is_flag=True,
                   help='Convert the hdf into COG.')
-    def create_item_command(metadata_href, dst, cogify):
+    def create_item_command(metadata_href: str, dst: str,
+                            cogify: bool) -> None:
         """Creates a STAC Item based on metadata from an hdf.xml
         MODIS file.
 
