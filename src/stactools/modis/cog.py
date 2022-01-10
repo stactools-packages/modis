@@ -3,6 +3,7 @@ import os
 from typing import Optional
 
 import pystac
+import rasterio
 from pystac import Item
 import stactools.core.utils.convert
 
@@ -54,3 +55,19 @@ def create_cogs(item: Item, cog_directory: Optional[str] = None) -> None:
                          title='Raster Dataset')
 
     item.assets[ITEM_COG_IMAGE_NAME] = asset
+
+
+def cogify(infile: str, outdir: str) -> None:
+    """Creates cogs for the provided HDF file.
+
+    This will create one COG per subdataset in the HDF file.
+    """
+    with rasterio.open(infile) as dataset:
+        subdatasets = dataset.subdatasets
+    base_file_name = os.path.splitext(os.path.basename(infile))[0]
+    for subdataset in subdatasets:
+        parts = subdataset.split(":")
+        product = parts[-1]
+        file_name = f"{base_file_name}_{product}.tif"
+        outfile = os.path.join(outdir, file_name)
+        stactools.core.utils.convert.cogify(subdataset, outfile)

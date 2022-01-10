@@ -9,6 +9,6 @@ COPY environment.yml /tmp/environment.yml
 RUN conda env update -f /tmp/environment.yml -n base && rm /tmp/environment.yml
 
 COPY . /tmp/stactools-modis
-RUN cd /tmp/stactools-modis && pip install . && rm -rf /tmp/stactools-modis
+RUN cd /tmp/stactools-modis && pip install . --no-binary rasterio && rm -rf /tmp/stactools-modis
 
 ENTRYPOINT [ "python", "-m", "stactools.cli" ]
