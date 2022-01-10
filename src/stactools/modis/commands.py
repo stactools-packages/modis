@@ -50,4 +50,11 @@ def create_modis_command(cli: Group) -> Command:
 
         item.save_object()
 
+    @modis.command("cogify")
+    @click.argument("infile")
+    @click.argument("outdir")
+    def cogify_command(infile: str, outdir: str) -> None:
+        """Converts a MODIS HDF file into one or more cloud optimized GeoTIFFs (COGs)."""
+        cog.cogify(infile, outdir)
+
     return modis
