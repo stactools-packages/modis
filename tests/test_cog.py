@@ -13,9 +13,9 @@ class CogTest(TestCase):
         infile = test_data.get_path(
             "data-files/MCD12Q1.A2001001.h00v08.006.2018142182903.hdf")
         with TemporaryDirectory() as temporary_directory:
-            cog.cogify(infile, temporary_directory)
-            file_names = os.listdir(temporary_directory)
-        self.assertEqual(len(file_names), 13)
+            paths = cog.cogify(infile, temporary_directory)
+        self.assertEqual(len(paths), 13)
+        file_names = [os.path.basename(path) for path in paths]
         subdataset_names = [
             "LC_Type1", "LC_Type2", "LC_Type3", "LC_Type4", "LC_Type5",
             "LC_Prop1_Assessment", "LC_Prop2_Assessment",
