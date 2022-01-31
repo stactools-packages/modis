@@ -1,0 +1,173 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD21A2.A2005361.h10v04.006.2018286181506",
+  "properties": {
+    "QC_Mandatory_QA_flags_00": "Pixel produced, good quality, no further QA info necessary",
+    "QC_Mandatory_QA_flags_01": "Pixel produced but unreliable quality. Either\n                                        one or more of the following conditions are met:\n                                        emissivity in both bands 31 and 32 < 0.95, retrieval\n                                        affected by nearby cloud, low transmissivity due to\n                                        high water vapor loading (<0.4), Recommend more\n                                        detailed analysis of other QC information",
+    "QC_Mandatory_QA_flags_10": "Pixel not produced due to cloud",
+    "QC_Mandatory_QA_flags_11": "Pixel not produced due to reasons other than cloud",
+    "QC_Data_quality_flag_00": "Good data quality of L1B bands 29, 31, 32",
+    "QC_Data_quality_flag_01": "Missing pixel",
+    "QC_Data_quality_flag_10": "Fairly calibrated",
+    "QC_Data_quality_flag_11": "Poorly calibrated, TES processing skipped",
+    "QC_Cloud_flag_00": "Cloud free",
+    "QC_Cloud_flag_01": "Thin cirrus",
+    "QC_Cloud_flag_10": "Pixel within 2 pixels of nearest cloud",
+    "QC_Cloud_flag_11": "Cloudy pixels",
+    "QC_Iterations_00": "Slow convergence",
+    "QC_Iterations_01": "Nominal",
+    "QC_Iterations_10": "Nominal",
+    "QC_Iterations_11": "Fast",
+    "QC_Atmospheric_Opacity_00": ">=3 (Warm, humid air; or cold land)",
+    "QC_Atmospheric_Opacity_01": "0.2 - 0.3 (Nominal value)",
+    "QC_Atmospheric_Opacity_10": "0.1 - 0.2 (Nominal value)",
+    "QC_Atmospheric_Opacity_11": "<0.1 (Dry, or high altitude pixel)",
+    "QC_MMD_00": "> 0.15 (Most silicate rocks)",
+    "QC_MMD_01": "0.1 - 0.15 (Rocks, sand, some soils)",
+    "QC_MMD_10": "0.03 - 0.1 (Mostly soils, mixed pixel)",
+    "QC_MMD_11": "<0.03 (Vegetation, snow, water, ice)",
+    "QC_Emissivity_accuracy_00": ">0.02 (Poor performance)",
+    "QC_Emissivity_accuracy_01": "0.015 - 0.02 (Marginal performance)",
+    "QC_Emissivity_accuracy_10": "0.01 - 0.015 (Good performance)",
+    "QC_Emissivity_accuracy_11": "<0.01 (Excellent performance)",
+    "QC_LST_accuracy _00": ">2 K (Poor performance)",
+    "QC_LST_accuracy_01": "1.5 - 2 K (Marginal performance)",
+    "QC_LST_accuracy_10": "1 - 1.5 K (Good performance)",
+    "QC_LST_accuracy_11": "<1 K (Excellent performance)",
+    "providers": [
+      {
+        "name": "NASA LP DAAC at the USGS EROS Center",
+        "roles": [
+          "producer",
+          "licensor"
+        ],
+        "url": "https://doi.org/10.5067/MODIS/MOD21A2.006"
+      }
+    ],
+    "description": "A new suite of Moderate Resolution Imaging Spectroradiometer (MODIS)\n            Land Surface Temperature and Emissivity (LST&E) products are available in\n            Collection 6. The MOD21 Land Surface Temperatuer (LST) algorithm differs from\n            the algorithm of the MOD11 LST products, in that the MOD21 algorithm is based\n            on the ASTER Temperature/Emissivity Separation (TES) technique, whereas the\n            MOD11 uses the split-window technique. The MOD21 TES algorithm uses a\n            physics-based algorithm to dynamically retrieve both the LST and spectral\n            emissivity simultaneously from the MODIS thermal infrared bands 29, 31, and 32.\n            The TES algorithm is combined with an improved Water Vapor Scaling (WVS)\n            atmospheric correction scheme to stabilize the retrieval during very warm and\n            humid conditions.\n\n            The MOD21A2 dataset is an 8-day composite LST product that uses an algorithm\n            based on a simple averaging method. The algorithm calculates the average from\n            all the cloud free MOD21A1D and MOD21A1N daily acquisitions from the 8-day period.\n            Unlike the MOD21A1 data sets where the daytime and nighttime acquisitions are\n            separate products, the MOD21A2 contains both daytime and nighttime acquisitions as\n            separate Science Dataset (SDS) layers within a single Hierarchical Data Format (HDF)\n            file. The LST, Quality Control (QC), view zenith angle, and viewing time have separate\n            day and night SDS layers, while the values for the MODIS emissivity bands 29, 31, and\n            32 are the average of both the nighttime and daytime acquisitions. MOD21A2 products\n            are available two months after acquisition due to latency of data inputs. Additional\n            details regarding the method used to create this Level 3 (L3) product are available\n            in the Algorithm Theoretical Basis Document (ATBD).",
+    "instruments": [
+      "MODIS"
+    ],
+    "platform": "Terra",
+    "title": "MODIS/Terra Land Surface Temperature/3-Band Emissivity 8-Day L3 Global 1 km SIN Grid",
+    "datetime": "2018-10-13T18:15:06Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -104.52019611598,
+          39.7556817203217
+        ],
+        [
+          -124.885362059179,
+          49.967693939585
+        ],
+        [
+          -109.002143160265,
+          50.1046853303771
+        ],
+        [
+          -91.1909609510465,
+          39.8554224326714
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Land Surface Temperature/3-Band Emissivity 8-Day L3 Global 1 km SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Land Surface Temperature/3-Band Emissivity 8-Day L3 Global 1 km SIN Grid"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Land Surface Temperature/3-Band Emissivity 8-Day L3 Global 1 km SIN Grid"
+    }
+  ],
+  "assets": {
+    "tif_image": {
+      "href": "MOD21A2.A2005361.h10v04.006.2018286181506.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf image",
+      "eo:bands": [
+        {
+          "name": "LST_Day_1KM",
+          "description": "Day Land surface temperature"
+        },
+        {
+          "name": "QC_Day",
+          "description": "Day Quality Control (QC)"
+        },
+        {
+          "name": "View_Angle_Day",
+          "description": "Day MODIS view zenith angle"
+        },
+        {
+          "name": "View_Time_Day",
+          "description": "Time of MODIS observation for day"
+        },
+        {
+          "name": "LST_Night_1KM",
+          "description": "Night Land Surface Temperature"
+        },
+        {
+          "name": "QC_Night",
+          "description": "Night Quality Control (QC)"
+        },
+        {
+          "name": "View_Angle_Night",
+          "description": "Night view zenith angle"
+        },
+        {
+          "name": "View_Time_Night",
+          "description": "Time of Observation for night"
+        },
+        {
+          "name": "Emis_29",
+          "description": "Average Day/Night Band 29 emissivity"
+        },
+        {
+          "name": "Emis_31",
+          "description": "Average Day/Night Band 31 emissivity"
+        },
+        {
+          "name": "Emis_32",
+          "description": "Average Day/Night Band 32 emissivity"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "MOD21A2.A2005361.h10v04.006.2018286181506.hdf.xml",
+      "type": "text/plain",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -124.885362059179,
+    39.7556817203217,
+    -91.1909609510465,
+    50.1046853303771
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+  ],
+  "collection": "MODIS/006/MOD21A2"
+}

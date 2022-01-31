@@ -1,0 +1,77 @@
+{
+  "type": "Collection",
+  "id": "MODIS/006/MOD17A2HGF",
+  "stac_version": "1.0.0",
+  "description": "The MOD17A2HGF Version 6 Gross Primary Productivity (GPP) product\nis a cumulative 8-day composite of\nvalues with 500 meter (m) pixel size based on the radiation use efficiency concept that can\nbe potentially used as inputs to data models to calculate terrestrial energy, carbon, water\ncycle processes, and biogeochemistry of vegetation. The data product includes information\nabout GPP and Net Photosynthesis (PSN). The PSN band values are the GPP less the Maintenance\nRespiration (MR). The data product also contains a PSN Quality Control (QC) layer. The quality\nlayer contains quality information for both the GPP and the PSN.\n\nThe MOD17A2HGF will be generated at the end of each year when the entire yearly 8-day MOD15A2H\nis available. Hence, the gap-filled MOD17A2HGF is the improved MOD17, which has cleaned the\npoor-quality inputs from 8-day Leaf Area Index and Fraction of Photosynthetically Active\nRadiation (FPAR/LAI) based on the Quality Control (QC) label for every pixel. If any LAI/FPAR\npixel did not meet the quality screening criteria, its value is determined through linear\ninterpolation. However, users cannot get MOD17A2HGF in near-real time because it will be\ngenerated only at the end of a given year.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "item",
+      "href": "./MOD17A2HGF.A2021337.h09v05.006.2022031141000/MOD17A2HGF.A2021337.h09v05.006.2022031141000.json",
+      "type": "application/json"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+  ],
+  "item_assets": {
+    "image": {
+      "eo:bands": [
+        {
+          "name": "Gpp_500m",
+          "description": "Gross Primary Productivity"
+        },
+        {
+          "name": "PsnNet_500m",
+          "description": "Net Photosynthesis"
+        },
+        {
+          "name": "Psn_QC_500m",
+          "description": "Quality control indicators"
+        }
+      ],
+      "roles": [
+        "data"
+      ],
+      "title": "RGBIR COG tile",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    }
+  },
+  "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180.0,
+          180.0,
+          -90.0,
+          90.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2000-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "providers": [
+    {
+      "name": "NASA LP DAAC at the USGS EROS Center",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://doi.org/10.5067/MODIS/MOD17A2HGF.006"
+    }
+  ]
+}
