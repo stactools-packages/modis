@@ -31,10 +31,13 @@ def create_collection(catalog_id: str) -> pystac.Collection:
         extra_fields={
             'item_assets': {
                 'image': {
-                    "eo:bands": MODIS_BAND_DATA[catalog_id],
+                    "eo:bands":
+                    [band.to_dict() for band in MODIS_BAND_DATA[catalog_id]],
                     "roles": ["data"],
-                    "title": "RGBIR COG tile",
-                    "type": pystac.MediaType.COG
+                    "title":
+                    "RGBIR COG tile",
+                    "type":
+                    pystac.MediaType.COG
                 },
             }
         })
