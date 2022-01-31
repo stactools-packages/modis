@@ -1808,5 +1808,7 @@ ADDITIONAL_MODIS_PROPERTIES = {
         'QA_bit_0_1_land_water_state_3': 'Missing data',
         'QA_bit_2_night_day_0': 'Night',
         'QA_bit_2_night_day_1': 'Day'
-    }
+    },
+    "MODIS/006/MOD10A1": {},
+    "MODIS/006/MCD43A4": {}
 }
