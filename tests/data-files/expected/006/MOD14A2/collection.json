@@ -1,0 +1,73 @@
+{
+  "type": "Collection",
+  "id": "MODIS/006/MOD14A2",
+  "stac_version": "1.0.0",
+  "description": "The Terra Moderate Resolution Imaging\nSpectroradiometer (MODIS) Thermal Anomalies and Fire 8-Day (MOD14A2)\nVersion 6 data are generated at 1 kilometer (km) spatial resolultion as\na Level 3 product. The MOD14A2 gridded composite contains the maximum value\nof the individual fire pixel classes detected during the eight days of acquisition.\n\nThe Science Dataset (SDS) layers include the fire mask and pixel quality indicators.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Thermal Anomalies/Fire 8-Day L3 Global 1 km SIN Grid"
+    },
+    {
+      "rel": "item",
+      "href": "./MOD14A2.A2022017.h10v05.006.2022026155645/MOD14A2.A2022017.h10v05.006.2022026155645.json",
+      "type": "application/json"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+  ],
+  "item_assets": {
+    "image": {
+      "eo:bands": [
+        {
+          "name": "FireMask",
+          "description": "Confidence of fire"
+        },
+        {
+          "name": "QA",
+          "description": "Pixel quality indicators"
+        }
+      ],
+      "roles": [
+        "data"
+      ],
+      "title": "RGBIR COG tile",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    }
+  },
+  "title": "MODIS/Terra Thermal Anomalies/Fire 8-Day L3 Global 1 km SIN Grid",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180.0,
+          180.0,
+          -90.0,
+          90.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2000-02-18T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "providers": [
+    {
+      "name": "NASA LP DAAC at the USGS EROS Center",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://doi.org/10.5067/MODIS/MOD14A2.006"
+    }
+  ]
+}

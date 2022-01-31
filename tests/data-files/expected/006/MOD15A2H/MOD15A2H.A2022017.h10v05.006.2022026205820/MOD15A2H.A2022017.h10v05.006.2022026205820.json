@@ -1,0 +1,136 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD15A2H.A2022017.h10v05.006.2022026205820",
+  "properties": {
+    "LAI_FPAR_fill_value_class_249": "Land cover assigned as \"unclassified\" or not able to determine",
+    "LAI_FPAR_fill_value_class_250": "Land cover assigned as urban/built-up",
+    "LAI_FPAR_fill_value_class_251": "Land cover assigned as \"permanent\" wetlands/inundated marshland",
+    "LAI_FPAR_fill_value_class_252": "Land cover assigned as perennial snow, ice",
+    "LAI_FPAR_fill_value_class_253": "Land cover assigned as barren, sparse vegetation (rock, tundra, desert)",
+    "LAI_FPAR_fill_value_class_254": "Land cover assigned as perennial salt or inland fresh water",
+    "LAI_FPAR_fill_value_class_255": "Fill",
+    "STD_LAI_STD_FPAR_fill_value_class_248": "No standard deviation available, pixel produced using backup method",
+    "STD_LAI_STD_FPAR_fill_value_class_249": "Land cover assigned as \"unclassified\" or not able to determine",
+    "STD_LAI_STD_FPAR_fill_value_class_250": "Land cover assigned as urban/built-up",
+    "STD_LAI_STD_FPAR_fill_value_class_251": "Land cover assigned as \"permanent\" wetlands / inundated marshland",
+    "STD_LAI_STD_FPAR_fill_value_class_252": "Land cover assigned as perennial snow, ice",
+    "STD_LAI_STD_FPAR_fill_value_class_253": "Land cover assigned as barren, sparse vegetation (rock, tundra, desert)",
+    "STD_LAI_STD_FPAR_fill_value_class_254": "Land cover assigned as perennial salt or inland fresh water",
+    "STD_LAI_STD_FPAR_fill_value_class_255": "Fill",
+    "providers": [
+      {
+        "name": "NASA LP DAAC at the USGS EROS Center",
+        "roles": [
+          "producer",
+          "licensor"
+        ],
+        "url": "https://doi.org/10.5067/MODIS/MOD15A2H.006"
+      }
+    ],
+    "description": "The MOD15A2H Version 6 Moderate Resolution Imaging Spectroradiometer (MODIS) combined Leaf Area\nIndex (LAI) and Fraction of Photosynthetically Active Radiation (FPAR) product is an 8-day\ncomposite dataset with 500 meter (m) pixel size. The algorithm chooses the \u201cbest\u201d pixel available\nfrom all the acquisitions of the Terra sensor from within the 8-day period.\n\nLAI is defined as the one-sided green leaf area per unit ground area in broadleaf canopies and\nas one-half the total needle surface area per unit ground area in coniferous canopies. FPAR is\ndefined as the fraction of incident photosynthetically active radiation, 400-700 nanometers (nm),\nabsorbed by the green elements of a vegetation canopy.\n\nScience Datasets (SDSs) in the Level 4 (L4) MOD15A2H product include LAI, FPAR, two quality layers,\nand standard deviation for LAI and FPAR. Two low resolution browse images, LAI and FPAR, are also\navailable for each MOD15A2H granule.",
+    "instruments": [
+      "MODIS"
+    ],
+    "platform": "Terra",
+    "title": "MODIS/Terra Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid",
+    "datetime": "2022-01-26T20:58:20Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -92.3012472028587,
+          29.8410878424102
+        ],
+        [
+          -104.43258313171,
+          39.9999999964079
+        ],
+        [
+          -91.1740859476425,
+          40.0637836759185
+        ],
+        [
+          -80.5775666708921,
+          29.8961896763571
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid"
+    }
+  ],
+  "assets": {
+    "tif_image": {
+      "href": "MOD15A2H.A2022017.h10v05.006.2022026205820.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf image",
+      "eo:bands": [
+        {
+          "name": "Fpar_500m",
+          "description": "Fraction of Photosynthetically Active Radiation"
+        },
+        {
+          "name": "Lai_500m",
+          "description": "Leaf Area Index"
+        },
+        {
+          "name": "FparLai_QC\t",
+          "description": "Quality for LAI and FPAR"
+        },
+        {
+          "name": "FparExtra_QC",
+          "description": "Extra detail Quality for LAI and FPAR"
+        },
+        {
+          "name": "FparStdDev_500m",
+          "description": "Percent"
+        },
+        {
+          "name": "LaiStdDev_500m",
+          "description": "Standard deviation of LAI"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "MOD15A2H.A2022017.h10v05.006.2022026205820.hdf.xml",
+      "type": "text/plain",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -104.43258313171,
+    29.8410878424102,
+    -80.5775666708921,
+    40.0637836759185
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+  ],
+  "collection": "MODIS/006/MOD15A2H"
+}
