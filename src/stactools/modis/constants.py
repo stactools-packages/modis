@@ -41,10 +41,8 @@ MODIS_CATALOG_ELEMENTS = {
         'extent':
         pystac.Extent(spatial=pystac.SpatialExtent(
             [[-180.0, 180.0, -90.0, 90.0]]),
-                      temporal=pystac.TemporalExtent(intervals=[[
-                          datetime.datetime(2000, 2, 16),
-                          datetime.datetime.now()
-                      ]]))
+                      temporal=pystac.TemporalExtent(
+                          intervals=[[datetime.datetime(2000, 2, 16), None]]))
     },
     'MODIS/006/MOD10A1': {
         'links': [
@@ -77,10 +75,8 @@ MODIS_CATALOG_ELEMENTS = {
         'extent':
         pystac.Extent(spatial=pystac.SpatialExtent(
             [[-180.0, 180.0, -90.0, 90.0]]),
-                      temporal=pystac.TemporalExtent(intervals=[[
-                          datetime.datetime(2000, 2, 24),
-                          datetime.datetime.now()
-                      ]]))
+                      temporal=pystac.TemporalExtent(
+                          intervals=[[datetime.datetime(2000, 2, 24), None]]))
     },
     'MODIS/006/MOD11A1': {
         'links': [
@@ -115,10 +111,8 @@ MODIS_CATALOG_ELEMENTS = {
         'extent':
         pystac.Extent(spatial=pystac.SpatialExtent(
             [[-180.0, 180.0, -90.0, 90.0]]),
-                      temporal=pystac.TemporalExtent(intervals=[[
-                          datetime.datetime(2000, 2, 24),
-                          datetime.datetime.now()
-                      ]]))
+                      temporal=pystac.TemporalExtent(
+                          intervals=[[datetime.datetime(2000, 2, 24), None]]))
     },
     'MODIS/006/MOD11A2': {
         'links': [
@@ -154,10 +148,8 @@ MODIS_CATALOG_ELEMENTS = {
         'extent':
         pystac.Extent(spatial=pystac.SpatialExtent(
             [[-180.0, 180.0, -90.0, 90.0]]),
-                      temporal=pystac.TemporalExtent(intervals=[[
-                          datetime.datetime(2000, 2, 18),
-                          datetime.datetime.now()
-                      ]]))
+                      temporal=pystac.TemporalExtent(
+                          intervals=[[datetime.datetime(2000, 2, 18), None]]))
     },
     'MODIS/006/MOD21A2': {
         'links': [
@@ -247,10 +239,8 @@ MODIS_CATALOG_ELEMENTS = {
         'extent':
         pystac.Extent(spatial=pystac.SpatialExtent(
             [[-180.0, 180.0, -90.0, 90.0]]),
-                      temporal=pystac.TemporalExtent(intervals=[[
-                          datetime.datetime(2000, 2, 18),
-                          datetime.datetime.now()
-                      ]]))
+                      temporal=pystac.TemporalExtent(
+                          intervals=[[datetime.datetime(2000, 2, 18), None]]))
     },
     'MODIS/006/MOD13A1': {
         'links': [
@@ -287,10 +277,8 @@ layers.""",
         'extent':
         pystac.Extent(spatial=pystac.SpatialExtent(
             [[-180.0, 180.0, -90.0, 90.0]]),
-                      temporal=pystac.TemporalExtent(intervals=[[
-                          datetime.datetime(2000, 2, 18),
-                          datetime.datetime.now()
-                      ]]))
+                      temporal=pystac.TemporalExtent(
+                          intervals=[[datetime.datetime(2000, 2, 18), None]]))
     },
     'MODIS/006/MOD15A2H': {
         'links': [
@@ -328,10 +316,8 @@ available for each MOD15A2H granule.""",
         'extent':
         pystac.Extent(spatial=pystac.SpatialExtent(
             [[-180.0, 180.0, -90.0, 90.0]]),
-                      temporal=pystac.TemporalExtent(intervals=[[
-                          datetime.datetime(2000, 2, 18),
-                          datetime.datetime.now()
-                      ]]))
+                      temporal=pystac.TemporalExtent(
+                          intervals=[[datetime.datetime(2000, 2, 18), None]]))
     },
     'MODIS/006/MOD16A3GF': {
         'links': [
@@ -378,10 +364,8 @@ the average of all days within the defined year.""",
         'extent':
         pystac.Extent(spatial=pystac.SpatialExtent(
             [[-180.0, 180.0, -90.0, 90.0]]),
-                      temporal=pystac.TemporalExtent(intervals=[[
-                          datetime.datetime(2000, 2, 18),
-                          datetime.datetime.now()
-                      ]]))
+                      temporal=pystac.TemporalExtent(
+                          intervals=[[datetime.datetime(2000, 2, 18), None]]))
     },
     'MODIS/006/MOD17A2H': {
         'links': [
@@ -414,10 +398,8 @@ contains quality information for both the GPP and thePSN.""",
         'extent':
         pystac.Extent(spatial=pystac.SpatialExtent(
             [[-180.0, 180.0, -90.0, 90.0]]),
-                      temporal=pystac.TemporalExtent(intervals=[[
-                          datetime.datetime(2000, 2, 18),
-                          datetime.datetime.now()
-                      ]]))
+                      temporal=pystac.TemporalExtent(
+                          intervals=[[datetime.datetime(2000, 2, 18), None]]))
     },
     'MODIS/006/MOD17A2HGF': {
         'links': [
@@ -458,10 +440,8 @@ generated only at the end of a given year.""",
         'extent':
         pystac.Extent(spatial=pystac.SpatialExtent(
             [[-180.0, 180.0, -90.0, 90.0]]),
-                      temporal=pystac.TemporalExtent(intervals=[[
-                          datetime.datetime(2000, 1, 1),
-                          datetime.datetime.now()
-                      ]]))
+                      temporal=pystac.TemporalExtent(
+                          intervals=[[datetime.datetime(2000, 1, 1), None]]))
     },
     'MODIS/006/MOD17A3HGF': {
         'links': [
@@ -500,10 +480,8 @@ end of a given year.""",
         'extent':
         pystac.Extent(spatial=pystac.SpatialExtent(
             [[-180.0, 180.0, -90.0, 90.0]]),
-                      temporal=pystac.TemporalExtent(intervals=[[
-                          datetime.datetime(2000, 1, 1),
-                          datetime.datetime.now()
-                      ]]))
+                      temporal=pystac.TemporalExtent(
+                          intervals=[[datetime.datetime(2000, 1, 1), None]]))
     },
     'MODIS/006/MOD44B': {
         'links': [
@@ -690,10 +668,8 @@ The Science Dataset (SDS) layers include the fire mask and pixel quality indicat
         'extent':
         pystac.Extent(spatial=pystac.SpatialExtent(
             [[-180.0, 180.0, -90.0, 90.0]]),
-                      temporal=pystac.TemporalExtent(intervals=[[
-                          datetime.datetime(2000, 2, 18),
-                          datetime.datetime.now()
-                      ]]))
+                      temporal=pystac.TemporalExtent(
+                          intervals=[[datetime.datetime(2000, 2, 18), None]]))
     }
 }
 
