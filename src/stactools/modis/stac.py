@@ -139,8 +139,8 @@ def create_item(metadata_href: str) -> pystac.Item:
                      title='FGDC Metdata'))
 
     # Bands
-    eo = EOExtension.ext(item, add_if_missing=True)
-    if item_id in MODIS_BAND_DATA:
-        eo.bands = MODIS_BAND_DATA[item_id]
+    eo = EOExtension.ext(item.assets[ITEM_TIF_IMAGE_NAME], add_if_missing=True)
+    if short_item_id in MODIS_BAND_DATA:
+        eo.bands = MODIS_BAND_DATA[short_item_id]
 
     return item
