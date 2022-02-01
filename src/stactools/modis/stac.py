@@ -1,4 +1,4 @@
-from typing import cast
+from typing import cast, Dict, Any
 import xml.etree.ElementTree as ET
 
 import pystac
@@ -96,11 +96,12 @@ def create_item(metadata_href: str) -> pystac.Item:
     assert prod_dt_text.text is not None
     prod_dt = str_to_datetime(prod_dt_text.text)
 
+    properties = ADDITIONAL_MODIS_PROPERTIES[short_item_id]
     item = pystac.Item(id=item_id,
                        geometry=geom,
                        bbox=bounds,
                        datetime=prod_dt,
-                       properties=ADDITIONAL_MODIS_PROPERTIES[short_item_id])
+                       properties=cast(Dict[str, Any], properties))
 
     # Common metadata
     item.common_metadata.providers = [
