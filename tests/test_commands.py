@@ -20,7 +20,7 @@ class CreateItemTest(CliTestCase):
             'data-files/MCD12Q1.A2001001.h00v08.006.2018142182903.hdf.xml')
 
         with TemporaryDirectory() as tmp_dir:
-            cmd = f"modis create-item --cogify {metadata_href} {tmp_dir}"
+            cmd = f"modis create-item {metadata_href} {tmp_dir}"
             self.run_command(cmd)
 
             jsons = [p for p in os.listdir(tmp_dir) if p.endswith('.json')]
