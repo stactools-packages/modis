@@ -2,9 +2,10 @@ from typing import cast
 import xml.etree.ElementTree as ET
 
 import pystac
-from pystac import Extent, Provider
+from pystac import Extent, Provider, MediaType
 from pystac.utils import str_to_datetime
 from pystac.extensions.eo import EOExtension
+from pystac.extensions.item_assets import ItemAssetsExtension, AssetDefinition
 from shapely.geometry import shape
 
 from stactools.modis.constants import (ITEM_TIF_IMAGE_NAME, ITEM_METADATA_NAME,
@@ -26,21 +27,21 @@ def create_collection(catalog_id: str) -> pystac.Collection:
         title=cast(str, MODIS_CATALOG_ELEMENTS[catalog_id]["title"]),
         providers=[
             cast(Provider, MODIS_CATALOG_ELEMENTS[catalog_id]["provider"])
-        ],
-        stac_extensions=['item-assets'],
-        extra_fields={
-            'item_assets': {
-                'image': {
-                    "eo:bands":
-                    [band.to_dict() for band in MODIS_BAND_DATA[catalog_id]],
-                    "roles": ["data"],
-                    "title":
-                    "RGBIR COG tile",
-                    "type":
-                    pystac.MediaType.COG
-                },
-            }
+        ])
+
+    item_assets = ItemAssetsExtension.ext(collection, add_if_missing=True)
+    item_assets.item_assets = {
+        "image":
+        AssetDefinition({
+            "eo:bands":
+            [band.to_dict() for band in MODIS_BAND_DATA[catalog_id]],
+            "roles": ["data"],
+            "title":
+            "RGBIR COG tile",
+            "type":
+            MediaType.COG,
         })
+    }
 
     return collection
 
