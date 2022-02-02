@@ -29,7 +29,7 @@ def create_cogs(item: Item, cog_directory: Optional[str] = None) -> None:
             which will be converted to COGs.
         cog_directory (str, optional): A URI of a directory to store COGs. This will be used
             in conjunction with the file names based on the COG asset to store
-            the COG data. If not supplied, the directory of the Item's self HREF
+            the COG data. If not supplied, the directory of the Item"s self HREF
             will be used.
 
     Returns:
@@ -50,8 +50,8 @@ def create_cogs(item: Item, cog_directory: Optional[str] = None) -> None:
 
     asset = pystac.Asset(href=cog_href,
                          media_type=pystac.MediaType.COG,
-                         roles=['data'],
-                         title='Raster Dataset')
+                         roles=["data"],
+                         title="Raster Dataset")
 
     item.assets[ITEM_COG_IMAGE_NAME] = asset
 
