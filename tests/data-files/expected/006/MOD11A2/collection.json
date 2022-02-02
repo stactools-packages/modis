@@ -12,6 +12,16 @@
     },
     {
       "rel": "item",
+      "href": "https://lpdaac.usgs.gov/documents/118/MOD11_User_Guide_V6.pdf",
+      "title": "User Guide"
+    },
+    {
+      "rel": "item",
+      "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/6/MOD11A2",
+      "title": "Data File"
+    },
+    {
+      "rel": "item",
       "href": "./MOD11A2.A2022017.h10v05.006.2022026205724/MOD11A2.A2022017.h10v05.006.2022026205724.json",
       "type": "application/json"
     }

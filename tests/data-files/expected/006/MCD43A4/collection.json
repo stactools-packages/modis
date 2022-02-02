@@ -12,6 +12,16 @@
     },
     {
       "rel": "item",
+      "href": "https://www.umb.edu/spectralmass/terra_aqua_modis/v006",
+      "title": "User Guide"
+    },
+    {
+      "rel": "item",
+      "href": "https://doi.org/10.5067/MODIS/MCD43A2.006",
+      "title": "Data File"
+    },
+    {
+      "rel": "item",
       "href": "./MCD43A4.A2022019.h10v04.006.2022028111747/MCD43A4.A2022019.h10v04.006.2022028111747.json",
       "type": "application/json"
     }

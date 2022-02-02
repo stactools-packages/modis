@@ -12,6 +12,11 @@
     },
     {
       "rel": "item",
+      "href": "https://lpdaac.usgs.gov/documents/109/MOD44W_User_Guide_ATBD_V6.pdf",
+      "title": "User Guide"
+    },
+    {
+      "rel": "item",
       "href": "./MOD44W.A2015001.h10v04.006.2018033150244/MOD44W.A2015001.h10v04.006.2018033150244.json",
       "type": "application/json"
     }

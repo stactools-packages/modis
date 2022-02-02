@@ -22,6 +22,7 @@ def create_collection(catalog_id: str) -> pystac.Collection:
         title=fragment["title"],
         providers=fragment["providers"],
     )
+    collection.add_links(fragment["links"])
 
     item_assets = ItemAssetsExtension.ext(collection, add_if_missing=True)
     item_assets.item_assets = {
