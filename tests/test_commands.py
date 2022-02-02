@@ -16,19 +16,14 @@ class CreateItemTest(CliTestCase):
         return [create_modis_command]
 
     def test_create_item(self) -> None:
-        metadata_href = test_data.get_path(
-            'data-files/MCD12Q1.A2001001.h00v08.006.2018142182903.hdf.xml')
+        infile = test_data.get_path(
+            "data-files/MCD12Q1.A2001001.h00v08.006.2018142182903.hdf.xml")
 
-        with TemporaryDirectory() as tmp_dir:
-            cmd = f"modis create-item {metadata_href} {tmp_dir}"
+        with TemporaryDirectory() as temporary_directory:
+            cmd = f"modis create-item {infile} {temporary_directory}"
             self.run_command(cmd)
-
-            jsons = [p for p in os.listdir(tmp_dir) if p.endswith('.json')]
-
-            self.assertEqual(len(jsons), 1)
-
-            item_path = os.path.join(tmp_dir, jsons[0])
-
+            item_path = os.path.join(
+                temporary_directory,
+                "MCD12Q1.A2001001.h00v08.006.2018142182903.json")
             item = pystac.read_file(item_path)
-
         item.validate()
