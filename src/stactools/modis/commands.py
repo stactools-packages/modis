@@ -36,7 +36,7 @@ def create_modis_command(cli: Group) -> Command:
                 expected to reside alongside the metadata xml file.
         """
         item = stac.create_item(infile)
-        item_path = os.path.join(outdir, '{}.json'.format(item.id))
+        item_path = os.path.join(outdir, "{}.json".format(item.id))
         item.set_self_href(item_path)
         if cogify:
             cog.create_cogs(item)
