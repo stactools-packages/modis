@@ -2,13 +2,13 @@ import xml.etree.ElementTree as ET
 
 import pystac
 from pystac import MediaType
+from pystac.extensions.eo import Band, EOExtension
+from pystac.extensions.item_assets import AssetDefinition, ItemAssetsExtension
 from pystac.utils import str_to_datetime
-from pystac.extensions.eo import EOExtension, Band
-from pystac.extensions.item_assets import ItemAssetsExtension, AssetDefinition
 from shapely.geometry import shape
 
 import stactools.modis.fragment
-from stactools.modis.constants import (ITEM_TIF_IMAGE_NAME, ITEM_METADATA_NAME)
+from stactools.modis.constants import ITEM_METADATA_NAME, ITEM_TIF_IMAGE_NAME
 
 
 def create_collection(catalog_id: str) -> pystac.Collection:

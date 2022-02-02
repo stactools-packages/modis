@@ -3,7 +3,6 @@ from tempfile import TemporaryDirectory
 from unittest import TestCase
 
 from stactools.modis import cog
-
 from tests import test_data
 
 

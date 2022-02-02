@@ -1,14 +1,13 @@
 import logging
 import os
-from typing import Optional, List
+from typing import List, Optional
 
 import pystac
 import rasterio
-from pystac import Item
 import stactools.core.utils.convert
+from pystac import Item
 
-from stactools.modis.constants import (ITEM_COG_IMAGE_NAME,
-                                       ITEM_TIF_IMAGE_NAME)
+from stactools.modis.constants import ITEM_COG_IMAGE_NAME, ITEM_TIF_IMAGE_NAME
 
 logger = logging.getLogger(__name__)
 

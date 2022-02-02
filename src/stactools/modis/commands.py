@@ -2,9 +2,9 @@ import logging
 import os
 
 import click
-from click import Group, Command
+from click import Command, Group
 
-from stactools.modis import stac, cog
+from stactools.modis import cog, stac
 
 logger = logging.getLogger(__name__)
 
@@ -50,7 +50,7 @@ def create_modis_command(cli: Group) -> Command:
         """Converts a MODIS HDF file into one or more cloud optimized GeoTIFFs (COGs).
 
         Args:
-            infile (str): The source .hdf file. 
+            infile (str): The source .hdf file.
             outdir (str): The directory that will contain the COGs.
         """
         cog.cogify(infile, outdir)

@@ -1,7 +1,7 @@
 import json
-import pkg_resources
 from typing import Any
 
+import pkg_resources
 from pystac import Extent, Link, Provider
 
 

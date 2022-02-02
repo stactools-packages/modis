@@ -9,10 +9,11 @@ import json
 import os
 from typing import List, cast
 
-from pystac import Link, Provider, Extent
+from pystac import Extent, Link, Provider
 from pystac.extensions.eo import Band
 
-from stactools.modis.constants import MODIS_BAND_DATA, MODIS_CATALOG_ELEMENTS, ADDITIONAL_MODIS_PROPERTIES
+from stactools.modis.constants import (ADDITIONAL_MODIS_PROPERTIES,
+                                       MODIS_BAND_DATA, MODIS_CATALOG_ELEMENTS)
 
 root = os.path.join(os.path.dirname(os.path.dirname(__file__)), "src",
                     "stactools", "modis", "fragments")

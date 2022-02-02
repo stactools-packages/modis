@@ -1,10 +1,10 @@
 import json
 import os.path
-from tempfile import TemporaryDirectory
 import unittest
+from tempfile import TemporaryDirectory
 
-from pystac import CatalogType
 import pytest
+from pystac import CatalogType
 
 import stactools.modis.stac
 from stactools.modis.file import File
