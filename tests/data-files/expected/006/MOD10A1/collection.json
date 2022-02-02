@@ -12,6 +12,16 @@
     },
     {
       "rel": "item",
+      "href": "https://doi.org/10.5067/MODIS/MOD10A1.006",
+      "title": "Documentation"
+    },
+    {
+      "rel": "item",
+      "href": "https://doi.org/10.5067/MODIS/MOD10A1.006",
+      "title": "Hall, D. K., V. V. Salomonson, and G. A. Riggs. 2016. MODIS/Terra Snow Cover Daily L3 Global 500m Grid. Version 6. Boulder, Colorado USA: NASA National Snow and Ice Data Center Distributed Active Archive Center."
+    },
+    {
+      "rel": "item",
       "href": "./MOD10A1.A2022029.h10v05.006.2022031045818/MOD10A1.A2022029.h10v05.006.2022031045818.json",
       "type": "application/json"
     }

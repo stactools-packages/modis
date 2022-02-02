@@ -2,7 +2,7 @@ import json
 import pkg_resources
 from typing import Any
 
-from pystac import Extent, Provider
+from pystac import Extent, Link, Provider
 
 
 def load(catalog_id: str, file_name: str) -> Any:
@@ -24,6 +24,7 @@ def load_collection(catalog_id: str) -> Any:
     data["providers"] = [
         Provider.from_dict(provider) for provider in data["providers"]
     ]
+    data["links"] = [Link.from_dict(link) for link in data["links"]]
     return data
 
 
