@@ -24,10 +24,10 @@ def create_cogs(item: Item, cog_directory: Optional[str] = None) -> None:
     """Create COGs from the HDF asset contained in the passed in STAC item.
 
     Args:
-        item (pystac.Item): modis Item that contains an asset
+        item (pystac.Item): MODIS Item that contains an asset
             with key equal to stactools.modis.constants.ITEM_METADATA_NAME,
             which will be converted to COGs.
-        cog_directory (str): A URI of a directory to store COGs. This will be used
+        cog_directory (str, optional): A URI of a directory to store COGs. This will be used
             in conjunction with the file names based on the COG asset to store
             the COG data. If not supplied, the directory of the Item's self HREF
             will be used.
@@ -59,7 +59,12 @@ def create_cogs(item: Item, cog_directory: Optional[str] = None) -> None:
 def cogify(infile: str, outdir: str) -> List[str]:
     """Creates cogs for the provided HDF file.
 
-    This will create one COG per subdataset in the HDF file.
+    Args:
+        infile (str): The input HDF file
+        outdir (str): The output directory
+
+    Returns:
+        List[str]: The paths to the created COGs.
     """
     with rasterio.open(infile) as dataset:
         subdatasets = dataset.subdatasets
