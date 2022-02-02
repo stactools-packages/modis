@@ -9,6 +9,7 @@ from shapely.geometry import shape
 
 import stactools.modis.fragment
 from stactools.modis.constants import ITEM_METADATA_NAME, ITEM_TIF_IMAGE_NAME
+from stactools.modis.file import File
 
 
 def create_collection(catalog_id: str) -> Collection:
@@ -51,13 +52,13 @@ def create_item(infile: str) -> Item:
     """Creates a STAC Item from MODIS data.
 
     Args:
-        infile (str): The href to the metadata for this hdf.
+        infile (str): The href to an HDF file or its metadata.
 
     Returns:
         pystac.Item: A STAC Item representing this MODIS image.
     """
-
-    metadata_root = ET.parse(infile).getroot()
+    file = File(infile)
+    metadata_root = ET.parse(file.xml_path).getroot()
 
     # Item id
     name = metadata_root.find("GranuleURMetaData/CollectionMetaData/ShortName")
@@ -65,6 +66,7 @@ def create_item(infile: str) -> Item:
     version = metadata_root.find(
         "GranuleURMetaData/CollectionMetaData/VersionID")
     assert version is not None
+    # FIXME this is not going to work for version 6.1 data
     short_item_id = "{}/00{}/{}".format("MODIS", version.text, name.text)
 
     image_name = metadata_root.find(
