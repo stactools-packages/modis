@@ -10,7 +10,7 @@ def load(catalog_id: str, file_name: str) -> Any:
 
     Args:
         catalog_id: The ID of a MODIS collection, e.g. "MODIS/006/MCD12Q1"
-        file_name: The fragment file name to read, e.g. "collection.json" 
+        file_name: The fragment file name to read, e.g. "collection.json"
 
     Returns:
         Any: The contents of the fragment file, parsed as JSON.
@@ -44,7 +44,7 @@ def load_collection(catalog_id: str) -> Any:
 
 def load_bands(catalog_id: str) -> Any:
     """Loads the bands.json for the given catalog id.
-    
+
     Args:
         catalog_id: The ID of a MODIS collection, e.g. "MODIS/006/MCD12Q1"
 
@@ -56,7 +56,7 @@ def load_bands(catalog_id: str) -> Any:
 
 def load_item_properties(catalog_id: str) -> Any:
     """Loads the item-properties.json for the given catalog id.
-    
+
     Args:
         catalog_id: The ID of a MODIS collection, e.g. "MODIS/006/MCD12Q1"
 
