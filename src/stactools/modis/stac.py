@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 
 import pystac
-from pystac import MediaType, Collection, Item
+from pystac import Collection, Item, MediaType
 from pystac.extensions.eo import Band, EOExtension
 from pystac.extensions.item_assets import AssetDefinition, ItemAssetsExtension
 from pystac.utils import str_to_datetime

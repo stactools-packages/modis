@@ -2,7 +2,7 @@
 """Creates fragment files from constants.py.
 
 Should only need to be used for the initial migration from constants.py to
-fragments, but kept around for posterity. 
+fragments, but kept around for posterity.
 """
 
 import json
@@ -10,7 +10,6 @@ import os
 from typing import List, cast
 
 from pystac import Extent, Link, Provider
-from pystac.extensions.eo import Band
 
 from stactools.modis.constants import (ADDITIONAL_MODIS_PROPERTIES,
                                        MODIS_BAND_DATA, MODIS_CATALOG_ELEMENTS)
