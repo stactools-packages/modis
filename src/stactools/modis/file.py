@@ -13,7 +13,11 @@ class File:
     id: str
 
     def __init__(self, path: str):
-        """Creates a new MODIS file from a path."""
+        """Creates a new MODIS file from a path.
+        
+        Args:
+            path (str): The .hdf or .hdf.xml path to MODIS data 
+        """
         base, extension = os.path.splitext(path)
         if extension not in [".hdf", ".xml"]:
             raise ValueError(f"Invalid MODIS path: {path}")
