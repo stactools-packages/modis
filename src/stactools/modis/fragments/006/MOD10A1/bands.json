@@ -1,0 +1,30 @@
+[
+    {
+        "name": "NDSI_Snow_Cover",
+        "description": " NDSI snow cover plus other results. This value is\n                            computed for MOD10_L2 and retrieved when the\n                            observation of the day is selected. Possible values\n                            are:\n                            0\u2013100: NDSI snow cover\n                            200: missing data\n                            201: no decision\n                            211: night\n                            237: inland water\n                            239: ocean\n                            250: cloud\n                            254: detector saturated\n                            255: fill"
+    },
+    {
+        "name": "NDSI_Snow_Cover_Basic_QA",
+        "description": " A basic estimate of the quality of the algorithm\n                            result. This value is computed for MOD10_L2 and\n                            retrieved with the corresponding observation of the\n                            day. Possible values are:\n                            0: best\n                            1: good\n                            2: OK\n                            3: poor (not currently in use)\n                            211: night\n                            239: ocean\n                            255: unusable input or no data"
+    },
+    {
+        "name": "NDSI_Snow_Cover_Algorithm_Flags_QA",
+        "description": " Bit flags indicating screen results and the presence\n                            of inland water. See \u201cSection 1.7.1 Interpreting\n                            NDSI_Snow_Cover_Algorithm_Flags_QA\u201d for a\n                            description. These flags are set when MOD10_L2 is\n                            generated and retrieved with the corresponding\n                            observation of the day. Bits are set to on (1) as\n                            follows:\n                            Bit 0: Inland water\n                            Bit 1: Low visible screen failed. Snow detection\n                            reversed.\n                            Bit 2: Low NDSI screen failed. Snow detection\n                            reversed.\n                            Bit 3: Combined temperature/height screen failed.\n                            On means either:\n                            brightness temperature \u2265 281 K, pixel height <\n                            1300 m, flag set, snow detection reversed to not\n                            snow, OR;\n                            brightness temperature \u2265 281 K, pixel height \u2265 1300\n                            m, flag set, snow detection NOT reversed.\n                            Bit 4: Shortwave IR (SWIR) reflectance\n                            anomalously high. On means either:\n                            Snow pixel with SWIR > 0.45, flag set, snow\n                            detection reversed to not snow, OR;\n                            Snow pixel with 25% < SWIR <= 45%, flag set to\n                            indicate unusual snow conditon, snow detection\n                            NOT reversed.\n                            Bit 5: spare\n                            Bit 6: spare\n                            Bit 7: solar zenith screen failed, uncertainty\n                            increased."
+    },
+    {
+        "name": "NDSI",
+        "description": " Raw NDSI (i.e. prior to screening) reported in the\n                        range 0\u201310,000. Values are scaled by 1 x 104. This\n                        value is computed for MOD10_L2 and retrieved\n                        with the corresponding observation of the day."
+    },
+    {
+        "name": "Snow_Albedo_Daily_Tile",
+        "description": " Snow albedo plus other results.\n                            Possible values are:\n                            1\u2013100: snow albedo\n                            101: no decision\n                            111: night\n                            125: land\n                            137: inland water\n                            139: ocean\n                            150: cloud\n                            151: cloud detected as snow\n                            250: missing\n                            251: self-shadowing\n                            252: land mask mismatch\n                            253: BRDF failure\n                            254: non-production mask"
+    },
+    {
+        "name": "orbit_pnt",
+        "description": " Pointer to the orbit number of the swath that was\n                            selected as the observation of the day. The pointer\n                            references by index the list of orbit numbers written\n                            to the ORBITNUMBERARRAY metadata object in\n                            ArchiveMetadata.0."
+    },
+    {
+        "name": "granule_pnt",
+        "description": " Pointer to the granule (swath) that was mapped into\n                            the tile. The pointer references the corresponding\n                            value in the GRANULEPOINTERARRAY metadata\n                            object written to ArchiveMetadata.0. See \u201cSection\n                            1.7.2 | Using granule_pnt\u201d for more information"
+    }
+]

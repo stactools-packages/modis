@@ -1,0 +1,54 @@
+[
+    {
+        "name": "LC_Type1",
+        "description": "Land Cover Type 1: Annual InternationalGeosphere-Biosphere Programme (IGBP) classification"
+    },
+    {
+        "name": "LC_Type2",
+        "description": "Land Cover Type 2: Annual University of Maryland (UMD) classification"
+    },
+    {
+        "name": "LC_Type3",
+        "description": "Land Cover Type 3: Annual Leaf Area Index (LAI) classification"
+    },
+    {
+        "name": "LC_Type4",
+        "description": "Land Cover Type 4: Annual BIOME-Biogeochemical Cycles (BGC) classification"
+    },
+    {
+        "name": "LC_Type5",
+        "description": "Land Cover Type 5: Annual Plant Functional Types classification"
+    },
+    {
+        "name": "LC_Prop1",
+        "description": "FAO-Land Cover Classification System 1 (LCCS1) land cover layer"
+    },
+    {
+        "name": "LC_Prop2",
+        "description": "FAO-LCCS2 land use layer"
+    },
+    {
+        "name": "LC_Prop3",
+        "description": "FAO-LCCS3 surface hydrology layer"
+    },
+    {
+        "name": "LC_Prop1_Assessment",
+        "description": "LCCS1 land cover layer confidence"
+    },
+    {
+        "name": "LC_Prop2_Assessment",
+        "description": "LCCS2 land use layer confidence"
+    },
+    {
+        "name": "LC_Prop3_Assessment",
+        "description": "LCCS3 surface hydrology layer confidence"
+    },
+    {
+        "name": "QC",
+        "description": "Product quality flags"
+    },
+    {
+        "name": "LW",
+        "description": "Binary land (class 2) / water (class 1) mask derived from MOD44W"
+    }
+]

@@ -1,0 +1,14 @@
+{
+    "Water_Mask_Class_0": "Land",
+    "Water_Mask_Class_1": "Water",
+    "Water_Mask_Class_250": "Outside of Projection",
+    "QA_1": "High confidence observation",
+    "QA_2": "Lower confidence water, but MOD44W V5 indicated water",
+    "QA_3": "Lower confidence land",
+    "QA_4": "Ocean mask",
+    "QA_5": "Ocean mask, but no water observations recorded",
+    "QA_6": "Burned area (MCD64A1)",
+    "QA_7": "Urban or impervious surface",
+    "QA_8": "No water detected, but MOD44W V5 shows inland water",
+    "QA_10": "Fill - outside of projected area"
+}

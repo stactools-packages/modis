@@ -1,0 +1,18 @@
+{
+    "FireMask_Class_0": "Not processed (missing input data)",
+    "FireMask_Class_1": "Not processed (obsolete; not used since Collection 1)",
+    "FireMask_Class_2": "Not processed (other reason)",
+    "FireMask_Class_3": "Non-fire water pixel",
+    "FireMask_Class_4": "Cloud (land or water)",
+    "FireMask_Class_5": "Non-fire land pixel",
+    "FireMask_Class_6": "Unknown (land or water)",
+    "FireMask_Class_7": "Fire (low confidence, land or water)",
+    "FireMask_Class_8": "Fire (nominal confidence, land or water)",
+    "FireMask_Class_9": "Fire (high confidence, land or water)",
+    "QA_bit_0_1_land_water_state_0": "Water",
+    "QA_bit_0_1_land_water_state_1": "Coast",
+    "QA_bit_0_1_land_water_state_2": "Land",
+    "QA_bit_0_1_land_water_state_3": "Missing data",
+    "QA_bit_2_night_day_0": "Night",
+    "QA_bit_2_night_day_1": "Day"
+}

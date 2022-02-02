@@ -1,40 +1,34 @@
-from typing import cast, Dict, Any
 import xml.etree.ElementTree as ET
 
 import pystac
-from pystac import Extent, Provider, MediaType
+from pystac import MediaType
 from pystac.utils import str_to_datetime
-from pystac.extensions.eo import EOExtension
+from pystac.extensions.eo import EOExtension, Band
 from pystac.extensions.item_assets import ItemAssetsExtension, AssetDefinition
 from shapely.geometry import shape
 
-from stactools.modis.constants import (ITEM_TIF_IMAGE_NAME, ITEM_METADATA_NAME,
-                                       MODIS_CATALOG_ELEMENTS, MODIS_BAND_DATA,
-                                       ADDITIONAL_MODIS_PROPERTIES)
+import stactools.modis.fragment
+from stactools.modis.constants import (ITEM_TIF_IMAGE_NAME, ITEM_METADATA_NAME)
 
 
 def create_collection(catalog_id: str) -> pystac.Collection:
     """Creates a STAC Collection for MODIS data.
     """
-
+    fragment = stactools.modis.fragment.load_collection(catalog_id)
     collection = pystac.Collection(
         id=catalog_id,
-        description=cast(
-            str,
-            MODIS_CATALOG_ELEMENTS[catalog_id]["description"],
-        ),
-        extent=cast(Extent, MODIS_CATALOG_ELEMENTS[catalog_id]["extent"]),
-        title=cast(str, MODIS_CATALOG_ELEMENTS[catalog_id]["title"]),
-        providers=[
-            cast(Provider, MODIS_CATALOG_ELEMENTS[catalog_id]["provider"])
-        ])
+        description=fragment["description"],
+        extent=fragment["extent"],
+        title=fragment["title"],
+        providers=fragment["providers"],
+    )
 
     item_assets = ItemAssetsExtension.ext(collection, add_if_missing=True)
     item_assets.item_assets = {
         "image":
         AssetDefinition({
             "eo:bands":
-            [band.to_dict() for band in MODIS_BAND_DATA[catalog_id]],
+            stactools.modis.fragment.load_bands(catalog_id),
             "roles": ["data"],
             "title":
             "RGBIR COG tile",
@@ -96,19 +90,18 @@ def create_item(metadata_href: str) -> pystac.Item:
     assert prod_dt_text.text is not None
     prod_dt = str_to_datetime(prod_dt_text.text)
 
-    properties = ADDITIONAL_MODIS_PROPERTIES[short_item_id]
-    item = pystac.Item(id=item_id,
-                       geometry=geom,
-                       bbox=bounds,
-                       datetime=prod_dt,
-                       properties=cast(Dict[str, Any], properties))
+    item = pystac.Item(
+        id=item_id,
+        geometry=geom,
+        bbox=bounds,
+        datetime=prod_dt,
+        properties=stactools.modis.fragment.load_item_properties(
+            short_item_id))
 
     # Common metadata
-    item.common_metadata.providers = [
-        cast(Provider, MODIS_CATALOG_ELEMENTS[short_item_id]['provider'])
-    ]
-    item.common_metadata.description = cast(
-        str, MODIS_CATALOG_ELEMENTS[short_item_id]['description'])
+    collection = stactools.modis.fragment.load_collection(short_item_id)
+    item.common_metadata.providers = collection["providers"]
+    item.common_metadata.description = collection["description"]
 
     instrument_short_name = metadata_root.find(
         'GranuleURMetaData/Platform/Instrument/InstrumentShortName')
@@ -119,8 +112,7 @@ def create_item(metadata_href: str) -> pystac.Item:
         'GranuleURMetaData/Platform/PlatformShortName')
     assert platform_short_name is not None
     item.common_metadata.platform = platform_short_name.text
-    item.common_metadata.title = cast(
-        str, MODIS_CATALOG_ELEMENTS[short_item_id]['title'])
+    item.common_metadata.title = collection["title"]
 
     # Hdf
     item.add_asset(
@@ -140,7 +132,9 @@ def create_item(metadata_href: str) -> pystac.Item:
 
     # Bands
     eo = EOExtension.ext(item.assets[ITEM_TIF_IMAGE_NAME], add_if_missing=True)
-    if short_item_id in MODIS_BAND_DATA:
-        eo.bands = MODIS_BAND_DATA[short_item_id]
+    eo.bands = [
+        Band(band)
+        for band in stactools.modis.fragment.load_bands(short_item_id)
+    ]
 
     return item

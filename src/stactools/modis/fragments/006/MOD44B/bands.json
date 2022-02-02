@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Percent_Tree_Cover",
+        "description": "Percent of pixel that is tree covered"
+    },
+    {
+        "name": "Percent_NonTree_Vegetation",
+        "description": "Percent of pixel that is nontree vegetation"
+    },
+    {
+        "name": "Percent_NonVegetated",
+        "description": "Percent of pixel non vegetated"
+    },
+    {
+        "name": "Quality",
+        "description": "Quality Control indicators"
+    },
+    {
+        "name": "Percent_Tree_Cover_SD",
+        "description": "Standard deviation of percent tree covered"
+    },
+    {
+        "name": "Percent_NonVegetated_SD",
+        "description": "Standard deviation of percent not vegetated"
+    },
+    {
+        "name": "Cloud",
+        "description": "Pixel cloud cover indicators"
+    }
+]

@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Npp_500m",
+        "description": "Net Primary Productivity"
+    },
+    {
+        "name": "Npp_QC_500m",
+        "description": "Quality control Bits"
+    }
+]
