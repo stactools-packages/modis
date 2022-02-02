@@ -1,0 +1,71 @@
+[
+    {
+        "name": "Nadir_Reflectance_Band1",
+        "common_name": "red",
+        "description": "NBAR at local solar noon for band 1",
+        "center_wavelength": 0.645
+    },
+    {
+        "name": "Nadir_Reflectance_Band2",
+        "common_name": "nir",
+        "description": "NBAR at local solar noon for band 2",
+        "center_wavelength": 0.8585
+    },
+    {
+        "name": "Nadir_Reflectance_Band3",
+        "common_name": "blue",
+        "description": "NBAR at local solar noon for band 3",
+        "center_wavelength": 0.469
+    },
+    {
+        "name": "Nadir_Reflectance_Band4",
+        "common_name": "green",
+        "description": "NBAR at local solar noon for band 4",
+        "center_wavelength": 0.555
+    },
+    {
+        "name": "Nadir_Reflectance_Band5",
+        "description": "NBAR at local solar noon for band 5",
+        "center_wavelength": 1.24
+    },
+    {
+        "name": "Nadir_Reflectance_Band6",
+        "common_name": "swir16",
+        "description": "NBAR at local solar noon for band 6",
+        "center_wavelength": 1.64
+    },
+    {
+        "name": "Nadir_Reflectance_Band7",
+        "common_name": "swir22",
+        "description": "NBAR at local solar noon for band 7",
+        "center_wavelength": 2.13
+    },
+    {
+        "name": "BRDF_Albedo_Band_Mandatory_Quality_Band1",
+        "description": "BRDF albedo mandatory quality for band 1"
+    },
+    {
+        "name": "BRDF_Albedo_Band_Mandatory_Quality_Band2",
+        "description": "BRDF albedo mandatory quality for band 2"
+    },
+    {
+        "name": "BRDF_Albedo_Band_Mandatory_Quality_Band3",
+        "description": "BRDF albedo mandatory quality for band 3"
+    },
+    {
+        "name": "BRDF_Albedo_Band_Mandatory_Quality_Band4",
+        "description": "BRDF albedo mandatory quality for band 4"
+    },
+    {
+        "name": "BRDF_Albedo_Band_Mandatory_Quality_Band5",
+        "description": "BRDF albedo mandatory quality for band 5"
+    },
+    {
+        "name": "BRDF_Albedo_Band_Mandatory_Quality_Band6",
+        "description": "BRDF albedo mandatory quality for band 6"
+    },
+    {
+        "name": "BRDF_Albedo_Band_Mandatory_Quality_Band7",
+        "description": "BRDF albedo mandatory quality for band 7"
+    }
+]

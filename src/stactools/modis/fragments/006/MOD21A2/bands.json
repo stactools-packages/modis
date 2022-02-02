@@ -1,0 +1,46 @@
+[
+    {
+        "name": "LST_Day_1KM",
+        "description": "Day Land surface temperature"
+    },
+    {
+        "name": "QC_Day",
+        "description": "Day Quality Control (QC)"
+    },
+    {
+        "name": "View_Angle_Day",
+        "description": "Day MODIS view zenith angle"
+    },
+    {
+        "name": "View_Time_Day",
+        "description": "Time of MODIS observation for day"
+    },
+    {
+        "name": "LST_Night_1KM",
+        "description": "Night Land Surface Temperature"
+    },
+    {
+        "name": "QC_Night",
+        "description": "Night Quality Control (QC)"
+    },
+    {
+        "name": "View_Angle_Night",
+        "description": "Night view zenith angle"
+    },
+    {
+        "name": "View_Time_Night",
+        "description": "Time of Observation for night"
+    },
+    {
+        "name": "Emis_29",
+        "description": "Average Day/Night Band 29 emissivity"
+    },
+    {
+        "name": "Emis_31",
+        "description": "Average Day/Night Band 31 emissivity"
+    },
+    {
+        "name": "Emis_32",
+        "description": "Average Day/Night Band 32 emissivity"
+    }
+]

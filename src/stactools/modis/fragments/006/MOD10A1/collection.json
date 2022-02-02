@@ -1,0 +1,46 @@
+{
+    "links": [
+        {
+            "rel": "item",
+            "href": "https://doi.org/10.5067/MODIS/MOD10A1.006",
+            "title": "Documentation"
+        },
+        {
+            "rel": "item",
+            "href": "https://doi.org/10.5067/MODIS/MOD10A1.006",
+            "title": "Hall, D. K., V. V. Salomonson, and G. A. Riggs. 2016. MODIS/Terra Snow Cover Daily L3 Global 500m Grid. Version 6. Boulder, Colorado USA: NASA National Snow and Ice Data Center Distributed Active Archive Center."
+        }
+    ],
+    "title": "MODIS/Terra Snow Cover Daily L3 Global 500m SIN Grid, Version 6",
+    "description": "\n            This data set contains daily, gridded snow cover and albedo derived from\n             radiance data acquired by the Moderate Resolution Imaging Spectroradiometer\n             (MODIS) on board the Terra satellite. Snow cover is identified using the\n             Normalized Difference Snow Index (NDSI) and a series of screens designed\n             to alleviate errors and flag uncertain snow cover detections.\n            ",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180.0,
+                    180.0,
+                    -90.0,
+                    90.0
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2000-02-24T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "providers": [
+        {
+            "name": "NASA NSIDC DAAC at CIRES",
+            "roles": [
+                "producer",
+                "licensor"
+            ],
+            "url": "https://doi.org/10.5067/MODIS/MOD10A1.006"
+        }
+    ]
+}

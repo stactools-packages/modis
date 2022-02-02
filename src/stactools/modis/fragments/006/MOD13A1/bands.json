@@ -1,0 +1,54 @@
+[
+    {
+        "name": "500m 16 days NDVI",
+        "description": "500m 16 days NDVI"
+    },
+    {
+        "name": "500m 16 days EVI",
+        "description": "500m 16 days EVI"
+    },
+    {
+        "name": "500m 16 days VI Quality\t",
+        "description": "VI quality indicators"
+    },
+    {
+        "name": "500m 16 days red reflectance",
+        "common_name": "red",
+        "description": "Surface Reflectance Band 1"
+    },
+    {
+        "name": "500m 16 days red reflectance",
+        "common_name": "nir",
+        "description": "Surface Reflectance Band 2"
+    },
+    {
+        "name": "500m 16 days red reflectance",
+        "common_name": "blue",
+        "description": "Surface Reflectance Band 3"
+    },
+    {
+        "name": "500m 16 days red reflectance",
+        "common_name": "swir22",
+        "description": "Surface Reflectance Band 7"
+    },
+    {
+        "name": "500m 16 days view zenith angle",
+        "description": "View zenith angle of VI Pixel"
+    },
+    {
+        "name": "500m 16 days sun zenith angle",
+        "description": "Sun zenith angle of VI pixel"
+    },
+    {
+        "name": "500m 16 days relative aziumuth angle",
+        "description": "Relative azimuth angle of VI pixel"
+    },
+    {
+        "name": "500m 16 days composite day of the year",
+        "description": "Day of year VI pixel"
+    },
+    {
+        "name": "500m 16 days pixel reliability",
+        "description": "Quality reliability of VI pixel"
+    }
+]

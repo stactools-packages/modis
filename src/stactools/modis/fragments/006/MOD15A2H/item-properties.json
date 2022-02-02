@@ -1,0 +1,17 @@
+{
+    "LAI_FPAR_fill_value_class_249": "Land cover assigned as \"unclassified\" or not able to determine",
+    "LAI_FPAR_fill_value_class_250": "Land cover assigned as urban/built-up",
+    "LAI_FPAR_fill_value_class_251": "Land cover assigned as \"permanent\" wetlands/inundated marshland",
+    "LAI_FPAR_fill_value_class_252": "Land cover assigned as perennial snow, ice",
+    "LAI_FPAR_fill_value_class_253": "Land cover assigned as barren, sparse vegetation (rock, tundra, desert)",
+    "LAI_FPAR_fill_value_class_254": "Land cover assigned as perennial salt or inland fresh water",
+    "LAI_FPAR_fill_value_class_255": "Fill",
+    "STD_LAI_STD_FPAR_fill_value_class_248": "No standard deviation available, pixel produced using backup method",
+    "STD_LAI_STD_FPAR_fill_value_class_249": "Land cover assigned as \"unclassified\" or not able to determine",
+    "STD_LAI_STD_FPAR_fill_value_class_250": "Land cover assigned as urban/built-up",
+    "STD_LAI_STD_FPAR_fill_value_class_251": "Land cover assigned as \"permanent\" wetlands / inundated marshland",
+    "STD_LAI_STD_FPAR_fill_value_class_252": "Land cover assigned as perennial snow, ice",
+    "STD_LAI_STD_FPAR_fill_value_class_253": "Land cover assigned as barren, sparse vegetation (rock, tundra, desert)",
+    "STD_LAI_STD_FPAR_fill_value_class_254": "Land cover assigned as perennial salt or inland fresh water",
+    "STD_LAI_STD_FPAR_fill_value_class_255": "Fill"
+}

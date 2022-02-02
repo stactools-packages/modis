@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Water_mask",
+        "description": "Land/Water Mask"
+    },
+    {
+        "name": "Water_mask_QA",
+        "description": "Quality Assurance (QA)"
+    }
+]

@@ -1,0 +1,46 @@
+{
+    "links": [
+        {
+            "rel": "item",
+            "href": "https://lpdaac.usgs.gov/documents/101/MCD12_User_Guide_V6.pdf",
+            "title": "User Guide"
+        },
+        {
+            "rel": "item",
+            "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/6/MCD12Q1",
+            "title": "Data File"
+        }
+    ],
+    "title": "MODIS/Terra+Aqua Land Cover Type Yearly L3 Global 500 m SIN Grid",
+    "description": "The Terra and Aqua combined Moderate Resolution\nImaging Spectroradiometer (MODIS) Land Cover Type (MCD12Q1) Version 6 data product\nprovides global land cover types at yearly intervals (2001-2019), derived from six\ndifferent classification schemes listed in the User Guide. The MCD12Q1 Version 6\ndata product is derived using supervised classifications of MODIS Terra and Aqua\nreflectance data. The supervised classifications then undergo additional\npost-processing that incorporate prior knowledge and ancillary information to\nfurther refine specific classes.\n\nLayers for Land Cover Type 1-5, Land Cover Property 1-3, Land Cover Property\nAssessment 1-3, Land Cover Quality Control (QC), and a Land Water Mask are\nprovided in each MCD12Q1 Version 6 Hierarchical Data Format 4 (HDF4) file.",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180.0,
+                    180.0,
+                    -90.0,
+                    90.0
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2001-01-01T00:00:00Z",
+                    "2019-12-31T00:00:00Z"
+                ]
+            ]
+        }
+    },
+    "providers": [
+        {
+            "name": "NASA LP DAAC at the USGS EROS Center",
+            "roles": [
+                "producer",
+                "licensor"
+            ],
+            "url": "https://doi.org/10.5067/MODIS/MCD12Q1.006"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "links": [
+        {
+            "rel": "item",
+            "href": "https://lpdaac.usgs.gov/documents/495/MOD17_User_Guide_V6.pdf",
+            "title": "User Guide"
+        },
+        {
+            "rel": "item",
+            "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/6/MOD17A2H",
+            "title": "Data File"
+        }
+    ],
+    "title": "MODIS/Terra Gross Primary Productivity 8-Day L4 Global 500 m SIN",
+    "description": "The MOD17A2H Version 6 Gross Primary Productivity (GPP)\nproduct is a cumulative 8-day composite of\nvalues with 500 meter (m) pixel size based on the radiation use efficiency concept that can be\npotentially used as inputs to data models to calculate terrestrial energy, carbon, water cycle\nprocesses, and biogeochemistry of vegetation. The data product includes information about GPP\nand Net Photosynthesis (PSN). The PSN band values are the GPP less the Maintenance Respiration\n(MR). The data product also contains a PSN Quality Control (QC) layer. The quality layer\ncontains quality information for both the GPP and thePSN.",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180.0,
+                    180.0,
+                    -90.0,
+                    90.0
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2000-02-18T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "providers": [
+        {
+            "name": "NASA LP DAAC at the USGS EROS Center",
+            "roles": [
+                "producer",
+                "licensor"
+            ],
+            "url": "https://doi.org/10.5067/MODIS/MOD17A2H.006"
+        }
+    ]
+}
