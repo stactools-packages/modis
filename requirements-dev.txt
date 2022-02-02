@@ -1,5 +1,6 @@
 codespell
 flake8
+isort
 mypy
 pylint
 pytest

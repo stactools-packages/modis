@@ -1,8 +1,8 @@
-from stactools.modis.stac import create_item
-from stactools.modis.cog import create_cogs
-
 import stactools.core
 from stactools.cli.registry import Registry
+
+from stactools.modis.cog import create_cogs
+from stactools.modis.stac import create_item
 
 stactools.core.use_fsspec()
 
