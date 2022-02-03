@@ -74,13 +74,13 @@
       "title": "MODIS/Terra Gross Primary Productivity 8-Day L4 Global 500 m SIN"
     },
     {
-      "rel": "parent",
+      "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Gross Primary Productivity 8-Day L4 Global 500 m SIN"
     },
     {
-      "rel": "collection",
+      "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Gross Primary Productivity 8-Day L4 Global 500 m SIN"
@@ -88,7 +88,7 @@
   ],
   "assets": {
     "hdf": {
-      "href": "MOD17A2H.A2022017.h09v04.006.2022026222424.hdf",
+      "href": "../../../../MOD17A2H.A2022017.h09v04.006.2022026222424.hdf",
       "type": "application/x-hdf",
       "title": "hdf data",
       "eo:bands": [
@@ -110,7 +110,7 @@
       ]
     },
     "metadata": {
-      "href": "MOD17A2H.A2022017.h09v04.006.2022026222424.hdf.xml",
+      "href": "../../../../MOD17A2H.A2022017.h09v04.006.2022026222424.hdf.xml",
       "type": "application/xml",
       "title": "FGDC Metdata",
       "roles": [

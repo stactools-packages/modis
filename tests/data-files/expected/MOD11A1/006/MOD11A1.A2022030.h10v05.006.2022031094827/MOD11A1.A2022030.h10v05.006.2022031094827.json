@@ -68,13 +68,13 @@
       "title": "MODIS/Terra Land Surface Temperature/Emissivity Daily L3 Global 1 km SIN Grid"
     },
     {
-      "rel": "parent",
+      "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Land Surface Temperature/Emissivity Daily L3 Global 1 km SIN Grid"
     },
     {
-      "rel": "collection",
+      "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Land Surface Temperature/Emissivity Daily L3 Global 1 km SIN Grid"
@@ -82,7 +82,7 @@
   ],
   "assets": {
     "hdf": {
-      "href": "MOD11A1.A2022030.h10v05.006.2022031094827.hdf",
+      "href": "../../../../MOD11A1.A2022030.h10v05.006.2022031094827.hdf",
       "type": "application/x-hdf",
       "title": "hdf data",
       "eo:bands": [
@@ -140,7 +140,7 @@
       ]
     },
     "metadata": {
-      "href": "MOD11A1.A2022030.h10v05.006.2022031094827.hdf.xml",
+      "href": "../../../../MOD11A1.A2022030.h10v05.006.2022031094827.hdf.xml",
       "type": "application/xml",
       "title": "FGDC Metdata",
       "roles": [
