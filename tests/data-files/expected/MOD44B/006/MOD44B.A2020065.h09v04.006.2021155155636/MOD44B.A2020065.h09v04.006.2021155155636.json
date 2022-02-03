@@ -81,10 +81,10 @@
     }
   ],
   "assets": {
-    "tif_image": {
+    "hdf": {
       "href": "MOD44B.A2020065.h09v04.006.2021155155636.hdf",
       "type": "application/x-hdf",
-      "title": "hdf image",
+      "title": "hdf data",
       "eo:bands": [
         {
           "name": "Percent_Tree_Cover",

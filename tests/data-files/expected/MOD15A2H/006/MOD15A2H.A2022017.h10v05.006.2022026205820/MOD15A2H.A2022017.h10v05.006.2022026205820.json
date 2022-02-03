@@ -80,10 +80,10 @@
     }
   ],
   "assets": {
-    "tif_image": {
+    "hdf": {
       "href": "MOD15A2H.A2022017.h10v05.006.2022026205820.hdf",
       "type": "application/x-hdf",
-      "title": "hdf image",
+      "title": "hdf data",
       "eo:bands": [
         {
           "name": "Fpar_500m",

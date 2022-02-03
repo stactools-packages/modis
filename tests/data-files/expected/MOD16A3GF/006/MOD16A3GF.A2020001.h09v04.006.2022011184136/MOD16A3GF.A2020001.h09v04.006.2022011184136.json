@@ -86,10 +86,10 @@
     }
   ],
   "assets": {
-    "tif_image": {
+    "hdf": {
       "href": "MOD16A3GF.A2020001.h09v04.006.2022011184136.hdf",
       "type": "application/x-hdf",
-      "title": "hdf image",
+      "title": "hdf data",
       "eo:bands": [
         {
           "name": "ET_500m",

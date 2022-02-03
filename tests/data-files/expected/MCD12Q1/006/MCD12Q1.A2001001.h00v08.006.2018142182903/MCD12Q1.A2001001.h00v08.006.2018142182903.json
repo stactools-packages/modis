@@ -179,10 +179,10 @@
     }
   ],
   "assets": {
-    "tif_image": {
+    "hdf": {
       "href": "MCD12Q1.A2001001.h00v08.006.2018142182903.hdf",
       "type": "application/x-hdf",
-      "title": "hdf image",
+      "title": "hdf data",
       "eo:bands": [
         {
           "name": "LC_Type1",

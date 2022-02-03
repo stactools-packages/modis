@@ -8,7 +8,7 @@ from pystac.utils import str_to_datetime
 from shapely.geometry import shape
 
 import stactools.modis.fragment
-from stactools.modis.constants import ITEM_METADATA_NAME, ITEM_TIF_IMAGE_NAME
+from stactools.modis.constants import HDF_ASSET, METADATA_ASSET
 from stactools.modis.file import File
 
 
@@ -133,22 +133,22 @@ def create_item(infile: str) -> Item:
 
     # Hdf
     item.add_asset(
-        ITEM_TIF_IMAGE_NAME,
+        HDF_ASSET,
         pystac.Asset(href=image_name.text,
                      media_type=pystac.MediaType.HDF,
                      roles=["data"],
-                     title="hdf image"))
+                     title="hdf data"))
 
     # Metadata
     item.add_asset(
-        ITEM_METADATA_NAME,
+        METADATA_ASSET,
         pystac.Asset(href=image_name.text + ".xml",
                      media_type=pystac.MediaType.TEXT,
                      roles=["metadata"],
                      title="FGDC Metdata"))
 
     # Bands
-    eo = EOExtension.ext(item.assets[ITEM_TIF_IMAGE_NAME], add_if_missing=True)
+    eo = EOExtension.ext(item.assets[HDF_ASSET], add_if_missing=True)
     eo.bands = [
         Band(band)
         for band in stactools.modis.fragment.load_bands(product, version)

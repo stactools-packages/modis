@@ -2,22 +2,11 @@ import logging
 import os
 from typing import List, Optional
 
-import pystac
 import rasterio
 import stactools.core.utils.convert
 from pystac import Item
 
-from stactools.modis.constants import ITEM_COG_IMAGE_NAME, ITEM_TIF_IMAGE_NAME
-
 logger = logging.getLogger(__name__)
-
-
-def _create_cog(item: Item, cog_directory: str) -> str:
-    hdf_asset = item.assets.get(ITEM_TIF_IMAGE_NAME)
-    assert hdf_asset
-    stactools.core.utils.convert.cogify(hdf_asset.href, cog_directory)
-
-    return cog_directory
 
 
 def create_cogs(item: Item, cog_directory: Optional[str] = None) -> None:
@@ -36,24 +25,7 @@ def create_cogs(item: Item, cog_directory: Optional[str] = None) -> None:
         pystac.Item: The same item, mutated to include assets for the
             new COGs.
     """
-    file_name = f"{item.id}-cog.tif"
-    if cog_directory:
-        cog_href = os.path.join(cog_directory, file_name)
-    else:
-        item_href = item.get_self_href()
-        if not item_href:
-            raise ValueError(
-                "COG directory not provided, and item has no self href")
-        cog_href = os.path.join(item_href, file_name)
-
-    _create_cog(item, cog_href)
-
-    asset = pystac.Asset(href=cog_href,
-                         media_type=pystac.MediaType.COG,
-                         roles=["data"],
-                         title="Raster Dataset")
-
-    item.assets[ITEM_COG_IMAGE_NAME] = asset
+    raise NotImplementedError
 
 
 def cogify(infile: str, outdir: str) -> List[str]:

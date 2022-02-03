@@ -87,10 +87,10 @@
     }
   ],
   "assets": {
-    "tif_image": {
+    "hdf": {
       "href": "MOD17A2HGF.A2021337.h09v05.006.2022031141000.hdf",
       "type": "application/x-hdf",
-      "title": "hdf image",
+      "title": "hdf data",
       "eo:bands": [
         {
           "name": "Gpp_500m",
