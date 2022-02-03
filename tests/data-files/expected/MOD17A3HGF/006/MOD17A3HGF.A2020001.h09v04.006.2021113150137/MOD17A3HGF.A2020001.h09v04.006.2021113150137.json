@@ -66,13 +66,13 @@
       "title": "MODIS/Terra Net Primary Production Gap-Filled Yearly L4 Global 500 m SIN Grid"
     },
     {
-      "rel": "parent",
+      "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Net Primary Production Gap-Filled Yearly L4 Global 500 m SIN Grid"
     },
     {
-      "rel": "collection",
+      "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Net Primary Production Gap-Filled Yearly L4 Global 500 m SIN Grid"
@@ -80,7 +80,7 @@
   ],
   "assets": {
     "hdf": {
-      "href": "MOD17A3HGF.A2020001.h09v04.006.2021113150137.hdf",
+      "href": "../../../../MOD17A3HGF.A2020001.h09v04.006.2021113150137.hdf",
       "type": "application/x-hdf",
       "title": "hdf data",
       "eo:bands": [
@@ -98,7 +98,7 @@
       ]
     },
     "metadata": {
-      "href": "MOD17A3HGF.A2020001.h09v04.006.2021113150137.hdf.xml",
+      "href": "../../../../MOD17A3HGF.A2020001.h09v04.006.2021113150137.hdf.xml",
       "type": "application/xml",
       "title": "FGDC Metdata",
       "roles": [

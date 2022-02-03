@@ -11,12 +11,12 @@
       "title": "MODIS/Terra Thermal Anomalies/Fire Daily L3 Global 1 km SIN Grid"
     },
     {
-      "rel": "item",
+      "rel": "help",
       "href": "https://lpdaac.usgs.gov/documents/88/MOD14_User_Guide_v6.pdf",
       "title": "User Guide"
     },
     {
-      "rel": "item",
+      "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/6/MOD14A1",
       "title": "Data File"
     },

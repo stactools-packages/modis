@@ -166,13 +166,13 @@
       "title": "MODIS/Terra+Aqua Land Cover Type Yearly L3 Global 500 m SIN Grid"
     },
     {
-      "rel": "parent",
+      "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
       "title": "MODIS/Terra+Aqua Land Cover Type Yearly L3 Global 500 m SIN Grid"
     },
     {
-      "rel": "collection",
+      "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
       "title": "MODIS/Terra+Aqua Land Cover Type Yearly L3 Global 500 m SIN Grid"
@@ -180,7 +180,7 @@
   ],
   "assets": {
     "hdf": {
-      "href": "MCD12Q1.A2001001.h00v08.006.2018142182903.hdf",
+      "href": "../../../../MCD12Q1.A2001001.h00v08.006.2018142182903.hdf",
       "type": "application/x-hdf",
       "title": "hdf data",
       "eo:bands": [
@@ -242,7 +242,7 @@
       ]
     },
     "metadata": {
-      "href": "MCD12Q1.A2001001.h00v08.006.2018142182903.hdf.xml",
+      "href": "../../../../MCD12Q1.A2001001.h00v08.006.2018142182903.hdf.xml",
       "type": "application/xml",
       "title": "FGDC Metdata",
       "roles": [

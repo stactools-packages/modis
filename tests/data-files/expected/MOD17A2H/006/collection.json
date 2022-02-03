@@ -11,12 +11,12 @@
       "title": "MODIS/Terra Gross Primary Productivity 8-Day L4 Global 500 m SIN"
     },
     {
-      "rel": "item",
+      "rel": "help",
       "href": "https://lpdaac.usgs.gov/documents/495/MOD17_User_Guide_V6.pdf",
       "title": "User Guide"
     },
     {
-      "rel": "item",
+      "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/6/MOD17A2H",
       "title": "Data File"
     },

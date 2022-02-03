@@ -11,12 +11,12 @@
       "title": "MCD43A4 v006 MODIS/Terra+Aqua Nadir BRDF-Adjusted Reflectance (NBAR) Daily L3 Global 500 m SIN Grid"
     },
     {
-      "rel": "item",
+      "rel": "help",
       "href": "https://www.umb.edu/spectralmass/terra_aqua_modis/v006",
       "title": "User Guide"
     },
     {
-      "rel": "item",
+      "rel": "describedby",
       "href": "https://doi.org/10.5067/MODIS/MCD43A2.006",
       "title": "Data File"
     },

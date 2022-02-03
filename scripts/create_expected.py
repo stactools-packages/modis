@@ -25,4 +25,5 @@ for file_name in os.listdir(data_files_directory):
         item.validate()
 
         collection.add_item(item)
+        collection.make_all_asset_hrefs_relative()
         collection.save(catalog_type=CatalogType.SELF_CONTAINED)
