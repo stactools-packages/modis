@@ -1,15 +1,19 @@
 # stactools-modis
 
-Template repostitory for [stactools](https://github.com/stac-utils/stactools) packages.
+- Name: modis
+- Package: 'stactools.modis'
+- PyPI: https://pypi.org/project/stactools-modis/
+- Owner: @gadomski 
+- Dataset homepage: https://modis.gsfc.nasa.gov/
+- STAC extensions used:
+  - [proj](https://github.com/stac-extensions/projection)
+  - [eo](https://github.com/stac-extensions/eo)
+  - [item-assets](https://github.com/stac-extensions/item-assets)
+- Extra Fields: TODO
 
-## How to use
+This repository will assist you in the generation of STAC files for MODIS datasets. 
 
-1. Clone this repository and name it `stactools-{NAME}`, where `NAME` is your package name.
-   This name should be short, memorable, and a valid Python package name (i.e. it shouldn't start with a number, etc).
-2. Update `setup.cfg` with your package name, description, and such.
-3. Rename `src/stactools.modis` to `src/stactools/{NAME}`.
-4. Rewrite this README to provide information about how to use your package.
-5. Update the LICENSE with your company's information (or whomever holds the copyright).
-6. Update the environment name in `environment.yml`.
-7. Update the environment variables in `.github/workflows/release.yml` to the appropriate values to publish for your organization.
-8. Update all scripts in the `docker` directory to refer to `stactools-{NAME}` and `stactools-{NAME}-dev`.
+## Examples
+
+There is an example `Catalog` at `examples/catalog.json`. Inside that catalog are several MODIS v6.0 and v6.1 STAC `Collection`s and `Item`s.
+### Command-line Usage
