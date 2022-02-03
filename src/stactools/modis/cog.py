@@ -1,34 +1,61 @@
 import logging
 import os
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
 import rasterio
 import stactools.core.utils.convert
-from pystac import Item
+from pystac import Asset, Item, MediaType
+from rasterio.errors import NotGeoreferencedWarning
+
+import stactools.modis.fragment
+from stactools.modis.constants import HDF_ASSET
+from stactools.modis.file import File
 
 logger = logging.getLogger(__name__)
 
 
-def create_cogs(item: Item, cog_directory: Optional[str] = None) -> None:
+def add_cogs(item: Item, outdir: Optional[str] = None) -> List[str]:
     """Create COGs from the HDF asset contained in the passed in STAC item.
 
+    The COGs will be added as assets to the item.
+
     Args:
-        item (pystac.Item): MODIS Item that contains an asset
-            with key equal to stactools.modis.constants.ITEM_METADATA_NAME,
-            which will be converted to COGs.
-        cog_directory (str, optional): A URI of a directory to store COGs. This will be used
-            in conjunction with the file names based on the COG asset to store
-            the COG data. If not supplied, the directory of the Item"s self HREF
-            will be used.
+        item (pystac.Item): MODIS Item
+        cog_directory (str, optional): An option HREF to hold the COGs. If not
+            provided, the COGs will be created alongside the item.
 
     Returns:
-        pystac.Item: The same item, mutated to include assets for the
-            new COGs.
+        List[str]: A list of hrefs to the created COGs.
     """
-    raise NotImplementedError
+    hdf_asset = item.assets.get(HDF_ASSET, None)
+    if hdf_asset is None:
+        raise ValueError(f"No HDF asset found on item: {item.id}")
+    hdf_href = hdf_asset.href
+    file = File(hdf_href)
+    if outdir is None:
+        item_href = item.get_self_href()
+        if item_href is None:
+            raise ValueError(
+                f"No outdir provided and no self href on item: {item.id}")
+        else:
+            outdir = os.path.dirname(item_href)
+    paths, subdataset_names = cogify(hdf_href, outdir)
+    band_list = stactools.modis.fragment.load_bands(file.product, file.version)
+    bands = dict((band["name"], band) for band in band_list)
+    for path, subdataset_name in zip(paths, subdataset_names):
+        item.add_asset(
+            subdataset_name,
+            Asset(
+                href=path,
+                title=bands[subdataset_name]["name"],
+                description=bands[subdataset_name]["description"],
+                media_type=MediaType.COG,
+                roles=["data"],
+            ))
+    return paths
 
 
-def cogify(infile: str, outdir: str) -> List[str]:
+def cogify(infile: str, outdir: str) -> Tuple[List[str], List[str]]:
     """Creates cogs for the provided HDF file.
 
     Args:
@@ -36,17 +63,21 @@ def cogify(infile: str, outdir: str) -> List[str]:
         outdir (str): The output directory
 
     Returns:
-        List[str]: The paths to the created COGs.
+        Tuple[List[str], List[str]]: A two tuple (paths, names):
+            - The first element is a list of the output tif paths
+            - The second element is a list of subdataset names
     """
     with rasterio.open(infile) as dataset:
         subdatasets = dataset.subdatasets
     base_file_name = os.path.splitext(os.path.basename(infile))[0]
     paths = []
+    subdataset_names = []
     for subdataset in subdatasets:
         parts = subdataset.split(":")
-        product = parts[-1]
-        file_name = f"{base_file_name}_{product}.tif"
+        subdataset_name = parts[-1]
+        subdataset_names.append(subdataset_name)
+        file_name = f"{base_file_name}_{subdataset_name}.tif"
         outfile = os.path.join(outdir, file_name)
         stactools.core.utils.convert.cogify(subdataset, outfile)
         paths.append(outfile)
-    return paths
+    return (paths, subdataset_names)
