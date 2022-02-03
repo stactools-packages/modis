@@ -39,7 +39,7 @@ def create_modis_command(cli: Group) -> Command:
         item_path = os.path.join(outdir, "{}.json".format(item.id))
         item.set_self_href(item_path)
         if cogify:
-            cog.create_cogs(item)
+            cog.add_cogs(item)
         item.validate()
         item.save_object()
 
