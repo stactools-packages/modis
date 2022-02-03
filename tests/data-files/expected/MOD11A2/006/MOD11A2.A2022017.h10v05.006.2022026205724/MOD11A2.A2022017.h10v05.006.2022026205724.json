@@ -141,7 +141,7 @@
     },
     "metadata": {
       "href": "MOD11A2.A2022017.h10v05.006.2022026205724.hdf.xml",
-      "type": "text/plain",
+      "type": "application/xml",
       "title": "FGDC Metdata",
       "roles": [
         "metadata"
