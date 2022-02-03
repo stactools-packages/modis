@@ -17,7 +17,7 @@ SUBDATASET_NAMES = [
 
 class CogTest(TestCase):
 
-    def test_cog(self) -> None:
+    def test_add_cogs(self) -> None:
         infile = test_data.get_path(
             "data-files/MCD12Q1.A2001001.h00v08.006.2018142182903.hdf")
         item = stactools.modis.stac.create_item(infile)
