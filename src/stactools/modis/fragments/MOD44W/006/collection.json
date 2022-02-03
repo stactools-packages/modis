@@ -1,7 +1,7 @@
 {
     "links": [
         {
-            "rel": "item",
+            "rel": "help",
             "href": "https://lpdaac.usgs.gov/documents/109/MOD44W_User_Guide_ATBD_V6.pdf",
             "title": "User Guide"
         }
