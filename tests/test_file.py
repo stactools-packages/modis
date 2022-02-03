@@ -30,3 +30,8 @@ def test_file() -> None:
         File("metadata.xml")
     with pytest.raises(ValueError):
         File("not-enough-dots.hdf.xml")
+
+    url = "http://example.com/MCD12Q1.A2001001.h00v08.006.2018142182903.hdf.xml"
+    file = File(url)
+    assert file.xml_path == url
+    assert file.hdf_path == "http://example.com/MCD12Q1.A2001001.h00v08.006.2018142182903.hdf"
