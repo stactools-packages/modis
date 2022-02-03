@@ -1,0 +1,161 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD11A2.A2022017.h10v05.006.2022026205724",
+  "properties": {
+    "QC_Mandatory_QA_flags_00": "LST produced, good quality, not necessary to examine more detailed QA",
+    "QC_Mandatory_QA_flags_01": "LST produced, other quality, recommend examination of more detailed QA",
+    "QC_Mandatory_QA_flags_10": "LST not produced due to cloud effects",
+    "QC_Mandatory_QA_flags_11": "LST not produced primarily due to reasons other than cloud",
+    "QC_Data_quality_flag_00": "good quality data",
+    "QC_Data_quality_flag_01": "other quality data",
+    "QC_Data_quality_flag_10": "TBD",
+    "QC_Data_quality_flag_11": "TBD",
+    "QC_Emis_Error_flag_00": "average emissivity error <= 0.01",
+    "QC_Emis_Error_flag_01": "average emissivity error <= 0.02",
+    "QC_Emis_Error_flag_10": "average emissivity error <= 0.04",
+    "QC_Emis_Error_flag_11": "average emissivity error > 0.04",
+    "QC_LST_Error_flag_00": "average LST error <= 1K",
+    "QC_LST_Error_flag_01": "average LST error <= 2K",
+    "QC_LST_Error_flag_10": "average LST error <= 3K",
+    "QC_LST_Error_flag_11": "average LST error > 3K",
+    "providers": [
+      {
+        "name": "NASA LP DAAC at the USGS EROS Center",
+        "roles": [
+          "producer",
+          "licensor"
+        ],
+        "url": "https://doi.org/10.5067/MODIS/MOD11A2.006"
+      }
+    ],
+    "description": "The MOD11A2 Version 6 product provides an average 8-day per-pixel\n                         Land Surface Temperature and Emissivity (LST&E) with a 1 kilometer (km)\n                         spatial resolution in a 1,200 by 1,200 km grid. Each pixel value in the\n                         MOD11A2 is a simple average of all the corresponding MOD11A1 LST pixels\n                         collected within that 8-day period. The 8-day compositing period was\n                         chosen because twice that period is the exact ground track repeat period\n                         of the Terra and Aqua platforms. Provided along with the daytime and\n                         nighttime surface temperature bands are associated quality control\n                         assessments, observation times, view zenith angles, and clear-sky\n                         coverages along with bands 31 and 32 emissivities from land\n                         cover types.",
+    "instruments": [
+      "MODIS"
+    ],
+    "platform": "Terra",
+    "title": "MODIS/Terra Land Surface Temperature/Emissivity 8-Day L3 Global 1 km SIN Grid",
+    "datetime": "2022-01-26T20:57:24Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -104.438013067114,
+          39.9958333333333
+        ],
+        [
+          -91.3839615039452,
+          39.9958333333333
+        ],
+        [
+          -80.8406494782854,
+          30.0041666666667
+        ],
+        [
+          -92.388605818441,
+          30.0041666666667
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Land Surface Temperature/Emissivity 8-Day L3 Global 1 km SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Land Surface Temperature/Emissivity 8-Day L3 Global 1 km SIN Grid"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Land Surface Temperature/Emissivity 8-Day L3 Global 1 km SIN Grid"
+    }
+  ],
+  "assets": {
+    "tif_image": {
+      "href": "MOD11A2.A2022017.h10v05.006.2022026205724.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf image",
+      "eo:bands": [
+        {
+          "name": "LST_Day_1km",
+          "description": "Daytime Land Surface Temperature"
+        },
+        {
+          "name": "QC_Day",
+          "description": "Daytime LST Quality Indicators"
+        },
+        {
+          "name": "Day_view_time",
+          "description": "Local time of day observation"
+        },
+        {
+          "name": "Day_view_angl",
+          "description": "View zenith angle of day observation"
+        },
+        {
+          "name": "LST_Night_1km",
+          "description": "Nighttime Land Surface Temperature"
+        },
+        {
+          "name": "QC_Night",
+          "description": "Nighttime LST Quality indicators"
+        },
+        {
+          "name": "Night_view_time",
+          "description": "Local time of night observation"
+        },
+        {
+          "name": "Night_view_angl",
+          "description": "View zenith angle of night observation"
+        },
+        {
+          "name": "Emis_31",
+          "description": "Band 31 emissivity"
+        },
+        {
+          "name": "Emis_32",
+          "description": "Band 32 emissivity"
+        },
+        {
+          "name": "Clear_day_cov",
+          "description": "Day clear-sky coverage"
+        },
+        {
+          "name": "Clear_night_cov",
+          "description": "Night clear-sky coverage"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "MOD11A2.A2022017.h10v05.006.2022026205724.hdf.xml",
+      "type": "text/plain",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -104.438013067114,
+    30.0041666666667,
+    -80.8406494782854,
+    39.9958333333333
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+  ],
+  "collection": "modis-MOD11A2-006"
+}

@@ -1,0 +1,138 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD16A3GF.A2020001.h09v04.006.2022011184136",
+  "properties": {
+    "ET_QC_500m_fill_value_class_249": "Land cover assigned as \"unclassified\" or not able to determine",
+    "ET_QC_500m_fill_value_class_250": "Land cover assigned as urban/built-up",
+    "ET_QC_500m_fill_value_class_251": "Land cover assigned as \"permanent\" wetlands/inundated marshland",
+    "ET_QC_500m_fill_value_class_252": "Land cover assigned as perennial snow, ice",
+    "ET_QC_500m_fill_value_class_253": "Land cover assigned as barren, sparse vegetation (rock, tundra, desert)",
+    "ET_QC_500m_fill_value_class_254": "Land cover assigned as perennial salt or inland fresh water",
+    "ET_QC_500m_fill_value_class_255": "Fill",
+    "ET_QC_500m_fill_value_class_65529": "Land cover assigned as \"unclassified\" or not able to determine",
+    "ET_QC_500m_fill_value_class_65530": "Land cover assigned as urban/built-up",
+    "ET_QC_500m_fill_value_class_65531": "Land cover assigned as \"permanent\" wetlands/inundated marshland",
+    "ET_QC_500m_fill_value_class_65532": "Land cover assigned as perennial snow, ice",
+    "ET_QC_500m_fill_value_class_65533": "Land cover assigned as barren, sparse vegetation (rock, tundra, desert)",
+    "ET_QC_500m_fill_value_class_65534": "Land cover assigned as perennial salt or water bodies",
+    "ET_QC_500m_fill_value_class_65535": "Fill",
+    "ET_QC_500m_fill_value_class_32761": "Land cover assigned as \"unclassified\" or not able to determine",
+    "ET_QC_500m_fill_value_class_32762": "Land cover assigned as urban/built-up",
+    "ET_QC_500m_fill_value_class_32763": "Land cover assigned as \"permanent\" wetlands/inundated marshland",
+    "ET_QC_500m_fill_value_class_32764": "Land cover assigned as perennial snow, ice",
+    "ET_QC_500m_fill_value_class_32765": "Land cover assigned as barren, sparse vegetation (rock, tundra, desert)",
+    "ET_QC_500m_fill_value_class_32766": "Land cover assigned as perennial salt or water bodies",
+    "ET_QC_500m_fill_value_class_32767": "Fill",
+    "providers": [
+      {
+        "name": "NASA LP DAAC at the USGS EROS Center",
+        "roles": [
+          "producer",
+          "licensor"
+        ],
+        "url": "https://doi.org/10.5067/MODIS/MOD16A3GF.006"
+      }
+    ],
+    "description": "The MOD16A3GF Version 6 Evapotranspiration/Latent Heat Flux (ET/LE) product is a year-end\ngap-filled yearly composite dataset produced at 500 meter (m) pixel resolution. The algorithm\nused for the MOD16 data product collection is based on the logic of the Penman-Monteith equation,\nwhich includes inputs of daily meteorological reanalysis data along with Moderate Resolution\nImaging Spectroradiometer (MODIS) remotely sensed data products such as vegetation property\ndynamics, albedo, and land cover.\n\nThe MOD16A3GF will be generated at the end of each year when the entire yearly 8-day MOD15A2H\nis available. Hence, the gap-filled MOD16A3GF is the improved MOD16, which has cleaned the\npoor-quality inputs from yearly Leaf Area Index and Fraction of Photosynthetically Active Radiation\n(LAI/FPAR) based on the Quality Control (QC) label for every pixel. If any LAI/FPAR pixel did not\nmeet the quality screening criteria, its value is determined through linear interpolation. However,\nusers cannot get MOD16A3GF in near-real time because it will be generated only at the end of a given\nyear.\n\nProvided in the MOD16A3GF product are layers for composited ET, LE, Potential ET (PET), and\nPotential LE (PLE) along with a quality control layer. Two low resolution browse images, ET\nand LE, are also available for each MOD16A3GF granule.\n\nThe pixel values for the two Evapotranspiration layers (ET and PET) are the sum for all days\nwithin the defined year, and the pixel values for the two Latent Heat layers (LE and PLE) are\nthe average of all days within the defined year.",
+    "instruments": [
+      "MODIS"
+    ],
+    "platform": "Terra",
+    "title": "MODIS/Terra Net Evapotranspiration Gap-Filled Yearly L4 Global 500 m SIN Grid",
+    "datetime": "2022-01-11T23:41:47Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -117.746445975456,
+          39.7342308150748
+        ],
+        [
+          -140.795234672207,
+          49.9394187999602
+        ],
+        [
+          -124.615349244084,
+          50.1159178280076
+        ],
+        [
+          -104.235445821904,
+          39.8623890159424
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Net Evapotranspiration Gap-Filled Yearly L4 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Net Evapotranspiration Gap-Filled Yearly L4 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Net Evapotranspiration Gap-Filled Yearly L4 Global 500 m SIN Grid"
+    }
+  ],
+  "assets": {
+    "tif_image": {
+      "href": "MOD16A3GF.A2020001.h09v04.006.2022011184136.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf image",
+      "eo:bands": [
+        {
+          "name": "ET_500m",
+          "description": "Total of Evapotranspiration"
+        },
+        {
+          "name": "LE_500m",
+          "description": "Average of Latent Heat Flux"
+        },
+        {
+          "name": "PET_500m\t",
+          "description": "Total Potential Evapotranspiration"
+        },
+        {
+          "name": "PLE_500m",
+          "description": "Average of Potential Latent Heat Flux"
+        },
+        {
+          "name": "ET_QC_500m",
+          "description": "Evapotranspiration Quality Assessment"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "MOD16A3GF.A2020001.h09v04.006.2022011184136.hdf.xml",
+      "type": "text/plain",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -140.795234672207,
+    39.7342308150748,
+    -104.235445821904,
+    50.1159178280076
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+  ],
+  "collection": "modis-MOD16A3GF-006"
+}

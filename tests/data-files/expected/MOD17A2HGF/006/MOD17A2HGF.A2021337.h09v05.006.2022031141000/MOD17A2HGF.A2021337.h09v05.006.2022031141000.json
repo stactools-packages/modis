@@ -1,0 +1,131 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD17A2HGF.A2021337.h09v05.006.2022031141000",
+  "properties": {
+    "Non-Terrestrial_fill_value_class_32761": "Land cover assigned as \"unclassified\" or not able to determine",
+    "Non-Terrestrial_fill_value_class_32762": "Land cover assigned as urban/built-up",
+    "Non-Terrestrial_fill_value_class_32763": "Land cover assigned as \"permanent\" wetlands/inundated marshland",
+    "Non-Terrestrial_fill_value_class_32764": "Land cover assigned as perennial snow, ice",
+    "Non-Terrestrial_fill_value_class_32765": "Land cover assigned as barren, sparse vegetation (rock, tundra, desert)",
+    "Non-Terrestrial_fill_value_class_32766": "Land cover assigned as perennial salt or water bodies",
+    "Non-Terrestrial_fill_value_class_32767": "Fill",
+    "MODLAND_QC_bits_0": "Good Quality - main algorithm with or without saturation",
+    "MODLAND_QC_bits_1": "Other Quality - back-up algorithm or fill values",
+    "SENSOR_0": "Terra",
+    "SENSOR_1": "Aqua",
+    "DEADDETECTOR_0": "Detectors apparently fine for up to 50% of channels 1,2",
+    "DEADDETECTOR_1": "Dead detectors caused >50% adjacent detector retrieval",
+    "CLOUDSTATE_00": "0 Significant clouds NOT present (clear)",
+    "CLOUDSTATE_01": "1 Significant clouds WERE present",
+    "CLOUDSTATE_10": "2 Mixed cloud present on pixel",
+    "CLOUDSTATE_11": "3 Cloud state not defined,assumed clear",
+    "SCF_QC_000": "0, Main (RT) method used, best result possible (no saturation)",
+    "SCF_QC_001": "1, Main (RT) method used with saturation. Good,very usable",
+    "SCF_QC_010": "2, Main (RT) method failed due to bad geometry, empirical algorithm used",
+    "SCF_QC_011": "3, Main (RT) method failed due to problems other than geometry, empirical algorithm used",
+    "SCF_QC_100": "4, Pixel not produced at all, value coudn't be retrieved (possible reasons: badL1B data, unusable MOD09GA data)",
+    "providers": [
+      {
+        "name": "NASA LP DAAC at the USGS EROS Center",
+        "roles": [
+          "producer",
+          "licensor"
+        ],
+        "url": "https://doi.org/10.5067/MODIS/MOD17A2HGF.006"
+      }
+    ],
+    "description": "The MOD17A2HGF Version 6 Gross Primary Productivity (GPP) product\nis a cumulative 8-day composite of\nvalues with 500 meter (m) pixel size based on the radiation use efficiency concept that can\nbe potentially used as inputs to data models to calculate terrestrial energy, carbon, water\ncycle processes, and biogeochemistry of vegetation. The data product includes information\nabout GPP and Net Photosynthesis (PSN). The PSN band values are the GPP less the Maintenance\nRespiration (MR). The data product also contains a PSN Quality Control (QC) layer. The quality\nlayer contains quality information for both the GPP and the PSN.\n\nThe MOD17A2HGF will be generated at the end of each year when the entire yearly 8-day MOD15A2H\nis available. Hence, the gap-filled MOD17A2HGF is the improved MOD17, which has cleaned the\npoor-quality inputs from 8-day Leaf Area Index and Fraction of Photosynthetically Active\nRadiation (FPAR/LAI) based on the Quality Control (QC) label for every pixel. If any LAI/FPAR\npixel did not meet the quality screening criteria, its value is determined through linear\ninterpolation. However, users cannot get MOD17A2HGF in near-real time because it will be\ngenerated only at the end of a given year.",
+    "instruments": [
+      "MODIS"
+    ],
+    "platform": "Terra",
+    "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid",
+    "datetime": "2022-01-31T14:10:00Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -103.835851753394,
+          29.8360532722546
+        ],
+        [
+          -117.486656023174,
+          39.9999999964079
+        ],
+        [
+          -104.256722414513,
+          40.0742066197196
+        ],
+        [
+          -92.131858571552,
+          29.9009502428382
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid"
+    }
+  ],
+  "assets": {
+    "tif_image": {
+      "href": "MOD17A2HGF.A2021337.h09v05.006.2022031141000.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf image",
+      "eo:bands": [
+        {
+          "name": "Gpp_500m",
+          "description": "Gross Primary Productivity"
+        },
+        {
+          "name": "PsnNet_500m",
+          "description": "Net Photosynthesis"
+        },
+        {
+          "name": "Psn_QC_500m",
+          "description": "Quality control indicators"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "MOD17A2HGF.A2021337.h09v05.006.2022031141000.hdf.xml",
+      "type": "text/plain",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -117.486656023174,
+    29.8360532722546,
+    -92.131858571552,
+    40.0742066197196
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+  ],
+  "collection": "modis-MOD17A2HGF-006"
+}

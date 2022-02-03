@@ -15,7 +15,6 @@ def test_file() -> None:
     assert file.xml_path == path
     assert file.version == "006"
     assert file.product == "MCD12Q1"
-    assert file.catalog_id == "MODIS/006/MCD12Q1"
     assert file.id == "MCD12Q1.A2001001.h00v08.006.2018142182903"
 
     path = test_data.get_path(

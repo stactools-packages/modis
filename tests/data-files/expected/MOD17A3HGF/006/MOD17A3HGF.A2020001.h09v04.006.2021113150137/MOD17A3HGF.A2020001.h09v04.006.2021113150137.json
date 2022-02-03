@@ -1,0 +1,119 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD17A3HGF.A2020001.h09v04.006.2021113150137",
+  "properties": {
+    "Npp_500m_fill_value_class_32761": "Land cover assigned as \"unclassified\" or not able to determine",
+    "Npp_500m_fill_value_class_32762": "Land cover assigned as urban/built-up",
+    "Npp_500m_fill_value_class_32763": "Land cover assigned as \"permanent\" wetlands/inundated marshland",
+    "Npp_500m_fill_value_class_32764": "Land cover assigned as perennial snow, ice",
+    "Npp_500m_fill_value_class_32765": "Land cover assigned as barren, sparse vegetation (rock, tundra, desert)",
+    "Npp_500m_fill_value_class_32766": "Land cover assigned as perennial salt or water bodies",
+    "Npp_500m_fill_value_class_32767": "Fill",
+    "Npp_500m_fill_value_class_249": "Land cover assigned as \"unclassified\" or not able to determine",
+    "Npp_500m_fill_value_class_250": "Land cover assigned as urban/built-up",
+    "Npp_500m_fill_value_class_251": "Land cover assigned as \"permanent\" wetlands/inundated marshland",
+    "Npp_500m_fill_value_class_252": "Land cover assigned as perennial snow, ice",
+    "Npp_500m_fill_value_class_253": "Land cover assigned as barren, sparse vegetation (rock, tundra, desert)",
+    "Npp_500m_fill_value_class_254": "Land cover assigned as perennial salt or water bodies",
+    "Npp_500m_fill_value_class_255": "Fill",
+    "providers": [
+      {
+        "name": "NASA LP DAAC at the USGS EROS Center",
+        "roles": [
+          "producer",
+          "licensor"
+        ],
+        "url": "https://doi.org/10.5067/MODIS/MOD17A2HGF.006"
+      }
+    ],
+    "description": "The MOD17A3HGF Version 6 product provides information\nabout annual Net Primary Production (NPP) at 500 meter (m) pixel resolution.\nAnnual NPP is derived from the sum of all 8-day Net Photosynthesis (PSN) products\n(MOD17A2H) from the given year. The PSN value is the difference of the Gross\nPrimary Productivity (GPP) and the Maintenance Respiration (MR).\n\nThe MOD17A3HGF will be generated at the end of each year when the entire yearly\n8-day MOD15A2H is available. Hence, the gap-filled MOD17A3HGF is the improved MOD17,\nwhich has cleaned the poor-quality inputs from 8-day Leaf Area Index and Fraction\nof Photosynthetically Active Radiation (LAI/FPAR) based on the Quality Control (QC)\nlabel for every pixel. If any LAI/FPAR pixel did not meet the quality screening\ncriteria, its value is determined through linear interpolation. However, users\ncannot get MOD17A3HGF in near-real time because it will be generated only at the\nend of a given year.",
+    "instruments": [
+      "MODIS"
+    ],
+    "platform": "Terra",
+    "title": "MODIS/Terra Net Primary Production Gap-Filled Yearly L4 Global 500 m SIN Grid",
+    "datetime": "2021-04-23T15:01:37Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -117.746445975456,
+          39.7342308150748
+        ],
+        [
+          -140.795234672207,
+          49.9394187999602
+        ],
+        [
+          -124.615349244084,
+          50.1159178280076
+        ],
+        [
+          -104.235445821904,
+          39.8623890159424
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Net Primary Production Gap-Filled Yearly L4 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Net Primary Production Gap-Filled Yearly L4 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Net Primary Production Gap-Filled Yearly L4 Global 500 m SIN Grid"
+    }
+  ],
+  "assets": {
+    "tif_image": {
+      "href": "MOD17A3HGF.A2020001.h09v04.006.2021113150137.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf image",
+      "eo:bands": [
+        {
+          "name": "Npp_500m",
+          "description": "Net Primary Productivity"
+        },
+        {
+          "name": "Npp_QC_500m",
+          "description": "Quality control Bits"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "MOD17A3HGF.A2020001.h09v04.006.2021113150137.hdf.xml",
+      "type": "text/plain",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -140.795234672207,
+    39.7342308150748,
+    -104.235445821904,
+    50.1159178280076
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+  ],
+  "collection": "modis-MOD17A3HGF-006"
+}
