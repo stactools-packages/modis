@@ -1,0 +1,117 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD44W.A2015001.h10v04.006.2018033150244",
+  "properties": {
+    "Water_Mask_Class_0": "Land",
+    "Water_Mask_Class_1": "Water",
+    "Water_Mask_Class_250": "Outside of Projection",
+    "QA_1": "High confidence observation",
+    "QA_2": "Lower confidence water, but MOD44W V5 indicated water",
+    "QA_3": "Lower confidence land",
+    "QA_4": "Ocean mask",
+    "QA_5": "Ocean mask, but no water observations recorded",
+    "QA_6": "Burned area (MCD64A1)",
+    "QA_7": "Urban or impervious surface",
+    "QA_8": "No water detected, but MOD44W V5 shows inland water",
+    "QA_10": "Fill - outside of projected area",
+    "providers": [
+      {
+        "name": "NASA LP DAAC at the USGS EROS Center",
+        "roles": [
+          "producer",
+          "licensor"
+        ],
+        "url": "https://doi.org/10.5067/MODIS/MOD44W.006"
+      }
+    ],
+    "description": "The Terra Moderate Resolution Imaging Spectroradiometer\n(MODIS) Land Water Mask (MOD44W) Version 6 data product provides a global\nmap of surface water at 250 meter (m) spatial resolution. The data are\navailable annually from 2000 to 2015. MOD44W Version 6 is derived using a\ndecision tree classifier trained with MODIS data and validated with the\nVersion 5 MOD44W data product. A series of masks are applied to address\nknown issues caused by terrain shadow, burn scars, cloudiness, or ice cover\nin oceans. A primary improvement in Version 6 is the generation of time series\ndata rather than a simple static representation of water, given that water bodies\nfluctuate in size and location over time due to both natural and anthropogenic causes.\nProvided in each MOD44W Version 6 Hierarchical Data Format 4 (HDF4) file are layers\nfor land, water, no data, and an associated per pixel quality assurance (QA) layer\nthat provides users with information on the determination of water.",
+    "instruments": [
+      "MODIS"
+    ],
+    "platform": "Terra",
+    "title": "MODIS/Terra Land Water Mask Derived from MODIS and SRTM L3 Yearly Global 250 m SIN Grid",
+    "datetime": "2018-02-02T15:02:44Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -104.520196,
+          39.755682
+        ],
+        [
+          -124.885362,
+          49.967694
+        ],
+        [
+          -109.002143,
+          50.104685
+        ],
+        [
+          -91.190961,
+          39.855422
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Land Water Mask Derived from MODIS and SRTM L3 Yearly Global 250 m SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Land Water Mask Derived from MODIS and SRTM L3 Yearly Global 250 m SIN Grid"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Land Water Mask Derived from MODIS and SRTM L3 Yearly Global 250 m SIN Grid"
+    }
+  ],
+  "assets": {
+    "tif_image": {
+      "href": "MOD44W.A2015001.h10v04.006.2018033150244.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf image",
+      "eo:bands": [
+        {
+          "name": "Water_mask",
+          "description": "Land/Water Mask"
+        },
+        {
+          "name": "Water_mask_QA",
+          "description": "Quality Assurance (QA)"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "MOD44W.A2015001.h10v04.006.2018033150244.hdf.xml",
+      "type": "text/plain",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -124.885362,
+    39.755682,
+    -91.190961,
+    50.104685
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+  ],
+  "collection": "modis-MOD44W-006"
+}

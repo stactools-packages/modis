@@ -1,0 +1,166 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MCD43A4.A2022019.h10v04.006.2022028111747",
+  "properties": {
+    "providers": [
+      {
+        "name": "NASA LP DAAC at the USGS EROS Center",
+        "roles": [
+          "producer",
+          "licensor"
+        ],
+        "url": "https://lpdaac.usgs.gov/"
+      }
+    ],
+    "description": "\n            The Moderate Resolution Imaging Spectroradiometer (MODIS) MCD43A4\n             Version 6 Nadir Bidirectional Reflectance Distribution Function\n             (BRDF)-Adjusted Reflectance (NBAR) dataset is produced daily using\n             16 days of Terra and Aqua MODIS data at 500 meter (m) resolution.\n             The view angle effects are removed from the directional reflectances,\n             resulting in a stable and consistent NBAR product. Data are temporally\n             weighted to the ninth day which is reflected in the Julian date in the\n             file name.\n            ",
+    "instruments": [
+      "MODIS"
+    ],
+    "platform": "Terra",
+    "title": "MCD43A4 v006 MODIS/Terra+Aqua Nadir BRDF-Adjusted Reflectance (NBAR) Daily L3 Global 500 m SIN Grid",
+    "datetime": "2022-01-28T11:20:24Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -104.52019611598,
+          39.7556817203217
+        ],
+        [
+          -124.885362059179,
+          49.967693939585
+        ],
+        [
+          -109.002143160265,
+          50.1046853303771
+        ],
+        [
+          -91.1909609510465,
+          39.8554224326714
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MCD43A4 v006 MODIS/Terra+Aqua Nadir BRDF-Adjusted Reflectance (NBAR) Daily L3 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MCD43A4 v006 MODIS/Terra+Aqua Nadir BRDF-Adjusted Reflectance (NBAR) Daily L3 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MCD43A4 v006 MODIS/Terra+Aqua Nadir BRDF-Adjusted Reflectance (NBAR) Daily L3 Global 500 m SIN Grid"
+    }
+  ],
+  "assets": {
+    "tif_image": {
+      "href": "MCD43A4.A2022019.h10v04.006.2022028111747.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf image",
+      "eo:bands": [
+        {
+          "name": "Nadir_Reflectance_Band1",
+          "common_name": "red",
+          "description": "NBAR at local solar noon for band 1",
+          "center_wavelength": 0.645
+        },
+        {
+          "name": "Nadir_Reflectance_Band2",
+          "common_name": "nir",
+          "description": "NBAR at local solar noon for band 2",
+          "center_wavelength": 0.8585
+        },
+        {
+          "name": "Nadir_Reflectance_Band3",
+          "common_name": "blue",
+          "description": "NBAR at local solar noon for band 3",
+          "center_wavelength": 0.469
+        },
+        {
+          "name": "Nadir_Reflectance_Band4",
+          "common_name": "green",
+          "description": "NBAR at local solar noon for band 4",
+          "center_wavelength": 0.555
+        },
+        {
+          "name": "Nadir_Reflectance_Band5",
+          "description": "NBAR at local solar noon for band 5",
+          "center_wavelength": 1.24
+        },
+        {
+          "name": "Nadir_Reflectance_Band6",
+          "common_name": "swir16",
+          "description": "NBAR at local solar noon for band 6",
+          "center_wavelength": 1.64
+        },
+        {
+          "name": "Nadir_Reflectance_Band7",
+          "common_name": "swir22",
+          "description": "NBAR at local solar noon for band 7",
+          "center_wavelength": 2.13
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band1",
+          "description": "BRDF albedo mandatory quality for band 1"
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band2",
+          "description": "BRDF albedo mandatory quality for band 2"
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band3",
+          "description": "BRDF albedo mandatory quality for band 3"
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band4",
+          "description": "BRDF albedo mandatory quality for band 4"
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band5",
+          "description": "BRDF albedo mandatory quality for band 5"
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band6",
+          "description": "BRDF albedo mandatory quality for band 6"
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band7",
+          "description": "BRDF albedo mandatory quality for band 7"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "MCD43A4.A2022019.h10v04.006.2022028111747.hdf.xml",
+      "type": "text/plain",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -124.885362059179,
+    39.7556817203217,
+    -91.1909609510465,
+    50.1046853303771
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+  ],
+  "collection": "modis-MCD43A4-006"
+}

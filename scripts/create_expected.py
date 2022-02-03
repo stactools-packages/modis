@@ -14,9 +14,10 @@ expected_directory = os.path.join(data_files_directory, "expected")
 for file_name in os.listdir(data_files_directory):
     if os.path.splitext(file_name)[1] == ".xml":
         file = File(os.path.join(data_files_directory, file_name))
-        collection = stactools.modis.stac.create_collection(file.catalog_id)
-        collection_path = os.path.join(expected_directory, file.version,
-                                       file.product, "collection.json")
+        collection = stactools.modis.stac.create_collection(
+            file.product, file.version)
+        collection_path = os.path.join(expected_directory, file.product,
+                                       file.version, "collection.json")
         collection.set_self_href(collection_path)
 
         item_file_name = f"{file.id}.json"

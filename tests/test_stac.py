@@ -18,9 +18,9 @@ for file_name in os.listdir(directory):
     if os.path.splitext(file_name)[1] != ".xml":
         continue
     file = File(os.path.join(directory, file_name))
-    collection_path = os.path.join(directory, "expected", file.version,
-                                   file.product, "collection.json")
-    item_path = os.path.join(directory, "expected", file.version, file.product,
+    collection_path = os.path.join(directory, "expected", file.product,
+                                   file.version, "collection.json")
+    item_path = os.path.join(directory, "expected", file.product, file.version,
                              file.id, f"{file.id}.json")
     args.append((file.path, collection_path, item_path))
     ids.append(file.product)
@@ -46,7 +46,8 @@ def test_metadata_files(metadata_path: str, collection_path: str,
         expected_item_dict = json.load(file)
 
     modis_file = File(metadata_path)
-    collection = stactools.modis.stac.create_collection(modis_file.catalog_id)
+    collection = stactools.modis.stac.create_collection(
+        modis_file.product, modis_file.version)
     item = stactools.modis.stac.create_item(metadata_path)
     with TemporaryDirectory() as temporary_directory:
         collection.set_self_href(
@@ -63,3 +64,8 @@ def test_metadata_files(metadata_path: str, collection_path: str,
                                f"{item.id}.json")) as file:
             item_dict = json.load(file)
         test_case.assertDictEqual(item_dict, expected_item_dict)
+
+
+def test_collection_id() -> None:
+    assert stactools.modis.stac.collection_id(
+        "product", "version") == "modis-product-version"

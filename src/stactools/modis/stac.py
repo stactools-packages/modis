@@ -12,18 +12,19 @@ from stactools.modis.constants import ITEM_METADATA_NAME, ITEM_TIF_IMAGE_NAME
 from stactools.modis.file import File
 
 
-def create_collection(catalog_id: str) -> Collection:
+def create_collection(product: str, version: str) -> Collection:
     """Creates a STAC Collection for MODIS data.
 
     Args:
-        catalog_id: The ID of a MODIS collection, e.g. "MODIS/006/MCD12Q1"
+        product (str): The ID of a MODIS product, e.g. "MCD12Q1"
+        version (str): The MODIS version, e.g. "006" or "061"
 
     Returns:
         Collection: The created collection.
     """
-    fragment = stactools.modis.fragment.load_collection(catalog_id)
+    fragment = stactools.modis.fragment.load_collection(product, version)
     collection = pystac.Collection(
-        id=catalog_id,
+        id=collection_id(product, version),
         description=fragment["description"],
         extent=fragment["extent"],
         title=fragment["title"],
@@ -36,7 +37,7 @@ def create_collection(catalog_id: str) -> Collection:
         "image":
         AssetDefinition({
             "eo:bands":
-            stactools.modis.fragment.load_bands(catalog_id),
+            stactools.modis.fragment.load_bands(product, version),
             "roles": ["data"],
             "title":
             "RGBIR COG tile",
@@ -61,19 +62,26 @@ def create_item(infile: str) -> Item:
     metadata_root = ET.parse(file.xml_path).getroot()
 
     # Item id
-    name = metadata_root.find("GranuleURMetaData/CollectionMetaData/ShortName")
-    assert name is not None
-    version = metadata_root.find(
+    product_element = metadata_root.find(
+        "GranuleURMetaData/CollectionMetaData/ShortName")
+    assert product_element is not None
+    product = product_element.text
+    version_element = metadata_root.find(
         "GranuleURMetaData/CollectionMetaData/VersionID")
-    assert version is not None
-    # FIXME this is not going to work for version 6.1 data
-    short_item_id = "{}/00{}/{}".format("MODIS", version.text, name.text)
+    assert version_element is not None
+    version = version_element.text
+    if version == "6":
+        version = "006"
+    elif version == "61":
+        version = "061"
+    else:
+        raise ValueError(f"Unsupported MODIS version: {version}")
 
     image_name = metadata_root.find(
         "GranuleURMetaData/DataFiles/DataFileContainer/DistributedFileName")
     assert image_name is not None
     assert image_name.text is not None
-    item_id = image_name.text.replace(".hdf", "")
+    id = image_name.text.replace(".hdf", "")
 
     coordinates = []
     point_ele = "{}/{}".format(
@@ -100,15 +108,15 @@ def create_item(infile: str) -> Item:
     prod_dt = str_to_datetime(prod_dt_text.text)
 
     item = pystac.Item(
-        id=item_id,
+        id=id,
         geometry=geom,
         bbox=bounds,
         datetime=prod_dt,
         properties=stactools.modis.fragment.load_item_properties(
-            short_item_id))
+            product, version))
 
     # Common metadata
-    collection = stactools.modis.fragment.load_collection(short_item_id)
+    collection = stactools.modis.fragment.load_collection(product, version)
     item.common_metadata.providers = collection["providers"]
     item.common_metadata.description = collection["description"]
 
@@ -143,7 +151,20 @@ def create_item(infile: str) -> Item:
     eo = EOExtension.ext(item.assets[ITEM_TIF_IMAGE_NAME], add_if_missing=True)
     eo.bands = [
         Band(band)
-        for band in stactools.modis.fragment.load_bands(short_item_id)
+        for band in stactools.modis.fragment.load_bands(product, version)
     ]
 
     return item
+
+
+def collection_id(product: str, version: str) -> str:
+    """Creates a collection id from a product and a version:
+
+    Args:
+        product (str): The MODIS product
+        version (str): The MODIS version
+
+    Returns:
+        str: The collection id, e.g. "modis-MCD12Q1-006"
+    """
+    return f"modis-{product}-{version}"

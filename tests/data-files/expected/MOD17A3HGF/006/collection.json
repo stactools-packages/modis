@@ -1,0 +1,83 @@
+{
+  "type": "Collection",
+  "id": "modis-MOD17A3HGF-006",
+  "stac_version": "1.0.0",
+  "description": "The MOD17A3HGF Version 6 product provides information\nabout annual Net Primary Production (NPP) at 500 meter (m) pixel resolution.\nAnnual NPP is derived from the sum of all 8-day Net Photosynthesis (PSN) products\n(MOD17A2H) from the given year. The PSN value is the difference of the Gross\nPrimary Productivity (GPP) and the Maintenance Respiration (MR).\n\nThe MOD17A3HGF will be generated at the end of each year when the entire yearly\n8-day MOD15A2H is available. Hence, the gap-filled MOD17A3HGF is the improved MOD17,\nwhich has cleaned the poor-quality inputs from 8-day Leaf Area Index and Fraction\nof Photosynthetically Active Radiation (LAI/FPAR) based on the Quality Control (QC)\nlabel for every pixel. If any LAI/FPAR pixel did not meet the quality screening\ncriteria, its value is determined through linear interpolation. However, users\ncannot get MOD17A3HGF in near-real time because it will be generated only at the\nend of a given year.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Net Primary Production Gap-Filled Yearly L4 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "item",
+      "href": "https://lpdaac.usgs.gov/documents/495/MOD17_User_Guide_V6.pdf",
+      "title": "User Guide"
+    },
+    {
+      "rel": "item",
+      "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/6/MOD17A3HGF",
+      "title": "Data File"
+    },
+    {
+      "rel": "item",
+      "href": "./MOD17A3HGF.A2020001.h09v04.006.2021113150137/MOD17A3HGF.A2020001.h09v04.006.2021113150137.json",
+      "type": "application/json"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+  ],
+  "item_assets": {
+    "image": {
+      "eo:bands": [
+        {
+          "name": "Npp_500m",
+          "description": "Net Primary Productivity"
+        },
+        {
+          "name": "Npp_QC_500m",
+          "description": "Quality control Bits"
+        }
+      ],
+      "roles": [
+        "data"
+      ],
+      "title": "RGBIR COG tile",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    }
+  },
+  "title": "MODIS/Terra Net Primary Production Gap-Filled Yearly L4 Global 500 m SIN Grid",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180.0,
+          180.0,
+          -90.0,
+          90.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2000-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "providers": [
+    {
+      "name": "NASA LP DAAC at the USGS EROS Center",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://doi.org/10.5067/MODIS/MOD17A2HGF.006"
+    }
+  ]
+}

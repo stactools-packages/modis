@@ -9,7 +9,6 @@ class File:
     xml_path: str
     product: str
     version: str
-    catalog_id: str
     id: str
 
     def __init__(self, path: str):
@@ -40,5 +39,4 @@ class File:
             )
         self.product = parts[0]
         self.version = parts[3]
-        self.catalog_id = f"MODIS/{self.version}/{self.product}"
         self.id = os.path.splitext(file_name)[0]
