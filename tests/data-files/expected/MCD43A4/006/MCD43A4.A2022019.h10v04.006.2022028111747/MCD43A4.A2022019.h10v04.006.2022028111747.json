@@ -65,10 +65,10 @@
     }
   ],
   "assets": {
-    "tif_image": {
+    "hdf": {
       "href": "MCD43A4.A2022019.h10v04.006.2022028111747.hdf",
       "type": "application/x-hdf",
-      "title": "hdf image",
+      "title": "hdf data",
       "eo:bands": [
         {
           "name": "Nadir_Reflectance_Band1",
