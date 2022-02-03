@@ -1,5 +1,6 @@
 import logging
 import os
+import warnings
 from typing import List, Optional, Tuple
 
 import rasterio
@@ -67,8 +68,10 @@ def cogify(infile: str, outdir: str) -> Tuple[List[str], List[str]]:
             - The first element is a list of the output tif paths
             - The second element is a list of subdataset names
     """
-    with rasterio.open(infile) as dataset:
-        subdatasets = dataset.subdatasets
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", category=NotGeoreferencedWarning)
+        with rasterio.open(infile) as dataset:
+            subdatasets = dataset.subdatasets
     base_file_name = os.path.splitext(os.path.basename(infile))[0]
     paths = []
     subdataset_names = []
