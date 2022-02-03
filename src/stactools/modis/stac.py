@@ -135,7 +135,7 @@ def create_item(infile: str) -> Item:
     item.add_asset(
         HDF_ASSET,
         pystac.Asset(href=image_name.text,
-                     media_type=pystac.MediaType.HDF,
+                     media_type=MediaType.HDF,
                      roles=["data"],
                      title="hdf data"))
 
@@ -143,7 +143,7 @@ def create_item(infile: str) -> Item:
     item.add_asset(
         METADATA_ASSET,
         pystac.Asset(href=image_name.text + ".xml",
-                     media_type=pystac.MediaType.TEXT,
+                     media_type=MediaType.XML,
                      roles=["metadata"],
                      title="FGDC Metdata"))
 
