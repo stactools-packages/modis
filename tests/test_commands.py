@@ -20,7 +20,7 @@ class CreateItemTest(CliTestCase):
             "data-files/MCD12Q1.A2001001.h00v08.006.2018142182903.hdf.xml")
 
         with TemporaryDirectory() as temporary_directory:
-            cmd = f"modis create-item {infile} {temporary_directory}"
+            cmd = f"modis create-item --cogify {infile} {temporary_directory}"
             self.run_command(cmd)
             item_path = os.path.join(
                 temporary_directory,
