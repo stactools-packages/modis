@@ -1,12 +1,12 @@
 {
     "links": [
         {
-            "rel": "item",
+            "rel": "help",
             "href": "https://lpdaac.usgs.gov/documents/101/MCD12_User_Guide_V6.pdf",
             "title": "User Guide"
         },
         {
-            "rel": "item",
+            "rel": "describedby",
             "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/6/MCD12Q1",
             "title": "Data File"
         }
