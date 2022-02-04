@@ -2,7 +2,7 @@
     "links": [
         {
             "rel": "help",
-            "href": "https://lpdaac.usgs.gov/documents/972/MOD17_User_Guide_V61.pdf",
+            "href": "https://lpdaac.usgs.gov/documents/495/MOD17_User_Guide_V6.pdf",
             "title": "User Guide"
         },
         {
@@ -12,7 +12,7 @@
         }
     ],
     "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid",
-    "description": "The MOD17A2HGF Version 6.1 Gross Primary Productivity (GPP) product is a cumulative 8-day composite of values with 500 meter (m) pixel size based on the radiation use efficiency concept that can be potentially used as inputs to data models to calculate terrestrial energy, carbon, water cycle processes, and biogeochemistry of vegetation. The Terra Moderate Resolution Imaging Spectroradiometer (MODIS) data product includes information about GPP and Net Photosynthesis (PSN). The PSN band values are the GPP less the Maintenance Respiration (MR). The data product also contains a PSN Quality Control (QC) layer. The quality layer contains quality information for both the GPP and the PSN. The MOD17A2HGF will be generated at the end of each year when the entire yearly 8-day MOD15A2H is available. Hence, the gap-filled MOD17A2HGF is the improved MOD17, which has cleaned the poor-quality inputs from 8-day Leaf Area Index and Fraction of Photosynthetically Active Radiation (FPAR/LAI) based on the Quality Control (QC) label for every pixel. If any LAI/FPAR pixel did not meet the quality screening criteria, its value is determined through linear interpolation. However, users cannot get MOD17A2HGF in near-real time because it will be generated only at the end of a given year.",
+    "description": "The MOD17A2HGF Version 6 Gross Primary Productivity (GPP) product\nis a cumulative 8-day composite of\nvalues with 500 meter (m) pixel size based on the radiation use efficiency concept that can\nbe potentially used as inputs to data models to calculate terrestrial energy, carbon, water\ncycle processes, and biogeochemistry of vegetation. The data product includes information\nabout GPP and Net Photosynthesis (PSN). The PSN band values are the GPP less the Maintenance\nRespiration (MR). The data product also contains a PSN Quality Control (QC) layer. The quality\nlayer contains quality information for both the GPP and the PSN.\n\nThe MOD17A2HGF will be generated at the end of each year when the entire yearly 8-day MOD15A2H\nis available. Hence, the gap-filled MOD17A2HGF is the improved MOD17, which has cleaned the\npoor-quality inputs from 8-day Leaf Area Index and Fraction of Photosynthetically Active\nRadiation (FPAR/LAI) based on the Quality Control (QC) label for every pixel. If any LAI/FPAR\npixel did not meet the quality screening criteria, its value is determined through linear\ninterpolation. However, users cannot get MOD17A2HGF in near-real time because it will be\ngenerated only at the end of a given year.",
     "extent": {
         "spatial": {
             "bbox": [
@@ -27,7 +27,7 @@
         "temporal": {
             "interval": [
                 [
-                    "2000-02-18T00:00:00Z",
+                    "2000-01-01T00:00:00Z",
                     null
                 ]
             ]
@@ -40,7 +40,7 @@
                 "producer",
                 "licensor"
             ],
-            "url": "https://doi.org/10.5067/MODIS/MOD17A2HGF.061"
+            "url": "https://doi.org/10.5067/MODIS/MOD17A2HGF.006"
         }
     ]
 }
