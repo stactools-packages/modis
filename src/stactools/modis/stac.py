@@ -80,6 +80,8 @@ def create_item(href: str,
 
     item.common_metadata.instruments = metadata.instruments
     item.common_metadata.platform = metadata.platform
+    item.common_metadata.start_datetime = metadata.start_datetime
+    item.common_metadata.end_datetime = metadata.end_datetime
     item.common_metadata.created = metadata.created
     item.common_metadata.updated = metadata.updated
     item.add_asset(
