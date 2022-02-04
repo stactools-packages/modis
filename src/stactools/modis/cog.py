@@ -1,14 +1,12 @@
 import logging
 import os
-import warnings
 from typing import List, Optional, Tuple
 
-import rasterio
 import stactools.core.utils.convert
 from pystac import Asset, Item, MediaType
-from rasterio.errors import NotGeoreferencedWarning
 
 import stactools.modis.fragment
+import stactools.modis.utils
 from stactools.modis.constants import HDF_ASSET
 from stactools.modis.file import File
 
@@ -68,10 +66,7 @@ def cogify(infile: str, outdir: str) -> Tuple[List[str], List[str]]:
             - The first element is a list of the output tif paths
             - The second element is a list of subdataset names
     """
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore", category=NotGeoreferencedWarning)
-        with rasterio.open(infile) as dataset:
-            subdatasets = dataset.subdatasets
+    subdatasets = stactools.modis.utils.subdatasets(infile)
     base_file_name = os.path.splitext(os.path.basename(infile))[0]
     paths = []
     subdataset_names = []
