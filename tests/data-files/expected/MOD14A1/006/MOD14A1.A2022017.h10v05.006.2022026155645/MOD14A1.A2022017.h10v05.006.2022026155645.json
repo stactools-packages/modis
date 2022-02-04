@@ -31,11 +31,11 @@
     ],
     "description": "The Terra Moderate Resolution Imaging\nSpectroradiometer (MODIS) Thermal Anomalies and Fire Daily\n(MOD14A1) Version 6 data are generated every eight days at 1 kilometer (km) spatial resolultion\nas a Level 3 product. MOD14A1 contains eight consecutive days of fire data conveniently packaged\ninto a single file.\n\nThe Science Dataset (SDS) layers include the fire mask, pixel quality indicators, maximum fire\nradiative power (MaxFRP), and the position of the fire pixel within the scan. Each layer consists of\ndaily per pixel information for each of the eight days of data acquisition.",
     "instruments": [
-      "MODIS"
+      "modis"
     ],
-    "platform": "Terra",
+    "platform": "terra",
     "title": "MODIS/Terra Thermal Anomalies/Fire Daily L3 Global 1 km SIN Grid",
-    "datetime": "2022-01-26T20:56:45Z"
+    "datetime": "2022-01-17T11:59:59.500000Z"
   },
   "geometry": {
     "type": "Polygon",
@@ -56,6 +56,10 @@
         [
           -80.5775666708921,
           29.8961896763571
+        ],
+        [
+          -92.3012472028587,
+          29.8410878424102
         ]
       ]
     ]

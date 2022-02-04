@@ -37,11 +37,11 @@
     ],
     "description": "The MOD17A2HGF Version 6 Gross Primary Productivity (GPP) product\nis a cumulative 8-day composite of\nvalues with 500 meter (m) pixel size based on the radiation use efficiency concept that can\nbe potentially used as inputs to data models to calculate terrestrial energy, carbon, water\ncycle processes, and biogeochemistry of vegetation. The data product includes information\nabout GPP and Net Photosynthesis (PSN). The PSN band values are the GPP less the Maintenance\nRespiration (MR). The data product also contains a PSN Quality Control (QC) layer. The quality\nlayer contains quality information for both the GPP and the PSN.\n\nThe MOD17A2HGF will be generated at the end of each year when the entire yearly 8-day MOD15A2H\nis available. Hence, the gap-filled MOD17A2HGF is the improved MOD17, which has cleaned the\npoor-quality inputs from 8-day Leaf Area Index and Fraction of Photosynthetically Active\nRadiation (FPAR/LAI) based on the Quality Control (QC) label for every pixel. If any LAI/FPAR\npixel did not meet the quality screening criteria, its value is determined through linear\ninterpolation. However, users cannot get MOD17A2HGF in near-real time because it will be\ngenerated only at the end of a given year.",
     "instruments": [
-      "MODIS"
+      "modis"
     ],
-    "platform": "Terra",
+    "platform": "terra",
     "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid",
-    "datetime": "2022-01-31T14:10:00Z"
+    "datetime": "2021-12-03T11:59:59.500000Z"
   },
   "geometry": {
     "type": "Polygon",
@@ -62,6 +62,10 @@
         [
           -92.131858571552,
           29.9009502428382
+        ],
+        [
+          -103.835851753394,
+          29.8360532722546
         ]
       ]
     ]
