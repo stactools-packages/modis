@@ -1,0 +1,109 @@
+{
+  "type": "Collection",
+  "id": "modis-MOD44B-006",
+  "stac_version": "1.0.0",
+  "description": "The MOD44B Version 6 Vegetation Continuous Fields\n(VCF) yearly product is a global representation of surface vegetation cover as\ngradations of three ground cover components: percent tree cover, percent non-tree\ncover, and percent non-vegetated (bare). VCF products provide a continuous,\nquantitative portrayal of land surface cover at 250 meter (m) pixel resolution,\nwith a sub-pixel depiction of percent cover in reference to the three ground cover\ncomponents. The sub-pixel mixture of ground cover estimates represents a revolutionary\napproach to the characterization of vegetative land cover that can be used to enhance\ninputs to environmental modeling and monitoring applications.\n\nThe MOD44B data product layers include percent tree cover, percent non-tree cover,\npercent non-vegetated, cloud cover, and quality indicators. The start date of the\nannual period for this product begins with day of year (DOY) 65 (March 5).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "help",
+      "href": "https://lpdaac.usgs.gov/documents/112/MOD44B_User_Guide_V6.pdf",
+      "title": "User Guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/6/MOD44B",
+      "title": "Data File"
+    },
+    {
+      "rel": "item",
+      "href": "./MOD44B.A2020065.h09v04.006.2021155155636/MOD44B.A2020065.h09v04.006.2021155155636.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+  ],
+  "item_assets": {
+    "image": {
+      "eo:bands": [
+        {
+          "name": "Percent_Tree_Cover",
+          "description": "Percent of pixel that is tree covered"
+        },
+        {
+          "name": "Percent_NonTree_Vegetation",
+          "description": "Percent of pixel that is nontree vegetation"
+        },
+        {
+          "name": "Percent_NonVegetated",
+          "description": "Percent of pixel non vegetated"
+        },
+        {
+          "name": "Quality",
+          "description": "Quality Control indicators"
+        },
+        {
+          "name": "Percent_Tree_Cover_SD",
+          "description": "Standard deviation of percent tree covered"
+        },
+        {
+          "name": "Percent_NonVegetated_SD",
+          "description": "Standard deviation of percent not vegetated"
+        },
+        {
+          "name": "Cloud",
+          "description": "Pixel cloud cover indicators"
+        }
+      ],
+      "roles": [
+        "data"
+      ],
+      "title": "RGBIR COG tile",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    }
+  },
+  "title": "MODIS/Terra Vegetation Continuous Fields Yearly L3 Global 250 m SIN Grid",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180.0,
+          180.0,
+          -90.0,
+          90.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2000-03-05T00:00:00Z",
+          "2020-03-05T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "providers": [
+    {
+      "name": "NASA LP DAAC at the USGS EROS Center",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://doi.org/10.5067/MODIS/MOD44B.006"
+    }
+  ]
+}
