@@ -67,6 +67,8 @@ def create_item(infile: str) -> Item:
 
     item.common_metadata.instruments = metadata.instruments
     item.common_metadata.platform = metadata.platform
+    item.common_metadata.created = metadata.created
+    item.common_metadata.updated = metadata.updated
 
     # Hdf
     item.add_asset(

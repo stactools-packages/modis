@@ -28,6 +28,8 @@
       "modis"
     ],
     "platform": "terra",
+    "created": "2022-01-11T23:41:47Z",
+    "updated": "2022-01-11T17:46:28.061000Z",
     "datetime": "2020-01-01T11:59:59.500000Z"
   },
   "geometry": {
