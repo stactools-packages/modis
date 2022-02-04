@@ -80,6 +80,14 @@ class Metadata:
         self.end_datetime = datetime.datetime.fromisoformat(
             f"{end_date}T{end_time}")
 
+        self.created = datetime.datetime.fromisoformat(
+            root.find_text_or_throw(
+                "GranuleURMetaData/ECSDataGranule/ProductionDateTime",
+                missing_element("created")))
+        self.updated = datetime.datetime.fromisoformat(
+            root.find_text_or_throw("GranuleURMetaData/LastUpdate",
+                                    missing_element("updated")))
+
         platforms = root.findall("GranuleURMetaData/Platform")
         if len(platforms) == 1:
             self.platform = platforms[0].find_text_or_throw(
