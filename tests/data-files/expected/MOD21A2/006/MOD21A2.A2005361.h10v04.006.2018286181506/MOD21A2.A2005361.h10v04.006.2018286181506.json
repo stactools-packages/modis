@@ -40,10 +40,10 @@
     ],
     "platform": "terra",
     "start_datetime": "2005-12-27T00:00:00Z",
-    "end_datetime": "2005-12-27T23:59:59Z",
+    "end_datetime": "2005-12-31T23:59:59Z",
     "created": "2018-10-13T18:15:06Z",
     "updated": "2018-10-14T20:17:00.495000Z",
-    "datetime": "2005-12-27T11:59:59.500000Z"
+    "datetime": "2005-12-29T11:59:59.500000Z"
   },
   "geometry": {
     "type": "Polygon",
