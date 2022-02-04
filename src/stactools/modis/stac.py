@@ -65,16 +65,8 @@ def create_item(infile: str) -> Item:
         properties=stactools.modis.fragment.load_item_properties(
             metadata.product, metadata.version))
 
-    # Common metadata
-    # TODO should we remove these? They're in the collection
-    collection = stactools.modis.fragment.load_collection(
-        metadata.product, metadata.version)
-    item.common_metadata.providers = collection["providers"]
-    item.common_metadata.description = collection["description"]
-
     item.common_metadata.instruments = metadata.instruments
     item.common_metadata.platform = metadata.platform
-    item.common_metadata.title = collection["title"]
 
     # Hdf
     item.add_asset(

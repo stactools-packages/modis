@@ -25,22 +25,10 @@
     "SCF_QC_010": "2, Main (RT) method failed due to bad geometry, empirical algorithm used",
     "SCF_QC_011": "3, Main (RT) method failed due to problems other than geometry,empirical algorithm used",
     "SCF_QC_100": "4, Pixel not produced at all, value coudn't be retrieved(possible reasons: bad L1B data, unusable MOD09GA data)",
-    "providers": [
-      {
-        "name": "NASA LP DAAC at the USGS EROS Center",
-        "roles": [
-          "producer",
-          "licensor"
-        ],
-        "url": "https://doi.org/10.5067/MODIS/MOD17A2H.006"
-      }
-    ],
-    "description": "The MOD17A2H Version 6 Gross Primary Productivity (GPP)\nproduct is a cumulative 8-day composite of\nvalues with 500 meter (m) pixel size based on the radiation use efficiency concept that can be\npotentially used as inputs to data models to calculate terrestrial energy, carbon, water cycle\nprocesses, and biogeochemistry of vegetation. The data product includes information about GPP\nand Net Photosynthesis (PSN). The PSN band values are the GPP less the Maintenance Respiration\n(MR). The data product also contains a PSN Quality Control (QC) layer. The quality layer\ncontains quality information for both the GPP and thePSN.",
     "instruments": [
       "modis"
     ],
     "platform": "terra",
-    "title": "MODIS/Terra Gross Primary Productivity 8-Day L4 Global 500 m SIN",
     "datetime": "2022-01-17T11:59:59.500000Z"
   },
   "geometry": {
