@@ -6,9 +6,8 @@ import fsspec
 import shapely.geometry
 from lxml import etree
 from shapely.geometry import Polygon
-
-from stactools.core.io.xml import XmlElement
 from stactools.core.io import ReadHrefModifier
+from stactools.core.io.xml import XmlElement
 
 
 class MissingElement(Exception):
@@ -109,8 +108,9 @@ class Metadata:
         ])
         self.instruments = list(
             set(
-                platform.find_text_or_throw("Instrument/InstrumentShortName",
-                                            "instrument_short_name").lower()
+                platform.find_text_or_throw(
+                    "Instrument/InstrumentShortName",
+                    missing_element("instrument_short_name")).lower()
                 for platform in platforms))
 
     @property
