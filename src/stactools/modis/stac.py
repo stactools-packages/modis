@@ -69,16 +69,12 @@ def create_item(infile: str) -> Item:
     item.common_metadata.platform = metadata.platform
     item.common_metadata.created = metadata.created
     item.common_metadata.updated = metadata.updated
-
-    # Hdf
     item.add_asset(
         HDF_ASSET,
         pystac.Asset(href=file.hdf_path,
                      media_type=MediaType.HDF,
                      roles=["data"],
                      title="hdf data"))
-
-    # Metadata
     item.add_asset(
         METADATA_ASSET,
         pystac.Asset(href=file.xml_path,
@@ -86,7 +82,6 @@ def create_item(infile: str) -> Item:
                      roles=["metadata"],
                      title="FGDC Metdata"))
 
-    # Bands
     eo = EOExtension.ext(item.assets[HDF_ASSET], add_if_missing=True)
     eo.bands = [
         Band(band) for band in stactools.modis.fragment.load_bands(
