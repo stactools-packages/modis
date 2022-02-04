@@ -13,6 +13,7 @@ from pystac.extensions.projection import ProjectionExtension
 from stactools.core.io import ReadHrefModifier
 
 import stactools.modis.fragment
+import stactools.modis.utils
 from stactools.modis.constants import HDF_ASSET, METADATA_ASSET
 from stactools.modis.file import File
 from stactools.modis.metadata import Metadata
@@ -102,8 +103,7 @@ def create_item(href: str,
 
     url = urllib.parse.urlparse(file.hdf_href)
     if not url.scheme and os.path.isfile(file.hdf_href):
-        with rasterio.open(file.hdf_href) as dataset:
-            subdatasets = dataset.subdatasets
+        subdatasets = stactools.modis.utils.subdatasets(file.hdf_href)
         if not subdatasets:
             raise ValueError(
                 f"No subdatasets found in HDF file: {file.hdf_href}")
