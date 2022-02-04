@@ -32,16 +32,15 @@ class Metadata:
         with fsspec.open(href) as file:
             root = XmlElement(etree.parse(file, base_url=href).getroot())
 
+        metadata = root.find_or_throw("GranuleURMetaData",
+                                      missing_element("URMetadata"))
         self.id = os.path.splitext(
-            root.find_text_or_throw(
-                "GranuleURMetaData/ECSDataGranule/LocalGranuleID",
-                missing_element("id")))[0]
-        self.product = root.find_text_or_throw(
-            "GranuleURMetaData/CollectionMetaData/ShortName",
-            missing_element("product"))
-        version = root.find_text_or_throw(
-            "GranuleURMetaData/CollectionMetaData/VersionID",
-            missing_element("version"))
+            metadata.find_text_or_throw("ECSDataGranule/LocalGranuleID",
+                                        missing_element("id")))[0]
+        self.product = metadata.find_text_or_throw(
+            "CollectionMetaData/ShortName", missing_element("product"))
+        version = metadata.find_text_or_throw("CollectionMetaData/VersionID",
+                                              missing_element("version"))
         if version == "6":
             self.version = "006"
         elif version == "61":
@@ -49,46 +48,42 @@ class Metadata:
         else:
             raise ValueError(f"Unsupported MODIS version: {version}")
 
-        points = [(
-            float(
+        points = [
+            (float(
                 point.find_text_or_throw("PointLongitude",
                                          missing_element("longitude"))),
-            float(
-                point.find_text_or_throw("PointLatitude",
-                                         missing_element("latitude")))
-        ) for point in root.findall(
-            "GranuleURMetaData/SpatialDomainContainer/HorizontalSpatialDomainContainer/"
-            "GPolygon/Boundary/Point")]
+             float(
+                 point.find_text_or_throw("PointLatitude",
+                                          missing_element("latitude"))))
+            for point in metadata.findall(
+                "SpatialDomainContainer/HorizontalSpatialDomainContainer/"
+                "GPolygon/Boundary/Point")
+        ]
         polygon = Polygon(points)
         self.geometry = shapely.geometry.mapping(polygon)
         self.bbox = polygon.bounds
 
-        start_date = root.find_text_or_throw(
-            "GranuleURMetaData/RangeDateTime/RangeBeginningDate",
-            missing_element("start_date"))
-        start_time = root.find_text_or_throw(
-            "GranuleURMetaData/RangeDateTime/RangeBeginningTime",
-            missing_element("start_time"))
+        start_date = metadata.find_text_or_throw(
+            "RangeDateTime/RangeBeginningDate", missing_element("start_date"))
+        start_time = metadata.find_text_or_throw(
+            "RangeDateTime/RangeBeginningTime", missing_element("start_time"))
         self.start_datetime = datetime.datetime.fromisoformat(
             f"{start_date}T{start_time}")
-        end_date = root.find_text_or_throw(
-            "GranuleURMetaData/RangeDateTime/RangeBeginningDate",
-            missing_element("end_date"))
-        end_time = root.find_text_or_throw(
-            "GranuleURMetaData/RangeDateTime/RangeEndingTime",
-            missing_element("end_time"))
+        end_date = metadata.find_text_or_throw(
+            "RangeDateTime/RangeBeginningDate", missing_element("end_date"))
+        end_time = metadata.find_text_or_throw("RangeDateTime/RangeEndingTime",
+                                               missing_element("end_time"))
         self.end_datetime = datetime.datetime.fromisoformat(
             f"{end_date}T{end_time}")
 
         self.created = datetime.datetime.fromisoformat(
-            root.find_text_or_throw(
-                "GranuleURMetaData/ECSDataGranule/ProductionDateTime",
-                missing_element("created")))
+            metadata.find_text_or_throw("ECSDataGranule/ProductionDateTime",
+                                        missing_element("created")))
         self.updated = datetime.datetime.fromisoformat(
-            root.find_text_or_throw("GranuleURMetaData/LastUpdate",
-                                    missing_element("updated")))
+            metadata.find_text_or_throw("LastUpdate",
+                                        missing_element("updated")))
 
-        platforms = root.findall("GranuleURMetaData/Platform")
+        platforms = metadata.findall("Platform")
         # Per the discussion in
         # https://github.com/radiantearth/stac-spec/issues/216, it seems like
         # the recommendation for multi-platform datasets is to just include both
