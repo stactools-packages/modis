@@ -89,16 +89,16 @@ class Metadata:
                                     missing_element("updated")))
 
         platforms = root.findall("GranuleURMetaData/Platform")
-        if len(platforms) == 1:
-            self.platform = platforms[0].find_text_or_throw(
+        # Per the discussion in
+        # https://github.com/radiantearth/stac-spec/issues/216, it seems like
+        # the recommendation for multi-platform datasets is to just include both
+        # and use a string seperator.
+        self.platform = ",".join([
+            platform.find_text_or_throw(
                 "PlatformShortName",
                 missing_element("platform_short_name")).lower()
-        else:
-            # TODO what should we do about products that list both Terra and Aqua
-            # for their platforms?
-            self.platform = platforms[0].find_text_or_throw(
-                "PlatformShortName",
-                missing_element("platform_short_name")).lower()
+            for platform in platforms
+        ])
         self.instruments = list(
             set(
                 platform.find_text_or_throw("Instrument/InstrumentShortName",
