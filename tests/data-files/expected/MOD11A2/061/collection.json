@@ -1,0 +1,136 @@
+{
+  "type": "Collection",
+  "id": "modis-MOD11A2-061",
+  "stac_version": "1.0.0",
+  "description": "The Terra Moderate Resolution Imaging Spectroradiometer (MODIS) Land Surface Temperature/Emissivity 8-Day (MOD11A2) Version 6.1 product provides an average 8-day per-pixel Land Surface Temperature and Emissivity (LST&E) with a 1 kilometer (km) spatial resolution in a 1,200 by 1,200 km grid. Each pixel value in the MOD11A2 is a simple average of all the corresponding MOD11A1 LST pixels collected within that 8-day period. The 8-day compositing period was chosen because twice that period is the exact ground track repeat period of the Terra and Aqua platforms. Provided along with the daytime and nighttime surface temperature bands are associated quality control assessments, observation times, view zenith angles, and clear-sky coverages along with bands 31 and 32 emissivities from land cover types.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Land Surface Temperature/Emissivity 8-Day L3 Global 1 km SIN Grid"
+    },
+    {
+      "rel": "help",
+      "href": "https://lpdaac.usgs.gov/documents/715/MOD11_User_Guide_V61.pdf",
+      "title": "User Guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MOD11A2",
+      "title": "Data File"
+    },
+    {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.5067/MODIS/MOD11A2.061"
+    },
+    {
+      "rel": "item",
+      "href": "./MOD11A2.A2022033.h19v10.061.2022042044121/MOD11A2.A2022033.h19v10.061.2022042044121.json",
+      "type": "application/json"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+  ],
+  "item_assets": {
+    "hdf": {
+      "type": "application/x-hdf",
+      "roles": [
+        "data"
+      ],
+      "title": "hdf data",
+      "eo:bands": [
+        {
+          "name": "LST_Day_1km",
+          "description": "8-day daytime 1km grid Landsurface Temperature"
+        },
+        {
+          "name": "QC_Day",
+          "description": "Quality control for daytime LST and emissivity"
+        },
+        {
+          "name": "Day_view_time",
+          "description": "Average time of daytime Landsurface Temperature observation"
+        },
+        {
+          "name": "Day_view_angl",
+          "description": "Average view zenith angle of daytime Land-surface Temperature"
+        },
+        {
+          "name": "LST_Night_1km",
+          "description": "8-day nighttime 1km grid Landsurface Temperature"
+        },
+        {
+          "name": "QC_Night",
+          "description": "Quality control for nighttime LST and emissivity"
+        },
+        {
+          "name": "Night_view_time",
+          "description": "Average view zenith angle of nighttime Land-surface Temperature"
+        },
+        {
+          "name": "Night_view_angl",
+          "description": "View zenith angle of nighttime Land-surface Temperature "
+        },
+        {
+          "name": "Emis_31",
+          "description": "Band 31 emissivity"
+        },
+        {
+          "name": "Emis_32",
+          "description": "Band 32 emissivity"
+        },
+        {
+          "name": "Clear_sky_days",
+          "description": "the days in clear-sky conditions and with validate LSTs"
+        },
+        {
+          "name": "Clear_sky_nights",
+          "description": "the nights in clear-sky conditions and with validate LSTs"
+        }
+      ]
+    },
+    "metadata": {
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ],
+      "title": "FGDC Metdata"
+    }
+  },
+  "sci:doi": "10.5067/MODIS/MOD11A2.061",
+  "title": "MODIS/Terra Land Surface Temperature/Emissivity 8-Day L3 Global 1 km SIN Grid",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180.0,
+          180.0,
+          -90.0,
+          90.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2000-02-18T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "providers": [
+    {
+      "name": "NASA LP DAAC at the USGS EROS Center",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://doi.org/10.5067/MODIS/MOD11A2.061"
+    }
+  ]
+}

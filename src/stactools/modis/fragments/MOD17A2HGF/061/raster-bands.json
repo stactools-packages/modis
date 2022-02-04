@@ -1,20 +1,17 @@
 {
-    "Gpp_500m": {
-        "nodata": null,
-        "data_type": "int16",
-        "scale": 0.0001,
-        "unit": "kg C/m²"
-    },
-    "PsnNet_500m": {
-        "nodata": null,
-        "data_type": "int16",
-        "scale": 0.0001,
-        "unit": "kg C/m²"
-    },
-    "Psn_QC_500m": {
-        "nodata": null,
-        "data_type": "uint8",
-        "scale": null,
-        "unit": null
-    }
+        "Gpp_500m": {
+                "data_type": "int16",
+                "scale": 0.0001,
+                "unit": "kg C/m²"
+        },
+        "PsnNet_500m": {
+                "data_type": "int16",
+                "scale": 0.0001,
+                "unit": "kg C/m²"
+        },
+        "Psn_QC_500m": {
+                "data_type": "uint8",
+                "scale": null,
+                "unit": null
+        }
 }

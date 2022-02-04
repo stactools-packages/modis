@@ -1,0 +1,104 @@
+{
+  "type": "Collection",
+  "id": "modis-MYD09Q1-061",
+  "stac_version": "1.0.0",
+  "description": "The MYD09Q1 Version 6.1 product provides an estimate of the surface spectral reflectance of Aqua Moderate Resolution Imaging Spectroradiometer (MODIS) Bands 1 and 2, corrected for atmospheric conditions such as gasses, aerosols, and Rayleigh scattering. Provided along with the 250 meter (m) surface reflectance bands are two quality layers. For each pixel, a value is selected from all the acquisitions within the 8-day composite period. The criteria for the pixel choice include cloud and solar zenith. When several acquisitions meet the criteria the pixel with the minimum channel 3 (blue) value is used.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "MODIS/Aqua Surface Reflectance 8-Day L3 Global 250 m SIN Grid"
+    },
+    {
+      "rel": "help",
+      "href": "https://lpdaac.usgs.gov/documents/925/MOD09_User_Guide_V61.pdf",
+      "title": "User Guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MYD09Q1",
+      "title": "Data File"
+    },
+    {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.5067/MODIS/MYD09Q1.061"
+    },
+    {
+      "rel": "item",
+      "href": "./MYD09Q1.A2022025.h02v08.061.2022035050917/MYD09Q1.A2022025.h02v08.061.2022035050917.json",
+      "type": "application/json"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+  ],
+  "item_assets": {
+    "hdf": {
+      "type": "application/x-hdf",
+      "roles": [
+        "data"
+      ],
+      "title": "hdf data",
+      "eo:bands": [
+        {
+          "name": "sur_refl_b01",
+          "description": "Surface Reflectance Band 1 (620-670 nm)"
+        },
+        {
+          "name": "sur_refl_b02",
+          "description": "Surface Reflectance Band 2 (841-876 nm)"
+        },
+        {
+          "name": "sur_refl_state_250m",
+          "description": "Surface Reflectance 250m State flags"
+        },
+        {
+          "name": "sur_refl_qc_250m",
+          "description": "Surface Reflectance 250m Band Quality Control flags"
+        }
+      ]
+    },
+    "metadata": {
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ],
+      "title": "FGDC Metdata"
+    }
+  },
+  "sci:doi": "10.5067/MODIS/MYD09Q1.061",
+  "title": "MODIS/Aqua Surface Reflectance 8-Day L3 Global 250 m SIN Grid",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180.0,
+          180.0,
+          -90.0,
+          90.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2002-07-04T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "providers": [
+    {
+      "name": "NASA LP DAAC at the USGS EROS Center",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://doi.org/10.5067/MODIS/MYD09Q1.061"
+    }
+  ]
+}

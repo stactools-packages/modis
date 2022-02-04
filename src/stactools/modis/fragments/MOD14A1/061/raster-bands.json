@@ -1,0 +1,22 @@
+{
+    "FireMask": {
+        "data_type": "uint8",
+        "unit": "Class Flag",
+        "scale": null
+    },
+    "QA": {
+        "data_type": "uint8",
+        "unit": "Bit Field",
+        "scale": null
+    },
+    "MaxFRP": {
+        "data_type": "uint32",
+        "unit": "Megawatts",
+        "scale": 0.1
+    },
+    "Sample": {
+        "data_type": "uint16",
+        "unit": "Number",
+        "scale": null
+    }
+}

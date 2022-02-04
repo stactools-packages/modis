@@ -1,0 +1,27 @@
+{
+    "Burn_Date": {
+        "data_type": "int16",
+        "unit": "Day",
+        "scale": null
+    },
+    "Burn_Date_Uncertainty": {
+        "data_type": "uint8",
+        "unit": "Day",
+        "scale": null
+    },
+    "QA": {
+        "data_type": "uint8",
+        "unit": "Bit Field",
+        "scale": null
+    },
+    "First_Day": {
+        "data_type": "int16",
+        "unit": "Day",
+        "scale": null
+    },
+    "Last_Day": {
+        "data_type": "int16",
+        "unit": "Day",
+        "scale": null
+    }
+}

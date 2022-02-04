@@ -1,0 +1,17 @@
+{
+    "Gpp_500m": {
+        "data_type": "uint16",
+        "unit": "kg C/m²",
+        "scale": 0.0001
+    },
+    "Npp_500m": {
+        "data_type": "int16",
+        "unit": "kg C/m²",
+        "scale": 0.0001
+    },
+    "Npp_QC_500m": {
+        "data_type": "uint8",
+        "unit": "Percent",
+        "scale": null
+    }
+}

@@ -1,0 +1,72 @@
+{
+    "BRDF_Albedo_Band_Mandatory_Quality_Band1": {
+        "data_type": "uint8",
+        "unit": "Bit Field",
+        "scale": null
+    },
+    "BRDF_Albedo_Band_Mandatory_Quality_Band2": {
+        "data_type": "uint8",
+        "unit": "Bit Field",
+        "scale": null
+    },
+    "BRDF_Albedo_Band_Mandatory_Quality_Band3": {
+        "data_type": "uint8",
+        "unit": "Bit Field",
+        "scale": null
+    },
+    "BRDF_Albedo_Band_Mandatory_Quality_Band4": {
+        "data_type": "uint8",
+        "unit": "Bit Field",
+        "scale": null
+    },
+    "BRDF_Albedo_Band_Mandatory_Quality_Band5": {
+        "data_type": "uint8",
+        "unit": "Bit Field",
+        "scale": null
+    },
+    "BRDF_Albedo_Band_Mandatory_Quality_Band6": {
+        "data_type": "uint8",
+        "unit": "Bit Field",
+        "scale": null
+    },
+    "BRDF_Albedo_Band_Mandatory_Quality_Band7": {
+        "data_type": "uint8",
+        "unit": "Bit Field",
+        "scale": null
+    },
+    "Nadir_Reflectance_Band1": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    },
+    "Nadir_Reflectance_Band2": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    },
+    "Nadir_Reflectance_Band3": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    },
+    "Nadir_Reflectance_Band4": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    },
+    "Nadir_Reflectance_Band5": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    },
+    "Nadir_Reflectance_Band6": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    },
+    "Nadir_Reflectance_Band7": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    }
+}

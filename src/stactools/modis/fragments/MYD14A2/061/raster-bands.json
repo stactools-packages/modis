@@ -1,0 +1,12 @@
+{
+    "FireMask": {
+        "data_type": "uint8",
+        "unit": "Class Flag",
+        "scale": null
+    },
+    "QA": {
+        "data_type": "uint8",
+        "unit": "Bit Field",
+        "scale": null
+    }
+}

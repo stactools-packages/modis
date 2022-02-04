@@ -1,0 +1,50 @@
+[
+    {
+        "name": "LST_Day_1km",
+        "description": "8-day daytime 1km grid Landsurface Temperature"
+    },
+    {
+        "name": "QC_Day",
+        "description": "Quality control for daytime LST and emissivity"
+    },
+    {
+        "name": "Day_view_time",
+        "description": "Average time of daytime Landsurface Temperature observation"
+    },
+    {
+        "name": "Day_view_angl",
+        "description": "Average view zenith angle of daytime Land-surface Temperature"
+    },
+    {
+        "name": "LST_Night_1km",
+        "description": "8-day nighttime 1km grid Landsurface Temperature"
+    },
+    {
+        "name": "QC_Night",
+        "description": "Quality control for nighttime LST and emissivity"
+    },
+    {
+        "name": "Night_view_time",
+        "description": "Average view zenith angle of nighttime Land-surface Temperature"
+    },
+    {
+        "name": "Night_view_angl",
+        "description": "View zenith angle of nighttime Land-surface Temperature "
+    },
+    {
+        "name": "Emis_31",
+        "description": "Band 31 emissivity"
+    },
+    {
+        "name": "Emis_32",
+        "description": "Band 32 emissivity"
+    },
+    {
+        "name": "Clear_sky_days",
+        "description": "the days in clear-sky conditions and with validate LSTs"
+    },
+    {
+        "name": "Clear_sky_nights",
+        "description": "the nights in clear-sky conditions and with validate LSTs"
+    }
+]

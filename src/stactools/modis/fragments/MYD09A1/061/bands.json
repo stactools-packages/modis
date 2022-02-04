@@ -1,0 +1,54 @@
+[
+    {
+        "name": "sur_refl_b01",
+        "description": "Surface Reflectance Band 1 (620-670 nm)"
+    },
+    {
+        "name": "sur_refl_b02",
+        "description": "Surface Reflectance Band 2 (841-876 nm)"
+    },
+    {
+        "name": "sur_refl_b03",
+        "description": "Surface Reflectance Band 3 (459-479 nm)"
+    },
+    {
+        "name": "sur_refl_b04",
+        "description": "Surface Reflectance Band 4 (545-565 nm)"
+    },
+    {
+        "name": "sur_refl_b05",
+        "description": "Surface Reflectance Band 5 (1230-1250 nm)"
+    },
+    {
+        "name": "sur_refl_b06",
+        "description": "Surface Reflectance Band 6 (1628-1652 nm)"
+    },
+    {
+        "name": "sur_refl_b07",
+        "description": "Surface Reflectance Band 7 (2105-2155 nm)"
+    },
+    {
+        "name": "sur_refl_qc_500m",
+        "description": "Surface reflectance 500m band quality control flags"
+    },
+    {
+        "name": "sur_refl_szen",
+        "description": "MODIS solar zenith angle"
+    },
+    {
+        "name": "sur_refl_vzen",
+        "description": "MODIS view zenith angle"
+    },
+    {
+        "name": "sur_refl_raz",
+        "description": "MODIS relative azimuth angle"
+    },
+    {
+        "name": "sur_refl_state_500m",
+        "description": "Surface reflectance 500m state flags"
+    },
+    {
+        "name": "sur_refl_day_of_year",
+        "description": "Day of the year for the pixel"
+    }
+]

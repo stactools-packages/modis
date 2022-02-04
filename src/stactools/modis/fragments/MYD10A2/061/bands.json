@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Maximum_Snow_Extent",
+        "description": "Maximum snow extent observed over an eight-day period."
+    },
+    {
+        "name": "Eight_Day_Snow_Cover",
+        "description": "Snow chronology bit flags for each day in the eight-day observation period."
+    }
+]

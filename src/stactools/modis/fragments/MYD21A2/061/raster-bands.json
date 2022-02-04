@@ -1,0 +1,57 @@
+{
+    "LST_Day_1KM": {
+        "data_type": "uint16",
+        "unit": "Kelvin",
+        "scale": 0.02
+    },
+    "QC_Day": {
+        "data_type": "uint8",
+        "unit": null,
+        "scale": null
+    },
+    "View_Angle_Day": {
+        "data_type": "uint8",
+        "unit": "Degree",
+        "scale": null
+    },
+    "View_Time_Day": {
+        "data_type": "uint8",
+        "unit": "Hours",
+        "scale": 0.1
+    },
+    "LST_Night_1KM": {
+        "data_type": "uint16",
+        "unit": "Kelvin",
+        "scale": 0.02
+    },
+    "QC_Night": {
+        "data_type": "uint8",
+        "unit": null,
+        "scale": null
+    },
+    "View_Angle_Night": {
+        "data_type": "uint8",
+        "unit": "Degree",
+        "scale": null
+    },
+    "View_Time_Night": {
+        "data_type": "uint8",
+        "unit": "Hours",
+        "scale": 0.1
+    },
+    "Emis_29": {
+        "data_type": "uint8",
+        "unit": null,
+        "scale": 0.002
+    },
+    "Emis_31": {
+        "data_type": "uint8",
+        "unit": null,
+        "scale": 0.002
+    },
+    "Emis_32": {
+        "data_type": "uint8",
+        "unit": null,
+        "scale": 0.002
+    }
+}

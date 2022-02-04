@@ -1,0 +1,62 @@
+{
+    "LST_Day_1km": {
+        "data_type": "uint16",
+        "unit": "Kelvin",
+        "scale": 0.02
+    },
+    "QC_Day": {
+        "data_type": "uint8",
+        "unit": null,
+        "scale": null
+    },
+    "Day_view_time": {
+        "data_type": "uint8",
+        "unit": "Hours",
+        "scale": 0.1
+    },
+    "Day_view_angl": {
+        "data_type": "uint8",
+        "unit": "Degree",
+        "scale": null
+    },
+    "LST_Night_1km": {
+        "data_type": "uint16",
+        "unit": "Kelvin",
+        "scale": 0.02
+    },
+    "QC_Night": {
+        "data_type": "uint8",
+        "unit": null,
+        "scale": null
+    },
+    "Night_view_time": {
+        "data_type": "uint8",
+        "unit": "Hours",
+        "scale": 0.1
+    },
+    "Night_view_angl": {
+        "data_type": "uint8",
+        "unit": "Degree",
+        "scale": null
+    },
+    "Emis_31": {
+        "data_type": "uint8",
+        "unit": null,
+        "scale": 0.002
+    },
+    "Emis_32": {
+        "data_type": "uint8",
+        "unit": null,
+        "scale": 0.002
+    },
+    "Clear_sky_days": {
+        "data_type": "uint8",
+        "unit": null,
+        "scale": null
+    },
+    "Clear_sky_nights": {
+        "data_type": "uint8",
+        "unit": null,
+        "scale": null
+    }
+}

@@ -1,0 +1,18 @@
+[
+    {
+        "name": "sur_refl_b01",
+        "description": "Surface Reflectance Band 1 (620-670 nm)"
+    },
+    {
+        "name": "sur_refl_b02",
+        "description": "Surface Reflectance Band 2 (841-876 nm)"
+    },
+    {
+        "name": "sur_refl_state_250m",
+        "description": "Surface Reflectance 250m State flags"
+    },
+    {
+        "name": "sur_refl_qc_250m",
+        "description": "Surface Reflectance 250m Band Quality Control flags"
+    }
+]

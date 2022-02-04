@@ -1,0 +1,30 @@
+[
+    {
+        "name": "NDSI_Snow_Cover",
+        "description": "Gridded NDSI snow cover and data flag values."
+    },
+    {
+        "name": "NDSI_Snow_Cover_Basic_QA",
+        "description": "A general estimate of the quality of the algorithm result."
+    },
+    {
+        "name": "NDSI_Snow_Cover_Algorithm_Flags_QA",
+        "description": "Algorithm-specific bit flags set for data screens and for inland water."
+    },
+    {
+        "name": "NDSI",
+        "description": "Raw NDSI values (i.e. prior to screening)."
+    },
+    {
+        "name": "Snow_Albedo_Daily_Tile",
+        "description": "Daily snow albedo corresponding to the NDSI_Snow_Cover parameter."
+    },
+    {
+        "name": "orbit_pnt",
+        "description": "Pointer to the orbit of the swath mapped into each grid cell. For details, see Section 1.1.2 below."
+    },
+    {
+        "name": "granule_pnt",
+        "description": "Pointer for identifying the swath mapped into each grid cell. For details, see the section 'Using the granule_pnt' below."
+    }
+]

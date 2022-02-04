@@ -1,0 +1,37 @@
+{
+    "NSDI_Snow_Cover": {
+        "data_type": "uint8",
+        "unit": null,
+        "scale": null
+    },
+    "NSDI_Snow_Cover_Basic_QA": {
+        "data_type": "uint8",
+        "unit": null,
+        "scale": null
+    },
+    "NDSI_Snow_Cover_Algorithm_Flags_QA": {
+        "data_type": "uint8",
+        "unit": null,
+        "scale": null
+    },
+    "NDSI": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    },
+    "Snow_Albedo_Daily_Tile": {
+        "data_type": "uint8",
+        "unit": null,
+        "scale": null
+    },
+    "orbit_pnt": {
+        "data_type": "uint8",
+        "unit": null,
+        "scale": null
+    },
+    "granule_pnt": {
+        "data_type": "uint8",
+        "unit": null,
+        "scale": null
+    }
+}

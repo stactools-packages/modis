@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE GranuleMetaDataFile SYSTEM "http://ecsinfo.gsfc.nasa.gov/ECSInfo/ecsmetadata/dtds/DPL/ECS/ScienceGranuleMetadata.dtd">
+<GranuleMetaDataFile>
+    <DTDVersion>1.0</DTDVersion>
+    <DataCenterId>NSIDC</DataCenterId>
+    <GranuleURMetaData>
+        <GranuleUR>SC:MYD10A2.061:239472748</GranuleUR>
+        <DbID>239472748</DbID>
+        <InsertTime>2022-02-04 00:16:00.600</InsertTime>
+        <LastUpdate>2022-02-04 00:16:00.600</LastUpdate>
+        <CollectionMetaData>
+            <ShortName>MYD10A2</ShortName>
+            <VersionID>61</VersionID>
+        </CollectionMetaData>
+        <DataFiles>
+            <DataFileContainer>
+                <DistributedFileName>MYD10A2.A2022025.h10v05.061.2022035071201.hdf</DistributedFileName>
+                <FileSize>306367</FileSize>
+                <ChecksumType>CKSUM</ChecksumType>
+                <Checksum>2734531027</Checksum>
+                <ChecksumOrigin>DPLIngst</ChecksumOrigin>
+            </DataFileContainer>
+        </DataFiles>
+        <ECSDataGranule>
+            <SizeMBECSDataGranule>0.292174</SizeMBECSDataGranule>
+            <ReprocessingPlanned>further update is anticipated</ReprocessingPlanned>
+            <ReprocessingActual>reprocessed</ReprocessingActual>
+            <LocalGranuleID>MYD10A2.A2022025.h10v05.061.2022035071201.hdf</LocalGranuleID>
+            <DayNightFlag>Day</DayNightFlag>
+            <ProductionDateTime>2022-02-04 07:12:12.000</ProductionDateTime>
+            <LocalVersionID>SCF V6.0.0</LocalVersionID>
+        </ECSDataGranule>
+        <PGEVersionClass>
+            <PGEVersion>6.1.0</PGEVersion>
+        </PGEVersionClass>
+        <RangeDateTime>
+            <RangeEndingTime>23:59:59.000000</RangeEndingTime>
+            <RangeEndingDate>2022-02-01</RangeEndingDate>
+            <RangeBeginningTime>00:00:00.000000</RangeBeginningTime>
+            <RangeBeginningDate>2022-01-25</RangeBeginningDate>
+        </RangeDateTime>
+        <SpatialDomainContainer>
+            <HorizontalSpatialDomainContainer>
+                <GPolygon>
+                    <Boundary>
+                        <Point>
+                            <PointLongitude>-92.3012472028587</PointLongitude>
+                            <PointLatitude>29.8410878424102</PointLatitude>
+                        </Point>
+                        <Point>
+                            <PointLongitude>-104.43258313171</PointLongitude>
+                            <PointLatitude>39.9999999964079</PointLatitude>
+                        </Point>
+                        <Point>
+                            <PointLongitude>-91.1740859476425</PointLongitude>
+                            <PointLatitude>40.0637836759185</PointLatitude>
+                        </Point>
+                        <Point>
+                            <PointLongitude>-80.5775666708921</PointLongitude>
+                            <PointLatitude>29.8961896763571</PointLatitude>
+                        </Point>
+                    </Boundary>
+                </GPolygon>
+            </HorizontalSpatialDomainContainer>
+        </SpatialDomainContainer>
+        <MeasuredParameter>
+            <MeasuredParameterContainer>
+                <ParameterName>Maximum Snow Extent</ParameterName>
+                <QAStats>
+                    <QAPercentMissingData>0</QAPercentMissingData>
+                    <QAPercentCloudCover>1</QAPercentCloudCover>
+                </QAStats>
+                <QAFlags>
+                    <AutomaticQualityFlag>Passed</AutomaticQualityFlag>
+                    <AutomaticQualityFlagExplanation>No automatic quality assessment done in the PGE</AutomaticQualityFlagExplanation>
+                    <OperationalQualityFlag>Passed</OperationalQualityFlag>
+                    <OperationalQualityFlagExplanation>Passed</OperationalQualityFlagExplanation>
+                    <ScienceQualityFlag>Not Investigated</ScienceQualityFlag>
+                    <ScienceQualityFlagExplanation>See http://landweb.nascom.nasa.gov/cgi-bin/QA_WWW/qaFlagPage.cgi?sat=aqua&amp;ver=C6 for the product Science Quality status.</ScienceQualityFlagExplanation>
+                </QAFlags>
+            </MeasuredParameterContainer>
+        </MeasuredParameter>
+        <Platform>
+            <PlatformShortName>Aqua</PlatformShortName>
+            <Instrument>
+                <InstrumentShortName>MODIS</InstrumentShortName>
+                <Sensor>
+                    <SensorShortName>MODIS</SensorShortName>
+                </Sensor>
+            </Instrument>
+        </Platform>
+        <PSAs>
+            <PSA>
+                <PSAName>QAPERCENTGOODQUALITY</PSAName>
+                <PSAValue>100</PSAValue>
+            </PSA>
+            <PSA>
+                <PSAName>QAPERCENTOTHERQUALITY</PSAName>
+                <PSAValue>0</PSAValue>
+            </PSA>
+            <PSA>
+                <PSAName>HORIZONTALTILENUMBER</PSAName>
+                <PSAValue>10</PSAValue>
+            </PSA>
+            <PSA>
+                <PSAName>VERTICALTILENUMBER</PSAName>
+                <PSAValue>5</PSAValue>
+            </PSA>
+            <PSA>
+                <PSAName>TileID</PSAName>
+                <PSAValue>51010005</PSAValue>
+            </PSA>
+            <PSA>
+                <PSAName>SNOWCOVERPERCENT</PSAName>
+                <PSAValue>8</PSAValue>
+            </PSA>
+            <PSA>
+                <PSAName>identifier_product_doi</PSAName>
+                <PSAValue>10.5067/MODIS/MYD10A2.061</PSAValue>
+            </PSA>
+            <PSA>
+                <PSAName>identifier_product_doi_authority</PSAName>
+                <PSAValue>http://dx.doi.org</PSAValue>
+            </PSA>
+        </PSAs>
+        <InputGranule>
+            <InputPointer>MYD10A1.A2022025.h10v05.061.2022028075149.hdf</InputPointer>
+            <InputPointer>MYD10A1.A2022026.h10v05.061.2022028133959.hdf</InputPointer>
+            <InputPointer>MYD10A1.A2022027.h10v05.061.2022032011338.hdf</InputPointer>
+            <InputPointer>MYD10A1.A2022028.h10v05.061.2022030071632.hdf</InputPointer>
+            <InputPointer>MYD10A1.A2022029.h10v05.061.2022031051034.hdf</InputPointer>
+            <InputPointer>MYD10A1.A2022030.h10v05.061.2022032054928.hdf</InputPointer>
+            <InputPointer>MYD10A1.A2022031.h10v05.061.2022033184051.hdf</InputPointer>
+            <InputPointer>MYD10A1.A2022032.h10v05.061.2022035063408.hdf</InputPointer>
+        </InputGranule>
+        <BrowseProduct>
+            <BrowseGranuleId>UR:10:DsShESDTUR:UR:15:DsShSciServerUR:15:[NSIDC:DSSDSRV]:23:BR:Browse.001:239472757</BrowseGranuleId>
+        </BrowseProduct>
+    </GranuleURMetaData>
+</GranuleMetaDataFile>
+
+
