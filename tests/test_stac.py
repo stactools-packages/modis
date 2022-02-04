@@ -52,12 +52,15 @@ def test_metadata_files(metadata_path: str, collection_path: str,
     with TemporaryDirectory() as temporary_directory:
         temporary_metadata_path = os.path.join(temporary_directory,
                                                os.path.basename(metadata_path))
+        temporary_file = File(temporary_metadata_path)
         expected_directory = os.path.join(temporary_directory, "expected",
                                           modis_file.product,
                                           modis_file.version)
         collection.set_self_href(
             os.path.join(expected_directory, "collection.json"))
-        shutil.copyfile(metadata_path, temporary_metadata_path)
+        shutil.copyfile(modis_file.xml_href, temporary_file.xml_href)
+        if os.path.exists(modis_file.hdf_href):
+            shutil.copyfile(modis_file.hdf_href, temporary_file.hdf_href)
         item = stactools.modis.stac.create_item(temporary_metadata_path)
         collection.add_item(item)
         collection.make_all_asset_hrefs_relative()

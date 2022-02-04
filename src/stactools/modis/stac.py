@@ -1,9 +1,15 @@
+import os.path
+import urllib.parse
 from typing import Optional
 
 import pystac
+import rasterio
+import shapely.geometry
+import stactools.core.utils
 from pystac import Collection, Item, MediaType
 from pystac.extensions.eo import Band, EOExtension
 from pystac.extensions.item_assets import AssetDefinition, ItemAssetsExtension
+from pystac.extensions.projection import ProjectionExtension
 from stactools.core.io import ReadHrefModifier
 
 import stactools.modis.fragment
@@ -94,6 +100,26 @@ def create_item(href: str,
             metadata.product, metadata.version)
     ]
 
+    url = urllib.parse.urlparse(file.hdf_href)
+    if not url.scheme and os.path.isfile(file.hdf_href):
+        with rasterio.open(file.hdf_href) as dataset:
+            subdatasets = dataset.subdatasets
+        if not subdatasets:
+            raise ValueError(
+                f"No subdatasets found in HDF file: {file.hdf_href}")
+        with rasterio.open(subdatasets[0]) as dataset:
+            crs = dataset.crs
+            proj_bbox = dataset.bounds
+            proj_transform = list(dataset.transform)[0:6]
+            proj_shape = dataset.shape
+        proj_geometry = shapely.geometry.mapping(
+            shapely.geometry.box(*proj_bbox))
+        projection = ProjectionExtension.ext(item, add_if_missing=True)
+        projection.epsg = None
+        projection.wkt2 = crs.to_wkt("WKT2")
+        projection.geometry = proj_geometry
+        projection.transform = proj_transform
+        projection.shape = proj_shape
     return item
 
 
