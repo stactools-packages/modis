@@ -81,8 +81,8 @@ class Metadata:
             "RangeDateTime/RangeBeginningTime", missing_element("start_time"))
         self.start_datetime = datetime.datetime.fromisoformat(
             f"{start_date}T{start_time}")
-        end_date = metadata.find_text_or_throw(
-            "RangeDateTime/RangeBeginningDate", missing_element("end_date"))
+        end_date = metadata.find_text_or_throw("RangeDateTime/RangeEndingDate",
+                                               missing_element("end_date"))
         end_time = metadata.find_text_or_throw("RangeDateTime/RangeEndingTime",
                                                missing_element("end_time"))
         self.end_datetime = datetime.datetime.fromisoformat(
