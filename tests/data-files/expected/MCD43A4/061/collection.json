@@ -1,0 +1,144 @@
+{
+  "type": "Collection",
+  "id": "modis-MCD43A4-061",
+  "stac_version": "1.0.0",
+  "description": "The Moderate Resolution Imaging Spectroradiometer (MODIS) MCD43A4 Version 6.1 Nadir Bidirectional Reflectance Distribution Function (BRDF)-Adjusted Reflectance (NBAR) dataset is produced daily using 16 days of Terra and Aqua MODIS data at 500 meter (m) resolution. The view angle effects are removed from the directional reflectances, resulting in a stable and consistent NBAR product. Data are temporally weighted to the ninth day which is reflected in the Julian date in the file name. Users are urged to use the band specific quality flags to isolate the highest quality full inversion results for their own science applications as described in the User Guide. The MCD43A4 provides NBAR and simplified mandatory quality layers for MODIS bands 1 through 7. Essential quality information provided in the corresponding MCD43A2 data file should be consulted when using this product.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra+Aqua Nadir BRDF-Adjusted Reflectance (NBAR) Daily L3 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "help",
+      "href": "https://www.umb.edu/spectralmass/terra_aqua_modis/v006",
+      "title": "User Guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MCD43A4",
+      "title": "Data File"
+    },
+    {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.5067/MODIS/MCD43A4.061"
+    },
+    {
+      "rel": "item",
+      "href": "./MCD43A4.A2022032.h14v10.061.2022041051831/MCD43A4.A2022032.h14v10.061.2022041051831.json",
+      "type": "application/json"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+  ],
+  "item_assets": {
+    "hdf": {
+      "type": "application/x-hdf",
+      "roles": [
+        "data"
+      ],
+      "title": "hdf data",
+      "eo:bands": [
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band1",
+          "description": "BRDF Albedo Mandatory Quality for Band 1"
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band2",
+          "description": "BRDF Albedo Mandatory Quality for Band 2"
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band3",
+          "description": "BRDF Albedo Mandatory Quality for Band 3"
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band4",
+          "description": "BRDF Albedo Mandatory Quality for Band 4"
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band5",
+          "description": "BRDF Albedo Mandatory Quality for Band 5"
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band6",
+          "description": "BRDF Albedo Mandatory Quality for Band 6"
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band7",
+          "description": "BRDF Albedo Mandatory Quality for Band 7"
+        },
+        {
+          "name": "Nadir_Reflectance_Band1",
+          "description": "NBAR at local solar noon for Band 1"
+        },
+        {
+          "name": "Nadir_Reflectance_Band2",
+          "description": "NBAR at local solar noon for Band 2"
+        },
+        {
+          "name": "Nadir_Reflectance_Band3",
+          "description": "ENBAR at local solar noon for Band 3"
+        },
+        {
+          "name": "Nadir_Reflectance_Band4",
+          "description": "NBAR at local solar noon for Band 4"
+        },
+        {
+          "name": "Nadir_Reflectance_Band5",
+          "description": "NBAR at local solar noon for Band 5"
+        },
+        {
+          "name": "Nadir_Reflectance_Band6",
+          "description": "NBAR at local solar noon for Band 6"
+        },
+        {
+          "name": "Nadir_Reflectance_Band7",
+          "description": "NBAR at local solar noon for Band 7"
+        }
+      ]
+    },
+    "metadata": {
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ],
+      "title": "FGDC Metdata"
+    }
+  },
+  "sci:doi": "10.5067/MODIS/MCD43A4.061",
+  "title": "MODIS/Terra+Aqua Nadir BRDF-Adjusted Reflectance (NBAR) Daily L3 Global 500 m SIN Grid",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180.0,
+          180.0,
+          -90.0,
+          90.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2000-02-16T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "providers": [
+    {
+      "name": "NASA LP DAAC at the USGS EROS Center",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://doi.org/10.5067/MODIS/MCD43A4.061"
+    }
+  ]
+}

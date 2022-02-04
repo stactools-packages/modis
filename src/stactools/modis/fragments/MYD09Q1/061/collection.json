@@ -1,0 +1,46 @@
+{
+    "links": [
+        {
+            "rel": "help",
+            "href": "https://lpdaac.usgs.gov/documents/925/MOD09_User_Guide_V61.pdf",
+            "title": "User Guide"
+        },
+        {
+            "rel": "describedby",
+            "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MYD09Q1",
+            "title": "Data File"
+        }
+    ],
+    "title": "MODIS/Aqua Surface Reflectance 8-Day L3 Global 250 m SIN Grid",
+    "description": "The MYD09Q1 Version 6.1 product provides an estimate of the surface spectral reflectance of Aqua Moderate Resolution Imaging Spectroradiometer (MODIS) Bands 1 and 2, corrected for atmospheric conditions such as gasses, aerosols, and Rayleigh scattering. Provided along with the 250 meter (m) surface reflectance bands are two quality layers. For each pixel, a value is selected from all the acquisitions within the 8-day composite period. The criteria for the pixel choice include cloud and solar zenith. When several acquisitions meet the criteria the pixel with the minimum channel 3 (blue) value is used.",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180.0,
+                    180.0,
+                    -90.0,
+                    90.0
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2002-07-04T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "providers": [
+        {
+            "name": "NASA LP DAAC at the USGS EROS Center",
+            "roles": [
+                "producer",
+                "licensor"
+            ],
+            "url": "https://doi.org/10.5067/MODIS/MYD09Q1.061"
+        }
+    ]
+}

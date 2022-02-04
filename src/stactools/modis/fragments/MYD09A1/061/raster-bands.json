@@ -1,0 +1,67 @@
+{
+    "sur_refl_b01": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    },
+    "sur_refl_b02": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    },
+    "sur_refl_b03": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    },
+    "sur_refl_b04": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    },
+    "sur_refl_b05": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    },
+    "sur_refl_b06": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    },
+    "sur_refl_b07": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    },
+    "sur_refl_qc_500m": {
+        "data_type": "uint32",
+        "unit": "Bit Field",
+        "scale": null
+    },
+    "sur_refl_szen": {
+        "data_type": "int16",
+        "unit": "Degree",
+        "scale": 0.01
+    },
+    "sur_refl_vzen": {
+        "data_type": "int16",
+        "unit": "Degree",
+        "scale": 0.01
+    },
+    "sur_refl_raz": {
+        "data_type": "int16",
+        "unit": "Degree",
+        "scale": 0.01
+    },
+    "sur_refl_state_500m": {
+        "data_type": "uint16",
+        "unit": "Bit Field",
+        "scale": null
+    },
+    "sur_refl_day_of_year": {
+        "data_type": "uint16",
+        "unit": "Julian Day",
+        "scale": null
+    }
+}

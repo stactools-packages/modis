@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE GranuleMetaDataFile SYSTEM "http://ecsinfo.gsfc.nasa.gov/ECSInfo/ecsmetadata/dtds/DPL/ECS/ScienceGranuleMetadata.dtd">
+<GranuleMetaDataFile>
+    <DTDVersion>1.0</DTDVersion>
+    <DataCenterId>EDC</DataCenterId>
+    <GranuleURMetaData>
+        <GranuleUR>SC:MOD14A1.061:2536490344</GranuleUR>
+        <DbID>2536490344</DbID>
+        <InsertTime>2022-02-10 22:59:34.540</InsertTime>
+        <LastUpdate>2022-02-10 22:59:34.540</LastUpdate>
+        <CollectionMetaData>
+            <ShortName>MOD14A1</ShortName>
+            <VersionID>61</VersionID>
+        </CollectionMetaData>
+        <DataFiles>
+            <DataFileContainer>
+                <DistributedFileName>MOD14A1.A2022033.h11v05.061.2022041234759.hdf</DistributedFileName>
+                <FileSize>903308</FileSize>
+                <ChecksumType>CKSUM</ChecksumType>
+                <Checksum>3099500408</Checksum>
+                <ChecksumOrigin>DPLIngst</ChecksumOrigin>
+            </DataFileContainer>
+        </DataFiles>
+        <ECSDataGranule>
+            <SizeMBECSDataGranule>0.861462</SizeMBECSDataGranule>
+            <ReprocessingPlanned>further update is anticipated</ReprocessingPlanned>
+            <ReprocessingActual>reprocessed</ReprocessingActual>
+            <LocalGranuleID>MOD14A1.A2022033.h11v05.061.2022041234759.hdf</LocalGranuleID>
+            <DayNightFlag>Both</DayNightFlag>
+            <ProductionDateTime>2022-02-11 04:47:59.000</ProductionDateTime>
+            <LocalVersionID>5.1.2</LocalVersionID>
+        </ECSDataGranule>
+        <PGEVersionClass>
+            <PGEVersion>6.1.2</PGEVersion>
+        </PGEVersionClass>
+        <RangeDateTime>
+            <RangeEndingTime>23:59:59.000000</RangeEndingTime>
+            <RangeEndingDate>2022-02-09</RangeEndingDate>
+            <RangeBeginningTime>00:00:00.000000</RangeBeginningTime>
+            <RangeBeginningDate>2022-02-02</RangeBeginningDate>
+        </RangeDateTime>
+        <SpatialDomainContainer>
+            <HorizontalSpatialDomainContainer>
+                <GPolygon>
+                    <Boundary>
+                        <Point>
+                            <PointLongitude>-80.7657805985677</PointLongitude>
+                            <PointLatitude>29.8459315745197</PointLatitude>
+                        </Point>
+                        <Point>
+                            <PointLongitude>-91.3785102402463</PointLongitude>
+                            <PointLatitude>39.9999999964079</PointLatitude>
+                        </Point>
+                        <Point>
+                            <PointLongitude>-78.110571576758</PointLongitude>
+                            <PointLatitude>40.0539543997624</PointLatitude>
+                        </Point>
+                        <Point>
+                            <PointLongitude>-69.0368143977928</PointLongitude>
+                            <PointLatitude>29.8919942789078</PointLatitude>
+                        </Point>
+                    </Boundary>
+                </GPolygon>
+            </HorizontalSpatialDomainContainer>
+        </SpatialDomainContainer>
+        <MeasuredParameter>
+            <MeasuredParameterContainer>
+                <ParameterName>FireMask, QA, MaxFRP, sample</ParameterName>
+                <QAStats>
+                    <QAPercentMissingData>0</QAPercentMissingData>
+                    <QAPercentOutofBoundsData>0</QAPercentOutofBoundsData>
+                    <QAPercentInterpolatedData>0</QAPercentInterpolatedData>
+                </QAStats>
+                <QAFlags>
+                    <AutomaticQualityFlag>Passed</AutomaticQualityFlag>
+                    <AutomaticQualityFlagExplanation>No automatic quality assessment is performed in the PGE</AutomaticQualityFlagExplanation>
+                    <OperationalQualityFlag>Passed</OperationalQualityFlag>
+                    <OperationalQualityFlagExplanation>Passed</OperationalQualityFlagExplanation>
+                    <ScienceQualityFlag>Not Investigated</ScienceQualityFlag>
+                    <ScienceQualityFlagExplanation>See http://landweb.nascom.nasa.gov/cgi-bin/QA_WWW/qaFlagPage.cgi?sat=terra for the product Science Quality status.</ScienceQualityFlagExplanation>
+                </QAFlags>
+            </MeasuredParameterContainer>
+        </MeasuredParameter>
+        <Platform>
+            <PlatformShortName>Terra</PlatformShortName>
+            <Instrument>
+                <InstrumentShortName>MODIS</InstrumentShortName>
+                <Sensor>
+                    <SensorShortName>MODIS</SensorShortName>
+                </Sensor>
+            </Instrument>
+        </Platform>
+        <PSAs>
+            <PSA>
+                <PSAName>QAPERCENTGOODQUALITY</PSAName>
+                <PSAValue>51</PSAValue>
+            </PSA>
+            <PSA>
+                <PSAName>QAPERCENTOTHERQUALITY</PSAName>
+                <PSAValue>49</PSAValue>
+            </PSA>
+            <PSA>
+                <PSAName>HORIZONTALTILENUMBER</PSAName>
+                <PSAValue>11</PSAValue>
+            </PSA>
+            <PSA>
+                <PSAName>VERTICALTILENUMBER</PSAName>
+                <PSAValue>05</PSAValue>
+            </PSA>
+            <PSA>
+                <PSAName>TileID</PSAName>
+                <PSAValue>51011005</PSAValue>
+            </PSA>
+            <PSA>
+                <PSAName>identifier_product_doi</PSAName>
+                <PSAValue>10.5067/MODIS/MOD14A1.061</PSAValue>
+            </PSA>
+            <PSA>
+                <PSAName>identifier_product_doi_authority</PSAName>
+                <PSAValue>http://dx.doi.org</PSAValue>
+            </PSA>
+        </PSAs>
+        <InputGranule>
+            <InputPointer>/MODAPSops8/archive/f7034/running/AM1M_C61_L10mc/221984071/MOD14GD.A2022033.h11v05.061.2022035075430.hdf</InputPointer>
+            <InputPointer>/MODAPSops8/archive/f7034/running/AM1M_C61_L10mc/221984071/MOD14GD.A2022034.h11v05.061.2022036042347.hdf</InputPointer>
+            <InputPointer>/MODAPSops8/archive/f7034/running/AM1M_C61_L10mc/221984071/MOD14GD.A2022035.h11v05.061.2022037061812.hdf</InputPointer>
+            <InputPointer>/MODAPSops8/archive/f7034/running/AM1M_C61_L10mc/221984071/MOD14GD.A2022036.h11v05.061.2022039025354.hdf</InputPointer>
+            <InputPointer>/MODAPSops8/archive/f7034/running/AM1M_C61_L10mc/221984071/MOD14GD.A2022037.h11v05.061.2022039083810.hdf</InputPointer>
+            <InputPointer>/MODAPSops8/archive/f7034/running/AM1M_C61_L10mc/221984071/MOD14GD.A2022038.h11v05.061.2022040035012.hdf</InputPointer>
+            <InputPointer>/MODAPSops8/archive/f7034/running/AM1M_C61_L10mc/221984071/MOD14GD.A2022039.h11v05.061.2022041040848.hdf</InputPointer>
+            <InputPointer>/MODAPSops8/archive/f7034/running/AM1M_C61_L10mc/221984071/MOD14GD.A2022040.h11v05.061.2022042035703.hdf</InputPointer>
+            <InputPointer>/MODAPSops8/archive/f7034/running/AM1M_C61_L10mc/221984071/MOD14GN.A2022033.h11v05.061.2022034233933.hdf</InputPointer>
+            <InputPointer>/MODAPSops8/archive/f7034/running/AM1M_C61_L10mc/221984071/MOD14GN.A2022034.h11v05.061.2022035123409.hdf</InputPointer>
+            <InputPointer>/MODAPSops8/archive/f7034/running/AM1M_C61_L10mc/221984071/MOD14GN.A2022035.h11v05.061.2022036094416.hdf</InputPointer>
+            <InputPointer>/MODAPSops8/archive/f7034/running/AM1M_C61_L10mc/221984071/MOD14GN.A2022036.h11v05.061.2022037153814.hdf</InputPointer>
+            <InputPointer>/MODAPSops8/archive/f7034/running/AM1M_C61_L10mc/221984071/MOD14GN.A2022037.h11v05.061.2022039045325.hdf</InputPointer>
+            <InputPointer>/MODAPSops8/archive/f7034/running/AM1M_C61_L10mc/221984071/MOD14GN.A2022038.h11v05.061.2022039091512.hdf</InputPointer>
+            <InputPointer>/MODAPSops8/archive/f7034/running/AM1M_C61_L10mc/221984071/MOD14GN.A2022039.h11v05.061.2022040082827.hdf</InputPointer>
+            <InputPointer>/MODAPSops8/archive/f7034/running/AM1M_C61_L10mc/221984071/MOD14GN.A2022040.h11v05.061.2022041082824.hdf</InputPointer>
+        </InputGranule>
+        <BrowseProduct>
+            <BrowseGranuleId>UR:10:DsShESDTUR:UR:15:DsShSciServerUR:13:[EDC:DSSDSRV]:24:BR:Browse.001:2536490383</BrowseGranuleId>
+        </BrowseProduct>
+    </GranuleURMetaData>
+</GranuleMetaDataFile>
+
+

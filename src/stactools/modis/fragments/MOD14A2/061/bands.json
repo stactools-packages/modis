@@ -1,0 +1,10 @@
+[
+    {
+        "name": "FireMask",
+        "description": "Confidence of fire"
+    },
+    {
+        "name": "QA",
+        "description": "Pixel quality indicators"
+    }
+]

@@ -1,0 +1,32 @@
+{
+    "Fpar_500m": {
+        "data_type": "uint8",
+        "unit": "Percent",
+        "scale": 0.01
+    },
+    "Lai_500m": {
+        "data_type": "uint8",
+        "unit": "m²/m²",
+        "scale": 0.1
+    },
+    "FparLai_QC": {
+        "data_type": "uint8",
+        "unit": "Class Flag",
+        "scale": null
+    },
+    "FparExtra_QC": {
+        "data_type": "uint8",
+        "unit": "Class Flag",
+        "scale": null
+    },
+    "FparStdDev_500m": {
+        "data_type": "uint8",
+        "unit": "Percent",
+        "scale": 0.01
+    },
+    "LaiStdDev_500m": {
+        "data_type": "uint8",
+        "unit": "m²/m²",
+        "scale": 0.1
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "links": [
+        {
+            "rel": "help",
+            "href": "https://lpdaac.usgs.gov/documents/1005/MOD14_User_Guide_V61.pdf",
+            "title": "User Guide"
+        },
+        {
+            "rel": "describedby",
+            "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MYD14A1",
+            "title": "Data File"
+        }
+    ],
+    "title": "MODIS/Aqua Thermal Anomalies/Fire Daily L3 Global 1 km SIN Grid",
+    "description": "The Aqua Moderate Resolution Imaging Spectroradiometer (MODIS) Thermal Anomalies and Fire Daily (MYD14A1) Version 6.1 data are generated every eight days at 1 kilometer (km) spatial resolution as a Level 3 product. MYD14A1 contains eight consecutive days of fire data conveniently packaged into a single file. The Science Dataset (SDS) layers include the fire mask, pixel quality indicators, maximum fire-radiative-power (MaxFRP), and the position of the fire pixel within the scan. Each layer consists of daily per pixel information for each of the eight days of data acquisition.",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180.0,
+                    180.0,
+                    -90.0,
+                    90.0
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2002-07-04T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "providers": [
+        {
+            "name": "NASA LP DAAC at the USGS EROS Center",
+            "roles": [
+                "producer",
+                "licensor"
+            ],
+            "url": "https://doi.org/10.5067/MODIS/MYD14A1.061"
+        }
+    ]
+}

@@ -1,0 +1,121 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MYD17A2H.A2022025.h22v08.061.2022035120601",
+  "properties": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": "aqua",
+    "start_datetime": "2022-01-25T00:00:00Z",
+    "end_datetime": "2022-02-01T23:59:59Z",
+    "created": "2022-02-04T12:06:01Z",
+    "updated": "2022-02-04T06:17:56.444000Z",
+    "datetime": "2022-01-28T23:59:59.500000Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          39.8503980445014,
+          6.59891525935623e-05
+        ],
+        [
+          40.4600826457784,
+          10.0038388277022
+        ],
+        [
+          50.7804337536263,
+          9.99985600972855
+        ],
+        [
+          50.0128817639264,
+          -0.0043942224508535
+        ],
+        [
+          39.8503980445014,
+          6.59891525935623e-05
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Aqua Gross Primary Productivity 8-Day L4 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Aqua Gross Primary Productivity 8-Day L4 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Aqua Gross Primary Productivity 8-Day L4 Global 500 m SIN Grid"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../MYD17A2H.A2022025.h22v08.061.2022035120601.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf data",
+      "eo:bands": [
+        {
+          "name": "Gpp_500m",
+          "description": "Gross Primary Productivity"
+        },
+        {
+          "name": "PsnNet_500m",
+          "description": "Net Photosynthesis"
+        },
+        {
+          "name": "Psn_QC_500m",
+          "description": "Quality control indicators"
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "unit": "kg C/m\u00b2",
+          "scale": 0.0001
+        },
+        {
+          "data_type": "int16",
+          "unit": "kg C/m\u00b2",
+          "scale": 0.0001
+        },
+        {
+          "data_type": "uint8"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../MYD17A2H.A2022025.h22v08.061.2022035120601.hdf.xml",
+      "type": "application/xml",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    39.8503980445014,
+    -0.0043942224508535,
+    50.7804337536263,
+    10.0038388277022
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
+  ],
+  "collection": "modis-MYD17A2H-061"
+}

@@ -1,0 +1,41 @@
+{
+    "links": [
+        {
+            "rel": "describedby",
+            "href": "https://doi.org/10.5067/MODIS/MYD10A2.061",
+            "title": " MODIS/Aqua Snow Cover 8-Day L3 Global 500m SIN Grid, Version 61. Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center."
+        }
+    ],
+    "title": "MODIS/Aqua Snow Cover Daily L3 Global 500m SIN Grid",
+    "description": "This global Level-3 (L3) data set provides a daily composite of snow cover and albedo derived from the 'MODIS/Aqua Snow Cover 5-Min L2 Swath 500m' data set (DOI:10.5067/MODIS/MYD10_L2.061). Each data granule is a 10°x10° tile projected to a 500 m sinusoidal grid.",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180.0,
+                    180.0,
+                    -90.0,
+                    90.0
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2002-07-02T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "providers": [
+        {
+            "name": "NASA NSIDC DAAC",
+            "roles": [
+                "producer",
+                "licensor"
+            ],
+            "url": "https://doi.org/10.5067/MODIS/MYD10A2.061"
+        }
+    ]
+}

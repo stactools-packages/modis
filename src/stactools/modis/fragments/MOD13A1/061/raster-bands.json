@@ -1,0 +1,62 @@
+{
+    "500m_16_days_NDVI": {
+        "data_type": "int16",
+        "unit": "NDVI",
+        "scale": 0.0001
+    },
+    "500m_16_days_EVI": {
+        "data_type": "int16",
+        "unit": "EVI",
+        "scale": 0.0001
+    },
+    "500m_16_days_VI_Quality": {
+        "data_type": "uint16",
+        "unit": "Bit Field",
+        "scale": null
+    },
+    "500m_16_days_red_reflectance": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    },
+    "500m_16_days_NIR_reflectance": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    },
+    "500m_16_days_blue_reflectance": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    },
+    "500m_16_days_MIR_reflectance": {
+        "data_type": "int16",
+        "unit": null,
+        "scale": 0.0001
+    },
+    "500m_16_days_view_zenith_angle": {
+        "data_type": "int16",
+        "unit": "Degree",
+        "scale": 0.01
+    },
+    "500m_16_days_sun_zenith_angle": {
+        "data_type": "int16",
+        "unit": "Degree",
+        "scale": 0.01
+    },
+    "500m_16_days_relative_azimuth_angle": {
+        "data_type": "int16",
+        "unit": "Degree",
+        "scale": 0.01
+    },
+    "500m_16_days_composite_day_of_the_year": {
+        "data_type": "int16",
+        "unit": "Julian Day",
+        "scale": null
+    },
+    "500m_16_days_pixel_reliability": {
+        "data_type": "int8",
+        "unit": "Rank",
+        "scale": null
+    }
+}

@@ -1,0 +1,194 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MYD11A1.A2022039.h21v07.061.2022040192419",
+  "properties": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": "aqua",
+    "start_datetime": "2022-02-08T00:00:00Z",
+    "end_datetime": "2022-02-08T23:59:59Z",
+    "created": "2022-02-09T19:24:19Z",
+    "updated": "2022-02-09T13:45:39.603000Z",
+    "datetime": "2022-02-08T11:59:59.500000Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          31.9208918380172,
+          19.9958333333333
+        ],
+        [
+          42.5626513388045,
+          19.9958333333333
+        ],
+        [
+          40.613870048666,
+          10.0041666666667
+        ],
+        [
+          30.4593600232477,
+          10.0041666666667
+        ],
+        [
+          31.9208918380172,
+          19.9958333333333
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Aqua Land Surface Temperature/Emissivity Daily L3 Global 1 km SIN Grid"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Aqua Land Surface Temperature/Emissivity Daily L3 Global 1 km SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Aqua Land Surface Temperature/Emissivity Daily L3 Global 1 km SIN Grid"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../MYD11A1.A2022039.h21v07.061.2022040192419.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf data",
+      "eo:bands": [
+        {
+          "name": "LST_Day_1km",
+          "description": "Daily daytime 1km grid Land-surface Temperature"
+        },
+        {
+          "name": "QC_Day",
+          "description": "Quality control for daytime LST and emissivity"
+        },
+        {
+          "name": "Day_view_time",
+          "description": "(local solar) Time of daytime Land-surface Temperature observation"
+        },
+        {
+          "name": "Day_view_angl",
+          "description": "View zenith angle of daytime Landsurface Temperature"
+        },
+        {
+          "name": "LST_Night_1km",
+          "description": "Daily nighttime 1km grid Land-surface Temperature"
+        },
+        {
+          "name": "QC_Night",
+          "description": "Quality control for nighttime LST and emissivity"
+        },
+        {
+          "name": "Night_view_time",
+          "description": "(local solar) Time of nighttime Landsurface Temperature observation"
+        },
+        {
+          "name": "Night_view_angl",
+          "description": "View zenith angle of nighttime Landsurface Temperature"
+        },
+        {
+          "name": "Emis_31",
+          "description": "Band 31 emissivity"
+        },
+        {
+          "name": "Emis_32",
+          "description": "Band 32 emissivity"
+        },
+        {
+          "name": "Clear_day_cov",
+          "description": "Day clear-sky coverage"
+        },
+        {
+          "name": "Clear_night_cov",
+          "description": "Night clear-sky coverage"
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "unit": "Kelvin",
+          "scale": 0.02
+        },
+        {
+          "data_type": "uint8"
+        },
+        {
+          "data_type": "uint8",
+          "unit": "Hours",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint8",
+          "unit": "Degree"
+        },
+        {
+          "data_type": "uint16",
+          "unit": "Kelvin",
+          "scale": 0.02
+        },
+        {
+          "data_type": "uint8"
+        },
+        {
+          "data_type": "uint8",
+          "unit": "Hours",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint8",
+          "unit": "Degree"
+        },
+        {
+          "data_type": "uint8",
+          "scale": 0.002
+        },
+        {
+          "data_type": "uint8",
+          "scale": 0.002
+        },
+        {
+          "data_type": "uint16",
+          "scale": 0.0005
+        },
+        {
+          "data_type": "uint16",
+          "scale": 0.0005
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../MYD11A1.A2022039.h21v07.061.2022040192419.hdf.xml",
+      "type": "application/xml",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    30.4593600232477,
+    10.0041666666667,
+    42.5626513388045,
+    19.9958333333333
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
+  ],
+  "collection": "modis-MYD11A1-061"
+}

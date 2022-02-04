@@ -1,0 +1,140 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD16A3GF.A2021001.h11v02.061.2022024075208",
+  "properties": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": "terra",
+    "start_datetime": "2021-01-01T00:00:00Z",
+    "end_datetime": "2021-12-31T23:59:59Z",
+    "created": "2022-01-24T12:53:25Z",
+    "updated": "2022-01-24T06:56:49.574000Z",
+    "datetime": "2021-07-02T11:59:59.500000Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -161.99981886055,
+          55.5344815313793
+        ],
+        [
+          176.211092064359,
+          68.4670945567165
+        ],
+        [
+          -109.906882828253,
+          75.55535641397
+        ],
+        [
+          -120.101822308431,
+          59.6807024294448
+        ],
+        [
+          -161.99981886055,
+          55.5344815313793
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Net Evapotranspiration Gap-Filled Yearly L4 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Net Evapotranspiration Gap-Filled Yearly L4 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Net Evapotranspiration Gap-Filled Yearly L4 Global 500 m SIN Grid"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../MOD16A3GF.A2021001.h11v02.061.2022024075208.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf data",
+      "eo:bands": [
+        {
+          "name": "ET_500m",
+          "description": "Total of Evapotranspiration"
+        },
+        {
+          "name": "LE_500m",
+          "description": "Average of Latent Heat Flux"
+        },
+        {
+          "name": "PET_500m",
+          "description": "Total Potential Evapotranspiration"
+        },
+        {
+          "name": "PLE_500m",
+          "description": "Average of Potential Latent Heat Flux"
+        },
+        {
+          "name": "ET_QC_500m",
+          "description": "Evapotranspiration Quality Assessment"
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "unit": "kg/m\u00b2/year",
+          "scale": 0.1
+        },
+        {
+          "data_type": "int16",
+          "unit": "J/m\u00b2/day",
+          "scale": 10000
+        },
+        {
+          "data_type": "uint16",
+          "unit": "kg/m\u00b2/year",
+          "scale": 0.1
+        },
+        {
+          "data_type": "int16",
+          "unit": "J/m\u00b2/day",
+          "scale": 10000
+        },
+        {
+          "data_type": "uint8",
+          "unit": "Percent"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../MOD16A3GF.A2021001.h11v02.061.2022024075208.hdf.xml",
+      "type": "application/xml",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -161.99981886055,
+    55.5344815313793,
+    176.211092064359,
+    75.55535641397
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
+  ],
+  "collection": "modis-MOD16A3GF-061"
+}
