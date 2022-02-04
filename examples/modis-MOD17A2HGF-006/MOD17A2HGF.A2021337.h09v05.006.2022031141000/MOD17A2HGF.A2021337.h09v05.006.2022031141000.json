@@ -1,0 +1,127 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD17A2HGF.A2021337.h09v05.006.2022031141000",
+  "properties": {
+    "Non-Terrestrial_fill_value_class_32761": "Land cover assigned as \"unclassified\" or not able to determine",
+    "Non-Terrestrial_fill_value_class_32762": "Land cover assigned as urban/built-up",
+    "Non-Terrestrial_fill_value_class_32763": "Land cover assigned as \"permanent\" wetlands/inundated marshland",
+    "Non-Terrestrial_fill_value_class_32764": "Land cover assigned as perennial snow, ice",
+    "Non-Terrestrial_fill_value_class_32765": "Land cover assigned as barren, sparse vegetation (rock, tundra, desert)",
+    "Non-Terrestrial_fill_value_class_32766": "Land cover assigned as perennial salt or water bodies",
+    "Non-Terrestrial_fill_value_class_32767": "Fill",
+    "MODLAND_QC_bits_0": "Good Quality - main algorithm with or without saturation",
+    "MODLAND_QC_bits_1": "Other Quality - back-up algorithm or fill values",
+    "SENSOR_0": "Terra",
+    "SENSOR_1": "Aqua",
+    "DEADDETECTOR_0": "Detectors apparently fine for up to 50% of channels 1,2",
+    "DEADDETECTOR_1": "Dead detectors caused >50% adjacent detector retrieval",
+    "CLOUDSTATE_00": "0 Significant clouds NOT present (clear)",
+    "CLOUDSTATE_01": "1 Significant clouds WERE present",
+    "CLOUDSTATE_10": "2 Mixed cloud present on pixel",
+    "CLOUDSTATE_11": "3 Cloud state not defined,assumed clear",
+    "SCF_QC_000": "0, Main (RT) method used, best result possible (no saturation)",
+    "SCF_QC_001": "1, Main (RT) method used with saturation. Good,very usable",
+    "SCF_QC_010": "2, Main (RT) method failed due to bad geometry, empirical algorithm used",
+    "SCF_QC_011": "3, Main (RT) method failed due to problems other than geometry, empirical algorithm used",
+    "SCF_QC_100": "4, Pixel not produced at all, value coudn't be retrieved (possible reasons: badL1B data, unusable MOD09GA data)",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "terra",
+    "start_datetime": "2021-12-03T00:00:00Z",
+    "end_datetime": "2021-12-10T23:59:59Z",
+    "created": "2022-01-31T14:10:00Z",
+    "updated": "2022-01-31T08:16:07.542000Z",
+    "datetime": "2021-12-06T23:59:59.500000Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -103.835851753394,
+          29.8360532722546
+        ],
+        [
+          -117.486656023174,
+          39.9999999964079
+        ],
+        [
+          -104.256722414513,
+          40.0742066197196
+        ],
+        [
+          -92.131858571552,
+          29.9009502428382
+        ],
+        [
+          -103.835851753394,
+          29.8360532722546
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "tests/data-files/MOD17A2HGF.A2021337.h09v05.006.2022031141000.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf data",
+      "eo:bands": [
+        {
+          "name": "Gpp_500m",
+          "description": "Gross Primary Productivity"
+        },
+        {
+          "name": "PsnNet_500m",
+          "description": "Net Photosynthesis"
+        },
+        {
+          "name": "Psn_QC_500m",
+          "description": "Quality control indicators"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "tests/data-files/MOD17A2HGF.A2021337.h09v05.006.2022031141000.hdf.xml",
+      "type": "application/xml",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -117.486656023174,
+    29.8360532722546,
+    -92.131858571552,
+    40.0742066197196
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+  ],
+  "collection": "modis-MOD17A2HGF-006"
+}

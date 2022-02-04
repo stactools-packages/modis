@@ -1,0 +1,132 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD15A2H.A2022017.h10v05.006.2022026205820",
+  "properties": {
+    "LAI_FPAR_fill_value_class_249": "Land cover assigned as \"unclassified\" or not able to determine",
+    "LAI_FPAR_fill_value_class_250": "Land cover assigned as urban/built-up",
+    "LAI_FPAR_fill_value_class_251": "Land cover assigned as \"permanent\" wetlands/inundated marshland",
+    "LAI_FPAR_fill_value_class_252": "Land cover assigned as perennial snow, ice",
+    "LAI_FPAR_fill_value_class_253": "Land cover assigned as barren, sparse vegetation (rock, tundra, desert)",
+    "LAI_FPAR_fill_value_class_254": "Land cover assigned as perennial salt or inland fresh water",
+    "LAI_FPAR_fill_value_class_255": "Fill",
+    "STD_LAI_STD_FPAR_fill_value_class_248": "No standard deviation available, pixel produced using backup method",
+    "STD_LAI_STD_FPAR_fill_value_class_249": "Land cover assigned as \"unclassified\" or not able to determine",
+    "STD_LAI_STD_FPAR_fill_value_class_250": "Land cover assigned as urban/built-up",
+    "STD_LAI_STD_FPAR_fill_value_class_251": "Land cover assigned as \"permanent\" wetlands / inundated marshland",
+    "STD_LAI_STD_FPAR_fill_value_class_252": "Land cover assigned as perennial snow, ice",
+    "STD_LAI_STD_FPAR_fill_value_class_253": "Land cover assigned as barren, sparse vegetation (rock, tundra, desert)",
+    "STD_LAI_STD_FPAR_fill_value_class_254": "Land cover assigned as perennial salt or inland fresh water",
+    "STD_LAI_STD_FPAR_fill_value_class_255": "Fill",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "terra",
+    "start_datetime": "2022-01-17T00:00:00Z",
+    "end_datetime": "2022-01-24T23:59:59Z",
+    "created": "2022-01-26T20:58:20Z",
+    "updated": "2022-01-26T23:20:26.941000Z",
+    "datetime": "2022-01-20T23:59:59.500000Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -92.3012472028587,
+          29.8410878424102
+        ],
+        [
+          -104.43258313171,
+          39.9999999964079
+        ],
+        [
+          -91.1740859476425,
+          40.0637836759185
+        ],
+        [
+          -80.5775666708921,
+          29.8961896763571
+        ],
+        [
+          -92.3012472028587,
+          29.8410878424102
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "tests/data-files/MOD15A2H.A2022017.h10v05.006.2022026205820.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf data",
+      "eo:bands": [
+        {
+          "name": "Fpar_500m",
+          "description": "Fraction of Photosynthetically Active Radiation"
+        },
+        {
+          "name": "Lai_500m",
+          "description": "Leaf Area Index"
+        },
+        {
+          "name": "FparLai_QC\t",
+          "description": "Quality for LAI and FPAR"
+        },
+        {
+          "name": "FparExtra_QC",
+          "description": "Extra detail Quality for LAI and FPAR"
+        },
+        {
+          "name": "FparStdDev_500m",
+          "description": "Percent"
+        },
+        {
+          "name": "LaiStdDev_500m",
+          "description": "Standard deviation of LAI"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "tests/data-files/MOD15A2H.A2022017.h10v05.006.2022026205820.hdf.xml",
+      "type": "application/xml",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -104.43258313171,
+    29.8410878424102,
+    -80.5775666708921,
+    40.0637836759185
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+  ],
+  "collection": "modis-MOD15A2H-006"
+}
