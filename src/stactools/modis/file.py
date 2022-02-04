@@ -4,34 +4,34 @@ import os.path
 class File:
     """A MODIS file."""
 
-    path: str
-    hdf_path: str
-    xml_path: str
+    href: str
+    hdf_href: str
+    xml_href: str
     product: str
     version: str
     id: str
 
-    def __init__(self, path: str):
-        """Creates a new MODIS file from a path.
+    def __init__(self, href: str):
+        """Creates a new MODIS file from an href.
 
         Args:
-            path (str): The .hdf or .hdf.xml path to MODIS data
+            href (str): The .hdf or .hdf.xml href to MODIS data
         """
-        base, extension = os.path.splitext(path)
+        base, extension = os.path.splitext(href)
         if extension not in [".hdf", ".xml"]:
-            raise ValueError(f"Invalid MODIS path: {path}")
+            raise ValueError(f"Invalid MODIS href: {href}")
         elif extension == ".xml":
             if os.path.splitext(base)[1] != ".hdf":
                 raise ValueError(
-                    f"Invalid MODIS metadata path (no .hdf.xml): {path}")
+                    f"Invalid MODIS metadata href (no .hdf.xml): {href}")
             else:
-                self.xml_path = path
-                self.hdf_path = base
+                self.xml_href = href
+                self.hdf_href = base
         else:
-            self.xml_path = f"{path}.xml"
-            self.hdf_path = path
-        self.path = path
-        file_name = os.path.basename(self.hdf_path)
+            self.xml_href = f"{href}.xml"
+            self.hdf_href = href
+        self.href = href
+        file_name = os.path.basename(self.hdf_href)
         parts = file_name.split(".")
         if len(parts) < 4:
             raise ValueError(

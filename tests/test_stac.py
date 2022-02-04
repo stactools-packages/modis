@@ -23,7 +23,7 @@ for file_name in os.listdir(directory):
                                    file.version, "collection.json")
     item_path = os.path.join(directory, "expected", file.product, file.version,
                              file.id, f"{file.id}.json")
-    args.append((file.path, collection_path, item_path))
+    args.append((file.href, collection_path, item_path))
     ids.append(file.product)
 
 

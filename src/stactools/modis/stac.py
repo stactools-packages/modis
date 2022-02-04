@@ -56,7 +56,7 @@ def create_item(infile: str) -> Item:
         pystac.Item: A STAC Item representing this MODIS image.
     """
     file = File(infile)
-    metadata = Metadata(file.xml_path)
+    metadata = Metadata(file.xml_href)
     item = pystac.Item(
         id=metadata.id,
         geometry=metadata.geometry,
@@ -71,13 +71,13 @@ def create_item(infile: str) -> Item:
     item.common_metadata.updated = metadata.updated
     item.add_asset(
         HDF_ASSET,
-        pystac.Asset(href=file.hdf_path,
+        pystac.Asset(href=file.hdf_href,
                      media_type=MediaType.HDF,
                      roles=["data"],
                      title="hdf data"))
     item.add_asset(
         METADATA_ASSET,
-        pystac.Asset(href=file.xml_path,
+        pystac.Asset(href=file.xml_href,
                      media_type=MediaType.XML,
                      roles=["metadata"],
                      title="FGDC Metdata"))
