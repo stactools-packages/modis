@@ -76,3 +76,18 @@ def test_metadata_files(metadata_path: str, collection_path: str,
 def test_collection_id() -> None:
     assert stactools.modis.stac.collection_id(
         "product", "version") == "modis-product-version"
+
+
+def test_read_href_modifier() -> None:
+    href = test_data.get_path(
+        "data-files/MCD12Q1.A2001001.h00v08.006.2018142182903.hdf.xml")
+
+    did_it = False
+
+    def read_href_modifier(href: str) -> str:
+        nonlocal did_it
+        did_it = True
+        return href
+
+    _ = stactools.modis.stac.create_item(href, read_href_modifier)
+    assert did_it

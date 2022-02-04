@@ -1,7 +1,10 @@
+from typing import Optional
+
 import pystac
 from pystac import Collection, Item, MediaType
 from pystac.extensions.eo import Band, EOExtension
 from pystac.extensions.item_assets import AssetDefinition, ItemAssetsExtension
+from stactools.core.io import ReadHrefModifier
 
 import stactools.modis.fragment
 from stactools.modis.constants import HDF_ASSET, METADATA_ASSET
@@ -46,17 +49,20 @@ def create_collection(product: str, version: str) -> Collection:
     return collection
 
 
-def create_item(infile: str) -> Item:
+def create_item(href: str,
+                read_href_modifier: Optional[ReadHrefModifier] = None) -> Item:
     """Creates a STAC Item from MODIS data.
 
     Args:
-        infile (str): The href to an HDF file or its metadata.
+        href (str): The href to an HDF file or its metadata.
+        read_href_modifier (Callable[[str], str]): An optional function to
+            modify the href (e.g. to add a token to a url)
 
     Returns:
         pystac.Item: A STAC Item representing this MODIS image.
     """
-    file = File(infile)
-    metadata = Metadata(file.xml_href)
+    file = File(href)
+    metadata = Metadata(file.xml_href, read_href_modifier)
     item = pystac.Item(
         id=metadata.id,
         geometry=metadata.geometry,

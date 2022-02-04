@@ -8,6 +8,7 @@ from lxml import etree
 from shapely.geometry import Polygon
 
 from stactools.core.io.xml import XmlElement
+from stactools.core.io import ReadHrefModifier
 
 
 class MissingElement(Exception):
@@ -17,8 +18,16 @@ class MissingElement(Exception):
 class Metadata:
     """Structure to hold values fetched from a metadata XML file."""
 
-    def __init__(self, href: str):
-        """Reads fields from a metadata href."""
+    def __init__(self,
+                 href: str,
+                 read_href_modifier: Optional[ReadHrefModifier] = None):
+        """Reads fields from a metadata href.
+
+        Args:
+            href (str): The href of the xml metadata file
+            read_href_modifier (Optional[Callable[[str], str]]): Optional
+                function to modify the read href
+        """
 
         def missing_element(attribute: str) -> Callable[[str], Exception]:
 
@@ -29,7 +38,11 @@ class Metadata:
 
             return get_exception
 
-        with fsspec.open(href) as file:
+        if read_href_modifier:
+            read_href = read_href_modifier(href)
+        else:
+            read_href = href
+        with fsspec.open(read_href) as file:
             root = XmlElement(etree.parse(file, base_url=href).getroot())
 
         metadata = root.find_or_throw("GranuleURMetaData",
