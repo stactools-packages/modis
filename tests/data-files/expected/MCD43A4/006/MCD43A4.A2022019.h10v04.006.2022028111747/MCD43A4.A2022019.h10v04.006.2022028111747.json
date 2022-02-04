@@ -7,6 +7,8 @@
       "modis"
     ],
     "platform": "terra,aqua",
+    "start_datetime": "2022-01-11T00:00:00Z",
+    "end_datetime": "2022-01-11T23:59:59.999999Z",
     "created": "2022-01-28T11:20:24Z",
     "updated": "2022-01-28T05:33:06.715000Z",
     "datetime": "2022-01-11T12:00:00Z"
