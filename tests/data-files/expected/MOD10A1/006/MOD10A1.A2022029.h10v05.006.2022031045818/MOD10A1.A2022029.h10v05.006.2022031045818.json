@@ -15,11 +15,11 @@
     ],
     "description": "\n            This data set contains daily, gridded snow cover and albedo derived from\n             radiance data acquired by the Moderate Resolution Imaging Spectroradiometer\n             (MODIS) on board the Terra satellite. Snow cover is identified using the\n             Normalized Difference Snow Index (NDSI) and a series of screens designed\n             to alleviate errors and flag uncertain snow cover detections.\n            ",
     "instruments": [
-      "MODIS"
+      "modis"
     ],
-    "platform": "Terra",
+    "platform": "terra",
     "title": "MODIS/Terra Snow Cover Daily L3 Global 500m SIN Grid, Version 6",
-    "datetime": "2022-01-31T04:58:23Z"
+    "datetime": "2022-01-29T11:59:59.500000Z"
   },
   "geometry": {
     "type": "Polygon",
@@ -40,6 +40,10 @@
         [
           -80.5775666708921,
           29.8961896763571
+        ],
+        [
+          -92.3012472028587,
+          29.8410878424102
         ]
       ]
     ]

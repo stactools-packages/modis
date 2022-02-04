@@ -15,11 +15,11 @@
     ],
     "description": "\n            The Moderate Resolution Imaging Spectroradiometer (MODIS) MCD43A4\n             Version 6 Nadir Bidirectional Reflectance Distribution Function\n             (BRDF)-Adjusted Reflectance (NBAR) dataset is produced daily using\n             16 days of Terra and Aqua MODIS data at 500 meter (m) resolution.\n             The view angle effects are removed from the directional reflectances,\n             resulting in a stable and consistent NBAR product. Data are temporally\n             weighted to the ninth day which is reflected in the Julian date in the\n             file name.\n            ",
     "instruments": [
-      "MODIS"
+      "modis"
     ],
-    "platform": "Terra",
+    "platform": "terra",
     "title": "MCD43A4 v006 MODIS/Terra+Aqua Nadir BRDF-Adjusted Reflectance (NBAR) Daily L3 Global 500 m SIN Grid",
-    "datetime": "2022-01-28T11:20:24Z"
+    "datetime": "2022-01-11T12:00:00Z"
   },
   "geometry": {
     "type": "Polygon",
@@ -40,6 +40,10 @@
         [
           -91.1909609510465,
           39.8554224326714
+        ],
+        [
+          -104.52019611598,
+          39.7556817203217
         ]
       ]
     ]

@@ -31,11 +31,11 @@
     ],
     "description": "The MOD44B Version 6 Vegetation Continuous Fields\n(VCF) yearly product is a global representation of surface vegetation cover as\ngradations of three ground cover components: percent tree cover, percent non-tree\ncover, and percent non-vegetated (bare). VCF products provide a continuous,\nquantitative portrayal of land surface cover at 250 meter (m) pixel resolution,\nwith a sub-pixel depiction of percent cover in reference to the three ground cover\ncomponents. The sub-pixel mixture of ground cover estimates represents a revolutionary\napproach to the characterization of vegetative land cover that can be used to enhance\ninputs to environmental modeling and monitoring applications.\n\nThe MOD44B data product layers include percent tree cover, percent non-tree cover,\npercent non-vegetated, cloud cover, and quality indicators. The start date of the\nannual period for this product begins with day of year (DOY) 65 (March 5).",
     "instruments": [
-      "MODIS"
+      "modis"
     ],
-    "platform": "Terra",
+    "platform": "terra",
     "title": "MODIS/Terra Vegetation Continuous Fields Yearly L3 Global 250 m SIN Grid",
-    "datetime": "2021-06-04T15:56:36Z"
+    "datetime": "2020-03-05T00:00:00Z"
   },
   "geometry": {
     "type": "Polygon",
@@ -56,6 +56,10 @@
         [
           -104.235445821904,
           39.8623890159424
+        ],
+        [
+          -117.746445975456,
+          39.7342308150748
         ]
       ]
     ]

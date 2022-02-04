@@ -36,11 +36,11 @@
     ],
     "description": "The MOD16A3GF Version 6 Evapotranspiration/Latent Heat Flux (ET/LE) product is a year-end\ngap-filled yearly composite dataset produced at 500 meter (m) pixel resolution. The algorithm\nused for the MOD16 data product collection is based on the logic of the Penman-Monteith equation,\nwhich includes inputs of daily meteorological reanalysis data along with Moderate Resolution\nImaging Spectroradiometer (MODIS) remotely sensed data products such as vegetation property\ndynamics, albedo, and land cover.\n\nThe MOD16A3GF will be generated at the end of each year when the entire yearly 8-day MOD15A2H\nis available. Hence, the gap-filled MOD16A3GF is the improved MOD16, which has cleaned the\npoor-quality inputs from yearly Leaf Area Index and Fraction of Photosynthetically Active Radiation\n(LAI/FPAR) based on the Quality Control (QC) label for every pixel. If any LAI/FPAR pixel did not\nmeet the quality screening criteria, its value is determined through linear interpolation. However,\nusers cannot get MOD16A3GF in near-real time because it will be generated only at the end of a given\nyear.\n\nProvided in the MOD16A3GF product are layers for composited ET, LE, Potential ET (PET), and\nPotential LE (PLE) along with a quality control layer. Two low resolution browse images, ET\nand LE, are also available for each MOD16A3GF granule.\n\nThe pixel values for the two Evapotranspiration layers (ET and PET) are the sum for all days\nwithin the defined year, and the pixel values for the two Latent Heat layers (LE and PLE) are\nthe average of all days within the defined year.",
     "instruments": [
-      "MODIS"
+      "modis"
     ],
-    "platform": "Terra",
+    "platform": "terra",
     "title": "MODIS/Terra Net Evapotranspiration Gap-Filled Yearly L4 Global 500 m SIN Grid",
-    "datetime": "2022-01-11T23:41:47Z"
+    "datetime": "2020-01-01T11:59:59.500000Z"
   },
   "geometry": {
     "type": "Polygon",
@@ -61,6 +61,10 @@
         [
           -104.235445821904,
           39.8623890159424
+        ],
+        [
+          -117.746445975456,
+          39.7342308150748
         ]
       ]
     ]

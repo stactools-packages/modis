@@ -37,11 +37,11 @@
     ],
     "description": "The MOD17A2H Version 6 Gross Primary Productivity (GPP)\nproduct is a cumulative 8-day composite of\nvalues with 500 meter (m) pixel size based on the radiation use efficiency concept that can be\npotentially used as inputs to data models to calculate terrestrial energy, carbon, water cycle\nprocesses, and biogeochemistry of vegetation. The data product includes information about GPP\nand Net Photosynthesis (PSN). The PSN band values are the GPP less the Maintenance Respiration\n(MR). The data product also contains a PSN Quality Control (QC) layer. The quality layer\ncontains quality information for both the GPP and thePSN.",
     "instruments": [
-      "MODIS"
+      "modis"
     ],
-    "platform": "Terra",
+    "platform": "terra",
     "title": "MODIS/Terra Gross Primary Productivity 8-Day L4 Global 500 m SIN",
-    "datetime": "2022-01-26T22:24:24Z"
+    "datetime": "2022-01-17T11:59:59.500000Z"
   },
   "geometry": {
     "type": "Polygon",
@@ -62,6 +62,10 @@
         [
           -104.235445821904,
           39.8623890159424
+        ],
+        [
+          -117.746445975456,
+          39.7342308150748
         ]
       ]
     ]
