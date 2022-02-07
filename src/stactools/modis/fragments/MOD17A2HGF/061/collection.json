@@ -1,0 +1,46 @@
+{
+    "links": [
+        {
+            "rel": "help",
+            "href": "https://lpdaac.usgs.gov/documents/972/MOD17_User_Guide_V61.pdf",
+            "title": "User Guide"
+        },
+        {
+            "rel": "describedby",
+            "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/6/MOD17A2HGF",
+            "title": "Data File"
+        }
+    ],
+    "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid",
+    "description": "The MOD17A2HGF Version 6.1 Gross Primary Productivity (GPP) product is a cumulative 8-day composite of values with 500 meter (m) pixel size based on the radiation use efficiency concept that can be potentially used as inputs to data models to calculate terrestrial energy, carbon, water cycle processes, and biogeochemistry of vegetation. The Terra Moderate Resolution Imaging Spectroradiometer (MODIS) data product includes information about GPP and Net Photosynthesis (PSN). The PSN band values are the GPP less the Maintenance Respiration (MR). The data product also contains a PSN Quality Control (QC) layer. The quality layer contains quality information for both the GPP and the PSN. The MOD17A2HGF will be generated at the end of each year when the entire yearly 8-day MOD15A2H is available. Hence, the gap-filled MOD17A2HGF is the improved MOD17, which has cleaned the poor-quality inputs from 8-day Leaf Area Index and Fraction of Photosynthetically Active Radiation (FPAR/LAI) based on the Quality Control (QC) label for every pixel. If any LAI/FPAR pixel did not meet the quality screening criteria, its value is determined through linear interpolation. However, users cannot get MOD17A2HGF in near-real time because it will be generated only at the end of a given year.",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180.0,
+                    180.0,
+                    -90.0,
+                    90.0
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2000-02-18T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "providers": [
+        {
+            "name": "NASA LP DAAC at the USGS EROS Center",
+            "roles": [
+                "producer",
+                "licensor"
+            ],
+            "url": "https://doi.org/10.5067/MODIS/MOD17A2HGF.061"
+        }
+    ]
+}
