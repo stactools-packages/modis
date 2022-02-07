@@ -1,0 +1,28 @@
+{
+  "type": "Catalog",
+  "id": "modis-061",
+  "stac_version": "1.0.0",
+  "description": "MODIS STAC Catalog containg a subset of MODIS assets, version 061",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "child",
+      "href": "./modis-MOD17A2HGF-061/collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    }
+  ],
+  "stac_extensions": [],
+  "title": "MODIS, version 061"
+}
