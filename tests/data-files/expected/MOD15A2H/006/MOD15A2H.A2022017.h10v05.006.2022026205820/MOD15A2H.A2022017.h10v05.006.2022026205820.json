@@ -18,23 +18,15 @@
     "STD_LAI_STD_FPAR_fill_value_class_253": "Land cover assigned as barren, sparse vegetation (rock, tundra, desert)",
     "STD_LAI_STD_FPAR_fill_value_class_254": "Land cover assigned as perennial salt or inland fresh water",
     "STD_LAI_STD_FPAR_fill_value_class_255": "Fill",
-    "providers": [
-      {
-        "name": "NASA LP DAAC at the USGS EROS Center",
-        "roles": [
-          "producer",
-          "licensor"
-        ],
-        "url": "https://doi.org/10.5067/MODIS/MOD15A2H.006"
-      }
-    ],
-    "description": "The MOD15A2H Version 6 Moderate Resolution Imaging Spectroradiometer (MODIS) combined Leaf Area\nIndex (LAI) and Fraction of Photosynthetically Active Radiation (FPAR) product is an 8-day\ncomposite dataset with 500 meter (m) pixel size. The algorithm chooses the \u201cbest\u201d pixel available\nfrom all the acquisitions of the Terra sensor from within the 8-day period.\n\nLAI is defined as the one-sided green leaf area per unit ground area in broadleaf canopies and\nas one-half the total needle surface area per unit ground area in coniferous canopies. FPAR is\ndefined as the fraction of incident photosynthetically active radiation, 400-700 nanometers (nm),\nabsorbed by the green elements of a vegetation canopy.\n\nScience Datasets (SDSs) in the Level 4 (L4) MOD15A2H product include LAI, FPAR, two quality layers,\nand standard deviation for LAI and FPAR. Two low resolution browse images, LAI and FPAR, are also\navailable for each MOD15A2H granule.",
     "instruments": [
-      "MODIS"
+      "modis"
     ],
-    "platform": "Terra",
-    "title": "MODIS/Terra Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid",
-    "datetime": "2022-01-26T20:58:20Z"
+    "platform": "terra",
+    "start_datetime": "2022-01-17T00:00:00Z",
+    "end_datetime": "2022-01-24T23:59:59Z",
+    "created": "2022-01-26T20:58:20Z",
+    "updated": "2022-01-26T23:20:26.941000Z",
+    "datetime": "2022-01-20T23:59:59.500000Z"
   },
   "geometry": {
     "type": "Polygon",
@@ -55,6 +47,10 @@
         [
           -80.5775666708921,
           29.8961896763571
+        ],
+        [
+          -92.3012472028587,
+          29.8410878424102
         ]
       ]
     ]

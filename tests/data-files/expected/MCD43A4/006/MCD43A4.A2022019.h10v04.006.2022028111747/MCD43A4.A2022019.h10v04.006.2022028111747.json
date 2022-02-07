@@ -3,23 +3,15 @@
   "stac_version": "1.0.0",
   "id": "MCD43A4.A2022019.h10v04.006.2022028111747",
   "properties": {
-    "providers": [
-      {
-        "name": "NASA LP DAAC at the USGS EROS Center",
-        "roles": [
-          "producer",
-          "licensor"
-        ],
-        "url": "https://lpdaac.usgs.gov/"
-      }
-    ],
-    "description": "\n            The Moderate Resolution Imaging Spectroradiometer (MODIS) MCD43A4\n             Version 6 Nadir Bidirectional Reflectance Distribution Function\n             (BRDF)-Adjusted Reflectance (NBAR) dataset is produced daily using\n             16 days of Terra and Aqua MODIS data at 500 meter (m) resolution.\n             The view angle effects are removed from the directional reflectances,\n             resulting in a stable and consistent NBAR product. Data are temporally\n             weighted to the ninth day which is reflected in the Julian date in the\n             file name.\n            ",
     "instruments": [
-      "MODIS"
+      "modis"
     ],
-    "platform": "Terra",
-    "title": "MCD43A4 v006 MODIS/Terra+Aqua Nadir BRDF-Adjusted Reflectance (NBAR) Daily L3 Global 500 m SIN Grid",
-    "datetime": "2022-01-28T11:20:24Z"
+    "platform": "terra,aqua",
+    "start_datetime": "2022-01-11T00:00:00Z",
+    "end_datetime": "2022-01-26T23:59:59.999999Z",
+    "created": "2022-01-28T11:20:24Z",
+    "updated": "2022-01-28T05:33:06.715000Z",
+    "datetime": "2022-01-19T00:00:00Z"
   },
   "geometry": {
     "type": "Polygon",
@@ -40,6 +32,10 @@
         [
           -91.1909609510465,
           39.8554224326714
+        ],
+        [
+          -104.52019611598,
+          39.7556817203217
         ]
       ]
     ]

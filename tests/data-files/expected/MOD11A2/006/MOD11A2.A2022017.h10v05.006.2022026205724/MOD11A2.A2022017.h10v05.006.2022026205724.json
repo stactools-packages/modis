@@ -19,23 +19,15 @@
     "QC_LST_Error_flag_01": "average LST error <= 2K",
     "QC_LST_Error_flag_10": "average LST error <= 3K",
     "QC_LST_Error_flag_11": "average LST error > 3K",
-    "providers": [
-      {
-        "name": "NASA LP DAAC at the USGS EROS Center",
-        "roles": [
-          "producer",
-          "licensor"
-        ],
-        "url": "https://doi.org/10.5067/MODIS/MOD11A2.006"
-      }
-    ],
-    "description": "The MOD11A2 Version 6 product provides an average 8-day per-pixel\n                         Land Surface Temperature and Emissivity (LST&E) with a 1 kilometer (km)\n                         spatial resolution in a 1,200 by 1,200 km grid. Each pixel value in the\n                         MOD11A2 is a simple average of all the corresponding MOD11A1 LST pixels\n                         collected within that 8-day period. The 8-day compositing period was\n                         chosen because twice that period is the exact ground track repeat period\n                         of the Terra and Aqua platforms. Provided along with the daytime and\n                         nighttime surface temperature bands are associated quality control\n                         assessments, observation times, view zenith angles, and clear-sky\n                         coverages along with bands 31 and 32 emissivities from land\n                         cover types.",
     "instruments": [
-      "MODIS"
+      "modis"
     ],
-    "platform": "Terra",
-    "title": "MODIS/Terra Land Surface Temperature/Emissivity 8-Day L3 Global 1 km SIN Grid",
-    "datetime": "2022-01-26T20:57:24Z"
+    "platform": "terra",
+    "start_datetime": "2022-01-17T00:00:00Z",
+    "end_datetime": "2022-01-24T23:59:59Z",
+    "created": "2022-01-26T20:57:24Z",
+    "updated": "2022-01-26T23:32:16.338000Z",
+    "datetime": "2022-01-20T23:59:59.500000Z"
   },
   "geometry": {
     "type": "Polygon",
@@ -56,6 +48,10 @@
         [
           -92.388605818441,
           30.0041666666667
+        ],
+        [
+          -104.438013067114,
+          39.9958333333333
         ]
       ]
     ]

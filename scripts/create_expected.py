@@ -21,7 +21,7 @@ for file_name in os.listdir(data_files_directory):
         collection.set_self_href(collection_path)
 
         item_file_name = f"{file.id}.json"
-        item = stactools.modis.stac.create_item(file.path)
+        item = stactools.modis.stac.create_item(file.href)
         item.validate()
 
         collection.add_item(item)

@@ -23,7 +23,7 @@ for file_name in os.listdir(directory):
                                    file.version, "collection.json")
     item_path = os.path.join(directory, "expected", file.product, file.version,
                              file.id, f"{file.id}.json")
-    args.append((file.path, collection_path, item_path))
+    args.append((file.href, collection_path, item_path))
     ids.append(file.product)
 
 
@@ -52,12 +52,15 @@ def test_metadata_files(metadata_path: str, collection_path: str,
     with TemporaryDirectory() as temporary_directory:
         temporary_metadata_path = os.path.join(temporary_directory,
                                                os.path.basename(metadata_path))
+        temporary_file = File(temporary_metadata_path)
         expected_directory = os.path.join(temporary_directory, "expected",
                                           modis_file.product,
                                           modis_file.version)
         collection.set_self_href(
             os.path.join(expected_directory, "collection.json"))
-        shutil.copyfile(metadata_path, temporary_metadata_path)
+        shutil.copyfile(modis_file.xml_href, temporary_file.xml_href)
+        if os.path.exists(modis_file.hdf_href):
+            shutil.copyfile(modis_file.hdf_href, temporary_file.hdf_href)
         item = stactools.modis.stac.create_item(temporary_metadata_path)
         collection.add_item(item)
         collection.make_all_asset_hrefs_relative()
@@ -76,3 +79,18 @@ def test_metadata_files(metadata_path: str, collection_path: str,
 def test_collection_id() -> None:
     assert stactools.modis.stac.collection_id(
         "product", "version") == "modis-product-version"
+
+
+def test_read_href_modifier() -> None:
+    href = test_data.get_path(
+        "data-files/MCD12Q1.A2001001.h00v08.006.2018142182903.hdf.xml")
+
+    did_it = False
+
+    def read_href_modifier(href: str) -> str:
+        nonlocal did_it
+        did_it = True
+        return href
+
+    _ = stactools.modis.stac.create_item(href, read_href_modifier)
+    assert did_it

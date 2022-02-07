@@ -19,23 +19,15 @@
     "QA_bit_0_1_land_water_state_3": "Missing data",
     "QA_bit_2_night_day_0": "Night",
     "QA_bit_2_night_day_1": "Day",
-    "providers": [
-      {
-        "name": "NASA LP DAAC at the USGS EROS Center",
-        "roles": [
-          "producer",
-          "licensor"
-        ],
-        "url": "https://doi.org/10.5067/MODIS/MOD44W.006"
-      }
-    ],
-    "description": "The Terra Moderate Resolution Imaging\nSpectroradiometer (MODIS) Thermal Anomalies and Fire Daily\n(MOD14A1) Version 6 data are generated every eight days at 1 kilometer (km) spatial resolultion\nas a Level 3 product. MOD14A1 contains eight consecutive days of fire data conveniently packaged\ninto a single file.\n\nThe Science Dataset (SDS) layers include the fire mask, pixel quality indicators, maximum fire\nradiative power (MaxFRP), and the position of the fire pixel within the scan. Each layer consists of\ndaily per pixel information for each of the eight days of data acquisition.",
     "instruments": [
-      "MODIS"
+      "modis"
     ],
-    "platform": "Terra",
-    "title": "MODIS/Terra Thermal Anomalies/Fire Daily L3 Global 1 km SIN Grid",
-    "datetime": "2022-01-26T20:56:45Z"
+    "platform": "terra",
+    "start_datetime": "2022-01-17T00:00:00Z",
+    "end_datetime": "2022-01-24T23:59:59Z",
+    "created": "2022-01-26T20:56:45Z",
+    "updated": "2022-01-26T23:32:06.516000Z",
+    "datetime": "2022-01-20T23:59:59.500000Z"
   },
   "geometry": {
     "type": "Polygon",
@@ -56,6 +48,10 @@
         [
           -80.5775666708921,
           29.8961896763571
+        ],
+        [
+          -92.3012472028587,
+          29.8410878424102
         ]
       ]
     ]
