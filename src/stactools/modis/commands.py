@@ -36,7 +36,7 @@ def create_modis_command(cli: Group) -> Command:
         "-d",
         "--description",
         help="The description of the output catalog",
-        default="MODIS STAC Catalog containg a subset of MODIS assets.")
+        default="MODIS STAC Catalog containg a subset of MODIS assets")
     def create_collection_command(infile: str, outdir: str, id: str,
                                   title: str, description: str) -> None:
         """Creates a STAC Catalog with collections and items defined by the URLs in INFILE.
@@ -52,18 +52,30 @@ def create_modis_command(cli: Group) -> Command:
         with open(infile) as file:
             hrefs = [line.strip() for line in file.readlines()]
         items = defaultdict(list)
+        versions = set()
         for href in hrefs:
             modis_file = File(href)
             item = stac.create_item(href)
             items[(modis_file.product, modis_file.version)].append(item)
+            versions.add(modis_file.version)
         catalog = Catalog(id=id,
                           description=description,
                           title=title,
                           catalog_type=CatalogType.SELF_CONTAINED)
         catalog.set_self_href(os.path.join(outdir, "catalog.json"))
+        catalogs = dict()
+        for version in versions:
+            version_catalog = Catalog(
+                id=f"{id}-{version}",
+                description=f"{description}, version {version}",
+                title=f"{title}, version {version}",
+                catalog_type=CatalogType.SELF_CONTAINED)
+            catalog.add_child(version_catalog)
+            catalogs[version] = version_catalog
         for (product, version), collection_items in items.items():
+            version_catalog = catalogs[version]
             collection = stac.create_collection(product, version)
-            catalog.add_child(collection)
+            version_catalog.add_child(collection)
             collection.add_items(collection_items)
         catalog.validate_all()
         catalog.save()
