@@ -16,4 +16,19 @@ This repository will assist you in the generation of STAC files for MODIS datase
 ## Examples
 
 There is an example `Catalog` at `examples/catalog.json`. Inside that catalog are several MODIS v6.0 and v6.1 STAC `Collection`s and `Item`s.
+
 ### Command-line Usage
+
+To create a STAC `Item`:
+
+```shell
+$ stac modis create-item tests/data-files/MCD12Q1.A2001001.h00v08.006.2018142182903.hdf.xml build
+```
+
+To create a STAC `Catalog` from a list of MODIS asset hrefs:
+
+```shell
+$ stac modis create-catalog examples/file-list.txt examples
+```
+
+Note that this `create-catalog` example is exactly how the `examples/` directory is generated.
