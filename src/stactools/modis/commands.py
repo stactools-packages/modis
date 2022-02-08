@@ -41,6 +41,7 @@ def create_modis_command(cli: Group) -> Command:
                                   title: str, description: str) -> None:
         """Creates a STAC Catalog with collections and items defined by the URLs in INFILE.
 
+        \b
         Args:
             infile (str): The input file. Should contain one href per line. The
                 hrefs can be to the .hdf files or .hdf.xml files
@@ -92,6 +93,7 @@ def create_modis_command(cli: Group) -> Command:
     def create_item_command(infile: str, outdir: str, cogify: bool) -> None:
         """Creates a STAC Item based on metadata from an .hdf.xml MODIS file.
 
+        \b
         Args:
             infile (str): The source metadata xml file.
             outdir (str): Directory that will contain the STAC Item.
@@ -113,6 +115,7 @@ def create_modis_command(cli: Group) -> Command:
     def cogify_command(infile: str, outdir: str) -> None:
         """Converts a MODIS HDF file into one or more cloud optimized GeoTIFFs (COGs).
 
+        \b
         Args:
             infile (str): The source .hdf file.
             outdir (str): The directory that will contain the COGs.
