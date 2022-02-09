@@ -1,0 +1,46 @@
+{
+    "links": [
+        {
+            "rel": "help",
+            "href": "https://lpdaac.usgs.gov/documents/926/MOD15_User_Guide_V61.pdf",
+            "title": "User Guide"
+        },
+        {
+            "rel": "describedby",
+            "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/6/MCD15A3H",
+            "title": "Data File"
+        }
+    ],
+    "title": "MODIS/Terra+Aqua Leaf Area Index/FPAR 4-Day L4 Global 500 m SIN",
+    "description": "The MCD15A3H Version 6.1 Moderate Resolution Imaging Spectroradiometer (MODIS) Level 4, Combined Fraction of Photosynthetically Active Radiation (FPAR), and Leaf Area Index (LAI) product is a 4-day composite data set with 500 meter pixel size. The algorithm chooses the best pixel available from all the acquisitions of both MODIS sensors located on NASA’s Terra and Aqua satellites from within the 4-day period. LAI is defined as the one-sided green leaf area per unit ground area in broadleaf canopies and as one-half the total needle surface area per unit ground area in coniferous canopies. FPAR is defined as the fraction of incident photosynthetically active radiation (400-700 nm) absorbed by the green elements of a vegetation canopy.",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    -180.0,
+                    180.0,
+                    -90.0,
+                    90.0
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    "2002-07-04T00:00:00Z",
+                    null
+                ]
+            ]
+        }
+    },
+    "providers": [
+        {
+            "name": "NASA LP DAAC at the USGS EROS Center",
+            "roles": [
+                "producer",
+                "licensor"
+            ],
+            "url": "https://doi.org/10.5067/MODIS/MCD15A3H.061"
+        }
+    ]
+}
