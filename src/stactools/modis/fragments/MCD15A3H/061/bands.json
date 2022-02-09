@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Fpar_500m",
+        "description": "Fraction of Photosynthetically Active Radiation"
+    },
+    {
+        "name": "Lai_500m",
+        "description": "Leaf Area Index"
+    },
+    {
+        "name": "FparLai_QC",
+        "description": "Quality for FPAR and LAI"
+    },
+    {
+        "name": "FparExtra_QC",
+        "description": "Extra detail Quality for FPAR and LAI"
+    },
+    {
+        "name": "FparStdDev_500m",
+        "description": "Standard deviation of FPAR"
+    },
+    {
+        "name": "LaiStdDev_500m",
+        "description": "Standard deviation of LAI"
+    }
+]
