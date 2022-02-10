@@ -21,6 +21,10 @@
       "title": "Data File"
     },
     {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.5067/MODIS/MOD17A2HGF.006"
+    },
+    {
       "rel": "item",
       "href": "./MOD17A2HGF.A2021337.h09v05.006.2022031141000/MOD17A2HGF.A2021337.h09v05.006.2022031141000.json",
       "type": "application/json"
@@ -33,7 +37,8 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -65,6 +70,7 @@
       "title": "FGDC Metdata"
     }
   },
+  "sci:doi": "10.5067/MODIS/MOD17A2HGF.006",
   "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid",
   "extent": {
     "spatial": {

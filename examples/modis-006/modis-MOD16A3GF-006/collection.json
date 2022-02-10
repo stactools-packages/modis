@@ -21,6 +21,10 @@
       "title": "Data File"
     },
     {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.5067/MODIS/MOD16A3GF.006"
+    },
+    {
       "rel": "item",
       "href": "./MOD16A3GF.A2020001.h09v04.006.2022011184136/MOD16A3GF.A2020001.h09v04.006.2022011184136.json",
       "type": "application/json"
@@ -33,7 +37,8 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -73,6 +78,7 @@
       "title": "FGDC Metdata"
     }
   },
+  "sci:doi": "10.5067/MODIS/MOD16A3GF.006",
   "title": "MODIS/Terra Net Evapotranspiration Gap-Filled Yearly L4 Global 500 m SIN Grid",
   "extent": {
     "spatial": {
