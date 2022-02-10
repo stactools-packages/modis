@@ -21,6 +21,10 @@
       "title": "Data File"
     },
     {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.5067/MODIS/MOD15A2H.006"
+    },
+    {
       "rel": "item",
       "href": "./MOD15A2H.A2022017.h10v05.006.2022026205820/MOD15A2H.A2022017.h10v05.006.2022026205820.json",
       "type": "application/json"
@@ -33,7 +37,8 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -77,6 +82,7 @@
       "title": "FGDC Metdata"
     }
   },
+  "sci:doi": "10.5067/MODIS/MOD15A2H.006",
   "title": "MODIS/Terra Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid",
   "extent": {
     "spatial": {

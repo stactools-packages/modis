@@ -1,6 +1,6 @@
 import os.path
 import urllib.parse
-from typing import Optional
+from typing import Any, Dict, Optional, cast
 
 import pystac
 import rasterio
@@ -10,6 +10,7 @@ from pystac import Asset, Collection, Item
 from pystac.extensions.eo import Band, EOExtension
 from pystac.extensions.item_assets import AssetDefinition, ItemAssetsExtension
 from pystac.extensions.projection import ProjectionExtension
+from pystac.extensions.scientific import ScientificExtension
 from stactools.core.io import ReadHrefModifier
 
 import stactools.modis.fragment
@@ -49,6 +50,11 @@ def create_collection(product: str, version: str) -> Collection:
         HDF_ASSET_KEY: AssetDefinition(hdf_asset_properties),
         METADATA_ASSET_KEY: AssetDefinition(METADATA_ASSET_PROPERTIES),
     }
+
+    doi = _doi(fragment)
+    if doi:
+        scientific = ScientificExtension.ext(collection, add_if_missing=True)
+        scientific.doi = doi
 
     return collection
 
@@ -128,3 +134,15 @@ def collection_id(product: str, version: str) -> str:
         str: The collection id, e.g. "modis-MCD12Q1-006"
     """
     return f"modis-{product}-{version}"
+
+
+def _doi(fragment: Dict[str, Any]) -> Optional[str]:
+    providers = fragment.get("providers") or []
+    for provider in providers:
+        url = provider.url
+        if not url:
+            continue
+        parsed_url = urllib.parse.urlparse(url)
+        if parsed_url.hostname == "doi.org":
+            return cast(str, parsed_url.path[1:])
+    return None
