@@ -7,7 +7,7 @@ from pystac import Asset, Item, MediaType
 
 import stactools.modis.fragment
 import stactools.modis.utils
-from stactools.modis.constants import HDF_ASSET
+from stactools.modis.constants import HDF_ASSET_KEY
 from stactools.modis.file import File
 
 logger = logging.getLogger(__name__)
@@ -26,7 +26,7 @@ def add_cogs(item: Item, outdir: Optional[str] = None) -> List[str]:
     Returns:
         List[str]: A list of hrefs to the created COGs.
     """
-    hdf_asset = item.assets.get(HDF_ASSET, None)
+    hdf_asset = item.assets.get(HDF_ASSET_KEY, None)
     if hdf_asset is None:
         raise ValueError(f"No HDF asset found on item: {item.id}")
     hdf_href = hdf_asset.href

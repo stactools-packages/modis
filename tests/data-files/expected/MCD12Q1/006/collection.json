@@ -30,7 +30,12 @@
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
   "item_assets": {
-    "image": {
+    "hdf": {
+      "type": "application/x-hdf",
+      "roles": [
+        "data"
+      ],
+      "title": "hdf data",
       "eo:bands": [
         {
           "name": "LC_Type1",
@@ -84,12 +89,14 @@
           "name": "LW",
           "description": "Binary land (class 2) / water (class 1) mask derived from MOD44W"
         }
-      ],
+      ]
+    },
+    "metadata": {
+      "type": "application/xml",
       "roles": [
-        "data"
+        "metadata"
       ],
-      "title": "RGBIR COG tile",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+      "title": "FGDC Metdata"
     }
   },
   "title": "MODIS/Terra+Aqua Land Cover Type Yearly L3 Global 500 m SIN Grid",
