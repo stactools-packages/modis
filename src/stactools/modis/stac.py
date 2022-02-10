@@ -6,7 +6,7 @@ import pystac
 import rasterio
 import shapely.geometry
 import stactools.core.utils
-from pystac import Collection, Item, MediaType
+from pystac import Asset, Collection, Item
 from pystac.extensions.eo import Band, EOExtension
 from pystac.extensions.item_assets import AssetDefinition, ItemAssetsExtension
 from pystac.extensions.projection import ProjectionExtension
@@ -14,7 +14,9 @@ from stactools.core.io import ReadHrefModifier
 
 import stactools.modis.fragment
 import stactools.modis.utils
-from stactools.modis.constants import HDF_ASSET, METADATA_ASSET
+from stactools.modis.constants import (HDF_ASSET_KEY, HDF_ASSET_PROPERTIES,
+                                       METADATA_ASSET_KEY,
+                                       METADATA_ASSET_PROPERTIES)
 from stactools.modis.file import File
 from stactools.modis.metadata import Metadata
 
@@ -40,17 +42,12 @@ def create_collection(product: str, version: str) -> Collection:
     collection.add_links(fragment["links"])
 
     item_assets = ItemAssetsExtension.ext(collection, add_if_missing=True)
+    hdf_asset_properties = HDF_ASSET_PROPERTIES.copy()
+    hdf_asset_properties["eo:bands"] = stactools.modis.fragment.load_bands(
+        product, version)
     item_assets.item_assets = {
-        "image":
-        AssetDefinition({
-            "eo:bands":
-            stactools.modis.fragment.load_bands(product, version),
-            "roles": ["data"],
-            "title":
-            "RGBIR COG tile",
-            "type":
-            MediaType.COG,
-        })
+        HDF_ASSET_KEY: AssetDefinition(hdf_asset_properties),
+        METADATA_ASSET_KEY: AssetDefinition(METADATA_ASSET_PROPERTIES),
     }
 
     return collection
@@ -84,20 +81,15 @@ def create_item(href: str,
     item.common_metadata.end_datetime = metadata.end_datetime
     item.common_metadata.created = metadata.created
     item.common_metadata.updated = metadata.updated
-    item.add_asset(
-        HDF_ASSET,
-        pystac.Asset(href=file.hdf_href,
-                     media_type=MediaType.HDF,
-                     roles=["data"],
-                     title="hdf data"))
-    item.add_asset(
-        METADATA_ASSET,
-        pystac.Asset(href=file.xml_href,
-                     media_type=MediaType.XML,
-                     roles=["metadata"],
-                     title="FGDC Metdata"))
+    properties = HDF_ASSET_PROPERTIES.copy()
+    properties["href"] = file.hdf_href
+    item.add_asset(HDF_ASSET_KEY, Asset.from_dict(properties))
 
-    eo = EOExtension.ext(item.assets[HDF_ASSET], add_if_missing=True)
+    properties = METADATA_ASSET_PROPERTIES.copy()
+    properties["href"] = file.xml_href
+    item.add_asset(METADATA_ASSET_KEY, Asset.from_dict(properties))
+
+    eo = EOExtension.ext(item.assets[HDF_ASSET_KEY], add_if_missing=True)
     eo.bands = [
         Band(band) for band in stactools.modis.fragment.load_bands(
             metadata.product, metadata.version)
