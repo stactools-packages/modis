@@ -8,4 +8,5 @@
 - [ ] Code lints properly (run `scripts/lint`).
 - [ ] Tests pass (run `scripts/test`).
 - [ ] Documentation has been updated to reflect changes, if applicable.
+- [ ] Example STAC Catalog has been updated to reflect changes, if applicable.
 - [ ] Changes are added to the [CHANGELOG](../CHANGELOG.md).

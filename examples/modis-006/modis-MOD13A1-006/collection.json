@@ -36,7 +36,12 @@
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
   "item_assets": {
-    "image": {
+    "hdf": {
+      "type": "application/x-hdf",
+      "roles": [
+        "data"
+      ],
+      "title": "hdf data",
       "eo:bands": [
         {
           "name": "500m 16 days NDVI",
@@ -90,12 +95,14 @@
           "name": "500m 16 days pixel reliability",
           "description": "Quality reliability of VI pixel"
         }
-      ],
+      ]
+    },
+    "metadata": {
+      "type": "application/xml",
       "roles": [
-        "data"
+        "metadata"
       ],
-      "title": "RGBIR COG tile",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+      "title": "FGDC Metdata"
     }
   },
   "title": "MODIS/Terra Vegetation Indices 16-Day L3 Global 500 m SIN Grid",

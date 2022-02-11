@@ -36,7 +36,12 @@
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
   "item_assets": {
-    "image": {
+    "hdf": {
+      "type": "application/x-hdf",
+      "roles": [
+        "data"
+      ],
+      "title": "hdf data",
       "eo:bands": [
         {
           "name": "Fpar_500m",
@@ -62,12 +67,14 @@
           "name": "LaiStdDev_500m",
           "description": "Standard deviation of LAI"
         }
-      ],
+      ]
+    },
+    "metadata": {
+      "type": "application/xml",
       "roles": [
-        "data"
+        "metadata"
       ],
-      "title": "RGBIR COG tile",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+      "title": "FGDC Metdata"
     }
   },
   "title": "MODIS/Terra Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid",

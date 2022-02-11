@@ -30,7 +30,12 @@
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
   "item_assets": {
-    "image": {
+    "hdf": {
+      "type": "application/x-hdf",
+      "roles": [
+        "data"
+      ],
+      "title": "hdf data",
       "eo:bands": [
         {
           "name": "Gpp_500m",
@@ -44,12 +49,14 @@
           "name": "Psn_QC_500m",
           "description": "Quality control indicators"
         }
-      ],
+      ]
+    },
+    "metadata": {
+      "type": "application/xml",
       "roles": [
-        "data"
+        "metadata"
       ],
-      "title": "RGBIR COG tile",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+      "title": "FGDC Metdata"
     }
   },
   "title": "MODIS/Terra Gross Primary Productivity 8-Day L4 Global 500 m SIN",
