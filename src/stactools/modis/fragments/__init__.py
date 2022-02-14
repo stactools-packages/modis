@@ -12,6 +12,7 @@ class Fragments:
         """Creates a new group of fragments for the provided product and version."""
         self._product = product
         self._version = version
+        self._optional_file_names = ["raster-bands.json"]
 
     def collection(self) -> Any:
         """Loads the collection.json for the given catalog id.
@@ -37,6 +38,14 @@ class Fragments:
         """
         return self._load("bands.json")
 
+    def raster_bands(self) -> Any:
+        """Loads the raster-bands.json for the given catalog id.
+
+        Returns:
+            Any: The contents of the fragment file, parsed as JSON.
+        """
+        return self._load("raster-bands.json")
+
     def item_properties(self) -> Any:
         """Loads the item-properties.json for the given catalog id.
 
@@ -46,8 +55,14 @@ class Fragments:
         return self._load("item-properties.json")
 
     def _load(self, file_name: str) -> Any:
-        with pkg_resources.resource_stream(
-                "stactools.modis",
-                f"fragments/{self._product}/{self._version}/{file_name}"
-        ) as stream:
-            return json.load(stream)
+        try:
+            with pkg_resources.resource_stream(
+                    "stactools.modis",
+                    f"fragments/{self._product}/{self._version}/{file_name}"
+            ) as stream:
+                return json.load(stream)
+        except FileNotFoundError as e:
+            if file_name in self._optional_file_names:
+                return None
+            else:
+                raise e
