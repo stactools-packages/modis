@@ -1,5 +1,7 @@
 import os.path
 
+from stactools.modis.fragments import Fragments
+
 
 class File:
     """A MODIS file."""
@@ -40,3 +42,4 @@ class File:
         self.product = parts[0]
         self.version = parts[3]
         self.id = os.path.splitext(file_name)[0]
+        self.fragments = Fragments(self.product, self.version)

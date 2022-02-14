@@ -5,7 +5,6 @@ from typing import List, Optional, Tuple
 import stactools.core.utils.convert
 from pystac import Asset, Item, MediaType
 
-import stactools.modis.fragment
 import stactools.modis.utils
 from stactools.modis.constants import HDF_ASSET_KEY
 from stactools.modis.file import File
@@ -39,7 +38,7 @@ def add_cogs(item: Item, outdir: Optional[str] = None) -> List[str]:
         else:
             outdir = os.path.dirname(item_href)
     paths, subdataset_names = cogify(hdf_href, outdir)
-    band_list = stactools.modis.fragment.load_bands(file.product, file.version)
+    band_list = file.fragments.bands()
     bands = dict((band["name"], band) for band in band_list)
     for path, subdataset_name in zip(paths, subdataset_names):
         item.add_asset(
