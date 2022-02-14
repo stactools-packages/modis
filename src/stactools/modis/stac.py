@@ -98,7 +98,7 @@ def create_item(href: str,
     hdf_asset = item.assets[HDF_ASSET_KEY]
 
     eo = EOExtension.ext(hdf_asset, add_if_missing=True)
-    eo.bands = [Band(band) for band in fragments.bands()]
+    eo.bands = [Band.create(**band) for band in fragments.bands()]
 
     raster_bands = fragments.raster_bands()
     if raster_bands:
