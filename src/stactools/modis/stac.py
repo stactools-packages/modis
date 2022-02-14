@@ -10,6 +10,7 @@ from pystac import Asset, Collection, Item
 from pystac.extensions.eo import Band, EOExtension
 from pystac.extensions.item_assets import AssetDefinition, ItemAssetsExtension
 from pystac.extensions.projection import ProjectionExtension
+from pystac.extensions.raster import RasterExtension, RasterBand
 from pystac.extensions.scientific import ScientificExtension
 from stactools.core.io import ReadHrefModifier
 
@@ -94,8 +95,19 @@ def create_item(href: str,
     properties["href"] = file.xml_href
     item.add_asset(METADATA_ASSET_KEY, Asset.from_dict(properties))
 
-    eo = EOExtension.ext(item.assets[HDF_ASSET_KEY], add_if_missing=True)
+    hdf_asset = item.assets[HDF_ASSET_KEY]
+
+    eo = EOExtension.ext(hdf_asset, add_if_missing=True)
     eo.bands = [Band(band) for band in fragments.bands()]
+
+    raster_bands = fragments.raster_bands()
+    if raster_bands:
+        raster = RasterExtension.ext(hdf_asset, add_if_missing=True)
+        bands = []
+        for band in eo.bands:
+            raster_band = raster_bands[band.name]
+            bands.append(RasterBand.create(**raster_band))
+        raster.bands = bands
 
     url = urllib.parse.urlparse(file.hdf_href)
     if not url.scheme and os.path.isfile(file.hdf_href):
