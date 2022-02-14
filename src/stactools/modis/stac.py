@@ -13,12 +13,12 @@ from pystac.extensions.projection import ProjectionExtension
 from pystac.extensions.scientific import ScientificExtension
 from stactools.core.io import ReadHrefModifier
 
-import stactools.modis.fragment
 import stactools.modis.utils
 from stactools.modis.constants import (HDF_ASSET_KEY, HDF_ASSET_PROPERTIES,
                                        METADATA_ASSET_KEY,
                                        METADATA_ASSET_PROPERTIES)
 from stactools.modis.file import File
+from stactools.modis.fragments import Fragments
 from stactools.modis.metadata import Metadata
 
 
@@ -32,7 +32,8 @@ def create_collection(product: str, version: str) -> Collection:
     Returns:
         Collection: The created collection.
     """
-    fragment = stactools.modis.fragment.load_collection(product, version)
+    fragments = Fragments(product, version)
+    fragment = fragments.collection()
     collection = pystac.Collection(
         id=collection_id(product, version),
         description=fragment["description"],
@@ -44,8 +45,7 @@ def create_collection(product: str, version: str) -> Collection:
 
     item_assets = ItemAssetsExtension.ext(collection, add_if_missing=True)
     hdf_asset_properties = HDF_ASSET_PROPERTIES.copy()
-    hdf_asset_properties["eo:bands"] = stactools.modis.fragment.load_bands(
-        product, version)
+    hdf_asset_properties["eo:bands"] = fragments.bands()
     item_assets.item_assets = {
         HDF_ASSET_KEY: AssetDefinition(hdf_asset_properties),
         METADATA_ASSET_KEY: AssetDefinition(METADATA_ASSET_PROPERTIES),
@@ -73,13 +73,12 @@ def create_item(href: str,
     """
     file = File(href)
     metadata = Metadata(file.xml_href, read_href_modifier)
-    item = pystac.Item(
-        id=metadata.id,
-        geometry=metadata.geometry,
-        bbox=metadata.bbox,
-        datetime=metadata.datetime,
-        properties=stactools.modis.fragment.load_item_properties(
-            metadata.product, metadata.version))
+    fragments = Fragments(metadata.product, metadata.version)
+    item = pystac.Item(id=metadata.id,
+                       geometry=metadata.geometry,
+                       bbox=metadata.bbox,
+                       datetime=metadata.datetime,
+                       properties=fragments.item_properties())
 
     item.common_metadata.instruments = metadata.instruments
     item.common_metadata.platform = metadata.platform
@@ -96,10 +95,7 @@ def create_item(href: str,
     item.add_asset(METADATA_ASSET_KEY, Asset.from_dict(properties))
 
     eo = EOExtension.ext(item.assets[HDF_ASSET_KEY], add_if_missing=True)
-    eo.bands = [
-        Band(band) for band in stactools.modis.fragment.load_bands(
-            metadata.product, metadata.version)
-    ]
+    eo.bands = [Band(band) for band in fragments.bands()]
 
     url = urllib.parse.urlparse(file.hdf_href)
     if not url.scheme and os.path.isfile(file.hdf_href):
