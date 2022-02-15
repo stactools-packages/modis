@@ -5,10 +5,12 @@ from typing import List, Optional, Tuple
 import stactools.core.utils.convert
 from pystac import Asset, Item, MediaType
 from pystac.extensions.eo import Band, EOExtension
+from pystac.extensions.raster import RasterExtension, RasterBand
 
 import stactools.modis.utils
 from stactools.modis.constants import HDF_ASSET_KEY
 from stactools.modis.file import File
+from stactools.modis.warnings import MissingRasterBand
 
 logger = logging.getLogger(__name__)
 
@@ -46,6 +48,7 @@ def add_cogs(item: Item,
         ]
     band_list = file.fragments.bands()
     bands = dict((band["name"], band) for band in band_list)
+    raster_bands = file.fragments.raster_bands()
     for path, subdataset_name in zip(paths, subdataset_names):
         if subdataset_name not in bands:
             raise ValueError(
@@ -64,6 +67,14 @@ def add_cogs(item: Item,
         asset = item.assets[subdataset_name]
         eo = EOExtension.ext(asset, add_if_missing=True)
         eo.bands = [Band.create(**band)]
+
+        if raster_bands:
+            try:
+                raster_band = raster_bands[subdataset_name]
+            except KeyError:
+                logger.warning(MissingRasterBand(item, subdataset_name))
+            raster = RasterExtension.ext(asset, add_if_missing=True)
+            raster.bands = [RasterBand.create(**raster_band)]
 
 
 def cogify(infile: str, outdir: str) -> Tuple[List[str], List[str]]:
