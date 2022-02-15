@@ -36,6 +36,9 @@ def add_cogs(item: Item,
             for file_name in os.listdir(directory)
             if os.path.splitext(file_name)[1] == ".tif"
         ]
+        if not paths:
+            raise ValueError("COG directory does not contain any cogs, "
+                             f"and create=False: {directory}")
         subdataset_names = [
             "_".join(os.path.basename(path).split(".")[-2].split("_")[1:])
             for path in paths
