@@ -5,7 +5,7 @@ from typing import List, Optional, Tuple
 import stactools.core.utils.convert
 from pystac import Asset, Item, MediaType
 from pystac.extensions.eo import Band, EOExtension
-from pystac.extensions.raster import RasterExtension, RasterBand
+from pystac.extensions.raster import RasterBand, RasterExtension
 
 import stactools.modis.utils
 from stactools.modis.constants import HDF_ASSET_KEY

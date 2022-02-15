@@ -26,8 +26,8 @@ for file_name in os.listdir(directory):
     args.append((file.href, collection_path, item_path))
     ids.append(file.product)
 
-cog_product = "MCD12Q1"
-cog_version = "006"
+cog_product = "MOD10A2"
+cog_version = "061"
 
 
 @pytest.mark.parametrize("metadata_path,collection_path,item_path",
@@ -95,7 +95,7 @@ def test_collection_id() -> None:
 
 def test_read_href_modifier() -> None:
     href = test_data.get_path(
-        "data-files/MCD12Q1.A2001001.h00v08.006.2018142182903.hdf.xml")
+        "data-files/MOD10A2.A2022033.h09v05.061.2022042050729.hdf.xml")
 
     did_it = False
 
@@ -111,7 +111,7 @@ def test_read_href_modifier() -> None:
 
 def test_cog_directory() -> None:
     href = test_data.get_path(
-        "data-files/MCD12Q1.A2001001.h00v08.006.2018142182903.hdf.xml")
+        "data-files/MOD10A2.A2022033.h09v05.061.2022042050729.hdf.xml")
     item = stactools.modis.stac.create_item(
         href, cog_directory=os.path.dirname(href))
 
@@ -119,4 +119,4 @@ def test_cog_directory() -> None:
         asset for asset in item.assets.values()
         if asset.media_type == MediaType.COG
     ]
-    assert len(cog_assets) == 13
+    assert len(cog_assets) == 2
