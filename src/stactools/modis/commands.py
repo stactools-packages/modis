@@ -37,9 +37,16 @@ def create_modis_command(cli: Group) -> Command:
         "--description",
         help="The description of the output catalog",
         default="MODIS STAC Catalog containg a subset of MODIS assets")
-    def create_collection_command(infile: str, outdir: str, id: str,
-                                  title: str, description: str) -> None:
+    def create_collection_command(
+        infile: str,
+        outdir: str,
+        id: str,
+        title: str,
+        description: str,
+    ) -> None:
         """Creates a STAC Catalog with collections and items defined by the URLs in INFILE.
+
+        If there are COGs alongside, they will be added.
 
         \b
         Args:
@@ -56,7 +63,17 @@ def create_modis_command(cli: Group) -> Command:
         versions = set()
         for href in hrefs:
             modis_file = File(href)
-            item = stac.create_item(href)
+            prefix = os.path.splitext(os.path.basename(modis_file.hdf_href))[0]
+            directory = os.path.dirname(modis_file.hdf_href)
+            has_tiffs = any(
+                os.path.splitext(file_name)[1] == ".tif"
+                and file_name.startswith(prefix)
+                for file_name in os.listdir(directory))
+            if has_tiffs:
+                cog_directory = directory
+            else:
+                cog_directory = None
+            item = stac.create_item(href, cog_directory=cog_directory)
             items[(modis_file.product, modis_file.version)].append(item)
             versions.add(modis_file.version)
         catalog = Catalog(id=id,
