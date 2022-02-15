@@ -14,6 +14,7 @@ from pystac.extensions.raster import RasterBand, RasterExtension
 from pystac.extensions.scientific import ScientificExtension
 from stactools.core.io import ReadHrefModifier
 
+import stactools.modis.cog
 import stactools.modis.utils
 from stactools.modis.constants import (HDF_ASSET_KEY, HDF_ASSET_PROPERTIES,
                                        METADATA_ASSET_KEY,
@@ -61,11 +62,18 @@ def create_collection(product: str, version: str) -> Collection:
 
 
 def create_item(href: str,
+                cog_directory: Optional[str] = None,
+                cogify: Optional[bool] = None,
                 read_href_modifier: Optional[ReadHrefModifier] = None) -> Item:
     """Creates a STAC Item from MODIS data.
 
     Args:
         href (str): The href to an HDF file or its metadata.
+        cog_directory (str): The directory that will/does hold the COGs. Use
+            `cogify` to actually create COGs there.
+        cogify (str): Should we create cogs from the source data? If so, put
+            them in `cog_directory`, or if that is `None`, put them alongside the
+            hdf file.
         read_href_modifier (Callable[[str], str]): An optional function to
             modify the href (e.g. to add a token to a url)
 
@@ -110,7 +118,9 @@ def create_item(href: str,
         raster.bands = bands
 
     url = urllib.parse.urlparse(file.hdf_href)
-    if not url.scheme and os.path.isfile(file.hdf_href):
+    is_local_hdf = not url.scheme and os.path.isfile(file.hdf_href)
+
+    if is_local_hdf:
         subdatasets = stactools.modis.utils.subdatasets(file.hdf_href)
         if not subdatasets:
             raise ValueError(
@@ -128,6 +138,17 @@ def create_item(href: str,
         projection.geometry = proj_geometry
         projection.transform = proj_transform
         projection.shape = proj_shape
+
+    if cogify:
+        if not is_local_hdf:
+            raise ValueError("Cannot cogify remote HDF files, "
+                             f"please download them first: {file.hdf_href}")
+        elif not cog_directory:
+            cog_directory = os.path.dirname(file.hdf_href)
+
+    if cog_directory:
+        stactools.modis.cog.add_cogs(item, cog_directory, cogify)
+
     return item
 
 

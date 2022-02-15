@@ -5,7 +5,7 @@ import unittest
 from tempfile import TemporaryDirectory
 
 import pytest
-from pystac import CatalogType
+from pystac import CatalogType, MediaType
 
 import stactools.modis.stac
 from stactools.modis.file import File
@@ -92,5 +92,19 @@ def test_read_href_modifier() -> None:
         did_it = True
         return href
 
-    _ = stactools.modis.stac.create_item(href, read_href_modifier)
+    _ = stactools.modis.stac.create_item(href,
+                                         read_href_modifier=read_href_modifier)
     assert did_it
+
+
+def test_cog_directory() -> None:
+    href = test_data.get_path(
+        "data-files/MCD12Q1.A2001001.h00v08.006.2018142182903.hdf.xml")
+    item = stactools.modis.stac.create_item(
+        href, cog_directory=os.path.dirname(href))
+
+    cog_assets = [
+        asset for asset in item.assets.values()
+        if asset.media_type == MediaType.COG
+    ]
+    assert len(cog_assets) == 13
