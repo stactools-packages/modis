@@ -26,6 +26,9 @@ for file_name in os.listdir(directory):
     args.append((file.href, collection_path, item_path))
     ids.append(file.product)
 
+cog_product = "MCD12Q1"
+cog_version = "006"
+
 
 @pytest.mark.parametrize("metadata_path,collection_path,item_path",
                          args,
@@ -61,7 +64,16 @@ def test_metadata_files(metadata_path: str, collection_path: str,
         shutil.copyfile(modis_file.xml_href, temporary_file.xml_href)
         if os.path.exists(modis_file.hdf_href):
             shutil.copyfile(modis_file.hdf_href, temporary_file.hdf_href)
-        item = stactools.modis.stac.create_item(temporary_metadata_path)
+
+        if temporary_file.product == cog_product and temporary_file.version == cog_version:
+            cog_directory = temporary_directory
+            create_cogs = True
+        else:
+            cog_directory = None
+            create_cogs = False
+        item = stactools.modis.stac.create_item(temporary_metadata_path,
+                                                cog_directory=cog_directory,
+                                                create_cogs=create_cogs)
         collection.add_item(item)
         collection.make_all_asset_hrefs_relative()
         collection.save(catalog_type=CatalogType.SELF_CONTAINED)
