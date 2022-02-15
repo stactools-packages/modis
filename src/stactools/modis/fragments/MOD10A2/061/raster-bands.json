@@ -1,0 +1,9 @@
+{
+    "Maximum_Snow_Extent": {
+        "data_type": "uint8"
+    },
+    "Eight_Day_Snow_Cover": {
+        "data_type": "uint8",
+        "unit": "bits"
+    }
+}

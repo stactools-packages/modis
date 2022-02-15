@@ -11,8 +11,8 @@ data_files_directory = os.path.join(os.path.dirname(os.path.dirname(__file__)),
                                     "tests", "data-files")
 expected_directory = os.path.join(data_files_directory, "expected")
 
-cog_product = "MCD12Q1"
-cog_version = "006"
+cog_product = "MOD10A2"
+cog_version = "061"
 
 for file_name in os.listdir(data_files_directory):
     if os.path.splitext(file_name)[1] == ".xml":
