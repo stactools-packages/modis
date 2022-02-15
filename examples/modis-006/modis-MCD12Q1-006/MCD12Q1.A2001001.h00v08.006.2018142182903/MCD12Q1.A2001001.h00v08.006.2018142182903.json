@@ -125,47 +125,6 @@
     "end_datetime": "2001-12-31T23:59:59Z",
     "created": "2018-05-22T18:29:03Z",
     "updated": "2019-08-26T14:27:11.357000Z",
-    "proj:epsg": null,
-    "proj:wkt2": "PROJCS[\"unnamed\",GEOGCS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",SPHEROID[\"Custom spheroid\",6371007.181,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Sinusoidal\"],PARAMETER[\"longitude_of_center\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"Meter\",1],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
-    "proj:geometry": {
-      "type": "Polygon",
-      "coordinates": [
-        [
-          [
-            -18903158.834333,
-            0.0
-          ],
-          [
-            -18903158.834333,
-            1111950.519667
-          ],
-          [
-            -20015109.354,
-            1111950.519667
-          ],
-          [
-            -20015109.354,
-            0.0
-          ],
-          [
-            -18903158.834333,
-            0.0
-          ]
-        ]
-      ]
-    },
-    "proj:transform": [
-      463.3127165279165,
-      0.0,
-      -20015109.354,
-      0.0,
-      -463.3127165279167,
-      1111950.519667
-    ],
-    "proj:shape": [
-      2400,
-      2400
-    ],
     "datetime": "2001-07-02T11:59:59.500000Z"
   },
   "geometry": {
@@ -294,8 +253,7 @@
     9.998978
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/projection/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
   ],
   "collection": "modis-MCD12Q1-006"
 }

@@ -16,7 +16,9 @@ This repository will assist you in the generation of STAC files for MODIS datase
 
 ## Examples
 
-There is an example `Catalog` at `examples/catalog.json`. Inside that catalog are several MODIS v6.0 and v6.1 STAC `Collection`s and `Item`s.
+There is an example `Catalog` at `examples/catalog.json`.
+Inside that catalog are several MODIS v6.0 and v6.1 STAC `Collection`s and `Item`s.
+For an example of an item with COG assets, see [MOD10A2.A2022033.h09v05.061.2022042050729.json](examples/modis-061/modis-MOD10A2-061/MOD10A2.A2022033.h09v05.061.2022042050729/MOD10A2.A2022033.h09v05.061.2022042050729.json).
 
 ### Command-line Usage
 
