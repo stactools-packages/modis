@@ -103,7 +103,7 @@
   ],
   "assets": {
     "hdf": {
-      "href": "tests/data-files/MOD10A2.A2022033.h09v05.061.2022042050729.hdf",
+      "href": "../../../../tests/data-files/MOD10A2.A2022033.h09v05.061.2022042050729.hdf",
       "type": "application/x-hdf",
       "title": "hdf data",
       "eo:bands": [
@@ -130,7 +130,7 @@
       ]
     },
     "metadata": {
-      "href": "tests/data-files/MOD10A2.A2022033.h09v05.061.2022042050729.hdf.xml",
+      "href": "../../../../tests/data-files/MOD10A2.A2022033.h09v05.061.2022042050729.hdf.xml",
       "type": "application/xml",
       "title": "FGDC Metdata",
       "roles": [
@@ -138,7 +138,7 @@
       ]
     },
     "Eight_Day_Snow_Cover": {
-      "href": "tests/data-files/MOD10A2.A2022033.h09v05.061.2022042050729_Eight_Day_Snow_Cover.tif",
+      "href": "../../../../tests/data-files/MOD10A2.A2022033.h09v05.061.2022042050729_Eight_Day_Snow_Cover.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Eight_Day_Snow_Cover",
       "description": "Snow chronology bit flags for each day in the eight-day observation period.",
@@ -159,7 +159,7 @@
       ]
     },
     "Maximum_Snow_Extent": {
-      "href": "tests/data-files/MOD10A2.A2022033.h09v05.061.2022042050729_Maximum_Snow_Extent.tif",
+      "href": "../../../../tests/data-files/MOD10A2.A2022033.h09v05.061.2022042050729_Maximum_Snow_Extent.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Maximum_Snow_Extent",
       "description": "Maximum snow extent over the 8-day period.",
