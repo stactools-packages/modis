@@ -57,9 +57,8 @@ class Fragments:
     def _load(self, file_name: str) -> Any:
         try:
             with pkg_resources.resource_stream(
-                    "stactools.modis",
-                    f"fragments/{self._product}/{self._version}/{file_name}"
-            ) as stream:
+                    "stactools.modis.fragments",
+                    f"{self._product}/{self._version}/{file_name}") as stream:
                 return json.load(stream)
         except FileNotFoundError as e:
             if file_name in self._optional_file_names:
