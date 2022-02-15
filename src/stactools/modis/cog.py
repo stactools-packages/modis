@@ -12,45 +12,49 @@ from stactools.modis.file import File
 logger = logging.getLogger(__name__)
 
 
-def add_cogs(item: Item, outdir: Optional[str] = None) -> List[str]:
-    """Create COGs from the HDF asset contained in the passed in STAC item.
-
-    The COGs will be added as assets to the item.
+def add_cogs(item: Item,
+             directory: str,
+             create: Optional[bool] = False) -> None:
+    """Add the COGs in the directory to the provided item.
 
     Args:
         item (pystac.Item): MODIS Item
-        cog_directory (str, optional): An option HREF to hold the COGs. If not
-            provided, the COGs will be created alongside the item.
-
-    Returns:
-        List[str]: A list of hrefs to the created COGs.
+        directory (str): The directory holding the COGs.
+        create (bool, optional): Set to true to create the cogs in the provided
+            directory. Defaults to false.
     """
     hdf_asset = item.assets.get(HDF_ASSET_KEY, None)
     if hdf_asset is None:
         raise ValueError(f"No HDF asset found on item: {item.id}")
     hdf_href = hdf_asset.href
     file = File(hdf_href)
-    if outdir is None:
-        item_href = item.get_self_href()
-        if item_href is None:
-            raise ValueError(
-                f"No outdir provided and no self href on item: {item.id}")
-        else:
-            outdir = os.path.dirname(item_href)
-    paths, subdataset_names = cogify(hdf_href, outdir)
+    if create:
+        (paths, subdataset_names) = cogify(file.hdf_href, directory)
+    else:
+        paths = [
+            os.path.join(directory, file_name)
+            for file_name in os.listdir(directory)
+            if os.path.splitext(file_name)[1] == ".tif"
+        ]
+        subdataset_names = [
+            "_".join(os.path.basename(path).split(".")[-2].split("_")[1:])
+            for path in paths
+        ]
     band_list = file.fragments.bands()
     bands = dict((band["name"], band) for band in band_list)
     for path, subdataset_name in zip(paths, subdataset_names):
-        item.add_asset(
-            subdataset_name,
-            Asset(
-                href=path,
-                title=bands[subdataset_name]["name"],
-                description=bands[subdataset_name]["description"],
-                media_type=MediaType.COG,
-                roles=["data"],
-            ))
-    return paths
+        if subdataset_name not in bands:
+            raise ValueError(
+                f"Invalid MODIS COG file name (subdataset={subdataset_name} "
+                f"name at end of file name): {os.path.basename(path)}")
+        asset = Asset(
+            href=path,
+            title=bands[subdataset_name]["name"],
+            description=bands[subdataset_name]["description"],
+            media_type=MediaType.COG,
+            roles=["data"],
+        )
+        item.add_asset(subdataset_name, asset)
 
 
 def cogify(infile: str, outdir: str) -> Tuple[List[str], List[str]]:
