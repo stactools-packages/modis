@@ -1,5 +1,7 @@
 import os.path
 
+import pystac.utils
+
 from stactools.modis.fragments import Fragments
 
 
@@ -19,6 +21,7 @@ class File:
         Args:
             href (str): The .hdf or .hdf.xml href to MODIS data
         """
+        href = pystac.utils.make_absolute_href(href)
         base, extension = os.path.splitext(href)
         if extension not in [".hdf", ".xml"]:
             raise ValueError(f"Invalid MODIS href: {href}")

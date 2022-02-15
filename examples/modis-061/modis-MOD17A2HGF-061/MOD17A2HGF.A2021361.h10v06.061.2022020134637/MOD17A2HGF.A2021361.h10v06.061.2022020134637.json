@@ -84,7 +84,7 @@
   ],
   "assets": {
     "hdf": {
-      "href": "tests/data-files/MOD17A2HGF.A2021361.h10v06.061.2022020134637.hdf",
+      "href": "../../../../tests/data-files/MOD17A2HGF.A2021361.h10v06.061.2022020134637.hdf",
       "type": "application/x-hdf",
       "title": "hdf data",
       "eo:bands": [
@@ -121,7 +121,7 @@
       ]
     },
     "metadata": {
-      "href": "tests/data-files/MOD17A2HGF.A2021361.h10v06.061.2022020134637.hdf.xml",
+      "href": "../../../../tests/data-files/MOD17A2HGF.A2021361.h10v06.061.2022020134637.hdf.xml",
       "type": "application/xml",
       "title": "FGDC Metdata",
       "roles": [

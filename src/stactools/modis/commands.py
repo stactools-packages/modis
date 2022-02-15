@@ -96,6 +96,7 @@ def create_modis_command(cli: Group) -> Command:
             version_catalog.add_child(collection)
             collection.add_items(collection_items)
         catalog.validate_all()
+        catalog.make_all_asset_hrefs_relative()
         catalog.save()
 
     @modis.command("create-item",
