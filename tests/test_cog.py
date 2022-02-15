@@ -2,6 +2,7 @@ import os.path
 from tempfile import TemporaryDirectory
 from unittest import TestCase
 
+import pytest
 from pystac import MediaType
 
 import stactools.modis.cog
@@ -28,6 +29,13 @@ class CogTest(TestCase):
                 asset.href
             ) == f"MCD12Q1.A2001001.h00v08.006.2018142182903_{subdataset_name}.tif"
             assert asset.media_type == MediaType.COG
+
+    def test_add_no_cogs(self) -> None:
+        infile = test_data.get_path(
+            "data-files/MCD12Q1.A2001001.h00v08.006.2018142182903.hdf")
+        item = stactools.modis.stac.create_item(infile)
+        with pytest.raises(ValueError):
+            stactools.modis.cog.add_cogs(item, os.path.dirname(__file__))
 
     def test_cogify(self) -> None:
         infile = test_data.get_path(
