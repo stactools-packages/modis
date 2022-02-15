@@ -4,6 +4,7 @@ from typing import List, Optional, Tuple
 
 import stactools.core.utils.convert
 from pystac import Asset, Item, MediaType
+from pystac.extensions.eo import Band, EOExtension
 
 import stactools.modis.utils
 from stactools.modis.constants import HDF_ASSET_KEY
@@ -50,14 +51,19 @@ def add_cogs(item: Item,
             raise ValueError(
                 f"Invalid MODIS COG file name (subdataset={subdataset_name} "
                 f"name at end of file name): {os.path.basename(path)}")
+        band = bands[subdataset_name]
         asset = Asset(
             href=path,
-            title=bands[subdataset_name]["name"],
-            description=bands[subdataset_name]["description"],
+            title=band["name"],
+            description=band["description"],
             media_type=MediaType.COG,
             roles=["data"],
         )
         item.add_asset(subdataset_name, asset)
+
+        asset = item.assets[subdataset_name]
+        eo = EOExtension.ext(asset, add_if_missing=True)
+        eo.bands = [Band.create(**band)]
 
 
 def cogify(infile: str, outdir: str) -> Tuple[List[str], List[str]]:
