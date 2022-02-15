@@ -285,6 +285,123 @@
       "roles": [
         "metadata"
       ]
+    },
+    "LC_Type5": {
+      "href": "../../../../MCD12Q1.A2001001.h00v08.006.2018142182903_LC_Type5.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "LC_Type5",
+      "description": "Land Cover Type 5: Annual Plant Functional Types classification",
+      "roles": [
+        "data"
+      ]
+    },
+    "LC_Prop1": {
+      "href": "../../../../MCD12Q1.A2001001.h00v08.006.2018142182903_LC_Prop1.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "LC_Prop1",
+      "description": "FAO-Land Cover Classification System 1 (LCCS1) land cover layer",
+      "roles": [
+        "data"
+      ]
+    },
+    "LC_Type4": {
+      "href": "../../../../MCD12Q1.A2001001.h00v08.006.2018142182903_LC_Type4.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "LC_Type4",
+      "description": "Land Cover Type 4: Annual BIOME-Biogeochemical Cycles (BGC) classification",
+      "roles": [
+        "data"
+      ]
+    },
+    "LC_Prop2": {
+      "href": "../../../../MCD12Q1.A2001001.h00v08.006.2018142182903_LC_Prop2.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "LC_Prop2",
+      "description": "FAO-LCCS2 land use layer",
+      "roles": [
+        "data"
+      ]
+    },
+    "LC_Prop3": {
+      "href": "../../../../MCD12Q1.A2001001.h00v08.006.2018142182903_LC_Prop3.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "LC_Prop3",
+      "description": "FAO-LCCS3 surface hydrology layer",
+      "roles": [
+        "data"
+      ]
+    },
+    "LC_Type3": {
+      "href": "../../../../MCD12Q1.A2001001.h00v08.006.2018142182903_LC_Type3.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "LC_Type3",
+      "description": "Land Cover Type 3: Annual Leaf Area Index (LAI) classification",
+      "roles": [
+        "data"
+      ]
+    },
+    "LC_Type2": {
+      "href": "../../../../MCD12Q1.A2001001.h00v08.006.2018142182903_LC_Type2.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "LC_Type2",
+      "description": "Land Cover Type 2: Annual University of Maryland (UMD) classification",
+      "roles": [
+        "data"
+      ]
+    },
+    "LC_Type1": {
+      "href": "../../../../MCD12Q1.A2001001.h00v08.006.2018142182903_LC_Type1.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "LC_Type1",
+      "description": "Land Cover Type 1: Annual InternationalGeosphere-Biosphere Programme (IGBP) classification",
+      "roles": [
+        "data"
+      ]
+    },
+    "LW": {
+      "href": "../../../../MCD12Q1.A2001001.h00v08.006.2018142182903_LW.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "LW",
+      "description": "Binary land (class 2) / water (class 1) mask derived from MOD44W",
+      "roles": [
+        "data"
+      ]
+    },
+    "LC_Prop1_Assessment": {
+      "href": "../../../../MCD12Q1.A2001001.h00v08.006.2018142182903_LC_Prop1_Assessment.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "LC_Prop1_Assessment",
+      "description": "LCCS1 land cover layer confidence",
+      "roles": [
+        "data"
+      ]
+    },
+    "LC_Prop3_Assessment": {
+      "href": "../../../../MCD12Q1.A2001001.h00v08.006.2018142182903_LC_Prop3_Assessment.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "LC_Prop3_Assessment",
+      "description": "LCCS3 surface hydrology layer confidence",
+      "roles": [
+        "data"
+      ]
+    },
+    "QC": {
+      "href": "../../../../MCD12Q1.A2001001.h00v08.006.2018142182903_QC.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "QC",
+      "description": "Product quality flags",
+      "roles": [
+        "data"
+      ]
+    },
+    "LC_Prop2_Assessment": {
+      "href": "../../../../MCD12Q1.A2001001.h00v08.006.2018142182903_LC_Prop2_Assessment.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "LC_Prop2_Assessment",
+      "description": "LCCS2 land use layer confidence",
+      "roles": [
+        "data"
+      ]
     }
   },
   "bbox": [
