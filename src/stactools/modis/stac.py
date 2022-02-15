@@ -1,3 +1,4 @@
+import logging
 import os.path
 import urllib.parse
 from typing import Any, Dict, Optional, cast
@@ -22,6 +23,9 @@ from stactools.modis.constants import (HDF_ASSET_KEY, HDF_ASSET_PROPERTIES,
 from stactools.modis.file import File
 from stactools.modis.fragments import Fragments
 from stactools.modis.metadata import Metadata
+from stactools.modis.warnings import MissingProj
+
+logger = logging.getLogger(__name__)
 
 
 def create_collection(product: str, version: str) -> Collection:
@@ -138,6 +142,8 @@ def create_item(href: str,
         projection.geometry = proj_geometry
         projection.transform = proj_transform
         projection.shape = proj_shape
+    else:
+        logger.warning(MissingProj(item, file))
 
     if cogify:
         if not is_local_hdf:
