@@ -21,8 +21,7 @@ class CogTest(TestCase):
         infile = test_data.get_path(
             "data-files/MCD12Q1.A2001001.h00v08.006.2018142182903.hdf")
         item = stactools.modis.stac.create_item(infile)
-        with TemporaryDirectory() as temporary_directory:
-            stactools.modis.cog.add_cogs(item, temporary_directory)
+        stactools.modis.cog.add_cogs(item, os.path.dirname(infile))
         for subdataset_name in SUBDATASET_NAMES:
             asset = item.assets[subdataset_name]
             assert os.path.basename(
@@ -35,6 +34,7 @@ class CogTest(TestCase):
             "data-files/MCD12Q1.A2001001.h00v08.006.2018142182903.hdf")
         with TemporaryDirectory() as temporary_directory:
             paths, _ = stactools.modis.cog.cogify(infile, temporary_directory)
+            assert all(os.path.exists(path) for path in paths)
         self.assertEqual(len(paths), 13)
         file_names = [os.path.basename(path) for path in paths]
         expected_cog_names = [

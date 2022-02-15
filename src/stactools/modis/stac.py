@@ -10,7 +10,7 @@ from pystac import Asset, Collection, Item
 from pystac.extensions.eo import Band, EOExtension
 from pystac.extensions.item_assets import AssetDefinition, ItemAssetsExtension
 from pystac.extensions.projection import ProjectionExtension
-from pystac.extensions.raster import RasterExtension, RasterBand
+from pystac.extensions.raster import RasterBand, RasterExtension
 from pystac.extensions.scientific import ScientificExtension
 from stactools.core.io import ReadHrefModifier
 
