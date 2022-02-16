@@ -10,6 +10,7 @@
   - [eo](https://github.com/stac-extensions/eo)
   - [item-assets](https://github.com/stac-extensions/item-assets)
   - [scientific](https://github.com/stac-extensions/scientific)
+  - [raster](https://github.com/stac-extensions/raster)
 - Extra Fields: TODO
 
 This repository will assist you in the generation of STAC files for MODIS datasets. 
