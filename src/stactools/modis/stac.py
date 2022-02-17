@@ -23,7 +23,7 @@ from stactools.modis.constants import (HDF_ASSET_KEY, HDF_ASSET_PROPERTIES,
 from stactools.modis.file import File
 from stactools.modis.fragments import Fragments
 from stactools.modis.metadata import Metadata
-from stactools.modis.warnings import MissingProj
+from stactools.modis.warnings import MissingProj, MissingRasterBand
 
 logger = logging.getLogger(__name__)
 
@@ -117,8 +117,11 @@ def create_item(href: str,
         raster = RasterExtension.ext(hdf_asset, add_if_missing=True)
         bands = []
         for band in eo.bands:
-            raster_band = raster_bands[band.name]
-            bands.append(RasterBand.create(**raster_band))
+            raster_band = raster_bands.get(band.name, None)
+            if raster_band:
+                bands.append(RasterBand.create(**raster_band))
+            else:
+                logger.warning(MissingRasterBand(item, band.name))
         raster.bands = bands
 
     url = urllib.parse.urlparse(file.hdf_href)
