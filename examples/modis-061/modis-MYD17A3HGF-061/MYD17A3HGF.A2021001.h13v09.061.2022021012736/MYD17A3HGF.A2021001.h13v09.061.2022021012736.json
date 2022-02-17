@@ -1,41 +1,41 @@
 {
   "type": "Feature",
   "stac_version": "1.0.0",
-  "id": "MOD17A2HGF.A2021361.h10v06.061.2022020134637",
+  "id": "MYD17A3HGF.A2021001.h13v09.061.2022021012736",
   "properties": {
     "instruments": [
       "modis"
     ],
-    "platform": "terra",
-    "start_datetime": "2021-12-27T00:00:00Z",
+    "platform": "aqua",
+    "start_datetime": "2021-01-01T00:00:00Z",
     "end_datetime": "2021-12-31T23:59:59Z",
-    "created": "2022-01-20T13:46:37Z",
-    "updated": "2022-01-20T07:50:11.257000Z",
-    "datetime": "2021-12-29T11:59:59.500000Z"
+    "created": "2022-01-21T01:27:36Z",
+    "updated": "2022-01-20T19:30:15.987000Z",
+    "datetime": "2021-07-02T11:59:59.500000Z"
   },
   "geometry": {
     "type": "Polygon",
     "coordinates": [
       [
         [
-          -85.1199000270707,
-          19.8972839682412
+          -50.7713305895875,
+          -9.99999999910197
         ],
         [
-          -92.3760430595367,
-          29.9999999973059
+          -50.005174037715,
+          0.00432291256969055
         ],
         [
-          -80.5352459184066,
-          30.0383760061888
+          -39.8421028844678,
+          -6.85701132132887e-05
         ],
         [
-          -74.2129537334706,
-          19.9339184091026
+          -40.4506127682054,
+          -10.0037652971218
         ],
         [
-          -85.1199000270707,
-          19.8972839682412
+          -50.7713305895875,
+          -9.99999999910197
         ]
       ]
     ]
@@ -51,18 +51,18 @@
       "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid"
+      "title": "MODIS/Aqua Net Primary Production Gap-Filled Yearly L4 Global 500 m SIN Grid"
     },
     {
       "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid"
+      "title": "MODIS/Aqua Net Primary Production Gap-Filled Yearly L4 Global 500 m SIN Grid"
     }
   ],
   "assets": {
     "hdf": {
-      "href": "../../../../tests/data-files/MOD17A2HGF.A2021361.h10v06.061.2022020134637.hdf",
+      "href": "../../../../tests/data-files/MYD17A3HGF.A2021001.h13v09.061.2022021012736.hdf",
       "type": "application/x-hdf",
       "title": "hdf data",
       "eo:bands": [
@@ -71,17 +71,17 @@
           "description": "Gross Primary Productivity"
         },
         {
-          "name": "PsnNet_500m",
-          "description": "Net Photosynthesis"
+          "name": "Npp_500m",
+          "description": "Net Primary Productivity"
         },
         {
-          "name": "Psn_QC_500m",
-          "description": "Quality control indicators"
+          "name": "Npp_QC_500m",
+          "description": "Quality control"
         }
       ],
       "raster:bands": [
         {
-          "data_type": "int16",
+          "data_type": "uint16",
           "unit": "kg C/m\u00b2",
           "scale": 0.0001
         },
@@ -91,7 +91,8 @@
           "scale": 0.0001
         },
         {
-          "data_type": "uint8"
+          "data_type": "uint8",
+          "unit": "Percent"
         }
       ],
       "roles": [
@@ -99,7 +100,7 @@
       ]
     },
     "metadata": {
-      "href": "../../../../tests/data-files/MOD17A2HGF.A2021361.h10v06.061.2022020134637.hdf.xml",
+      "href": "../../../../tests/data-files/MYD17A3HGF.A2021001.h13v09.061.2022021012736.hdf.xml",
       "type": "application/xml",
       "title": "FGDC Metdata",
       "roles": [
@@ -108,14 +109,14 @@
     }
   },
   "bbox": [
-    -92.3760430595367,
-    19.8972839682412,
-    -74.2129537334706,
-    30.0383760061888
+    -50.7713305895875,
+    -10.0037652971218,
+    -39.8421028844678,
+    0.00432291256969055
   ],
   "stac_extensions": [
     "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
   ],
-  "collection": "modis-MOD17A2HGF-061"
+  "collection": "modis-MYD17A3HGF-061"
 }
