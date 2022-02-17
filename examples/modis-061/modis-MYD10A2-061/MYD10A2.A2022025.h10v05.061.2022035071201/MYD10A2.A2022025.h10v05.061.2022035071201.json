@@ -1,0 +1,111 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MYD10A2.A2022025.h10v05.061.2022035071201",
+  "properties": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": "aqua",
+    "start_datetime": "2022-01-25T00:00:00Z",
+    "end_datetime": "2022-02-01T23:59:59Z",
+    "created": "2022-02-04T07:12:12Z",
+    "updated": "2022-02-04T00:16:00.600000Z",
+    "datetime": "2022-01-28T23:59:59.500000Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -92.3012472028587,
+          29.8410878424102
+        ],
+        [
+          -104.43258313171,
+          39.9999999964079
+        ],
+        [
+          -91.1740859476425,
+          40.0637836759185
+        ],
+        [
+          -80.5775666708921,
+          29.8961896763571
+        ],
+        [
+          -92.3012472028587,
+          29.8410878424102
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Aqua Snow Cover Daily L3 Global 500m SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Aqua Snow Cover Daily L3 Global 500m SIN Grid"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../tests/data-files/MYD10A2.A2022025.h10v05.061.2022035071201.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf data",
+      "eo:bands": [
+        {
+          "name": "Maximum_Snow_Extent",
+          "description": "Maximum snow extent observed over an eight-day period."
+        },
+        {
+          "name": "Eight_Day_Snow_Cover",
+          "description": "Snow chronology bit flags for each day in the eight-day observation period."
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "uint8"
+        },
+        {
+          "data_type": "uint8",
+          "unit": "Bit Field"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/MYD10A2.A2022025.h10v05.061.2022035071201.hdf.xml",
+      "type": "application/xml",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -104.43258313171,
+    29.8410878424102,
+    -80.5775666708921,
+    40.0637836759185
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
+  ],
+  "collection": "modis-MYD10A2-061"
+}

@@ -1,0 +1,129 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MYD14A1.A2022025.h01v07.061.2022035001141",
+  "properties": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": "aqua",
+    "start_datetime": "2022-01-25T00:00:00Z",
+    "end_datetime": "2022-02-01T23:59:59Z",
+    "created": "2022-02-04T05:11:41Z",
+    "updated": "2022-02-03T23:40:07.931000Z",
+    "datetime": "2022-01-28T23:59:59.500000Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -179.464544105346,
+          9.72439219646173
+        ],
+        [
+          179.952014616979,
+          19.9968450579578
+        ],
+        [
+          -162.21824805558,
+          20.2678775712419
+        ],
+        [
+          -162.468655281243,
+          9.9829565925733
+        ],
+        [
+          -179.464544105346,
+          9.72439219646173
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Aqua Thermal Anomalies/Fire Daily L3 Global 1 km SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Aqua Thermal Anomalies/Fire Daily L3 Global 1 km SIN Grid"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../tests/data-files/MYD14A1.A2022025.h01v07.061.2022035001141.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf data",
+      "eo:bands": [
+        {
+          "name": "FireMask",
+          "description": "Confidence of fire"
+        },
+        {
+          "name": "QA",
+          "description": "Pixel quality indicators"
+        },
+        {
+          "name": "MaxFRP",
+          "description": "Maximum Fire Radiative Power"
+        },
+        {
+          "name": "Sample",
+          "description": "Position of fire pixel within scan"
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "unit": "Class Flag"
+        },
+        {
+          "data_type": "uint8",
+          "unit": "Bit Field"
+        },
+        {
+          "data_type": "uint32",
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint16",
+          "unit": "Number"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/MYD14A1.A2022025.h01v07.061.2022035001141.hdf.xml",
+      "type": "application/xml",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -179.464544105346,
+    9.72439219646173,
+    179.952014616979,
+    20.2678775712419
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
+  ],
+  "collection": "modis-MYD14A1-061"
+}

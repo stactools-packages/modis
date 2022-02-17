@@ -1,0 +1,197 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MYD13A1.A2022009.h25v02.061.2022028071925",
+  "properties": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": "aqua",
+    "start_datetime": "2022-01-09T00:00:00Z",
+    "end_datetime": "2022-01-24T23:59:59Z",
+    "created": "2022-01-28T12:19:25Z",
+    "updated": "2022-01-28T06:24:44.574000Z",
+    "datetime": "2022-01-16T23:59:59.500000Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          140.110001024585,
+          59.6452506478332
+        ],
+        [
+          135.926980213043,
+          69.2113905326394
+        ],
+        [
+          -176.534172118079,
+          66.3541732020201
+        ],
+        [
+          174.497006769159,
+          57.5564415970622
+        ],
+        [
+          140.110001024585,
+          59.6452506478332
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Aqua Vegetation Indices 16-Day L3 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Aqua Vegetation Indices 16-Day L3 Global 500 m SIN Grid"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../tests/data-files/MYD13A1.A2022009.h25v02.061.2022028071925.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf data",
+      "eo:bands": [
+        {
+          "name": "500m_16_days_NDVI",
+          "description": "500m 16 days NDVI"
+        },
+        {
+          "name": "500m_16_days_EVI",
+          "description": "500m 16 days EVI"
+        },
+        {
+          "name": "500m_16_days_VI_Quality",
+          "description": "VI quality indicators"
+        },
+        {
+          "name": "500m_16_days_red_reflectance",
+          "description": "Surface Reflectance Band 1"
+        },
+        {
+          "name": "500m_16_days_NIR_reflectance",
+          "description": "Surface Reflectance Band 2"
+        },
+        {
+          "name": "500m_16_days_blue_reflectance",
+          "description": "Surface Reflectance Band 3"
+        },
+        {
+          "name": "500m_16_days_MIR_reflectance",
+          "description": "Surface Reflectance Band 7"
+        },
+        {
+          "name": "500m_16_days_view_zenith_angle",
+          "description": "View zenith angle of VI Pixel"
+        },
+        {
+          "name": "500m_16_days_sun_zenith_angle",
+          "description": "Sun zenith angle of VI pixel"
+        },
+        {
+          "name": "500m_16_days_relative_azimuth_angle",
+          "description": "Relative azimuth angle of VI pixel"
+        },
+        {
+          "name": "500m_16_days_composite_day_of_the_year",
+          "description": "Day of year VI pixel"
+        },
+        {
+          "name": "500m_16_days_pixel_reliability",
+          "description": "Quality reliability of VI pixel"
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "unit": "NDVI",
+          "scale": 0.0001
+        },
+        {
+          "data_type": "int16",
+          "unit": "EVI",
+          "scale": 0.0001
+        },
+        {
+          "data_type": "uint16",
+          "unit": "Bit Field"
+        },
+        {
+          "data_type": "int16",
+          "scale": 0.0001
+        },
+        {
+          "data_type": "int16",
+          "scale": 0.0001
+        },
+        {
+          "data_type": "int16",
+          "scale": 0.0001
+        },
+        {
+          "data_type": "int16",
+          "scale": 0.0001
+        },
+        {
+          "data_type": "int16",
+          "unit": "Degree",
+          "scale": 0.01
+        },
+        {
+          "data_type": "int16",
+          "unit": "Degree",
+          "scale": 0.01
+        },
+        {
+          "data_type": "int16",
+          "unit": "Degree",
+          "scale": 0.01
+        },
+        {
+          "data_type": "int16",
+          "unit": "Julian Day"
+        },
+        {
+          "data_type": "int8",
+          "unit": "Rank"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/MYD13A1.A2022009.h25v02.061.2022028071925.hdf.xml",
+      "type": "application/xml",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -176.534172118079,
+    57.5564415970622,
+    174.497006769159,
+    69.2113905326394
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
+  ],
+  "collection": "modis-MYD13A1-061"
+}

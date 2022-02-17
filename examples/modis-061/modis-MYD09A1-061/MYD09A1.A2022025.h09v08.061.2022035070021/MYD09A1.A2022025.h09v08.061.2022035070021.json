@@ -1,0 +1,203 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MYD09A1.A2022025.h09v08.061.2022035070021",
+  "properties": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": "aqua",
+    "start_datetime": "2022-01-25T00:00:00Z",
+    "end_datetime": "2022-02-01T23:59:59Z",
+    "created": "2022-02-04T07:00:21Z",
+    "updated": "2022-02-04T01:11:00.763000Z",
+    "datetime": "2022-01-28T23:59:59.500000Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -90.0093979038185,
+          -0.00820857870338532
+        ],
+        [
+          -91.3883950612575,
+          9.99999999910197
+        ],
+        [
+          -80.9143997673695,
+          10.0071017643835
+        ],
+        [
+          -79.6923787161652,
+          0.00025356283043357
+        ],
+        [
+          -90.0093979038185,
+          -0.00820857870338532
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Aqua Surface Reflectance 8-Day L3 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Aqua Surface Reflectance 8-Day L3 Global 500 m SIN Grid"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../tests/data-files/MYD09A1.A2022025.h09v08.061.2022035070021.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf data",
+      "eo:bands": [
+        {
+          "name": "sur_refl_b01",
+          "description": "Surface Reflectance Band 1 (620-670 nm)"
+        },
+        {
+          "name": "sur_refl_b02",
+          "description": "Surface Reflectance Band 2 (841-876 nm)"
+        },
+        {
+          "name": "sur_refl_b03",
+          "description": "Surface Reflectance Band 3 (459-479 nm)"
+        },
+        {
+          "name": "sur_refl_b04",
+          "description": "Surface Reflectance Band 4 (545-565 nm)"
+        },
+        {
+          "name": "sur_refl_b05",
+          "description": "Surface Reflectance Band 5 (1230-1250 nm)"
+        },
+        {
+          "name": "sur_refl_b06",
+          "description": "Surface Reflectance Band 6 (1628-1652 nm)"
+        },
+        {
+          "name": "sur_refl_b07",
+          "description": "Surface Reflectance Band 7 (2105-2155 nm)"
+        },
+        {
+          "name": "sur_refl_qc_500m",
+          "description": "Surface reflectance 500m band quality control flags"
+        },
+        {
+          "name": "sur_refl_szen",
+          "description": "MODIS solar zenith angle"
+        },
+        {
+          "name": "sur_refl_vzen",
+          "description": "MODIS view zenith angle"
+        },
+        {
+          "name": "sur_refl_raz",
+          "description": "MODIS relative azimuth angle"
+        },
+        {
+          "name": "sur_refl_state_500m",
+          "description": "Surface reflectance 500m state flags"
+        },
+        {
+          "name": "sur_refl_day_of_year",
+          "description": "Day of the year for the pixel"
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001
+        },
+        {
+          "data_type": "int16",
+          "scale": 0.0001
+        },
+        {
+          "data_type": "int16",
+          "scale": 0.0001
+        },
+        {
+          "data_type": "int16",
+          "scale": 0.0001
+        },
+        {
+          "data_type": "int16",
+          "scale": 0.0001
+        },
+        {
+          "data_type": "int16",
+          "scale": 0.0001
+        },
+        {
+          "data_type": "int16",
+          "scale": 0.0001
+        },
+        {
+          "data_type": "uint32",
+          "unit": "Bit Field"
+        },
+        {
+          "data_type": "int16",
+          "unit": "Degree",
+          "scale": 0.01
+        },
+        {
+          "data_type": "int16",
+          "unit": "Degree",
+          "scale": 0.01
+        },
+        {
+          "data_type": "int16",
+          "unit": "Degree",
+          "scale": 0.01
+        },
+        {
+          "data_type": "uint16",
+          "unit": "Bit Field"
+        },
+        {
+          "data_type": "uint16",
+          "unit": "Julian Day"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/MYD09A1.A2022025.h09v08.061.2022035070021.hdf.xml",
+      "type": "application/xml",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -91.3883950612575,
+    -0.00820857870338532,
+    -79.6923787161652,
+    10.0071017643835
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
+  ],
+  "collection": "modis-MYD09A1-061"
+}

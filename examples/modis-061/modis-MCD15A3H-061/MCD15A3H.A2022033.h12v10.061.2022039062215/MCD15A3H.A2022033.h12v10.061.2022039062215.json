@@ -1,0 +1,148 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MCD15A3H.A2022033.h12v10.061.2022039062215",
+  "properties": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": "terra,aqua",
+    "start_datetime": "2022-02-02T00:00:00Z",
+    "end_datetime": "2022-02-05T23:59:59Z",
+    "created": "2022-02-08T06:22:15Z",
+    "updated": "2022-02-08T00:30:21.656000Z",
+    "datetime": "2022-02-03T23:59:59.500000Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -63.8506663420922,
+          -19.9999999982039
+        ],
+        [
+          -60.9332459081005,
+          -9.95174301126409
+        ],
+        [
+          -50.5717093742954,
+          -9.96742499665193
+        ],
+        [
+          -52.9885896490026,
+          -20.0151416658559
+        ],
+        [
+          -63.8506663420922,
+          -19.9999999982039
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra+Aqua Leaf Area Index/FPAR 4-Day L4 Global 500 m SIN"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra+Aqua Leaf Area Index/FPAR 4-Day L4 Global 500 m SIN"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../tests/data-files/MCD15A3H.A2022033.h12v10.061.2022039062215.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf data",
+      "eo:bands": [
+        {
+          "name": "Fpar_500m",
+          "description": "Fraction of Photosynthetically Active Radiation"
+        },
+        {
+          "name": "Lai_500m",
+          "description": "Leaf Area Index"
+        },
+        {
+          "name": "FparLai_QC",
+          "description": "Quality for FPAR and LAI"
+        },
+        {
+          "name": "FparExtra_QC",
+          "description": "Extra detail Quality for FPAR and LAI"
+        },
+        {
+          "name": "FparStdDev_500m",
+          "description": "Standard deviation of FPAR"
+        },
+        {
+          "name": "LaiStdDev_500m",
+          "description": "Standard deviation of LAI"
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "unit": "Dimensionless",
+          "scale": 0.01
+        },
+        {
+          "data_type": "uint8",
+          "unit": "Dimensionless",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint8",
+          "unit": "Class Flag"
+        },
+        {
+          "data_type": "uint8",
+          "unit": "Class Flag"
+        },
+        {
+          "data_type": "uint8",
+          "unit": "Dimensionless",
+          "scale": 0.01
+        },
+        {
+          "data_type": "uint8",
+          "unit": "Dimensionless",
+          "scale": 0.1
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/MCD15A3H.A2022033.h12v10.061.2022039062215.hdf.xml",
+      "type": "application/xml",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -63.8506663420922,
+    -20.0151416658559,
+    -50.5717093742954,
+    -9.95174301126409
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
+  ],
+  "collection": "modis-MCD15A3H-061"
+}

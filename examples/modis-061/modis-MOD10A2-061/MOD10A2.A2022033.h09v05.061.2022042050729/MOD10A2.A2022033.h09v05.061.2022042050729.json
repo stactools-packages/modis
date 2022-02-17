@@ -122,7 +122,7 @@
         },
         {
           "data_type": "uint8",
-          "unit": "bits"
+          "unit": "Bit Field"
         }
       ],
       "roles": [
@@ -151,7 +151,7 @@
       "raster:bands": [
         {
           "data_type": "uint8",
-          "unit": "bits"
+          "unit": "Bit Field"
         }
       ],
       "roles": [
