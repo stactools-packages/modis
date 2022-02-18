@@ -1,7 +1,9 @@
 import os.path
 
 import pystac.utils
+from pystac import Item
 
+from stactools.modis.constants import HDF_ASSET_KEY
 from stactools.modis.fragments import Fragments
 
 
@@ -14,6 +16,25 @@ class File:
     product: str
     version: str
     id: str
+
+    @classmethod
+    def from_item(cls, item: Item) -> "File":
+        """Creates a File from an item.
+
+        Raises a value error if there is no HDF asset on the item.
+
+        Args:
+            item (pystac.Item): The item
+
+        Returns:
+            file (File): A file pointing to the item's assets
+
+        """
+        hdf_asset = item.assets.get(HDF_ASSET_KEY, None)
+        if hdf_asset is None:
+            raise ValueError(f"No HDF asset found on item: {item.id}")
+        hdf_href = hdf_asset.href
+        return File(hdf_href)
 
     def __init__(self, href: str):
         """Creates a new MODIS file from an href.
