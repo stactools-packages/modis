@@ -8,7 +8,6 @@ from pystac.extensions.eo import Band, EOExtension
 from pystac.extensions.raster import RasterBand, RasterExtension
 
 import stactools.modis.utils
-from stactools.modis.constants import HDF_ASSET_KEY
 from stactools.modis.file import File
 from stactools.modis.warnings import MissingRasterBand
 
@@ -26,11 +25,7 @@ def add_cogs(item: Item,
         create (bool, optional): Set to true to create the cogs in the provided
             directory. Defaults to false.
     """
-    hdf_asset = item.assets.get(HDF_ASSET_KEY, None)
-    if hdf_asset is None:
-        raise ValueError(f"No HDF asset found on item: {item.id}")
-    hdf_href = hdf_asset.href
-    file = File(hdf_href)
+    file = File.from_item(item)
     if create:
         (paths, subdataset_names) = cogify(file.hdf_href, directory)
     else:
@@ -42,14 +37,34 @@ def add_cogs(item: Item,
         if not paths:
             raise ValueError("COG directory does not contain any cogs, "
                              f"and create=False: {directory}")
+        subdataset_names = None
+    return add_cog_assets(item, paths, subdataset_names)
+
+
+def add_cog_assets(item: Item,
+                   hrefs: List[str],
+                   subdataset_names: Optional[List[str]] = None) -> None:
+    """Adds COG assets to an item.
+
+    The assets must already exist at hrefs. If `subdataset_names` is not
+    provided, it will be deduced from the file names.
+
+    Args:
+        item (pystac.Item): The item which will get COG assets.
+        hrefs (List[str]): A list of COG hrefs.
+        subdataset_names (Optional[List[str]]): A list of subdataset names that
+            map 1-to-1 with the hrefs. Produced by `cogify`.
+    """
+    if not subdataset_names:
         subdataset_names = [
-            "_".join(os.path.basename(path).split(".")[-2].split("_")[1:])
-            for path in paths
+            "_".join(os.path.basename(href).split(".")[-2].split("_")[1:])
+            for href in hrefs
         ]
+    file = File.from_item(item)
     band_list = file.fragments.bands()
     bands = dict((band["name"], band) for band in band_list)
     raster_bands = file.fragments.raster_bands()
-    for path, subdataset_name in zip(paths, subdataset_names):
+    for path, subdataset_name in zip(hrefs, subdataset_names):
         if subdataset_name not in bands:
             raise ValueError(
                 f"Invalid MODIS COG file name (subdataset={subdataset_name} "
