@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 def add_cogs(item: Item,
              directory: str,
-             create: Optional[bool] = False) -> None:
+             create: Optional[bool] = False) -> Tuple[List[str], List[str]]:
     """Add the COGs in the directory to the provided item.
 
     Args:
@@ -24,6 +24,9 @@ def add_cogs(item: Item,
         directory (str): The directory holding the COGs.
         create (bool, optional): Set to true to create the cogs in the provided
             directory. Defaults to false.
+
+    Returns:
+        List[str]: The COG hrefs
     """
     file = File.from_item(item)
     if create:
@@ -38,12 +41,13 @@ def add_cogs(item: Item,
             raise ValueError("COG directory does not contain any cogs, "
                              f"and create=False: {directory}")
         subdataset_names = None
-    return add_cog_assets(item, paths, subdataset_names)
+    subdataset_names = add_cog_assets(item, paths, subdataset_names)
+    return (paths, subdataset_names)
 
 
 def add_cog_assets(item: Item,
                    hrefs: List[str],
-                   subdataset_names: Optional[List[str]] = None) -> None:
+                   subdataset_names: Optional[List[str]] = None) -> List[str]:
     """Adds COG assets to an item.
 
     The assets must already exist at hrefs. If `subdataset_names` is not
@@ -54,6 +58,10 @@ def add_cog_assets(item: Item,
         hrefs (List[str]): A list of COG hrefs.
         subdataset_names (Optional[List[str]]): A list of subdataset names that
             map 1-to-1 with the hrefs. Produced by `cogify`.
+
+    Returns:
+        List[str]: The list of subdataset names, in case they were intuited from
+            the hrefs.
     """
     if not subdataset_names:
         subdataset_names = [
@@ -90,6 +98,8 @@ def add_cog_assets(item: Item,
                 logger.warning(MissingRasterBand(item, subdataset_name))
             raster = RasterExtension.ext(asset, add_if_missing=True)
             raster.bands = [RasterBand.create(**raster_band)]
+
+    return subdataset_names
 
 
 def cogify(infile: str, outdir: str) -> Tuple[List[str], List[str]]:

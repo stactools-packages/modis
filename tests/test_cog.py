@@ -18,7 +18,10 @@ class CogTest(TestCase):
         infile = test_data.get_path(
             "data-files/MOD10A2.A2022033.h09v05.061.2022042050729.hdf")
         item = stactools.modis.stac.create_item(infile)
-        stactools.modis.cog.add_cogs(item, os.path.dirname(infile))
+        paths, subdataset_names = stactools.modis.cog.add_cogs(
+            item, os.path.dirname(infile))
+        assert set(subdataset_names) == set(SUBDATASET_NAMES)
+        assert len(paths) == len(SUBDATASET_NAMES)
         for subdataset_name in SUBDATASET_NAMES:
             asset = item.assets[subdataset_name]
             assert os.path.basename(
