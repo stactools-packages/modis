@@ -12,7 +12,7 @@
         }
     ],
     "title": "MODIS/Terra Thermal Anomalies/Fire 8-Day L3 Global 1 km SIN Grid",
-    "description": "The Terra Moderate Resolution Imaging\nSpectroradiometer (MODIS) Thermal Anomalies and Fire 8-Day (MOD14A2)\nVersion 6 data are generated at 1 kilometer (km) spatial resolultion as\na Level 3 product. The MOD14A2 gridded composite contains the maximum value\nof the individual fire pixel classes detected during the eight days of acquisition.\n\nThe Science Dataset (SDS) layers include the fire mask and pixel quality indicators.",
+    "description": "The Terra Moderate Resolution Imaging Spectroradiometer (MODIS) Thermal Anomalies and Fire 8-Day (MOD14A2) Version 6 data are generated at 1 kilometer (km) spatial resolultion as a Level 3 product. The MOD14A2 gridded composite contains the maximum value of the individual fire pixel classes detected during the eight days of acquisition. The Science Dataset (SDS) layers include the fire mask and pixel quality indicators.",
     "extent": {
         "spatial": {
             "bbox": [
