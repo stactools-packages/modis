@@ -8,7 +8,7 @@
         "description": "Leaf Area Index"
     },
     {
-        "name": "FparLai_QC\t",
+        "name": "FparLai_QC",
         "description": "Quality for LAI and FPAR"
     },
     {
