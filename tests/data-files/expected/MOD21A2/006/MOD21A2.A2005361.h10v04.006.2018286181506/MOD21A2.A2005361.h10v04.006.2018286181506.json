@@ -4,7 +4,7 @@
   "id": "MOD21A2.A2005361.h10v04.006.2018286181506",
   "properties": {
     "QC_Mandatory_QA_flags_00": "Pixel produced, good quality, no further QA info necessary",
-    "QC_Mandatory_QA_flags_01": "Pixel produced but unreliable quality. Either\n                                        one or more of the following conditions are met:\n                                        emissivity in both bands 31 and 32 < 0.95, retrieval\n                                        affected by nearby cloud, low transmissivity due to\n                                        high water vapor loading (<0.4), Recommend more\n                                        detailed analysis of other QC information",
+    "QC_Mandatory_QA_flags_01": "Pixel produced but unreliable quality. Either one or more of the following conditions are met: emissivity in both bands 31 and 32 < 0.95, retrieval affected by nearby cloud, low transmissivity due to high water vapor loading (<0.4), Recommend more detailed analysis of other QC information",
     "QC_Mandatory_QA_flags_10": "Pixel not produced due to cloud",
     "QC_Mandatory_QA_flags_11": "Pixel not produced due to reasons other than cloud",
     "QC_Data_quality_flag_00": "Good data quality of L1B bands 29, 31, 32",
