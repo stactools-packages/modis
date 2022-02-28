@@ -8,7 +8,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Added
 
-- Return paths and subdatasest names from `stactools.modis.cogs.add_cogs`
+- Return paths and subdatasest names from `stactools.modis.cogs.add_cogs` ([#44](https://github.com/stactools-packages/modis/pull/44))
+
+### Fixed
+
+- Formatting in V006 fragments ([#45](https://github.com/stactools-packages/modis/pull/45))
 
 ## [0.1.0] - 2022-02-17
 
