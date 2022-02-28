@@ -8,7 +8,7 @@
         "description": "Average of Latent Heat Flux"
     },
     {
-        "name": "PET_500m\t",
+        "name": "PET_500m",
         "description": "Total Potential Evapotranspiration"
     },
     {
