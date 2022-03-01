@@ -7,7 +7,7 @@ import pystac
 import rasterio
 import shapely.geometry
 import stactools.core.utils
-from pystac import Asset, Collection, Item
+from pystac import Asset, Collection, Item, Summaries
 from pystac.extensions.eo import Band, EOExtension
 from pystac.extensions.item_assets import AssetDefinition, ItemAssetsExtension
 from pystac.extensions.projection import ProjectionExtension
@@ -40,13 +40,25 @@ def create_collection(product: str, version: str) -> Collection:
     """
     fragments = Fragments(product, version)
     fragment = fragments.collection()
-    collection = pystac.Collection(
-        id=collection_id(product, version),
-        description=fragment["description"],
-        extent=fragment["extent"],
-        title=fragment["title"],
-        providers=fragment["providers"],
-    )
+    if product.startswith("MCD"):
+        platform = ["terra,aqua"]
+    elif product.startswith("MOD"):
+        platform = ["terra"]
+    elif product.startswith("MYD"):
+        platform = ["aqua"]
+    else:
+        raise ValueError(
+            f"Invalid product (should start with MCD, MOD, or MYD): {product}")
+    collection = pystac.Collection(id=collection_id(product, version),
+                                   description=fragment["description"],
+                                   extent=fragment["extent"],
+                                   title=fragment["title"],
+                                   providers=fragment["providers"],
+                                   keywords=["modis"],
+                                   summaries=Summaries({
+                                       "instruments": ["modis"],
+                                       "platform": platform,
+                                   }))
     collection.add_links(fragment["links"])
 
     item_assets = ItemAssetsExtension.ext(collection, add_if_missing=True)

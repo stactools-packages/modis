@@ -98,6 +98,9 @@
     }
   },
   "license": "proprietary",
+  "keywords": [
+    "modis"
+  ],
   "providers": [
     {
       "name": "NASA NSIDC DAAC at CIRES",
@@ -107,5 +110,13 @@
       ],
       "url": "https://doi.org/10.5067/MODIS/MOD10A1.006"
     }
-  ]
+  ],
+  "summaries": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": [
+      "terra"
+    ]
+  }
 }
