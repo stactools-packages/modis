@@ -40,13 +40,12 @@ def create_collection(product: str, version: str) -> Collection:
     """
     fragments = Fragments(product, version)
     fragment = fragments.collection()
-    collection = pystac.Collection(
-        id=collection_id(product, version),
-        description=fragment["description"],
-        extent=fragment["extent"],
-        title=fragment["title"],
-        providers=fragment["providers"],
-    )
+    collection = pystac.Collection(id=collection_id(product, version),
+                                   description=fragment["description"],
+                                   extent=fragment["extent"],
+                                   title=fragment["title"],
+                                   providers=fragment["providers"],
+                                   keywords=["modis"])
     collection.add_links(fragment["links"])
 
     item_assets = ItemAssetsExtension.ext(collection, add_if_missing=True)
