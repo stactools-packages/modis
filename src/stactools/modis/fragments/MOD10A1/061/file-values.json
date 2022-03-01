@@ -1,0 +1,52 @@
+{
+    "NDSI_Snow_Cover_Basic_QA": [
+        {
+            "values": [
+                0
+            ],
+            "summary": "best"
+        },
+        {
+            "values": [
+                1
+            ],
+            "summary": "good"
+        },
+        {
+            "values": [
+                2
+            ],
+            "summary": "ok"
+        },
+        {
+            "values": [
+                3
+            ],
+            "summary": "poor (not used)"
+        },
+        {
+            "values": [
+                4
+            ],
+            "summary": "other (not used)"
+        },
+        {
+            "values": [
+                211
+            ],
+            "summary": "night"
+        },
+        {
+            "values": [
+                239
+            ],
+            "summary": "ocean"
+        },
+        {
+            "values": [
+                255
+            ],
+            "summary": "unusable input or no data"
+        }
+    ]
+}
