@@ -143,5 +143,13 @@
       ],
       "url": "https://doi.org/10.5067/MODIS/MCD43A4.061"
     }
-  ]
+  ],
+  "summaries": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": [
+      "terra,aqua"
+    ]
+  }
 }

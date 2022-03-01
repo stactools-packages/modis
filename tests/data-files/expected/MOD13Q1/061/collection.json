@@ -135,5 +135,13 @@
       ],
       "url": "https://doi.org/10.5067/MODIS/MOD13Q1.061"
     }
-  ]
+  ],
+  "summaries": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": [
+      "terra"
+    ]
+  }
 }

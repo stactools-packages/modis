@@ -90,5 +90,13 @@
       ],
       "url": "https://doi.org/10.5067/MODIS/MOD44W.006"
     }
-  ]
+  ],
+  "summaries": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": [
+      "terra"
+    ]
+  }
 }

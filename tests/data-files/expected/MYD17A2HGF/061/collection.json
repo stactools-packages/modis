@@ -99,5 +99,13 @@
       ],
       "url": "https://doi.org/10.5067/MODIS/MYD17A2HGF.061"
     }
-  ]
+  ],
+  "summaries": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": [
+      "aqua"
+    ]
+  }
 }
