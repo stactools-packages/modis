@@ -150,5 +150,13 @@
       ],
       "url": "https://lpdaac.usgs.gov/"
     }
-  ]
+  ],
+  "summaries": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": [
+      "terra,aqua"
+    ]
+  }
 }
