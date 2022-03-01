@@ -11,12 +11,6 @@
                 1
             ],
             "summary": "Processed, see other QA (magnitude BRDF inversions)"
-        },
-        {
-            "values": [
-                255
-            ],
-            "summary": "Fill Value"
         }
     ],
     "BRDF_Albedo_Band_Mandatory_Quality_Band2": [
@@ -31,12 +25,6 @@
                 1
             ],
             "summary": "Processed, see other QA (magnitude BRDF inversions)"
-        },
-        {
-            "values": [
-                255
-            ],
-            "summary": "Fill Value"
         }
     ],
     "BRDF_Albedo_Band_Mandatory_Quality_Band3": [
@@ -51,12 +39,6 @@
                 1
             ],
             "summary": "Processed, see other QA (magnitude BRDF inversions)"
-        },
-        {
-            "values": [
-                255
-            ],
-            "summary": "Fill Value"
         }
     ],
     "BRDF_Albedo_Band_Mandatory_Quality_Band4": [
@@ -71,12 +53,6 @@
                 1
             ],
             "summary": "Processed, see other QA (magnitude BRDF inversions)"
-        },
-        {
-            "values": [
-                255
-            ],
-            "summary": "Fill Value"
         }
     ],
     "BRDF_Albedo_Band_Mandatory_Quality_Band5": [
@@ -91,12 +67,6 @@
                 1
             ],
             "summary": "Processed, see other QA (magnitude BRDF inversions)"
-        },
-        {
-            "values": [
-                255
-            ],
-            "summary": "Fill Value"
         }
     ],
     "BRDF_Albedo_Band_Mandatory_Quality_Band6": [
@@ -111,12 +81,6 @@
                 1
             ],
             "summary": "Processed, see other QA (magnitude BRDF inversions)"
-        },
-        {
-            "values": [
-                255
-            ],
-            "summary": "Fill Value"
         }
     ],
     "BRDF_Albedo_Band_Mandatory_Quality_Band7": [
@@ -131,12 +95,6 @@
                 1
             ],
             "summary": "Processed, see other QA (magnitude BRDF inversions)"
-        },
-        {
-            "values": [
-                255
-            ],
-            "summary": "Fill Value"
         }
     ]
 }

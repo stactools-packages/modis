@@ -1,1 +1,106 @@
-{}
+{
+    "BRDF_Albedo_Band_Mandatory_Quality_Band1": [
+        {
+            "values": [
+                0
+            ],
+            "summary": "Processed, good quality (full BRDF inversions)"
+        },
+        {
+            "values": [
+                1
+            ],
+            "summary": "Processed, see other QA (magnitude BRDF inversions)"
+        },
+        {
+            "values": [
+                255
+            ],
+            "summary": "Fill Value"
+        }
+    ],
+    "BRDF_Albedo_Band_Mandatory_Quality_Band2": [
+        {
+            "values": [
+                0
+            ],
+            "summary": "Processed, good quality (full BRDF inversions)"
+        },
+        {
+            "values": [
+                1
+            ],
+            "summary": "Processed, see other QA (magnitude BRDF inversions)"
+        },
+        {
+            "values": [
+                255
+            ],
+            "summary": "Fill Value"
+        }
+    ],
+    "BRDF_Albedo_Band_Mandatory_Quality_Band3": [
+        {
+            "values": [
+                0
+            ],
+            "summary": "Processed, good quality (full BRDF inversions)"
+        },
+        {
+            "values": [
+                1
+            ],
+            "summary": "Processed, see other QA (magnitude BRDF inversions)"
+        },
+        {
+            "values": [
+                255
+            ],
+            "summary": "Fill Value"
+        }
+    ],
+    "BRDF_Albedo_Band_Mandatory_Quality_Band4": [
+        {
+            "values": [
+                0
+            ],
+            "summary": "Processed, good quality (full BRDF inversions)"
+        },
+        {
+            "values": [
+                1
+            ],
+            "summary": "Processed, see other QA (magnitude BRDF inversions)"
+        },
+        {
+            "values": [
+                255
+            ],
+            "summary": "Fill Value"
+        }
+    ],
+    "BRDF_Albedo_Band_Mandatory_Quality_Band5": [
+        {
+            "values": [
+                255
+            ],
+            "summary": "FillValue"
+        }
+    ],
+    "BRDF_Albedo_Band_Mandatory_Quality_Band6": [
+        {
+            "values": [
+                255
+            ],
+            "summary": "FillValue"
+        }
+    ],
+    "BRDF_Albedo_Band_Mandatory_Quality_Band7": [
+        {
+            "values": [
+                255
+            ],
+            "summary": "FillValue"
+        }
+    ]
+}
