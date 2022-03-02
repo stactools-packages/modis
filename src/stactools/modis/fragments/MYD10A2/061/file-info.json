@@ -1,0 +1,114 @@
+{
+    "Maximum_Snow_Extent": [
+        {
+            "values": [
+                0
+            ],
+            "summary": "missing data"
+        },
+        {
+            "values": [
+                1
+            ],
+            "summary": "no decision"
+        },
+        {
+            "values": [
+                11
+            ],
+            "summary": "night"
+        },
+        {
+            "values": [
+                25
+            ],
+            "summary": "no snow"
+        },
+        {
+            "values": [
+                37
+            ],
+            "summary": "lake"
+        },
+        {
+            "values": [
+                39
+            ],
+            "summary": "ocean"
+        },
+        {
+            "values": [
+                50
+            ],
+            "summary": "cloud"
+        },
+        {
+            "values": [
+                100
+            ],
+            "summary": "lake ice"
+        },
+        {
+            "values": [
+                200
+            ],
+            "summary": "snow"
+        },
+        {
+            "values": [
+                254
+            ],
+            "summary": "detector saturated"
+        }
+    ],
+    "Eight_Day_Snow_Cover": [
+        {
+            "values": [
+                0
+            ],
+            "summary": "day 1"
+        },
+        {
+            "values": [
+                1
+            ],
+            "summary": "day 2"
+        },
+        {
+            "values": [
+                2
+            ],
+            "summary": "day 3"
+        },
+        {
+            "values": [
+                3
+            ],
+            "summary": "day 4"
+        },
+        {
+            "values": [
+                4
+            ],
+            "summary": "day 5"
+        },
+        {
+            "values": [
+                5
+            ],
+            "summary": "day 6"
+        },
+        {
+            "values": [
+                6
+            ],
+            "summary": "day 7"
+        },
+        {
+            "values": [
+                7
+            ],
+            "summary": "day 8"
+        }
+    ]
+}
