@@ -29,24 +29,6 @@
                 4
             ],
             "summary": "other (not used)"
-        },
-        {
-            "values": [
-                211
-            ],
-            "summary": "night"
-        },
-        {
-            "values": [
-                239
-            ],
-            "summary": "ocean"
-        },
-        {
-            "values": [
-                255
-            ],
-            "summary": "unusable input or no data"
         }
     ]
 }

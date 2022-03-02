@@ -2,12 +2,6 @@
     "250m_16_days_pixel_reliability": [
         {
             "values": [
-                -1
-            ],
-            "summary": "No data, FillValue"
-        },
-        {
-            "values": [
                 0
             ],
             "summary": "Good data, use with confidence"

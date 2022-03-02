@@ -59,12 +59,6 @@
                 254
             ],
             "summary": "detector saturated"
-        },
-        {
-            "values": [
-                255
-            ],
-            "summary": "fill"
         }
     ],
     "Eight_Day_Snow_Cover": [
