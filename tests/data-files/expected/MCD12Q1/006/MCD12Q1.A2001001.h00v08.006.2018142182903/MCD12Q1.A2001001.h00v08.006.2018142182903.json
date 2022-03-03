@@ -125,6 +125,9 @@
     "end_datetime": "2001-12-31T23:59:59Z",
     "created": "2018-05-22T18:29:03Z",
     "updated": "2019-08-26T14:27:11.357000Z",
+    "modis:horizontal-tile": 0,
+    "modis:vertical-tile": 8,
+    "modis:tile-id": "51000008",
     "datetime": "2001-07-02T11:59:59.500000Z"
   },
   "geometry": {

@@ -3,6 +3,7 @@
   "stac_version": "1.0.0",
   "id": "MYD11A1.A2022039.h21v07.061.2022040192419",
   "properties": {
+    "gsd": 1000,
     "instruments": [
       "modis"
     ],
@@ -11,6 +12,9 @@
     "end_datetime": "2022-02-08T23:59:59Z",
     "created": "2022-02-09T19:24:19Z",
     "updated": "2022-02-09T13:45:39.603000Z",
+    "modis:horizontal-tile": 21,
+    "modis:vertical-tile": 7,
+    "modis:tile-id": "51021007",
     "datetime": "2022-02-08T11:59:59.500000Z"
   },
   "geometry": {

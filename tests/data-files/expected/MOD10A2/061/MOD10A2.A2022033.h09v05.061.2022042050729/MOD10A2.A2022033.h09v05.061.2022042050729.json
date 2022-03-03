@@ -3,6 +3,7 @@
   "stac_version": "1.0.0",
   "id": "MOD10A2.A2022033.h09v05.061.2022042050729",
   "properties": {
+    "gsd": 500,
     "instruments": [
       "modis"
     ],
@@ -11,6 +12,9 @@
     "end_datetime": "2022-02-09T23:59:59Z",
     "created": "2022-02-11T05:07:40Z",
     "updated": "2022-02-10T22:17:10.512000Z",
+    "modis:horizontal-tile": 9,
+    "modis:vertical-tile": 5,
+    "modis:tile-id": "51009005",
     "proj:epsg": null,
     "proj:wkt2": "PROJCS[\"unnamed\",GEOGCS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",SPHEROID[\"Custom spheroid\",6371007.181,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Sinusoidal\"],PARAMETER[\"longitude_of_center\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"Meter\",1],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
     "proj:geometry": {

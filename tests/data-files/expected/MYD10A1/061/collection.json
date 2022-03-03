@@ -38,11 +38,11 @@
       "title": "hdf data",
       "eo:bands": [
         {
-          "name": "NSDI_Snow_Cover",
+          "name": "NDSI_Snow_Cover",
           "description": "Gridded NDSI snow cover and data flag values."
         },
         {
-          "name": "NSDI_Snow_Cover_Basic_QA",
+          "name": "NDSI_Snow_Cover_Basic_QA",
           "description": "A general estimate of the quality of the algorithm result."
         },
         {
@@ -59,11 +59,11 @@
         },
         {
           "name": "orbit_pnt",
-          "description": "Pointer to the orbit of the swath mapped into each grid cell."
+          "description": "Pointer to the orbit of the swath mapped into each grid cell. For details, see Section 1.1.2 below."
         },
         {
           "name": "granule_pnt",
-          "description": "Pointer for identifying the swath mapped into each grid cell."
+          "description": "Pointer for identifying the swath mapped into each grid cell. For details, see the section 'Using the granule_pnt' below."
         }
       ]
     },
