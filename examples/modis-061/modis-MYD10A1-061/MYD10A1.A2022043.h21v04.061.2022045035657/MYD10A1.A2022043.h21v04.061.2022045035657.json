@@ -4,18 +4,18 @@
   "id": "MYD10A1.A2022043.h21v04.061.2022045035657",
   "properties": {
     "gsd": 500,
+    "start_datetime": "2022-02-12T00:00:00Z",
+    "end_datetime": "2022-02-12T23:59:59Z",
+    "modis:horizontal-tile": 21,
+    "modis:vertical-tile": 4,
+    "modis:tile-id": "51021004",
     "instruments": [
       "modis"
     ],
     "platform": "aqua",
-    "start_datetime": "2022-02-12T00:00:00Z",
-    "end_datetime": "2022-02-12T23:59:59Z",
     "created": "2022-02-14T03:57:02Z",
     "updated": "2022-02-13T21:01:32.595000Z",
-    "modis:horizontal-tile": 21,
-    "modis:vertical-tile": 4,
-    "modis:tile-id": "51021004",
-    "datetime": "2022-02-12T11:59:59.500000Z"
+    "datetime": null
   },
   "geometry": {
     "type": "Polygon",

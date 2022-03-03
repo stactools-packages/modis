@@ -4,18 +4,18 @@
   "id": "MOD10A1.A2022040.h11v05.061.2022042042026",
   "properties": {
     "gsd": 500,
+    "start_datetime": "2022-02-09T00:00:00Z",
+    "end_datetime": "2022-02-09T23:59:59Z",
+    "modis:horizontal-tile": 11,
+    "modis:vertical-tile": 5,
+    "modis:tile-id": "51011005",
     "instruments": [
       "modis"
     ],
     "platform": "terra",
-    "start_datetime": "2022-02-09T00:00:00Z",
-    "end_datetime": "2022-02-09T23:59:59Z",
     "created": "2022-02-11T04:20:28Z",
     "updated": "2022-02-10T21:25:29.136000Z",
-    "modis:horizontal-tile": 11,
-    "modis:vertical-tile": 5,
-    "modis:tile-id": "51011005",
-    "datetime": "2022-02-09T11:59:59.500000Z"
+    "datetime": null
   },
   "geometry": {
     "type": "Polygon",

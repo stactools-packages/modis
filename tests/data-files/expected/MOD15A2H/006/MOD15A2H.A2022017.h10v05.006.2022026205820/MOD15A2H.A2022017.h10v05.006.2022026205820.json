@@ -18,18 +18,18 @@
     "STD_LAI_STD_FPAR_fill_value_class_253": "Land cover assigned as barren, sparse vegetation (rock, tundra, desert)",
     "STD_LAI_STD_FPAR_fill_value_class_254": "Land cover assigned as perennial salt or inland fresh water",
     "STD_LAI_STD_FPAR_fill_value_class_255": "Fill",
+    "start_datetime": "2022-01-17T00:00:00Z",
+    "end_datetime": "2022-01-24T23:59:59Z",
+    "modis:horizontal-tile": 10,
+    "modis:vertical-tile": 5,
+    "modis:tile-id": "51010005",
     "instruments": [
       "modis"
     ],
     "platform": "terra",
-    "start_datetime": "2022-01-17T00:00:00Z",
-    "end_datetime": "2022-01-24T23:59:59Z",
     "created": "2022-01-26T20:58:20Z",
     "updated": "2022-01-26T23:20:26.941000Z",
-    "modis:horizontal-tile": 10,
-    "modis:vertical-tile": 5,
-    "modis:tile-id": "51010005",
-    "datetime": "2022-01-20T23:59:59.500000Z"
+    "datetime": null
   },
   "geometry": {
     "type": "Polygon",

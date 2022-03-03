@@ -44,18 +44,18 @@
     "Summary_QA_1": "Marginal data - Useful, but look at other QA information",
     "Summary_QA_2": "Snow/Ice - Target covered with snow/ice",
     "Summary_QA_3": "Cloudy - Target not visible, covered with cloud",
+    "start_datetime": "2022-01-01T00:00:00Z",
+    "end_datetime": "2022-01-16T23:59:59Z",
+    "modis:horizontal-tile": 9,
+    "modis:vertical-tile": 5,
+    "modis:tile-id": "51009005",
     "instruments": [
       "modis"
     ],
     "platform": "terra",
-    "start_datetime": "2022-01-01T00:00:00Z",
-    "end_datetime": "2022-01-16T23:59:59Z",
     "created": "2022-01-18T22:57:46Z",
     "updated": "2022-01-18T17:05:27.039000Z",
-    "modis:horizontal-tile": 9,
-    "modis:vertical-tile": 5,
-    "modis:tile-id": "51009005",
-    "datetime": "2022-01-08T23:59:59.500000Z"
+    "datetime": null
   },
   "geometry": {
     "type": "Polygon",
