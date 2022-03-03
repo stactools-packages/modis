@@ -111,6 +111,9 @@ def create_item(href: str,
     item.common_metadata.end_datetime = metadata.end_datetime
     item.common_metadata.created = metadata.created
     item.common_metadata.updated = metadata.updated
+    item.properties["modis:horizontal-tile"] = metadata.horizontal_tile
+    item.properties["modis:vertical-tile"] = metadata.vertical_tile
+    item.properties["modis:tile-id"] = metadata.tile_id
     properties = HDF_ASSET_PROPERTIES.copy()
     properties["href"] = file.hdf_href
     item.add_asset(HDF_ASSET_KEY, Asset.from_dict(properties))
