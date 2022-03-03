@@ -19,18 +19,18 @@
     "Quality_5_DOY_305_to_337": "0 Clear; 1 Bad",
     "Quality_6_DOY_353_to_017": "0 Clear; 1 Bad",
     "Quality_7_DOY_033_to_045": "0 Clear; 1 Bad",
+    "start_datetime": "2020-03-05T00:00:00Z",
+    "end_datetime": "2021-03-06T00:00:00Z",
+    "modis:horizontal-tile": 9,
+    "modis:vertical-tile": 4,
+    "modis:tile-id": "51009004",
     "instruments": [
       "modis"
     ],
     "platform": "terra",
-    "start_datetime": "2020-03-05T00:00:00Z",
-    "end_datetime": "2021-03-06T00:00:00Z",
     "created": "2021-06-04T15:56:36Z",
     "updated": "2021-06-04T11:50:13.011000Z",
-    "modis:horizontal-tile": 9,
-    "modis:vertical-tile": 4,
-    "modis:tile-id": "51009004",
-    "datetime": "2020-09-04T00:00:00Z"
+    "datetime": null
   },
   "geometry": {
     "type": "Polygon",

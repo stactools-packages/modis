@@ -9,6 +9,8 @@ from shapely.geometry import Polygon
 from stactools.core.io import ReadHrefModifier
 from stactools.core.io.xml import XmlElement
 
+from stactools.modis.constants import TEMPORALLY_WEIGHTED_PRODUCTS
+
 
 class MissingElement(Exception):
     """An expected element is missing from the XML file"""
@@ -136,6 +138,8 @@ class Metadata:
         Returns:
             Optional[datetime.datetime]: The nominal datetime for this product.
         """
-        # FIXME this is incorrect, need to account for the prouduct type
-        return self.start_datetime + (self.end_datetime -
-                                      self.start_datetime) / 2
+        if self.product in TEMPORALLY_WEIGHTED_PRODUCTS:
+            return self.start_datetime + (self.end_datetime -
+                                          self.start_datetime) / 2
+        else:
+            return None

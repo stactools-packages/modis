@@ -4,6 +4,7 @@ import urllib.parse
 from typing import Any, Dict, Optional, cast
 
 import pystac
+import pystac.utils
 import rasterio
 import shapely.geometry
 import stactools.core.utils
@@ -107,21 +108,25 @@ def create_item(href: str,
     file = File(href)
     metadata = Metadata(file.xml_href, read_href_modifier)
     fragments = Fragments(metadata.product, metadata.version)
+    properties = fragments.item_properties()
+    properties["start_datetime"] = pystac.utils.datetime_to_str(
+        metadata.start_datetime)
+    properties["end_datetime"] = pystac.utils.datetime_to_str(
+        metadata.end_datetime)
+    properties["modis:horizontal-tile"] = metadata.horizontal_tile
+    properties["modis:vertical-tile"] = metadata.vertical_tile
+    properties["modis:tile-id"] = metadata.tile_id
     item = pystac.Item(id=metadata.id,
                        geometry=metadata.geometry,
                        bbox=metadata.bbox,
                        datetime=metadata.datetime,
-                       properties=fragments.item_properties())
+                       properties=properties)
 
     item.common_metadata.instruments = metadata.instruments
     item.common_metadata.platform = metadata.platform
-    item.common_metadata.start_datetime = metadata.start_datetime
-    item.common_metadata.end_datetime = metadata.end_datetime
     item.common_metadata.created = metadata.created
     item.common_metadata.updated = metadata.updated
-    item.properties["modis:horizontal-tile"] = metadata.horizontal_tile
-    item.properties["modis:vertical-tile"] = metadata.vertical_tile
-    item.properties["modis:tile-id"] = metadata.tile_id
+
     properties = HDF_ASSET_PROPERTIES.copy()
     properties["href"] = file.hdf_href
     item.add_asset(HDF_ASSET_KEY, Asset.from_dict(properties))
