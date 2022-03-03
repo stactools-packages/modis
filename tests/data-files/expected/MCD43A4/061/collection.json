@@ -150,6 +150,9 @@
     ],
     "platform": [
       "terra,aqua"
+    ],
+    "gsd": [
+      500
     ]
   }
 }
