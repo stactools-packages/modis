@@ -38,8 +38,6 @@ def create_collection(product: str, version: str) -> Collection:
     Returns:
         Collection: The created collection.
     """
-    fragments = Fragments(product, version)
-    fragment = fragments.collection()
     if product.startswith("MCD"):
         platform = ["terra,aqua"]
     elif product.startswith("MOD"):
@@ -54,11 +52,14 @@ def create_collection(product: str, version: str) -> Collection:
         "instruments": ["modis"],
         "platform": platform,
     }
+
+    fragments = Fragments(product, version)
     item_properties = fragments.item_properties()
     gsd = item_properties.get("gsd")
     if gsd:
         summaries["gsd"] = [gsd]
 
+    fragment = fragments.collection()
     collection = pystac.Collection(id=collection_id(product, version),
                                    description=fragment["description"],
                                    extent=fragment["extent"],
