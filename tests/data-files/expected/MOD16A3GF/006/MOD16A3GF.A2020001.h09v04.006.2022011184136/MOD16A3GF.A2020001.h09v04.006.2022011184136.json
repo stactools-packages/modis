@@ -32,6 +32,9 @@
     "end_datetime": "2020-12-31T23:59:59Z",
     "created": "2022-01-11T23:41:47Z",
     "updated": "2022-01-11T17:46:28.061000Z",
+    "modis:horizontal-tile": 9,
+    "modis:vertical-tile": 4,
+    "modis:tile-id": "51009004",
     "datetime": "2020-07-01T23:59:59.500000Z"
   },
   "geometry": {

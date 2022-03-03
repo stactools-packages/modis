@@ -3,6 +3,7 @@
   "stac_version": "1.0.0",
   "id": "MYD11A2.A2022025.h17v00.061.2022035054130",
   "properties": {
+    "gsd": 1000,
     "instruments": [
       "modis"
     ],
@@ -11,6 +12,9 @@
     "end_datetime": "2022-02-01T23:59:59Z",
     "created": "2022-02-04T05:41:30Z",
     "updated": "2022-02-03T23:51:17.900000Z",
+    "modis:horizontal-tile": 17,
+    "modis:vertical-tile": 0,
+    "modis:tile-id": "51017000",
     "datetime": "2022-01-28T23:59:59.500000Z"
   },
   "geometry": {
@@ -159,10 +163,12 @@
           "scale": 0.002
         },
         {
-          "data_type": "uint8"
+          "data_type": "uint8",
+          "unit": "Bit Field"
         },
         {
-          "data_type": "uint8"
+          "data_type": "uint8",
+          "unit": "Bit Field"
         }
       ],
       "roles": [
