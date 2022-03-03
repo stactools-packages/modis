@@ -11,7 +11,10 @@
   - [item-assets](https://github.com/stac-extensions/item-assets)
   - [scientific](https://github.com/stac-extensions/scientific)
   - [raster](https://github.com/stac-extensions/raster)
-- Extra Fields: TODO
+- Extra Fields:
+  - `modis:horizontal-tile`
+  - `modis:vertical-tile`
+  - `modis:tile-id`
 
 This repository will assist you in the generation of STAC files for MODIS datasets. 
 
