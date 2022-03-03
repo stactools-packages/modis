@@ -1,8 +1,10 @@
 import json
-from typing import Any
+from typing import Any, List
 
 import pkg_resources
 from pystac import Extent, Link, Provider
+
+PREFIXES = ["MCD", "MOD", "MYD"]
 
 
 class Fragments:
@@ -54,14 +56,41 @@ class Fragments:
         """
         return self._load("item-properties.json")
 
+    def prefix(self) -> str:
+        """The product prefix (aka MCD, MYD, or MOD)."""
+        return self._product[0:3]
+
+    def with_prefix(self, prefix: str) -> "Fragments":
+        """Returns this fragments but with a different prefix."""
+        product = self._product.replace(self.prefix(), prefix)
+        return Fragments(product, self._version)
+
     def _load(self, file_name: str) -> Any:
+        fallbacks = PREFIXES.copy()
+        fallbacks.remove(self.prefix())
         try:
-            with pkg_resources.resource_stream(
-                    "stactools.modis.fragments",
-                    f"{self._product}/{self._version}/{file_name}") as stream:
+            return self._load_with_fallbacks(file_name, fallbacks)
+        except FragmentMissing:
+            raise FragmentMissing(
+                f"Fragment missing for product={self._product}, "
+                f"version={self._version}: {file_name}")
+
+    def _load_with_fallbacks(self, file_name: str,
+                             fallbacks: List[str]) -> Any:
+        package = "stactools.modis.fragments"
+        path = f"{self._product}/{self._version}/{file_name}"
+        if pkg_resources.resource_exists(package, path):
+            with pkg_resources.resource_stream(package, path) as stream:
                 return json.load(stream)
-        except FileNotFoundError as e:
-            if file_name in self._optional_file_names:
-                return None
-            else:
-                raise e
+        elif fallbacks:
+            prefix = fallbacks.pop(0)
+            fragments = self.with_prefix(prefix)
+            return fragments._load_with_fallbacks(file_name, fallbacks)
+        elif file_name in self._optional_file_names:
+            return None
+        else:
+            raise FragmentMissing()
+
+
+class FragmentMissing(Exception):
+    pass
