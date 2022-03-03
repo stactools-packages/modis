@@ -5,6 +5,7 @@ from typing import List, Optional, Tuple
 import stactools.core.utils.convert
 from pystac import Asset, Item, MediaType
 from pystac.extensions.eo import Band, EOExtension
+from pystac.extensions.file import FileExtension, MappingObject
 from pystac.extensions.raster import RasterBand, RasterExtension
 
 import stactools.modis.utils
@@ -72,6 +73,7 @@ def add_cog_assets(item: Item,
     band_list = file.fragments.bands()
     bands = dict((band["name"], band) for band in band_list)
     raster_bands = file.fragments.raster_bands()
+    file_info = file.fragments.file_info()
     for path, subdataset_name in zip(hrefs, subdataset_names):
         if subdataset_name not in bands:
             raise ValueError(
@@ -96,8 +98,18 @@ def add_cog_assets(item: Item,
                 raster_band = raster_bands[subdataset_name]
             except KeyError:
                 logger.warning(MissingRasterBand(item, subdataset_name))
-            raster = RasterExtension.ext(asset, add_if_missing=True)
-            raster.bands = [RasterBand.create(**raster_band)]
+            else:
+                raster = RasterExtension.ext(asset, add_if_missing=True)
+                raster.bands = [RasterBand.create(**raster_band)]
+
+        if file_info:
+            try:
+                values = file_info[subdataset_name]
+            except KeyError:
+                pass
+            else:
+                file_ext = FileExtension.ext(asset, add_if_missing=True)
+                file_ext.values = [MappingObject.from_dict(d) for d in values]
 
     return subdataset_names
 

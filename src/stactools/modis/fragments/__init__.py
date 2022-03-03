@@ -56,6 +56,14 @@ class Fragments:
         """
         return self._load("item-properties.json")
 
+    def file_info(self) -> Any:
+        """Loads the file-info.json for the given catalog id.
+
+        Returns:
+            Any: The contents of the fragment file, parsed as JSON.
+        """
+        return self._load("file-info.json")
+
     def prefix(self) -> str:
         """The product prefix (aka MCD, MYD, or MOD)."""
         return self._product[0:3]
