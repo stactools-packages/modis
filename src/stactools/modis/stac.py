@@ -49,16 +49,23 @@ def create_collection(product: str, version: str) -> Collection:
     else:
         raise ValueError(
             f"Invalid product (should start with MCD, MOD, or MYD): {product}")
+
+    summaries = {
+        "instruments": ["modis"],
+        "platform": platform,
+    }
+    item_properties = fragments.item_properties()
+    gsd = item_properties.get("gsd")
+    if gsd:
+        summaries["gsd"] = [gsd]
+
     collection = pystac.Collection(id=collection_id(product, version),
                                    description=fragment["description"],
                                    extent=fragment["extent"],
                                    title=fragment["title"],
                                    providers=fragment["providers"],
                                    keywords=["modis"],
-                                   summaries=Summaries({
-                                       "instruments": ["modis"],
-                                       "platform": platform,
-                                   }))
+                                   summaries=Summaries(summaries))
     collection.add_links(fragment["links"])
 
     item_assets = ItemAssetsExtension.ext(collection, add_if_missing=True)
