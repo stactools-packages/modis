@@ -12,7 +12,7 @@
         "description": "Maximum Fire Radiative Power"
     },
     {
-        "name": "Sample",
+        "name": "sample",
         "description": "Position of fire pixel within scan"
     }
 ]

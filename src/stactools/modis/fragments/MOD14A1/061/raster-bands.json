@@ -14,7 +14,7 @@
         "unit": "Megawatts",
         "scale": 0.1
     },
-    "Sample": {
+    "sample": {
         "data_type": "uint16",
         "unit": "Number",
         "scale": null
