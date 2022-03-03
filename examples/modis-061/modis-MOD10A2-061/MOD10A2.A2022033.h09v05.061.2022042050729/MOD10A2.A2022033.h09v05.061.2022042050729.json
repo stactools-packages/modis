@@ -178,6 +178,68 @@
           "data_type": "uint8"
         }
       ],
+      "file:values": [
+        {
+          "values": [
+            0
+          ],
+          "summary": "missing data"
+        },
+        {
+          "values": [
+            1
+          ],
+          "summary": "no decision"
+        },
+        {
+          "values": [
+            11
+          ],
+          "summary": "night"
+        },
+        {
+          "values": [
+            25
+          ],
+          "summary": "no snow"
+        },
+        {
+          "values": [
+            37
+          ],
+          "summary": "lake"
+        },
+        {
+          "values": [
+            39
+          ],
+          "summary": "ocean"
+        },
+        {
+          "values": [
+            50
+          ],
+          "summary": "cloud"
+        },
+        {
+          "values": [
+            100
+          ],
+          "summary": "lake ice"
+        },
+        {
+          "values": [
+            200
+          ],
+          "summary": "snow"
+        },
+        {
+          "values": [
+            254
+          ],
+          "summary": "detector saturated"
+        }
+      ],
       "roles": [
         "data"
       ]
@@ -192,7 +254,8 @@
   "stac_extensions": [
     "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/projection/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.0.0/schema.json"
   ],
   "collection": "modis-MOD10A2-061"
 }
