@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Return paths and subdatasest names from `stactools.modis.cogs.add_cogs` ([#44](https://github.com/stactools-packages/modis/pull/44))
 - Keywords and summaries to collections ([#48](https://github.com/stactools-packages/modis/pull/48))
+- More Item and Collection metadata ([#51](https://github.com/stactools-packages/modis/pull/51))
 
 ### Fixed
 
