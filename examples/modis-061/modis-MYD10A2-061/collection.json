@@ -45,7 +45,7 @@
       "eo:bands": [
         {
           "name": "Maximum_Snow_Extent",
-          "description": "Maximum snow extent observed over an eight-day period."
+          "description": "Maximum snow extent over the 8-day period."
         },
         {
           "name": "Eight_Day_Snow_Cover",

@@ -3,6 +3,7 @@
   "stac_version": "1.0.0",
   "id": "MYD10A1.A2022043.h21v04.061.2022045035657",
   "properties": {
+    "gsd": 500,
     "instruments": [
       "modis"
     ],
@@ -11,6 +12,9 @@
     "end_datetime": "2022-02-12T23:59:59Z",
     "created": "2022-02-14T03:57:02Z",
     "updated": "2022-02-13T21:01:32.595000Z",
+    "modis:horizontal-tile": 21,
+    "modis:vertical-tile": 4,
+    "modis:tile-id": "51021004",
     "datetime": "2022-02-12T11:59:59.500000Z"
   },
   "geometry": {
@@ -67,11 +71,11 @@
       "title": "hdf data",
       "eo:bands": [
         {
-          "name": "NSDI_Snow_Cover",
+          "name": "NDSI_Snow_Cover",
           "description": "Gridded NDSI snow cover and data flag values."
         },
         {
-          "name": "NSDI_Snow_Cover_Basic_QA",
+          "name": "NDSI_Snow_Cover_Basic_QA",
           "description": "A general estimate of the quality of the algorithm result."
         },
         {
@@ -88,11 +92,11 @@
         },
         {
           "name": "orbit_pnt",
-          "description": "Pointer to the orbit of the swath mapped into each grid cell."
+          "description": "Pointer to the orbit of the swath mapped into each grid cell. For details, see Section 1.1.2 below."
         },
         {
           "name": "granule_pnt",
-          "description": "Pointer for identifying the swath mapped into each grid cell."
+          "description": "Pointer for identifying the swath mapped into each grid cell. For details, see the section 'Using the granule_pnt' below."
         }
       ],
       "raster:bands": [
