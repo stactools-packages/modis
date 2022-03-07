@@ -15,7 +15,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Fixed
 
 - Formatting in V006 fragments ([#45](https://github.com/stactools-packages/modis/pull/45))
-- Extents for V061 collections ([#53](https://github.com/stactools-packages/modis/pull/52))
+- Extents for V061 collections ([#52](https://github.com/stactools-packages/modis/pull/52))
+- Spaces are disallowed in COG filenames ([#53](https://github.com/stactools-packages/modis/pull/53))
 
 ## [0.1.0] - 2022-02-17
 
