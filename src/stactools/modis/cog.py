@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 def add_cogs(item: Item,
              directory: str,
-             create: Optional[bool] = False) -> Tuple[List[str], List[str]]:
+             create: bool = False) -> Tuple[List[str], List[str]]:
     """Add the COGs in the directory to the provided item.
 
     Args:

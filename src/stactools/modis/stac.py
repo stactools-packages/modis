@@ -88,7 +88,7 @@ def create_collection(product: str, version: str) -> Collection:
 
 def create_item(href: str,
                 cog_directory: Optional[str] = None,
-                create_cogs: Optional[bool] = None,
+                create_cogs: bool = False,
                 read_href_modifier: Optional[ReadHrefModifier] = None) -> Item:
     """Creates a STAC Item from MODIS data.
 
