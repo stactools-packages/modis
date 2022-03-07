@@ -2,7 +2,7 @@
   "type": "Collection",
   "id": "modis-MOD15A2H-006",
   "stac_version": "1.0.0",
-  "description": "The MOD15A2H Version 6 Moderate Resolution Imaging Spectroradiometer (MODIS) combined Leaf Area\nIndex (LAI) and Fraction of Photosynthetically Active Radiation (FPAR) product is an 8-day\ncomposite dataset with 500 meter (m) pixel size. The algorithm chooses the \u201cbest\u201d pixel available\nfrom all the acquisitions of the Terra sensor from within the 8-day period.\n\nLAI is defined as the one-sided green leaf area per unit ground area in broadleaf canopies and\nas one-half the total needle surface area per unit ground area in coniferous canopies. FPAR is\ndefined as the fraction of incident photosynthetically active radiation, 400-700 nanometers (nm),\nabsorbed by the green elements of a vegetation canopy.\n\nScience Datasets (SDSs) in the Level 4 (L4) MOD15A2H product include LAI, FPAR, two quality layers,\nand standard deviation for LAI and FPAR. Two low resolution browse images, LAI and FPAR, are also\navailable for each MOD15A2H granule.",
+  "description": "The MOD15A2H Version 6 Moderate Resolution Imaging Spectroradiometer (MODIS) combined Leaf Area Index (LAI) and Fraction of Photosynthetically Active Radiation (FPAR) product is an 8-day composite dataset with 500 meter (m) pixel size. The algorithm chooses the 'best' pixel available from all the acquisitions of the Terra sensor from within the 8-day period.  LAI is defined as the one-sided green leaf area per unit ground area in broadleaf canopies and as one-half the total needle surface area per unit ground area in coniferous canopies. FPAR is defined as the fraction of incident photosynthetically active radiation, 400-700 nanometers (nm), absorbed by the green elements of a vegetation canopy. Science Datasets (SDSs) in the Level 4 (L4) MOD15A2H product include LAI, FPAR, two quality layers, and standard deviation for LAI and FPAR. Two low resolution browse images, LAI and FPAR, are also available for each MOD15A2H granule.",
   "links": [
     {
       "rel": "root",
@@ -57,7 +57,7 @@
           "description": "Leaf Area Index"
         },
         {
-          "name": "FparLai_QC\t",
+          "name": "FparLai_QC",
           "description": "Quality for LAI and FPAR"
         },
         {
@@ -105,6 +105,9 @@
     }
   },
   "license": "proprietary",
+  "keywords": [
+    "modis"
+  ],
   "providers": [
     {
       "name": "NASA LP DAAC at the USGS EROS Center",
@@ -114,5 +117,13 @@
       ],
       "url": "https://doi.org/10.5067/MODIS/MOD15A2H.006"
     }
-  ]
+  ],
+  "summaries": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": [
+      "terra"
+    ]
+  }
 }

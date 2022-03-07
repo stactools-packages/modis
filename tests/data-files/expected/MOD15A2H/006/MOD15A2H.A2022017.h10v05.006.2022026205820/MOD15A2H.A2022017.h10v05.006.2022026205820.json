@@ -3,30 +3,33 @@
   "stac_version": "1.0.0",
   "id": "MOD15A2H.A2022017.h10v05.006.2022026205820",
   "properties": {
-    "LAI_FPAR_fill_value_class_249": "Land cover assigned as \"unclassified\" or not able to determine",
+    "LAI_FPAR_fill_value_class_249": "Land cover assigned as 'unclassified ' or not able to determine",
     "LAI_FPAR_fill_value_class_250": "Land cover assigned as urban/built-up",
-    "LAI_FPAR_fill_value_class_251": "Land cover assigned as \"permanent\" wetlands/inundated marshland",
+    "LAI_FPAR_fill_value_class_251": "Land cover assigned as 'permanent' wetlands/inundated marshland",
     "LAI_FPAR_fill_value_class_252": "Land cover assigned as perennial snow, ice",
     "LAI_FPAR_fill_value_class_253": "Land cover assigned as barren, sparse vegetation (rock, tundra, desert)",
     "LAI_FPAR_fill_value_class_254": "Land cover assigned as perennial salt or inland fresh water",
     "LAI_FPAR_fill_value_class_255": "Fill",
     "STD_LAI_STD_FPAR_fill_value_class_248": "No standard deviation available, pixel produced using backup method",
-    "STD_LAI_STD_FPAR_fill_value_class_249": "Land cover assigned as \"unclassified\" or not able to determine",
+    "STD_LAI_STD_FPAR_fill_value_class_249": "Land cover assigned as 'unclassified' or not able to determine",
     "STD_LAI_STD_FPAR_fill_value_class_250": "Land cover assigned as urban/built-up",
-    "STD_LAI_STD_FPAR_fill_value_class_251": "Land cover assigned as \"permanent\" wetlands / inundated marshland",
+    "STD_LAI_STD_FPAR_fill_value_class_251": "Land cover assigned as 'permanent' wetlands/inundated marshland",
     "STD_LAI_STD_FPAR_fill_value_class_252": "Land cover assigned as perennial snow, ice",
     "STD_LAI_STD_FPAR_fill_value_class_253": "Land cover assigned as barren, sparse vegetation (rock, tundra, desert)",
     "STD_LAI_STD_FPAR_fill_value_class_254": "Land cover assigned as perennial salt or inland fresh water",
     "STD_LAI_STD_FPAR_fill_value_class_255": "Fill",
+    "start_datetime": "2022-01-17T00:00:00Z",
+    "end_datetime": "2022-01-24T23:59:59Z",
+    "modis:horizontal-tile": 10,
+    "modis:vertical-tile": 5,
+    "modis:tile-id": "51010005",
     "instruments": [
       "modis"
     ],
     "platform": "terra",
-    "start_datetime": "2022-01-17T00:00:00Z",
-    "end_datetime": "2022-01-24T23:59:59Z",
     "created": "2022-01-26T20:58:20Z",
     "updated": "2022-01-26T23:20:26.941000Z",
-    "datetime": "2022-01-20T23:59:59.500000Z"
+    "datetime": null
   },
   "geometry": {
     "type": "Polygon",
@@ -90,7 +93,7 @@
           "description": "Leaf Area Index"
         },
         {
-          "name": "FparLai_QC\t",
+          "name": "FparLai_QC",
           "description": "Quality for LAI and FPAR"
         },
         {

@@ -11,7 +11,10 @@
   - [item-assets](https://github.com/stac-extensions/item-assets)
   - [scientific](https://github.com/stac-extensions/scientific)
   - [raster](https://github.com/stac-extensions/raster)
-- Extra Fields: TODO
+- Extra Fields:
+  - `modis:horizontal-tile`
+  - `modis:vertical-tile`
+  - `modis:tile-id`
 
 This repository will assist you in the generation of STAC files for MODIS datasets. 
 
@@ -36,3 +39,21 @@ $ stac modis create-catalog examples/file-list.txt examples
 ```
 
 Note that this `create-catalog` example is exactly how the `examples/` directory is generated.
+
+
+## Contributing
+
+If you are making any changes to the item or collection structure, the tests will fail until you update the expected values.
+To update, run this script:
+
+```shell
+$ scripts/create_expected.py
+```
+
+This will create, validate, and save new test data items into `tests/data-files/expected` which are used for unit testing.
+
+Once you've got a pull request ready, please update the examples as well:
+
+```
+$ stac modis create-catalog examples/file-list.txt examples
+```

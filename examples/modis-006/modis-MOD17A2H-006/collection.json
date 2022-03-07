@@ -2,7 +2,7 @@
   "type": "Collection",
   "id": "modis-MOD17A2H-006",
   "stac_version": "1.0.0",
-  "description": "The MOD17A2H Version 6 Gross Primary Productivity (GPP)\nproduct is a cumulative 8-day composite of\nvalues with 500 meter (m) pixel size based on the radiation use efficiency concept that can be\npotentially used as inputs to data models to calculate terrestrial energy, carbon, water cycle\nprocesses, and biogeochemistry of vegetation. The data product includes information about GPP\nand Net Photosynthesis (PSN). The PSN band values are the GPP less the Maintenance Respiration\n(MR). The data product also contains a PSN Quality Control (QC) layer. The quality layer\ncontains quality information for both the GPP and thePSN.",
+  "description": "The MOD17A2H Version 6 Gross Primary Productivity (GPP) product is a cumulative 8-day composite of values with 500 meter (m) pixel size based on the radiation use efficiency concept that can be potentially used as inputs to data models to calculate terrestrial energy, carbon, water cycle processes, and biogeochemistry of vegetation. The data product includes information about GPP and Net Photosynthesis (PSN). The PSN band values are the GPP less the Maintenance Respiration (MR). The data product also contains a PSN Quality Control (QC) layer. The quality layer contains quality information for both the GPP and the PSN.",
   "links": [
     {
       "rel": "root",
@@ -93,6 +93,9 @@
     }
   },
   "license": "proprietary",
+  "keywords": [
+    "modis"
+  ],
   "providers": [
     {
       "name": "NASA LP DAAC at the USGS EROS Center",
@@ -102,5 +105,13 @@
       ],
       "url": "https://doi.org/10.5067/MODIS/MOD17A2H.006"
     }
-  ]
+  ],
+  "summaries": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": [
+      "terra"
+    ]
+  }
 }

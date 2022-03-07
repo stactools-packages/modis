@@ -45,7 +45,7 @@
       "eo:bands": [
         {
           "name": "Maximum_Snow_Extent",
-          "description": "Maximum snow extent observed over an eight-day period."
+          "description": "Maximum snow extent over the 8-day period."
         },
         {
           "name": "Eight_Day_Snow_Cover",
@@ -84,6 +84,9 @@
     }
   },
   "license": "proprietary",
+  "keywords": [
+    "modis"
+  ],
   "providers": [
     {
       "name": "NASA NSIDC DAAC",
@@ -93,5 +96,16 @@
       ],
       "url": "https://doi.org/10.5067/MODIS/MYD10A2.061"
     }
-  ]
+  ],
+  "summaries": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": [
+      "aqua"
+    ],
+    "gsd": [
+      500
+    ]
+  }
 }

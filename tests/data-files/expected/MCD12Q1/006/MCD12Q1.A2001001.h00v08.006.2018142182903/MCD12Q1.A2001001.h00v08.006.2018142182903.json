@@ -117,15 +117,18 @@
     "QC_Class_9": "Forest type changed: climate-based change to forest class.",
     "LW_Class_1": "1c0dff, Water",
     "LW_Class_2": "f9ffa4, Land",
+    "start_datetime": "2001-01-01T00:00:00Z",
+    "end_datetime": "2001-12-31T23:59:59Z",
+    "modis:horizontal-tile": 0,
+    "modis:vertical-tile": 8,
+    "modis:tile-id": "51000008",
     "instruments": [
       "modis"
     ],
     "platform": "terra,aqua",
-    "start_datetime": "2001-01-01T00:00:00Z",
-    "end_datetime": "2001-12-31T23:59:59Z",
     "created": "2018-05-22T18:29:03Z",
     "updated": "2019-08-26T14:27:11.357000Z",
-    "datetime": "2001-07-02T11:59:59.500000Z"
+    "datetime": null
   },
   "geometry": {
     "type": "Polygon",

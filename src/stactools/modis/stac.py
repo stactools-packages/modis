@@ -4,10 +4,11 @@ import urllib.parse
 from typing import Any, Dict, Optional, cast
 
 import pystac
+import pystac.utils
 import rasterio
 import shapely.geometry
 import stactools.core.utils
-from pystac import Asset, Collection, Item
+from pystac import Asset, Collection, Item, Summaries
 from pystac.extensions.eo import Band, EOExtension
 from pystac.extensions.item_assets import AssetDefinition, ItemAssetsExtension
 from pystac.extensions.projection import ProjectionExtension
@@ -38,15 +39,35 @@ def create_collection(product: str, version: str) -> Collection:
     Returns:
         Collection: The created collection.
     """
+    if product.startswith("MCD"):
+        platform = ["terra,aqua"]
+    elif product.startswith("MOD"):
+        platform = ["terra"]
+    elif product.startswith("MYD"):
+        platform = ["aqua"]
+    else:
+        raise ValueError(
+            f"Invalid product (should start with MCD, MOD, or MYD): {product}")
+
+    summaries = {
+        "instruments": ["modis"],
+        "platform": platform,
+    }
+
     fragments = Fragments(product, version)
+    item_properties = fragments.item_properties()
+    gsd = item_properties.get("gsd")
+    if gsd:
+        summaries["gsd"] = [gsd]
+
     fragment = fragments.collection()
-    collection = pystac.Collection(
-        id=collection_id(product, version),
-        description=fragment["description"],
-        extent=fragment["extent"],
-        title=fragment["title"],
-        providers=fragment["providers"],
-    )
+    collection = pystac.Collection(id=collection_id(product, version),
+                                   description=fragment["description"],
+                                   extent=fragment["extent"],
+                                   title=fragment["title"],
+                                   providers=fragment["providers"],
+                                   keywords=["modis"],
+                                   summaries=Summaries(summaries))
     collection.add_links(fragment["links"])
 
     item_assets = ItemAssetsExtension.ext(collection, add_if_missing=True)
@@ -87,18 +108,25 @@ def create_item(href: str,
     file = File(href)
     metadata = Metadata(file.xml_href, read_href_modifier)
     fragments = Fragments(metadata.product, metadata.version)
+    properties = fragments.item_properties()
+    properties["start_datetime"] = pystac.utils.datetime_to_str(
+        metadata.start_datetime)
+    properties["end_datetime"] = pystac.utils.datetime_to_str(
+        metadata.end_datetime)
+    properties["modis:horizontal-tile"] = metadata.horizontal_tile
+    properties["modis:vertical-tile"] = metadata.vertical_tile
+    properties["modis:tile-id"] = metadata.tile_id
     item = pystac.Item(id=metadata.id,
                        geometry=metadata.geometry,
                        bbox=metadata.bbox,
                        datetime=metadata.datetime,
-                       properties=fragments.item_properties())
+                       properties=properties)
 
     item.common_metadata.instruments = metadata.instruments
     item.common_metadata.platform = metadata.platform
-    item.common_metadata.start_datetime = metadata.start_datetime
-    item.common_metadata.end_datetime = metadata.end_datetime
     item.common_metadata.created = metadata.created
     item.common_metadata.updated = metadata.updated
+
     properties = HDF_ASSET_PROPERTIES.copy()
     properties["href"] = file.hdf_href
     item.add_asset(HDF_ASSET_KEY, Asset.from_dict(properties))

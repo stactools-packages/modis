@@ -3,15 +3,19 @@
   "stac_version": "1.0.0",
   "id": "MOD15A2H.A2022033.h13v10.061.2022042045937",
   "properties": {
+    "gsd": 500,
+    "start_datetime": "2022-02-02T00:00:00Z",
+    "end_datetime": "2022-02-09T23:59:59Z",
+    "modis:horizontal-tile": 13,
+    "modis:vertical-tile": 10,
+    "modis:tile-id": "51013010",
     "instruments": [
       "modis"
     ],
     "platform": "terra",
-    "start_datetime": "2022-02-02T00:00:00Z",
-    "end_datetime": "2022-02-09T23:59:59Z",
     "created": "2022-02-11T04:59:37Z",
     "updated": "2022-02-10T23:09:54.486000Z",
-    "datetime": "2022-02-05T23:59:59.500000Z"
+    "datetime": null
   },
   "geometry": {
     "type": "Polygon",

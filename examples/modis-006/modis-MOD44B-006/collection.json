@@ -2,7 +2,7 @@
   "type": "Collection",
   "id": "modis-MOD44B-006",
   "stac_version": "1.0.0",
-  "description": "The MOD44B Version 6 Vegetation Continuous Fields\n(VCF) yearly product is a global representation of surface vegetation cover as\ngradations of three ground cover components: percent tree cover, percent non-tree\ncover, and percent non-vegetated (bare). VCF products provide a continuous,\nquantitative portrayal of land surface cover at 250 meter (m) pixel resolution,\nwith a sub-pixel depiction of percent cover in reference to the three ground cover\ncomponents. The sub-pixel mixture of ground cover estimates represents a revolutionary\napproach to the characterization of vegetative land cover that can be used to enhance\ninputs to environmental modeling and monitoring applications.\n\nThe MOD44B data product layers include percent tree cover, percent non-tree cover,\npercent non-vegetated, cloud cover, and quality indicators. The start date of the\nannual period for this product begins with day of year (DOY) 65 (March 5).",
+  "description": "The MOD44B Version 6 Vegetation Continuous Fields (VCF) yearly product is a global representation of surface vegetation cover as gradations of three ground cover components: percent tree cover, percent non-tree cover, and percent non-vegetated (bare). VCF products provide a continuous, quantitative portrayal of land surface cover at 250 meter (m) pixel resolution, with a sub-pixel depiction of percent cover in reference to the three ground cover components. The sub-pixel mixture of ground cover estimates represents a revolutionary approach to the characterization of vegetative land cover that can be used to enhance inputs to environmental modeling and monitoring applications. The MOD44B data product layers include percent tree cover, percent non-tree cover, percent non-vegetated, cloud cover, and quality indicators. The start date of the annual period for this product begins with day of year (DOY) 65 (March 5).",
   "links": [
     {
       "rel": "root",
@@ -109,6 +109,9 @@
     }
   },
   "license": "proprietary",
+  "keywords": [
+    "modis"
+  ],
   "providers": [
     {
       "name": "NASA LP DAAC at the USGS EROS Center",
@@ -118,5 +121,13 @@
       ],
       "url": "https://doi.org/10.5067/MODIS/MOD44B.006"
     }
-  ]
+  ],
+  "summaries": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": [
+      "terra"
+    ]
+  }
 }

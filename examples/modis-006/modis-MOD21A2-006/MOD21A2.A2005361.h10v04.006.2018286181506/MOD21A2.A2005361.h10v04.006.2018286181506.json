@@ -4,7 +4,7 @@
   "id": "MOD21A2.A2005361.h10v04.006.2018286181506",
   "properties": {
     "QC_Mandatory_QA_flags_00": "Pixel produced, good quality, no further QA info necessary",
-    "QC_Mandatory_QA_flags_01": "Pixel produced but unreliable quality. Either\n                                        one or more of the following conditions are met:\n                                        emissivity in both bands 31 and 32 < 0.95, retrieval\n                                        affected by nearby cloud, low transmissivity due to\n                                        high water vapor loading (<0.4), Recommend more\n                                        detailed analysis of other QC information",
+    "QC_Mandatory_QA_flags_01": "Pixel produced but unreliable quality. Either one or more of the following conditions are met: emissivity in both bands 31 and 32 < 0.95, retrieval affected by nearby cloud, low transmissivity due to high water vapor loading (<0.4), Recommend more detailed analysis of other QC information",
     "QC_Mandatory_QA_flags_10": "Pixel not produced due to cloud",
     "QC_Mandatory_QA_flags_11": "Pixel not produced due to reasons other than cloud",
     "QC_Data_quality_flag_00": "Good data quality of L1B bands 29, 31, 32",
@@ -35,15 +35,18 @@
     "QC_LST_accuracy_01": "1.5 - 2 K (Marginal performance)",
     "QC_LST_accuracy_10": "1 - 1.5 K (Good performance)",
     "QC_LST_accuracy_11": "<1 K (Excellent performance)",
+    "start_datetime": "2005-12-27T00:00:00Z",
+    "end_datetime": "2005-12-31T23:59:59Z",
+    "modis:horizontal-tile": 10,
+    "modis:vertical-tile": 4,
+    "modis:tile-id": "51010004",
     "instruments": [
       "modis"
     ],
     "platform": "terra",
-    "start_datetime": "2005-12-27T00:00:00Z",
-    "end_datetime": "2005-12-31T23:59:59Z",
     "created": "2018-10-13T18:15:06Z",
     "updated": "2018-10-14T20:17:00.495000Z",
-    "datetime": "2005-12-29T11:59:59.500000Z"
+    "datetime": null
   },
   "geometry": {
     "type": "Polygon",

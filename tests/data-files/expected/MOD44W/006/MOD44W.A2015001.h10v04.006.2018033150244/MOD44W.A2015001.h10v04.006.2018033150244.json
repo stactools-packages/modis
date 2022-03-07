@@ -15,15 +15,18 @@
     "QA_7": "Urban or impervious surface",
     "QA_8": "No water detected, but MOD44W V5 shows inland water",
     "QA_10": "Fill - outside of projected area",
+    "start_datetime": "2015-01-01T00:00:00Z",
+    "end_datetime": "2015-12-31T00:00:00Z",
+    "modis:horizontal-tile": 10,
+    "modis:vertical-tile": 4,
+    "modis:tile-id": "51010004",
     "instruments": [
       "modis"
     ],
     "platform": "terra",
-    "start_datetime": "2015-01-01T00:00:00Z",
-    "end_datetime": "2015-12-31T00:00:00Z",
     "created": "2018-02-02T15:02:44Z",
     "updated": "2018-04-04T12:07:35.020000Z",
-    "datetime": "2015-07-02T00:00:00Z"
+    "datetime": null
   },
   "geometry": {
     "type": "Polygon",

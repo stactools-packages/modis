@@ -2,7 +2,7 @@
   "type": "Collection",
   "id": "modis-MOD16A3GF-006",
   "stac_version": "1.0.0",
-  "description": "The MOD16A3GF Version 6 Evapotranspiration/Latent Heat Flux (ET/LE) product is a year-end\ngap-filled yearly composite dataset produced at 500 meter (m) pixel resolution. The algorithm\nused for the MOD16 data product collection is based on the logic of the Penman-Monteith equation,\nwhich includes inputs of daily meteorological reanalysis data along with Moderate Resolution\nImaging Spectroradiometer (MODIS) remotely sensed data products such as vegetation property\ndynamics, albedo, and land cover.\n\nThe MOD16A3GF will be generated at the end of each year when the entire yearly 8-day MOD15A2H\nis available. Hence, the gap-filled MOD16A3GF is the improved MOD16, which has cleaned the\npoor-quality inputs from yearly Leaf Area Index and Fraction of Photosynthetically Active Radiation\n(LAI/FPAR) based on the Quality Control (QC) label for every pixel. If any LAI/FPAR pixel did not\nmeet the quality screening criteria, its value is determined through linear interpolation. However,\nusers cannot get MOD16A3GF in near-real time because it will be generated only at the end of a given\nyear.\n\nProvided in the MOD16A3GF product are layers for composited ET, LE, Potential ET (PET), and\nPotential LE (PLE) along with a quality control layer. Two low resolution browse images, ET\nand LE, are also available for each MOD16A3GF granule.\n\nThe pixel values for the two Evapotranspiration layers (ET and PET) are the sum for all days\nwithin the defined year, and the pixel values for the two Latent Heat layers (LE and PLE) are\nthe average of all days within the defined year.",
+  "description": "The MOD16A3GF Version 6 Evapotranspiration/Latent Heat Flux (ET/LE) product is a year-end gap-filled yearly composite dataset produced at 500 meter (m) pixel resolution. The algorithm used for the MOD16 data product collection is based on the logic of the Penman-Monteith equation, which includes inputs of daily meteorological reanalysis data along with Moderate Resolution Imaging Spectroradiometer (MODIS) remotely sensed data products such as vegetation property dynamics, albedo, and land cover. The MOD16A3GF will be generated at the end of each year when the entire yearly 8-day MOD15A2H is available. Hence, the gap-filled MOD16A3GF is the improved MOD16, which has cleaned the poor-quality inputs from yearly Leaf Area Index and Fraction of Photosynthetically Active Radiation (LAI/FPAR) based on the Quality Control (QC) label for every pixel. If any LAI/FPAR pixel did not meet the quality screening criteria, its value is determined through linear interpolation. However, users cannot get MOD16A3GF in near-real time because it will be generated only at the end of a given year. Provided in the MOD16A3GF product are layers for composited ET, LE, Potential ET (PET), and Potential LE (PLE) along with a quality control layer. Two low resolution browse images, ET and LE, are also available for each MOD16A3GF granule. The pixel values for the two Evapotranspiration layers (ET and PET) are the sum for all days within the defined year, and the pixel values for the two Latent Heat layers (LE and PLE) are the average of all days within the defined year.",
   "links": [
     {
       "rel": "root",
@@ -51,7 +51,7 @@
           "description": "Average of Latent Heat Flux"
         },
         {
-          "name": "PET_500m\t",
+          "name": "PET_500m",
           "description": "Total Potential Evapotranspiration"
         },
         {
@@ -95,6 +95,9 @@
     }
   },
   "license": "proprietary",
+  "keywords": [
+    "modis"
+  ],
   "providers": [
     {
       "name": "NASA LP DAAC at the USGS EROS Center",
@@ -104,5 +107,13 @@
       ],
       "url": "https://doi.org/10.5067/MODIS/MOD16A3GF.006"
     }
-  ]
+  ],
+  "summaries": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": [
+      "terra"
+    ]
+  }
 }

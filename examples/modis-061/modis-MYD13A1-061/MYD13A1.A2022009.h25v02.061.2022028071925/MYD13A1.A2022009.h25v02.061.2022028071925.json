@@ -3,15 +3,19 @@
   "stac_version": "1.0.0",
   "id": "MYD13A1.A2022009.h25v02.061.2022028071925",
   "properties": {
+    "gsd": 500,
+    "start_datetime": "2022-01-09T00:00:00Z",
+    "end_datetime": "2022-01-24T23:59:59Z",
+    "modis:horizontal-tile": 25,
+    "modis:vertical-tile": 2,
+    "modis:tile-id": "51025002",
     "instruments": [
       "modis"
     ],
     "platform": "aqua",
-    "start_datetime": "2022-01-09T00:00:00Z",
-    "end_datetime": "2022-01-24T23:59:59Z",
     "created": "2022-01-28T12:19:25Z",
     "updated": "2022-01-28T06:24:44.574000Z",
-    "datetime": "2022-01-16T23:59:59.500000Z"
+    "datetime": null
   },
   "geometry": {
     "type": "Polygon",

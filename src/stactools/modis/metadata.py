@@ -9,6 +9,8 @@ from shapely.geometry import Polygon
 from stactools.core.io import ReadHrefModifier
 from stactools.core.io.xml import XmlElement
 
+from stactools.modis.constants import TEMPORALLY_WEIGHTED_PRODUCTS
+
 
 class MissingElement(Exception):
     """An expected element is missing from the XML file"""
@@ -95,6 +97,19 @@ class Metadata:
             metadata.find_text_or_throw("LastUpdate",
                                         missing_element("updated")))
 
+        psas = metadata.findall("PSAs/PSA")
+        for psa in psas:
+            name = psa.find_text_or_throw("PSAName",
+                                          missing_element("PSAName"))
+            value = psa.find_text_or_throw("PSAValue",
+                                           missing_element("PSAValue"))
+            if name == "HORIZONTALTILENUMBER":
+                self.horizontal_tile = int(value)
+            elif name == "VERTICALTILENUMBER":
+                self.vertical_tile = int(value)
+            elif name == "TileID":
+                self.tile_id = value
+
         platforms = metadata.findall("Platform")
         # Per the discussion in
         # https://github.com/radiantearth/stac-spec/issues/216, it seems like
@@ -123,6 +138,8 @@ class Metadata:
         Returns:
             Optional[datetime.datetime]: The nominal datetime for this product.
         """
-        # FIXME this is incorrect, need to account for the prouduct type
-        return self.start_datetime + (self.end_datetime -
-                                      self.start_datetime) / 2
+        if self.product in TEMPORALLY_WEIGHTED_PRODUCTS:
+            return self.start_datetime + (self.end_datetime -
+                                          self.start_datetime) / 2
+        else:
+            return None

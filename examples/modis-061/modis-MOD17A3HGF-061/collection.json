@@ -93,6 +93,9 @@
     }
   },
   "license": "proprietary",
+  "keywords": [
+    "modis"
+  ],
   "providers": [
     {
       "name": "NASA LP DAAC at the USGS EROS Center",
@@ -102,5 +105,16 @@
       ],
       "url": "https://doi.org/10.5067/MODIS/MOD17A3HGF.061"
     }
-  ]
+  ],
+  "summaries": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": [
+      "terra"
+    ],
+    "gsd": [
+      500
+    ]
+  }
 }

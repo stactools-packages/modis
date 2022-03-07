@@ -12,3 +12,4 @@ METADATA_ASSET_PROPERTIES = {
     "roles": ["metadata"],
     "title": "FGDC Metdata"
 }
+TEMPORALLY_WEIGHTED_PRODUCTS = ["MCD43A4"]

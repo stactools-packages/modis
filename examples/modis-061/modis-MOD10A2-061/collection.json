@@ -84,6 +84,9 @@
     }
   },
   "license": "proprietary",
+  "keywords": [
+    "modis"
+  ],
   "providers": [
     {
       "name": "NASA NSIDC DAAC",
@@ -93,5 +96,16 @@
       ],
       "url": "https://doi.org/10.5067/MODIS/MOD10A2.061"
     }
-  ]
+  ],
+  "summaries": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": [
+      "terra"
+    ],
+    "gsd": [
+      500
+    ]
+  }
 }

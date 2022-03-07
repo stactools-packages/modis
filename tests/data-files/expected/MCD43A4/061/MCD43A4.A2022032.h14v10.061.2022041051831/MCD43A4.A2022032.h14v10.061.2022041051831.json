@@ -3,12 +3,16 @@
   "stac_version": "1.0.0",
   "id": "MCD43A4.A2022032.h14v10.061.2022041051831",
   "properties": {
+    "gsd": 500,
+    "start_datetime": "2022-01-24T00:00:00Z",
+    "end_datetime": "2022-02-08T23:59:59.999999Z",
+    "modis:horizontal-tile": 14,
+    "modis:vertical-tile": 10,
+    "modis:tile-id": "51014010",
     "instruments": [
       "modis"
     ],
     "platform": "terra,aqua",
-    "start_datetime": "2022-01-24T00:00:00Z",
-    "end_datetime": "2022-02-08T23:59:59.999999Z",
     "created": "2022-02-10T05:19:45Z",
     "updated": "2022-02-09T23:25:46.095000Z",
     "datetime": "2022-02-01T00:00:00Z"
