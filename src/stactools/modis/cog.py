@@ -133,8 +133,9 @@ def cogify(infile: str, outdir: str) -> Tuple[List[str], List[str]]:
     for subdataset in subdatasets:
         parts = subdataset.split(":")
         subdataset_name = parts[-1]
-        subdataset_names.append(subdataset_name)
-        file_name = f"{base_file_name}_{subdataset_name}.tif"
+        sanitized_subdataset_name = subdataset_name.replace(" ", "_")
+        subdataset_names.append(sanitized_subdataset_name)
+        file_name = f"{base_file_name}_{sanitized_subdataset_name}.tif"
         outfile = os.path.join(outdir, file_name)
         stactools.core.utils.convert.cogify(subdataset, outfile)
         paths.append(outfile)
