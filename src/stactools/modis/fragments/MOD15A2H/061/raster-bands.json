@@ -11,12 +11,12 @@
     },
     "FparLai_QC": {
         "data_type": "uint8",
-        "unit": "Class Flag",
+        "unit": null,
         "scale": null
     },
     "FparExtra_QC": {
         "data_type": "uint8",
-        "unit": "Class Flag",
+        "unit": null,
         "scale": null
     },
     "FparStdDev_500m": {

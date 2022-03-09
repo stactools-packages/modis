@@ -11,12 +11,12 @@
     },
     "sur_refl_state_250m": {
         "data_type": "uint16",
-        "unit": "Bit Field",
+        "unit": null,
         "scale": null
     },
     "sur_refl_qc_250m": {
         "data_type": "uint16",
-        "unit": "Bit Field",
+        "unit": null,
         "scale": null
     }
 }

@@ -36,7 +36,7 @@
     },
     "sur_refl_qc_500m": {
         "data_type": "uint32",
-        "unit": "Bit Field",
+        "unit": null,
         "scale": null
     },
     "sur_refl_szen": {
@@ -56,7 +56,7 @@
     },
     "sur_refl_state_500m": {
         "data_type": "uint16",
-        "unit": "Bit Field",
+        "unit": null,
         "scale": null
     },
     "sur_refl_day_of_year": {

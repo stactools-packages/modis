@@ -51,12 +51,12 @@
     },
     "Clear_sky_days": {
         "data_type": "uint8",
-        "unit": "Bit Field",
+        "unit": null,
         "scale": null
     },
     "Clear_sky_nights": {
         "data_type": "uint8",
-        "unit": "Bit Field",
+        "unit": null,
         "scale": null
     }
 }
