@@ -66,7 +66,7 @@ def create_collection(product: str, version: str) -> Collection:
                                    extent=fragment["extent"],
                                    title=fragment["title"],
                                    providers=fragment["providers"],
-                                   keywords=["modis"],
+                                   keywords=fragment.get("keywords", list()),
                                    summaries=Summaries(summaries))
     collection.add_links(fragment["links"])
 
