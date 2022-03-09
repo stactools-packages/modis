@@ -107,12 +107,10 @@
           "scale": 0.1
         },
         {
-          "data_type": "uint8",
-          "unit": "Class Flag"
+          "data_type": "uint8"
         },
         {
-          "data_type": "uint8",
-          "unit": "Class Flag"
+          "data_type": "uint8"
         },
         {
           "data_type": "uint8",

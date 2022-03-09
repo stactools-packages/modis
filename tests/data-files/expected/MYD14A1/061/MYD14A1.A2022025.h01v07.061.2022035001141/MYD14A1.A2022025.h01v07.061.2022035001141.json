@@ -89,12 +89,10 @@
       ],
       "raster:bands": [
         {
-          "data_type": "uint8",
-          "unit": "Class Flag"
+          "data_type": "uint8"
         },
         {
-          "data_type": "uint8",
-          "unit": "Bit Field"
+          "data_type": "uint8"
         },
         {
           "data_type": "uint32",
@@ -102,8 +100,7 @@
           "scale": 0.1
         },
         {
-          "data_type": "uint16",
-          "unit": "Number"
+          "data_type": "uint16"
         }
       ],
       "roles": [

@@ -98,30 +98,28 @@
       "raster:bands": [
         {
           "data_type": "uint8",
-          "unit": "Dimensionless",
+          "unit": "Percent",
           "scale": 0.01
         },
         {
           "data_type": "uint8",
-          "unit": "Dimensionless",
+          "unit": "m\u00b2/m\u00b2",
           "scale": 0.1
         },
         {
-          "data_type": "uint8",
-          "unit": "Class Flag"
+          "data_type": "uint8"
+        },
+        {
+          "data_type": "uint8"
         },
         {
           "data_type": "uint8",
-          "unit": "Class Flag"
-        },
-        {
-          "data_type": "uint8",
-          "unit": "Dimensionless",
+          "unit": "Percent",
           "scale": 0.01
         },
         {
           "data_type": "uint8",
-          "unit": "Dimensionless",
+          "unit": "m\u00b2/m\u00b2",
           "scale": 0.1
         }
       ],
