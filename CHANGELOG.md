@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Return paths and subdatasest names from `stactools.modis.cogs.add_cogs` ([#44](https://github.com/stactools-packages/modis/pull/44))
 - Keywords and summaries to collections ([#48](https://github.com/stactools-packages/modis/pull/48))
 - More Item and Collection metadata ([#51](https://github.com/stactools-packages/modis/pull/51))
+- Keywords for Collections ([#54](https://github.com/stactools-packages/modis/pull/54))
 
 ### Changed
 
@@ -22,6 +23,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Formatting in V006 fragments ([#45](https://github.com/stactools-packages/modis/pull/45))
 - Extents for V061 collections ([#52](https://github.com/stactools-packages/modis/pull/52))
 - Spaces are disallowed in COG filenames ([#53](https://github.com/stactools-packages/modis/pull/53))
+- Use keywords when creating Collections ([#56](https://github.com/stactools-packages/modis/pull/56))
 
 ## [0.1.0] - 2022-02-17
 
