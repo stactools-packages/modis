@@ -1,22 +1,22 @@
 {
     "ET_500m": {
         "data_type": "uint16",
-        "unit": "kg/m²/year",
+        "unit": "kg/m^2/year",
         "scale": 0.1
     },
     "LE_500m": {
         "data_type": "int16",
-        "unit": "J/m²/day",
+        "unit": "J/m^2/day",
         "scale": 10000
     },
     "PET_500m": {
         "data_type": "uint16",
-        "unit": "kg/m²/year",
+        "unit": "kg/m^2/year",
         "scale": 0.1
     },
     "PLE_500m": {
         "data_type": "int16",
-        "unit": "J/m²/day",
+        "unit": "J/m^2/day",
         "scale": 10000
     },
     "ET_QC_500m": {

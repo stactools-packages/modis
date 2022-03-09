@@ -1,12 +1,12 @@
 {
     "Gpp_500m": {
         "data_type": "int16",
-        "unit": "kg C/m²",
+        "unit": "kg C/m^2",
         "scale": 0.0001
     },
     "PsnNet_500m": {
         "data_type": "int16",
-        "unit": "kg C/m²",
+        "unit": "kg C/m^2",
         "scale": 0.0001
     },
     "Psn_QC_500m": {
