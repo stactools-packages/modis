@@ -11,7 +11,7 @@
     },
     "500m_16_days_VI_Quality": {
         "data_type": "uint16",
-        "unit": "Bit Field",
+        "unit": null,
         "scale": null
     },
     "500m_16_days_red_reflectance": {

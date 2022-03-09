@@ -6,7 +6,7 @@
     },
     "Eight_Day_Snow_Cover": {
         "data_type": "uint8",
-        "unit": "Bit Field",
+        "unit": null,
         "scale": null
     }
 }
