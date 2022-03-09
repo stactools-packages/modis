@@ -129,32 +129,25 @@
       ],
       "raster:bands": [
         {
-          "data_type": "uint8",
-          "unit": "Bit Field"
+          "data_type": "uint8"
         },
         {
-          "data_type": "uint8",
-          "unit": "Bit Field"
+          "data_type": "uint8"
         },
         {
-          "data_type": "uint8",
-          "unit": "Bit Field"
+          "data_type": "uint8"
         },
         {
-          "data_type": "uint8",
-          "unit": "Bit Field"
+          "data_type": "uint8"
         },
         {
-          "data_type": "uint8",
-          "unit": "Bit Field"
+          "data_type": "uint8"
         },
         {
-          "data_type": "uint8",
-          "unit": "Bit Field"
+          "data_type": "uint8"
         },
         {
-          "data_type": "uint8",
-          "unit": "Bit Field"
+          "data_type": "uint8"
         },
         {
           "data_type": "int16",
