@@ -1,12 +1,12 @@
 {
     "Fpar_500m": {
         "data_type": "uint8",
-        "unit": "Dimensionless",
+        "unit": null,
         "scale": 0.01
     },
     "Lai_500m": {
         "data_type": "uint8",
-        "unit": "Dimensionless",
+        "unit": null,
         "scale": 0.1
     },
     "FparLai_QC": {
@@ -21,12 +21,12 @@
     },
     "FparStdDev_500m": {
         "data_type": "uint8",
-        "unit": "Dimensionless",
+        "unit": null,
         "scale": 0.01
     },
     "LaiStdDev_500m": {
         "data_type": "uint8",
-        "unit": "Dimensionless",
+        "unit": null,
         "scale": 0.1
     }
 }
