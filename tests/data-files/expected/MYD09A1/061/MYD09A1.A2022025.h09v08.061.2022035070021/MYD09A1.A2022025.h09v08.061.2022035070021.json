@@ -153,8 +153,7 @@
           "scale": 0.0001
         },
         {
-          "data_type": "uint32",
-          "unit": "Bit Field"
+          "data_type": "uint32"
         },
         {
           "data_type": "int16",
@@ -172,8 +171,7 @@
           "scale": 0.01
         },
         {
-          "data_type": "uint16",
-          "unit": "Bit Field"
+          "data_type": "uint16"
         },
         {
           "data_type": "uint16",
