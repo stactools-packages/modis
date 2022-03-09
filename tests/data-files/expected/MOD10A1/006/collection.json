@@ -98,9 +98,7 @@
     }
   },
   "license": "proprietary",
-  "keywords": [
-    "modis"
-  ],
+  "keywords": [],
   "providers": [
     {
       "name": "NASA NSIDC DAAC at CIRES",
