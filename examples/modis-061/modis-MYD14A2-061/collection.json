@@ -90,7 +90,13 @@
   },
   "license": "proprietary",
   "keywords": [
-    "modis"
+    "NASA",
+    "MODIS",
+    "Satellite",
+    "Remote Sensing",
+    "Imagery",
+    "Global",
+    "Fire"
   ],
   "providers": [
     {
