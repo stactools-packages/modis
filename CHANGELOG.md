@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Changed
 
 - Use `null` instead of "unitless` ([#55](https://github.com/stactools-packages/modis/pull/55))
+- Don't use unicode for units, PySTAC doesn't like it ([#57](https://github.com/stactools-packages/modis/pull/57))
 
 ### Fixed
 
