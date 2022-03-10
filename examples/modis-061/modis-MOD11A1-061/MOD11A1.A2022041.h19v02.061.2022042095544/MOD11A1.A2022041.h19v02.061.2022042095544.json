@@ -3,7 +3,6 @@
   "stac_version": "1.0.0",
   "id": "MOD11A1.A2022041.h19v02.061.2022042095544",
   "properties": {
-    "gsd": 1000,
     "start_datetime": "2022-02-10T00:00:00Z",
     "end_datetime": "2022-02-10T23:59:59Z",
     "modis:horizontal-tile": 19,
@@ -122,52 +121,64 @@
       "raster:bands": [
         {
           "data_type": "uint16",
+          "spatial_resolution": 1000,
           "unit": "Kelvin",
           "scale": 0.02
         },
         {
-          "data_type": "uint8"
+          "data_type": "uint8",
+          "spatial_resolution": 1000
         },
         {
           "data_type": "uint8",
+          "spatial_resolution": 1000,
           "unit": "Hours",
           "scale": 0.1
         },
         {
           "data_type": "uint8",
+          "spatial_resolution": 1000,
           "unit": "Degree"
         },
         {
           "data_type": "uint16",
+          "spatial_resolution": 1000,
           "unit": "Kelvin",
           "scale": 0.02
         },
         {
-          "data_type": "uint8"
+          "data_type": "uint8",
+          "spatial_resolution": 1000
         },
         {
           "data_type": "uint8",
+          "spatial_resolution": 1000,
           "unit": "Hours",
           "scale": 0.1
         },
         {
           "data_type": "uint8",
+          "spatial_resolution": 1000,
           "unit": "Degree"
         },
         {
           "data_type": "uint8",
+          "spatial_resolution": 1000,
           "scale": 0.002
         },
         {
           "data_type": "uint8",
+          "spatial_resolution": 1000,
           "scale": 0.002
         },
         {
           "data_type": "uint16",
+          "spatial_resolution": 1000,
           "scale": 0.0005
         },
         {
           "data_type": "uint16",
+          "spatial_resolution": 1000,
           "scale": 0.0005
         }
       ],
