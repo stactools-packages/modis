@@ -24,6 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Extents for V061 collections ([#52](https://github.com/stactools-packages/modis/pull/52))
 - Spaces are disallowed in COG filenames ([#53](https://github.com/stactools-packages/modis/pull/53))
 - Use keywords when creating Collections ([#56](https://github.com/stactools-packages/modis/pull/56))
+- Use `raster`'s `spatial_resolution` instead of `gsd` ([#60](https://github.com/stactools-packages/modis/pull/60))
 
 ## [0.1.0] - 2022-02-17
 
