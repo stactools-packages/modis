@@ -3,7 +3,6 @@
   "stac_version": "1.0.0",
   "id": "MOD10A1.A2022040.h11v05.061.2022042042026",
   "properties": {
-    "gsd": 500,
     "start_datetime": "2022-02-09T00:00:00Z",
     "end_datetime": "2022-02-09T23:59:59Z",
     "modis:horizontal-tile": 11,
@@ -101,26 +100,33 @@
       ],
       "raster:bands": [
         {
-          "data_type": "uint8"
+          "data_type": "uint8",
+          "spatial_resolution": 500
         },
         {
-          "data_type": "uint8"
+          "data_type": "uint8",
+          "spatial_resolution": 500
         },
         {
-          "data_type": "uint8"
+          "data_type": "uint8",
+          "spatial_resolution": 500
         },
         {
           "data_type": "int16",
+          "spatial_resolution": 500,
           "scale": 0.0001
         },
         {
-          "data_type": "uint8"
+          "data_type": "uint8",
+          "spatial_resolution": 500
         },
         {
-          "data_type": "uint8"
+          "data_type": "uint8",
+          "spatial_resolution": 500
         },
         {
-          "data_type": "uint8"
+          "data_type": "uint8",
+          "spatial_resolution": 500
         }
       ],
       "roles": [
