@@ -3,7 +3,6 @@
   "stac_version": "1.0.0",
   "id": "MOD14A2.A2022033.h21v05.061.2022041234800",
   "properties": {
-    "gsd": 1000,
     "start_datetime": "2022-02-02T00:00:00Z",
     "end_datetime": "2022-02-09T23:59:59Z",
     "modis:horizontal-tile": 21,
@@ -81,10 +80,12 @@
       ],
       "raster:bands": [
         {
-          "data_type": "uint8"
+          "data_type": "uint8",
+          "spatial_resolution": 1000
         },
         {
-          "data_type": "uint8"
+          "data_type": "uint8",
+          "spatial_resolution": 1000
         }
       ],
       "roles": [
