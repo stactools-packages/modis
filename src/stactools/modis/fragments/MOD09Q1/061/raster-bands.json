@@ -2,21 +2,25 @@
     "sur_refl_b01": {
         "data_type": "int16",
         "unit": null,
-        "scale": 0.0001
+        "scale": 0.0001,
+        "spatial_resolution": 250
     },
     "sur_refl_b02": {
         "data_type": "int16",
         "unit": null,
-        "scale": 0.0001
+        "scale": 0.0001,
+        "spatial_resolution": 250
     },
     "sur_refl_state_250m": {
         "data_type": "uint16",
         "unit": null,
-        "scale": null
+        "scale": null,
+        "spatial_resolution": 250
     },
     "sur_refl_qc_250m": {
         "data_type": "uint16",
         "unit": null,
-        "scale": null
+        "scale": null,
+        "spatial_resolution": 250
     }
 }
