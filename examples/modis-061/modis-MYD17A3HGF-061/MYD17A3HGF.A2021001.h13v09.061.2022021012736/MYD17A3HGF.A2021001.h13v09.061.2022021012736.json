@@ -86,12 +86,12 @@
       "raster:bands": [
         {
           "data_type": "uint16",
-          "unit": "kg C/m\u00b2",
+          "unit": "kg C/m^2",
           "scale": 0.0001
         },
         {
           "data_type": "int16",
-          "unit": "kg C/m\u00b2",
+          "unit": "kg C/m^2",
           "scale": 0.0001
         },
         {

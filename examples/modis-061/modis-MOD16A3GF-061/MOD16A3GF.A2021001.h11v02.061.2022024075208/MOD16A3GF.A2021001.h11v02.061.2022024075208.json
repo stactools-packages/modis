@@ -94,22 +94,22 @@
       "raster:bands": [
         {
           "data_type": "uint16",
-          "unit": "kg/m\u00b2/year",
+          "unit": "kg/m^2/year",
           "scale": 0.1
         },
         {
           "data_type": "int16",
-          "unit": "J/m\u00b2/day",
+          "unit": "J/m^2/day",
           "scale": 10000
         },
         {
           "data_type": "uint16",
-          "unit": "kg/m\u00b2/year",
+          "unit": "kg/m^2/year",
           "scale": 0.1
         },
         {
           "data_type": "int16",
-          "unit": "J/m\u00b2/day",
+          "unit": "J/m^2/day",
           "scale": 10000
         },
         {
