@@ -2,11 +2,13 @@
     "Maximum_Snow_Extent": {
         "data_type": "uint8",
         "unit": null,
-        "scale": null
+        "scale": null,
+        "spatial_resolution": 500
     },
     "Eight_Day_Snow_Cover": {
         "data_type": "uint8",
         "unit": null,
-        "scale": null
+        "scale": null,
+        "spatial_resolution": 500
     }
 }

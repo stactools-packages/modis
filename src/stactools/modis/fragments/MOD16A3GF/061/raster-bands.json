@@ -2,26 +2,31 @@
     "ET_500m": {
         "data_type": "uint16",
         "unit": "kg/m^2/year",
-        "scale": 0.1
+        "scale": 0.1,
+        "spatial_resolution": 500
     },
     "LE_500m": {
         "data_type": "int16",
         "unit": "J/m^2/day",
-        "scale": 10000
+        "scale": 10000,
+        "spatial_resolution": 500
     },
     "PET_500m": {
         "data_type": "uint16",
         "unit": "kg/m^2/year",
-        "scale": 0.1
+        "scale": 0.1,
+        "spatial_resolution": 500
     },
     "PLE_500m": {
         "data_type": "int16",
         "unit": "J/m^2/day",
-        "scale": 10000
+        "scale": 10000,
+        "spatial_resolution": 500
     },
     "ET_QC_500m": {
         "data_type": "uint8",
         "unit": "Percent",
-        "scale": null
+        "scale": null,
+        "spatial_resolution": 500
     }
 }
