@@ -1,0 +1,156 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD10A1.A2022040.h11v05.061.2022042042026",
+  "properties": {
+    "start_datetime": "2022-02-09T00:00:00Z",
+    "end_datetime": "2022-02-09T23:59:59Z",
+    "modis:horizontal-tile": 11,
+    "modis:vertical-tile": 5,
+    "modis:tile-id": "51011005",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "terra",
+    "created": "2022-02-11T04:20:28Z",
+    "updated": "2022-02-10T21:25:29.136000Z",
+    "datetime": null
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -80.7657805985677,
+          29.8459315745197
+        ],
+        [
+          -91.3785102402463,
+          39.9999999964079
+        ],
+        [
+          -78.110571576758,
+          40.0539543997624
+        ],
+        [
+          -69.0368143977928,
+          29.8919942789078
+        ],
+        [
+          -80.7657805985677,
+          29.8459315745197
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Snow Cover Daily L3 Global 500m SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Snow Cover Daily L3 Global 500m SIN Grid"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../tests/data-files/MOD10A1.A2022040.h11v05.061.2022042042026.hdf",
+      "type": "application/x-hdf",
+      "title": "hdf data",
+      "eo:bands": [
+        {
+          "name": "NDSI_Snow_Cover",
+          "description": "Gridded NDSI snow cover and data flag values."
+        },
+        {
+          "name": "NDSI_Snow_Cover_Basic_QA",
+          "description": "A general estimate of the quality of the algorithm result."
+        },
+        {
+          "name": "NDSI_Snow_Cover_Algorithm_Flags_QA",
+          "description": "Algorithm-specific bit flags set for data screens and for inland water."
+        },
+        {
+          "name": "NDSI",
+          "description": "Raw NDSI values (i.e. prior to screening)."
+        },
+        {
+          "name": "Snow_Albedo_Daily_Tile",
+          "description": "Daily snow albedo corresponding to the NDSI_Snow_Cover parameter."
+        },
+        {
+          "name": "orbit_pnt",
+          "description": "Pointer to the orbit of the swath mapped into each grid cell. For details, see Section 1.1.2 below."
+        },
+        {
+          "name": "granule_pnt",
+          "description": "Pointer for identifying the swath mapped into each grid cell. For details, see the section 'Using the granule_pnt' below."
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        },
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "scale": 0.0001
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/MOD10A1.A2022040.h11v05.061.2022042042026.hdf.xml",
+      "type": "application/xml",
+      "title": "FGDC Metdata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -91.3785102402463,
+    29.8459315745197,
+    -69.0368143977928,
+    40.0539543997624
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
+  ],
+  "collection": "modis-10A1-061"
+}

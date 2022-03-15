@@ -1,0 +1,147 @@
+{
+  "type": "Collection",
+  "id": "modis-21A2-006",
+  "stac_version": "1.0.0",
+  "description": "A new suite of Moderate Resolution Imaging Spectroradiometer (MODIS) Land Surface Temperature and Emissivity (LST&E) products are available in Collection 6. The MOD21 Land Surface Temperatuer (LST) algorithm differs from the algorithm of the MOD11 LST products, in that the MOD21 algorithm is based on the ASTER Temperature/Emissivity Separation (TES) technique, whereas the MOD11 uses the split-window technique. The MOD21 TES algorithm uses a physics-based algorithm to dynamically retrieve both the LST and spectral emissivity simultaneously from the MODIS thermal infrared bands 29, 31, and 32. The TES algorithm is combined with an improved Water Vapor Scaling (WVS) atmospheric correction scheme to stabilize the retrieval during very warm and humid conditions. The MOD21A2 dataset is an 8-day composite LST product that uses an algorithm based on a simple averaging method. The algorithm calculates the average from all the cloud free MOD21A1D and MOD21A1N daily acquisitions from the 8-day period. Unlike the MOD21A1 data sets where the daytime and nighttime acquisitions are separate products, the MOD21A2 contains both daytime and nighttime acquisitions as separate Science Dataset (SDS) layers within a single Hierarchical Data Format (HDF) file. The LST, Quality Control (QC), view zenith angle, and viewing time have separate day and night SDS layers, while the values for the MODIS emissivity bands 29, 31, and 32 are the average of both the nighttime and daytime acquisitions. MOD21A2 products are available two months after acquisition due to latency of data inputs. Additional details regarding the method used to create this Level 3 (L3) product are available in the Algorithm Theoretical Basis Document (ATBD).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "help",
+      "href": "https://lpdaac.usgs.gov/documents/108/MOD21_User_Guide_V6.pdf",
+      "title": "User Guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/6/MOD21A2",
+      "title": "Data File"
+    },
+    {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.5067/MODIS/MOD21A2.006"
+    },
+    {
+      "rel": "item",
+      "href": "./MOD21A2.A2005361.h10v04.006.2018286181506/MOD21A2.A2005361.h10v04.006.2018286181506.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "MODIS, version 006"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+  ],
+  "item_assets": {
+    "hdf": {
+      "type": "application/x-hdf",
+      "roles": [
+        "data"
+      ],
+      "title": "hdf data",
+      "eo:bands": [
+        {
+          "name": "LST_Day_1KM",
+          "description": "Day Land surface temperature"
+        },
+        {
+          "name": "QC_Day",
+          "description": "Day Quality Control (QC)"
+        },
+        {
+          "name": "View_Angle_Day",
+          "description": "Day MODIS view zenith angle"
+        },
+        {
+          "name": "View_Time_Day",
+          "description": "Time of MODIS observation for day"
+        },
+        {
+          "name": "LST_Night_1KM",
+          "description": "Night Land Surface Temperature"
+        },
+        {
+          "name": "QC_Night",
+          "description": "Night Quality Control (QC)"
+        },
+        {
+          "name": "View_Angle_Night",
+          "description": "Night view zenith angle"
+        },
+        {
+          "name": "View_Time_Night",
+          "description": "Time of Observation for night"
+        },
+        {
+          "name": "Emis_29",
+          "description": "Average Day/Night Band 29 emissivity"
+        },
+        {
+          "name": "Emis_31",
+          "description": "Average Day/Night Band 31 emissivity"
+        },
+        {
+          "name": "Emis_32",
+          "description": "Average Day/Night Band 32 emissivity"
+        }
+      ]
+    },
+    "metadata": {
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ],
+      "title": "FGDC Metdata"
+    }
+  },
+  "sci:doi": "10.5067/MODIS/MOD21A2.006",
+  "title": "MODIS/Terra Land Surface Temperature/3-Band Emissivity 8-Day L3 Global 1 km SIN Grid",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180.0,
+          180.0,
+          -90.0,
+          90.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2000-02-16T00:00:00Z",
+          "2005-12-31T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "keywords": [],
+  "providers": [
+    {
+      "name": "NASA LP DAAC at the USGS EROS Center",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://doi.org/10.5067/MODIS/MOD21A2.006"
+    }
+  ],
+  "summaries": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": [
+      "terra"
+    ]
+  }
+}
