@@ -8,6 +8,7 @@ import pystac.utils
 import rasterio
 import shapely.geometry
 import stactools.core.utils
+import stactools.core.utils.antimeridian
 from pystac import Asset, Collection, Item, Summaries
 from pystac.extensions.eo import Band, EOExtension
 from pystac.extensions.item_assets import AssetDefinition, ItemAssetsExtension
@@ -20,7 +21,8 @@ import stactools.modis.cog
 import stactools.modis.utils
 from stactools.modis.constants import (HDF_ASSET_KEY, HDF_ASSET_PROPERTIES,
                                        METADATA_ASSET_KEY,
-                                       METADATA_ASSET_PROPERTIES)
+                                       METADATA_ASSET_PROPERTIES,
+                                       AntimeridianStrategy)
 from stactools.modis.file import File
 from stactools.modis.metadata import Metadata
 from stactools.modis.product import Product
@@ -76,10 +78,13 @@ def create_collection(product_name: str, version: str) -> Collection:
     return collection
 
 
-def create_item(href: str,
-                cog_directory: Optional[str] = None,
-                create_cogs: bool = False,
-                read_href_modifier: Optional[ReadHrefModifier] = None) -> Item:
+def create_item(
+    href: str,
+    cog_directory: Optional[str] = None,
+    create_cogs: bool = False,
+    read_href_modifier: Optional[ReadHrefModifier] = None,
+    antimeridian_strategy: AntimeridianStrategy = AntimeridianStrategy.SPLIT
+) -> Item:
     """Creates a STAC Item from MODIS data.
 
     Args:
@@ -91,6 +96,8 @@ def create_item(href: str,
             hdf file.
         read_href_modifier (Callable[[str], str]): An optional function to
             modify the href (e.g. to add a token to a url)
+        antimeridian_strategy (AntimeridianStrategy): Either split on -180 or
+            normalize geometries so all longitudes are either positive or negative.
 
     Returns:
         pystac.Item: A STAC Item representing this MODIS image.
@@ -111,6 +118,14 @@ def create_item(href: str,
                        bbox=metadata.bbox,
                        datetime=metadata.datetime,
                        properties=properties)
+    geometry = shapely.geometry.shape(item.geometry)
+    if antimeridian_strategy == AntimeridianStrategy.SPLIT:
+        split = stactools.core.utils.antimeridian.split(geometry)
+        if split:
+            item.geometry = shapely.geometry.mapping(split)
+    elif antimeridian_strategy == AntimeridianStrategy.NORMALIZE:
+        item.geometry = shapely.geometry.mapping(
+            stactools.core.utils.antimeridian.normalize(geometry))
 
     item.common_metadata.instruments = metadata.instruments
     item.common_metadata.platform = metadata.platform
