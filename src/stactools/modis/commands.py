@@ -92,7 +92,7 @@ def create_modis_command(cli: Group) -> Command:
             catalogs[version] = version_catalog
         for (product, version), collection_items in items.items():
             version_catalog = catalogs[version]
-            collection = stac.create_collection(product, version)
+            collection = stac.create_collection(str(product), version)
             version_catalog.add_child(collection)
             collection.add_items(collection_items)
         catalog.validate_all()

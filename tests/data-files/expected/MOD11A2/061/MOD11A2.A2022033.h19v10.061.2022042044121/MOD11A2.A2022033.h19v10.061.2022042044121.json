@@ -48,19 +48,19 @@
       "rel": "root",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Terra Land Surface Temperature/Emissivity 8-Day L3 Global 1 km SIN Grid"
+      "title": "MODIS Land Surface Temperature/Emissivity 8-Day L3 Global 1 km SIN Grid"
     },
     {
       "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Terra Land Surface Temperature/Emissivity 8-Day L3 Global 1 km SIN Grid"
+      "title": "MODIS Land Surface Temperature/Emissivity 8-Day L3 Global 1 km SIN Grid"
     },
     {
       "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Terra Land Surface Temperature/Emissivity 8-Day L3 Global 1 km SIN Grid"
+      "title": "MODIS Land Surface Temperature/Emissivity 8-Day L3 Global 1 km SIN Grid"
     }
   ],
   "assets": {
@@ -203,5 +203,5 @@
     "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
   ],
-  "collection": "modis-MOD11A2-061"
+  "collection": "modis-11A2-061"
 }

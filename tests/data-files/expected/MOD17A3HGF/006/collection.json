@@ -1,6 +1,6 @@
 {
   "type": "Collection",
-  "id": "modis-MOD17A3HGF-006",
+  "id": "modis-17A3HGF-006",
   "stac_version": "1.0.0",
   "description": "The MOD17A3HGF Version 6 product provides information about annual Net Primary Production (NPP) at 500 meter (m) pixel resolution. Annual NPP is derived from the sum of all 8-day Net Photosynthesis (PSN) products (MOD17A2H) from the given year. The PSN value is the difference of the Gross Primary Productivity (GPP) and the Maintenance Respiration (MR). The MOD17A3HGF will be generated at the end of each year when the entire yearly 8-day MOD15A2H is available. Hence, the gap-filled MOD17A3HGF is the improved MOD17, which has cleaned the poor-quality inputs from 8-day Leaf Area Index and Fraction of Photosynthetically Active Radiation (LAI/FPAR) based on the Quality Control (QC) label for every pixel. If any LAI/FPAR pixel did not meet the quality screening criteria, its value is determined through linear interpolation. However, users cannot get MOD17A3HGF in near-real time because it will be generated only at the end of a given year.",
   "links": [

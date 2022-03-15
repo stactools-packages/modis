@@ -133,5 +133,5 @@
   "stac_extensions": [
     "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
   ],
-  "collection": "modis-MOD16A3GF-006"
+  "collection": "modis-16A3GF-006"
 }

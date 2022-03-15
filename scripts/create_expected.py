@@ -16,14 +16,15 @@ cog_version = "061"
 
 for file_name in os.listdir(data_files_directory):
     if os.path.splitext(file_name)[1] == ".xml":
+        print(f"Creating from {file_name}")
         file = File(os.path.join(data_files_directory, file_name))
         collection = stactools.modis.stac.create_collection(
-            file.product, file.version)
-        collection_path = os.path.join(expected_directory, file.product,
+            str(file.product), file.version)
+        collection_path = os.path.join(expected_directory, str(file.product),
                                        file.version, "collection.json")
         collection.set_self_href(collection_path)
 
-        if file.product == cog_product and file.version == cog_version:
+        if str(file.product) == cog_product and file.version == cog_version:
             cog_directory = data_files_directory
         else:
             cog_directory = None

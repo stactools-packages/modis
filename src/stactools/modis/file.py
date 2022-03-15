@@ -5,6 +5,7 @@ from pystac import Item
 
 from stactools.modis.constants import HDF_ASSET_KEY
 from stactools.modis.fragments import Fragments
+from stactools.modis.product import Product
 
 
 class File:
@@ -13,7 +14,7 @@ class File:
     href: str
     hdf_href: str
     xml_href: str
-    product: str
+    product: Product
     version: str
     id: str
 
@@ -63,7 +64,10 @@ class File:
             raise ValueError(
                 f"Invalid MODIS file name (not enough '.'-separated parts): {file_name}"
             )
-        self.product = parts[0]
+        self.product = Product(parts[0])
         self.version = parts[3]
         self.id = os.path.splitext(file_name)[0]
-        self.fragments = Fragments(self.product, self.version)
+
+    def fragments(self) -> Fragments:
+        """Returns the fragments for this file."""
+        return self.product.fragments(self.version)

@@ -22,14 +22,14 @@ from stactools.modis.constants import (HDF_ASSET_KEY, HDF_ASSET_PROPERTIES,
                                        METADATA_ASSET_KEY,
                                        METADATA_ASSET_PROPERTIES)
 from stactools.modis.file import File
-from stactools.modis.fragments import Fragments
 from stactools.modis.metadata import Metadata
+from stactools.modis.product import Product
 from stactools.modis.warnings import MissingProj, MissingRasterBand
 
 logger = logging.getLogger(__name__)
 
 
-def create_collection(product: str, version: str) -> Collection:
+def create_collection(product_name: str, version: str) -> Collection:
     """Creates a STAC Collection for MODIS data.
 
     Args:
@@ -39,29 +39,19 @@ def create_collection(product: str, version: str) -> Collection:
     Returns:
         Collection: The created collection.
     """
-    if product.startswith("MCD"):
-        platform = ["terra,aqua"]
-    elif product.startswith("MOD"):
-        platform = ["terra"]
-    elif product.startswith("MYD"):
-        platform = ["aqua"]
-    else:
-        raise ValueError(
-            f"Invalid product (should start with MCD, MOD, or MYD): {product}")
-
+    product = Product(product_name)
     summaries = {
         "instruments": ["modis"],
-        "platform": platform,
+        "platform": product.platforms,
     }
-
-    fragments = Fragments(product, version)
+    fragments = product.fragments(version)
     item_properties = fragments.item_properties()
     gsd = item_properties.get("gsd")
     if gsd:
         summaries["gsd"] = [gsd]
 
     fragment = fragments.collection()
-    collection = pystac.Collection(id=collection_id(product, version),
+    collection = pystac.Collection(id=product.collection_id(version),
                                    description=fragment["description"],
                                    extent=fragment["extent"],
                                    title=fragment["title"],
@@ -107,7 +97,7 @@ def create_item(href: str,
     """
     file = File(href)
     metadata = Metadata(file.xml_href, read_href_modifier)
-    fragments = Fragments(metadata.product, metadata.version)
+    fragments = file.product.fragments(metadata.version)
     properties = fragments.item_properties()
     properties["start_datetime"] = pystac.utils.datetime_to_str(
         metadata.start_datetime)

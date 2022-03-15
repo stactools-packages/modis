@@ -1,6 +1,6 @@
 {
   "type": "Collection",
-  "id": "modis-MCD43A4-061",
+  "id": "modis-43A4-061",
   "stac_version": "1.0.0",
   "description": "The Moderate Resolution Imaging Spectroradiometer (MODIS) MCD43A4 Version 6.1 Nadir Bidirectional Reflectance Distribution Function (BRDF)-Adjusted Reflectance (NBAR) dataset is produced daily using 16 days of Terra and Aqua MODIS data at 500 meter (m) resolution. The view angle effects are removed from the directional reflectances, resulting in a stable and consistent NBAR product. Data are temporally weighted to the ninth day which is reflected in the Julian date in the file name. Users are urged to use the band specific quality flags to isolate the highest quality full inversion results for their own science applications as described in the User Guide. The MCD43A4 provides NBAR and simplified mandatory quality layers for MODIS bands 1 through 7. Essential quality information provided in the corresponding MCD43A2 data file should be consulted when using this product.",
   "links": [
@@ -31,8 +31,7 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -108,7 +107,6 @@
       "title": "FGDC Metdata"
     }
   },
-  "sci:doi": "10.5067/MODIS/MCD43A4.061",
   "title": "MODIS/Terra+Aqua Nadir BRDF-Adjusted Reflectance (NBAR) Daily L3 Global 500 m SIN Grid",
   "extent": {
     "spatial": {
@@ -138,16 +136,19 @@
     "Remote Sensing",
     "Imagery",
     "Global",
-    "Reflectance"
+    "Reflectance",
+    "MCD43A4"
   ],
   "providers": [
     {
       "name": "NASA LP DAAC at the USGS EROS Center",
       "roles": [
         "producer",
-        "licensor"
+        "licensor",
+        "processor",
+        "host"
       ],
-      "url": "https://doi.org/10.5067/MODIS/MCD43A4.061"
+      "url": "https://lpdaac.usgs.gov/"
     }
   ],
   "summaries": {
@@ -155,7 +156,8 @@
       "modis"
     ],
     "platform": [
-      "terra,aqua"
+      "terra",
+      "aqua"
     ]
   }
 }

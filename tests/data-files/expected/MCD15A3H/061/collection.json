@@ -1,6 +1,6 @@
 {
   "type": "Collection",
-  "id": "modis-MCD15A3H-061",
+  "id": "modis-15A3H-061",
   "stac_version": "1.0.0",
   "description": "The MCD15A3H Version 6.1 Moderate Resolution Imaging Spectroradiometer (MODIS) Level 4, Combined Fraction of Photosynthetically Active Radiation (FPAR), and Leaf Area Index (LAI) product is a 4-day composite data set with 500 meter pixel size. The algorithm chooses the best pixel available from all the acquisitions of both MODIS sensors located on NASA\u2019s Terra and Aqua satellites from within the 4-day period. LAI is defined as the one-sided green leaf area per unit ground area in broadleaf canopies and as one-half the total needle surface area per unit ground area in coniferous canopies. FPAR is defined as the fraction of incident photosynthetically active radiation (400-700 nm) absorbed by the green elements of a vegetation canopy.",
   "links": [
@@ -17,7 +17,7 @@
     },
     {
       "rel": "describedby",
-      "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/6/MCD15A3H",
+      "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MCD15A3H",
       "title": "Data File"
     },
     {
@@ -31,8 +31,7 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -76,7 +75,6 @@
       "title": "FGDC Metdata"
     }
   },
-  "sci:doi": "10.5067/MODIS/MCD15A3H.061",
   "title": "MODIS/Terra+Aqua Leaf Area Index/FPAR 4-Day L4 Global 500 m SIN",
   "extent": {
     "spatial": {
@@ -106,16 +104,19 @@
     "Remote Sensing",
     "Imagery",
     "Global",
-    "Forest"
+    "Forest",
+    "MCD15A3H"
   ],
   "providers": [
     {
       "name": "NASA LP DAAC at the USGS EROS Center",
       "roles": [
         "producer",
-        "licensor"
+        "licensor",
+        "processor",
+        "host"
       ],
-      "url": "https://doi.org/10.5067/MODIS/MCD15A3H.061"
+      "url": "https://lpdaac.usgs.gov/"
     }
   ],
   "summaries": {
@@ -123,7 +124,8 @@
       "modis"
     ],
     "platform": [
-      "terra,aqua"
+      "terra",
+      "aqua"
     ]
   }
 }

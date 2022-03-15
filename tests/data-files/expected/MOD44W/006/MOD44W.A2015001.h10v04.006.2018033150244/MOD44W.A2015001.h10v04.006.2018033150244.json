@@ -112,5 +112,5 @@
   "stac_extensions": [
     "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
   ],
-  "collection": "modis-MOD44W-006"
+  "collection": "modis-44W-006"
 }

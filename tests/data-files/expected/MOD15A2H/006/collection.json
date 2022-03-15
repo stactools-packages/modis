@@ -1,6 +1,6 @@
 {
   "type": "Collection",
-  "id": "modis-MOD15A2H-006",
+  "id": "modis-15A2H-006",
   "stac_version": "1.0.0",
   "description": "The MOD15A2H Version 6 Moderate Resolution Imaging Spectroradiometer (MODIS) combined Leaf Area Index (LAI) and Fraction of Photosynthetically Active Radiation (FPAR) product is an 8-day composite dataset with 500 meter (m) pixel size. The algorithm chooses the 'best' pixel available from all the acquisitions of the Terra sensor from within the 8-day period.  LAI is defined as the one-sided green leaf area per unit ground area in broadleaf canopies and as one-half the total needle surface area per unit ground area in coniferous canopies. FPAR is defined as the fraction of incident photosynthetically active radiation, 400-700 nanometers (nm), absorbed by the green elements of a vegetation canopy. Science Datasets (SDSs) in the Level 4 (L4) MOD15A2H product include LAI, FPAR, two quality layers, and standard deviation for LAI and FPAR. Two low resolution browse images, LAI and FPAR, are also available for each MOD15A2H granule.",
   "links": [

@@ -48,19 +48,19 @@
       "rel": "root",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Aqua Thermal Anomalies/Fire Daily L3 Global 1 km SIN Grid"
+      "title": "MODIS Thermal Anomalies/Fire Daily L3 Global 1 km SIN Grid"
     },
     {
       "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Aqua Thermal Anomalies/Fire Daily L3 Global 1 km SIN Grid"
+      "title": "MODIS Thermal Anomalies/Fire Daily L3 Global 1 km SIN Grid"
     },
     {
       "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Aqua Thermal Anomalies/Fire Daily L3 Global 1 km SIN Grid"
+      "title": "MODIS Thermal Anomalies/Fire Daily L3 Global 1 km SIN Grid"
     }
   ],
   "assets": {
@@ -129,5 +129,5 @@
     "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
   ],
-  "collection": "modis-MYD14A1-061"
+  "collection": "modis-14A1-061"
 }
