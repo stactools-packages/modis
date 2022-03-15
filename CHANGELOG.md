@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Use `null` instead of "unitless` ([#55](https://github.com/stactools-packages/modis/pull/55))
 - Don't use unicode for units, PySTAC doesn't like it ([#57](https://github.com/stactools-packages/modis/pull/57))
+- Use fewer collections (e.g. all 17A2HGF products are in the same collection) ([#61](https://github.com/stactools-packages/modis/pull/61))
 
 ### Fixed
 
