@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Keywords and summaries to collections ([#48](https://github.com/stactools-packages/modis/pull/48))
 - More Item and Collection metadata ([#51](https://github.com/stactools-packages/modis/pull/51))
 - Keywords for Collections ([#54](https://github.com/stactools-packages/modis/pull/54))
+- Antimeridian corrections ([#62](https://github.com/stactools-packages/modis/pull/62))
 
 ### Changed
 
