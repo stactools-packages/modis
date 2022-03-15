@@ -126,5 +126,5 @@
   "stac_extensions": [
     "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
   ],
-  "collection": "modis-MOD17A2H-006"
+  "collection": "modis-17A2H-006"
 }

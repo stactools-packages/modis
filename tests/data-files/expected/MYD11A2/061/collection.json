@@ -1,14 +1,14 @@
 {
   "type": "Collection",
-  "id": "modis-MYD11A2-061",
+  "id": "modis-11A2-061",
   "stac_version": "1.0.0",
-  "description": "The Aqua Moderate Resolution Imaging Spectroradiometer (MODIS) Land Surface Temperature/Emissivity 8-Day (MYD11A2) Version 6.1 product provides an average 8-day per-pixel Land Surface Temperature and Emissivity (LST&E) with a 1 kilometer (km) spatial resolution in a 1,200 by 1,200 km grid. Each pixel value in the MYD11A2 is a simple average of all the corresponding MYD11A1 LST pixels collected within that 8-day period. The 8-day compositing period was chosen because twice that period is the exact ground track repeat period of the Terra and Aqua platforms. Provided along with the daytime and nighttime surface temperature bands are associated quality control assessments, observation times, view zenith angles, and clear-sky coverages along with bands 31 and 32 emissivities from land cover types.",
+  "description": "The Moderate Resolution Imaging Spectroradiometer (MODIS) Land Surface Temperature/Emissivity 8-Day Version 6.1 product provides an average 8-day per-pixel Land Surface Temperature and Emissivity (LST&E) with a 1 kilometer (km) spatial resolution in a 1,200 by 1,200 km grid. Each pixel value in the MOD11A2 is a simple average of all the corresponding MOD11A1 LST pixels collected within that 8-day period. The 8-day compositing period was chosen because twice that period is the exact ground track repeat period of the Terra and Aqua platforms. Provided along with the daytime and nighttime surface temperature bands are associated quality control assessments, observation times, view zenith angles, and clear-sky coverages along with bands 31 and 32 emissivities from land cover types.",
   "links": [
     {
       "rel": "root",
       "href": "./collection.json",
       "type": "application/json",
-      "title": "MODIS/Aqua Land Surface Temperature/Emissivity 8-Day L3 Global 1 km SIN Grid"
+      "title": "MODIS Land Surface Temperature/Emissivity 8-Day L3 Global 1 km SIN Grid"
     },
     {
       "rel": "help",
@@ -17,8 +17,17 @@
     },
     {
       "rel": "describedby",
+      "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MOD11A2",
+      "title": "Data File"
+    },
+    {
+      "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MYD11A2",
       "title": "Data File"
+    },
+    {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.5067/MODIS/MOD11A2.061"
     },
     {
       "rel": "cite-as",
@@ -31,8 +40,7 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -100,8 +108,7 @@
       "title": "FGDC Metdata"
     }
   },
-  "sci:doi": "10.5067/MODIS/MYD11A2.061",
-  "title": "MODIS/Aqua Land Surface Temperature/Emissivity 8-Day L3 Global 1 km SIN Grid",
+  "title": "MODIS Land Surface Temperature/Emissivity 8-Day L3 Global 1 km SIN Grid",
   "extent": {
     "spatial": {
       "bbox": [
@@ -116,7 +123,7 @@
     "temporal": {
       "interval": [
         [
-          "2002-07-04T00:00:00Z",
+          "2000-02-18T00:00:00Z",
           null
         ]
       ]
@@ -130,16 +137,20 @@
     "Remote Sensing",
     "Imagery",
     "Global",
-    "Temperature"
+    "Temperature",
+    "MOD11A2",
+    "MYD11A2"
   ],
   "providers": [
     {
       "name": "NASA LP DAAC at the USGS EROS Center",
       "roles": [
         "producer",
-        "licensor"
+        "licensor",
+        "processor",
+        "host"
       ],
-      "url": "https://doi.org/10.5067/MODIS/MYD11A2.061"
+      "url": "https://lpdaac.usgs.gov/"
     }
   ],
   "summaries": {

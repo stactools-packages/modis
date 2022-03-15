@@ -19,12 +19,12 @@ for file_name in os.listdir(directory):
     if os.path.splitext(file_name)[1] != ".xml":
         continue
     file = File(os.path.join(directory, file_name))
-    collection_path = os.path.join(directory, "expected", file.product,
+    collection_path = os.path.join(directory, "expected", str(file.product),
                                    file.version, "collection.json")
-    item_path = os.path.join(directory, "expected", file.product, file.version,
-                             file.id, f"{file.id}.json")
+    item_path = os.path.join(directory, "expected", str(file.product),
+                             file.version, file.id, f"{file.id}.json")
     args.append((file.href, collection_path, item_path))
-    ids.append(file.product)
+    ids.append(str(file.product))
 
 cog_product = "MOD10A2"
 cog_version = "061"
@@ -51,13 +51,13 @@ def test_metadata_files(metadata_path: str, collection_path: str,
 
     modis_file = File(metadata_path)
     collection = stactools.modis.stac.create_collection(
-        modis_file.product, modis_file.version)
+        str(modis_file.product), modis_file.version)
     with TemporaryDirectory() as temporary_directory:
         temporary_metadata_path = os.path.join(temporary_directory,
                                                os.path.basename(metadata_path))
         temporary_file = File(temporary_metadata_path)
         expected_directory = os.path.join(temporary_directory, "expected",
-                                          modis_file.product,
+                                          str(modis_file.product),
                                           modis_file.version)
         collection.set_self_href(
             os.path.join(expected_directory, "collection.json"))
@@ -65,7 +65,8 @@ def test_metadata_files(metadata_path: str, collection_path: str,
         if os.path.exists(modis_file.hdf_href):
             shutil.copyfile(modis_file.hdf_href, temporary_file.hdf_href)
 
-        if temporary_file.product == cog_product and temporary_file.version == cog_version:
+        if str(temporary_file.product
+               ) == cog_product and temporary_file.version == cog_version:
             cog_directory = temporary_directory
             create_cogs = True
         else:

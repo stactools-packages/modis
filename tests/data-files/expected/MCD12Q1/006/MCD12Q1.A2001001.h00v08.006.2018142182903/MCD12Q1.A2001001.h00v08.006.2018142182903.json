@@ -258,5 +258,5 @@
   "stac_extensions": [
     "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
   ],
-  "collection": "modis-MCD12Q1-006"
+  "collection": "modis-12Q1-006"
 }

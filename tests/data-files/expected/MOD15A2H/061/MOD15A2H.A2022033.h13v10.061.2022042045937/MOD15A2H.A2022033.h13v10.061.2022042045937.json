@@ -48,19 +48,19 @@
       "rel": "root",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Terra Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid"
+      "title": "MODIS Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid"
     },
     {
       "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Terra Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid"
+      "title": "MODIS Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid"
     },
     {
       "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Terra Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid"
+      "title": "MODIS Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid"
     }
   ],
   "assets": {
@@ -79,11 +79,11 @@
         },
         {
           "name": "FparLai_QC",
-          "description": "Quality for LAI and FPAR"
+          "description": "Quality for FPAR and LAI"
         },
         {
           "name": "FparExtra_QC",
-          "description": "Extra detail Quality for LAI and FPAR"
+          "description": "Extra detail Quality for FPAR and LAI"
         },
         {
           "name": "FparStdDev_500m",
@@ -151,5 +151,5 @@
     "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
   ],
-  "collection": "modis-MOD15A2H-061"
+  "collection": "modis-15A2H-061"
 }

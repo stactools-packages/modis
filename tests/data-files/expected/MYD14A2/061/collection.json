@@ -1,14 +1,14 @@
 {
   "type": "Collection",
-  "id": "modis-MYD14A2-061",
+  "id": "modis-14A2-061",
   "stac_version": "1.0.0",
-  "description": "The Aqua Moderate Resolution Imaging Spectroradiometer (MODIS) Thermal Anomalies and Fire 8-Day (MYD14A2) Version 6.1 data are generated at 1 kilometer (km) spatial resolution as a Level 3 product. The MYD14A2 gridded composite contains maximum value of individual fire pixel classes detected during the eight days of acquisition. The Science Dataset (SDS) layers include the fire mask and pixel quality indicators.",
+  "description": "The Moderate Resolution Imaging Spectroradiometer (MODIS) Thermal Anomalies and Fire 8-Day Version 6.1 data are generated at 1 kilometer (km) spatial resolution as a Level 3 product. The MOD14A2 gridded composite contains the maximum value of the individual fire pixel classes detected during the eight days of acquisition. The Science Dataset (SDS) layers include the fire mask and pixel quality indicators.",
   "links": [
     {
       "rel": "root",
       "href": "./collection.json",
       "type": "application/json",
-      "title": "MODIS/Aqua Thermal Anomalies/Fire 8-Day L3 Global 1 km SIN Grid"
+      "title": "MODIS Thermal Anomalies/Fire 8-Day L3 Global 1 km SIN Grid"
     },
     {
       "rel": "help",
@@ -17,8 +17,17 @@
     },
     {
       "rel": "describedby",
+      "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MOD14A2",
+      "title": "Data File"
+    },
+    {
+      "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MYD14A2",
       "title": "Data File"
+    },
+    {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.5067/MODIS/MOD14A2.061"
     },
     {
       "rel": "cite-as",
@@ -31,8 +40,7 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -60,8 +68,7 @@
       "title": "FGDC Metdata"
     }
   },
-  "sci:doi": "10.5067/MODIS/MYD14A2.061",
-  "title": "MODIS/Aqua Thermal Anomalies/Fire 8-Day L3 Global 1 km SIN Grid",
+  "title": "MODIS Thermal Anomalies/Fire 8-Day L3 Global 1 km SIN Grid",
   "extent": {
     "spatial": {
       "bbox": [
@@ -76,7 +83,7 @@
     "temporal": {
       "interval": [
         [
-          "2002-07-04T00:00:00Z",
+          "2000-02-18T00:00:00Z",
           null
         ]
       ]
@@ -90,16 +97,20 @@
     "Remote Sensing",
     "Imagery",
     "Global",
-    "Fire"
+    "Fire",
+    "MOD14A2",
+    "MYD14A2"
   ],
   "providers": [
     {
       "name": "NASA LP DAAC at the USGS EROS Center",
       "roles": [
         "producer",
-        "licensor"
+        "licensor",
+        "processor",
+        "host"
       ],
-      "url": "https://doi.org/10.5067/MODIS/MYD14A2.061"
+      "url": "https://lpdaac.usgs.gov/"
     }
   ],
   "summaries": {

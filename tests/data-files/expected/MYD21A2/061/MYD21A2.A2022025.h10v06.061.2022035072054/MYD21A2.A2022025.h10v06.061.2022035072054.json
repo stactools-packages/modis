@@ -48,19 +48,19 @@
       "rel": "root",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Aqua Land Surface Temperature/3-Band Emissivity 8-Day L3 Global 1 km SIN Grid"
+      "title": "MODIS Land Surface Temperature/3-Band Emissivity 8-Day L3 Global 1 km SIN Grid"
     },
     {
       "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Aqua Land Surface Temperature/3-Band Emissivity 8-Day L3 Global 1 km SIN Grid"
+      "title": "MODIS Land Surface Temperature/3-Band Emissivity 8-Day L3 Global 1 km SIN Grid"
     },
     {
       "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Aqua Land Surface Temperature/3-Band Emissivity 8-Day L3 Global 1 km SIN Grid"
+      "title": "MODIS Land Surface Temperature/3-Band Emissivity 8-Day L3 Global 1 km SIN Grid"
     }
   ],
   "assets": {
@@ -196,5 +196,5 @@
     "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
   ],
-  "collection": "modis-MYD21A2-061"
+  "collection": "modis-21A2-061"
 }

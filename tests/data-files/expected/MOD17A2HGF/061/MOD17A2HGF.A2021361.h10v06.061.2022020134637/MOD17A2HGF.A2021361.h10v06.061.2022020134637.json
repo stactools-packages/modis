@@ -48,19 +48,19 @@
       "rel": "root",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid"
+      "title": "MODIS Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid"
     },
     {
       "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid"
+      "title": "MODIS Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid"
     },
     {
       "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid"
+      "title": "MODIS Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid"
     }
   ],
   "assets": {
@@ -123,5 +123,5 @@
     "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
   ],
-  "collection": "modis-MOD17A2HGF-061"
+  "collection": "modis-17A2HGF-061"
 }

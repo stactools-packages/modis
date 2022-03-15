@@ -70,10 +70,11 @@ def add_cog_assets(item: Item,
             for href in hrefs
         ]
     file = File.from_item(item)
-    band_list = file.fragments.bands()
+    fragments = file.fragments()
+    band_list = fragments.bands()
     bands = dict((band["name"], band) for band in band_list)
-    raster_bands = file.fragments.raster_bands()
-    file_info = file.fragments.file_info()
+    raster_bands = fragments.raster_bands()
+    file_info = fragments.file_info()
     for path, subdataset_name in zip(hrefs, subdataset_names):
         if subdataset_name not in bands:
             raise ValueError(

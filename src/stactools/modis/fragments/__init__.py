@@ -1,18 +1,16 @@
 import json
-from typing import Any, List
+from typing import Any
 
 import pkg_resources
 from pystac import Extent, Link, Provider
 
-PREFIXES = ["MCD", "MOD", "MYD"]
-
 
 class Fragments:
-    """Class for accessing fragment data for products and versions."""
+    """Class for accessing fragment data for collection and versions."""
 
-    def __init__(self, product: str, version: str):
-        """Creates a new group of fragments for the provided product and version."""
-        self._product = product
+    def __init__(self, collection: str, version: str):
+        """Creates a new group of fragments for the provided collection and version."""
+        self._collection = collection
         self._version = version
         self._optional_file_names = ["raster-bands.json"]
 
@@ -64,40 +62,18 @@ class Fragments:
         """
         return self._load("file-info.json")
 
-    def prefix(self) -> str:
-        """The product prefix (aka MCD, MYD, or MOD)."""
-        return self._product[0:3]
-
-    def with_prefix(self, prefix: str) -> "Fragments":
-        """Returns this fragments but with a different prefix."""
-        product = self._product.replace(self.prefix(), prefix)
-        return Fragments(product, self._version)
-
     def _load(self, file_name: str) -> Any:
-        fallbacks = PREFIXES.copy()
-        fallbacks.remove(self.prefix())
-        try:
-            return self._load_with_fallbacks(file_name, fallbacks)
-        except FragmentMissing:
-            raise FragmentMissing(
-                f"Fragment missing for product={self._product}, "
-                f"version={self._version}: {file_name}")
-
-    def _load_with_fallbacks(self, file_name: str,
-                             fallbacks: List[str]) -> Any:
         package = "stactools.modis.fragments"
-        path = f"{self._product}/{self._version}/{file_name}"
+        path = f"{self._collection}/{self._version}/{file_name}"
         if pkg_resources.resource_exists(package, path):
             with pkg_resources.resource_stream(package, path) as stream:
                 return json.load(stream)
-        elif fallbacks:
-            prefix = fallbacks.pop(0)
-            fragments = self.with_prefix(prefix)
-            return fragments._load_with_fallbacks(file_name, fallbacks)
         elif file_name in self._optional_file_names:
             return None
         else:
-            raise FragmentMissing()
+            raise FragmentMissing(
+                f"Fragment missing for collection={self._collection}, "
+                f"version={self._version}: {file_name}")
 
 
 class FragmentMissing(Exception):

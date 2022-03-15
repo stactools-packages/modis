@@ -139,5 +139,5 @@
     "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
   ],
-  "collection": "modis-MCD64A1-061"
+  "collection": "modis-64A1-061"
 }

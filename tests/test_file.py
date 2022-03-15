@@ -14,7 +14,7 @@ def test_file() -> None:
         "data-files/MCD12Q1.A2001001.h00v08.006.2018142182903.hdf")
     assert file.xml_href == href
     assert file.version == "006"
-    assert file.product == "MCD12Q1"
+    assert str(file.product) == "MCD12Q1"
     assert file.id == "MCD12Q1.A2001001.h00v08.006.2018142182903"
 
     href = test_data.get_path(
