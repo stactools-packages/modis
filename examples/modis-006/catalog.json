@@ -12,103 +12,103 @@
     },
     {
       "rel": "child",
-      "href": "./modis-MOD16A3GF-006/collection.json",
+      "href": "./modis-16A3GF-006/collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Net Evapotranspiration Gap-Filled Yearly L4 Global 500 m SIN Grid"
     },
     {
       "rel": "child",
-      "href": "./modis-MOD17A3HGF-006/collection.json",
+      "href": "./modis-17A3HGF-006/collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Net Primary Production Gap-Filled Yearly L4 Global 500 m SIN Grid"
     },
     {
       "rel": "child",
-      "href": "./modis-MOD11A2-006/collection.json",
+      "href": "./modis-11A2-006/collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Land Surface Temperature/Emissivity 8-Day L3 Global 1 km SIN Grid"
     },
     {
       "rel": "child",
-      "href": "./modis-MOD10A1-006/collection.json",
+      "href": "./modis-10A1-006/collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Snow Cover Daily L3 Global 500m SIN Grid, Version 6"
     },
     {
       "rel": "child",
-      "href": "./modis-MOD14A1-006/collection.json",
+      "href": "./modis-14A1-006/collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Thermal Anomalies/Fire Daily L3 Global 1 km SIN Grid"
     },
     {
       "rel": "child",
-      "href": "./modis-MOD11A1-006/collection.json",
+      "href": "./modis-11A1-006/collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Land Surface Temperature/Emissivity Daily L3 Global 1 km SIN Grid"
     },
     {
       "rel": "child",
-      "href": "./modis-MCD12Q1-006/collection.json",
+      "href": "./modis-12Q1-006/collection.json",
       "type": "application/json",
       "title": "MODIS/Terra+Aqua Land Cover Type Yearly L3 Global 500 m SIN Grid"
     },
     {
       "rel": "child",
-      "href": "./modis-MOD13Q1-006/collection.json",
+      "href": "./modis-13Q1-006/collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Vegetation Indices 16-Day L3 Global 250 m SIN Grid"
     },
     {
       "rel": "child",
-      "href": "./modis-MOD13A1-006/collection.json",
+      "href": "./modis-13A1-006/collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Vegetation Indices 16-Day L3 Global 500 m SIN Grid"
     },
     {
       "rel": "child",
-      "href": "./modis-MOD17A2HGF-006/collection.json",
+      "href": "./modis-17A2HGF-006/collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid"
     },
     {
       "rel": "child",
-      "href": "./modis-MCD43A4-006/collection.json",
+      "href": "./modis-43A4-006/collection.json",
       "type": "application/json",
       "title": "MCD43A4 v006 MODIS/Terra+Aqua Nadir BRDF-Adjusted Reflectance (NBAR) Daily L3 Global 500 m SIN Grid"
     },
     {
       "rel": "child",
-      "href": "./modis-MOD15A2H-006/collection.json",
+      "href": "./modis-15A2H-006/collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid"
     },
     {
       "rel": "child",
-      "href": "./modis-MOD14A2-006/collection.json",
+      "href": "./modis-14A2-006/collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Thermal Anomalies/Fire 8-Day L3 Global 1 km SIN Grid"
     },
     {
       "rel": "child",
-      "href": "./modis-MOD44W-006/collection.json",
+      "href": "./modis-44W-006/collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Land Water Mask Derived from MODIS and SRTM L3 Yearly Global 250 m SIN Grid"
     },
     {
       "rel": "child",
-      "href": "./modis-MOD17A2H-006/collection.json",
+      "href": "./modis-17A2H-006/collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Gross Primary Productivity 8-Day L4 Global 500 m SIN"
     },
     {
       "rel": "child",
-      "href": "./modis-MOD44B-006/collection.json",
+      "href": "./modis-44B-006/collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Vegetation Continuous Fields Yearly L3 Global 250 m SIN Grid"
     },
     {
       "rel": "child",
-      "href": "./modis-MOD21A2-006/collection.json",
+      "href": "./modis-21A2-006/collection.json",
       "type": "application/json",
       "title": "MODIS/Terra Land Surface Temperature/3-Band Emissivity 8-Day L3 Global 1 km SIN Grid"
     },

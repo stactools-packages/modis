@@ -1,0 +1,111 @@
+{
+  "type": "Collection",
+  "id": "modis-14A2-006",
+  "stac_version": "1.0.0",
+  "description": "The Terra Moderate Resolution Imaging Spectroradiometer (MODIS) Thermal Anomalies and Fire 8-Day (MOD14A2) Version 6 data are generated at 1 kilometer (km) spatial resolultion as a Level 3 product. The MOD14A2 gridded composite contains the maximum value of the individual fire pixel classes detected during the eight days of acquisition. The Science Dataset (SDS) layers include the fire mask and pixel quality indicators.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "help",
+      "href": "https://lpdaac.usgs.gov/documents/876/MOD14_User_Guide_v6.pdf",
+      "title": "User Guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/6/MOD14A2",
+      "title": "Data File"
+    },
+    {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.5067/MODIS/MOD14A2.006"
+    },
+    {
+      "rel": "item",
+      "href": "./MOD14A2.A2022017.h10v05.006.2022026155645/MOD14A2.A2022017.h10v05.006.2022026155645.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "MODIS, version 006"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+  ],
+  "item_assets": {
+    "hdf": {
+      "type": "application/x-hdf",
+      "roles": [
+        "data"
+      ],
+      "title": "hdf data",
+      "eo:bands": [
+        {
+          "name": "FireMask",
+          "description": "Confidence of fire"
+        },
+        {
+          "name": "QA",
+          "description": "Pixel quality indicators"
+        }
+      ]
+    },
+    "metadata": {
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ],
+      "title": "FGDC Metdata"
+    }
+  },
+  "sci:doi": "10.5067/MODIS/MOD14A2.006",
+  "title": "MODIS/Terra Thermal Anomalies/Fire 8-Day L3 Global 1 km SIN Grid",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180.0,
+          180.0,
+          -90.0,
+          90.0
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2000-02-18T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "keywords": [],
+  "providers": [
+    {
+      "name": "NASA LP DAAC at the USGS EROS Center",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://doi.org/10.5067/MODIS/MOD14A2.006"
+    }
+  ],
+  "summaries": {
+    "instruments": [
+      "modis"
+    ],
+    "platform": [
+      "terra"
+    ]
+  }
+}
