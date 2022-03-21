@@ -88,29 +88,7 @@
     "hdf": {
       "href": "../../../../tests/data-files/MOD16A3GF.A2020001.h09v04.006.2022011184136.hdf",
       "type": "application/x-hdf",
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "ET_500m",
-          "description": "Total of Evapotranspiration"
-        },
-        {
-          "name": "LE_500m",
-          "description": "Average of Latent Heat Flux"
-        },
-        {
-          "name": "PET_500m",
-          "description": "Total Potential Evapotranspiration"
-        },
-        {
-          "name": "PLE_500m",
-          "description": "Average of Potential Latent Heat Flux"
-        },
-        {
-          "name": "ET_QC_500m",
-          "description": "Evapotranspiration Quality Assessment"
-        }
-      ],
+      "title": "Source data containing all bands",
       "roles": [
         "data"
       ]
@@ -118,7 +96,7 @@
     "metadata": {
       "href": "../../../../tests/data-files/MOD16A3GF.A2020001.h09v04.006.2022011184136.hdf.xml",
       "type": "application/xml",
-      "title": "FGDC Metdata",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
       ]
@@ -130,8 +108,6 @@
     -104.235445821904,
     50.1159178280076
   ],
-  "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
-  ],
+  "stac_extensions": [],
   "collection": "modis-16A3GF-006"
 }

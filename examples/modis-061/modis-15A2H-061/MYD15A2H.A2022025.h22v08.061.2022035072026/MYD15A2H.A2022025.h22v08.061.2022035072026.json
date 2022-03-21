@@ -54,46 +54,20 @@
       "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid"
+      "title": "MODIS Leaf Area Index/FPAR 8-Day"
     },
     {
       "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid"
+      "title": "MODIS Leaf Area Index/FPAR 8-Day"
     }
   ],
   "assets": {
     "hdf": {
       "href": "../../../../tests/data-files/MYD15A2H.A2022025.h22v08.061.2022035072026.hdf",
       "type": "application/x-hdf",
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "Fpar_500m",
-          "description": "Fraction of Photosynthetically Active Radiation"
-        },
-        {
-          "name": "Lai_500m",
-          "description": "Leaf Area Index"
-        },
-        {
-          "name": "FparLai_QC",
-          "description": "Quality for FPAR and LAI"
-        },
-        {
-          "name": "FparExtra_QC",
-          "description": "Extra detail Quality for FPAR and LAI"
-        },
-        {
-          "name": "FparStdDev_500m",
-          "description": "Standard deviation of FPAR"
-        },
-        {
-          "name": "LaiStdDev_500m",
-          "description": "Standard deviation of LAI"
-        }
-      ],
+      "title": "Source data containing all bands",
       "raster:bands": [
         {
           "data_type": "uint8",
@@ -135,7 +109,7 @@
     "metadata": {
       "href": "../../../../tests/data-files/MYD15A2H.A2022025.h22v08.061.2022035072026.hdf.xml",
       "type": "application/xml",
-      "title": "FGDC Metdata",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
       ]
@@ -148,7 +122,6 @@
     10.0038388277022
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
   ],
   "collection": "modis-15A2H-061"

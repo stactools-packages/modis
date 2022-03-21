@@ -13,25 +13,32 @@
     {
       "rel": "help",
       "href": "https://lpdaac.usgs.gov/documents/972/MOD17_User_Guide_V61.pdf",
-      "title": "User Guide"
+      "title": "MOD17 User Guide"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MOD17A2H",
-      "title": "Data File"
+      "title": "MOD17A2H file specification"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MYD17A2H",
-      "title": "Data File"
+      "title": "MYD17A2H file specification"
     },
     {
       "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MOD17A2H.061"
+      "href": "https://doi.org/10.5067/MODIS/MOD17A2H.061",
+      "title": "LP DAAC - MOD17A2H"
     },
     {
       "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MYD17A2H.061"
+      "href": "https://doi.org/10.5067/MODIS/MYD17A2H.061",
+      "title": "LP DAAC - MYD17A2H"
+    },
+    {
+      "rel": "item",
+      "href": "./MOD17A2H.A2022025.h08v05.061.2022035065002/MOD17A2H.A2022025.h08v05.061.2022035065002.json",
+      "type": "application/json"
     },
     {
       "rel": "item",
@@ -54,31 +61,44 @@
       "roles": [
         "data"
       ],
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "Gpp_500m",
-          "description": "Gross Primary Productivity"
+      "title": "Source data containing all bands",
+      "eo:bands": {
+        "Gpp_500m": {
+          "name": "Gross Primary Productivity",
+          "raster:bands": {
+            "data_type": "int16",
+            "unit": "kg C/m^2",
+            "scale": 0.0001,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "PsnNet_500m",
-          "description": "Net Photosynthesis"
+        "PsnNet_500m": {
+          "name": "Net Photosynthesis",
+          "raster:bands": {
+            "data_type": "int16",
+            "unit": "kg C/m^2",
+            "scale": 0.0001,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "Psn_QC_500m",
-          "description": "Quality control indicators"
+        "Psn_QC_500m": {
+          "name": "Quality control indicators",
+          "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 500
+          }
         }
-      ]
+      }
     },
     "metadata": {
       "type": "application/xml",
       "roles": [
         "metadata"
       ],
-      "title": "FGDC Metdata"
+      "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
-  "title": "MODIS Gross Primary Productivity 8-Day L4 Global 500 m SIN Grid",
+  "title": "MODIS Gross Primary Productivity 8-Day",
   "extent": {
     "spatial": {
       "bbox": [
@@ -127,7 +147,8 @@
       "modis"
     ],
     "platform": [
-      "aqua"
+      "aqua",
+      "terra"
     ]
   }
 }

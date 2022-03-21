@@ -80,38 +80,20 @@
       "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS Thermal Anomalies/Fire Daily L3 Global 1 km SIN Grid"
+      "title": "MODIS Thermal Anomalies/Fire Daily"
     },
     {
       "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS Thermal Anomalies/Fire Daily L3 Global 1 km SIN Grid"
+      "title": "MODIS Thermal Anomalies/Fire Daily"
     }
   ],
   "assets": {
     "hdf": {
       "href": "../../../../tests/data-files/MYD14A1.A2022025.h01v07.061.2022035001141.hdf",
       "type": "application/x-hdf",
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "FireMask",
-          "description": "Confidence of fire"
-        },
-        {
-          "name": "QA",
-          "description": "Pixel quality indicators"
-        },
-        {
-          "name": "MaxFRP",
-          "description": "Maximum Fire Radiative Power"
-        },
-        {
-          "name": "sample",
-          "description": "Position of fire pixel within scan"
-        }
-      ],
+      "title": "Source data containing all bands",
       "raster:bands": [
         {
           "data_type": "uint8",
@@ -139,7 +121,7 @@
     "metadata": {
       "href": "../../../../tests/data-files/MYD14A1.A2022025.h01v07.061.2022035001141.hdf.xml",
       "type": "application/xml",
-      "title": "FGDC Metdata",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
       ]
@@ -152,7 +134,6 @@
     20.2678775712419
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
   ],
   "collection": "modis-14A1-061"

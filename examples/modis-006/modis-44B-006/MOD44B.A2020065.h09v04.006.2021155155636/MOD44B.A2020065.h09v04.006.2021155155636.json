@@ -83,37 +83,7 @@
     "hdf": {
       "href": "../../../../tests/data-files/MOD44B.A2020065.h09v04.006.2021155155636.hdf",
       "type": "application/x-hdf",
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "Percent_Tree_Cover",
-          "description": "Percent of pixel that is tree covered"
-        },
-        {
-          "name": "Percent_NonTree_Vegetation",
-          "description": "Percent of pixel that is nontree vegetation"
-        },
-        {
-          "name": "Percent_NonVegetated",
-          "description": "Percent of pixel non vegetated"
-        },
-        {
-          "name": "Quality",
-          "description": "Quality Control indicators"
-        },
-        {
-          "name": "Percent_Tree_Cover_SD",
-          "description": "Standard deviation of percent tree covered"
-        },
-        {
-          "name": "Percent_NonVegetated_SD",
-          "description": "Standard deviation of percent not vegetated"
-        },
-        {
-          "name": "Cloud",
-          "description": "Pixel cloud cover indicators"
-        }
-      ],
+      "title": "Source data containing all bands",
       "roles": [
         "data"
       ]
@@ -121,7 +91,7 @@
     "metadata": {
       "href": "../../../../tests/data-files/MOD44B.A2020065.h09v04.006.2021155155636.hdf.xml",
       "type": "application/xml",
-      "title": "FGDC Metdata",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
       ]
@@ -133,8 +103,6 @@
     -104.235445821904,
     50.1159178280076
   ],
-  "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
-  ],
+  "stac_extensions": [],
   "collection": "modis-44B-006"
 }
