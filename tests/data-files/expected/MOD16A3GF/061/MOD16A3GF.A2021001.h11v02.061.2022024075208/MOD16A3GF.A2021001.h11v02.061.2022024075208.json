@@ -74,48 +74,26 @@
       "rel": "root",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS Net Evapotranspiration Gap-Filled Yearly L4 Global 500 m SIN Grid"
+      "title": "MODIS Net Evapotranspiration Yearly Gap-Filled"
     },
     {
       "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS Net Evapotranspiration Gap-Filled Yearly L4 Global 500 m SIN Grid"
+      "title": "MODIS Net Evapotranspiration Yearly Gap-Filled"
     },
     {
       "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS Net Evapotranspiration Gap-Filled Yearly L4 Global 500 m SIN Grid"
+      "title": "MODIS Net Evapotranspiration Yearly Gap-Filled"
     }
   ],
   "assets": {
     "hdf": {
       "href": "../../../../MOD16A3GF.A2021001.h11v02.061.2022024075208.hdf",
       "type": "application/x-hdf",
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "ET_500m",
-          "description": "Total of Evapotranspiration"
-        },
-        {
-          "name": "LE_500m",
-          "description": "Average of Latent Heat Flux"
-        },
-        {
-          "name": "PET_500m",
-          "description": "Total Potential Evapotranspiration"
-        },
-        {
-          "name": "PLE_500m",
-          "description": "Average of Potential Latent Heat Flux"
-        },
-        {
-          "name": "ET_QC_500m",
-          "description": "Evapotranspiration Quality Assessment"
-        }
-      ],
+      "title": "Source data containing all bands",
       "raster:bands": [
         {
           "data_type": "uint16",
@@ -154,7 +132,7 @@
     "metadata": {
       "href": "../../../../MOD16A3GF.A2021001.h11v02.061.2022024075208.hdf.xml",
       "type": "application/xml",
-      "title": "FGDC Metdata",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
       ]
@@ -167,7 +145,6 @@
     75.55535641397
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
   ],
   "collection": "modis-16A3GF-061"

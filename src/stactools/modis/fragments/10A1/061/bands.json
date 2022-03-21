@@ -1,30 +1,52 @@
-[
-    {
-        "name": "NDSI_Snow_Cover",
-        "description": "Gridded NDSI snow cover and data flag values."
+{
+    "NDSI_Snow_Cover": {
+        "name": "Gridded NDSI snow cover and data flag values.",
+        "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 500
+        }
     },
-    {
-        "name": "NDSI_Snow_Cover_Basic_QA",
-        "description": "A general estimate of the quality of the algorithm result."
+    "NDSI_Snow_Cover_Basic_QA": {
+        "name": "A general estimate of the quality of the algorithm result.",
+        "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 500
+        }
     },
-    {
-        "name": "NDSI_Snow_Cover_Algorithm_Flags_QA",
-        "description": "Algorithm-specific bit flags set for data screens and for inland water."
+    "NDSI_Snow_Cover_Algorithm_Flags_QA": {
+        "name": "Algorithm-specific bit flags set for data screens and for inland water.",
+        "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 500
+        }
     },
-    {
-        "name": "NDSI",
-        "description": "Raw NDSI values (i.e. prior to screening)."
+    "NDSI": {
+        "name": "Raw NDSI values (i.e. prior to screening).",
+        "raster:bands": {
+            "data_type": "int16",
+            "scale": 0.0001,
+            "spatial_resolution": 500
+        }
     },
-    {
-        "name": "Snow_Albedo_Daily_Tile",
-        "description": "Daily snow albedo corresponding to the NDSI_Snow_Cover parameter."
+    "Snow_Albedo_Daily_Tile": {
+        "name": "Daily snow albedo corresponding to the NDSI_Snow_Cover parameter.",
+        "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 500
+        }
     },
-    {
-        "name": "orbit_pnt",
-        "description": "Pointer to the orbit of the swath mapped into each grid cell. For details, see Section 1.1.2 below."
+    "orbit_pnt": {
+        "name": "Pointer to the orbit of the swath mapped into each grid cell. For details, see Section 1.1.2 below.",
+        "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 500
+        }
     },
-    {
-        "name": "granule_pnt",
-        "description": "Pointer for identifying the swath mapped into each grid cell. For details, see the section 'Using the granule_pnt' below."
+    "granule_pnt": {
+        "name": "Pointer for identifying the swath mapped into each grid cell. For details, see the section 'Using the granule_pnt' below.",
+        "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 500
+        }
     }
-]
+}

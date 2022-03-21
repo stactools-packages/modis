@@ -3,12 +3,12 @@
         {
             "rel": "help",
             "href": "https://lpdaac.usgs.gov/documents/876/MOD14_User_Guide_v6.pdf",
-            "title": "User Guide"
+            "title": "MOD14 User Guide"
         },
         {
             "rel": "describedby",
             "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/6/MOD14A2",
-            "title": "Data File"
+            "title": "MOD14A2 file specification"
         }
     ],
     "title": "MODIS/Terra Thermal Anomalies/Fire 8-Day L3 Global 1 km SIN Grid",

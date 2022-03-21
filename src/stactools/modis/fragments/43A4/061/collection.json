@@ -8,14 +8,15 @@
         {
             "rel": "describedby",
             "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MCD43A4",
-            "title": "Data File"
+            "title": "MCD43A4 file specification"
         },
         {
             "rel": "cite-as",
-            "href": "https://doi.org/10.5067/MODIS/MCD43A4.061"
+            "href": "https://doi.org/10.5067/MODIS/MCD43A4.061",
+            "title": "LP DAAC - MCD43A4"
         }
     ],
-    "title": "MODIS/Terra+Aqua Nadir BRDF-Adjusted Reflectance (NBAR) Daily L3 Global 500 m SIN Grid",
+    "title": "MODIS Nadir BRDF-Adjusted Reflectance (NBAR) Daily",
     "description": "The Moderate Resolution Imaging Spectroradiometer (MODIS) MCD43A4 Version 6.1 Nadir Bidirectional Reflectance Distribution Function (BRDF)-Adjusted Reflectance (NBAR) dataset is produced daily using 16 days of Terra and Aqua MODIS data at 500 meter (m) resolution. The view angle effects are removed from the directional reflectances, resulting in a stable and consistent NBAR product. Data are temporally weighted to the ninth day which is reflected in the Julian date in the file name. Users are urged to use the band specific quality flags to isolate the highest quality full inversion results for their own science applications as described in the User Guide. The MCD43A4 provides NBAR and simplified mandatory quality layers for MODIS bands 1 through 7. Essential quality information provided in the corresponding MCD43A2 data file should be consulted when using this product.",
     "extent": {
         "spatial": {

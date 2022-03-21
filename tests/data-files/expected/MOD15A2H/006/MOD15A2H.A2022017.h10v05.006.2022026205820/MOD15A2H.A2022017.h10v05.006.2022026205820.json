@@ -82,33 +82,7 @@
     "hdf": {
       "href": "../../../../MOD15A2H.A2022017.h10v05.006.2022026205820.hdf",
       "type": "application/x-hdf",
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "Fpar_500m",
-          "description": "Fraction of Photosynthetically Active Radiation"
-        },
-        {
-          "name": "Lai_500m",
-          "description": "Leaf Area Index"
-        },
-        {
-          "name": "FparLai_QC",
-          "description": "Quality for LAI and FPAR"
-        },
-        {
-          "name": "FparExtra_QC",
-          "description": "Extra detail Quality for LAI and FPAR"
-        },
-        {
-          "name": "FparStdDev_500m",
-          "description": "Percent"
-        },
-        {
-          "name": "LaiStdDev_500m",
-          "description": "Standard deviation of LAI"
-        }
-      ],
+      "title": "Source data containing all bands",
       "roles": [
         "data"
       ]
@@ -116,7 +90,7 @@
     "metadata": {
       "href": "../../../../MOD15A2H.A2022017.h10v05.006.2022026205820.hdf.xml",
       "type": "application/xml",
-      "title": "FGDC Metdata",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
       ]
@@ -128,8 +102,6 @@
     -80.5775666708921,
     40.0637836759185
   ],
-  "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
-  ],
+  "stac_extensions": [],
   "collection": "modis-15A2H-006"
 }

@@ -48,84 +48,26 @@
       "rel": "root",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Terra+Aqua Nadir BRDF-Adjusted Reflectance (NBAR) Daily L3 Global 500 m SIN Grid"
+      "title": "MODIS Nadir BRDF-Adjusted Reflectance (NBAR) Daily"
     },
     {
       "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Terra+Aqua Nadir BRDF-Adjusted Reflectance (NBAR) Daily L3 Global 500 m SIN Grid"
+      "title": "MODIS Nadir BRDF-Adjusted Reflectance (NBAR) Daily"
     },
     {
       "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS/Terra+Aqua Nadir BRDF-Adjusted Reflectance (NBAR) Daily L3 Global 500 m SIN Grid"
+      "title": "MODIS Nadir BRDF-Adjusted Reflectance (NBAR) Daily"
     }
   ],
   "assets": {
     "hdf": {
       "href": "../../../../MCD43A4.A2022032.h14v10.061.2022041051831.hdf",
       "type": "application/x-hdf",
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band1",
-          "description": "BRDF Albedo Mandatory Quality for Band 1"
-        },
-        {
-          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band2",
-          "description": "BRDF Albedo Mandatory Quality for Band 2"
-        },
-        {
-          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band3",
-          "description": "BRDF Albedo Mandatory Quality for Band 3"
-        },
-        {
-          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band4",
-          "description": "BRDF Albedo Mandatory Quality for Band 4"
-        },
-        {
-          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band5",
-          "description": "BRDF Albedo Mandatory Quality for Band 5"
-        },
-        {
-          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band6",
-          "description": "BRDF Albedo Mandatory Quality for Band 6"
-        },
-        {
-          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band7",
-          "description": "BRDF Albedo Mandatory Quality for Band 7"
-        },
-        {
-          "name": "Nadir_Reflectance_Band1",
-          "description": "NBAR at local solar noon for Band 1"
-        },
-        {
-          "name": "Nadir_Reflectance_Band2",
-          "description": "NBAR at local solar noon for Band 2"
-        },
-        {
-          "name": "Nadir_Reflectance_Band3",
-          "description": "ENBAR at local solar noon for Band 3"
-        },
-        {
-          "name": "Nadir_Reflectance_Band4",
-          "description": "NBAR at local solar noon for Band 4"
-        },
-        {
-          "name": "Nadir_Reflectance_Band5",
-          "description": "NBAR at local solar noon for Band 5"
-        },
-        {
-          "name": "Nadir_Reflectance_Band6",
-          "description": "NBAR at local solar noon for Band 6"
-        },
-        {
-          "name": "Nadir_Reflectance_Band7",
-          "description": "NBAR at local solar noon for Band 7"
-        }
-      ],
+      "title": "Source data containing all bands",
       "raster:bands": [
         {
           "data_type": "uint8",
@@ -198,7 +140,7 @@
     "metadata": {
       "href": "../../../../MCD43A4.A2022032.h14v10.061.2022041051831.hdf.xml",
       "type": "application/xml",
-      "title": "FGDC Metdata",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
       ]
@@ -211,7 +153,6 @@
     -9.95544626171462
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
   ],
   "collection": "modis-43A4-061"

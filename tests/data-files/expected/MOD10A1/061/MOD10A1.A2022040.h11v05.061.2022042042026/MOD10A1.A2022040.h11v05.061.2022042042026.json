@@ -48,56 +48,26 @@
       "rel": "root",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS Snow Cover Daily L3 Global 500m SIN Grid"
+      "title": "MODIS Snow Cover Daily"
     },
     {
       "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS Snow Cover Daily L3 Global 500m SIN Grid"
+      "title": "MODIS Snow Cover Daily"
     },
     {
       "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS Snow Cover Daily L3 Global 500m SIN Grid"
+      "title": "MODIS Snow Cover Daily"
     }
   ],
   "assets": {
     "hdf": {
       "href": "../../../../MOD10A1.A2022040.h11v05.061.2022042042026.hdf",
       "type": "application/x-hdf",
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "NDSI_Snow_Cover",
-          "description": "Gridded NDSI snow cover and data flag values."
-        },
-        {
-          "name": "NDSI_Snow_Cover_Basic_QA",
-          "description": "A general estimate of the quality of the algorithm result."
-        },
-        {
-          "name": "NDSI_Snow_Cover_Algorithm_Flags_QA",
-          "description": "Algorithm-specific bit flags set for data screens and for inland water."
-        },
-        {
-          "name": "NDSI",
-          "description": "Raw NDSI values (i.e. prior to screening)."
-        },
-        {
-          "name": "Snow_Albedo_Daily_Tile",
-          "description": "Daily snow albedo corresponding to the NDSI_Snow_Cover parameter."
-        },
-        {
-          "name": "orbit_pnt",
-          "description": "Pointer to the orbit of the swath mapped into each grid cell. For details, see Section 1.1.2 below."
-        },
-        {
-          "name": "granule_pnt",
-          "description": "Pointer for identifying the swath mapped into each grid cell. For details, see the section 'Using the granule_pnt' below."
-        }
-      ],
+      "title": "Source data containing all bands",
       "raster:bands": [
         {
           "data_type": "uint8",
@@ -136,7 +106,7 @@
     "metadata": {
       "href": "../../../../MOD10A1.A2022040.h11v05.061.2022042042026.hdf.xml",
       "type": "application/xml",
-      "title": "FGDC Metdata",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
       ]
@@ -149,7 +119,6 @@
     40.0539543997624
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
   ],
   "collection": "modis-10A1-061"

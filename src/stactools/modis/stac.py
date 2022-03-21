@@ -10,7 +10,6 @@ import shapely.geometry
 import stactools.core.utils
 import stactools.core.utils.antimeridian
 from pystac import Asset, Collection, Item, Summaries
-from pystac.extensions.eo import Band, EOExtension
 from pystac.extensions.item_assets import AssetDefinition, ItemAssetsExtension
 from pystac.extensions.projection import ProjectionExtension
 from pystac.extensions.raster import RasterBand, RasterExtension
@@ -142,20 +141,19 @@ def create_item(
 
     hdf_asset = item.assets[HDF_ASSET_KEY]
 
-    eo = EOExtension.ext(hdf_asset, add_if_missing=True)
-    eo.bands = [Band.create(**band) for band in fragments.bands()]
-
-    raster_bands = fragments.raster_bands()
-    if raster_bands:
+    bands = fragments.bands()
+    all_bands_have_raster_bands = True
+    raster_bands = []
+    for name, band in bands.items():
+        if "raster:bands" in band:
+            raster_bands.append(RasterBand.create(**band["raster:bands"]))
+        else:
+            logger.warning(MissingRasterBand(item, name))
+            all_bands_have_raster_bands = False
+            break
+    if all_bands_have_raster_bands:
         raster = RasterExtension.ext(hdf_asset, add_if_missing=True)
-        bands = []
-        for band in eo.bands:
-            raster_band = raster_bands.get(band.name, None)
-            if raster_band:
-                bands.append(RasterBand.create(**raster_band))
-            else:
-                logger.warning(MissingRasterBand(item, band.name))
-        raster.bands = bands
+        raster.bands = raster_bands
 
     url = urllib.parse.urlparse(file.hdf_href)
     is_local_hdf = not url.scheme and os.path.isfile(file.hdf_href)

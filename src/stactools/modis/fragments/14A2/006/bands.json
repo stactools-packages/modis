@@ -1,10 +1,8 @@
-[
-    {
-        "name": "FireMask",
-        "description": "Confidence of fire"
+{
+    "FireMask": {
+        "name": "Confidence of fire"
     },
-    {
-        "name": "QA",
-        "description": "Pixel quality indicators"
+    "QA": {
+        "name": "Pixel quality indicators"
     }
-]
+}

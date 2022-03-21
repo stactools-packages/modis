@@ -38,14 +38,6 @@ class Fragments:
         """
         return self._load("bands.json")
 
-    def raster_bands(self) -> Any:
-        """Loads the raster-bands.json for the given catalog id.
-
-        Returns:
-            Any: The contents of the fragment file, parsed as JSON.
-        """
-        return self._load("raster-bands.json")
-
     def item_properties(self) -> Any:
         """Loads the item-properties.json for the given catalog id.
 
