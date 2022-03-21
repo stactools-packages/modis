@@ -4,7 +4,6 @@ from typing import List, Optional, Tuple
 
 import stactools.core.utils.convert
 from pystac import Asset, Item, MediaType
-from pystac.extensions.eo import Band, EOExtension
 from pystac.extensions.file import FileExtension, MappingObject
 from pystac.extensions.raster import RasterBand, RasterExtension
 
@@ -71,9 +70,7 @@ def add_cog_assets(item: Item,
         ]
     file = File.from_item(item)
     fragments = file.fragments()
-    band_list = fragments.bands()
-    bands = dict((band["name"], band) for band in band_list)
-    raster_bands = fragments.raster_bands()
+    bands = fragments.bands()
     file_info = fragments.file_info()
     for path, subdataset_name in zip(hrefs, subdataset_names):
         if subdataset_name not in bands:
@@ -84,24 +81,20 @@ def add_cog_assets(item: Item,
         asset = Asset(
             href=path,
             title=band["name"],
-            description=band["description"],
+            description=band.get("description"),
             media_type=MediaType.COG,
             roles=["data"],
         )
         item.add_asset(subdataset_name, asset)
 
         asset = item.assets[subdataset_name]
-        eo = EOExtension.ext(asset, add_if_missing=True)
-        eo.bands = [Band.create(**band)]
 
+        raster_bands = band.get("raster:bands")
         if raster_bands:
-            try:
-                raster_band = raster_bands[subdataset_name]
-            except KeyError:
-                logger.warning(MissingRasterBand(item, subdataset_name))
-            else:
-                raster = RasterExtension.ext(asset, add_if_missing=True)
-                raster.bands = [RasterBand.create(**raster_band)]
+            raster = RasterExtension.ext(asset, add_if_missing=True)
+            raster.bands = [RasterBand.create(**raster_bands)]
+        else:
+            logger.warning(MissingRasterBand(item, subdataset_name))
 
         if file_info:
             try:

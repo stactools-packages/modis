@@ -8,39 +8,42 @@
       "rel": "root",
       "href": "./collection.json",
       "type": "application/json",
-      "title": "MODIS Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid"
+      "title": "MODIS Leaf Area Index/FPAR 8-Day"
     },
     {
       "rel": "help",
       "href": "https://lpdaac.usgs.gov/documents/926/MOD15_User_Guide_V61.pdf",
-      "title": "User Guide"
+      "title": "MOD15 User Guide"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MCD15A2H",
-      "title": "Data File"
+      "title": "MCD15A2H file specification"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MOD15A2H",
-      "title": "Data File"
+      "title": "MOD15A2H file specification"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MYD15A2H",
-      "title": "Data File"
+      "title": "MYD15A2H file specification"
     },
     {
       "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MCD15A2H.061"
+      "href": "https://doi.org/10.5067/MODIS/MCD15A2H.061",
+      "title": "LP DAAC - MCD15A2H"
     },
     {
       "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MOD15A2H.061"
+      "href": "https://doi.org/10.5067/MODIS/MOD15A2H.061",
+      "title": "LP DAAC - MOD15A2H"
     },
     {
       "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MYD15A2H.061"
+      "href": "https://doi.org/10.5067/MODIS/MYD15A2H.061",
+      "title": "LP DAAC - MYD15A2H"
     },
     {
       "rel": "item",
@@ -57,43 +60,71 @@
       "roles": [
         "data"
       ],
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "Fpar_500m",
-          "description": "Fraction of Photosynthetically Active Radiation"
+      "title": "Source data containing all bands",
+      "eo:bands": {
+        "Fpar_500m": {
+          "name": "Fraction of Photosynthetically Active Radiation",
+          "description": "The fraction of incident photosynthetically active radiation (400-700 nm) absorbed by the green elements of a vegetation canopy.",
+          "raster:bands": {
+            "data_type": "uint8",
+            "unit": "Percent",
+            "scale": 0.01,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "Lai_500m",
-          "description": "Leaf Area Index"
+        "Lai_500m": {
+          "name": "Leaf Area Index",
+          "description": "The one-sided green leaf area per unit ground area in broadleaf canopies and as one-half the total needle surface area per unit ground area in coniferous canopies",
+          "raster:bands": {
+            "data_type": "uint8",
+            "unit": "m^2/m^2",
+            "scale": 0.1,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "FparLai_QC",
-          "description": "Quality for FPAR and LAI"
+        "FparLai_QC": {
+          "name": "Quality for FPAR and LAI",
+          "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "FparExtra_QC",
-          "description": "Extra detail Quality for FPAR and LAI"
+        "FparExtra_QC": {
+          "name": "Extra detail Quality for FPAR and LAI",
+          "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "FparStdDev_500m",
-          "description": "Standard deviation of FPAR"
+        "FparStdDev_500m": {
+          "name": "Standard deviation of FPAR",
+          "raster:bands": {
+            "data_type": "uint8",
+            "unit": "Percent",
+            "scale": 0.01,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "LaiStdDev_500m",
-          "description": "Standard deviation of LAI"
+        "LaiStdDev_500m": {
+          "name": "Standard deviation of LAI",
+          "raster:bands": {
+            "data_type": "uint8",
+            "unit": "m^2/m^2",
+            "scale": 0.1,
+            "spatial_resolution": 500
+          }
         }
-      ]
+      }
     },
     "metadata": {
       "type": "application/xml",
       "roles": [
         "metadata"
       ],
-      "title": "FGDC Metdata"
+      "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
-  "title": "MODIS Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid",
+  "title": "MODIS Leaf Area Index/FPAR 8-Day",
   "extent": {
     "spatial": {
       "bbox": [

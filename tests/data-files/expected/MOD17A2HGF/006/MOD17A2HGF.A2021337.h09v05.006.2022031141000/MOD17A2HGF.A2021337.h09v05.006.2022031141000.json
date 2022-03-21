@@ -89,21 +89,7 @@
     "hdf": {
       "href": "../../../../MOD17A2HGF.A2021337.h09v05.006.2022031141000.hdf",
       "type": "application/x-hdf",
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "Gpp_500m",
-          "description": "Gross Primary Productivity"
-        },
-        {
-          "name": "PsnNet_500m",
-          "description": "Net Photosynthesis"
-        },
-        {
-          "name": "Psn_QC_500m",
-          "description": "Quality control indicators"
-        }
-      ],
+      "title": "Source data containing all bands",
       "roles": [
         "data"
       ]
@@ -111,7 +97,7 @@
     "metadata": {
       "href": "../../../../MOD17A2HGF.A2021337.h09v05.006.2022031141000.hdf.xml",
       "type": "application/xml",
-      "title": "FGDC Metdata",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
       ]
@@ -123,8 +109,6 @@
     -92.131858571552,
     40.0742066197196
   ],
-  "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
-  ],
+  "stac_extensions": [],
   "collection": "modis-17A2HGF-006"
 }

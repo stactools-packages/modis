@@ -2,27 +2,28 @@
   "type": "Collection",
   "id": "modis-15A3H-061",
   "stac_version": "1.0.0",
-  "description": "The MCD15A3H Version 6.1 Moderate Resolution Imaging Spectroradiometer (MODIS) Level 4, Combined Fraction of Photosynthetically Active Radiation (FPAR), and Leaf Area Index (LAI) product is a 4-day composite data set with 500 meter pixel size. The algorithm chooses the best pixel available from all the acquisitions of both MODIS sensors located on NASA\u2019s Terra and Aqua satellites from within the 4-day period. LAI is defined as the one-sided green leaf area per unit ground area in broadleaf canopies and as one-half the total needle surface area per unit ground area in coniferous canopies. FPAR is defined as the fraction of incident photosynthetically active radiation (400-700 nm) absorbed by the green elements of a vegetation canopy.",
+  "description": "The MCD15A3H Version 6.1 Moderate Resolution Imaging Spectroradiometer (MODIS) Level 4, Combined Fraction of Photosynthetically Active Radiation (FPAR), and Leaf Area Index (LAI) product is a 4-day composite data set with 500 meter pixel size. The algorithm chooses the best pixel available from all the acquisitions of both MODIS sensors located on NASA's Terra and Aqua satellites from within the 4-day period. LAI is defined as the one-sided green leaf area per unit ground area in broadleaf canopies and as one-half the total needle surface area per unit ground area in coniferous canopies. FPAR is defined as the fraction of incident photosynthetically active radiation (400-700 nm) absorbed by the green elements of a vegetation canopy.",
   "links": [
     {
       "rel": "root",
       "href": "./collection.json",
       "type": "application/json",
-      "title": "MODIS/Terra+Aqua Leaf Area Index/FPAR 4-Day L4 Global 500 m SIN"
+      "title": "MODIS Leaf Area Index/FPAR 4-Day"
     },
     {
       "rel": "help",
       "href": "https://lpdaac.usgs.gov/documents/926/MOD15_User_Guide_V61.pdf",
-      "title": "User Guide"
+      "title": "MOD15 User Guide"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MCD15A3H",
-      "title": "Data File"
+      "title": "MCD15A3H file specification"
     },
     {
       "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MCD15A3H.061"
+      "href": "https://doi.org/10.5067/MODIS/MCD15A3H.061",
+      "title": "LP DAAC - MCD15A3H"
     },
     {
       "rel": "item",
@@ -39,43 +40,69 @@
       "roles": [
         "data"
       ],
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "Fpar_500m",
-          "description": "Fraction of Photosynthetically Active Radiation"
+      "title": "Source data containing all bands",
+      "eo:bands": {
+        "Fpar_500m": {
+          "name": "Fraction of Photosynthetically Active Radiation",
+          "raster:bands": {
+            "data_type": "uint8",
+            "unit": "Percent",
+            "scale": 0.01,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "Lai_500m",
-          "description": "Leaf Area Index"
+        "Lai_500m": {
+          "name": "Leaf Area Index",
+          "raster:bands": {
+            "data_type": "uint8",
+            "unit": "m^2/m^2",
+            "scale": 0.1,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "FparLai_QC",
-          "description": "Quality for FPAR and LAI"
+        "FparLai_QC": {
+          "name": "Quality for FPAR and LAI",
+          "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "FparExtra_QC",
-          "description": "Extra detail Quality for FPAR and LAI"
+        "FparExtra_QC": {
+          "name": "Extra detail Quality for FPAR and LAI",
+          "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "FparStdDev_500m",
-          "description": "Standard deviation of FPAR"
+        "FparStdDev_500m": {
+          "name": "Standard deviation of FPAR",
+          "raster:bands": {
+            "data_type": "uint8",
+            "unit": "Percent",
+            "scale": 0.01,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "LaiStdDev_500m",
-          "description": "Standard deviation of LAI"
+        "LaiStdDev_500m": {
+          "name": "Standard deviation of LAI",
+          "raster:bands": {
+            "data_type": "uint8",
+            "unit": "m^2/m^2",
+            "scale": 0.1,
+            "spatial_resolution": 500
+          }
         }
-      ]
+      }
     },
     "metadata": {
       "type": "application/xml",
       "roles": [
         "metadata"
       ],
-      "title": "FGDC Metdata"
+      "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
-  "title": "MODIS/Terra+Aqua Leaf Area Index/FPAR 4-Day L4 Global 500 m SIN",
+  "title": "MODIS Leaf Area Index/FPAR 4-Day",
   "extent": {
     "spatial": {
       "bbox": [

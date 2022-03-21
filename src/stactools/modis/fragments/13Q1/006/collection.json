@@ -3,12 +3,12 @@
         {
             "rel": "help",
             "href": "https://lpdaac.usgs.gov/documents/103/MOD13_User_Guide_V6.pdf",
-            "title": "User Guide"
+            "title": "MOD13 User Guide"
         },
         {
             "rel": "describedby",
             "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/6/MOD13A2",
-            "title": "Data File"
+            "title": "MOD13A2 file specification"
         }
     ],
     "title": "MODIS/Terra Vegetation Indices 16-Day L3 Global 250 m SIN Grid",

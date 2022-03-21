@@ -3,28 +3,30 @@
         {
             "rel": "help",
             "href": "https://lpdaac.usgs.gov/documents/972/MOD17_User_Guide_V61.pdf",
-            "title": "User Guide"
+            "title": "MOD17 User Guide"
         },
         {
             "rel": "describedby",
             "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MOD17A3HGF",
-            "title": "Data File"
+            "title": "MOD17A3HGF file specification"
         },
         {
             "rel": "describedby",
             "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MYD17A3HGF",
-            "title": "Data File"
+            "title": "MYD17A3HGF file specification"
         },
         {
             "rel": "cite-as",
-            "href": "https://doi.org/10.5067/MODIS/MOD17A3HGF.061"
+            "href": "https://doi.org/10.5067/MODIS/MOD17A3HGF.061",
+            "title": "LP DAAC - MOD17A3HGF"
         },
         {
             "rel": "cite-as",
-            "href": "https://doi.org/10.5067/MODIS/MYD17A3HGF.061"
+            "href": "https://doi.org/10.5067/MODIS/MYD17A3HGF.061",
+            "title": "LP DAAC - MYD17A3HGF"
         }
     ],
-    "title": "MODIS Net Primary Production Gap-Filled Yearly L4 Global 500 m SIN Grid",
+    "title": "MODIS Net Primary Production Yearly Gap-Filled",
     "description": "The Version 6.1 product provides information about annual Net Primary Production (NPP) at 500 meter (m) pixel resolution. Annual Moderate Resolution Imaging Spectroradiometer (MODIS) NPP is derived from the sum of all 8-day Net Photosynthesis (PSN) products (MOD17A2H) from the given year. The PSN value is the difference of the Gross Primary Productivity (GPP) and the Maintenance Respiration (MR). The product will be generated at the end of each year when the entire yearly 8-day 15A2H is available. Hence, the gap-filled product is the improved 17, which has cleaned the poor-quality inputs from 8-day Leaf Area Index and Fraction of Photosynthetically Active Radiation (LAI/FPAR) based on the Quality Control (QC) label for every pixel. If any LAI/FPAR pixel did not meet the quality screening criteria, its value is determined through linear interpolation. However, users cannot get this product in near-real time because it will be generated only at the end of a given year.",
     "extent": {
         "spatial": {

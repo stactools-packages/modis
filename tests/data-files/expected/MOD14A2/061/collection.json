@@ -8,30 +8,32 @@
       "rel": "root",
       "href": "./collection.json",
       "type": "application/json",
-      "title": "MODIS Thermal Anomalies/Fire 8-Day L3 Global 1 km SIN Grid"
+      "title": "MODIS Thermal Anomalies/Fire 8-Day"
     },
     {
       "rel": "help",
       "href": "https://lpdaac.usgs.gov/documents/1005/MOD14_User_Guide_V61.pdf",
-      "title": "User Guide"
+      "title": "MOD14 User Guide"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MOD14A2",
-      "title": "Data File"
+      "title": "MOD14A2 file specification"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MYD14A2",
-      "title": "Data File"
+      "title": "MYD14A2 file specification"
     },
     {
       "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MOD14A2.061"
+      "href": "https://doi.org/10.5067/MODIS/MOD14A2.061",
+      "title": "LP DAAC - MOD14A2"
     },
     {
       "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MYD14A2.061"
+      "href": "https://doi.org/10.5067/MODIS/MYD14A2.061",
+      "title": "LP DAAC - MYD14A2"
     },
     {
       "rel": "item",
@@ -48,27 +50,33 @@
       "roles": [
         "data"
       ],
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "FireMask",
-          "description": "Confidence of fire"
+      "title": "Source data containing all bands",
+      "eo:bands": {
+        "FireMask": {
+          "name": "Confidence of fire",
+          "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 1000
+          }
         },
-        {
-          "name": "QA",
-          "description": "Pixel quality indicators"
+        "QA": {
+          "name": "Pixel quality indicators",
+          "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 1000
+          }
         }
-      ]
+      }
     },
     "metadata": {
       "type": "application/xml",
       "roles": [
         "metadata"
       ],
-      "title": "FGDC Metdata"
+      "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
-  "title": "MODIS Thermal Anomalies/Fire 8-Day L3 Global 1 km SIN Grid",
+  "title": "MODIS Thermal Anomalies/Fire 8-Day",
   "extent": {
     "spatial": {
       "bbox": [

@@ -1,26 +1,54 @@
-[
-    {
-        "name": "Fpar_500m",
-        "description": "Fraction of Photosynthetically Active Radiation"
+{
+    "Fpar_500m": {
+        "name": "Fraction of Photosynthetically Active Radiation",
+        "description": "The fraction of incident photosynthetically active radiation (400-700 nm) absorbed by the green elements of a vegetation canopy.",
+        "raster:bands": {
+            "data_type": "uint8",
+            "unit": "Percent",
+            "scale": 0.01,
+            "spatial_resolution": 500
+        }
     },
-    {
-        "name": "Lai_500m",
-        "description": "Leaf Area Index"
+    "Lai_500m": {
+        "name": "Leaf Area Index",
+        "description": "The one-sided green leaf area per unit ground area in broadleaf canopies and as one-half the total needle surface area per unit ground area in coniferous canopies",
+        "raster:bands": {
+            "data_type": "uint8",
+            "unit": "m^2/m^2",
+            "scale": 0.1,
+            "spatial_resolution": 500
+        }
     },
-    {
-        "name": "FparLai_QC",
-        "description": "Quality for FPAR and LAI"
+    "FparLai_QC": {
+        "name": "Quality for FPAR and LAI",
+        "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 500
+        }
     },
-    {
-        "name": "FparExtra_QC",
-        "description": "Extra detail Quality for FPAR and LAI"
+    "FparExtra_QC": {
+        "name": "Extra detail Quality for FPAR and LAI",
+        "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 500
+        }
     },
-    {
-        "name": "FparStdDev_500m",
-        "description": "Standard deviation of FPAR"
+    "FparStdDev_500m": {
+        "name": "Standard deviation of FPAR",
+        "raster:bands": {
+            "data_type": "uint8",
+            "unit": "Percent",
+            "scale": 0.01,
+            "spatial_resolution": 500
+        }
     },
-    {
-        "name": "LaiStdDev_500m",
-        "description": "Standard deviation of LAI"
+    "LaiStdDev_500m": {
+        "name": "Standard deviation of LAI",
+        "raster:bands": {
+            "data_type": "uint8",
+            "unit": "m^2/m^2",
+            "scale": 0.1,
+            "spatial_resolution": 500
+        }
     }
-]
+}

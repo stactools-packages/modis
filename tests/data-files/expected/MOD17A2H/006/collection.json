@@ -13,12 +13,12 @@
     {
       "rel": "help",
       "href": "https://lpdaac.usgs.gov/documents/495/MOD17_User_Guide_V6.pdf",
-      "title": "User Guide"
+      "title": "MOD17 User Guide"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/6/MOD17A2H",
-      "title": "Data File"
+      "title": "MOD17A2H file specification"
     },
     {
       "rel": "cite-as",
@@ -40,28 +40,25 @@
       "roles": [
         "data"
       ],
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "Gpp_500m",
-          "description": "Gross Primary Productivity"
+      "title": "Source data containing all bands",
+      "eo:bands": {
+        "Gpp_500m": {
+          "name": "Gross Primary Productivity"
         },
-        {
-          "name": "PsnNet_500m",
-          "description": "Net Photosynthesis"
+        "PsnNet_500m": {
+          "name": "Net Photosynthesis"
         },
-        {
-          "name": "Psn_QC_500m",
-          "description": "Quality control indicators"
+        "Psn_QC_500m": {
+          "name": "Quality control indicators"
         }
-      ]
+      }
     },
     "metadata": {
       "type": "application/xml",
       "roles": [
         "metadata"
       ],
-      "title": "FGDC Metdata"
+      "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
   "sci:doi": "10.5067/MODIS/MOD17A2H.006",

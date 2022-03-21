@@ -1,14 +1,27 @@
-[
-    {
-        "name": "Gpp_500m",
-        "description": "Gross Primary Productivity"
+{
+    "Gpp_500m": {
+        "name": "Gross Primary Productivity",
+        "raster:bands": {
+            "data_type": "int16",
+            "unit": "kg C/m^2",
+            "scale": 0.0001,
+            "spatial_resolution": 500
+        }
     },
-    {
-        "name": "PsnNet_500m",
-        "description": "Net Photosynthesis"
+    "PsnNet_500m": {
+        "name": "Net Photosynthesis",
+        "raster:bands": {
+            "data_type": "int16",
+            "unit": "kg C/m^2",
+            "scale": 0.0001,
+            "spatial_resolution": 500
+        }
     },
-    {
-        "name": "Psn_QC_500m",
-        "description": "Quality control indicators"
+    "Psn_QC_500m": {
+        "name": "Quality control indicators",
+        "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 500
+        }
     }
-]
+}

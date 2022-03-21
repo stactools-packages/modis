@@ -1,10 +1,16 @@
-[
-    {
-        "name": "FireMask",
-        "description": "Confidence of fire"
+{
+    "FireMask": {
+        "name": "Confidence of fire",
+        "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 1000
+        }
     },
-    {
-        "name": "QA",
-        "description": "Pixel quality indicators"
+    "QA": {
+        "name": "Pixel quality indicators",
+        "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 1000
+        }
     }
-]
+}

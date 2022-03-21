@@ -1,14 +1,11 @@
-[
-    {
-        "name": "Gpp_500m",
-        "description": "Gross Primary Productivity"
+{
+    "Gpp_500m": {
+        "name": "Gross Primary Productivity"
     },
-    {
-        "name": "PsnNet_500m",
-        "description": "Net Photosynthesis"
+    "PsnNet_500m": {
+        "name": "Net Photosynthesis"
     },
-    {
-        "name": "Psn_QC_500m",
-        "description": "Quality control indicators"
+    "Psn_QC_500m": {
+        "name": "Quality control indicators"
     }
-]
+}
