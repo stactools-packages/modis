@@ -71,3 +71,7 @@ class File:
     def fragments(self) -> Fragments:
         """Returns the fragments for this file."""
         return self.product.fragments(self.version)
+
+    def collection_id(self) -> str:
+        """Returns the collection id for this file."""
+        return self.product.collection_id(self.version)
