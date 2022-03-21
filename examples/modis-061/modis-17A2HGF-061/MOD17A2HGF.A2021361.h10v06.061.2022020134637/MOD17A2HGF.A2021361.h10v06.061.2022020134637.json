@@ -54,34 +54,20 @@
       "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid"
+      "title": "MODIS Gross Primary Productivity 8-Day Gap-Filled"
     },
     {
       "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS Gross Primary Productivity Gap-Filled 8-Day L4 Global 500 m SIN Grid"
+      "title": "MODIS Gross Primary Productivity 8-Day Gap-Filled"
     }
   ],
   "assets": {
     "hdf": {
       "href": "../../../../tests/data-files/MOD17A2HGF.A2021361.h10v06.061.2022020134637.hdf",
       "type": "application/x-hdf",
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "Gpp_500m",
-          "description": "Gross Primary Productivity"
-        },
-        {
-          "name": "PsnNet_500m",
-          "description": "Net Photosynthesis"
-        },
-        {
-          "name": "Psn_QC_500m",
-          "description": "Quality control indicators"
-        }
-      ],
+      "title": "Source data containing all bands",
       "raster:bands": [
         {
           "data_type": "int16",
@@ -107,7 +93,7 @@
     "metadata": {
       "href": "../../../../tests/data-files/MOD17A2HGF.A2021361.h10v06.061.2022020134637.hdf.xml",
       "type": "application/xml",
-      "title": "FGDC Metdata",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
       ]
@@ -120,7 +106,6 @@
     30.0383760061888
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
   ],
   "collection": "modis-17A2HGF-061"

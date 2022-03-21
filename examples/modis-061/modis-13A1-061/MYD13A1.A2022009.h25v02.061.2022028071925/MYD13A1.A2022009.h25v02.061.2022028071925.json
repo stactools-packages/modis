@@ -80,70 +80,20 @@
       "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS Vegetation Indices 16-Day L3 Global 500 m SIN Grid"
+      "title": "MODIS Vegetation Indices 16-Day (500m)"
     },
     {
       "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "MODIS Vegetation Indices 16-Day L3 Global 500 m SIN Grid"
+      "title": "MODIS Vegetation Indices 16-Day (500m)"
     }
   ],
   "assets": {
     "hdf": {
       "href": "../../../../tests/data-files/MYD13A1.A2022009.h25v02.061.2022028071925.hdf",
       "type": "application/x-hdf",
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "500m_16_days_NDVI",
-          "description": "500m 16 days NDVI"
-        },
-        {
-          "name": "500m_16_days_EVI",
-          "description": "500m 16 days EVI"
-        },
-        {
-          "name": "500m_16_days_VI_Quality",
-          "description": "VI quality indicators"
-        },
-        {
-          "name": "500m_16_days_red_reflectance",
-          "description": "Surface Reflectance Band 1"
-        },
-        {
-          "name": "500m_16_days_NIR_reflectance",
-          "description": "Surface Reflectance Band 2"
-        },
-        {
-          "name": "500m_16_days_blue_reflectance",
-          "description": "Surface Reflectance Band 3"
-        },
-        {
-          "name": "500m_16_days_MIR_reflectance",
-          "description": "Surface Reflectance Band 7"
-        },
-        {
-          "name": "500m_16_days_view_zenith_angle",
-          "description": "View zenith angle of VI Pixel"
-        },
-        {
-          "name": "500m_16_days_sun_zenith_angle",
-          "description": "Sun zenith angle of VI pixel"
-        },
-        {
-          "name": "500m_16_days_relative_azimuth_angle",
-          "description": "Relative azimuth angle of VI pixel"
-        },
-        {
-          "name": "500m_16_days_composite_day_of_the_year",
-          "description": "Day of year VI pixel"
-        },
-        {
-          "name": "500m_16_days_pixel_reliability",
-          "description": "Quality reliability of VI pixel"
-        }
-      ],
+      "title": "Source data containing all bands",
       "raster:bands": [
         {
           "data_type": "int16",
@@ -217,7 +167,7 @@
     "metadata": {
       "href": "../../../../tests/data-files/MYD13A1.A2022009.h25v02.061.2022028071925.hdf.xml",
       "type": "application/xml",
-      "title": "FGDC Metdata",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
       ]
@@ -230,7 +180,6 @@
     69.2113905326394
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
   ],
   "collection": "modis-13A1-061"

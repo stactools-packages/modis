@@ -13,25 +13,32 @@
     {
       "rel": "help",
       "href": "https://lpdaac.usgs.gov/documents/621/MOD13_User_Guide_V61.pdf",
-      "title": "User Guide"
+      "title": "MOD13 User Guide"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MOD13A1",
-      "title": "Data File"
+      "title": "MOD13A1 file specification"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MYD13A1",
-      "title": "Data File"
+      "title": "MYD13A1 file specification"
     },
     {
       "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MOD13A1.061"
+      "href": "https://doi.org/10.5067/MODIS/MOD13A1.061",
+      "title": "LP DAAC - MOD13A1"
     },
     {
       "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MYD13A1.061"
+      "href": "https://doi.org/10.5067/MODIS/MYD13A1.061",
+      "title": "LP DAAC - MYD13A1"
+    },
+    {
+      "rel": "item",
+      "href": "./MYD13A1.A2022009.h25v02.061.2022028071925/MYD13A1.A2022009.h25v02.061.2022028071925.json",
+      "type": "application/json"
     },
     {
       "rel": "item",
@@ -54,67 +61,119 @@
       "roles": [
         "data"
       ],
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "500m_16_days_NDVI",
-          "description": "500m 16 days NDVI"
+      "title": "Source data containing all bands",
+      "eo:bands": {
+        "500m_16_days_NDVI": {
+          "name": "500m 16 days NDVI",
+          "raster:bands": {
+            "data_type": "int16",
+            "unit": "NDVI",
+            "scale": 0.0001,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "500m_16_days_EVI",
-          "description": "500m 16 days EVI"
+        "500m_16_days_EVI": {
+          "name": "500m 16 days EVI",
+          "raster:bands": {
+            "data_type": "int16",
+            "unit": "EVI",
+            "scale": 0.0001,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "500m_16_days_VI_Quality",
-          "description": "VI quality indicators"
+        "500m_16_days_VI_Quality": {
+          "name": "VI quality indicators",
+          "raster:bands": {
+            "data_type": "uint16",
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "500m_16_days_red_reflectance",
-          "description": "Surface Reflectance Band 1"
+        "500m_16_days_red_reflectance": {
+          "name": "Surface Reflectance Band 1",
+          "raster:bands": {
+            "data_type": "int16",
+            "scale": 0.0001,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "500m_16_days_NIR_reflectance",
-          "description": "Surface Reflectance Band 2"
+        "500m_16_days_NIR_reflectance": {
+          "name": "Surface Reflectance Band 2",
+          "raster:bands": {
+            "data_type": "int16",
+            "scale": 0.0001,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "500m_16_days_blue_reflectance",
-          "description": "Surface Reflectance Band 3"
+        "500m_16_days_blue_reflectance": {
+          "name": "Surface Reflectance Band 3",
+          "raster:bands": {
+            "data_type": "int16",
+            "scale": 0.0001,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "500m_16_days_MIR_reflectance",
-          "description": "Surface Reflectance Band 7"
+        "500m_16_days_MIR_reflectance": {
+          "name": "Surface Reflectance Band 7",
+          "raster:bands": {
+            "data_type": "int16",
+            "scale": 0.0001,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "500m_16_days_view_zenith_angle",
-          "description": "View zenith angle of VI Pixel"
+        "500m_16_days_view_zenith_angle": {
+          "name": "View zenith angle of VI Pixel",
+          "raster:bands": {
+            "data_type": "int16",
+            "unit": "Degree",
+            "scale": 0.01,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "500m_16_days_sun_zenith_angle",
-          "description": "Sun zenith angle of VI pixel"
+        "500m_16_days_sun_zenith_angle": {
+          "name": "Sun zenith angle of VI pixel",
+          "raster:bands": {
+            "data_type": "int16",
+            "unit": "Degree",
+            "scale": 0.01,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "500m_16_days_relative_azimuth_angle",
-          "description": "Relative azimuth angle of VI pixel"
+        "500m_16_days_relative_azimuth_angle": {
+          "name": "Relative azimuth angle of VI pixel",
+          "raster:bands": {
+            "data_type": "int16",
+            "unit": "Degree",
+            "scale": 0.01,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "500m_16_days_composite_day_of_the_year",
-          "description": "Day of year VI pixel"
+        "500m_16_days_composite_day_of_the_year": {
+          "name": "Day of year VI pixel",
+          "raster:bands": {
+            "data_type": "int16",
+            "unit": "Julian Day",
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "500m_16_days_pixel_reliability",
-          "description": "Quality reliability of VI pixel"
+        "500m_16_days_pixel_reliability": {
+          "name": "Quality reliability of VI pixel",
+          "raster:bands": {
+            "data_type": "int8",
+            "unit": "Rank",
+            "spatial_resolution": 500
+          }
         }
-      ]
+      }
     },
     "metadata": {
       "type": "application/xml",
       "roles": [
         "metadata"
       ],
-      "title": "FGDC Metdata"
+      "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
-  "title": "MODIS Vegetation Indices 16-Day L3 Global 500 m SIN Grid",
+  "title": "MODIS Vegetation Indices 16-Day (500m)",
   "extent": {
     "spatial": {
       "bbox": [
@@ -164,6 +223,7 @@
       "modis"
     ],
     "platform": [
+      "aqua",
       "terra"
     ]
   }

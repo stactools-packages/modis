@@ -13,12 +13,12 @@
     {
       "rel": "help",
       "href": "https://lpdaac.usgs.gov/documents/108/MOD21_User_Guide_V6.pdf",
-      "title": "User Guide"
+      "title": "MOD21 User Guide"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/6/MOD21A2",
-      "title": "Data File"
+      "title": "MOD21A2 file specification"
     },
     {
       "rel": "cite-as",
@@ -46,60 +46,49 @@
       "roles": [
         "data"
       ],
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "LST_Day_1KM",
-          "description": "Day Land surface temperature"
+      "title": "Source data containing all bands",
+      "eo:bands": {
+        "LST_Day_1KM": {
+          "name": "Day Land surface temperature"
         },
-        {
-          "name": "QC_Day",
-          "description": "Day Quality Control (QC)"
+        "QC_Day": {
+          "name": "Day Quality Control (QC)"
         },
-        {
-          "name": "View_Angle_Day",
-          "description": "Day MODIS view zenith angle"
+        "View_Angle_Day": {
+          "name": "Day MODIS view zenith angle"
         },
-        {
-          "name": "View_Time_Day",
-          "description": "Time of MODIS observation for day"
+        "View_Time_Day": {
+          "name": "Time of MODIS observation for day"
         },
-        {
-          "name": "LST_Night_1KM",
-          "description": "Night Land Surface Temperature"
+        "LST_Night_1KM": {
+          "name": "Night Land Surface Temperature"
         },
-        {
-          "name": "QC_Night",
-          "description": "Night Quality Control (QC)"
+        "QC_Night": {
+          "name": "Night Quality Control (QC)"
         },
-        {
-          "name": "View_Angle_Night",
-          "description": "Night view zenith angle"
+        "View_Angle_Night": {
+          "name": "Night view zenith angle"
         },
-        {
-          "name": "View_Time_Night",
-          "description": "Time of Observation for night"
+        "View_Time_Night": {
+          "name": "Time of Observation for night"
         },
-        {
-          "name": "Emis_29",
-          "description": "Average Day/Night Band 29 emissivity"
+        "Emis_29": {
+          "name": "Average Day/Night Band 29 emissivity"
         },
-        {
-          "name": "Emis_31",
-          "description": "Average Day/Night Band 31 emissivity"
+        "Emis_31": {
+          "name": "Average Day/Night Band 31 emissivity"
         },
-        {
-          "name": "Emis_32",
-          "description": "Average Day/Night Band 32 emissivity"
+        "Emis_32": {
+          "name": "Average Day/Night Band 32 emissivity"
         }
-      ]
+      }
     },
     "metadata": {
       "type": "application/xml",
       "roles": [
         "metadata"
       ],
-      "title": "FGDC Metdata"
+      "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
   "sci:doi": "10.5067/MODIS/MOD21A2.006",

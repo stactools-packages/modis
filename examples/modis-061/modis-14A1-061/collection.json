@@ -13,25 +13,32 @@
     {
       "rel": "help",
       "href": "https://lpdaac.usgs.gov/documents/1005/MOD14_User_Guide_V61.pdf",
-      "title": "User Guide"
+      "title": "MOD14 User Guide"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MOD14A1",
-      "title": "Data File"
+      "title": "MOD14A1 file specification"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MYD14A1",
-      "title": "Data File"
+      "title": "MYD14A1 file specification"
     },
     {
       "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MOD14A1.061"
+      "href": "https://doi.org/10.5067/MODIS/MOD14A1.061",
+      "title": "LP DAAC - MOD14A1"
     },
     {
       "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MYD14A1.061"
+      "href": "https://doi.org/10.5067/MODIS/MYD14A1.061",
+      "title": "LP DAAC - MYD14A1"
+    },
+    {
+      "rel": "item",
+      "href": "./MYD14A1.A2022025.h01v07.061.2022035001141/MYD14A1.A2022025.h01v07.061.2022035001141.json",
+      "type": "application/json"
     },
     {
       "rel": "item",
@@ -54,35 +61,49 @@
       "roles": [
         "data"
       ],
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "FireMask",
-          "description": "Confidence of fire"
+      "title": "Source data containing all bands",
+      "eo:bands": {
+        "FireMask": {
+          "name": "Confidence of fire",
+          "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 1000
+          }
         },
-        {
-          "name": "QA",
-          "description": "Pixel quality indicators"
+        "QA": {
+          "name": "Pixel quality indicators",
+          "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 1000
+          }
         },
-        {
-          "name": "MaxFRP",
-          "description": "Maximum Fire Radiative Power"
+        "MaxFRP": {
+          "name": "Maximum Fire Radiative Power",
+          "raster:bands": {
+            "data_type": "uint32",
+            "unit": "Megawatts",
+            "scale": 0.1,
+            "spatial_resolution": 1000
+          }
         },
-        {
-          "name": "sample",
-          "description": "Position of fire pixel within scan"
+        "sample": {
+          "name": "Position of fire pixel within scan",
+          "raster:bands": {
+            "data_type": "uint16",
+            "spatial_resolution": 1000
+          }
         }
-      ]
+      }
     },
     "metadata": {
       "type": "application/xml",
       "roles": [
         "metadata"
       ],
-      "title": "FGDC Metdata"
+      "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
-  "title": "MODIS Thermal Anomalies/Fire Daily L3 Global 1 km SIN Grid",
+  "title": "MODIS Thermal Anomalies/Fire Daily",
   "extent": {
     "spatial": {
       "bbox": [
@@ -132,6 +153,7 @@
       "modis"
     ],
     "platform": [
+      "aqua",
       "terra"
     ]
   }

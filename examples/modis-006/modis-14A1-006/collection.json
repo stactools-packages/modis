@@ -13,12 +13,12 @@
     {
       "rel": "help",
       "href": "https://lpdaac.usgs.gov/documents/88/MOD14_User_Guide_v6.pdf",
-      "title": "User Guide"
+      "title": "MOD14 User Guide"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/6/MOD14A1",
-      "title": "Data File"
+      "title": "MOD14A1 file specification"
     },
     {
       "rel": "cite-as",
@@ -46,32 +46,28 @@
       "roles": [
         "data"
       ],
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "FireMask",
-          "description": "Confidence of fire"
+      "title": "Source data containing all bands",
+      "eo:bands": {
+        "FireMask": {
+          "name": "Confidence of fire"
         },
-        {
-          "name": "QA",
-          "description": "Pixel quality indicators"
+        "QA": {
+          "name": "Pixel quality indicators"
         },
-        {
-          "name": "MaxFRP",
-          "description": "Maximum Fire Radiative Power"
+        "MaxFRP": {
+          "name": "Maximum Fire Radiative Power"
         },
-        {
-          "name": "sample",
-          "description": "Position of fire pixel within scan"
+        "sample": {
+          "name": "Position of fire pixel within scan"
         }
-      ]
+      }
     },
     "metadata": {
       "type": "application/xml",
       "roles": [
         "metadata"
       ],
-      "title": "FGDC Metdata"
+      "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
   "sci:doi": "10.5067/MODIS/MOD44W.006",

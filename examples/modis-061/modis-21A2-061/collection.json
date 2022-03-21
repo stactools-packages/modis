@@ -13,25 +13,32 @@
     {
       "rel": "help",
       "href": "https://lpdaac.usgs.gov/documents/620/MOD21_User_Guide_V61.pdf",
-      "title": "User Guide"
+      "title": "MOD21 User Guide"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MOD21A2",
-      "title": "Data File"
+      "title": "MOD21A2 file specification"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MYD21A2",
-      "title": "Data File"
+      "title": "MYD21A2 file specification"
     },
     {
       "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MOD21A2.061"
+      "href": "https://doi.org/10.5067/MODIS/MOD21A2.061",
+      "title": "LP DAAC - MOD21A2"
     },
     {
       "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MYD21A2.061"
+      "href": "https://doi.org/10.5067/MODIS/MYD21A2.061",
+      "title": "LP DAAC - MYD21A2"
+    },
+    {
+      "rel": "item",
+      "href": "./MYD21A2.A2022025.h10v06.061.2022035072054/MYD21A2.A2022025.h10v06.061.2022035072054.json",
+      "type": "application/json"
     },
     {
       "rel": "item",
@@ -54,63 +61,109 @@
       "roles": [
         "data"
       ],
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "LST_Day_1KM",
-          "description": "Day Land Surface Temperature"
+      "title": "Source data containing all bands",
+      "eo:bands": {
+        "LST_Day_1KM": {
+          "name": "Day Land Surface Temperature",
+          "raster:bands": {
+            "data_type": "uint16",
+            "unit": "Kelvin",
+            "scale": 0.02,
+            "spatial_resolution": 1000
+          }
         },
-        {
-          "name": "QC_Day",
-          "description": "Day Quality Control"
+        "QC_Day": {
+          "name": "Day Quality Control",
+          "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 1000
+          }
         },
-        {
-          "name": "View_Angle_Day",
-          "description": "Day view zenith angle"
+        "View_Angle_Day": {
+          "name": "Day view zenith angle",
+          "raster:bands": {
+            "data_type": "uint8",
+            "unit": "Degree",
+            "spatial_resolution": 1000
+          }
         },
-        {
-          "name": "View_Time_Day",
-          "description": "Day Time of Observation"
+        "View_Time_Day": {
+          "name": "Day Time of Observation",
+          "raster:bands": {
+            "data_type": "uint8",
+            "unit": "Hours",
+            "scale": 0.1,
+            "spatial_resolution": 1000
+          }
         },
-        {
-          "name": "LST_Night_1KM",
-          "description": "Night Land Surface Temperature"
+        "LST_Night_1KM": {
+          "name": "Night Land Surface Temperature",
+          "raster:bands": {
+            "data_type": "uint16",
+            "unit": "Kelvin",
+            "scale": 0.02,
+            "spatial_resolution": 1000
+          }
         },
-        {
-          "name": "QC_Night",
-          "description": "Night Quality Control"
+        "QC_Night": {
+          "name": "Night Quality Control",
+          "raster:bands": {
+            "data_type": "uint8",
+            "spatial_resolution": 1000
+          }
         },
-        {
-          "name": "View_Angle_Night",
-          "description": "Night view zenith angle"
+        "View_Angle_Night": {
+          "name": "Night view zenith angle",
+          "raster:bands": {
+            "data_type": "uint8",
+            "unit": "Degree",
+            "spatial_resolution": 1000
+          }
         },
-        {
-          "name": "View_Time_Night",
-          "description": "Night Time of Observation"
+        "View_Time_Night": {
+          "name": "Night Time of Observation",
+          "raster:bands": {
+            "data_type": "uint8",
+            "unit": "Hours",
+            "scale": 0.1,
+            "spatial_resolution": 1000
+          }
         },
-        {
-          "name": "Emis_29",
-          "description": "Average Day/Night Band 29 emissivity"
+        "Emis_29": {
+          "name": "Average Day/Night Band 29 emissivity",
+          "raster:bands": {
+            "data_type": "uint8",
+            "scale": 0.002,
+            "spatial_resolution": 1000
+          }
         },
-        {
-          "name": "Emis_31",
-          "description": "Average Day/Night Band 31 emissivity"
+        "Emis_31": {
+          "name": "Average Day/Night Band 31 emissivity",
+          "raster:bands": {
+            "data_type": "uint8",
+            "scale": 0.002,
+            "spatial_resolution": 1000
+          }
         },
-        {
-          "name": "Emis_32",
-          "description": "Average Day/Night Band 32 emissivity"
+        "Emis_32": {
+          "name": "Average Day/Night Band 32 emissivity",
+          "raster:bands": {
+            "data_type": "uint8",
+            "scale": 0.002,
+            "spatial_resolution": 1000
+          }
         }
-      ]
+      }
     },
     "metadata": {
       "type": "application/xml",
       "roles": [
         "metadata"
       ],
-      "title": "FGDC Metdata"
+      "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
-  "title": "MODIS Land Surface Temperature/3-Band Emissivity 8-Day L3 Global 1 km SIN Grid",
+  "title": "MODIS Land Surface Temperature/3-Band Emissivity 8-Day",
   "extent": {
     "spatial": {
       "bbox": [
@@ -160,6 +213,7 @@
       "modis"
     ],
     "platform": [
+      "aqua",
       "terra"
     ]
   }

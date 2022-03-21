@@ -13,25 +13,32 @@
     {
       "rel": "help",
       "href": "https://lpdaac.usgs.gov/documents/931/MOD16_User_Guide_V61.pdf",
-      "title": "User Guide"
+      "title": "MOD16 User Guide"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MOD16A3GF",
-      "title": "Data File"
+      "title": "MOD16A3GF file specification"
     },
     {
       "rel": "describedby",
       "href": "https://ladsweb.modaps.eosdis.nasa.gov/filespec/MODIS/61/MYD16A3GF",
-      "title": "Data File"
+      "title": "MYD16A3GF file specification"
     },
     {
       "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MOD16A3GF.061"
+      "href": "https://doi.org/10.5067/MODIS/MOD16A3GF.061",
+      "title": "LP DAAC - MOD16A3GF"
     },
     {
       "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MYD16A3GF.061"
+      "href": "https://doi.org/10.5067/MODIS/MYD16A3GF.061",
+      "title": "LP DAAC - MYD16A3GF"
+    },
+    {
+      "rel": "item",
+      "href": "./MYD16A3GF.A2021001.h11v02.061.2022024220526/MYD16A3GF.A2021001.h11v02.061.2022024220526.json",
+      "type": "application/json"
     },
     {
       "rel": "item",
@@ -54,39 +61,63 @@
       "roles": [
         "data"
       ],
-      "title": "hdf data",
-      "eo:bands": [
-        {
-          "name": "ET_500m",
-          "description": "Total of Evapotranspiration"
+      "title": "Source data containing all bands",
+      "eo:bands": {
+        "ET_500m": {
+          "name": "Total of Evapotranspiration",
+          "raster:bands": {
+            "data_type": "uint16",
+            "unit": "kg/m^2/year",
+            "scale": 0.1,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "LE_500m",
-          "description": "Average of Latent Heat Flux"
+        "LE_500m": {
+          "name": "Average of Latent Heat Flux",
+          "raster:bands": {
+            "data_type": "int16",
+            "unit": "J/m^2/day",
+            "scale": 10000,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "PET_500m",
-          "description": "Total Potential Evapotranspiration"
+        "PET_500m": {
+          "name": "Total Potential Evapotranspiration",
+          "raster:bands": {
+            "data_type": "uint16",
+            "unit": "kg/m^2/year",
+            "scale": 0.1,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "PLE_500m",
-          "description": "Average of Potential Latent Heat Flux"
+        "PLE_500m": {
+          "name": "Average of Potential Latent Heat Flux",
+          "raster:bands": {
+            "data_type": "int16",
+            "unit": "J/m^2/day",
+            "scale": 10000,
+            "spatial_resolution": 500
+          }
         },
-        {
-          "name": "ET_QC_500m",
-          "description": "Evapotranspiration Quality Assessment"
+        "ET_QC_500m": {
+          "name": "Evapotranspiration Quality Assessment",
+          "raster:bands": {
+            "data_type": "uint8",
+            "unit": "Percent",
+            "spatial_resolution": 500
+          }
         }
-      ]
+      }
     },
     "metadata": {
       "type": "application/xml",
       "roles": [
         "metadata"
       ],
-      "title": "FGDC Metdata"
+      "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
-  "title": "MODIS Net Evapotranspiration Gap-Filled Yearly L4 Global 500 m SIN Grid",
+  "title": "MODIS Net Evapotranspiration Yearly Gap-Filled",
   "extent": {
     "spatial": {
       "bbox": [
@@ -136,6 +167,7 @@
       "modis"
     ],
     "platform": [
+      "aqua",
       "terra"
     ]
   }
