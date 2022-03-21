@@ -1,10 +1,11 @@
 import logging
 import os
 from collections import defaultdict
+from typing import List
 
 import click
 from click import Command, Group
-from pystac import Catalog, CatalogType
+from pystac import Catalog, CatalogType, Item, Summaries
 
 from stactools.modis import cog, stac
 from stactools.modis.file import File
@@ -57,44 +58,57 @@ def create_modis_command(cli: Group) -> Command:
             title (str): The title of the output catalog.
             description (str): The description of the output catalog.
         """
-        with open(infile) as file:
-            hrefs = [line.strip() for line in file.readlines()]
-        items = defaultdict(list)
-        versions = set()
+        with open(infile) as f:
+            hrefs = [line.strip() for line in f.readlines()]
+        item_dict: defaultdict[str, defaultdict[
+            str, List[Item]]] = defaultdict(lambda: defaultdict(list))
+        collection_id_set = set()
         for href in hrefs:
-            modis_file = File(href)
-            prefix = os.path.splitext(os.path.basename(modis_file.hdf_href))[0]
-            directory = os.path.dirname(modis_file.hdf_href)
+            file = File(href)
+            directory = os.path.dirname(href)
+            prefix = os.path.splitext(os.path.basename(file.hdf_href))
             has_tiffs = any(
                 os.path.splitext(file_name)[1] == ".tif"
                 and file_name.startswith(prefix)
                 for file_name in os.listdir(directory))
             if has_tiffs:
-                cog_directory = directory
+                cog_directory = os.path.abspath(directory)
             else:
                 cog_directory = None
             item = stac.create_item(href, cog_directory=cog_directory)
-            items[(modis_file.product, modis_file.version)].append(item)
-            versions.add(modis_file.version)
+            item.set_self_href(href)
+            item_dict[file.version][file.collection_id()].append(item)
+            collection_id_set.add(file.collection_id())
+        collection_ids = list(collection_id_set)
+        collection_ids.sort()
         catalog = Catalog(id=id,
                           description=description,
                           title=title,
                           catalog_type=CatalogType.SELF_CONTAINED)
-        catalog.set_self_href(os.path.join(outdir, "catalog.json"))
-        catalogs = dict()
-        for version in versions:
+        for version, collections in item_dict.items():
             version_catalog = Catalog(
                 id=f"{id}-{version}",
                 description=f"{description}, version {version}",
                 title=f"{title}, version {version}",
                 catalog_type=CatalogType.SELF_CONTAINED)
+            for collection_id in collection_ids:
+                if collection_id not in collections:
+                    continue
+                items = collections[collection_id]
+                file = File(items[0].get_self_href())
+                collection = stac.create_collection(str(file.product), version)
+                platform_set = set()
+                for item in items:
+                    item.set_self_href(None)
+                    collection.add_item(item)
+                    for platform in item.common_metadata.platform.split(","):
+                        platform_set.add(platform)
+                platforms = list(platform_set)
+                platforms.sort()
+                collection.summaries.update(Summaries({"platform": platforms}))
+                version_catalog.add_child(collection)
             catalog.add_child(version_catalog)
-            catalogs[version] = version_catalog
-        for (product, version), collection_items in items.items():
-            version_catalog = catalogs[version]
-            collection = stac.create_collection(str(product), version)
-            version_catalog.add_child(collection)
-            collection.add_items(collection_items)
+        catalog.normalize_hrefs(outdir)
         catalog.validate_all()
         catalog.make_all_asset_hrefs_relative()
         catalog.save()
