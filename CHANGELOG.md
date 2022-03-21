@@ -19,6 +19,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Use `null` instead of "unitless` ([#55](https://github.com/stactools-packages/modis/pull/55))
 - Don't use unicode for units, PySTAC doesn't like it ([#57](https://github.com/stactools-packages/modis/pull/57))
 - Use fewer collections (e.g. all 17A2HGF products are in the same collection) ([#61](https://github.com/stactools-packages/modis/pull/61))
+- Example collections and items ([#65](https://github.com/stactools-packages/modis/pull/65))
 
 ### Fixed
 
@@ -27,6 +28,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Spaces are disallowed in COG filenames ([#53](https://github.com/stactools-packages/modis/pull/53))
 - Use keywords when creating Collections ([#56](https://github.com/stactools-packages/modis/pull/56))
 - Use `raster`'s `spatial_resolution` instead of `gsd` ([#60](https://github.com/stactools-packages/modis/pull/60))
+- Metadata ([#65](https://github.com/stactools-packages/modis/pull/65))
 
 ## [0.1.0] - 2022-02-17
 
