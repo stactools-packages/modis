@@ -70,5 +70,15 @@
         "Water",
         "MOD16A3GF",
         "MYD16A3GF"
+    ],
+    "sci:publications": [
+        {
+            "doi": "10.5067/MODIS/MOD16A3GF.061",
+            "citation": "Running, S., Mu, Q., Zhao, M., &amp; Moreno, A. (2021). <i>MODIS/Terra Net Evapotranspiration Gap-Filled Yearly L4 Global 500m SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MOD16A3GF.061"
+        },
+        {
+            "doi": "10.5067/MODIS/MYD16A3GF.061",
+            "citation": "Running, S., Mu, Q., Zhao, M., &amp; Moreno, A. (2021). <i>MODIS/Aqua Net Evapotranspiration Gap-Filled Yearly L4 Global 500m SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MYD16A3GF.061"
+        }
     ]
 }

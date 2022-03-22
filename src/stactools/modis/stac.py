@@ -1,7 +1,7 @@
 import logging
 import os.path
 import urllib.parse
-from typing import Any, Dict, Optional, cast
+from typing import Optional
 
 import pystac
 import pystac.utils
@@ -69,10 +69,12 @@ def create_collection(product_name: str, version: str) -> Collection:
         METADATA_ASSET_KEY: AssetDefinition(METADATA_ASSET_PROPERTIES),
     }
 
-    doi = _doi(fragment)
-    if doi:
-        scientific = ScientificExtension.ext(collection, add_if_missing=True)
-        scientific.doi = doi
+    if "sci:publications" in fragment:
+        ScientificExtension.add_to(collection)
+        # We don't use the scientific extension to set the publications because
+        # we don't want duplicate cite-as links.
+        collection.extra_fields["sci:publications"] = fragment[
+            "sci:publications"]
 
     return collection
 
@@ -213,15 +215,3 @@ def collection_id(product: str, version: str) -> str:
         str: The collection id, e.g. "modis-MCD12Q1-006"
     """
     return f"modis-{product}-{version}"
-
-
-def _doi(fragment: Dict[str, Any]) -> Optional[str]:
-    providers = fragment.get("providers") or []
-    for provider in providers:
-        url = provider.url
-        if not url:
-            continue
-        parsed_url = urllib.parse.urlparse(url)
-        if parsed_url.hostname == "doi.org":
-            return cast(str, parsed_url.path[1:])
-    return None

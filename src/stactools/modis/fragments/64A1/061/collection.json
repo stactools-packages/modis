@@ -59,5 +59,11 @@
         "Global",
         "Fire",
         "MCD64A1"
+    ],
+    "sci:publications": [
+        {
+            "doi": "10.5067/MODIS/MCD64A1.061",
+            "citation": "Giglio, L., Justice, C., Boschetti, L., &amp; Roy, D. (2021). <i>MODIS/Terra+Aqua Burned Area Monthly L3 Global 500m SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MCD64A1.061"
+        }
     ]
 }

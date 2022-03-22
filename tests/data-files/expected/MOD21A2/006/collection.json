@@ -21,18 +21,13 @@
       "title": "MOD21A2 file specification"
     },
     {
-      "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MOD21A2.006"
-    },
-    {
       "rel": "item",
       "href": "./MOD21A2.A2005361.h10v04.006.2018286181506/MOD21A2.A2005361.h10v04.006.2018286181506.json",
       "type": "application/json"
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -50,7 +45,6 @@
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
-  "sci:doi": "10.5067/MODIS/MOD21A2.006",
   "title": "MODIS/Terra Land Surface Temperature/3-Band Emissivity 8-Day L3 Global 1 km SIN Grid",
   "extent": {
     "spatial": {

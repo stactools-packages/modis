@@ -81,5 +81,19 @@
         "MCD15A2H",
         "MOD15A2H",
         "MYD15A2H"
+    ],
+    "sci:publications": [
+        {
+            "doi": "10.5067/MODIS/MCD15A2H.061",
+            "citation": "Myneni, R., Knyazikhin, Y., &amp; Park, T. (2021). <i>MODIS/Terra+Aqua Leaf Area Index/FPAR 8-Day L4 Global 500m SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MCD15A2H.061"
+        },
+        {
+            "doi": "10.5067/MODIS/MOD15A2H.061",
+            "citation": "Myneni, R., Knyazikhin, Y., &amp; Park, T. (2021). <i>MODIS/Terra Leaf Area Index/FPAR 8-Day L4 Global 500m SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MOD15A2H.061"
+        },
+        {
+            "doi": "10.5067/MODIS/MYD15A2H.061",
+            "citation": "Myneni, R., Knyazikhin, Y., &amp; Park, T. (2021). <i>MODIS/Aqua Leaf Area Index/FPAR 8-Day L4 Global 500m SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MYD15A2H.061"
+        }
     ]
 }
