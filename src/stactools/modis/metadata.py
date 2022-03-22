@@ -98,6 +98,7 @@ class Metadata:
                                         missing_element("updated")))
 
         psas = metadata.findall("PSAs/PSA")
+        self.qa_percent_not_produced_cloud = None
         for psa in psas:
             name = psa.find_text_or_throw("PSAName",
                                           missing_element("PSAName"))
@@ -109,6 +110,20 @@ class Metadata:
                 self.vertical_tile = int(value)
             elif name == "TileID":
                 self.tile_id = value
+            elif name == "QAPERCENTNOTPRODUCEDCLOUD":
+                self.qa_percent_not_produced_cloud = int(value)
+
+        self.qa_percent_cloud_cover = {}
+        measured_parameters = metadata.findall(
+            "MeasuredParameter/MeasuredParameterContainer")
+        for measured_parameter in measured_parameters:
+            name = measured_parameter.find_text_or_throw(
+                "ParameterName",
+                missing_element("ParameterName")).replace(" ", "_")
+            qa_percent_cloud_cover = measured_parameter.find_text(
+                "QAPercentCloudCover")
+            if qa_percent_cloud_cover:
+                self.qa_percent_cloud_cover[name] = int(qa_percent_cloud_cover)
 
         platforms = metadata.findall("Platform")
         # Per the discussion in

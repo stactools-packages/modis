@@ -14,6 +14,7 @@
     "platform": "terra",
     "created": "2022-02-11T04:41:21Z",
     "updated": "2022-02-10T22:57:48.564000Z",
+    "eo:cloud_cover": 19,
     "datetime": null
   },
   "geometry": {
@@ -150,6 +151,7 @@
     -10.0041666666667
   ],
   "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
   ],
   "collection": "modis-11A2-061"

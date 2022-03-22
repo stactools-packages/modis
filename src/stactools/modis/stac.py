@@ -10,6 +10,7 @@ import shapely.geometry
 import stactools.core.utils
 import stactools.core.utils.antimeridian
 from pystac import Asset, Collection, Item, Summaries
+from pystac.extensions.eo import EOExtension
 from pystac.extensions.item_assets import AssetDefinition, ItemAssetsExtension
 from pystac.extensions.projection import ProjectionExtension
 from pystac.extensions.raster import RasterBand, RasterExtension
@@ -130,6 +131,10 @@ def create_item(
     item.common_metadata.created = metadata.created
     item.common_metadata.updated = metadata.updated
 
+    if metadata.qa_percent_not_produced_cloud:
+        eo = EOExtension.ext(item, add_if_missing=True)
+        eo.cloud_cover = metadata.qa_percent_not_produced_cloud
+
     properties = HDF_ASSET_PROPERTIES.copy()
     properties["href"] = file.hdf_href
     item.add_asset(HDF_ASSET_KEY, Asset.from_dict(properties))
@@ -188,6 +193,11 @@ def create_item(
 
     if cog_directory:
         stactools.modis.cog.add_cogs(item, cog_directory, create_cogs)
+        if metadata.qa_percent_cloud_cover:
+            EOExtension.add_to(item)
+        for name, cloud_cover in metadata.qa_percent_cloud_cover.items():
+            asset = item.assets[name]
+            asset.extra_fields["eo:cloud_cover"] = cloud_cover
 
     return item
 
