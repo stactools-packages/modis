@@ -14,6 +14,7 @@
     "platform": "terra,aqua",
     "created": "2022-02-10T05:19:45Z",
     "updated": "2022-02-09T23:25:46.095000Z",
+    "eo:cloud_cover": 10,
     "datetime": "2022-02-01T00:00:00Z"
   },
   "geometry": {
@@ -153,6 +154,7 @@
     -9.95544626171462
   ],
   "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
   ],
   "collection": "modis-43A4-061"

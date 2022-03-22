@@ -21,10 +21,6 @@
       "title": "MOD14A1 file specification"
     },
     {
-      "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MOD44W.006"
-    },
-    {
       "rel": "item",
       "href": "./MOD14A1.A2022017.h10v05.006.2022026155645/MOD14A1.A2022017.h10v05.006.2022026155645.json",
       "type": "application/json"
@@ -37,8 +33,7 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -46,21 +41,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "FireMask": {
-          "name": "Confidence of fire"
-        },
-        "QA": {
-          "name": "Pixel quality indicators"
-        },
-        "MaxFRP": {
-          "name": "Maximum Fire Radiative Power"
-        },
-        "sample": {
-          "name": "Position of fire pixel within scan"
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",
@@ -70,7 +51,6 @@
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
-  "sci:doi": "10.5067/MODIS/MOD44W.006",
   "title": "MODIS/Terra Thermal Anomalies/Fire Daily L3 Global 1 km SIN Grid",
   "extent": {
     "spatial": {

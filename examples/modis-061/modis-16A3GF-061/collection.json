@@ -53,7 +53,8 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -61,53 +62,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "ET_500m": {
-          "name": "Total of Evapotranspiration",
-          "raster:bands": {
-            "data_type": "uint16",
-            "unit": "kg/m^2/year",
-            "scale": 0.1,
-            "spatial_resolution": 500
-          }
-        },
-        "LE_500m": {
-          "name": "Average of Latent Heat Flux",
-          "raster:bands": {
-            "data_type": "int16",
-            "unit": "J/m^2/day",
-            "scale": 10000,
-            "spatial_resolution": 500
-          }
-        },
-        "PET_500m": {
-          "name": "Total Potential Evapotranspiration",
-          "raster:bands": {
-            "data_type": "uint16",
-            "unit": "kg/m^2/year",
-            "scale": 0.1,
-            "spatial_resolution": 500
-          }
-        },
-        "PLE_500m": {
-          "name": "Average of Potential Latent Heat Flux",
-          "raster:bands": {
-            "data_type": "int16",
-            "unit": "J/m^2/day",
-            "scale": 10000,
-            "spatial_resolution": 500
-          }
-        },
-        "ET_QC_500m": {
-          "name": "Evapotranspiration Quality Assessment",
-          "raster:bands": {
-            "data_type": "uint8",
-            "unit": "Percent",
-            "spatial_resolution": 500
-          }
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",
@@ -117,6 +72,16 @@
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
+  "sci:publications": [
+    {
+      "doi": "10.5067/MODIS/MOD16A3GF.061",
+      "citation": "Running, S., Mu, Q., Zhao, M., &amp; Moreno, A. (2021). <i>MODIS/Terra Net Evapotranspiration Gap-Filled Yearly L4 Global 500m SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MOD16A3GF.061"
+    },
+    {
+      "doi": "10.5067/MODIS/MYD16A3GF.061",
+      "citation": "Running, S., Mu, Q., Zhao, M., &amp; Moreno, A. (2021). <i>MODIS/Aqua Net Evapotranspiration Gap-Filled Yearly L4 Global 500m SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MYD16A3GF.061"
+    }
+  ],
   "title": "MODIS Net Evapotranspiration Yearly Gap-Filled",
   "extent": {
     "spatial": {

@@ -21,10 +21,6 @@
       "title": "MCD12Q1 file specification"
     },
     {
-      "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MCD12Q1.006"
-    },
-    {
       "rel": "item",
       "href": "./MCD12Q1.A2001001.h00v08.006.2018142182903/MCD12Q1.A2001001.h00v08.006.2018142182903.json",
       "type": "application/json"
@@ -37,8 +33,7 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -46,48 +41,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "LC_Type1": {
-          "name": "Land Cover Type 1: Annual InternationalGeosphere-Biosphere Programme (IGBP) classification"
-        },
-        "LC_Type2": {
-          "name": "Land Cover Type 2: Annual University of Maryland (UMD) classification"
-        },
-        "LC_Type3": {
-          "name": "Land Cover Type 3: Annual Leaf Area Index (LAI) classification"
-        },
-        "LC_Type4": {
-          "name": "Land Cover Type 4: Annual BIOME-Biogeochemical Cycles (BGC) classification"
-        },
-        "LC_Type5": {
-          "name": "Land Cover Type 5: Annual Plant Functional Types classification"
-        },
-        "LC_Prop1": {
-          "name": "FAO-Land Cover Classification System 1 (LCCS1) land cover layer"
-        },
-        "LC_Prop2": {
-          "name": "FAO-LCCS2 land use layer"
-        },
-        "LC_Prop3": {
-          "name": "FAO-LCCS3 surface hydrology layer"
-        },
-        "LC_Prop1_Assessment": {
-          "name": "LCCS1 land cover layer confidence"
-        },
-        "LC_Prop2_Assessment": {
-          "name": "LCCS2 land use layer confidence"
-        },
-        "LC_Prop3_Assessment": {
-          "name": "LCCS3 surface hydrology layer confidence"
-        },
-        "QC": {
-          "name": "Product quality flags"
-        },
-        "LW": {
-          "name": "Binary land (class 2) / water (class 1) mask derived from MOD44W"
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",
@@ -97,7 +51,6 @@
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
-  "sci:doi": "10.5067/MODIS/MCD12Q1.006",
   "title": "MODIS/Terra+Aqua Land Cover Type Yearly L3 Global 500 m SIN Grid",
   "extent": {
     "spatial": {
