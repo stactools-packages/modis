@@ -15,9 +15,9 @@
         "name": "Daily snow albedo corresponding to the NDSI_Snow_Cover parameter."
     },
     "orbit_pnt": {
-        "name": "Pointer to the orbit of the swath mapped into each grid cell. For details, see Section 1.1.2 below."
+        "name": "Pointer to the orbit of the swath mapped into each grid cell."
     },
     "granule_pnt": {
-        "name": "Pointer for identifying the swath mapped into each grid cell. For details, see the section 'Using the granule_pnt' below."
+        "name": "Pointer for identifying the swath mapped into each grid cell."
     }
 }
