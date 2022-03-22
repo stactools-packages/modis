@@ -50,39 +50,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "sur_refl_b01": {
-          "name": "Surface Reflectance Band 1 (620-670 nm)",
-          "raster:bands": {
-            "data_type": "int16",
-            "scale": 0.0001,
-            "spatial_resolution": 250
-          }
-        },
-        "sur_refl_b02": {
-          "name": "Surface Reflectance Band 2 (841-876 nm)",
-          "raster:bands": {
-            "data_type": "int16",
-            "scale": 0.0001,
-            "spatial_resolution": 250
-          }
-        },
-        "sur_refl_state_250m": {
-          "name": "Surface Reflectance 250m State flags",
-          "raster:bands": {
-            "data_type": "uint16",
-            "spatial_resolution": 250
-          }
-        },
-        "sur_refl_qc_250m": {
-          "name": "Surface Reflectance 250m Band Quality Control flags",
-          "raster:bands": {
-            "data_type": "uint16",
-            "spatial_resolution": 250
-          }
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",

@@ -40,18 +40,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "Gpp_500m": {
-          "name": "Gross Primary Productivity"
-        },
-        "PsnNet_500m": {
-          "name": "Net Photosynthesis"
-        },
-        "Psn_QC_500m": {
-          "name": "Quality control indicators"
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",

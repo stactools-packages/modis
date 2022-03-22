@@ -35,15 +35,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "Water_mask": {
-          "name": "Land/Water Mask"
-        },
-        "Water_mask_QA": {
-          "name": "Quality Assurance (QA)"
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",

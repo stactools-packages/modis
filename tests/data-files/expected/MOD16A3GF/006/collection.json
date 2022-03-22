@@ -40,24 +40,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "ET_500m": {
-          "name": "Total of Evapotranspiration"
-        },
-        "LE_500m": {
-          "name": "Average of Latent Heat Flux"
-        },
-        "PET_500m": {
-          "name": "Total Potential Evapotranspiration"
-        },
-        "PLE_500m": {
-          "name": "Average of Potential Latent Heat Flux"
-        },
-        "ET_QC_500m": {
-          "name": "Evapotranspiration Quality Assessment"
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",

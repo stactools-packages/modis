@@ -50,35 +50,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "Gpp_500m": {
-          "name": "Gross Primary Productivity",
-          "raster:bands": {
-            "data_type": "uint16",
-            "unit": "kg C/m^2",
-            "scale": 0.0001,
-            "spatial_resolution": 500
-          }
-        },
-        "Npp_500m": {
-          "name": "Net Primary Productivity",
-          "raster:bands": {
-            "data_type": "int16",
-            "unit": "kg C/m^2",
-            "scale": 0.0001,
-            "spatial_resolution": 500
-          }
-        },
-        "Npp_QC_500m": {
-          "name": "Quality control",
-          "raster:bands": {
-            "data_type": "uint8",
-            "unit": "Percent",
-            "spatial_resolution": 500
-          }
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",

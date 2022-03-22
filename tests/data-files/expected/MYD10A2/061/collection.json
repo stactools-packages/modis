@@ -35,23 +35,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "Maximum_Snow_Extent": {
-          "name": "Maximum snow extent over the 8-day period.",
-          "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-          }
-        },
-        "Eight_Day_Snow_Cover": {
-          "name": "Snow chronology bit flags for each day in the eight-day observation period.",
-          "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-          }
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",
