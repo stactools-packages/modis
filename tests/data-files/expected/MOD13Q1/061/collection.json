@@ -42,7 +42,8 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -60,6 +61,16 @@
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
+  "sci:publications": [
+    {
+      "doi": "10.5067/MODIS/MOD13Q1.061",
+      "citation": "Didan, K. (2021). <i>MODIS/Terra Vegetation Indices 16-Day L3 Global 250m SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MOD13Q1.061"
+    },
+    {
+      "doi": "10.5067/MODIS/MYD13Q1.061",
+      "citation": "Didan, K. (2021). <i>MODIS/Aqua Vegetation Indices 16-Day L3 Global 250m SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MYD13Q1.061"
+    }
+  ],
   "title": "MODIS Vegetation Indices 16-Day (250m)",
   "extent": {
     "spatial": {

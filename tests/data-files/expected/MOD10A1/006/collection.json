@@ -16,18 +16,13 @@
       "title": "MODIS/Terra Snow Cover Daily L3 Global 500m SIN Grid, Version 61"
     },
     {
-      "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MOD10A1.006"
-    },
-    {
       "rel": "item",
       "href": "./MOD10A1.A2022029.h10v05.006.2022031045818/MOD10A1.A2022029.h10v05.006.2022031045818.json",
       "type": "application/json"
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -45,7 +40,6 @@
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
-  "sci:doi": "10.5067/MODIS/MOD10A1.006",
   "title": "MODIS/Terra Snow Cover Daily L3 Global 500m SIN Grid, Version 6",
   "extent": {
     "spatial": {

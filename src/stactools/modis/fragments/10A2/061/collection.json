@@ -54,5 +54,15 @@
         "Global",
         "MOD10A2",
         "MYD10A2"
+    ],
+    "sci:publications": [
+        {
+            "doi": "10.5067/MODIS/MOD10A2.061",
+            "citation": "Hall, D. K., &amp; Riggs, G. A. (2021). <i>MODIS/Terra Snow Cover 8-Day L3 Global 500m Grid, Version 61</i> [Data set]. NASA National Snow and Ice Data Center DAAC. https://doi.org/10.5067/MODIS/MOD10A2.061"
+        },
+        {
+            "doi": "10.5067/MODIS/MYD10A2.061",
+            "citation": "Hall, D. K., &amp; Riggs, G. A. (2021). <i>MODIS/Aqua Snow Cover 8-Day L3 Global 500m Grid, Version 61</i> [Data set]. NASA National Snow and Ice Data Center DAAC. https://doi.org/10.5067/MODIS/MYD10A2.061"
+        }
     ]
 }

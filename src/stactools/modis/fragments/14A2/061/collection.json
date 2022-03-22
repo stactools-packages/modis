@@ -70,5 +70,15 @@
         "Fire",
         "MOD14A2",
         "MYD14A2"
+    ],
+    "sci:publications": [
+        {
+            "doi": "10.5067/MODIS/MOD14A2.061",
+            "citation": "Giglio, L., &amp; Justice, C. (2021). <i>MODIS/Terra Thermal Anomalies/Fire 8-Day L3 Global 1km SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MOD14A2.061"
+        },
+        {
+            "doi": "10.5067/MODIS/MYD14A2.061",
+            "citation": "Giglio, L., &amp; Justice, C. (2021). <i>MODIS/Aqua Thermal Anomalies/Fire 8-Day L3 Global 1km SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MYD14A2.061"
+        }
     ]
 }

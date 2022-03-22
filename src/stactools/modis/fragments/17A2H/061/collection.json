@@ -69,5 +69,15 @@
         "Global",
         "MOD17A2H",
         "MYD17A2H"
+    ],
+    "sci:publications": [
+        {
+            "doi": "10.5067/MODIS/MOD17A2H.061",
+            "citation": "Running, S., Mu, Q., &amp; Zhao, M. (2021). <i>MODIS/Terra Gross Primary Productivity 8-Day L4 Global 500m SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MOD17A2H.061"
+        },
+        {
+            "doi": "10.5067/MODIS/MYD17A2H.061",
+            "citation": "Running, S., Mu, Q., &amp; Zhao, M. (2021). <i>MODIS/Aqua Gross Primary Productivity 8-Day L4 Global 500m SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MYD17A2H.061"
+        }
     ]
 }

@@ -69,5 +69,15 @@
         "Global",
         "MOD17A3HGF",
         "MYD17A3HGF"
+    ],
+    "sci:publications": [
+        {
+            "doi": "10.5067/MODIS/MOD17A3HGF.061",
+            "citation": "Running, S., &amp; Zhao, M. (2021). <i>MODIS/Terra Net Primary Production Gap-Filled Yearly L4 Global 500 m SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MOD17A3HGF.061"
+        },
+        {
+            "doi": "10.5067/MODIS/MYD17A3HGF.061",
+            "citation": "Running, S., &amp; Zhao, M. (2021). <i>MODIS/Aqua Net Primary Production Gap-Filled Yearly L4 Global 500m SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MYD17A3HGF.061"
+        }
     ]
 }

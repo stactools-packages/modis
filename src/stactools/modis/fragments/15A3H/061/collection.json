@@ -59,5 +59,11 @@
         "Global",
         "Forest",
         "MCD15A3H"
+    ],
+    "sci:publications": [
+        {
+            "doi": "10.5067/MODIS/MCD15A3H.061",
+            "citation": "Myneni, R., Knyazikhin, Y., &amp; Park, T. (2021). <i>MODIS/Terra+Aqua Leaf Area Index/FPAR 4-Day L4 Global 500m SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MCD15A3H.061"
+        }
     ]
 }

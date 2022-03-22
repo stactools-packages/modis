@@ -27,7 +27,8 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -45,6 +46,16 @@
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
+  "sci:publications": [
+    {
+      "doi": "10.5067/MODIS/MOD10A1.061",
+      "citation": "Hall, D. K., &amp; Riggs, G. A. (2021). <i>MODIS/Aqua Snow Cover Daily L3 Global 500m Grid, Version 61</i> [Data set]. NASA National Snow and Ice Data Center DAAC. https://doi.org/10.5067/MODIS/MOD10A1.061"
+    },
+    {
+      "doi": "10.5067/MODIS/MYD10A1.061",
+      "citation": "Hall, D. K., &amp; Riggs, G. A. (2021). <i>MODIS/Aqua Snow Cover Daily L3 Global 500m Grid, Version 61</i> [Data set]. NASA National Snow and Ice Data Center DAAC. https://doi.org/10.5067/MODIS/MYD10A1.061"
+    }
+  ],
   "title": "MODIS Snow Cover Daily",
   "extent": {
     "spatial": {

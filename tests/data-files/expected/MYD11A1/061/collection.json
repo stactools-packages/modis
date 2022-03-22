@@ -42,7 +42,8 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -60,6 +61,16 @@
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
+  "sci:publications": [
+    {
+      "doi": "10.5067/MODIS/MOD11A1.061",
+      "citation": "Wan, Z., Hook, S., &amp; Hulley, G. (2021). <i>MODIS/Terra Land Surface Temperature/Emissivity Daily L3 Global 1km SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MOD11A1.061"
+    },
+    {
+      "doi": "10.5067/MODIS/MYD11A1.061",
+      "citation": "Wan, Z., Hook, S., &amp; Hulley, G. (2021). <i>MODIS/Aqua Land Surface Temperature/Emissivity Daily L3 Global 1km SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MYD11A1.061"
+    }
+  ],
   "title": "MODIS Land Surface Temperature/Emissivity Daily",
   "extent": {
     "spatial": {
