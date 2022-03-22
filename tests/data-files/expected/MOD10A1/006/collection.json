@@ -35,30 +35,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "NDSI_Snow_Cover": {
-          "name": "Gridded NDSI snow cover and data flag values."
-        },
-        "NDSI_Snow_Cover_Basic_QA": {
-          "name": "A general estimate of the quality of the algorithm result."
-        },
-        "NDSI_Snow_Cover_Algorithm_Flags_QA": {
-          "name": "Algorithm-specific bit flags set for data screens and for inland water."
-        },
-        "NDSI": {
-          "name": "Raw NDSI values (i.e. prior to screening)."
-        },
-        "Snow_Albedo_Daily_Tile": {
-          "name": "Daily snow albedo corresponding to the NDSI_Snow_Cover parameter."
-        },
-        "orbit_pnt": {
-          "name": "Pointer to the orbit of the swath mapped into each grid cell. For details, see Section 1.1.2 below."
-        },
-        "granule_pnt": {
-          "name": "Pointer for identifying the swath mapped into each grid cell. For details, see the section 'Using the granule_pnt' below."
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",

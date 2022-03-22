@@ -50,23 +50,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "FireMask": {
-          "name": "Confidence of fire",
-          "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 1000
-          }
-        },
-        "QA": {
-          "name": "Pixel quality indicators",
-          "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 1000
-          }
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",

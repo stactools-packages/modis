@@ -40,15 +40,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "FireMask": {
-          "name": "Confidence of fire"
-        },
-        "QA": {
-          "name": "Pixel quality indicators"
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",

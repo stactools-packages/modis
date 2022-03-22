@@ -50,34 +50,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "Gpp_500m": {
-          "name": "Gross Primary Productivity",
-          "raster:bands": {
-            "data_type": "int16",
-            "scale": 0.0001,
-            "unit": "kg C/m^2",
-            "spatial_resolution": 500
-          }
-        },
-        "PsnNet_500m": {
-          "name": "Net Photosynthesis",
-          "raster:bands": {
-            "data_type": "int16",
-            "scale": 0.0001,
-            "unit": "kg C/m^2",
-            "spatial_resolution": 500
-          }
-        },
-        "Psn_QC_500m": {
-          "name": "Quality control indicators",
-          "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-          }
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",

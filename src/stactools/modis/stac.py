@@ -63,7 +63,6 @@ def create_collection(product_name: str, version: str) -> Collection:
 
     item_assets = ItemAssetsExtension.ext(collection, add_if_missing=True)
     hdf_asset_properties = HDF_ASSET_PROPERTIES.copy()
-    hdf_asset_properties["eo:bands"] = fragments.bands()
     item_assets.item_assets = {
         HDF_ASSET_KEY: AssetDefinition(hdf_asset_properties),
         METADATA_ASSET_KEY: AssetDefinition(METADATA_ASSET_PROPERTIES),
