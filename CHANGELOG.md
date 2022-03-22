@@ -13,6 +13,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - More Item and Collection metadata ([#51](https://github.com/stactools-packages/modis/pull/51))
 - Keywords for Collections ([#54](https://github.com/stactools-packages/modis/pull/54))
 - Antimeridian corrections ([#62](https://github.com/stactools-packages/modis/pull/62))
+- Cloud cover ([#66](https://github.com/stactools-packages/modis/pull/66))
+- `sci:publications` ([#66](https://github.com/stactools-packages/modis/pull/66))
 
 ### Changed
 
