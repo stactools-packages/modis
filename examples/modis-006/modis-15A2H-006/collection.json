@@ -21,10 +21,6 @@
       "title": "MOD15A2H file specification"
     },
     {
-      "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MOD15A2H.006"
-    },
-    {
       "rel": "item",
       "href": "./MOD15A2H.A2022017.h10v05.006.2022026205820/MOD15A2H.A2022017.h10v05.006.2022026205820.json",
       "type": "application/json"
@@ -37,8 +33,7 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -46,27 +41,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "Fpar_500m": {
-          "name": "Fraction of Photosynthetically Active Radiation"
-        },
-        "Lai_500m": {
-          "name": "Leaf Area Index"
-        },
-        "FparLai_QC": {
-          "name": "Quality for LAI and FPAR"
-        },
-        "FparExtra_QC": {
-          "name": "Extra detail Quality for LAI and FPAR"
-        },
-        "FparStdDev_500m": {
-          "name": "Percent"
-        },
-        "LaiStdDev_500m": {
-          "name": "Standard deviation of LAI"
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",
@@ -76,7 +51,6 @@
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
-  "sci:doi": "10.5067/MODIS/MOD15A2H.006",
   "title": "MODIS/Terra Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid",
   "extent": {
     "spatial": {

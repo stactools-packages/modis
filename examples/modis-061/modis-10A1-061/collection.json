@@ -38,7 +38,8 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -46,59 +47,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "NDSI_Snow_Cover": {
-          "name": "Gridded NDSI snow cover and data flag values.",
-          "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-          }
-        },
-        "NDSI_Snow_Cover_Basic_QA": {
-          "name": "A general estimate of the quality of the algorithm result.",
-          "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-          }
-        },
-        "NDSI_Snow_Cover_Algorithm_Flags_QA": {
-          "name": "Algorithm-specific bit flags set for data screens and for inland water.",
-          "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-          }
-        },
-        "NDSI": {
-          "name": "Raw NDSI values (i.e. prior to screening).",
-          "raster:bands": {
-            "data_type": "int16",
-            "scale": 0.0001,
-            "spatial_resolution": 500
-          }
-        },
-        "Snow_Albedo_Daily_Tile": {
-          "name": "Daily snow albedo corresponding to the NDSI_Snow_Cover parameter.",
-          "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-          }
-        },
-        "orbit_pnt": {
-          "name": "Pointer to the orbit of the swath mapped into each grid cell. For details, see Section 1.1.2 below.",
-          "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-          }
-        },
-        "granule_pnt": {
-          "name": "Pointer for identifying the swath mapped into each grid cell. For details, see the section 'Using the granule_pnt' below.",
-          "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-          }
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",
@@ -108,6 +57,16 @@
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
+  "sci:publications": [
+    {
+      "doi": "10.5067/MODIS/MOD10A1.061",
+      "citation": "Hall, D. K., &amp; Riggs, G. A. (2021). <i>MODIS/Aqua Snow Cover Daily L3 Global 500m Grid, Version 61</i> [Data set]. NASA National Snow and Ice Data Center DAAC. https://doi.org/10.5067/MODIS/MOD10A1.061"
+    },
+    {
+      "doi": "10.5067/MODIS/MYD10A1.061",
+      "citation": "Hall, D. K., &amp; Riggs, G. A. (2021). <i>MODIS/Aqua Snow Cover Daily L3 Global 500m Grid, Version 61</i> [Data set]. NASA National Snow and Ice Data Center DAAC. https://doi.org/10.5067/MODIS/MYD10A1.061"
+    }
+  ],
   "title": "MODIS Snow Cover Daily",
   "extent": {
     "spatial": {

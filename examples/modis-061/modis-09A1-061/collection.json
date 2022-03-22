@@ -53,7 +53,8 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -61,114 +62,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "sur_refl_b01": {
-          "name": "Surface Reflectance Band 1 (620-670 nm)",
-          "raster:bands": {
-            "data_type": "int16",
-            "scale": 0.0001,
-            "spatial_resolution": 500
-          }
-        },
-        "sur_refl_b02": {
-          "name": "Surface Reflectance Band 2 (841-876 nm)",
-          "raster:bands": {
-            "data_type": "int16",
-            "scale": 0.0001,
-            "spatial_resolution": 500
-          }
-        },
-        "sur_refl_b03": {
-          "name": "Surface Reflectance Band 3 (459-479 nm)",
-          "raster:bands": {
-            "data_type": "int16",
-            "scale": 0.0001,
-            "spatial_resolution": 500
-          }
-        },
-        "sur_refl_b04": {
-          "name": "Surface Reflectance Band 4 (545-565 nm)",
-          "raster:bands": {
-            "data_type": "int16",
-            "scale": 0.0001,
-            "spatial_resolution": 500
-          }
-        },
-        "sur_refl_b05": {
-          "name": "Surface Reflectance Band 5 (1230-1250 nm)",
-          "raster:bands": {
-            "data_type": "int16",
-            "scale": 0.0001,
-            "spatial_resolution": 500
-          }
-        },
-        "sur_refl_b06": {
-          "name": "Surface Reflectance Band 6 (1628-1652 nm)",
-          "raster:bands": {
-            "data_type": "int16",
-            "scale": 0.0001,
-            "spatial_resolution": 500
-          }
-        },
-        "sur_refl_b07": {
-          "name": "Surface Reflectance Band 7 (2105-2155 nm)",
-          "raster:bands": {
-            "data_type": "int16",
-            "scale": 0.0001,
-            "spatial_resolution": 500
-          }
-        },
-        "sur_refl_qc_500m": {
-          "name": "Surface reflectance 500m band quality control flags",
-          "raster:bands": {
-            "data_type": "uint32",
-            "spatial_resolution": 500
-          }
-        },
-        "sur_refl_szen": {
-          "name": "MODIS solar zenith angle",
-          "raster:bands": {
-            "data_type": "int16",
-            "unit": "Degree",
-            "scale": 0.01,
-            "spatial_resolution": 500
-          }
-        },
-        "sur_refl_vzen": {
-          "name": "MODIS view zenith angle",
-          "raster:bands": {
-            "data_type": "int16",
-            "unit": "Degree",
-            "scale": 0.01,
-            "spatial_resolution": 500
-          }
-        },
-        "sur_refl_raz": {
-          "name": "MODIS relative azimuth angle",
-          "raster:bands": {
-            "data_type": "int16",
-            "unit": "Degree",
-            "scale": 0.01,
-            "spatial_resolution": 500
-          }
-        },
-        "sur_refl_state_500m": {
-          "name": "Surface reflectance 500m state flags",
-          "raster:bands": {
-            "data_type": "uint16",
-            "spatial_resolution": 500
-          }
-        },
-        "sur_refl_day_of_year": {
-          "name": "Day of the year for the pixel",
-          "raster:bands": {
-            "data_type": "uint16",
-            "unit": "Julian Day",
-            "spatial_resolution": 500
-          }
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",
@@ -178,6 +72,16 @@
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
+  "sci:publications": [
+    {
+      "doi": "10.5067/MODIS/MOD09A1.061",
+      "citation": "Vermote, E. (2021). <i>MODIS/Terra Surface Reflectance 8-Day L3 Global 500m SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MOD09A1.061"
+    },
+    {
+      "doi": "10.5067/MODIS/MYD09A1.061",
+      "citation": "Vermote, E. (2021). <i>MODIS/Aqua Surface Reflectance 8-Day L3 Global 500m SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MYD09A1.061"
+    }
+  ],
   "title": "MODIS Surface Reflectance 8-Day (500m)",
   "extent": {
     "spatial": {

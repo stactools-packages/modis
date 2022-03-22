@@ -53,7 +53,8 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -61,39 +62,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "FireMask": {
-          "name": "Confidence of fire",
-          "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 1000
-          }
-        },
-        "QA": {
-          "name": "Pixel quality indicators",
-          "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 1000
-          }
-        },
-        "MaxFRP": {
-          "name": "Maximum Fire Radiative Power",
-          "raster:bands": {
-            "data_type": "uint32",
-            "unit": "Megawatts",
-            "scale": 0.1,
-            "spatial_resolution": 1000
-          }
-        },
-        "sample": {
-          "name": "Position of fire pixel within scan",
-          "raster:bands": {
-            "data_type": "uint16",
-            "spatial_resolution": 1000
-          }
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",
@@ -103,6 +72,16 @@
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
+  "sci:publications": [
+    {
+      "doi": "10.5067/MODIS/MOD14A1.061",
+      "citation": "Giglio, L., &amp; Justice, C. (2021). <i>MODIS/Terra Thermal Anomalies/Fire Daily L3 Global 1km SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MOD14A1.061"
+    },
+    {
+      "doi": "10.5067/MODIS/MYD14A1.061",
+      "citation": "Giglio, L., &amp; Justice, C. (2021). <i>MODIS/Aqua Thermal Anomalies/Fire Daily L3 Global 1km SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MYD14A1.061"
+    }
+  ],
   "title": "MODIS Thermal Anomalies/Fire Daily",
   "extent": {
     "spatial": {

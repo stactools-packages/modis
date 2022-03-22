@@ -21,10 +21,6 @@
       "title": "MOD16A3GF file specification"
     },
     {
-      "rel": "cite-as",
-      "href": "https://doi.org/10.5067/MODIS/MOD16A3GF.006"
-    },
-    {
       "rel": "item",
       "href": "./MOD16A3GF.A2020001.h09v04.006.2022011184136/MOD16A3GF.A2020001.h09v04.006.2022011184136.json",
       "type": "application/json"
@@ -37,8 +33,7 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -46,24 +41,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "ET_500m": {
-          "name": "Total of Evapotranspiration"
-        },
-        "LE_500m": {
-          "name": "Average of Latent Heat Flux"
-        },
-        "PET_500m": {
-          "name": "Total Potential Evapotranspiration"
-        },
-        "PLE_500m": {
-          "name": "Average of Potential Latent Heat Flux"
-        },
-        "ET_QC_500m": {
-          "name": "Evapotranspiration Quality Assessment"
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",
@@ -73,7 +51,6 @@
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
-  "sci:doi": "10.5067/MODIS/MOD16A3GF.006",
   "title": "MODIS/Terra Net Evapotranspiration Gap-Filled Yearly L4 Global 500 m SIN Grid",
   "extent": {
     "spatial": {

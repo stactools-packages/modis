@@ -38,7 +38,8 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
   "item_assets": {
     "hdf": {
@@ -46,59 +47,7 @@
       "roles": [
         "data"
       ],
-      "title": "Source data containing all bands",
-      "eo:bands": {
-        "Fpar_500m": {
-          "name": "Fraction of Photosynthetically Active Radiation",
-          "raster:bands": {
-            "data_type": "uint8",
-            "unit": "Percent",
-            "scale": 0.01,
-            "spatial_resolution": 500
-          }
-        },
-        "Lai_500m": {
-          "name": "Leaf Area Index",
-          "raster:bands": {
-            "data_type": "uint8",
-            "unit": "m^2/m^2",
-            "scale": 0.1,
-            "spatial_resolution": 500
-          }
-        },
-        "FparLai_QC": {
-          "name": "Quality for FPAR and LAI",
-          "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-          }
-        },
-        "FparExtra_QC": {
-          "name": "Extra detail Quality for FPAR and LAI",
-          "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-          }
-        },
-        "FparStdDev_500m": {
-          "name": "Standard deviation of FPAR",
-          "raster:bands": {
-            "data_type": "uint8",
-            "unit": "Percent",
-            "scale": 0.01,
-            "spatial_resolution": 500
-          }
-        },
-        "LaiStdDev_500m": {
-          "name": "Standard deviation of LAI",
-          "raster:bands": {
-            "data_type": "uint8",
-            "unit": "m^2/m^2",
-            "scale": 0.1,
-            "spatial_resolution": 500
-          }
-        }
-      }
+      "title": "Source data containing all bands"
     },
     "metadata": {
       "type": "application/xml",
@@ -108,6 +57,12 @@
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
     }
   },
+  "sci:publications": [
+    {
+      "doi": "10.5067/MODIS/MCD15A3H.061",
+      "citation": "Myneni, R., Knyazikhin, Y., &amp; Park, T. (2021). <i>MODIS/Terra+Aqua Leaf Area Index/FPAR 4-Day L4 Global 500m SIN Grid V061</i> [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MCD15A3H.061"
+    }
+  ],
   "title": "MODIS Leaf Area Index/FPAR 4-Day",
   "extent": {
     "spatial": {

@@ -30,6 +30,7 @@
     "platform": "terra",
     "created": "2022-01-26T20:57:24Z",
     "updated": "2022-01-26T23:32:16.338000Z",
+    "eo:cloud_cover": 2,
     "datetime": null
   },
   "geometry": {
@@ -103,6 +104,8 @@
     -80.8406494782854,
     39.9958333333333
   ],
-  "stac_extensions": [],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+  ],
   "collection": "modis-11A2-006"
 }
