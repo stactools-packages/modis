@@ -16,13 +16,13 @@ from pystac.extensions.projection import ProjectionExtension
 from pystac.extensions.raster import RasterBand, RasterExtension
 from pystac.extensions.scientific import ScientificExtension
 from stactools.core.io import ReadHrefModifier
+from stactools.core.utils.antimeridian import Strategy
 
 import stactools.modis.cog
 import stactools.modis.utils
 from stactools.modis.constants import (HDF_ASSET_KEY, HDF_ASSET_PROPERTIES,
                                        METADATA_ASSET_KEY,
-                                       METADATA_ASSET_PROPERTIES,
-                                       AntimeridianStrategy)
+                                       METADATA_ASSET_PROPERTIES)
 from stactools.modis.file import File
 from stactools.modis.metadata import Metadata
 from stactools.modis.product import Product
@@ -79,13 +79,11 @@ def create_collection(product_name: str, version: str) -> Collection:
     return collection
 
 
-def create_item(
-    href: str,
-    cog_directory: Optional[str] = None,
-    create_cogs: bool = False,
-    read_href_modifier: Optional[ReadHrefModifier] = None,
-    antimeridian_strategy: AntimeridianStrategy = AntimeridianStrategy.SPLIT
-) -> Item:
+def create_item(href: str,
+                cog_directory: Optional[str] = None,
+                create_cogs: bool = False,
+                read_href_modifier: Optional[ReadHrefModifier] = None,
+                antimeridian_strategy: Strategy = Strategy.SPLIT) -> Item:
     """Creates a STAC Item from MODIS data.
 
     Args:
@@ -119,14 +117,7 @@ def create_item(
                        bbox=metadata.bbox,
                        datetime=metadata.datetime,
                        properties=properties)
-    geometry = shapely.geometry.shape(item.geometry)
-    if antimeridian_strategy == AntimeridianStrategy.SPLIT:
-        split = stactools.core.utils.antimeridian.split(geometry)
-        if split:
-            item.geometry = shapely.geometry.mapping(split)
-    elif antimeridian_strategy == AntimeridianStrategy.NORMALIZE:
-        item.geometry = shapely.geometry.mapping(
-            stactools.core.utils.antimeridian.normalize(geometry))
+    stactools.core.utils.antimeridian.fix_item(item, antimeridian_strategy)
 
     item.common_metadata.instruments = metadata.instruments
     item.common_metadata.platform = metadata.platform
