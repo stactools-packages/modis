@@ -7,9 +7,9 @@ from tempfile import TemporaryDirectory
 import pytest
 import shapely.geometry
 from pystac import CatalogType, MediaType
+from stactools.core.utils.antimeridian import Strategy
 
 import stactools.modis.stac
-from stactools.modis.constants import AntimeridianStrategy
 from stactools.modis.file import File
 
 from . import test_data
@@ -129,8 +129,9 @@ def test_antimeridian() -> None:
     href = test_data.get_path(
         "data-files/MCD15A2H.A2022025.h01v11.061.2022035062702.hdf.xml")
     item = stactools.modis.stac.create_item(
-        href, antimeridian_strategy=AntimeridianStrategy.NORMALIZE)
+        href, antimeridian_strategy=Strategy.NORMALIZE)
     bounds = shapely.geometry.shape(item.geometry).bounds
-    assert bounds[0] == 179.73790138346
-    assert bounds[2] == 190.002006291983
+    print(bounds)
+    assert bounds[0] == -180.26209861654
+    assert bounds[2] == -169.997993708017
     item.validate()
