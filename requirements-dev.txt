@@ -10,5 +10,7 @@ sphinx-autobuild
 sphinx-click
 sphinxcontrib-fulltoc
 sphinxcontrib-napoleon
+# required until yapf 0.40
+toml
 types-setuptools
 yapf
