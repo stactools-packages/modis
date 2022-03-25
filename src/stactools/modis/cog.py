@@ -92,7 +92,10 @@ def add_cog_assets(item: Item,
         raster_bands = band.get("raster:bands")
         if raster_bands:
             raster = RasterExtension.ext(asset, add_if_missing=True)
-            raster.bands = [RasterBand.create(**raster_bands)]
+            raster.bands = [
+                RasterBand.create(**raster_band)
+                for raster_band in raster_bands
+            ]
         else:
             logger.warning(MissingRasterBand(item, subdataset_name))
 

@@ -1,46 +1,56 @@
 {
     "ET_500m": {
         "name": "Total of Evapotranspiration",
-        "raster:bands": {
-            "data_type": "uint16",
-            "unit": "kg/m^2/year",
-            "scale": 0.1,
-            "spatial_resolution": 500
-        }
+        "raster:bands": [
+            {
+                "data_type": "uint16",
+                "unit": "kg/m^2/year",
+                "scale": 0.1,
+                "spatial_resolution": 500
+            }
+        ]
     },
     "LE_500m": {
         "name": "Average of Latent Heat Flux",
-        "raster:bands": {
-            "data_type": "int16",
-            "unit": "J/m^2/day",
-            "scale": 10000,
-            "spatial_resolution": 500
-        }
+        "raster:bands": [
+            {
+                "data_type": "int16",
+                "unit": "J/m^2/day",
+                "scale": 10000,
+                "spatial_resolution": 500
+            }
+        ]
     },
     "PET_500m": {
         "name": "Total Potential Evapotranspiration",
-        "raster:bands": {
-            "data_type": "uint16",
-            "unit": "kg/m^2/year",
-            "scale": 0.1,
-            "spatial_resolution": 500
-        }
+        "raster:bands": [
+            {
+                "data_type": "uint16",
+                "unit": "kg/m^2/year",
+                "scale": 0.1,
+                "spatial_resolution": 500
+            }
+        ]
     },
     "PLE_500m": {
         "name": "Average of Potential Latent Heat Flux",
-        "raster:bands": {
-            "data_type": "int16",
-            "unit": "J/m^2/day",
-            "scale": 10000,
-            "spatial_resolution": 500
-        }
+        "raster:bands": [
+            {
+                "data_type": "int16",
+                "unit": "J/m^2/day",
+                "scale": 10000,
+                "spatial_resolution": 500
+            }
+        ]
     },
     "ET_QC_500m": {
         "name": "Evapotranspiration Quality Assessment",
-        "raster:bands": {
-            "data_type": "uint8",
-            "unit": "Percent",
-            "spatial_resolution": 500
-        }
+        "raster:bands": [
+            {
+                "data_type": "uint8",
+                "unit": "Percent",
+                "spatial_resolution": 500
+            }
+        ]
     }
 }

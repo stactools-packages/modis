@@ -143,7 +143,8 @@ def create_item(href: str,
     raster_bands = []
     for name, band in bands.items():
         if "raster:bands" in band:
-            raster_bands.append(RasterBand.create(**band["raster:bands"]))
+            for raster_band in band["raster:bands"]:
+                raster_bands.append(RasterBand.create(**raster_band))
         else:
             logger.warning(MissingRasterBand(item, name))
             all_bands_have_raster_bands = False
