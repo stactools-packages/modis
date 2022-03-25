@@ -1,52 +1,66 @@
 {
     "NDSI_Snow_Cover": {
         "name": "Gridded NDSI snow cover and data flag values.",
-        "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-        }
+        "raster:bands": [
+            {
+                "data_type": "uint8",
+                "spatial_resolution": 500
+            }
+        ]
     },
     "NDSI_Snow_Cover_Basic_QA": {
         "name": "A general estimate of the quality of the algorithm result.",
-        "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-        }
+        "raster:bands": [
+            {
+                "data_type": "uint8",
+                "spatial_resolution": 500
+            }
+        ]
     },
     "NDSI_Snow_Cover_Algorithm_Flags_QA": {
         "name": "Algorithm-specific bit flags set for data screens and for inland water.",
-        "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-        }
+        "raster:bands": [
+            {
+                "data_type": "uint8",
+                "spatial_resolution": 500
+            }
+        ]
     },
     "NDSI": {
         "name": "Raw NDSI values (i.e. prior to screening).",
-        "raster:bands": {
-            "data_type": "int16",
-            "scale": 0.0001,
-            "spatial_resolution": 500
-        }
+        "raster:bands": [
+            {
+                "data_type": "int16",
+                "scale": 0.0001,
+                "spatial_resolution": 500
+            }
+        ]
     },
     "Snow_Albedo_Daily_Tile": {
         "name": "Daily snow albedo corresponding to the NDSI_Snow_Cover parameter.",
-        "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-        }
+        "raster:bands": [
+            {
+                "data_type": "uint8",
+                "spatial_resolution": 500
+            }
+        ]
     },
     "orbit_pnt": {
         "name": "Pointer to the orbit of the swath mapped into each grid cell.",
-        "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-        }
+        "raster:bands": [
+            {
+                "data_type": "uint8",
+                "spatial_resolution": 500
+            }
+        ]
     },
     "granule_pnt": {
         "name": "Pointer for identifying the swath mapped into each grid cell.",
-        "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-        }
+        "raster:bands": [
+            {
+                "data_type": "uint8",
+                "spatial_resolution": 500
+            }
+        ]
     }
 }

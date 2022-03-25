@@ -1,52 +1,64 @@
 {
     "Fpar_500m": {
         "name": "Fraction of Photosynthetically Active Radiation",
-        "raster:bands": {
-            "data_type": "uint8",
-            "unit": "Percent",
-            "scale": 0.01,
-            "spatial_resolution": 500
-        }
+        "raster:bands": [
+            {
+                "data_type": "uint8",
+                "unit": "Percent",
+                "scale": 0.01,
+                "spatial_resolution": 500
+            }
+        ]
     },
     "Lai_500m": {
         "name": "Leaf Area Index",
-        "raster:bands": {
-            "data_type": "uint8",
-            "unit": "m^2/m^2",
-            "scale": 0.1,
-            "spatial_resolution": 500
-        }
+        "raster:bands": [
+            {
+                "data_type": "uint8",
+                "unit": "m^2/m^2",
+                "scale": 0.1,
+                "spatial_resolution": 500
+            }
+        ]
     },
     "FparLai_QC": {
         "name": "Quality for FPAR and LAI",
-        "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-        }
+        "raster:bands": [
+            {
+                "data_type": "uint8",
+                "spatial_resolution": 500
+            }
+        ]
     },
     "FparExtra_QC": {
         "name": "Extra detail Quality for FPAR and LAI",
-        "raster:bands": {
-            "data_type": "uint8",
-            "spatial_resolution": 500
-        }
+        "raster:bands": [
+            {
+                "data_type": "uint8",
+                "spatial_resolution": 500
+            }
+        ]
     },
     "FparStdDev_500m": {
         "name": "Standard deviation of FPAR",
-        "raster:bands": {
-            "data_type": "uint8",
-            "unit": "Percent",
-            "scale": 0.01,
-            "spatial_resolution": 500
-        }
+        "raster:bands": [
+            {
+                "data_type": "uint8",
+                "unit": "Percent",
+                "scale": 0.01,
+                "spatial_resolution": 500
+            }
+        ]
     },
     "LaiStdDev_500m": {
         "name": "Standard deviation of LAI",
-        "raster:bands": {
-            "data_type": "uint8",
-            "unit": "m^2/m^2",
-            "scale": 0.1,
-            "spatial_resolution": 500
-        }
+        "raster:bands": [
+            {
+                "data_type": "uint8",
+                "unit": "m^2/m^2",
+                "scale": 0.1,
+                "spatial_resolution": 500
+            }
+        ]
     }
 }
