@@ -31,6 +31,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Use keywords when creating Collections ([#56](https://github.com/stactools-packages/modis/pull/56))
 - Use `raster`'s `spatial_resolution` instead of `gsd` ([#60](https://github.com/stactools-packages/modis/pull/60))
 - Metadata ([#65](https://github.com/stactools-packages/modis/pull/65))
+- Raster bands ([#68](https://github.com/stactools-packages/modis/pull/68))
 
 ## [0.1.0] - 2022-02-17
 
