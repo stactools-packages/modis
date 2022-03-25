@@ -78,10 +78,136 @@
           "spatial_resolution": 1000
         },
         {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
           "data_type": "uint32",
           "spatial_resolution": 1000,
           "unit": "Megawatts",
           "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
         },
         {
           "data_type": "uint16",
