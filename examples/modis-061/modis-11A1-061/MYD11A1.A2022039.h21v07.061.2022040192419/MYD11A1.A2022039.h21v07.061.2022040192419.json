@@ -215,7 +215,8 @@
         }
       ],
       "roles": [
-        "data"
+        "data",
+        "temperature"
       ]
     },
     "QC_Day": {
@@ -245,7 +246,8 @@
         }
       ],
       "roles": [
-        "data"
+        "data",
+        "temperature"
       ]
     },
     "Emis_32": {

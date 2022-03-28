@@ -331,7 +331,8 @@
         }
       ],
       "roles": [
-        "data"
+        "data",
+        "temperature"
       ]
     },
     "Clear_sky_days": {
@@ -361,7 +362,8 @@
         }
       ],
       "roles": [
-        "data"
+        "data",
+        "temperature"
       ]
     }
   },

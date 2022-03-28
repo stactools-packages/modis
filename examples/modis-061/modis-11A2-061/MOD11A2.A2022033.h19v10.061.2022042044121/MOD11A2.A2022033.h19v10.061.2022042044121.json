@@ -211,7 +211,8 @@
         }
       ],
       "roles": [
-        "data"
+        "data",
+        "temperature"
       ]
     },
     "LST_Night_1km": {
@@ -227,7 +228,8 @@
         }
       ],
       "roles": [
-        "data"
+        "data",
+        "temperature"
       ]
     },
     "Clear_sky_nights": {
