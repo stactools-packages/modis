@@ -88,6 +88,20 @@
           "spatial_resolution": 250
         }
       ],
+      "eo:bands": [
+        {
+          "name": "sur_refl_b01",
+          "common_name": "red",
+          "center_wavelength": 0.645,
+          "full_width_half_max": 0.5
+        },
+        {
+          "name": "sur_refl_b02",
+          "common_name": "nir08",
+          "center_wavelength": 0.8585,
+          "full_width_half_max": 0.35
+        }
+      ],
       "roles": [
         "data"
       ]
@@ -108,7 +122,8 @@
     -9.94789001665572
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
   ],
   "collection": "modis-09Q1-061"
 }

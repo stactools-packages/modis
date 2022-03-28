@@ -4,12 +4,12 @@ from typing import List, Optional, Tuple
 
 import stactools.core.utils.convert
 from pystac import Asset, Item, MediaType
+from pystac.extensions.eo import Band, EOExtension
 from pystac.extensions.file import FileExtension, MappingObject
 from pystac.extensions.raster import RasterBand, RasterExtension
 
 import stactools.modis.utils
 from stactools.modis.file import File
-from stactools.modis.warnings import MissingRasterBand
 
 logger = logging.getLogger(__name__)
 
@@ -96,8 +96,14 @@ def add_cog_assets(item: Item,
                 RasterBand.create(**raster_band)
                 for raster_band in raster_bands
             ]
-        else:
-            logger.warning(MissingRasterBand(item, subdataset_name))
+        eo_bands = band.get("eo:bands")
+        if eo_bands:
+            eo = EOExtension.ext(asset, add_if_missing=True)
+            eo.bands = [Band.create(**eo_band) for eo_band in eo_bands]
+
+        roles = band.get("roles")
+        if roles:
+            asset.roles.extend(roles)
 
         if file_info:
             try:

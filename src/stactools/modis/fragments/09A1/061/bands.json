@@ -1,6 +1,17 @@
 {
     "sur_refl_b01": {
         "name": "Surface Reflectance Band 1 (620-670 nm)",
+        "roles": [
+            "reflectance"
+        ],
+        "eo:bands": [
+            {
+                "name": "sur_refl_b01",
+                "common_name": "red",
+                "center_wavelength": 0.645,
+                "full_width_half_max": 0.50
+            }
+        ],
         "raster:bands": [
             {
                 "data_type": "int16",
@@ -11,6 +22,17 @@
     },
     "sur_refl_b02": {
         "name": "Surface Reflectance Band 2 (841-876 nm)",
+        "roles": [
+            "reflectance"
+        ],
+        "eo:bands": [
+            {
+                "name": "sur_refl_b02",
+                "common_name": "nir08",
+                "center_wavelength": 0.8585,
+                "full_width_half_max": 0.35
+            }
+        ],
         "raster:bands": [
             {
                 "data_type": "int16",
@@ -21,6 +43,17 @@
     },
     "sur_refl_b03": {
         "name": "Surface Reflectance Band 3 (459-479 nm)",
+        "roles": [
+            "reflectance"
+        ],
+        "eo:bands": [
+            {
+                "name": "sur_refl_b03",
+                "common_name": "blue",
+                "center_wavelength": 0.469,
+                "full_width_half_max": 0.20
+            }
+        ],
         "raster:bands": [
             {
                 "data_type": "int16",
@@ -31,6 +64,17 @@
     },
     "sur_refl_b04": {
         "name": "Surface Reflectance Band 4 (545-565 nm)",
+        "roles": [
+            "reflectance"
+        ],
+        "eo:bands": [
+            {
+                "name": "sur_refl_b04",
+                "common_name": "green",
+                "center_wavelength": 0.555,
+                "full_width_half_max": 0.20
+            }
+        ],
         "raster:bands": [
             {
                 "data_type": "int16",
@@ -41,6 +85,17 @@
     },
     "sur_refl_b05": {
         "name": "Surface Reflectance Band 5 (1230-1250 nm)",
+        "roles": [
+            "reflectance"
+        ],
+        "eo:bands": [
+            {
+                "name": "sur_refl_b05",
+                "common_name": "lwir12",
+                "center_wavelength": 1.240,
+                "full_width_half_max": 0.20
+            }
+        ],
         "raster:bands": [
             {
                 "data_type": "int16",
@@ -51,6 +106,17 @@
     },
     "sur_refl_b06": {
         "name": "Surface Reflectance Band 6 (1628-1652 nm)",
+        "roles": [
+            "reflectance"
+        ],
+        "eo:bands": [
+            {
+                "name": "sur_refl_b06",
+                "common_name": "swir16",
+                "center_wavelength": 1.640,
+                "full_width_half_max": 0.24
+            }
+        ],
         "raster:bands": [
             {
                 "data_type": "int16",
@@ -61,6 +127,17 @@
     },
     "sur_refl_b07": {
         "name": "Surface Reflectance Band 7 (2105-2155 nm)",
+        "roles": [
+            "reflectance"
+        ],
+        "eo:bands": [
+            {
+                "name": "sur_refl_b07",
+                "common_name": "swir22",
+                "center_wavelength": 2.130,
+                "full_width_half_max": 0.50
+            }
+        ],
         "raster:bands": [
             {
                 "data_type": "int16",
