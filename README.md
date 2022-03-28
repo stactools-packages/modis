@@ -34,11 +34,8 @@ $ stac modis create-item tests/data-files/MCD12Q1.A2001001.h00v08.006.2018142182
 To create a STAC `Catalog` from a list of MODIS asset hrefs:
 
 ```shell
-$ stac modis create-catalog examples/file-list.txt examples
+$ stac modis create-catalog examples/file-list-061.txt examples/modis-061
 ```
-
-Note that this `create-catalog` example is exactly how the `examples/` directory is generated.
-
 
 ## Contributing
 
@@ -54,8 +51,11 @@ This will create, validate, and save new test data items into `tests/data-files/
 Once you've got a pull request ready, please update the examples as well (you'll need to download the external test data files first, see [below](#running-tests)):
 
 ```
-$ stac modis create-catalog examples/file-list.txt examples
+$ stac modis create-catalog --cogify examples/file-list-061.txt examples/modis-061
 ```
+
+Note that this will take a while (~5-10 minutes).
+If you need to update the examples later, you can omit the `--cogify` as the COGs will already be created.
 
 ### Running tests
 

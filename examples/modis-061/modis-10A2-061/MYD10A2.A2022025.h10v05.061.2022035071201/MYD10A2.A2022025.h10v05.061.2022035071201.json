@@ -14,6 +14,47 @@
     "platform": "aqua",
     "created": "2022-02-04T07:12:12Z",
     "updated": "2022-02-04T00:16:00.600000Z",
+    "proj:epsg": null,
+    "proj:wkt2": "PROJCS[\"unnamed\",GEOGCS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",SPHEROID[\"Custom spheroid\",6371007.181,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Sinusoidal\"],PARAMETER[\"longitude_of_center\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"Meter\",1],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -7783653.637667,
+            3335851.559
+          ],
+          [
+            -7783653.637667,
+            4447802.078667
+          ],
+          [
+            -8895604.157333,
+            4447802.078667
+          ],
+          [
+            -8895604.157333,
+            3335851.559
+          ],
+          [
+            -7783653.637667,
+            3335851.559
+          ]
+        ]
+      ]
+    },
+    "proj:transform": [
+      463.31271652749973,
+      0.0,
+      -8895604.157333,
+      0.0,
+      -463.3127165279167,
+      4447802.078667
+    ],
+    "proj:shape": [
+      2400,
+      2400
+    ],
     "datetime": null
   },
   "geometry": {
@@ -65,7 +106,7 @@
   ],
   "assets": {
     "hdf": {
-      "href": "../../../../tests/data-files/MYD10A2.A2022025.h10v05.061.2022035071201.hdf",
+      "href": "../../../../tests/data-files/external/MYD10A2.A2022025.h10v05.061.2022035071201.hdf",
       "type": "application/x-hdf",
       "title": "Source data containing all bands",
       "raster:bands": [
@@ -83,11 +124,101 @@
       ]
     },
     "metadata": {
-      "href": "../../../../tests/data-files/MYD10A2.A2022025.h10v05.061.2022035071201.hdf.xml",
+      "href": "../../../../tests/data-files/external/MYD10A2.A2022025.h10v05.061.2022035071201.hdf.xml",
       "type": "application/xml",
       "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
+      ]
+    },
+    "Eight_Day_Snow_Cover": {
+      "href": "../../../../tests/data-files/external/MYD10A2.A2022025.h10v05.061.2022035071201_Eight_Day_Snow_Cover.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Snow chronology bit flags for each day in the eight-day observation period.",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "Maximum_Snow_Extent": {
+      "href": "../../../../tests/data-files/external/MYD10A2.A2022025.h10v05.061.2022035071201_Maximum_Snow_Extent.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Maximum snow extent over the 8-day period.",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "file:values": [
+        {
+          "values": [
+            0
+          ],
+          "summary": "missing data"
+        },
+        {
+          "values": [
+            1
+          ],
+          "summary": "no decision"
+        },
+        {
+          "values": [
+            11
+          ],
+          "summary": "night"
+        },
+        {
+          "values": [
+            25
+          ],
+          "summary": "no snow"
+        },
+        {
+          "values": [
+            37
+          ],
+          "summary": "lake"
+        },
+        {
+          "values": [
+            39
+          ],
+          "summary": "ocean"
+        },
+        {
+          "values": [
+            50
+          ],
+          "summary": "cloud"
+        },
+        {
+          "values": [
+            100
+          ],
+          "summary": "lake ice"
+        },
+        {
+          "values": [
+            200
+          ],
+          "summary": "snow"
+        },
+        {
+          "values": [
+            254
+          ],
+          "summary": "detector saturated"
+        }
+      ],
+      "roles": [
+        "data"
       ]
     }
   },
@@ -98,7 +229,9 @@
     40.0637836759185
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.0.0/schema.json"
   ],
   "collection": "modis-10A2-061"
 }

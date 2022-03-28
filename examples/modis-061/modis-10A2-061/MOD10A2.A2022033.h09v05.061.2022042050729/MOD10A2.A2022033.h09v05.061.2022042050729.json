@@ -106,7 +106,7 @@
   ],
   "assets": {
     "hdf": {
-      "href": "../../../../tests/data-files/MOD10A2.A2022033.h09v05.061.2022042050729.hdf",
+      "href": "../../../../tests/data-files/external/MOD10A2.A2022033.h09v05.061.2022042050729.hdf",
       "type": "application/x-hdf",
       "title": "Source data containing all bands",
       "raster:bands": [
@@ -124,7 +124,7 @@
       ]
     },
     "metadata": {
-      "href": "../../../../tests/data-files/MOD10A2.A2022033.h09v05.061.2022042050729.hdf.xml",
+      "href": "../../../../tests/data-files/external/MOD10A2.A2022033.h09v05.061.2022042050729.hdf.xml",
       "type": "application/xml",
       "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
@@ -132,7 +132,7 @@
       ]
     },
     "Eight_Day_Snow_Cover": {
-      "href": "../../../../tests/data-files/MOD10A2.A2022033.h09v05.061.2022042050729_Eight_Day_Snow_Cover.tif",
+      "href": "../../../../tests/data-files/external/MOD10A2.A2022033.h09v05.061.2022042050729_Eight_Day_Snow_Cover.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Snow chronology bit flags for each day in the eight-day observation period.",
       "raster:bands": [
@@ -146,7 +146,7 @@
       ]
     },
     "Maximum_Snow_Extent": {
-      "href": "../../../../tests/data-files/MOD10A2.A2022033.h09v05.061.2022042050729_Maximum_Snow_Extent.tif",
+      "href": "../../../../tests/data-files/external/MOD10A2.A2022033.h09v05.061.2022042050729_Maximum_Snow_Extent.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Maximum snow extent over the 8-day period.",
       "raster:bands": [

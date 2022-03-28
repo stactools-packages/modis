@@ -14,6 +14,47 @@
     "platform": "terra",
     "created": "2022-01-24T12:53:25Z",
     "updated": "2022-01-24T06:56:49.574000Z",
+    "proj:epsg": null,
+    "proj:wkt2": "PROJCS[\"unnamed\",GEOGCS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",SPHEROID[\"Custom spheroid\",6371007.181,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Sinusoidal\"],PARAMETER[\"longitude_of_center\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"Meter\",1],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -6671703.118,
+            6671703.118
+          ],
+          [
+            -6671703.118,
+            7783653.637667
+          ],
+          [
+            -7783653.637667,
+            7783653.637667
+          ],
+          [
+            -7783653.637667,
+            6671703.118
+          ],
+          [
+            -6671703.118,
+            6671703.118
+          ]
+        ]
+      ]
+    },
+    "proj:transform": [
+      463.3127165279169,
+      0.0,
+      -7783653.637667,
+      0.0,
+      -463.3127165279169,
+      7783653.637667
+    ],
+    "proj:shape": [
+      2400,
+      2400
+    ],
     "datetime": null
   },
   "geometry": {
@@ -91,7 +132,7 @@
   ],
   "assets": {
     "hdf": {
-      "href": "../../../../tests/data-files/MOD16A3GF.A2021001.h11v02.061.2022024075208.hdf",
+      "href": "../../../../tests/data-files/external/MOD16A3GF.A2021001.h11v02.061.2022024075208.hdf",
       "type": "application/x-hdf",
       "title": "Source data containing all bands",
       "raster:bands": [
@@ -130,11 +171,90 @@
       ]
     },
     "metadata": {
-      "href": "../../../../tests/data-files/MOD16A3GF.A2021001.h11v02.061.2022024075208.hdf.xml",
+      "href": "../../../../tests/data-files/external/MOD16A3GF.A2021001.h11v02.061.2022024075208.hdf.xml",
       "type": "application/xml",
       "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
+      ]
+    },
+    "PLE_500m": {
+      "href": "../../../../tests/data-files/external/MOD16A3GF.A2021001.h11v02.061.2022024075208_PLE_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Average of Potential Latent Heat Flux",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "J/m^2/day",
+          "scale": 10000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "ET_500m": {
+      "href": "../../../../tests/data-files/external/MOD16A3GF.A2021001.h11v02.061.2022024075208_ET_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Total of Evapotranspiration",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 500,
+          "unit": "kg/m^2/year",
+          "scale": 0.1
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "PET_500m": {
+      "href": "../../../../tests/data-files/external/MOD16A3GF.A2021001.h11v02.061.2022024075208_PET_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Total Potential Evapotranspiration",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 500,
+          "unit": "kg/m^2/year",
+          "scale": 0.1
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "LE_500m": {
+      "href": "../../../../tests/data-files/external/MOD16A3GF.A2021001.h11v02.061.2022024075208_LE_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Average of Latent Heat Flux",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "J/m^2/day",
+          "scale": 10000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "ET_QC_500m": {
+      "href": "../../../../tests/data-files/external/MOD16A3GF.A2021001.h11v02.061.2022024075208_ET_QC_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Evapotranspiration Quality Assessment",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500,
+          "unit": "Percent"
+        }
+      ],
+      "roles": [
+        "data"
       ]
     }
   },
@@ -145,7 +265,8 @@
     75.55535641397
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json"
   ],
   "collection": "modis-16A3GF-061"
 }
