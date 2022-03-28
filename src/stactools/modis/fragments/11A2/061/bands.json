@@ -1,6 +1,9 @@
 {
     "LST_Day_1km": {
         "name": "8-day daytime 1km grid Landsurface Temperature",
+        "roles": [
+            "temperature"
+        ],
         "raster:bands": [
             {
                 "data_type": "uint16",
@@ -42,6 +45,9 @@
     },
     "LST_Night_1km": {
         "name": "8-day nighttime 1km grid Landsurface Temperature",
+        "roles": [
+            "temperature"
+        ],
         "raster:bands": [
             {
                 "data_type": "uint16",
