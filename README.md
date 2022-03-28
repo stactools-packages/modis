@@ -22,7 +22,6 @@ This repository will assist you in the generation of STAC files for MODIS datase
 
 There is an example `Catalog` at `examples/catalog.json`.
 Inside that catalog are several MODIS v6.0 and v6.1 STAC `Collection`s and `Item`s.
-For an example of an item with COG assets, see [MOD10A2.A2022033.h09v05.061.2022042050729.json](examples/modis-061/modis-MOD10A2-061/MOD10A2.A2022033.h09v05.061.2022042050729/MOD10A2.A2022033.h09v05.061.2022042050729.json).
 
 ### Command-line Usage
 
@@ -52,8 +51,20 @@ $ scripts/create_expected.py
 
 This will create, validate, and save new test data items into `tests/data-files/expected` which are used for unit testing.
 
-Once you've got a pull request ready, please update the examples as well:
+Once you've got a pull request ready, please update the examples as well (you'll need to download the external test data files first, see [below](#running-tests)):
 
 ```
 $ stac modis create-catalog examples/file-list.txt examples
 ```
+
+### Running tests
+
+Because of the large number of MODIS products supported by this library and their asset file size, the default test suite does _not_ download all HDF files.
+To run all tests, use the `--runslow` option for `pytest`:
+
+```shell
+pytest --runslow
+```
+
+This will download HDF files for all 061 products to `tests/data-files/external`.
+Note that these files are required to create the `examples/` directory.

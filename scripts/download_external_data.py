@@ -1,6 +1,9 @@
-from typing import Dict
+#!/usr/bin/env python
 
-from stactools.testing.test_data import TestData
+import os
+import sys
+
+from azure.storage.blob import BlobServiceClient
 
 EXTERNAL_DATA_FILE_NAMES = [
     "MCD15A2H.A2022025.h01v11.061.2022035062702.hdf",
@@ -41,21 +44,33 @@ EXTERNAL_DATA_FILE_NAMES = [
     "MYD21A2.A2022025.h10v06.061.2022035072054.hdf",
 ]
 
-
-def create_external_data_dict() -> Dict[str, Dict[str, str]]:
-    external_data = dict()
-    for file_name in EXTERNAL_DATA_FILE_NAMES:
-        external_data[file_name] = {
-            "url":
-            "https://ai4epublictestdata.blob.core.windows.net/stactools/modis"
-            f"/{file_name}"
-        }
-        external_data[f"{file_name}.xml"] = {
-            "url":
-            "https://ai4epublictestdata.blob.core.windows.net/stactools/modis"
-            f"/{file_name}.xml"
-        }
-    return external_data
+sas = sys.argv[1]
+outdir = sys.argv[2]
+os.makedirs(outdir, exist_ok=True)
+account_client = BlobServiceClient("https://modiseuwest.blob.core.windows.net",
+                                   credential=sas)
+container_client = account_client.get_container_client("modis-061")
 
 
-test_data = TestData(__file__, create_external_data_dict())
+def download(path: str) -> None:
+    outpath = os.path.join(outdir, os.path.basename(path))
+    if os.path.exists(outpath):
+        print(f"Skipping {path}, already downloaded")
+        return
+    print(f"Downloading {path}")
+    blob = container_client.get_blob_client(path)
+    with open(outpath, "wb") as outfile:
+        stream = blob.download_blob()
+        outfile.write(stream.readall())
+
+
+for file_name in EXTERNAL_DATA_FILE_NAMES:
+    parts = file_name.split(".")
+    product = parts[0]
+    date = parts[1][1:]
+    horizontal = parts[2][1:3]
+    vertical = parts[2][4:6]
+    hdf_path = f"{product}/{horizontal}/{vertical}/{date}/{file_name}"
+    xml_path = f"{hdf_path}.xml"
+    download(xml_path)
+    download(hdf_path)
