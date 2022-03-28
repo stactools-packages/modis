@@ -1,0 +1,237 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MYD14A2.A2022025.h03v09.061.2022035001140",
+  "properties": {
+    "start_datetime": "2022-01-25T00:00:00Z",
+    "end_datetime": "2022-02-01T23:59:59Z",
+    "modis:horizontal-tile": 3,
+    "modis:vertical-tile": 9,
+    "modis:tile-id": "51003009",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "aqua",
+    "created": "2022-02-04T05:11:40Z",
+    "updated": "2022-02-03T23:23:11.946000Z",
+    "proj:epsg": null,
+    "proj:wkt2": "PROJCS[\"unnamed\",GEOGCS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",SPHEROID[\"Custom spheroid\",6371007.181,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Sinusoidal\"],PARAMETER[\"longitude_of_center\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"Meter\",1],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -15567307.275333,
+            -1111950.519667
+          ],
+          [
+            -15567307.275333,
+            0.0
+          ],
+          [
+            -16679257.795,
+            0.0
+          ],
+          [
+            -16679257.795,
+            -1111950.519667
+          ],
+          [
+            -15567307.275333,
+            -1111950.519667
+          ]
+        ]
+      ]
+    },
+    "proj:transform": [
+      926.625433055833,
+      0.0,
+      -16679257.795,
+      0.0,
+      -926.6254330558334,
+      0.0
+    ],
+    "proj:shape": [
+      1200,
+      1200
+    ],
+    "datetime": null
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -152.313991768763,
+          -9.99999999910197
+        ],
+        [
+          -150.015241588564,
+          0.0140311075676572
+        ],
+        [
+          -139.468212625991,
+          -0.000748817846227359
+        ],
+        [
+          -141.600434541414,
+          -10.0121698005882
+        ],
+        [
+          -152.313991768763,
+          -9.99999999910197
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Thermal Anomalies/Fire 8-Day"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Thermal Anomalies/Fire 8-Day"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../../tests/data-files/external/MYD14A2.A2022025.h03v09.061.2022035001140.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../../tests/data-files/external/MYD14A2.A2022025.h03v09.061.2022035001140.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "FireMask": {
+      "href": "../../../../../tests/data-files/external/MYD14A2.A2022025.h03v09.061.2022035001140_FireMask.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Confidence of fire",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "file:values": [
+        {
+          "values": [
+            0
+          ],
+          "summary": "Not processed (missing input data)"
+        },
+        {
+          "values": [
+            1
+          ],
+          "summary": "Not processed (obsolete; not used since Collection 1)"
+        },
+        {
+          "values": [
+            2
+          ],
+          "summary": "Not processed (other reason)"
+        },
+        {
+          "values": [
+            3
+          ],
+          "summary": "Non-fire water pixel"
+        },
+        {
+          "values": [
+            4
+          ],
+          "summary": "Cloud (land or water)"
+        },
+        {
+          "values": [
+            5
+          ],
+          "summary": "Non-fire land pixel"
+        },
+        {
+          "values": [
+            6
+          ],
+          "summary": "Unknown (land or water)"
+        },
+        {
+          "values": [
+            7
+          ],
+          "summary": "Fire (low confidence, land or water)"
+        },
+        {
+          "values": [
+            8
+          ],
+          "summary": "Fire (nominal confidence, land or water)"
+        },
+        {
+          "values": [
+            9
+          ],
+          "summary": "Fire (high confidence, land or water)"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "QA": {
+      "href": "../../../../../tests/data-files/external/MYD14A2.A2022025.h03v09.061.2022035001140_QA.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Pixel quality indicators",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "bbox": [
+    -152.313991768763,
+    -10.0121698005882,
+    -139.468212625991,
+    0.0140311075676572
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.0.0/schema.json"
+  ],
+  "collection": "modis-14A2-061"
+}

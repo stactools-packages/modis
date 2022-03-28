@@ -38,12 +38,16 @@ def create_modis_command(cli: Group) -> Command:
         "--description",
         help="The description of the output catalog",
         default="MODIS STAC Catalog containg a subset of MODIS assets")
+    @click.option("--cogify/--no-cogify",
+                  help="Create COGs for each file",
+                  default=False)
     def create_collection_command(
         infile: str,
         outdir: str,
         id: str,
         title: str,
         description: str,
+        cogify: bool,
     ) -> None:
         """Creates a STAC Catalog with collections and items defined by the URLs in INFILE.
 
@@ -67,15 +71,27 @@ def create_modis_command(cli: Group) -> Command:
             file = File(href)
             directory = os.path.dirname(href)
             prefix = os.path.splitext(os.path.basename(file.hdf_href))
+            has_hdf = os.path.exists(file.hdf_href)
             has_tiffs = any(
                 os.path.splitext(file_name)[1] == ".tif"
                 and file_name.startswith(prefix)
                 for file_name in os.listdir(directory))
             if has_tiffs:
                 cog_directory = os.path.abspath(directory)
+            elif cogify:
+                if has_hdf:
+                    cog_directory = os.path.abspath(directory)
+                else:
+                    print(
+                        f"WARNING: not cogifying {file.xml_href} because HDF file does not exist"
+                    )
+                    cogify = False
+                    cog_directory = None
             else:
                 cog_directory = None
-            item = stac.create_item(href, cog_directory=cog_directory)
+            item = stac.create_item(href,
+                                    cog_directory=cog_directory,
+                                    create_cogs=cogify)
             item.set_self_href(href)
             item_dict[file.version][file.collection_id()].append(item)
             collection_id_set.add(file.collection_id())

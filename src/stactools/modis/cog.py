@@ -32,11 +32,12 @@ def add_cogs(item: Item,
     if create:
         (paths, subdataset_names) = cogify(file.hdf_href, directory)
     else:
-        paths = [
-            os.path.join(directory, file_name)
-            for file_name in os.listdir(directory)
-            if os.path.splitext(file_name)[1] == ".tif"
-        ]
+        paths = []
+        for file_name in os.listdir(directory):
+            basename, ext = os.path.splitext(file_name)
+            if basename.startswith(os.path.splitext(
+                    item.id)) and ext == ".tif":
+                paths.append(os.path.join(directory, file_name))
         if not paths:
             raise ValueError("COG directory does not contain any cogs, "
                              f"and create=False: {directory}")

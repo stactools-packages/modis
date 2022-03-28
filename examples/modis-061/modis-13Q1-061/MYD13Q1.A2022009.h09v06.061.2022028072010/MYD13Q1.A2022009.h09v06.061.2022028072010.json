@@ -14,6 +14,47 @@
     "platform": "aqua",
     "created": "2022-01-28T12:20:10Z",
     "updated": "2022-01-28T06:31:42.841000Z",
+    "proj:epsg": null,
+    "proj:wkt2": "PROJCS[\"unnamed\",GEOGCS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",SPHEROID[\"Custom spheroid\",6371007.181,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Sinusoidal\"],PARAMETER[\"longitude_of_center\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"Meter\",1],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -8895604.157333,
+            2223901.039333
+          ],
+          [
+            -8895604.157333,
+            3335851.559
+          ],
+          [
+            -10007554.677,
+            3335851.559
+          ],
+          [
+            -10007554.677,
+            2223901.039333
+          ],
+          [
+            -8895604.157333,
+            2223901.039333
+          ]
+        ]
+      ]
+    },
+    "proj:transform": [
+      231.65635826395825,
+      0.0,
+      -10007554.677,
+      0.0,
+      -231.65635826395834,
+      3335851.559
+    ],
+    "proj:shape": [
+      4800,
+      4800
+    ],
     "datetime": null
   },
   "geometry": {
@@ -65,7 +106,7 @@
   ],
   "assets": {
     "hdf": {
-      "href": "../../../../tests/data-files/MYD13Q1.A2022009.h09v06.061.2022028072010.hdf",
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010.hdf",
       "type": "application/x-hdf",
       "title": "Source data containing all bands",
       "raster:bands": [
@@ -139,11 +180,221 @@
       ]
     },
     "metadata": {
-      "href": "../../../../tests/data-files/MYD13Q1.A2022009.h09v06.061.2022028072010.hdf.xml",
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010.hdf.xml",
       "type": "application/xml",
       "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
+      ]
+    },
+    "250m_16_days_blue_reflectance": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_blue_reflectance.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 3",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "250m_16_days_composite_day_of_the_year": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_composite_day_of_the_year.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Day of year VI pixel",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "unit": "Julian Day"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "250m_16_days_pixel_reliability": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_pixel_reliability.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Quality reliability of VI pixel",
+      "raster:bands": [
+        {
+          "data_type": "int8",
+          "spatial_resolution": 250,
+          "unit": "Rank"
+        }
+      ],
+      "file:values": [
+        {
+          "values": [
+            0
+          ],
+          "summary": "Good data, use with confidence"
+        },
+        {
+          "values": [
+            1
+          ],
+          "summary": "Marginal data, useful, but look at other QA information"
+        },
+        {
+          "values": [
+            2
+          ],
+          "summary": "Snow/Ice Target covered with snow/ice"
+        },
+        {
+          "values": [
+            3
+          ],
+          "summary": "Cloudy data"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "250m_16_days_NDVI": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_NDVI.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "16 day NDVI",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "unit": "NDVI",
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "250m_16_days_VI_Quality": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_VI_Quality.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "VI quality indicators",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 250
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "250m_16_days_relative_azimuth_angle": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_relative_azimuth_angle.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Relative azimuth angle of VI pixel",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "unit": "Degree",
+          "scale": 0.01
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "250m_16_days_EVI": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_EVI.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "16 day EVI",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "unit": "EVI",
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "250m_16_days_sun_zenith_angle": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_sun_zenith_angle.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Sun zenith angle of VI pixel",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "unit": "Degree",
+          "scale": 0.01
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "250m_16_days_MIR_reflectance": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_MIR_reflectance.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 7",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "250m_16_days_view_zenith_angle": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_view_zenith_angle.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "View zenith angle of VI Pixel",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "unit": "Degree",
+          "scale": 0.01
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "250m_16_days_NIR_reflectance": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_NIR_reflectance.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 2",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "250m_16_days_red_reflectance": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_red_reflectance.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 1",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
       ]
     }
   },
@@ -154,7 +405,9 @@
     30.0438375723808
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.0.0/schema.json"
   ],
   "collection": "modis-13Q1-061"
 }

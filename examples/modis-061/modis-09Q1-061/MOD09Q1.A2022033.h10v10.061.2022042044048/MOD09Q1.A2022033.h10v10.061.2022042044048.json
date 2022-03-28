@@ -14,6 +14,47 @@
     "platform": "terra",
     "created": "2022-02-11T04:40:48Z",
     "updated": "2022-02-10T22:51:55.839000Z",
+    "proj:epsg": null,
+    "proj:wkt2": "PROJCS[\"unnamed\",GEOGCS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",SPHEROID[\"Custom spheroid\",6371007.181,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Sinusoidal\"],PARAMETER[\"longitude_of_center\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"Meter\",1],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -7783653.637667,
+            -2223901.039333
+          ],
+          [
+            -7783653.637667,
+            -1111950.519667
+          ],
+          [
+            -8895604.157333,
+            -1111950.519667
+          ],
+          [
+            -8895604.157333,
+            -2223901.039333
+          ],
+          [
+            -7783653.637667,
+            -2223901.039333
+          ]
+        ]
+      ]
+    },
+    "proj:transform": [
+      231.65635826374987,
+      0.0,
+      -8895604.157333,
+      0.0,
+      -231.65635826374995,
+      -1111950.519667
+    ],
+    "proj:shape": [
+      4800,
+      4800
+    ],
     "datetime": null
   },
   "geometry": {
@@ -65,7 +106,7 @@
   ],
   "assets": {
     "hdf": {
-      "href": "../../../../tests/data-files/MOD09Q1.A2022033.h10v10.061.2022042044048.hdf",
+      "href": "../../../../tests/data-files/external/MOD09Q1.A2022033.h10v10.061.2022042044048.hdf",
       "type": "application/x-hdf",
       "title": "Source data containing all bands",
       "raster:bands": [
@@ -88,16 +129,106 @@
           "spatial_resolution": 250
         }
       ],
+      "eo:bands": [
+        {
+          "name": "sur_refl_b01",
+          "common_name": "red",
+          "center_wavelength": 0.645,
+          "full_width_half_max": 0.5
+        },
+        {
+          "name": "sur_refl_b02",
+          "common_name": "nir08",
+          "center_wavelength": 0.8585,
+          "full_width_half_max": 0.35
+        }
+      ],
       "roles": [
         "data"
       ]
     },
     "metadata": {
-      "href": "../../../../tests/data-files/MOD09Q1.A2022033.h10v10.061.2022042044048.hdf.xml",
+      "href": "../../../../tests/data-files/external/MOD09Q1.A2022033.h10v10.061.2022042044048.hdf.xml",
       "type": "application/xml",
       "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
+      ]
+    },
+    "sur_refl_b02": {
+      "href": "../../../../tests/data-files/external/MOD09Q1.A2022033.h10v10.061.2022042044048_sur_refl_b02.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 2 (841-876 nm)",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "scale": 0.0001
+        }
+      ],
+      "eo:bands": [
+        {
+          "name": "sur_refl_b02",
+          "common_name": "nir08",
+          "center_wavelength": 0.8585,
+          "full_width_half_max": 0.35
+        }
+      ],
+      "roles": [
+        "data",
+        "reflectance"
+      ]
+    },
+    "sur_refl_b01": {
+      "href": "../../../../tests/data-files/external/MOD09Q1.A2022033.h10v10.061.2022042044048_sur_refl_b01.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 1 (620-670 nm)",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "scale": 0.0001
+        }
+      ],
+      "eo:bands": [
+        {
+          "name": "sur_refl_b01",
+          "common_name": "red",
+          "center_wavelength": 0.645,
+          "full_width_half_max": 0.5
+        }
+      ],
+      "roles": [
+        "data",
+        "reflectance"
+      ]
+    },
+    "sur_refl_state_250m": {
+      "href": "../../../../tests/data-files/external/MOD09Q1.A2022033.h10v10.061.2022042044048_sur_refl_state_250m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance 250m State flags",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 250
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "sur_refl_qc_250m": {
+      "href": "../../../../tests/data-files/external/MOD09Q1.A2022033.h10v10.061.2022042044048_sur_refl_qc_250m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance 250m Band Quality Control flags",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 250
+        }
+      ],
+      "roles": [
+        "data"
       ]
     }
   },
@@ -108,7 +239,9 @@
     -9.94789001665572
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json"
   ],
   "collection": "modis-09Q1-061"
 }

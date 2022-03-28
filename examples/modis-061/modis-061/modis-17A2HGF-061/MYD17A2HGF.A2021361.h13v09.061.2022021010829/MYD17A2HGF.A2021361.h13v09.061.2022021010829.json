@@ -1,0 +1,200 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MYD17A2HGF.A2021361.h13v09.061.2022021010829",
+  "properties": {
+    "start_datetime": "2021-12-27T00:00:00Z",
+    "end_datetime": "2021-12-31T23:59:59Z",
+    "modis:horizontal-tile": 13,
+    "modis:vertical-tile": 9,
+    "modis:tile-id": "51013009",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "aqua",
+    "created": "2022-01-21T01:08:29Z",
+    "updated": "2022-01-20T19:12:09.442000Z",
+    "proj:epsg": null,
+    "proj:wkt2": "PROJCS[\"unnamed\",GEOGCS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",SPHEROID[\"Custom spheroid\",6371007.181,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Sinusoidal\"],PARAMETER[\"longitude_of_center\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"Meter\",1],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -4447802.078667,
+            -1111950.519667
+          ],
+          [
+            -4447802.078667,
+            0.0
+          ],
+          [
+            -5559752.598333,
+            0.0
+          ],
+          [
+            -5559752.598333,
+            -1111950.519667
+          ],
+          [
+            -4447802.078667,
+            -1111950.519667
+          ]
+        ]
+      ]
+    },
+    "proj:transform": [
+      463.31271652750013,
+      0.0,
+      -5559752.598333,
+      0.0,
+      -463.3127165279167,
+      0.0
+    ],
+    "proj:shape": [
+      2400,
+      2400
+    ],
+    "datetime": null
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -50.7713305895875,
+          -9.99999999910197
+        ],
+        [
+          -50.005174037715,
+          0.00432291256969055
+        ],
+        [
+          -39.8421028844678,
+          -6.85701132132887e-05
+        ],
+        [
+          -40.4506127682054,
+          -10.0037652971218
+        ],
+        [
+          -50.7713305895875,
+          -9.99999999910197
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Gross Primary Productivity 8-Day Gap-Filled"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Gross Primary Productivity 8-Day Gap-Filled"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../../tests/data-files/external/MYD17A2HGF.A2021361.h13v09.061.2022021010829.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "kg C/m^2",
+          "scale": 0.0001
+        },
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "kg C/m^2",
+          "scale": 0.0001
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../../tests/data-files/external/MYD17A2HGF.A2021361.h13v09.061.2022021010829.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "Gpp_500m": {
+      "href": "../../../../../tests/data-files/external/MYD17A2HGF.A2021361.h13v09.061.2022021010829_Gpp_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Gross Primary Productivity",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "kg C/m^2",
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "PsnNet_500m": {
+      "href": "../../../../../tests/data-files/external/MYD17A2HGF.A2021361.h13v09.061.2022021010829_PsnNet_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Net Photosynthesis",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "kg C/m^2",
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "Psn_QC_500m": {
+      "href": "../../../../../tests/data-files/external/MYD17A2HGF.A2021361.h13v09.061.2022021010829_Psn_QC_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Quality control indicators",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "bbox": [
+    -50.7713305895875,
+    -10.0037652971218,
+    -39.8421028844678,
+    0.00432291256969055
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json"
+  ],
+  "collection": "modis-17A2HGF-061"
+}

@@ -14,6 +14,47 @@
     "platform": "terra",
     "created": "2022-02-11T04:47:59Z",
     "updated": "2022-02-10T22:59:34.540000Z",
+    "proj:epsg": null,
+    "proj:wkt2": "PROJCS[\"unnamed\",GEOGCS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",SPHEROID[\"Custom spheroid\",6371007.181,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Sinusoidal\"],PARAMETER[\"longitude_of_center\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"Meter\",1],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -6671703.118,
+            3335851.559
+          ],
+          [
+            -6671703.118,
+            4447802.078667
+          ],
+          [
+            -7783653.637667,
+            4447802.078667
+          ],
+          [
+            -7783653.637667,
+            3335851.559
+          ],
+          [
+            -6671703.118,
+            3335851.559
+          ]
+        ]
+      ]
+    },
+    "proj:transform": [
+      926.6254330558338,
+      0.0,
+      -7783653.637667,
+      0.0,
+      -926.6254330558334,
+      4447802.078667
+    ],
+    "proj:shape": [
+      1200,
+      1200
+    ],
     "datetime": null
   },
   "geometry": {
@@ -65,7 +106,7 @@
   ],
   "assets": {
     "hdf": {
-      "href": "../../../../tests/data-files/MOD14A1.A2022033.h11v05.061.2022041234759.hdf",
+      "href": "../../../../tests/data-files/external/MOD14A1.A2022033.h11v05.061.2022041234759.hdf",
       "type": "application/x-hdf",
       "title": "Source data containing all bands",
       "raster:bands": [
@@ -219,11 +260,257 @@
       ]
     },
     "metadata": {
-      "href": "../../../../tests/data-files/MOD14A1.A2022033.h11v05.061.2022041234759.hdf.xml",
+      "href": "../../../../tests/data-files/external/MOD14A1.A2022033.h11v05.061.2022041234759.hdf.xml",
       "type": "application/xml",
       "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
+      ]
+    },
+    "MaxFRP": {
+      "href": "../../../../tests/data-files/external/MOD14A1.A2022033.h11v05.061.2022041234759_MaxFRP.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Maximum Fire Radiative Power",
+      "raster:bands": [
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "QA": {
+      "href": "../../../../tests/data-files/external/MOD14A1.A2022033.h11v05.061.2022041234759_QA.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Pixel quality indicators",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "FireMask": {
+      "href": "../../../../tests/data-files/external/MOD14A1.A2022033.h11v05.061.2022041234759_FireMask.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Confidence of fire",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "file:values": [
+        {
+          "values": [
+            0
+          ],
+          "summary": "Not processed (missing input data)"
+        },
+        {
+          "values": [
+            1
+          ],
+          "summary": "Not processed (obsolete; not used since Collection 1)"
+        },
+        {
+          "values": [
+            2
+          ],
+          "summary": "Not processed (other reason)"
+        },
+        {
+          "values": [
+            3
+          ],
+          "summary": "Non-fire water pixel"
+        },
+        {
+          "values": [
+            4
+          ],
+          "summary": "Cloud (land or water)"
+        },
+        {
+          "values": [
+            5
+          ],
+          "summary": "Non-fire land pixel"
+        },
+        {
+          "values": [
+            6
+          ],
+          "summary": "Unknown (land or water)"
+        },
+        {
+          "values": [
+            7
+          ],
+          "summary": "Fire (low confidence, land or water)"
+        },
+        {
+          "values": [
+            8
+          ],
+          "summary": "Fire (nominal confidence, land or water)"
+        },
+        {
+          "values": [
+            9
+          ],
+          "summary": "Fire (high confidence, land or water)"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "sample": {
+      "href": "../../../../tests/data-files/external/MOD14A1.A2022033.h11v05.061.2022041234759_sample.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Position of fire pixel within scan",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        }
+      ],
+      "roles": [
+        "data"
       ]
     }
   },
@@ -234,7 +521,9 @@
     40.0539543997624
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.0.0/schema.json"
   ],
   "collection": "modis-14A1-061"
 }

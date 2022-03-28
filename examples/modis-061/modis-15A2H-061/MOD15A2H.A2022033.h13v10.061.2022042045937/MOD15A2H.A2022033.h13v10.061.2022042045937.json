@@ -14,6 +14,47 @@
     "platform": "terra",
     "created": "2022-02-11T04:59:37Z",
     "updated": "2022-02-10T23:09:54.486000Z",
+    "proj:epsg": null,
+    "proj:wkt2": "PROJCS[\"unnamed\",GEOGCS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",SPHEROID[\"Custom spheroid\",6371007.181,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Sinusoidal\"],PARAMETER[\"longitude_of_center\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"Meter\",1],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -4447802.078667,
+            -2223901.039333
+          ],
+          [
+            -4447802.078667,
+            -1111950.519667
+          ],
+          [
+            -5559752.598333,
+            -1111950.519667
+          ],
+          [
+            -5559752.598333,
+            -2223901.039333
+          ],
+          [
+            -4447802.078667,
+            -2223901.039333
+          ]
+        ]
+      ]
+    },
+    "proj:transform": [
+      463.31271652750013,
+      0.0,
+      -5559752.598333,
+      0.0,
+      -463.3127165274999,
+      -1111950.519667
+    ],
+    "proj:shape": [
+      2400,
+      2400
+    ],
     "datetime": null
   },
   "geometry": {
@@ -65,7 +106,7 @@
   ],
   "assets": {
     "hdf": {
-      "href": "../../../../tests/data-files/MOD15A2H.A2022033.h13v10.061.2022042045937.hdf",
+      "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937.hdf",
       "type": "application/x-hdf",
       "title": "Source data containing all bands",
       "raster:bands": [
@@ -107,11 +148,105 @@
       ]
     },
     "metadata": {
-      "href": "../../../../tests/data-files/MOD15A2H.A2022033.h13v10.061.2022042045937.hdf.xml",
+      "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937.hdf.xml",
       "type": "application/xml",
       "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
+      ]
+    },
+    "FparStdDev_500m": {
+      "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937_FparStdDev_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Standard deviation of FPAR",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500,
+          "unit": "Percent",
+          "scale": 0.01
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "FparLai_QC": {
+      "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937_FparLai_QC.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Quality for FPAR and LAI",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "Fpar_500m": {
+      "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937_Fpar_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Fraction of Photosynthetically Active Radiation",
+      "description": "The fraction of incident photosynthetically active radiation (400-700 nm) absorbed by the green elements of a vegetation canopy.",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500,
+          "unit": "Percent",
+          "scale": 0.01
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "Lai_500m": {
+      "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937_Lai_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Leaf Area Index",
+      "description": "The one-sided green leaf area per unit ground area in broadleaf canopies and as one-half the total needle surface area per unit ground area in coniferous canopies",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500,
+          "unit": "m^2/m^2",
+          "scale": 0.1
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "FparExtra_QC": {
+      "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937_FparExtra_QC.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Extra detail Quality for FPAR and LAI",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "LaiStdDev_500m": {
+      "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937_LaiStdDev_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Standard deviation of LAI",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500,
+          "unit": "m^2/m^2",
+          "scale": 0.1
+        }
+      ],
+      "roles": [
+        "data"
       ]
     }
   },
@@ -122,7 +257,8 @@
     -9.95361312745358
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json"
   ],
   "collection": "modis-15A2H-061"
 }
