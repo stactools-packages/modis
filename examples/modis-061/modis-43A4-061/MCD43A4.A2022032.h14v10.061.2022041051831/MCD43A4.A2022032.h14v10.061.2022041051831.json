@@ -175,6 +175,71 @@
           "scale": 0.0001
         }
       ],
+      "eo:bands": [
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band1"
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band2"
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band3"
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band4"
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band5"
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band6"
+        },
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band7"
+        },
+        {
+          "name": "Nadir_Reflectance_Band1",
+          "common_name": "red",
+          "center_wavelength": 0.645,
+          "full_width_half_max": 0.5
+        },
+        {
+          "name": "Nadir_Reflectance_Band2",
+          "common_name": "nir08",
+          "center_wavelength": 0.8585,
+          "full_width_half_max": 0.35
+        },
+        {
+          "name": "Nadir_Reflectance_Band3",
+          "common_name": "blue",
+          "center_wavelength": 0.469,
+          "full_width_half_max": 0.2
+        },
+        {
+          "name": "Nadir_Reflectance_Band4",
+          "common_name": "green",
+          "center_wavelength": 0.555,
+          "full_width_half_max": 0.2
+        },
+        {
+          "name": "Nadir_Reflectance_Band5",
+          "common_name": "lwir12",
+          "center_wavelength": 1.24,
+          "full_width_half_max": 0.2
+        },
+        {
+          "name": "Nadir_Reflectance_Band6",
+          "common_name": "swir16",
+          "center_wavelength": 1.64,
+          "full_width_half_max": 0.24
+        },
+        {
+          "name": "Nadir_Reflectance_Band7",
+          "common_name": "swir22",
+          "center_wavelength": 2.13,
+          "full_width_half_max": 0.5
+        }
+      ],
       "roles": [
         "data"
       ]
@@ -195,6 +260,11 @@
         {
           "data_type": "uint8",
           "spatial_resolution": 500
+        }
+      ],
+      "eo:bands": [
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band4"
         }
       ],
       "file:values": [
@@ -226,8 +296,17 @@
           "scale": 0.0001
         }
       ],
+      "eo:bands": [
+        {
+          "name": "Nadir_Reflectance_Band6",
+          "common_name": "swir16",
+          "center_wavelength": 1.64,
+          "full_width_half_max": 0.24
+        }
+      ],
       "roles": [
-        "data"
+        "data",
+        "reflectance"
       ]
     },
     "Nadir_Reflectance_Band7": {
@@ -241,8 +320,17 @@
           "scale": 0.0001
         }
       ],
+      "eo:bands": [
+        {
+          "name": "Nadir_Reflectance_Band7",
+          "common_name": "swir22",
+          "center_wavelength": 2.13,
+          "full_width_half_max": 0.5
+        }
+      ],
       "roles": [
-        "data"
+        "data",
+        "reflectance"
       ]
     },
     "BRDF_Albedo_Band_Mandatory_Quality_Band5": {
@@ -253,6 +341,11 @@
         {
           "data_type": "uint8",
           "spatial_resolution": 500
+        }
+      ],
+      "eo:bands": [
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band5"
         }
       ],
       "file:values": [
@@ -281,6 +374,11 @@
         {
           "data_type": "uint8",
           "spatial_resolution": 500
+        }
+      ],
+      "eo:bands": [
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band7"
         }
       ],
       "file:values": [
@@ -312,8 +410,17 @@
           "scale": 0.0001
         }
       ],
+      "eo:bands": [
+        {
+          "name": "Nadir_Reflectance_Band5",
+          "common_name": "lwir12",
+          "center_wavelength": 1.24,
+          "full_width_half_max": 0.2
+        }
+      ],
       "roles": [
-        "data"
+        "data",
+        "reflectance"
       ]
     },
     "Nadir_Reflectance_Band4": {
@@ -327,8 +434,17 @@
           "scale": 0.0001
         }
       ],
+      "eo:bands": [
+        {
+          "name": "Nadir_Reflectance_Band4",
+          "common_name": "green",
+          "center_wavelength": 0.555,
+          "full_width_half_max": 0.2
+        }
+      ],
       "roles": [
-        "data"
+        "data",
+        "reflectance"
       ]
     },
     "BRDF_Albedo_Band_Mandatory_Quality_Band6": {
@@ -339,6 +455,11 @@
         {
           "data_type": "uint8",
           "spatial_resolution": 500
+        }
+      ],
+      "eo:bands": [
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band6"
         }
       ],
       "file:values": [
@@ -367,6 +488,11 @@
         {
           "data_type": "uint8",
           "spatial_resolution": 500
+        }
+      ],
+      "eo:bands": [
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band2"
         }
       ],
       "file:values": [
@@ -398,8 +524,17 @@
           "scale": 0.0001
         }
       ],
+      "eo:bands": [
+        {
+          "name": "Nadir_Reflectance_Band1",
+          "common_name": "red",
+          "center_wavelength": 0.645,
+          "full_width_half_max": 0.5
+        }
+      ],
       "roles": [
-        "data"
+        "data",
+        "reflectance"
       ]
     },
     "BRDF_Albedo_Band_Mandatory_Quality_Band3": {
@@ -410,6 +545,11 @@
         {
           "data_type": "uint8",
           "spatial_resolution": 500
+        }
+      ],
+      "eo:bands": [
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band3"
         }
       ],
       "file:values": [
@@ -440,6 +580,11 @@
           "spatial_resolution": 500
         }
       ],
+      "eo:bands": [
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band1"
+        }
+      ],
       "file:values": [
         {
           "values": [
@@ -461,7 +606,7 @@
     "Nadir_Reflectance_Band3": {
       "href": "../../../../tests/data-files/external/MCD43A4.A2022032.h14v10.061.2022041051831_Nadir_Reflectance_Band3.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "ENBAR at local solar noon for Band 3",
+      "title": "NBAR at local solar noon for Band 3",
       "raster:bands": [
         {
           "data_type": "int16",
@@ -469,8 +614,17 @@
           "scale": 0.0001
         }
       ],
+      "eo:bands": [
+        {
+          "name": "Nadir_Reflectance_Band3",
+          "common_name": "blue",
+          "center_wavelength": 0.469,
+          "full_width_half_max": 0.2
+        }
+      ],
       "roles": [
-        "data"
+        "data",
+        "reflectance"
       ]
     },
     "Nadir_Reflectance_Band2": {
@@ -484,8 +638,17 @@
           "scale": 0.0001
         }
       ],
+      "eo:bands": [
+        {
+          "name": "Nadir_Reflectance_Band2",
+          "common_name": "nir08",
+          "center_wavelength": 0.8585,
+          "full_width_half_max": 0.35
+        }
+      ],
       "roles": [
-        "data"
+        "data",
+        "reflectance"
       ]
     }
   },
