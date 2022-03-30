@@ -1,6 +1,5 @@
 {
     "FireMask": {
-        "name": "Confidence of fire",
         "raster:bands": [
             {
                 "data_type": "uint8",
@@ -34,10 +33,114 @@
                 "data_type": "uint8",
                 "spatial_resolution": 1000
             }
-        ]
+        ],
+        "file:values": [
+            {
+                "values": [
+                    0
+                ],
+                "summary": "Not processed (missing input data)"
+            },
+            {
+                "values": [
+                    1
+                ],
+                "summary": "Not processed (obsolete; not used since Collection 1)"
+            },
+            {
+                "values": [
+                    2
+                ],
+                "summary": "Not processed (other reason)"
+            },
+            {
+                "values": [
+                    3
+                ],
+                "summary": "Non-fire water pixel"
+            },
+            {
+                "values": [
+                    4
+                ],
+                "summary": "Cloud (land or water)"
+            },
+            {
+                "values": [
+                    5
+                ],
+                "summary": "Non-fire land pixel"
+            },
+            {
+                "values": [
+                    6
+                ],
+                "summary": "Unknown (land or water)"
+            },
+            {
+                "values": [
+                    7
+                ],
+                "summary": "Fire (low confidence, land or water)"
+            },
+            {
+                "values": [
+                    8
+                ],
+                "summary": "Fire (nominal confidence, land or water)"
+            },
+            {
+                "values": [
+                    9
+                ],
+                "summary": "Fire (high confidence, land or water)"
+            }
+        ],
+        "classification:classes": [
+            {
+                "value": 0,
+                "description": "Not processed (missing input data)"
+            },
+            {
+                "value": 1,
+                "description": "Not processed (obsolete; not used since Collection 1)"
+            },
+            {
+                "value": 2,
+                "description": "Not processed (other reason)"
+            },
+            {
+                "value": 3,
+                "description": "Non-fire water pixel"
+            },
+            {
+                "value": 4,
+                "description": "Cloud (land or water)"
+            },
+            {
+                "value": 5,
+                "description": "Non-fire land pixel"
+            },
+            {
+                "value": 6,
+                "description": "Unknown (land or water)"
+            },
+            {
+                "value": 7,
+                "description": "Fire (low confidence, land or water)"
+            },
+            {
+                "value": 8,
+                "description": "Fire (nominal confidence, land or water)"
+            },
+            {
+                "value": 9,
+                "description": "Fire (high confidence, land or water)"
+            }
+        ],
+        "title": "Confidence of fire"
     },
     "QA": {
-        "name": "Pixel quality indicators",
         "raster:bands": [
             {
                 "data_type": "uint8",
@@ -71,10 +174,10 @@
                 "data_type": "uint8",
                 "spatial_resolution": 1000
             }
-        ]
+        ],
+        "title": "Pixel quality indicators"
     },
     "MaxFRP": {
-        "name": "Maximum Fire Radiative Power",
         "raster:bands": [
             {
                 "data_type": "uint32",
@@ -124,10 +227,10 @@
                 "scale": 0.1,
                 "spatial_resolution": 1000
             }
-        ]
+        ],
+        "title": "Maximum Fire Radiative Power"
     },
     "sample": {
-        "name": "Position of fire pixel within scan",
         "raster:bands": [
             {
                 "data_type": "uint16",
@@ -161,6 +264,7 @@
                 "data_type": "uint16",
                 "spatial_resolution": 1000
             }
-        ]
+        ],
+        "title": "Position of fire pixel within scan"
     }
 }

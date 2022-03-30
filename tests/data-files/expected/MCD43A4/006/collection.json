@@ -43,6 +43,104 @@
         "metadata"
       ],
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
+    },
+    "Nadir_Reflectance_Band1": {
+      "title": "NBAR at local solar noon for band 1",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Nadir_Reflectance_Band2": {
+      "title": "NBAR at local solar noon for band 2",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Nadir_Reflectance_Band3": {
+      "title": "NBAR at local solar noon for band 3",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Nadir_Reflectance_Band4": {
+      "title": "NBAR at local solar noon for band 4",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Nadir_Reflectance_Band5": {
+      "title": "NBAR at local solar noon for band 5",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Nadir_Reflectance_Band6": {
+      "title": "NBAR at local solar noon for band 6",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Nadir_Reflectance_Band7": {
+      "title": "NBAR at local solar noon for band 7",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "BRDF_Albedo_Band_Mandatory_Quality_Band1": {
+      "title": "BRDF albedo mandatory quality for band 1",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "BRDF_Albedo_Band_Mandatory_Quality_Band2": {
+      "title": "BRDF albedo mandatory quality for band 2",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "BRDF_Albedo_Band_Mandatory_Quality_Band3": {
+      "title": "BRDF albedo mandatory quality for band 3",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "BRDF_Albedo_Band_Mandatory_Quality_Band4": {
+      "title": "BRDF albedo mandatory quality for band 4",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "BRDF_Albedo_Band_Mandatory_Quality_Band5": {
+      "title": "BRDF albedo mandatory quality for band 5",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "BRDF_Albedo_Band_Mandatory_Quality_Band6": {
+      "title": "BRDF albedo mandatory quality for band 6",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "BRDF_Albedo_Band_Mandatory_Quality_Band7": {
+      "title": "BRDF albedo mandatory quality for band 7",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },
   "title": "MCD43A4 v006 MODIS/Terra+Aqua Nadir BRDF-Adjusted Reflectance (NBAR) Daily L3 Global 500 m SIN Grid",

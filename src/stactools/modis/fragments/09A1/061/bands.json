@@ -1,6 +1,5 @@
 {
     "sur_refl_b01": {
-        "name": "Surface Reflectance Band 1 (620-670 nm)",
         "roles": [
             "reflectance"
         ],
@@ -9,7 +8,7 @@
                 "name": "sur_refl_b01",
                 "common_name": "red",
                 "center_wavelength": 0.645,
-                "full_width_half_max": 0.50
+                "full_width_half_max": 0.5
             }
         ],
         "raster:bands": [
@@ -18,10 +17,10 @@
                 "scale": 0.0001,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Surface Reflectance Band 1 (620-670 nm)"
     },
     "sur_refl_b02": {
-        "name": "Surface Reflectance Band 2 (841-876 nm)",
         "roles": [
             "reflectance"
         ],
@@ -39,10 +38,10 @@
                 "scale": 0.0001,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Surface Reflectance Band 2 (841-876 nm)"
     },
     "sur_refl_b03": {
-        "name": "Surface Reflectance Band 3 (459-479 nm)",
         "roles": [
             "reflectance"
         ],
@@ -51,7 +50,7 @@
                 "name": "sur_refl_b03",
                 "common_name": "blue",
                 "center_wavelength": 0.469,
-                "full_width_half_max": 0.20
+                "full_width_half_max": 0.2
             }
         ],
         "raster:bands": [
@@ -60,10 +59,10 @@
                 "scale": 0.0001,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Surface Reflectance Band 3 (459-479 nm)"
     },
     "sur_refl_b04": {
-        "name": "Surface Reflectance Band 4 (545-565 nm)",
         "roles": [
             "reflectance"
         ],
@@ -72,7 +71,7 @@
                 "name": "sur_refl_b04",
                 "common_name": "green",
                 "center_wavelength": 0.555,
-                "full_width_half_max": 0.20
+                "full_width_half_max": 0.2
             }
         ],
         "raster:bands": [
@@ -81,10 +80,10 @@
                 "scale": 0.0001,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Surface Reflectance Band 4 (545-565 nm)"
     },
     "sur_refl_b05": {
-        "name": "Surface Reflectance Band 5 (1230-1250 nm)",
         "roles": [
             "reflectance"
         ],
@@ -92,8 +91,8 @@
             {
                 "name": "sur_refl_b05",
                 "common_name": "lwir12",
-                "center_wavelength": 1.240,
-                "full_width_half_max": 0.20
+                "center_wavelength": 1.24,
+                "full_width_half_max": 0.2
             }
         ],
         "raster:bands": [
@@ -102,10 +101,10 @@
                 "scale": 0.0001,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Surface Reflectance Band 5 (1230-1250 nm)"
     },
     "sur_refl_b06": {
-        "name": "Surface Reflectance Band 6 (1628-1652 nm)",
         "roles": [
             "reflectance"
         ],
@@ -113,7 +112,7 @@
             {
                 "name": "sur_refl_b06",
                 "common_name": "swir16",
-                "center_wavelength": 1.640,
+                "center_wavelength": 1.64,
                 "full_width_half_max": 0.24
             }
         ],
@@ -123,10 +122,10 @@
                 "scale": 0.0001,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Surface Reflectance Band 6 (1628-1652 nm)"
     },
     "sur_refl_b07": {
-        "name": "Surface Reflectance Band 7 (2105-2155 nm)",
         "roles": [
             "reflectance"
         ],
@@ -134,8 +133,8 @@
             {
                 "name": "sur_refl_b07",
                 "common_name": "swir22",
-                "center_wavelength": 2.130,
-                "full_width_half_max": 0.50
+                "center_wavelength": 2.13,
+                "full_width_half_max": 0.5
             }
         ],
         "raster:bands": [
@@ -144,19 +143,19 @@
                 "scale": 0.0001,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Surface Reflectance Band 7 (2105-2155 nm)"
     },
     "sur_refl_qc_500m": {
-        "name": "Surface reflectance 500m band quality control flags",
         "raster:bands": [
             {
                 "data_type": "uint32",
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Surface reflectance 500m band quality control flags"
     },
     "sur_refl_szen": {
-        "name": "MODIS solar zenith angle",
         "raster:bands": [
             {
                 "data_type": "int16",
@@ -164,10 +163,10 @@
                 "scale": 0.01,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "MODIS solar zenith angle"
     },
     "sur_refl_vzen": {
-        "name": "MODIS view zenith angle",
         "raster:bands": [
             {
                 "data_type": "int16",
@@ -175,10 +174,10 @@
                 "scale": 0.01,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "MODIS view zenith angle"
     },
     "sur_refl_raz": {
-        "name": "MODIS relative azimuth angle",
         "raster:bands": [
             {
                 "data_type": "int16",
@@ -186,25 +185,26 @@
                 "scale": 0.01,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "MODIS relative azimuth angle"
     },
     "sur_refl_state_500m": {
-        "name": "Surface reflectance 500m state flags",
         "raster:bands": [
             {
                 "data_type": "uint16",
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Surface reflectance 500m state flags"
     },
     "sur_refl_day_of_year": {
-        "name": "Day of the year for the pixel",
         "raster:bands": [
             {
                 "data_type": "uint16",
                 "unit": "Julian Day",
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Day of the year for the pixel"
     }
 }

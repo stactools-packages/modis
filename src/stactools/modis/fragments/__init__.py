@@ -12,7 +12,6 @@ class Fragments:
         """Creates a new group of fragments for the provided collection and version."""
         self._collection = collection
         self._version = version
-        self._optional_file_names = ["raster-bands.json"]
 
     def collection(self) -> Any:
         """Loads the collection.json for the given catalog id.
@@ -38,21 +37,13 @@ class Fragments:
         """
         return self._load("bands.json")
 
-    def item_properties(self) -> Any:
-        """Loads the item-properties.json for the given catalog id.
+    def item(self) -> Any:
+        """Loads the item.json for the given catalog id.
 
         Returns:
             Any: The contents of the fragment file, parsed as JSON.
         """
-        return self._load("item-properties.json")
-
-    def file_info(self) -> Any:
-        """Loads the file-info.json for the given catalog id.
-
-        Returns:
-            Any: The contents of the fragment file, parsed as JSON.
-        """
-        return self._load("file-info.json")
+        return self._load("item.json")
 
     def _load(self, file_name: str) -> Any:
         package = "stactools.modis.fragments"
@@ -60,8 +51,6 @@ class Fragments:
         if pkg_resources.resource_exists(package, path):
             with pkg_resources.resource_stream(package, path) as stream:
                 return json.load(stream)
-        elif file_name in self._optional_file_names:
-            return None
         else:
             raise FragmentMissing(
                 f"Fragment missing for collection={self._collection}, "

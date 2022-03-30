@@ -1,6 +1,5 @@
 {
     "sur_refl_b01": {
-        "name": "Surface Reflectance Band 1 (620-670 nm)",
         "roles": [
             "reflectance"
         ],
@@ -9,7 +8,7 @@
                 "name": "sur_refl_b01",
                 "common_name": "red",
                 "center_wavelength": 0.645,
-                "full_width_half_max": 0.50
+                "full_width_half_max": 0.5
             }
         ],
         "raster:bands": [
@@ -18,10 +17,10 @@
                 "scale": 0.0001,
                 "spatial_resolution": 250
             }
-        ]
+        ],
+        "title": "Surface Reflectance Band 1 (620-670 nm)"
     },
     "sur_refl_b02": {
-        "name": "Surface Reflectance Band 2 (841-876 nm)",
         "roles": [
             "reflectance"
         ],
@@ -39,24 +38,25 @@
                 "scale": 0.0001,
                 "spatial_resolution": 250
             }
-        ]
+        ],
+        "title": "Surface Reflectance Band 2 (841-876 nm)"
     },
     "sur_refl_state_250m": {
-        "name": "Surface Reflectance 250m State flags",
         "raster:bands": [
             {
                 "data_type": "uint16",
                 "spatial_resolution": 250
             }
-        ]
+        ],
+        "title": "Surface Reflectance 250m State flags"
     },
     "sur_refl_qc_250m": {
-        "name": "Surface Reflectance 250m Band Quality Control flags",
         "raster:bands": [
             {
                 "data_type": "uint16",
                 "spatial_resolution": 250
             }
-        ]
+        ],
+        "title": "Surface Reflectance 250m Band Quality Control flags"
     }
 }

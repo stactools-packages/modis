@@ -1,6 +1,5 @@
 {
     "Gpp_500m": {
-        "name": "Gross Primary Productivity",
         "raster:bands": [
             {
                 "data_type": "uint16",
@@ -8,10 +7,10 @@
                 "scale": 0.0001,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Gross Primary Productivity"
     },
     "Npp_500m": {
-        "name": "Net Primary Productivity",
         "raster:bands": [
             {
                 "data_type": "int16",
@@ -19,16 +18,17 @@
                 "scale": 0.0001,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Net Primary Productivity"
     },
     "Npp_QC_500m": {
-        "name": "Quality control",
         "raster:bands": [
             {
                 "data_type": "uint8",
                 "unit": "Percent",
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Quality control"
     }
 }

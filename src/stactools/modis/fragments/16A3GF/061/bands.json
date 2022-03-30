@@ -1,6 +1,5 @@
 {
     "ET_500m": {
-        "name": "Total of Evapotranspiration",
         "raster:bands": [
             {
                 "data_type": "uint16",
@@ -8,10 +7,10 @@
                 "scale": 0.1,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Total of Evapotranspiration"
     },
     "LE_500m": {
-        "name": "Average of Latent Heat Flux",
         "raster:bands": [
             {
                 "data_type": "int16",
@@ -19,10 +18,10 @@
                 "scale": 10000,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Average of Latent Heat Flux"
     },
     "PET_500m": {
-        "name": "Total Potential Evapotranspiration",
         "raster:bands": [
             {
                 "data_type": "uint16",
@@ -30,10 +29,10 @@
                 "scale": 0.1,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Total Potential Evapotranspiration"
     },
     "PLE_500m": {
-        "name": "Average of Potential Latent Heat Flux",
         "raster:bands": [
             {
                 "data_type": "int16",
@@ -41,16 +40,17 @@
                 "scale": 10000,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Average of Potential Latent Heat Flux"
     },
     "ET_QC_500m": {
-        "name": "Evapotranspiration Quality Assessment",
         "raster:bands": [
             {
                 "data_type": "uint8",
                 "unit": "Percent",
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Evapotranspiration Quality Assessment"
     }
 }

@@ -1,5 +1,7 @@
 from pystac import MediaType
 
+CLASSIFICATION_EXTENSION_HREF = ("https://stac-extensions.github.io/"
+                                 "classification/v1.0.0/schema.json")
 HDF_ASSET_KEY = "hdf"
 HDF_ASSET_PROPERTIES = {
     "type": MediaType.HDF,

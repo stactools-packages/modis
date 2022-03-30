@@ -37,6 +37,7 @@
     }
   ],
   "stac_extensions": [
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
     "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
@@ -54,6 +55,75 @@
         "metadata"
       ],
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
+    },
+    "Burn_Date": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "unit": "Day",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Burn day of year",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Burn_Date_Uncertainty": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "unit": "Day",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Estimated uncertainty in burn day",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "QA": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Quality Assurance Indicators",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "First_Day": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "unit": "Day",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "First day of the year of reliable change detection",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Last_Day": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "unit": "Day",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Last day of the year of reliable change detection",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },
   "sci:publications": [

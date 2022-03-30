@@ -43,6 +43,20 @@
         "metadata"
       ],
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
+    },
+    "Npp_500m": {
+      "title": "Net Primary Productivity",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Npp_QC_500m": {
+      "title": "Quality control Bits",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },
   "title": "MODIS/Terra Net Primary Production Gap-Filled Yearly L4 Global 500 m SIN Grid",

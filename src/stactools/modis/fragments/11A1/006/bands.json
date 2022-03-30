@@ -1,38 +1,38 @@
 {
     "LST_Day_1km": {
-        "name": "Daytime Land Surface Temperature"
+        "title": "Daytime Land Surface Temperature"
     },
     "QC_Day": {
-        "name": "Daytime LST Quality Indicators"
+        "title": "Daytime LST Quality Indicators"
     },
     "Day_view_time": {
-        "name": "Local time of day observation"
+        "title": "Local time of day observation"
     },
     "Day_view_angl": {
-        "name": "View zenith angle of day observation"
+        "title": "View zenith angle of day observation"
     },
     "LST_Night_1km": {
-        "name": "Nighttime Land Surface Temperature"
+        "title": "Nighttime Land Surface Temperature"
     },
     "QC_Night": {
-        "name": "Nighttime LST Quality indicators"
+        "title": "Nighttime LST Quality indicators"
     },
     "Night_view_time": {
-        "name": "Local time of night observation"
+        "title": "Local time of night observation"
     },
     "Night_view_angl": {
-        "name": "View zenith angle of night observation"
+        "title": "View zenith angle of night observation"
     },
     "Emis_31": {
-        "name": "Band 31 emissivity"
+        "title": "Band 31 emissivity"
     },
     "Emis_32": {
-        "name": "Band 32 emissivity"
+        "title": "Band 32 emissivity"
     },
     "Clear_day_cov": {
-        "name": "Day clear-sky coverage"
+        "title": "Day clear-sky coverage"
     },
     "Clear_night_cov": {
-        "name": "Night clear-sky coverage"
+        "title": "Night clear-sky coverage"
     }
 }
