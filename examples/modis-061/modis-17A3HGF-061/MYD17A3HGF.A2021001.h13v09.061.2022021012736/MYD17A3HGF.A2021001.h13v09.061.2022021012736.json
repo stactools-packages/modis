@@ -109,25 +109,6 @@
       "href": "../../../../tests/data-files/external/MYD17A3HGF.A2021001.h13v09.061.2022021012736.hdf",
       "type": "application/x-hdf",
       "title": "Source data containing all bands",
-      "raster:bands": [
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 500,
-          "unit": "kg C/m^2",
-          "scale": 0.0001
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "kg C/m^2",
-          "scale": 0.0001
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 500,
-          "unit": "Percent"
-        }
-      ],
       "roles": [
         "data"
       ]
@@ -195,8 +176,8 @@
     0.00432291256969055
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/projection/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
   ],
   "collection": "modis-17A3HGF-061"
 }
