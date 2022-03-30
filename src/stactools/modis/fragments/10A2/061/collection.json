@@ -9,6 +9,11 @@
             "rel": "cite-as",
             "href": "https://doi.org/10.5067/MODIS/MYD10A2.061",
             "title": "MODIS/Aqua Snow Cover 8-Day L3 Global 500m SIN Grid, Version 61"
+        },
+        {
+            "rel": "license",
+            "href": "https://nsidc.org/about/use_copyright.html",
+            "title": "Use and Copyright | National Snow and Ice Data Center"
         }
     ],
     "title": "MODIS Snow Cover 8-day",

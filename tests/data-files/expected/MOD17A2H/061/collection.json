@@ -36,6 +36,11 @@
       "title": "LP DAAC - MYD17A2H"
     },
     {
+      "rel": "license",
+      "href": "https://lpdaac.usgs.gov/data/data-citation-and-policies/",
+      "title": "LP DAAC - Data Citation and Policies"
+    },
+    {
       "rel": "item",
       "href": "./MOD17A2H.A2022025.h08v05.061.2022035065002/MOD17A2H.A2022025.h08v05.061.2022035065002.json",
       "type": "application/json"

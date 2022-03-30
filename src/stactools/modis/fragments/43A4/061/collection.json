@@ -14,6 +14,11 @@
             "rel": "cite-as",
             "href": "https://doi.org/10.5067/MODIS/MCD43A4.061",
             "title": "LP DAAC - MCD43A4"
+        },
+        {
+            "rel": "license",
+            "href": "https://lpdaac.usgs.gov/data/data-citation-and-policies/",
+            "title": "LP DAAC - Data Citation and Policies"
         }
     ],
     "title": "MODIS Nadir BRDF-Adjusted Reflectance (NBAR) Daily",
