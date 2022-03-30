@@ -49,6 +49,27 @@
         "metadata"
       ],
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
+    },
+    "Gpp_500m": {
+      "title": "Gross Primary Productivity",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "PsnNet_500m": {
+      "title": "Net Photosynthesis",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Psn_QC_500m": {
+      "title": "Quality control indicators",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },
   "title": "MODIS/Terra Gross Primary Productivity 8-Day L4 Global 500 m SIN",

@@ -217,6 +217,48 @@
           "summary": "Fire (high confidence, land or water)"
         }
       ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Not processed (missing input data)"
+        },
+        {
+          "value": 1,
+          "description": "Not processed (obsolete; not used since Collection 1)"
+        },
+        {
+          "value": 2,
+          "description": "Not processed (other reason)"
+        },
+        {
+          "value": 3,
+          "description": "Non-fire water pixel"
+        },
+        {
+          "value": 4,
+          "description": "Cloud (land or water)"
+        },
+        {
+          "value": 5,
+          "description": "Non-fire land pixel"
+        },
+        {
+          "value": 6,
+          "description": "Unknown (land or water)"
+        },
+        {
+          "value": 7,
+          "description": "Fire (low confidence, land or water)"
+        },
+        {
+          "value": 8,
+          "description": "Fire (nominal confidence, land or water)"
+        },
+        {
+          "value": 9,
+          "description": "Fire (high confidence, land or water)"
+        }
+      ],
       "roles": [
         "data"
       ]
@@ -231,7 +273,8 @@
   "stac_extensions": [
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
     "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/file/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/file/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/classification/v1.0.0/schema.json"
   ],
   "collection": "modis-14A2-061"
 }

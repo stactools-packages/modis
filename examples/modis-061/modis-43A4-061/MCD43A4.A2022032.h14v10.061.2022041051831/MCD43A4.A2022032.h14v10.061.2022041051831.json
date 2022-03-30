@@ -281,6 +281,16 @@
           "summary": "Processed, see other QA (magnitude BRDF inversions)"
         }
       ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Processed, good quality (full BRDF inversions)"
+        },
+        {
+          "value": 1,
+          "description": "Processed, see other QA (magnitude BRDF inversions)"
+        }
+      ],
       "roles": [
         "data"
       ]
@@ -362,6 +372,16 @@
           "summary": "Processed, see other QA (magnitude BRDF inversions)"
         }
       ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Processed, good quality (full BRDF inversions)"
+        },
+        {
+          "value": 1,
+          "description": "Processed, see other QA (magnitude BRDF inversions)"
+        }
+      ],
       "roles": [
         "data"
       ]
@@ -393,6 +413,16 @@
             1
           ],
           "summary": "Processed, see other QA (magnitude BRDF inversions)"
+        }
+      ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Processed, good quality (full BRDF inversions)"
+        },
+        {
+          "value": 1,
+          "description": "Processed, see other QA (magnitude BRDF inversions)"
         }
       ],
       "roles": [
@@ -476,6 +506,16 @@
           "summary": "Processed, see other QA (magnitude BRDF inversions)"
         }
       ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Processed, good quality (full BRDF inversions)"
+        },
+        {
+          "value": 1,
+          "description": "Processed, see other QA (magnitude BRDF inversions)"
+        }
+      ],
       "roles": [
         "data"
       ]
@@ -507,6 +547,16 @@
             1
           ],
           "summary": "Processed, see other QA (magnitude BRDF inversions)"
+        }
+      ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Processed, good quality (full BRDF inversions)"
+        },
+        {
+          "value": 1,
+          "description": "Processed, see other QA (magnitude BRDF inversions)"
         }
       ],
       "roles": [
@@ -566,6 +616,16 @@
           "summary": "Processed, see other QA (magnitude BRDF inversions)"
         }
       ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Processed, good quality (full BRDF inversions)"
+        },
+        {
+          "value": 1,
+          "description": "Processed, see other QA (magnitude BRDF inversions)"
+        }
+      ],
       "roles": [
         "data"
       ]
@@ -597,6 +657,16 @@
             1
           ],
           "summary": "Processed, see other QA (magnitude BRDF inversions)"
+        }
+      ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Processed, good quality (full BRDF inversions)"
+        },
+        {
+          "value": 1,
+          "description": "Processed, see other QA (magnitude BRDF inversions)"
         }
       ],
       "roles": [
@@ -662,7 +732,8 @@
     "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
     "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/file/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/file/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/classification/v1.0.0/schema.json"
   ],
   "collection": "modis-43A4-061"
 }

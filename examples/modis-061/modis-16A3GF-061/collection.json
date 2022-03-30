@@ -58,6 +58,7 @@
     }
   ],
   "stac_extensions": [
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
     "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
@@ -75,6 +76,80 @@
         "metadata"
       ],
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
+    },
+    "ET_500m": {
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "unit": "kg/m^2/year",
+          "scale": 0.1,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Total of Evapotranspiration",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "LE_500m": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "unit": "J/m^2/day",
+          "scale": 10000,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Average of Latent Heat Flux",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "PET_500m": {
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "unit": "kg/m^2/year",
+          "scale": 0.1,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Total Potential Evapotranspiration",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "PLE_500m": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "unit": "J/m^2/day",
+          "scale": 10000,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Average of Potential Latent Heat Flux",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "ET_QC_500m": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "unit": "Percent",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Evapotranspiration Quality Assessment",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },
   "sci:publications": [

@@ -68,6 +68,8 @@
     }
   ],
   "stac_extensions": [
+    "https://stac-extensions.github.io/classification/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
     "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
@@ -85,6 +87,222 @@
         "metadata"
       ],
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
+    },
+    "250m_16_days_NDVI": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "unit": "NDVI",
+          "scale": 0.0001,
+          "spatial_resolution": 250
+        }
+      ],
+      "title": "16 day NDVI",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m_16_days_EVI": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "unit": "EVI",
+          "scale": 0.0001,
+          "spatial_resolution": 250
+        }
+      ],
+      "title": "16 day EVI",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m_16_days_VI_Quality": {
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 250
+        }
+      ],
+      "title": "VI quality indicators",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m_16_days_red_reflectance": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 250
+        }
+      ],
+      "title": "Surface Reflectance Band 1",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m_16_days_NIR_reflectance": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 250
+        }
+      ],
+      "title": "Surface Reflectance Band 2",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m_16_days_blue_reflectance": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 250
+        }
+      ],
+      "title": "Surface Reflectance Band 3",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m_16_days_MIR_reflectance": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 250
+        }
+      ],
+      "title": "Surface Reflectance Band 7",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m_16_days_view_zenith_angle": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "unit": "Degree",
+          "scale": 0.01,
+          "spatial_resolution": 250
+        }
+      ],
+      "title": "View zenith angle of VI Pixel",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m_16_days_sun_zenith_angle": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "unit": "Degree",
+          "scale": 0.01,
+          "spatial_resolution": 250
+        }
+      ],
+      "title": "Sun zenith angle of VI pixel",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m_16_days_relative_azimuth_angle": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "unit": "Degree",
+          "scale": 0.01,
+          "spatial_resolution": 250
+        }
+      ],
+      "title": "Relative azimuth angle of VI pixel",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m_16_days_composite_day_of_the_year": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "unit": "Julian Day",
+          "spatial_resolution": 250
+        }
+      ],
+      "title": "Day of year VI pixel",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m_16_days_pixel_reliability": {
+      "raster:bands": [
+        {
+          "data_type": "int8",
+          "unit": "Rank",
+          "spatial_resolution": 250
+        }
+      ],
+      "file:values": [
+        {
+          "values": [
+            0
+          ],
+          "summary": "Good data, use with confidence"
+        },
+        {
+          "values": [
+            1
+          ],
+          "summary": "Marginal data, useful, but look at other QA information"
+        },
+        {
+          "values": [
+            2
+          ],
+          "summary": "Snow/Ice Target covered with snow/ice"
+        },
+        {
+          "values": [
+            3
+          ],
+          "summary": "Cloudy data"
+        }
+      ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Good data, use with confidence"
+        },
+        {
+          "value": 1,
+          "description": "Marginal data, useful, but look at other QA information"
+        },
+        {
+          "value": 2,
+          "description": "Snow/Ice Target covered with snow/ice"
+        },
+        {
+          "value": 3,
+          "description": "Cloudy data"
+        }
+      ],
+      "title": "Quality reliability of VI pixel",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },
   "sci:publications": [

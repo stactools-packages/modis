@@ -362,6 +362,24 @@
           "summary": "Cloudy data"
         }
       ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Good data, use with confidence"
+        },
+        {
+          "value": 1,
+          "description": "Marginal data, useful, but look at other QA information"
+        },
+        {
+          "value": 2,
+          "description": "Snow/Ice Target covered with snow/ice"
+        },
+        {
+          "value": 3,
+          "description": "Cloudy data"
+        }
+      ],
       "roles": [
         "data"
       ]
@@ -407,7 +425,8 @@
   "stac_extensions": [
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
     "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/file/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/file/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/classification/v1.0.0/schema.json"
   ],
   "collection": "modis-13A1-061"
 }
