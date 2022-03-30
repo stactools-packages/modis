@@ -38,6 +38,55 @@
         "metadata"
       ],
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
+    },
+    "NDSI_Snow_Cover": {
+      "title": "Gridded NDSI snow cover and data flag values.",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "NDSI_Snow_Cover_Basic_QA": {
+      "title": "A general estimate of the quality of the algorithm result.",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "NDSI_Snow_Cover_Algorithm_Flags_QA": {
+      "title": "Algorithm-specific bit flags set for data screens and for inland water.",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "NDSI": {
+      "title": "Raw NDSI values (i.e. prior to screening).",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Snow_Albedo_Daily_Tile": {
+      "title": "Daily snow albedo corresponding to the NDSI_Snow_Cover parameter.",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "orbit_pnt": {
+      "title": "Pointer to the orbit of the swath mapped into each grid cell.",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "granule_pnt": {
+      "title": "Pointer for identifying the swath mapped into each grid cell.",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },
   "title": "MODIS/Terra Snow Cover Daily L3 Global 500m SIN Grid, Version 6",

@@ -1,6 +1,5 @@
 {
     "250m_16_days_NDVI": {
-        "name": "16 day NDVI",
         "raster:bands": [
             {
                 "data_type": "int16",
@@ -8,10 +7,10 @@
                 "scale": 0.0001,
                 "spatial_resolution": 250
             }
-        ]
+        ],
+        "title": "16 day NDVI"
     },
     "250m_16_days_EVI": {
-        "name": "16 day EVI",
         "raster:bands": [
             {
                 "data_type": "int16",
@@ -19,59 +18,59 @@
                 "scale": 0.0001,
                 "spatial_resolution": 250
             }
-        ]
+        ],
+        "title": "16 day EVI"
     },
     "250m_16_days_VI_Quality": {
-        "name": "VI quality indicators",
         "raster:bands": [
             {
                 "data_type": "uint16",
                 "spatial_resolution": 250
             }
-        ]
+        ],
+        "title": "VI quality indicators"
     },
     "250m_16_days_red_reflectance": {
-        "name": "Surface Reflectance Band 1",
         "raster:bands": [
             {
                 "data_type": "int16",
                 "scale": 0.0001,
                 "spatial_resolution": 250
             }
-        ]
+        ],
+        "title": "Surface Reflectance Band 1"
     },
     "250m_16_days_NIR_reflectance": {
-        "name": "Surface Reflectance Band 2",
         "raster:bands": [
             {
                 "data_type": "int16",
                 "scale": 0.0001,
                 "spatial_resolution": 250
             }
-        ]
+        ],
+        "title": "Surface Reflectance Band 2"
     },
     "250m_16_days_blue_reflectance": {
-        "name": "Surface Reflectance Band 3",
         "raster:bands": [
             {
                 "data_type": "int16",
                 "scale": 0.0001,
                 "spatial_resolution": 250
             }
-        ]
+        ],
+        "title": "Surface Reflectance Band 3"
     },
     "250m_16_days_MIR_reflectance": {
-        "name": "Surface Reflectance Band 7",
         "raster:bands": [
             {
                 "data_type": "int16",
                 "scale": 0.0001,
                 "spatial_resolution": 250
             }
-        ]
+        ],
+        "title": "Surface Reflectance Band 7"
     },
     "250m_16_days_view_zenith_angle": {
-        "name": "View zenith angle of VI Pixel",
         "raster:bands": [
             {
                 "data_type": "int16",
@@ -79,10 +78,10 @@
                 "scale": 0.01,
                 "spatial_resolution": 250
             }
-        ]
+        ],
+        "title": "View zenith angle of VI Pixel"
     },
     "250m_16_days_sun_zenith_angle": {
-        "name": "Sun zenith angle of VI pixel",
         "raster:bands": [
             {
                 "data_type": "int16",
@@ -90,10 +89,10 @@
                 "scale": 0.01,
                 "spatial_resolution": 250
             }
-        ]
+        ],
+        "title": "Sun zenith angle of VI pixel"
     },
     "250m_16_days_relative_azimuth_angle": {
-        "name": "Relative azimuth angle of VI pixel",
         "raster:bands": [
             {
                 "data_type": "int16",
@@ -101,26 +100,71 @@
                 "scale": 0.01,
                 "spatial_resolution": 250
             }
-        ]
+        ],
+        "title": "Relative azimuth angle of VI pixel"
     },
     "250m_16_days_composite_day_of_the_year": {
-        "name": "Day of year VI pixel",
         "raster:bands": [
             {
                 "data_type": "int16",
                 "unit": "Julian Day",
                 "spatial_resolution": 250
             }
-        ]
+        ],
+        "title": "Day of year VI pixel"
     },
     "250m_16_days_pixel_reliability": {
-        "name": "Quality reliability of VI pixel",
         "raster:bands": [
             {
                 "data_type": "int8",
                 "unit": "Rank",
                 "spatial_resolution": 250
             }
-        ]
+        ],
+        "file:values": [
+            {
+                "values": [
+                    0
+                ],
+                "summary": "Good data, use with confidence"
+            },
+            {
+                "values": [
+                    1
+                ],
+                "summary": "Marginal data, useful, but look at other QA information"
+            },
+            {
+                "values": [
+                    2
+                ],
+                "summary": "Snow/Ice Target covered with snow/ice"
+            },
+            {
+                "values": [
+                    3
+                ],
+                "summary": "Cloudy data"
+            }
+        ],
+        "classification:classes": [
+            {
+                "value": 0,
+                "description": "Good data, use with confidence"
+            },
+            {
+                "value": 1,
+                "description": "Marginal data, useful, but look at other QA information"
+            },
+            {
+                "value": 2,
+                "description": "Snow/Ice Target covered with snow/ice"
+            },
+            {
+                "value": 3,
+                "description": "Cloudy data"
+            }
+        ],
+        "title": "Quality reliability of VI pixel"
     }
 }

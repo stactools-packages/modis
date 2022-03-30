@@ -1,14 +1,14 @@
 {
     "FireMask": {
-        "name": "Confidence of fire"
+        "title": "Confidence of fire"
     },
     "QA": {
-        "name": "Pixel quality indicators"
+        "title": "Pixel quality indicators"
     },
     "MaxFRP": {
-        "name": "Maximum Fire Radiative Power"
+        "title": "Maximum Fire Radiative Power"
     },
     "sample": {
-        "name": "Position of fire pixel within scan"
+        "title": "Position of fire pixel within scan"
     }
 }

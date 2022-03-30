@@ -1,66 +1,120 @@
 {
     "NDSI_Snow_Cover": {
-        "name": "Gridded NDSI snow cover and data flag values.",
         "raster:bands": [
             {
                 "data_type": "uint8",
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Gridded NDSI snow cover and data flag values."
     },
     "NDSI_Snow_Cover_Basic_QA": {
-        "name": "A general estimate of the quality of the algorithm result.",
         "raster:bands": [
             {
                 "data_type": "uint8",
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "file:values": [
+            {
+                "values": [
+                    0
+                ],
+                "summary": "best"
+            },
+            {
+                "values": [
+                    1
+                ],
+                "summary": "good"
+            },
+            {
+                "values": [
+                    2
+                ],
+                "summary": "ok"
+            },
+            {
+                "values": [
+                    3
+                ],
+                "summary": "poor (not used)"
+            },
+            {
+                "values": [
+                    4
+                ],
+                "summary": "other (not used)"
+            }
+        ],
+        "classification:classes": [
+            {
+                "value": 0,
+                "description": "best"
+            },
+            {
+                "value": 1,
+                "description": "good"
+            },
+            {
+                "value": 2,
+                "description": "ok"
+            },
+            {
+                "value": 3,
+                "description": "poor (not used)"
+            },
+            {
+                "value": 4,
+                "description": "other (not used)"
+            }
+        ],
+        "title": "A general estimate of the quality of the algorithm result."
     },
     "NDSI_Snow_Cover_Algorithm_Flags_QA": {
-        "name": "Algorithm-specific bit flags set for data screens and for inland water.",
         "raster:bands": [
             {
                 "data_type": "uint8",
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Algorithm-specific bit flags set for data screens and for inland water."
     },
     "NDSI": {
-        "name": "Raw NDSI values (i.e. prior to screening).",
         "raster:bands": [
             {
                 "data_type": "int16",
                 "scale": 0.0001,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Raw NDSI values (i.e. prior to screening)."
     },
     "Snow_Albedo_Daily_Tile": {
-        "name": "Daily snow albedo corresponding to the NDSI_Snow_Cover parameter.",
         "raster:bands": [
             {
                 "data_type": "uint8",
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Daily snow albedo corresponding to the NDSI_Snow_Cover parameter."
     },
     "orbit_pnt": {
-        "name": "Pointer to the orbit of the swath mapped into each grid cell.",
         "raster:bands": [
             {
                 "data_type": "uint8",
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Pointer to the orbit of the swath mapped into each grid cell."
     },
     "granule_pnt": {
-        "name": "Pointer for identifying the swath mapped into each grid cell.",
         "raster:bands": [
             {
                 "data_type": "uint8",
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Pointer for identifying the swath mapped into each grid cell."
     }
 }

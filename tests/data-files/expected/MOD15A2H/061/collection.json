@@ -57,6 +57,7 @@
     }
   ],
   "stac_extensions": [
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
     "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
@@ -74,6 +75,94 @@
         "metadata"
       ],
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
+    },
+    "Fpar_500m": {
+      "description": "The fraction of incident photosynthetically active radiation (400-700 nm) absorbed by the green elements of a vegetation canopy.",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "unit": "Percent",
+          "scale": 0.01,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Fraction of Photosynthetically Active Radiation",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Lai_500m": {
+      "description": "The one-sided green leaf area per unit ground area in broadleaf canopies and as one-half the total needle surface area per unit ground area in coniferous canopies",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "unit": "m^2/m^2",
+          "scale": 0.1,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Leaf Area Index",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "FparLai_QC": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Quality for FPAR and LAI",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "FparExtra_QC": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Extra detail Quality for FPAR and LAI",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "FparStdDev_500m": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "unit": "Percent",
+          "scale": 0.01,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Standard deviation of FPAR",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "LaiStdDev_500m": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "unit": "m^2/m^2",
+          "scale": 0.1,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Standard deviation of LAI",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },
   "sci:publications": [

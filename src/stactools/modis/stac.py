@@ -9,7 +9,7 @@ import rasterio
 import shapely.geometry
 import stactools.core.utils
 import stactools.core.utils.antimeridian
-from pystac import Asset, Collection, Item, Summaries
+from pystac import Asset, Collection, Item, MediaType, Summaries
 from pystac.extensions.eo import Band, EOExtension
 from pystac.extensions.item_assets import AssetDefinition, ItemAssetsExtension
 from pystac.extensions.projection import ProjectionExtension
@@ -20,7 +20,8 @@ from stactools.core.utils.antimeridian import Strategy
 
 import stactools.modis.cog
 import stactools.modis.utils
-from stactools.modis.constants import (HDF_ASSET_KEY, HDF_ASSET_PROPERTIES,
+from stactools.modis.constants import (CLASSIFICATION_EXTENSION_HREF,
+                                       HDF_ASSET_KEY, HDF_ASSET_PROPERTIES,
                                        METADATA_ASSET_KEY,
                                        METADATA_ASSET_PROPERTIES)
 from stactools.modis.file import File
@@ -47,8 +48,8 @@ def create_collection(product_name: str, version: str) -> Collection:
         "platform": product.platforms,
     }
     fragments = product.fragments(version)
-    item_properties = fragments.item_properties()
-    gsd = item_properties.get("gsd")
+    item = fragments.item()
+    gsd = item.get("gsd")
     if gsd:
         summaries["gsd"] = [gsd]
 
@@ -62,12 +63,27 @@ def create_collection(product_name: str, version: str) -> Collection:
                                    summaries=Summaries(summaries))
     collection.add_links(fragment["links"])
 
-    item_assets = ItemAssetsExtension.ext(collection, add_if_missing=True)
-    hdf_asset_properties = HDF_ASSET_PROPERTIES.copy()
-    item_assets.item_assets = {
-        HDF_ASSET_KEY: AssetDefinition(hdf_asset_properties),
+    item_assets_dict = {
+        HDF_ASSET_KEY: AssetDefinition(HDF_ASSET_PROPERTIES),
         METADATA_ASSET_KEY: AssetDefinition(METADATA_ASSET_PROPERTIES),
     }
+    for name, band in fragments.bands().items():
+        if "roles" in band:
+            band["roles"].append("data")
+        else:
+            band["roles"] = ["data"]
+        band["type"] = MediaType.COG
+        item_assets_dict[name] = AssetDefinition(band)
+        if "eo:bands" in band:
+            collection.stac_extensions.append(EOExtension.get_schema_uri())
+        if "raster:bands" in band:
+            collection.stac_extensions.append(RasterExtension.get_schema_uri())
+        if "classification:classes" in band:
+            collection.stac_extensions.append(CLASSIFICATION_EXTENSION_HREF)
+    collection.stac_extensions = list(set(collection.stac_extensions))
+    collection.stac_extensions.sort()
+    item_assets = ItemAssetsExtension.ext(collection, add_if_missing=True)
+    item_assets.item_assets = item_assets_dict
 
     if "sci:publications" in fragment:
         ScientificExtension.add_to(collection)
@@ -104,7 +120,7 @@ def create_item(href: str,
     file = File(href)
     metadata = Metadata(file.xml_href, read_href_modifier)
     fragments = file.product.fragments(metadata.version)
-    properties = fragments.item_properties()
+    properties = fragments.item()
     properties["start_datetime"] = pystac.utils.datetime_to_str(
         metadata.start_datetime)
     properties["end_datetime"] = pystac.utils.datetime_to_str(

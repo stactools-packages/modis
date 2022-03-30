@@ -9,6 +9,7 @@ from pystac.extensions.file import FileExtension, MappingObject
 from pystac.extensions.raster import RasterBand, RasterExtension
 
 import stactools.modis.utils
+from stactools.modis.constants import CLASSIFICATION_EXTENSION_HREF
 from stactools.modis.file import File
 
 logger = logging.getLogger(__name__)
@@ -72,7 +73,6 @@ def add_cog_assets(item: Item,
     file = File.from_item(item)
     fragments = file.fragments()
     bands = fragments.bands()
-    file_info = fragments.file_info()
     for path, subdataset_name in zip(hrefs, subdataset_names):
         if subdataset_name not in bands:
             raise ValueError(
@@ -81,7 +81,7 @@ def add_cog_assets(item: Item,
         band = bands[subdataset_name]
         asset = Asset(
             href=path,
-            title=band["name"],
+            title=band["title"],
             description=band.get("description"),
             media_type=MediaType.COG,
             roles=["data"],
@@ -101,19 +101,20 @@ def add_cog_assets(item: Item,
         if eo_bands:
             eo = EOExtension.ext(asset, add_if_missing=True)
             eo.bands = [Band.create(**eo_band) for eo_band in eo_bands]
+        file_values = band.get("file:values")
+        if file_values:
+            file_ext = FileExtension.ext(asset, add_if_missing=True)
+            file_ext.values = [MappingObject.from_dict(d) for d in file_values]
+        classification_classes = band.get("classification:classes")
+        if classification_classes:
+            if CLASSIFICATION_EXTENSION_HREF not in item.stac_extensions:
+                item.stac_extensions.append(CLASSIFICATION_EXTENSION_HREF)
+            asset.extra_fields[
+                "classification:classes"] = classification_classes
 
         roles = band.get("roles")
         if roles:
             asset.roles.extend(roles)
-
-        if file_info:
-            try:
-                values = file_info[subdataset_name]
-            except KeyError:
-                pass
-            else:
-                file_ext = FileExtension.ext(asset, add_if_missing=True)
-                file_ext.values = [MappingObject.from_dict(d) for d in values]
 
     return subdataset_names
 

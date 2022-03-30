@@ -43,6 +43,34 @@
         "metadata"
       ],
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
+    },
+    "FireMask": {
+      "title": "Confidence of fire",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "QA": {
+      "title": "Pixel quality indicators",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "MaxFRP": {
+      "title": "Maximum Fire Radiative Power",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "sample": {
+      "title": "Position of fire pixel within scan",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },
   "title": "MODIS/Terra Thermal Anomalies/Fire Daily L3 Global 1 km SIN Grid",

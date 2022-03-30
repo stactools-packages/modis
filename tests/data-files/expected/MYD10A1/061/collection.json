@@ -32,6 +32,8 @@
     }
   ],
   "stac_extensions": [
+    "https://stac-extensions.github.io/classification/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
     "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
@@ -49,6 +51,152 @@
         "metadata"
       ],
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
+    },
+    "NDSI_Snow_Cover": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Gridded NDSI snow cover and data flag values.",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "NDSI_Snow_Cover_Basic_QA": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "file:values": [
+        {
+          "values": [
+            0
+          ],
+          "summary": "best"
+        },
+        {
+          "values": [
+            1
+          ],
+          "summary": "good"
+        },
+        {
+          "values": [
+            2
+          ],
+          "summary": "ok"
+        },
+        {
+          "values": [
+            3
+          ],
+          "summary": "poor (not used)"
+        },
+        {
+          "values": [
+            4
+          ],
+          "summary": "other (not used)"
+        }
+      ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "best"
+        },
+        {
+          "value": 1,
+          "description": "good"
+        },
+        {
+          "value": 2,
+          "description": "ok"
+        },
+        {
+          "value": 3,
+          "description": "poor (not used)"
+        },
+        {
+          "value": 4,
+          "description": "other (not used)"
+        }
+      ],
+      "title": "A general estimate of the quality of the algorithm result.",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "NDSI_Snow_Cover_Algorithm_Flags_QA": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Algorithm-specific bit flags set for data screens and for inland water.",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "NDSI": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Raw NDSI values (i.e. prior to screening).",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Snow_Albedo_Daily_Tile": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Daily snow albedo corresponding to the NDSI_Snow_Cover parameter.",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "orbit_pnt": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Pointer to the orbit of the swath mapped into each grid cell.",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "granule_pnt": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Pointer for identifying the swath mapped into each grid cell.",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },
   "sci:publications": [

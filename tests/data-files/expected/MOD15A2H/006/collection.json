@@ -43,6 +43,48 @@
         "metadata"
       ],
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
+    },
+    "Fpar_500m": {
+      "title": "Fraction of Photosynthetically Active Radiation",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Lai_500m": {
+      "title": "Leaf Area Index",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "FparLai_QC": {
+      "title": "Quality for LAI and FPAR",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "FparExtra_QC": {
+      "title": "Extra detail Quality for LAI and FPAR",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "FparStdDev_500m": {
+      "title": "Percent",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "LaiStdDev_500m": {
+      "title": "Standard deviation of LAI",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },
   "title": "MODIS/Terra Leaf Area Index/FPAR 8-Day L4 Global 500 m SIN Grid",

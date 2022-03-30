@@ -9,11 +9,7 @@ For each version+product combination, the following fragments are _required_:
   - `title`
   - `providers`
   - `links`
+- `item.json`: A dictionary of constant fields for each item
 - `bands.json`: A list of `eo:bands` to include in both the item-assets on the collection level, and as an extension on the asset level
-- `item-properties.json`: A dictionary of constant fields for each item
 
 The original set of fragments was created from the old `constants.py` via `scripts/create_fragments.py`; new fragments can be created by hand.
-
-## Fallbacks
-
-If there is not a fragment for a given product-version combination, the `Fragments` class will try to look up a fragment with the same name, version, and product suffix (e.g. 21A2) but with a different prefix (e.g. MOD instead of MYD).

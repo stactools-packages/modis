@@ -1,8 +1,8 @@
 {
     "Water_mask": {
-        "name": "Land/Water Mask"
+        "title": "Land/Water Mask"
     },
     "Water_mask_QA": {
-        "name": "Quality Assurance (QA)"
+        "title": "Quality Assurance (QA)"
     }
 }

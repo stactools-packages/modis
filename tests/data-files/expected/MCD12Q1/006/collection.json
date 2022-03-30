@@ -43,6 +43,97 @@
         "metadata"
       ],
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
+    },
+    "LC_Type1": {
+      "title": "Land Cover Type 1: Annual InternationalGeosphere-Biosphere Programme (IGBP) classification",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "LC_Type2": {
+      "title": "Land Cover Type 2: Annual University of Maryland (UMD) classification",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "LC_Type3": {
+      "title": "Land Cover Type 3: Annual Leaf Area Index (LAI) classification",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "LC_Type4": {
+      "title": "Land Cover Type 4: Annual BIOME-Biogeochemical Cycles (BGC) classification",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "LC_Type5": {
+      "title": "Land Cover Type 5: Annual Plant Functional Types classification",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "LC_Prop1": {
+      "title": "FAO-Land Cover Classification System 1 (LCCS1) land cover layer",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "LC_Prop2": {
+      "title": "FAO-LCCS2 land use layer",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "LC_Prop3": {
+      "title": "FAO-LCCS3 surface hydrology layer",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "LC_Prop1_Assessment": {
+      "title": "LCCS1 land cover layer confidence",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "LC_Prop2_Assessment": {
+      "title": "LCCS2 land use layer confidence",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "LC_Prop3_Assessment": {
+      "title": "LCCS3 surface hydrology layer confidence",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "QC": {
+      "title": "Product quality flags",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "LW": {
+      "title": "Binary land (class 2) / water (class 1) mask derived from MOD44W",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },
   "title": "MODIS/Terra+Aqua Land Cover Type Yearly L3 Global 500 m SIN Grid",

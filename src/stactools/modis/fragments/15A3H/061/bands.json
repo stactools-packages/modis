@@ -1,6 +1,5 @@
 {
     "Fpar_500m": {
-        "name": "Fraction of Photosynthetically Active Radiation",
         "raster:bands": [
             {
                 "data_type": "uint8",
@@ -8,10 +7,10 @@
                 "scale": 0.01,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Fraction of Photosynthetically Active Radiation"
     },
     "Lai_500m": {
-        "name": "Leaf Area Index",
         "raster:bands": [
             {
                 "data_type": "uint8",
@@ -19,28 +18,28 @@
                 "scale": 0.1,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Leaf Area Index"
     },
     "FparLai_QC": {
-        "name": "Quality for FPAR and LAI",
         "raster:bands": [
             {
                 "data_type": "uint8",
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Quality for FPAR and LAI"
     },
     "FparExtra_QC": {
-        "name": "Extra detail Quality for FPAR and LAI",
         "raster:bands": [
             {
                 "data_type": "uint8",
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Extra detail Quality for FPAR and LAI"
     },
     "FparStdDev_500m": {
-        "name": "Standard deviation of FPAR",
         "raster:bands": [
             {
                 "data_type": "uint8",
@@ -48,10 +47,10 @@
                 "scale": 0.01,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Standard deviation of FPAR"
     },
     "LaiStdDev_500m": {
-        "name": "Standard deviation of LAI",
         "raster:bands": [
             {
                 "data_type": "uint8",
@@ -59,6 +58,7 @@
                 "scale": 0.1,
                 "spatial_resolution": 500
             }
-        ]
+        ],
+        "title": "Standard deviation of LAI"
     }
 }

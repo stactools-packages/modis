@@ -1,8 +1,8 @@
 {
     "FireMask": {
-        "name": "Confidence of fire"
+        "title": "Confidence of fire"
     },
     "QA": {
-        "name": "Pixel quality indicators"
+        "title": "Pixel quality indicators"
     }
 }

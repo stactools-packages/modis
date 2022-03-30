@@ -1,29 +1,29 @@
 {
     "500m 16 days NDVI": {
-        "name": "500m 16 days NDVI"
+        "title": "500m 16 days NDVI"
     },
     "500m 16 days EVI": {
-        "name": "500m 16 days EVI"
+        "title": "500m 16 days EVI"
     },
     "500m 16 days VI Quality": {
-        "name": "VI quality indicators"
+        "title": "VI quality indicators"
     },
     "500m 16 days red reflectance": {
-        "name": "Surface Reflectance Band 7"
+        "title": "Surface Reflectance Band 7"
     },
     "500m 16 days view zenith angle": {
-        "name": "View zenith angle of VI Pixel"
+        "title": "View zenith angle of VI Pixel"
     },
     "500m 16 days sun zenith angle": {
-        "name": "Sun zenith angle of VI pixel"
+        "title": "Sun zenith angle of VI pixel"
     },
     "500m 16 days relative aziumuth angle": {
-        "name": "Relative azimuth angle of VI pixel"
+        "title": "Relative azimuth angle of VI pixel"
     },
     "500m 16 days composite day of the year": {
-        "name": "Day of year VI pixel"
+        "title": "Day of year VI pixel"
     },
     "500m 16 days pixel reliability": {
-        "name": "Quality reliability of VI pixel"
+        "title": "Quality reliability of VI pixel"
     }
 }
