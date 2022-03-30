@@ -58,6 +58,8 @@
     }
   ],
   "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
     "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
@@ -75,6 +77,252 @@
         "metadata"
       ],
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
+    },
+    "sur_refl_b01": {
+      "roles": [
+        "reflectance",
+        "data"
+      ],
+      "eo:bands": [
+        {
+          "name": "sur_refl_b01",
+          "common_name": "red",
+          "center_wavelength": 0.645,
+          "full_width_half_max": 0.5
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Surface Reflectance Band 1 (620-670 nm)",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "sur_refl_b02": {
+      "roles": [
+        "reflectance",
+        "data"
+      ],
+      "eo:bands": [
+        {
+          "name": "sur_refl_b02",
+          "common_name": "nir08",
+          "center_wavelength": 0.8585,
+          "full_width_half_max": 0.35
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Surface Reflectance Band 2 (841-876 nm)",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "sur_refl_b03": {
+      "roles": [
+        "reflectance",
+        "data"
+      ],
+      "eo:bands": [
+        {
+          "name": "sur_refl_b03",
+          "common_name": "blue",
+          "center_wavelength": 0.469,
+          "full_width_half_max": 0.2
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Surface Reflectance Band 3 (459-479 nm)",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "sur_refl_b04": {
+      "roles": [
+        "reflectance",
+        "data"
+      ],
+      "eo:bands": [
+        {
+          "name": "sur_refl_b04",
+          "common_name": "green",
+          "center_wavelength": 0.555,
+          "full_width_half_max": 0.2
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Surface Reflectance Band 4 (545-565 nm)",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "sur_refl_b05": {
+      "roles": [
+        "reflectance",
+        "data"
+      ],
+      "eo:bands": [
+        {
+          "name": "sur_refl_b05",
+          "common_name": "lwir12",
+          "center_wavelength": 1.24,
+          "full_width_half_max": 0.2
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Surface Reflectance Band 5 (1230-1250 nm)",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "sur_refl_b06": {
+      "roles": [
+        "reflectance",
+        "data"
+      ],
+      "eo:bands": [
+        {
+          "name": "sur_refl_b06",
+          "common_name": "swir16",
+          "center_wavelength": 1.64,
+          "full_width_half_max": 0.24
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Surface Reflectance Band 6 (1628-1652 nm)",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "sur_refl_b07": {
+      "roles": [
+        "reflectance",
+        "data"
+      ],
+      "eo:bands": [
+        {
+          "name": "sur_refl_b07",
+          "common_name": "swir22",
+          "center_wavelength": 2.13,
+          "full_width_half_max": 0.5
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Surface Reflectance Band 7 (2105-2155 nm)",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "sur_refl_qc_500m": {
+      "raster:bands": [
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Surface reflectance 500m band quality control flags",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "sur_refl_szen": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "unit": "Degree",
+          "scale": 0.01,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "MODIS solar zenith angle",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "sur_refl_vzen": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "unit": "Degree",
+          "scale": 0.01,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "MODIS view zenith angle",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "sur_refl_raz": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "unit": "Degree",
+          "scale": 0.01,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "MODIS relative azimuth angle",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "sur_refl_state_500m": {
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Surface reflectance 500m state flags",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "sur_refl_day_of_year": {
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "unit": "Julian Day",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Day of the year for the pixel",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },
   "sci:publications": [

@@ -49,6 +49,55 @@
         "metadata"
       ],
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
+    },
+    "Percent_Tree_Cover": {
+      "title": "Percent of pixel that is tree covered",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Percent_NonTree_Vegetation": {
+      "title": "Percent of pixel that is nontree vegetation",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Percent_NonVegetated": {
+      "title": "Percent of pixel non vegetated",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Quality": {
+      "title": "Quality Control indicators",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Percent_Tree_Cover_SD": {
+      "title": "Standard deviation of percent tree covered",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Percent_NonVegetated_SD": {
+      "title": "Standard deviation of percent not vegetated",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Cloud": {
+      "title": "Pixel cloud cover indicators",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },
   "title": "MODIS/Terra Vegetation Continuous Fields Yearly L3 Global 250 m SIN Grid",

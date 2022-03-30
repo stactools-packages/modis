@@ -58,6 +58,7 @@
     }
   ],
   "stac_extensions": [
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
     "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
@@ -75,6 +76,162 @@
         "metadata"
       ],
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
+    },
+    "LST_Day_1KM": {
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "unit": "Kelvin",
+          "scale": 0.02,
+          "spatial_resolution": 1000
+        }
+      ],
+      "title": "Day Land Surface Temperature",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "QC_Day": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "title": "Day Quality Control",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "View_Angle_Day": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "unit": "Degree",
+          "spatial_resolution": 1000
+        }
+      ],
+      "title": "Day view zenith angle",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "View_Time_Day": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "unit": "Hours",
+          "scale": 0.1,
+          "spatial_resolution": 1000
+        }
+      ],
+      "title": "Day Time of Observation",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "LST_Night_1KM": {
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "unit": "Kelvin",
+          "scale": 0.02,
+          "spatial_resolution": 1000
+        }
+      ],
+      "title": "Night Land Surface Temperature",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "QC_Night": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "title": "Night Quality Control",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "View_Angle_Night": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "unit": "Degree",
+          "spatial_resolution": 1000
+        }
+      ],
+      "title": "Night view zenith angle",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "View_Time_Night": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "unit": "Hours",
+          "scale": 0.1,
+          "spatial_resolution": 1000
+        }
+      ],
+      "title": "Night Time of Observation",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Emis_29": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "scale": 0.002,
+          "spatial_resolution": 1000
+        }
+      ],
+      "title": "Average Day/Night Band 29 emissivity",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Emis_31": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "scale": 0.002,
+          "spatial_resolution": 1000
+        }
+      ],
+      "title": "Average Day/Night Band 31 emissivity",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Emis_32": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "scale": 0.002,
+          "spatial_resolution": 1000
+        }
+      ],
+      "title": "Average Day/Night Band 32 emissivity",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },
   "sci:publications": [

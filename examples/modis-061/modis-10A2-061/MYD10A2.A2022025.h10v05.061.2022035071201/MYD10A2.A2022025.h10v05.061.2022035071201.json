@@ -217,6 +217,48 @@
           "summary": "detector saturated"
         }
       ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "missing data"
+        },
+        {
+          "value": 1,
+          "description": "no decision"
+        },
+        {
+          "value": 11,
+          "description": "night"
+        },
+        {
+          "value": 25,
+          "description": "no snow"
+        },
+        {
+          "value": 37,
+          "description": "lake"
+        },
+        {
+          "value": 39,
+          "description": "ocean"
+        },
+        {
+          "value": 50,
+          "description": "cloud"
+        },
+        {
+          "value": 100,
+          "description": "lake ice"
+        },
+        {
+          "value": 200,
+          "description": "snow"
+        },
+        {
+          "value": 254,
+          "description": "detector saturated"
+        }
+      ],
       "roles": [
         "data"
       ]
@@ -231,7 +273,8 @@
   "stac_extensions": [
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
     "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/file/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/file/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/classification/v1.0.0/schema.json"
   ],
   "collection": "modis-10A2-061"
 }

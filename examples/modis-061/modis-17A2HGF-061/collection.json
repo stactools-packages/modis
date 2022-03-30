@@ -58,6 +58,7 @@
     }
   ],
   "stac_extensions": [
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
     "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
@@ -75,6 +76,49 @@
         "metadata"
       ],
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
+    },
+    "Gpp_500m": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "unit": "kg C/m^2",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Gross Primary Productivity",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "PsnNet_500m": {
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "unit": "kg C/m^2",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Net Photosynthesis",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Psn_QC_500m": {
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "Quality control indicators",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },
   "sci:publications": [

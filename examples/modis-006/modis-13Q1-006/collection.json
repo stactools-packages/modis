@@ -49,6 +49,90 @@
         "metadata"
       ],
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
+    },
+    "250m 16 days NDVI": {
+      "title": "16 day NDVI",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m 16 days EVI": {
+      "title": "16 day EVI",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m 16 days VI Quality": {
+      "title": "VI quality indicators",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m 16 days red reflectance": {
+      "title": "Surface Reflectance Band 1",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m 16 days NIR reflectance": {
+      "title": "Surface Reflectance Band 2",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m 16 days blue reflectance": {
+      "title": "Surface Reflectance Band 3",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m 16 days MIR reflectance": {
+      "title": "Surface Reflectance Band 7",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m 16 days view zenith angle": {
+      "title": "View zenith angle of VI Pixel",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m 16 days sun zenith angle": {
+      "title": "Sun zenith angle of VI pixel",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m 16 days relative azimuth angle": {
+      "title": "Relative azimuth angle of VI pixel",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m 16 days composite day of the year": {
+      "title": "Day of year VI pixel",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "250m 16 days pixel reliability": {
+      "title": "Quality reliability of VI pixel",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },
   "title": "MODIS/Terra Vegetation Indices 16-Day L3 Global 250 m SIN Grid",
