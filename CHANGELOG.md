@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Cloud cover ([#66](https://github.com/stactools-packages/modis/pull/66))
 - `sci:publications` ([#66](https://github.com/stactools-packages/modis/pull/66))
 - `eo:bands` to reflectance products ([#69](https://github.com/stactools-packages/modis/pull/69), [#71](https://github.com/stactools-packages/modis/pull/71))
+- License links ([#72](https://github.com/stactools-packages/modis/pull/72))
 
 ### Changed
 
