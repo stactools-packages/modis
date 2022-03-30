@@ -36,6 +36,11 @@
       "title": "LP DAAC - MYD11A1"
     },
     {
+      "rel": "license",
+      "href": "https://lpdaac.usgs.gov/data/data-citation-and-policies/",
+      "title": "LP DAAC - Data Citation and Policies"
+    },
+    {
       "rel": "item",
       "href": "./MYD11A1.A2022039.h21v07.061.2022040192419/MYD11A1.A2022039.h21v07.061.2022040192419.json",
       "type": "application/json"

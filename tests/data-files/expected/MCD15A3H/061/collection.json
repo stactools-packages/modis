@@ -26,6 +26,11 @@
       "title": "LP DAAC - MCD15A3H"
     },
     {
+      "rel": "license",
+      "href": "https://lpdaac.usgs.gov/data/data-citation-and-policies/",
+      "title": "LP DAAC - Data Citation and Policies"
+    },
+    {
       "rel": "item",
       "href": "./MCD15A3H.A2022033.h12v10.061.2022039062215/MCD15A3H.A2022033.h12v10.061.2022039062215.json",
       "type": "application/json"
