@@ -109,72 +109,6 @@
       "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010.hdf",
       "type": "application/x-hdf",
       "title": "Source data containing all bands",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 250,
-          "unit": "NDVI",
-          "scale": 0.0001
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 250,
-          "unit": "EVI",
-          "scale": 0.0001
-        },
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 250
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 250,
-          "scale": 0.0001
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 250,
-          "scale": 0.0001
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 250,
-          "scale": 0.0001
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 250,
-          "scale": 0.0001
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 250,
-          "unit": "Degree",
-          "scale": 0.01
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 250,
-          "unit": "Degree",
-          "scale": 0.01
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 250,
-          "unit": "Degree",
-          "scale": 0.01
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 250,
-          "unit": "Julian Day"
-        },
-        {
-          "data_type": "int8",
-          "spatial_resolution": 250,
-          "unit": "Rank"
-        }
-      ],
       "roles": [
         "data"
       ]
@@ -423,8 +357,8 @@
     30.0438375723808
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
     "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
     "https://stac-extensions.github.io/file/v2.0.0/schema.json",
     "https://stac-extensions.github.io/classification/v1.0.0/schema.json"
   ],

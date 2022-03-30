@@ -109,16 +109,6 @@
       "href": "../../../../tests/data-files/external/MOD14A2.A2022033.h21v05.061.2022041234800.hdf",
       "type": "application/x-hdf",
       "title": "Source data containing all bands",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        }
-      ],
       "roles": [
         "data"
       ]
@@ -271,8 +261,8 @@
     40.0278035903489
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
     "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
     "https://stac-extensions.github.io/file/v2.0.0/schema.json",
     "https://stac-extensions.github.io/classification/v1.0.0/schema.json"
   ],
