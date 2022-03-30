@@ -6,11 +6,12 @@
 - Owner: @gadomski 
 - Dataset homepage: https://modis.gsfc.nasa.gov/
 - STAC extensions used:
-  - [proj](https://github.com/stac-extensions/projection)
+  - [classification](https://github.com/stac-extensions/classification/)
   - [eo](https://github.com/stac-extensions/eo)
   - [item-assets](https://github.com/stac-extensions/item-assets)
-  - [scientific](https://github.com/stac-extensions/scientific)
+  - [proj](https://github.com/stac-extensions/projection)
   - [raster](https://github.com/stac-extensions/raster)
+  - [scientific](https://github.com/stac-extensions/scientific)
 - Extra Fields:
   - `modis:horizontal-tile`
   - `modis:vertical-tile`
