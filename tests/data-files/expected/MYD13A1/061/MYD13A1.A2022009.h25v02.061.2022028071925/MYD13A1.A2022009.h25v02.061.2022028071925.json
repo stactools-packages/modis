@@ -94,72 +94,6 @@
       "href": "../../../../MYD13A1.A2022009.h25v02.061.2022028071925.hdf",
       "type": "application/x-hdf",
       "title": "Source data containing all bands",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "NDVI",
-          "scale": 0.0001
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "EVI",
-          "scale": 0.0001
-        },
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 500
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "scale": 0.0001
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "scale": 0.0001
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "scale": 0.0001
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "scale": 0.0001
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "Degree",
-          "scale": 0.01
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "Degree",
-          "scale": 0.01
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "Degree",
-          "scale": 0.01
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "Julian Day"
-        },
-        {
-          "data_type": "int8",
-          "spatial_resolution": 500,
-          "unit": "Rank"
-        }
-      ],
       "roles": [
         "data"
       ]
@@ -179,8 +113,6 @@
     -176.534172118079,
     69.2113905326394
   ],
-  "stac_extensions": [
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
-  ],
+  "stac_extensions": [],
   "collection": "modis-13A1-061"
 }

@@ -69,68 +69,6 @@
       "href": "../../../../MYD11A2.A2022025.h17v00.061.2022035054130.hdf",
       "type": "application/x-hdf",
       "title": "Source data containing all bands",
-      "raster:bands": [
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 1000,
-          "unit": "Kelvin",
-          "scale": 0.02
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000,
-          "unit": "Hours",
-          "scale": 0.1
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000,
-          "unit": "Degree"
-        },
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 1000,
-          "unit": "Kelvin",
-          "scale": 0.02
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000,
-          "unit": "Hours",
-          "scale": 0.1
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000,
-          "unit": "Degree"
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000,
-          "scale": 0.002
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000,
-          "scale": 0.002
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        }
-      ],
       "roles": [
         "data"
       ]
@@ -151,8 +89,7 @@
     89.9875
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
   ],
   "collection": "modis-11A2-061"
 }

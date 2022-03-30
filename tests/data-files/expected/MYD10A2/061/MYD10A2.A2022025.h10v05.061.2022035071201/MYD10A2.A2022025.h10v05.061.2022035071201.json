@@ -68,16 +68,6 @@
       "href": "../../../../MYD10A2.A2022025.h10v05.061.2022035071201.hdf",
       "type": "application/x-hdf",
       "title": "Source data containing all bands",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 500
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 500
-        }
-      ],
       "roles": [
         "data"
       ]
@@ -97,8 +87,6 @@
     -80.5775666708921,
     40.0637836759185
   ],
-  "stac_extensions": [
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
-  ],
+  "stac_extensions": [],
   "collection": "modis-10A2-061"
 }

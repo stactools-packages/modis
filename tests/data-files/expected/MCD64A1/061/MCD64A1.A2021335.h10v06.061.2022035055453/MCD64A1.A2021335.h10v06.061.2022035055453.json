@@ -68,32 +68,6 @@
       "href": "../../../../MCD64A1.A2021335.h10v06.061.2022035055453.hdf",
       "type": "application/x-hdf",
       "title": "Source data containing all bands",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "Day"
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 500,
-          "unit": "Day"
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 500
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "Day"
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "Day"
-        }
-      ],
       "roles": [
         "data"
       ]
@@ -113,8 +87,6 @@
     -74.2129537335,
     30.0383760062
   ],
-  "stac_extensions": [
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
-  ],
+  "stac_extensions": [],
   "collection": "modis-64A1-061"
 }
