@@ -68,118 +68,6 @@
       "href": "../../../../MYD09A1.A2022025.h09v08.061.2022035070021.hdf",
       "type": "application/x-hdf",
       "title": "Source data containing all bands",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "scale": 0.0001
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "scale": 0.0001
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "scale": 0.0001
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "scale": 0.0001
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "scale": 0.0001
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "scale": 0.0001
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "scale": 0.0001
-        },
-        {
-          "data_type": "uint32",
-          "spatial_resolution": 500
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "Degree",
-          "scale": 0.01
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "Degree",
-          "scale": 0.01
-        },
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "Degree",
-          "scale": 0.01
-        },
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 500
-        },
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 500,
-          "unit": "Julian Day"
-        }
-      ],
-      "eo:bands": [
-        {
-          "name": "sur_refl_b01",
-          "common_name": "red",
-          "center_wavelength": 0.645,
-          "full_width_half_max": 0.5
-        },
-        {
-          "name": "sur_refl_b02",
-          "common_name": "nir08",
-          "center_wavelength": 0.8585,
-          "full_width_half_max": 0.35
-        },
-        {
-          "name": "sur_refl_b03",
-          "common_name": "blue",
-          "center_wavelength": 0.469,
-          "full_width_half_max": 0.2
-        },
-        {
-          "name": "sur_refl_b04",
-          "common_name": "green",
-          "center_wavelength": 0.555,
-          "full_width_half_max": 0.2
-        },
-        {
-          "name": "sur_refl_b05",
-          "common_name": "lwir12",
-          "center_wavelength": 1.24,
-          "full_width_half_max": 0.2
-        },
-        {
-          "name": "sur_refl_b06",
-          "common_name": "swir16",
-          "center_wavelength": 1.64,
-          "full_width_half_max": 0.24
-        },
-        {
-          "name": "sur_refl_b07",
-          "common_name": "swir22",
-          "center_wavelength": 2.13,
-          "full_width_half_max": 0.5
-        }
-      ],
       "roles": [
         "data"
       ]
@@ -199,9 +87,6 @@
     -79.6923787161652,
     10.0071017643835
   ],
-  "stac_extensions": [
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
-  ],
+  "stac_extensions": [],
   "collection": "modis-09A1-061"
 }
