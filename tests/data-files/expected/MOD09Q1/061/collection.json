@@ -69,8 +69,8 @@
     },
     "sur_refl_b01": {
       "roles": [
-        "reflectance",
-        "data"
+        "data",
+        "reflectance"
       ],
       "eo:bands": [
         {
@@ -92,8 +92,8 @@
     },
     "sur_refl_b02": {
       "roles": [
-        "reflectance",
-        "data"
+        "data",
+        "reflectance"
       ],
       "eo:bands": [
         {

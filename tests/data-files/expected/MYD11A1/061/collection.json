@@ -68,8 +68,8 @@
     },
     "LST_Day_1km": {
       "roles": [
-        "temperature",
-        "data"
+        "data",
+        "temperature"
       ],
       "raster:bands": [
         {
@@ -126,8 +126,8 @@
     },
     "LST_Night_1km": {
       "roles": [
-        "temperature",
-        "data"
+        "data",
+        "temperature"
       ],
       "raster:bands": [
         {
