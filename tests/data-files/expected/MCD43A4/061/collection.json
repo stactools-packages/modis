@@ -354,8 +354,8 @@
     },
     "Nadir_Reflectance_Band1": {
       "roles": [
-        "reflectance",
-        "data"
+        "data",
+        "reflectance"
       ],
       "eo:bands": [
         {
@@ -377,8 +377,8 @@
     },
     "Nadir_Reflectance_Band2": {
       "roles": [
-        "reflectance",
-        "data"
+        "data",
+        "reflectance"
       ],
       "eo:bands": [
         {
@@ -400,8 +400,8 @@
     },
     "Nadir_Reflectance_Band3": {
       "roles": [
-        "reflectance",
-        "data"
+        "data",
+        "reflectance"
       ],
       "eo:bands": [
         {
@@ -423,8 +423,8 @@
     },
     "Nadir_Reflectance_Band4": {
       "roles": [
-        "reflectance",
-        "data"
+        "data",
+        "reflectance"
       ],
       "eo:bands": [
         {
@@ -446,8 +446,8 @@
     },
     "Nadir_Reflectance_Band5": {
       "roles": [
-        "reflectance",
-        "data"
+        "data",
+        "reflectance"
       ],
       "eo:bands": [
         {
@@ -469,8 +469,8 @@
     },
     "Nadir_Reflectance_Band6": {
       "roles": [
-        "reflectance",
-        "data"
+        "data",
+        "reflectance"
       ],
       "eo:bands": [
         {
@@ -492,8 +492,8 @@
     },
     "Nadir_Reflectance_Band7": {
       "roles": [
-        "reflectance",
-        "data"
+        "data",
+        "reflectance"
       ],
       "eo:bands": [
         {
