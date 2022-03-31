@@ -80,8 +80,8 @@
     },
     "sur_refl_b01": {
       "roles": [
-        "reflectance",
-        "data"
+        "data",
+        "reflectance"
       ],
       "eo:bands": [
         {
@@ -103,8 +103,8 @@
     },
     "sur_refl_b02": {
       "roles": [
-        "reflectance",
-        "data"
+        "data",
+        "reflectance"
       ],
       "eo:bands": [
         {
@@ -126,8 +126,8 @@
     },
     "sur_refl_b03": {
       "roles": [
-        "reflectance",
-        "data"
+        "data",
+        "reflectance"
       ],
       "eo:bands": [
         {
@@ -149,8 +149,8 @@
     },
     "sur_refl_b04": {
       "roles": [
-        "reflectance",
-        "data"
+        "data",
+        "reflectance"
       ],
       "eo:bands": [
         {
@@ -172,8 +172,8 @@
     },
     "sur_refl_b05": {
       "roles": [
-        "reflectance",
-        "data"
+        "data",
+        "reflectance"
       ],
       "eo:bands": [
         {
@@ -195,8 +195,8 @@
     },
     "sur_refl_b06": {
       "roles": [
-        "reflectance",
-        "data"
+        "data",
+        "reflectance"
       ],
       "eo:bands": [
         {
@@ -218,8 +218,8 @@
     },
     "sur_refl_b07": {
       "roles": [
-        "reflectance",
-        "data"
+        "data",
+        "reflectance"
       ],
       "eo:bands": [
         {
