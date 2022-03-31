@@ -69,7 +69,7 @@ def create_collection(product_name: str, version: str) -> Collection:
     }
     for name, band in fragments.bands().items():
         if "roles" in band:
-            band["roles"].append("data")
+            band["roles"].insert(0, "data")
         else:
             band["roles"] = ["data"]
         band["type"] = MediaType.COG
