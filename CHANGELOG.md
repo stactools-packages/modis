@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Insert "data" role at the front of the roles list ([#75](https://github.com/stactools-packages/modis/pull/75))
 
+### Removed
+
+- `file:values` ([#76](https://github.com/stactools-packages/modis/pull/76))
+
 ## [0.2.0] - 2022-03-30
 
 ### Added
