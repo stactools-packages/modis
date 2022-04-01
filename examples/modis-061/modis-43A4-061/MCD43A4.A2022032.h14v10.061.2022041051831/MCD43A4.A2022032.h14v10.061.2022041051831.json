@@ -137,20 +137,6 @@
           "name": "BRDF_Albedo_Band_Mandatory_Quality_Band4"
         }
       ],
-      "file:values": [
-        {
-          "values": [
-            0
-          ],
-          "summary": "Processed, good quality (full BRDF inversions)"
-        },
-        {
-          "values": [
-            1
-          ],
-          "summary": "Processed, see other QA (magnitude BRDF inversions)"
-        }
-      ],
       "classification:classes": [
         {
           "value": 0,
@@ -228,20 +214,6 @@
           "name": "BRDF_Albedo_Band_Mandatory_Quality_Band5"
         }
       ],
-      "file:values": [
-        {
-          "values": [
-            0
-          ],
-          "summary": "Processed, good quality (full BRDF inversions)"
-        },
-        {
-          "values": [
-            1
-          ],
-          "summary": "Processed, see other QA (magnitude BRDF inversions)"
-        }
-      ],
       "classification:classes": [
         {
           "value": 0,
@@ -269,20 +241,6 @@
       "eo:bands": [
         {
           "name": "BRDF_Albedo_Band_Mandatory_Quality_Band7"
-        }
-      ],
-      "file:values": [
-        {
-          "values": [
-            0
-          ],
-          "summary": "Processed, good quality (full BRDF inversions)"
-        },
-        {
-          "values": [
-            1
-          ],
-          "summary": "Processed, see other QA (magnitude BRDF inversions)"
         }
       ],
       "classification:classes": [
@@ -362,20 +320,6 @@
           "name": "BRDF_Albedo_Band_Mandatory_Quality_Band6"
         }
       ],
-      "file:values": [
-        {
-          "values": [
-            0
-          ],
-          "summary": "Processed, good quality (full BRDF inversions)"
-        },
-        {
-          "values": [
-            1
-          ],
-          "summary": "Processed, see other QA (magnitude BRDF inversions)"
-        }
-      ],
       "classification:classes": [
         {
           "value": 0,
@@ -403,20 +347,6 @@
       "eo:bands": [
         {
           "name": "BRDF_Albedo_Band_Mandatory_Quality_Band2"
-        }
-      ],
-      "file:values": [
-        {
-          "values": [
-            0
-          ],
-          "summary": "Processed, good quality (full BRDF inversions)"
-        },
-        {
-          "values": [
-            1
-          ],
-          "summary": "Processed, see other QA (magnitude BRDF inversions)"
         }
       ],
       "classification:classes": [
@@ -472,20 +402,6 @@
           "name": "BRDF_Albedo_Band_Mandatory_Quality_Band3"
         }
       ],
-      "file:values": [
-        {
-          "values": [
-            0
-          ],
-          "summary": "Processed, good quality (full BRDF inversions)"
-        },
-        {
-          "values": [
-            1
-          ],
-          "summary": "Processed, see other QA (magnitude BRDF inversions)"
-        }
-      ],
       "classification:classes": [
         {
           "value": 0,
@@ -513,20 +429,6 @@
       "eo:bands": [
         {
           "name": "BRDF_Albedo_Band_Mandatory_Quality_Band1"
-        }
-      ],
-      "file:values": [
-        {
-          "values": [
-            0
-          ],
-          "summary": "Processed, good quality (full BRDF inversions)"
-        },
-        {
-          "values": [
-            1
-          ],
-          "summary": "Processed, see other QA (magnitude BRDF inversions)"
         }
       ],
       "classification:classes": [
@@ -602,7 +504,6 @@
     "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/file/v2.0.0/schema.json",
     "https://stac-extensions.github.io/classification/v1.0.0/schema.json"
   ],
   "collection": "modis-43A4-061"

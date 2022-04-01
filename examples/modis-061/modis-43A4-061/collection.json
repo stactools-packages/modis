@@ -76,20 +76,6 @@
           "spatial_resolution": 500
         }
       ],
-      "file:values": [
-        {
-          "values": [
-            0
-          ],
-          "summary": "Processed, good quality (full BRDF inversions)"
-        },
-        {
-          "values": [
-            1
-          ],
-          "summary": "Processed, see other QA (magnitude BRDF inversions)"
-        }
-      ],
       "classification:classes": [
         {
           "value": 0,
@@ -116,20 +102,6 @@
         {
           "data_type": "uint8",
           "spatial_resolution": 500
-        }
-      ],
-      "file:values": [
-        {
-          "values": [
-            0
-          ],
-          "summary": "Processed, good quality (full BRDF inversions)"
-        },
-        {
-          "values": [
-            1
-          ],
-          "summary": "Processed, see other QA (magnitude BRDF inversions)"
         }
       ],
       "classification:classes": [
@@ -160,20 +132,6 @@
           "spatial_resolution": 500
         }
       ],
-      "file:values": [
-        {
-          "values": [
-            0
-          ],
-          "summary": "Processed, good quality (full BRDF inversions)"
-        },
-        {
-          "values": [
-            1
-          ],
-          "summary": "Processed, see other QA (magnitude BRDF inversions)"
-        }
-      ],
       "classification:classes": [
         {
           "value": 0,
@@ -200,20 +158,6 @@
         {
           "data_type": "uint8",
           "spatial_resolution": 500
-        }
-      ],
-      "file:values": [
-        {
-          "values": [
-            0
-          ],
-          "summary": "Processed, good quality (full BRDF inversions)"
-        },
-        {
-          "values": [
-            1
-          ],
-          "summary": "Processed, see other QA (magnitude BRDF inversions)"
         }
       ],
       "classification:classes": [
@@ -244,20 +188,6 @@
           "spatial_resolution": 500
         }
       ],
-      "file:values": [
-        {
-          "values": [
-            0
-          ],
-          "summary": "Processed, good quality (full BRDF inversions)"
-        },
-        {
-          "values": [
-            1
-          ],
-          "summary": "Processed, see other QA (magnitude BRDF inversions)"
-        }
-      ],
       "classification:classes": [
         {
           "value": 0,
@@ -286,20 +216,6 @@
           "spatial_resolution": 500
         }
       ],
-      "file:values": [
-        {
-          "values": [
-            0
-          ],
-          "summary": "Processed, good quality (full BRDF inversions)"
-        },
-        {
-          "values": [
-            1
-          ],
-          "summary": "Processed, see other QA (magnitude BRDF inversions)"
-        }
-      ],
       "classification:classes": [
         {
           "value": 0,
@@ -326,20 +242,6 @@
         {
           "data_type": "uint8",
           "spatial_resolution": 500
-        }
-      ],
-      "file:values": [
-        {
-          "values": [
-            0
-          ],
-          "summary": "Processed, good quality (full BRDF inversions)"
-        },
-        {
-          "values": [
-            1
-          ],
-          "summary": "Processed, see other QA (magnitude BRDF inversions)"
         }
       ],
       "classification:classes": [

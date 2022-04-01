@@ -206,32 +206,6 @@
           "unit": "Rank"
         }
       ],
-      "file:values": [
-        {
-          "values": [
-            0
-          ],
-          "summary": "Good data, use with confidence"
-        },
-        {
-          "values": [
-            1
-          ],
-          "summary": "Marginal data, useful, but look at other QA information"
-        },
-        {
-          "values": [
-            2
-          ],
-          "summary": "Snow/Ice Target covered with snow/ice"
-        },
-        {
-          "values": [
-            3
-          ],
-          "summary": "Cloudy data"
-        }
-      ],
       "classification:classes": [
         {
           "value": 0,
@@ -359,7 +333,6 @@
   "stac_extensions": [
     "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/file/v2.0.0/schema.json",
     "https://stac-extensions.github.io/classification/v1.0.0/schema.json"
   ],
   "collection": "modis-13A1-061"

@@ -259,68 +259,6 @@
           "spatial_resolution": 1000
         }
       ],
-      "file:values": [
-        {
-          "values": [
-            0
-          ],
-          "summary": "Not processed (missing input data)"
-        },
-        {
-          "values": [
-            1
-          ],
-          "summary": "Not processed (obsolete; not used since Collection 1)"
-        },
-        {
-          "values": [
-            2
-          ],
-          "summary": "Not processed (other reason)"
-        },
-        {
-          "values": [
-            3
-          ],
-          "summary": "Non-fire water pixel"
-        },
-        {
-          "values": [
-            4
-          ],
-          "summary": "Cloud (land or water)"
-        },
-        {
-          "values": [
-            5
-          ],
-          "summary": "Non-fire land pixel"
-        },
-        {
-          "values": [
-            6
-          ],
-          "summary": "Unknown (land or water)"
-        },
-        {
-          "values": [
-            7
-          ],
-          "summary": "Fire (low confidence, land or water)"
-        },
-        {
-          "values": [
-            8
-          ],
-          "summary": "Fire (nominal confidence, land or water)"
-        },
-        {
-          "values": [
-            9
-          ],
-          "summary": "Fire (high confidence, land or water)"
-        }
-      ],
       "classification:classes": [
         {
           "value": 0,
@@ -419,7 +357,6 @@
   "stac_extensions": [
     "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/file/v2.0.0/schema.json",
     "https://stac-extensions.github.io/classification/v1.0.0/schema.json"
   ],
   "collection": "modis-14A1-061"
