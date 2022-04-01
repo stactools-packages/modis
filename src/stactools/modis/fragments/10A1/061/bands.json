@@ -15,38 +15,6 @@
                 "spatial_resolution": 500
             }
         ],
-        "file:values": [
-            {
-                "values": [
-                    0
-                ],
-                "summary": "best"
-            },
-            {
-                "values": [
-                    1
-                ],
-                "summary": "good"
-            },
-            {
-                "values": [
-                    2
-                ],
-                "summary": "ok"
-            },
-            {
-                "values": [
-                    3
-                ],
-                "summary": "poor (not used)"
-            },
-            {
-                "values": [
-                    4
-                ],
-                "summary": "other (not used)"
-            }
-        ],
         "classification:classes": [
             {
                 "value": 0,

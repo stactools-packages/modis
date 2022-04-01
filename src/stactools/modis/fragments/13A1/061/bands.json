@@ -121,32 +121,6 @@
                 "spatial_resolution": 500
             }
         ],
-        "file:values": [
-            {
-                "values": [
-                    0
-                ],
-                "summary": "Good data, use with confidence"
-            },
-            {
-                "values": [
-                    1
-                ],
-                "summary": "Marginal data, useful, but look at other QA information"
-            },
-            {
-                "values": [
-                    2
-                ],
-                "summary": "Snow/Ice Target covered with snow/ice"
-            },
-            {
-                "values": [
-                    3
-                ],
-                "summary": "Cloudy data"
-            }
-        ],
         "classification:classes": [
             {
                 "value": 0,
