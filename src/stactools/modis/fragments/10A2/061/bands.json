@@ -6,68 +6,6 @@
                 "spatial_resolution": 500
             }
         ],
-        "file:values": [
-            {
-                "values": [
-                    0
-                ],
-                "summary": "missing data"
-            },
-            {
-                "values": [
-                    1
-                ],
-                "summary": "no decision"
-            },
-            {
-                "values": [
-                    11
-                ],
-                "summary": "night"
-            },
-            {
-                "values": [
-                    25
-                ],
-                "summary": "no snow"
-            },
-            {
-                "values": [
-                    37
-                ],
-                "summary": "lake"
-            },
-            {
-                "values": [
-                    39
-                ],
-                "summary": "ocean"
-            },
-            {
-                "values": [
-                    50
-                ],
-                "summary": "cloud"
-            },
-            {
-                "values": [
-                    100
-                ],
-                "summary": "lake ice"
-            },
-            {
-                "values": [
-                    200
-                ],
-                "summary": "snow"
-            },
-            {
-                "values": [
-                    254
-                ],
-                "summary": "detector saturated"
-            }
-        ],
         "classification:classes": [
             {
                 "value": 0,

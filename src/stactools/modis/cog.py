@@ -5,7 +5,6 @@ from typing import List, Optional, Tuple
 import stactools.core.utils.convert
 from pystac import Asset, Item, MediaType
 from pystac.extensions.eo import Band, EOExtension
-from pystac.extensions.file import FileExtension, MappingObject
 from pystac.extensions.raster import RasterBand, RasterExtension
 
 import stactools.modis.utils
@@ -101,10 +100,6 @@ def add_cog_assets(item: Item,
         if eo_bands:
             eo = EOExtension.ext(asset, add_if_missing=True)
             eo.bands = [Band.create(**eo_band) for eo_band in eo_bands]
-        file_values = band.get("file:values")
-        if file_values:
-            file_ext = FileExtension.ext(asset, add_if_missing=True)
-            file_ext.values = [MappingObject.from_dict(d) for d in file_values]
         classification_classes = band.get("classification:classes")
         if classification_classes:
             if CLASSIFICATION_EXTENSION_HREF not in item.stac_extensions:
