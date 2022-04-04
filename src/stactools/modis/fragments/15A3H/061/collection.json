@@ -59,10 +59,8 @@
         "NASA",
         "MODIS",
         "Satellite",
-        "Remote Sensing",
-        "Imagery",
         "Global",
-        "Forest",
+        "Vegetation",
         "MCD15A3H"
     ],
     "sci:publications": [
