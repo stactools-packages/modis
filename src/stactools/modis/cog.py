@@ -1,5 +1,6 @@
 import logging
 import os
+import warnings
 from typing import List, Optional, Tuple
 
 import stactools.core.utils.convert
@@ -28,6 +29,11 @@ def add_cogs(
     Returns:
         List[str]: The COG hrefs
     """
+    warnings.warn(
+        "stactools.modis.cog.add_cogs will be removed in v0.4.0, "
+        "use stactools.modis.cogify and stactools.modis.Builder instead",
+        DeprecationWarning,
+    )
     file = File.from_item(item)
     if create:
         (paths, subdataset_names) = cogify(file.hdf_href, directory)
@@ -65,6 +71,11 @@ def add_cog_assets(
         List[str]: The list of subdataset names, in case they were intuited from
             the hrefs.
     """
+    warnings.warn(
+        "stactools.modis.cog.add_cogs_assets will be removed in v0.4.0, "
+        "use stactools.modis.cogify and stactools.modis.Builder instead",
+        DeprecationWarning,
+    )
     if not subdataset_names:
         subdataset_names = [
             "_".join(os.path.basename(href).split(".")[-2].split("_")[1:])

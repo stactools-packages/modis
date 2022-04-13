@@ -5,15 +5,15 @@
   "properties": {
     "start_datetime": "2022-01-24T00:00:00Z",
     "end_datetime": "2022-02-08T23:59:59.999999Z",
-    "modis:horizontal-tile": 14,
-    "modis:vertical-tile": 10,
-    "modis:tile-id": "51014010",
     "instruments": [
       "modis"
     ],
     "platform": "terra,aqua",
     "created": "2022-02-10T05:19:45Z",
     "updated": "2022-02-09T23:25:46.095000Z",
+    "modis:horizontal-tile": 14,
+    "modis:vertical-tile": 10,
+    "modis:tile-id": "51014010",
     "eo:cloud_cover": 10,
     "datetime": "2022-02-01T00:00:00Z"
   },
@@ -65,20 +65,20 @@
     }
   ],
   "assets": {
-    "hdf": {
-      "href": "../../../../MCD43A4.A2022032.h14v10.061.2022041051831.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
     "metadata": {
       "href": "../../../../MCD43A4.A2022032.h14v10.061.2022041051831.hdf.xml",
       "type": "application/xml",
       "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
+      ]
+    },
+    "hdf": {
+      "href": "../../../../MCD43A4.A2022032.h14v10.061.2022041051831.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
       ]
     }
   },
