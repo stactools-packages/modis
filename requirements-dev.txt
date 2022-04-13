@@ -4,12 +4,6 @@ flake8
 isort
 mypy
 pre-commit
-pylint
 pytest
 pytest-cov
-sphinx
-sphinx-autobuild
-sphinx-click
-sphinxcontrib-fulltoc
-sphinxcontrib-napoleon
 types-setuptools
