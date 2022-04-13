@@ -5,18 +5,17 @@
   "properties": {
     "start_datetime": "2022-01-24T00:00:00Z",
     "end_datetime": "2022-02-08T23:59:59.999999Z",
-    "modis:horizontal-tile": 14,
-    "modis:vertical-tile": 10,
-    "modis:tile-id": "51014010",
     "instruments": [
       "modis"
     ],
     "platform": "terra,aqua",
     "created": "2022-02-10T05:19:45Z",
     "updated": "2022-02-09T23:25:46.095000Z",
-    "eo:cloud_cover": 10,
+    "modis:horizontal-tile": 14,
+    "modis:vertical-tile": 10,
+    "modis:tile-id": "51014010",
     "proj:epsg": null,
-    "proj:wkt2": "PROJCS[\"unnamed\",GEOGCS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",SPHEROID[\"Custom spheroid\",6371007.181,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Sinusoidal\"],PARAMETER[\"longitude_of_center\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"Meter\",1],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "proj:wkt2": "PROJCS[\"unnamed\",GEOGCS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not_specified_based_on_custom_spheroid\",SPHEROID[\"Custom spheroid\",6371007.181,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Sinusoidal\"],PARAMETER[\"longitude_of_center\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
     "proj:geometry": {
       "type": "Polygon",
       "coordinates": [
@@ -44,6 +43,10 @@
         ]
       ]
     },
+    "proj:shape": [
+      2400,
+      2400
+    ],
     "proj:transform": [
       463.3127165279167,
       0.0,
@@ -52,10 +55,7 @@
       -463.3127165274999,
       -1111950.519667
     ],
-    "proj:shape": [
-      2400,
-      2400
-    ],
+    "eo:cloud_cover": 10,
     "datetime": "2022-02-01T00:00:00Z"
   },
   "geometry": {
@@ -106,20 +106,20 @@
     }
   ],
   "assets": {
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MCD43A4.A2022032.h14v10.061.2022041051831.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
     "metadata": {
       "href": "../../../../tests/data-files/external/MCD43A4.A2022032.h14v10.061.2022041051831.hdf.xml",
       "type": "application/xml",
       "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
+      ]
+    },
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MCD43A4.A2022032.h14v10.061.2022041051831.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
       ]
     },
     "BRDF_Albedo_Band_Mandatory_Quality_Band4": {
@@ -501,8 +501,8 @@
     -9.95544626171462
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
     "https://stac-extensions.github.io/classification/v1.0.0/schema.json"
   ],

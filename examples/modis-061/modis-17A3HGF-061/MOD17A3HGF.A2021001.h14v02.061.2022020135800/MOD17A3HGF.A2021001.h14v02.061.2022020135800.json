@@ -5,17 +5,17 @@
   "properties": {
     "start_datetime": "2021-01-01T00:00:00Z",
     "end_datetime": "2021-12-31T23:59:59Z",
-    "modis:horizontal-tile": 14,
-    "modis:vertical-tile": 2,
-    "modis:tile-id": "51014002",
     "instruments": [
       "modis"
     ],
     "platform": "terra",
     "created": "2022-01-20T13:58:00Z",
     "updated": "2022-01-20T08:00:08.259000Z",
+    "modis:horizontal-tile": 14,
+    "modis:vertical-tile": 2,
+    "modis:tile-id": "51014002",
     "proj:epsg": null,
-    "proj:wkt2": "PROJCS[\"unnamed\",GEOGCS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",SPHEROID[\"Custom spheroid\",6371007.181,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Sinusoidal\"],PARAMETER[\"longitude_of_center\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"Meter\",1],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "proj:wkt2": "PROJCS[\"unnamed\",GEOGCS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not_specified_based_on_custom_spheroid\",SPHEROID[\"Custom spheroid\",6371007.181,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Sinusoidal\"],PARAMETER[\"longitude_of_center\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
     "proj:geometry": {
       "type": "Polygon",
       "coordinates": [
@@ -43,6 +43,10 @@
         ]
       ]
     },
+    "proj:shape": [
+      2400,
+      2400
+    ],
     "proj:transform": [
       463.3127165279167,
       0.0,
@@ -50,10 +54,6 @@
       0.0,
       -463.3127165279169,
       7783653.637667
-    ],
-    "proj:shape": [
-      2400,
-      2400
     ],
     "datetime": null
   },
@@ -105,20 +105,20 @@
     }
   ],
   "assets": {
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MOD17A3HGF.A2021001.h14v02.061.2022020135800.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
     "metadata": {
       "href": "../../../../tests/data-files/external/MOD17A3HGF.A2021001.h14v02.061.2022020135800.hdf.xml",
       "type": "application/xml",
       "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
+      ]
+    },
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MOD17A3HGF.A2021001.h14v02.061.2022020135800.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
       ]
     },
     "Npp_QC_500m": {

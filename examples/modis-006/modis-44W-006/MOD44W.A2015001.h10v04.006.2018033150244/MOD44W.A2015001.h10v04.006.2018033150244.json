@@ -17,15 +17,15 @@
     "QA_10": "Fill - outside of projected area",
     "start_datetime": "2015-01-01T00:00:00Z",
     "end_datetime": "2015-12-31T00:00:00Z",
-    "modis:horizontal-tile": 10,
-    "modis:vertical-tile": 4,
-    "modis:tile-id": "51010004",
     "instruments": [
       "modis"
     ],
     "platform": "terra",
     "created": "2018-02-02T15:02:44Z",
     "updated": "2018-04-04T12:07:35.020000Z",
+    "modis:horizontal-tile": 10,
+    "modis:vertical-tile": 4,
+    "modis:tile-id": "51010004",
     "datetime": null
   },
   "geometry": {
@@ -76,20 +76,20 @@
     }
   ],
   "assets": {
-    "hdf": {
-      "href": "../../../../tests/data-files/MOD44W.A2015001.h10v04.006.2018033150244.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
     "metadata": {
       "href": "../../../../tests/data-files/MOD44W.A2015001.h10v04.006.2018033150244.hdf.xml",
       "type": "application/xml",
       "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
+      ]
+    },
+    "hdf": {
+      "href": "../../../../tests/data-files/MOD44W.A2015001.h10v04.006.2018033150244.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
       ]
     }
   },
