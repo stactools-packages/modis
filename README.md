@@ -40,6 +40,21 @@ $ stac modis create-catalog examples/file-list-061.txt examples/modis-061
 
 ## Contributing
 
+We use [pre-commit](https://pre-commit.com/) to check any changes.
+To set up your development environment:
+
+```shell
+$ pip install -e .
+$ pip install -r requirements-dev.txt
+$ pre-commit install
+```
+
+To check all files:
+
+```shell
+$ pre-commit run --all-files
+```
+
 If you are making any changes to the item or collection structure, the tests will fail until you update the expected values.
 To update, run this script:
 
