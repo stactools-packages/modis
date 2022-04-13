@@ -2,7 +2,7 @@
   "type": "Catalog",
   "id": "modis-061",
   "stac_version": "1.0.0",
-  "description": "MODIS STAC Catalog containg a subset of MODIS assets, version 061",
+  "description": "MODIS STAC Catalog containing a subset of MODIS assets, version 061",
   "links": [
     {
       "rel": "root",

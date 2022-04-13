@@ -20,15 +20,15 @@
     "STD_LAI_STD_FPAR_fill_value_class_255": "Fill",
     "start_datetime": "2022-01-17T00:00:00Z",
     "end_datetime": "2022-01-24T23:59:59Z",
-    "modis:horizontal-tile": 10,
-    "modis:vertical-tile": 5,
-    "modis:tile-id": "51010005",
     "instruments": [
       "modis"
     ],
     "platform": "terra",
     "created": "2022-01-26T20:58:20Z",
     "updated": "2022-01-26T23:20:26.941000Z",
+    "modis:horizontal-tile": 10,
+    "modis:vertical-tile": 5,
+    "modis:tile-id": "51010005",
     "datetime": null
   },
   "geometry": {
@@ -79,20 +79,20 @@
     }
   ],
   "assets": {
-    "hdf": {
-      "href": "../../../../tests/data-files/MOD15A2H.A2022017.h10v05.006.2022026205820.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
     "metadata": {
       "href": "../../../../tests/data-files/MOD15A2H.A2022017.h10v05.006.2022026205820.hdf.xml",
       "type": "application/xml",
       "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
+      ]
+    },
+    "hdf": {
+      "href": "../../../../tests/data-files/MOD15A2H.A2022017.h10v05.006.2022026205820.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
       ]
     }
   },
