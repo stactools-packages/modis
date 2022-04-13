@@ -54,7 +54,8 @@ class Fragments:
         else:
             raise FragmentMissing(
                 f"Fragment missing for collection={self._collection}, "
-                f"version={self._version}: {file_name}")
+                f"version={self._version}: {file_name}"
+            )
 
 
 class FragmentMissing(Exception):

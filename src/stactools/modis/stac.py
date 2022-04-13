@@ -20,10 +20,13 @@ from stactools.core.utils.antimeridian import Strategy
 
 import stactools.modis.cog
 import stactools.modis.utils
-from stactools.modis.constants import (CLASSIFICATION_EXTENSION_HREF,
-                                       HDF_ASSET_KEY, HDF_ASSET_PROPERTIES,
-                                       METADATA_ASSET_KEY,
-                                       METADATA_ASSET_PROPERTIES)
+from stactools.modis.constants import (
+    CLASSIFICATION_EXTENSION_HREF,
+    HDF_ASSET_KEY,
+    HDF_ASSET_PROPERTIES,
+    METADATA_ASSET_KEY,
+    METADATA_ASSET_PROPERTIES,
+)
 from stactools.modis.file import File
 from stactools.modis.metadata import Metadata
 from stactools.modis.product import Product
@@ -54,13 +57,15 @@ def create_collection(product_name: str, version: str) -> Collection:
         summaries["gsd"] = [gsd]
 
     fragment = fragments.collection()
-    collection = pystac.Collection(id=product.collection_id(version),
-                                   description=fragment["description"],
-                                   extent=fragment["extent"],
-                                   title=fragment["title"],
-                                   providers=fragment["providers"],
-                                   keywords=fragment.get("keywords", list()),
-                                   summaries=Summaries(summaries))
+    collection = pystac.Collection(
+        id=product.collection_id(version),
+        description=fragment["description"],
+        extent=fragment["extent"],
+        title=fragment["title"],
+        providers=fragment["providers"],
+        keywords=fragment.get("keywords", list()),
+        summaries=Summaries(summaries),
+    )
     collection.add_links(fragment["links"])
 
     item_assets_dict = {
@@ -89,17 +94,18 @@ def create_collection(product_name: str, version: str) -> Collection:
         ScientificExtension.add_to(collection)
         # We don't use the scientific extension to set the publications because
         # we don't want duplicate cite-as links.
-        collection.extra_fields["sci:publications"] = fragment[
-            "sci:publications"]
+        collection.extra_fields["sci:publications"] = fragment["sci:publications"]
 
     return collection
 
 
-def create_item(href: str,
-                cog_directory: Optional[str] = None,
-                create_cogs: bool = False,
-                read_href_modifier: Optional[ReadHrefModifier] = None,
-                antimeridian_strategy: Strategy = Strategy.SPLIT) -> Item:
+def create_item(
+    href: str,
+    cog_directory: Optional[str] = None,
+    create_cogs: bool = False,
+    read_href_modifier: Optional[ReadHrefModifier] = None,
+    antimeridian_strategy: Strategy = Strategy.SPLIT,
+) -> Item:
     """Creates a STAC Item from MODIS data.
 
     Args:
@@ -121,18 +127,18 @@ def create_item(href: str,
     metadata = Metadata(file.xml_href, read_href_modifier)
     fragments = file.product.fragments(metadata.version)
     properties = fragments.item()
-    properties["start_datetime"] = pystac.utils.datetime_to_str(
-        metadata.start_datetime)
-    properties["end_datetime"] = pystac.utils.datetime_to_str(
-        metadata.end_datetime)
+    properties["start_datetime"] = pystac.utils.datetime_to_str(metadata.start_datetime)
+    properties["end_datetime"] = pystac.utils.datetime_to_str(metadata.end_datetime)
     properties["modis:horizontal-tile"] = metadata.horizontal_tile
     properties["modis:vertical-tile"] = metadata.vertical_tile
     properties["modis:tile-id"] = metadata.tile_id
-    item = pystac.Item(id=metadata.id,
-                       geometry=metadata.geometry,
-                       bbox=metadata.bbox,
-                       datetime=metadata.datetime,
-                       properties=properties)
+    item = pystac.Item(
+        id=metadata.id,
+        geometry=metadata.geometry,
+        bbox=metadata.bbox,
+        datetime=metadata.datetime,
+        properties=properties,
+    )
     stactools.core.utils.antimeridian.fix_item(item, antimeridian_strategy)
 
     item.common_metadata.instruments = metadata.instruments
@@ -158,15 +164,13 @@ def create_item(href: str,
     if is_local_hdf:
         subdatasets = stactools.modis.utils.subdatasets(file.hdf_href)
         if not subdatasets:
-            raise ValueError(
-                f"No subdatasets found in HDF file: {file.hdf_href}")
+            raise ValueError(f"No subdatasets found in HDF file: {file.hdf_href}")
         with rasterio.open(subdatasets[0]) as dataset:
             crs = dataset.crs
             proj_bbox = dataset.bounds
             proj_transform = list(dataset.transform)[0:6]
             proj_shape = dataset.shape
-        proj_geometry = shapely.geometry.mapping(
-            shapely.geometry.box(*proj_bbox))
+        proj_geometry = shapely.geometry.mapping(shapely.geometry.box(*proj_bbox))
         projection = ProjectionExtension.ext(item, add_if_missing=True)
         projection.epsg = None
         projection.wkt2 = crs.to_wkt("WKT2")
@@ -179,7 +183,7 @@ def create_item(href: str,
     if create_cogs:
         if not is_local_hdf:
             raise ValueError(
-                f"Cannot cogify remote or non-existant HDF files: {file.hdf_href}"
+                f"Cannot cogify remote or non-existent HDF files: {file.hdf_href}"
             )
         elif not cog_directory:
             cog_directory = os.path.dirname(file.hdf_href)

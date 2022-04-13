@@ -12,18 +12,15 @@ import json
 import os
 from pathlib import Path
 
-fragments_directory = Path(
-    __file__).parents[1] / "src" / "stactools" / "modis" / "fragments"
+fragments_directory = (
+    Path(__file__).parents[1] / "src" / "stactools" / "modis" / "fragments"
+)
 
 SPECIAL_DOI_TITLES = {
-    "MOD10A1":
-    "MODIS/Terra Snow Cover Daily L3 Global 500m SIN Grid, Version 61",
-    "MYD10A1":
-    "MODIS/Aqua Snow Cover Daily L3 Global 500m SIN Grid, Version 61",
-    "MOD10A2":
-    "MODIS/Terra Snow Cover 8-Day L3 Global 500m SIN Grid, Version 61",
-    "MYD10A2":
-    "MODIS/Aqua Snow Cover 8-Day L3 Global 500m SIN Grid, Version 61",
+    "MOD10A1": "MODIS/Terra Snow Cover Daily L3 Global 500m SIN Grid, Version 61",
+    "MYD10A1": "MODIS/Aqua Snow Cover Daily L3 Global 500m SIN Grid, Version 61",
+    "MOD10A2": "MODIS/Terra Snow Cover 8-Day L3 Global 500m SIN Grid, Version 61",
+    "MYD10A2": "MODIS/Aqua Snow Cover 8-Day L3 Global 500m SIN Grid, Version 61",
 }
 
 for directory, directories, file_names in os.walk(fragments_directory):
@@ -68,8 +65,7 @@ for directory, directories, file_names in os.walk(fragments_directory):
         if link["href"].endswith(".pdf"):
             product = os.path.basename(link["href"]).split("_")[0]
             link["title"] = f"{product} User Guide"
-        if link["href"].startswith(
-                "https://ladsweb.modaps.eosdis.nasa.gov/filespec"):
+        if link["href"].startswith("https://ladsweb.modaps.eosdis.nasa.gov/filespec"):
             product = os.path.basename(link["href"])
             link["title"] = f"{product} file specification"
         if link["href"].startswith("https://doi.org/10.5067/MODIS"):

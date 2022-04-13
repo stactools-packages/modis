@@ -19,9 +19,9 @@ class MissingElement(Exception):
 class Metadata:
     """Structure to hold values fetched from a metadata XML file."""
 
-    def __init__(self,
-                 href: str,
-                 read_href_modifier: Optional[ReadHrefModifier] = None):
+    def __init__(
+        self, href: str, read_href_modifier: Optional[ReadHrefModifier] = None
+    ):
         """Reads fields from a metadata href.
 
         Args:
@@ -31,7 +31,6 @@ class Metadata:
         """
 
         def missing_element(attribute: str) -> Callable[[str], Exception]:
-
             def get_exception(xpath: str) -> Exception:
                 return MissingElement(
                     f"Could not find attribute `{attribute}` at xpath '{xpath}' at href {href}"
@@ -46,15 +45,20 @@ class Metadata:
         with fsspec.open(read_href) as file:
             root = XmlElement(etree.parse(file, base_url=href).getroot())
 
-        metadata = root.find_or_throw("GranuleURMetaData",
-                                      missing_element("URMetadata"))
+        metadata = root.find_or_throw(
+            "GranuleURMetaData", missing_element("URMetadata")
+        )
         self.id = os.path.splitext(
-            metadata.find_text_or_throw("ECSDataGranule/LocalGranuleID",
-                                        missing_element("id")))[0]
+            metadata.find_text_or_throw(
+                "ECSDataGranule/LocalGranuleID", missing_element("id")
+            )
+        )[0]
         self.product = metadata.find_text_or_throw(
-            "CollectionMetaData/ShortName", missing_element("product"))
-        version = metadata.find_text_or_throw("CollectionMetaData/VersionID",
-                                              missing_element("version"))
+            "CollectionMetaData/ShortName", missing_element("product")
+        )
+        version = metadata.find_text_or_throw(
+            "CollectionMetaData/VersionID", missing_element("version")
+        )
         if version == "6":
             self.version = "006"
         elif version == "61":
@@ -63,47 +67,58 @@ class Metadata:
             raise ValueError(f"Unsupported MODIS version: {version}")
 
         points = [
-            (float(
-                point.find_text_or_throw("PointLongitude",
-                                         missing_element("longitude"))),
-             float(
-                 point.find_text_or_throw("PointLatitude",
-                                          missing_element("latitude"))))
+            (
+                float(
+                    point.find_text_or_throw(
+                        "PointLongitude", missing_element("longitude")
+                    )
+                ),
+                float(
+                    point.find_text_or_throw(
+                        "PointLatitude", missing_element("latitude")
+                    )
+                ),
+            )
             for point in metadata.findall(
                 "SpatialDomainContainer/HorizontalSpatialDomainContainer/"
-                "GPolygon/Boundary/Point")
+                "GPolygon/Boundary/Point"
+            )
         ]
         polygon = Polygon(points)
         self.geometry = shapely.geometry.mapping(polygon)
         self.bbox = polygon.bounds
 
         start_date = metadata.find_text_or_throw(
-            "RangeDateTime/RangeBeginningDate", missing_element("start_date"))
+            "RangeDateTime/RangeBeginningDate", missing_element("start_date")
+        )
         start_time = metadata.find_text_or_throw(
-            "RangeDateTime/RangeBeginningTime", missing_element("start_time"))
+            "RangeDateTime/RangeBeginningTime", missing_element("start_time")
+        )
         self.start_datetime = datetime.datetime.fromisoformat(
-            f"{start_date}T{start_time}")
-        end_date = metadata.find_text_or_throw("RangeDateTime/RangeEndingDate",
-                                               missing_element("end_date"))
-        end_time = metadata.find_text_or_throw("RangeDateTime/RangeEndingTime",
-                                               missing_element("end_time"))
-        self.end_datetime = datetime.datetime.fromisoformat(
-            f"{end_date}T{end_time}")
+            f"{start_date}T{start_time}"
+        )
+        end_date = metadata.find_text_or_throw(
+            "RangeDateTime/RangeEndingDate", missing_element("end_date")
+        )
+        end_time = metadata.find_text_or_throw(
+            "RangeDateTime/RangeEndingTime", missing_element("end_time")
+        )
+        self.end_datetime = datetime.datetime.fromisoformat(f"{end_date}T{end_time}")
 
         self.created = datetime.datetime.fromisoformat(
-            metadata.find_text_or_throw("ECSDataGranule/ProductionDateTime",
-                                        missing_element("created")))
+            metadata.find_text_or_throw(
+                "ECSDataGranule/ProductionDateTime", missing_element("created")
+            )
+        )
         self.updated = datetime.datetime.fromisoformat(
-            metadata.find_text_or_throw("LastUpdate",
-                                        missing_element("updated")))
+            metadata.find_text_or_throw("LastUpdate", missing_element("updated"))
+        )
 
         psas = metadata.findall("PSAs/PSA")
         self.qa_percent_not_produced_cloud = None
         for psa in psas:
-            name = psa.find_text_or_throw("PSAName",
-                                          missing_element("PSAName"))
-            value = psa.find_text_or_throw("PSAValue",
-                                           missing_element("PSAValue"))
+            name = psa.find_text_or_throw("PSAName", missing_element("PSAName"))
+            value = psa.find_text_or_throw("PSAValue", missing_element("PSAValue"))
             if name == "HORIZONTALTILENUMBER":
                 self.horizontal_tile = int(value)
             elif name == "VERTICALTILENUMBER":
@@ -115,13 +130,13 @@ class Metadata:
 
         self.qa_percent_cloud_cover = {}
         measured_parameters = metadata.findall(
-            "MeasuredParameter/MeasuredParameterContainer")
+            "MeasuredParameter/MeasuredParameterContainer"
+        )
         for measured_parameter in measured_parameters:
             name = measured_parameter.find_text_or_throw(
-                "ParameterName",
-                missing_element("ParameterName")).replace(" ", "_")
-            qa_percent_cloud_cover = measured_parameter.find_text(
-                "QAPercentCloudCover")
+                "ParameterName", missing_element("ParameterName")
+            ).replace(" ", "_")
+            qa_percent_cloud_cover = measured_parameter.find_text("QAPercentCloudCover")
             if qa_percent_cloud_cover:
                 self.qa_percent_cloud_cover[name] = int(qa_percent_cloud_cover)
 
@@ -129,19 +144,24 @@ class Metadata:
         # Per the discussion in
         # https://github.com/radiantearth/stac-spec/issues/216, it seems like
         # the recommendation for multi-platform datasets is to just include both
-        # and use a string seperator.
-        self.platform = ",".join([
-            platform.find_text_or_throw(
-                "PlatformShortName",
-                missing_element("platform_short_name")).lower()
-            for platform in platforms
-        ])
+        # and use a string separator.
+        self.platform = ",".join(
+            [
+                platform.find_text_or_throw(
+                    "PlatformShortName", missing_element("platform_short_name")
+                ).lower()
+                for platform in platforms
+            ]
+        )
         self.instruments = list(
             set(
                 platform.find_text_or_throw(
                     "Instrument/InstrumentShortName",
-                    missing_element("instrument_short_name")).lower()
-                for platform in platforms))
+                    missing_element("instrument_short_name"),
+                ).lower()
+                for platform in platforms
+            )
+        )
 
     @property
     def datetime(self) -> Optional[datetime.datetime]:
@@ -154,7 +174,6 @@ class Metadata:
             Optional[datetime.datetime]: The nominal datetime for this product.
         """
         if self.product in TEMPORALLY_WEIGHTED_PRODUCTS:
-            return self.start_datetime + (self.end_datetime -
-                                          self.start_datetime) / 2
+            return self.start_datetime + (self.end_datetime - self.start_datetime) / 2
         else:
             return None

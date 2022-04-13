@@ -8,8 +8,9 @@ import json
 import os
 from pathlib import Path
 
-fragments_directory = Path(
-    __file__).parents[1] / "src" / "stactools" / "modis" / "fragments"
+fragments_directory = (
+    Path(__file__).parents[1] / "src" / "stactools" / "modis" / "fragments"
+)
 
 for directory, directories, file_names in os.walk(fragments_directory):
     if "bands.json" not in file_names or "file-info.json" not in file_names:
@@ -34,10 +35,9 @@ for directory, directories, file_names in os.walk(fragments_directory):
         bands[name]["file:values"] = values
         classification_classes = []
         for value in values:
-            classification_classes.append({
-                "value": value["values"][0],
-                "description": value["summary"]
-            })
+            classification_classes.append(
+                {"value": value["values"][0], "description": value["summary"]}
+            )
         bands[name]["classification:classes"] = classification_classes
 
     with open(bands_path, "w") as file:
@@ -46,8 +46,8 @@ for directory, directories, file_names in os.walk(fragments_directory):
 for directory, directories, file_names in os.walk(fragments_directory):
     if "item-properties.json" in file_names:
         os.rename(
-            Path(directory) / "item-properties.json",
-            Path(directory) / "item.json")
+            Path(directory) / "item-properties.json", Path(directory) / "item.json"
+        )
 
 for directory, directories, file_names in os.walk(fragments_directory):
     if "bands.json" not in file_names:

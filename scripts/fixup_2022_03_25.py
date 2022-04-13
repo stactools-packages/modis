@@ -4,8 +4,9 @@ import json
 import os
 from pathlib import Path
 
-fragments_directory = Path(
-    __file__).parents[1] / "src" / "stactools" / "modis" / "fragments"
+fragments_directory = (
+    Path(__file__).parents[1] / "src" / "stactools" / "modis" / "fragments"
+)
 
 for directory, directories, file_names in os.walk(fragments_directory):
     if "bands.json" not in file_names:

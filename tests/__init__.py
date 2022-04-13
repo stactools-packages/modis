@@ -46,13 +46,11 @@ def create_external_data_dict() -> Dict[str, Dict[str, str]]:
     external_data = dict()
     for file_name in EXTERNAL_DATA_FILE_NAMES:
         external_data[file_name] = {
-            "url":
-            "https://ai4epublictestdata.blob.core.windows.net/stactools/modis"
+            "url": "https://ai4epublictestdata.blob.core.windows.net/stactools/modis"
             f"/{file_name}"
         }
         external_data[f"{file_name}.xml"] = {
-            "url":
-            "https://ai4epublictestdata.blob.core.windows.net/stactools/modis"
+            "url": "https://ai4epublictestdata.blob.core.windows.net/stactools/modis"
             f"/{file_name}.xml"
         }
     return external_data

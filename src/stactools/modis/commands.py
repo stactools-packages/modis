@@ -20,27 +20,26 @@ def create_modis_command(cli: Group) -> Command:
     def modis() -> None:
         pass
 
-    @modis.command("create-catalog",
-                   short_help="Creates a STAC Catalog with contents "
-                   "defined by urls in the INFILE")
+    @modis.command(
+        "create-catalog",
+        short_help="Creates a STAC Catalog with contents "
+        "defined by urls in the INFILE",
+    )
     @click.argument("INFILE")
     @click.argument("OUTDIR")
-    @click.option("-i",
-                  "--id",
-                  help="The ID of the output catalog",
-                  default="modis")
-    @click.option("-t",
-                  "--title",
-                  help="The title of the output catalog",
-                  default="MODIS")
+    @click.option("-i", "--id", help="The ID of the output catalog", default="modis")
+    @click.option(
+        "-t", "--title", help="The title of the output catalog", default="MODIS"
+    )
     @click.option(
         "-d",
         "--description",
         help="The description of the output catalog",
-        default="MODIS STAC Catalog containg a subset of MODIS assets")
-    @click.option("--cogify/--no-cogify",
-                  help="Create COGs for each file",
-                  default=False)
+        default="MODIS STAC Catalog containing a subset of MODIS assets",
+    )
+    @click.option(
+        "--cogify/--no-cogify", help="Create COGs for each file", default=False
+    )
     def create_collection_command(
         infile: str,
         outdir: str,
@@ -64,8 +63,9 @@ def create_modis_command(cli: Group) -> Command:
         """
         with open(infile) as f:
             hrefs = [line.strip() for line in f.readlines()]
-        item_dict: defaultdict[str, defaultdict[
-            str, List[Item]]] = defaultdict(lambda: defaultdict(list))
+        item_dict: defaultdict[str, defaultdict[str, List[Item]]] = defaultdict(
+            lambda: defaultdict(list)
+        )
         collection_id_set = set()
         for href in hrefs:
             file = File(href)
@@ -75,7 +75,8 @@ def create_modis_command(cli: Group) -> Command:
             has_tiffs = any(
                 os.path.splitext(file_name)[1] == ".tif"
                 and file_name.startswith(prefix)
-                for file_name in os.listdir(directory))
+                for file_name in os.listdir(directory)
+            )
             if has_tiffs:
                 cog_directory = os.path.abspath(directory)
             elif cogify:
@@ -89,24 +90,27 @@ def create_modis_command(cli: Group) -> Command:
                     cog_directory = None
             else:
                 cog_directory = None
-            item = stac.create_item(href,
-                                    cog_directory=cog_directory,
-                                    create_cogs=cogify)
+            item = stac.create_item(
+                href, cog_directory=cog_directory, create_cogs=cogify
+            )
             item.set_self_href(href)
             item_dict[file.version][file.collection_id()].append(item)
             collection_id_set.add(file.collection_id())
         collection_ids = list(collection_id_set)
         collection_ids.sort()
-        catalog = Catalog(id=id,
-                          description=description,
-                          title=title,
-                          catalog_type=CatalogType.SELF_CONTAINED)
+        catalog = Catalog(
+            id=id,
+            description=description,
+            title=title,
+            catalog_type=CatalogType.SELF_CONTAINED,
+        )
         for version, collections in item_dict.items():
             version_catalog = Catalog(
                 id=f"{id}-{version}",
                 description=f"{description}, version {version}",
                 title=f"{title}, version {version}",
-                catalog_type=CatalogType.SELF_CONTAINED)
+                catalog_type=CatalogType.SELF_CONTAINED,
+            )
             for collection_id in collection_ids:
                 if collection_id not in collections:
                     continue
@@ -129,15 +133,14 @@ def create_modis_command(cli: Group) -> Command:
         catalog.make_all_asset_hrefs_relative()
         catalog.save()
 
-    @modis.command("create-item",
-                   short_help="Create a STAC Item from a MODIS metadata file")
+    @modis.command(
+        "create-item", short_help="Create a STAC Item from a MODIS metadata file"
+    )
     @click.argument("INFILE")
     @click.argument("OUTDIR")
-    @click.option("-c",
-                  "--cogify",
-                  is_flag=True,
-                  help="Convert the hdf into COGs.",
-                  default=False)
+    @click.option(
+        "-c", "--cogify", is_flag=True, help="Convert the hdf into COGs.", default=False
+    )
     def create_item_command(infile: str, outdir: str, cogify: bool) -> None:
         """Creates a STAC Item based on metadata from an .hdf.xml MODIS file.
 
