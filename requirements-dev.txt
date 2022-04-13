@@ -1,7 +1,9 @@
+black
 codespell
 flake8
 isort
 mypy
+pre-commit
 pylint
 pytest
 pytest-cov
@@ -10,7 +12,4 @@ sphinx-autobuild
 sphinx-click
 sphinxcontrib-fulltoc
 sphinxcontrib-napoleon
-# required until yapf 0.40
-toml
 types-setuptools
-yapf
