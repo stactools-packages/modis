@@ -212,3 +212,7 @@ class Metadata:
             return self.start_datetime + (self.end_datetime - self.start_datetime) / 2
         else:
             return None
+
+    @property
+    def collection(self) -> str:
+        return self.product[3:]

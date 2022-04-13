@@ -1,4 +1,5 @@
 import os.path
+import warnings
 
 import pystac.utils
 from pystac import Item
@@ -6,6 +7,11 @@ from pystac import Item
 from stactools.modis.constants import HDF_ASSET_KEY
 from stactools.modis.fragments import Fragments
 from stactools.modis.product import Product
+
+warnings.warn(
+    "stactools.modis.file is deprecated and will be removed in v0.4.0",
+    DeprecationWarning,
+)
 
 
 class File:

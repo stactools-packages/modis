@@ -26,15 +26,15 @@
     "ET_QC_500m_fill_value_class_32767": "Fill",
     "start_datetime": "2020-01-01T00:00:00Z",
     "end_datetime": "2020-12-31T23:59:59Z",
-    "modis:horizontal-tile": 9,
-    "modis:vertical-tile": 4,
-    "modis:tile-id": "51009004",
     "instruments": [
       "modis"
     ],
     "platform": "terra",
     "created": "2022-01-11T23:41:47Z",
     "updated": "2022-01-11T17:46:28.061000Z",
+    "modis:horizontal-tile": 9,
+    "modis:vertical-tile": 4,
+    "modis:tile-id": "51009004",
     "datetime": null
   },
   "geometry": {
@@ -85,20 +85,20 @@
     }
   ],
   "assets": {
-    "hdf": {
-      "href": "../../../../MOD16A3GF.A2020001.h09v04.006.2022011184136.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
     "metadata": {
       "href": "../../../../MOD16A3GF.A2020001.h09v04.006.2022011184136.hdf.xml",
       "type": "application/xml",
       "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
         "metadata"
+      ]
+    },
+    "hdf": {
+      "href": "../../../../MOD16A3GF.A2020001.h09v04.006.2022011184136.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
       ]
     }
   },

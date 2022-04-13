@@ -8,7 +8,7 @@ from click import Command, Group
 from pystac import Catalog, CatalogType, Item, Summaries
 
 from stactools.modis import cog, stac
-from stactools.modis.file import File
+from stactools.modis.builder import ModisBuilder
 
 logger = logging.getLogger(__name__)
 
@@ -62,40 +62,20 @@ def create_modis_command(cli: Group) -> Command:
             description (str): The description of the output catalog.
         """
         with open(infile) as f:
-            hrefs = [line.strip() for line in f.readlines()]
+            hrefs = [os.path.abspath(line.strip()) for line in f.readlines()]
         item_dict: defaultdict[str, defaultdict[str, List[Item]]] = defaultdict(
             lambda: defaultdict(list)
         )
         collection_id_set = set()
         for href in hrefs:
-            file = File(href)
-            directory = os.path.dirname(href)
-            prefix = os.path.splitext(os.path.basename(file.hdf_href))
-            has_hdf = os.path.exists(file.hdf_href)
-            has_tiffs = any(
-                os.path.splitext(file_name)[1] == ".tif"
-                and file_name.startswith(prefix)
-                for file_name in os.listdir(directory)
-            )
-            if has_tiffs:
-                cog_directory = os.path.abspath(directory)
-            elif cogify:
-                if has_hdf:
-                    cog_directory = os.path.abspath(directory)
-                else:
-                    print(
-                        f"WARNING: not cogifying {file.xml_href} because HDF file does not exist"
-                    )
-                    cogify = False
-                    cog_directory = None
-            else:
-                cog_directory = None
-            item = stac.create_item(
-                href, cog_directory=cog_directory, create_cogs=cogify
-            )
-            item.set_self_href(href)
-            item_dict[file.version][file.collection_id()].append(item)
-            collection_id_set.add(file.collection_id())
+            indir = os.path.dirname(href)
+            builder = ModisBuilder()
+            builder.add_hdf_or_xml_href(href, cog_directory=indir, create_cogs=cogify)
+            item = builder.create_item()
+            metadata = builder.metadata
+            item.set_self_href(os.path.join(indir, f"{metadata.id}.json"))
+            item_dict[metadata.version][metadata.collection].append(item)
+            collection_id_set.add(metadata.collection)
         collection_ids = list(collection_id_set)
         collection_ids.sort()
         catalog = Catalog(
@@ -115,8 +95,7 @@ def create_modis_command(cli: Group) -> Command:
                 if collection_id not in collections:
                     continue
                 items = collections[collection_id]
-                file = File(items[0].get_self_href())
-                collection = stac.create_collection(str(file.product), version)
+                collection = stac.create_collection(items[0].id.split(".")[0], version)
                 platform_set = set()
                 for item in items:
                     item.set_self_href(None)
@@ -152,11 +131,9 @@ def create_modis_command(cli: Group) -> Command:
                 Cloud-Optimized GeoTIFFs, one per layer. The .hdf file is
                 expected to reside alongside the metadata xml file.
         """
-        item = stac.create_item(infile)
+        item = stac.create_item(infile, cog_directory=outdir, create_cogs=cogify)
         item_path = os.path.join(outdir, "{}.json".format(item.id))
         item.set_self_href(item_path)
-        if cogify:
-            cog.add_cogs(item, outdir, create=True)
         item.validate()
         item.save_object()
 

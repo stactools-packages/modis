@@ -1,6 +1,7 @@
 import stactools.core
 from stactools.cli.registry import Registry
 
+from stactools.modis.cog import cogify
 from stactools.modis.stac import create_item
 
 stactools.core.use_fsspec()
@@ -15,4 +16,4 @@ def register_plugin(registry: Registry) -> None:
 __version__ = "0.2.0"
 """Library version"""
 
-__all__ = ["create_item"]
+__all__ = ["create_item", "cogify"]
