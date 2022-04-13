@@ -14,9 +14,9 @@ from stactools.modis.file import File
 logger = logging.getLogger(__name__)
 
 
-def add_cogs(item: Item,
-             directory: str,
-             create: bool = False) -> Tuple[List[str], List[str]]:
+def add_cogs(
+    item: Item, directory: str, create: bool = False
+) -> Tuple[List[str], List[str]]:
     """Add the COGs in the directory to the provided item.
 
     Args:
@@ -35,20 +35,21 @@ def add_cogs(item: Item,
         paths = []
         for file_name in os.listdir(directory):
             basename, ext = os.path.splitext(file_name)
-            if basename.startswith(os.path.splitext(
-                    item.id)) and ext == ".tif":
+            if basename.startswith(os.path.splitext(item.id)) and ext == ".tif":
                 paths.append(os.path.join(directory, file_name))
         if not paths:
-            raise ValueError("COG directory does not contain any cogs, "
-                             f"and create=False: {directory}")
+            raise ValueError(
+                "COG directory does not contain any cogs, "
+                f"and create=False: {directory}"
+            )
         subdataset_names = None
     subdataset_names = add_cog_assets(item, paths, subdataset_names)
     return (paths, subdataset_names)
 
 
-def add_cog_assets(item: Item,
-                   hrefs: List[str],
-                   subdataset_names: Optional[List[str]] = None) -> List[str]:
+def add_cog_assets(
+    item: Item, hrefs: List[str], subdataset_names: Optional[List[str]] = None
+) -> List[str]:
     """Adds COG assets to an item.
 
     The assets must already exist at hrefs. If `subdataset_names` is not
@@ -76,7 +77,8 @@ def add_cog_assets(item: Item,
         if subdataset_name not in bands:
             raise ValueError(
                 f"Invalid MODIS COG file name (subdataset={subdataset_name} "
-                f"name at end of file name): {os.path.basename(path)}")
+                f"name at end of file name): {os.path.basename(path)}"
+            )
         band = bands[subdataset_name]
         asset = Asset(
             href=path,
@@ -93,8 +95,7 @@ def add_cog_assets(item: Item,
         if raster_bands:
             raster = RasterExtension.ext(asset, add_if_missing=True)
             raster.bands = [
-                RasterBand.create(**raster_band)
-                for raster_band in raster_bands
+                RasterBand.create(**raster_band) for raster_band in raster_bands
             ]
         eo_bands = band.get("eo:bands")
         if eo_bands:
@@ -104,8 +105,7 @@ def add_cog_assets(item: Item,
         if classification_classes:
             if CLASSIFICATION_EXTENSION_HREF not in item.stac_extensions:
                 item.stac_extensions.append(CLASSIFICATION_EXTENSION_HREF)
-            asset.extra_fields[
-                "classification:classes"] = classification_classes
+            asset.extra_fields["classification:classes"] = classification_classes
 
         roles = band.get("roles")
         if roles:

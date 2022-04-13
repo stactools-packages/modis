@@ -49,8 +49,7 @@ class File:
             raise ValueError(f"Invalid MODIS href: {href}")
         elif extension == ".xml":
             if os.path.splitext(base)[1] != ".hdf":
-                raise ValueError(
-                    f"Invalid MODIS metadata href (no .hdf.xml): {href}")
+                raise ValueError(f"Invalid MODIS metadata href (no .hdf.xml): {href}")
             else:
                 self.xml_href = href
                 self.hdf_href = base

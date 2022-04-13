@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# type: ignore
 
 import os
 import sys
@@ -47,8 +48,9 @@ EXTERNAL_DATA_FILE_NAMES = [
 sas = sys.argv[1]
 outdir = sys.argv[2]
 os.makedirs(outdir, exist_ok=True)
-account_client = BlobServiceClient("https://modiseuwest.blob.core.windows.net",
-                                   credential=sas)
+account_client = BlobServiceClient(
+    "https://modiseuwest.blob.core.windows.net", credential=sas
+)
 container_client = account_client.get_container_client("modis-061")
 
 
