@@ -124,7 +124,7 @@ def create_item(
         pystac.Item: A STAC Item representing this MODIS image.
     """
     file = File(href)
-    metadata = Metadata(file.xml_href, read_href_modifier)
+    metadata = Metadata.from_xml_href(file.xml_href, read_href_modifier)
     fragments = file.product.fragments(metadata.version)
     properties = fragments.item()
     properties["start_datetime"] = pystac.utils.datetime_to_str(metadata.start_datetime)
@@ -142,7 +142,11 @@ def create_item(
     stactools.core.utils.antimeridian.fix_item(item, antimeridian_strategy)
 
     item.common_metadata.instruments = metadata.instruments
-    item.common_metadata.platform = metadata.platform
+    # Per the discussion in
+    # https://github.com/radiantearth/stac-spec/issues/216, it seems like
+    # the recommendation for multi-platform datasets is to just include both
+    # and use a string separator.
+    item.common_metadata.platform = ",".join(metadata.platforms)
     item.common_metadata.created = metadata.created
     item.common_metadata.updated = metadata.updated
 
