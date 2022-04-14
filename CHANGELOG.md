@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Insert "data" role at the front of the roles list ([#75](https://github.com/stactools-packages/modis/pull/75))
 - Keywords ([#77](https://github.com/stactools-packages/modis/pull/77))
+- Metadata is now a dataclass ([#80](https://github.com/stactools-packages/modis/pull/80))
 
 ### Removed
 
