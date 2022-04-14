@@ -1,6 +1,7 @@
 import datetime
 import os.path
-from typing import Callable, Optional
+from dataclasses import dataclass
+from typing import Any, Callable, Dict, List, Optional
 
 import fsspec
 import shapely.geometry
@@ -16,18 +17,40 @@ class MissingElement(Exception):
     """An expected element is missing from the XML file"""
 
 
+@dataclass(frozen=True)
 class Metadata:
-    """Structure to hold values fetched from a metadata XML file."""
+    """Structure to hold values fetched from a metadata XML file or other metadata source."""
 
-    def __init__(
-        self, href: str, read_href_modifier: Optional[ReadHrefModifier] = None
-    ):
-        """Reads fields from a metadata href.
+    id: str
+    product: str
+    version: str
+    geometry: Dict[str, Any]
+    bbox: List[float]
+    start_datetime: datetime.datetime
+    end_datetime: datetime.datetime
+    created: datetime.datetime
+    updated: datetime.datetime
+    qa_percent_not_produced_cloud: int
+    qa_percent_cloud_cover: Dict[str, int]
+    horizontal_tile: int
+    vertical_tile: int
+    tile_id: str
+    platforms: List[str]
+    instruments: List[str]
+
+    @classmethod
+    def from_xml_href(
+        cls, href: str, read_href_modifier: Optional[ReadHrefModifier] = None
+    ) -> "Metadata":
+        """Reads metadat from an XML href.
 
         Args:
             href (str): The href of the xml metadata file
             read_href_modifier (Optional[Callable[[str], str]]): Optional
                 function to modify the read href
+
+        Returns:
+            Metadata: Information that will map to Item attributes.
         """
 
         def missing_element(attribute: str) -> Callable[[str], Exception]:
@@ -48,21 +71,21 @@ class Metadata:
         metadata = root.find_or_throw(
             "GranuleURMetaData", missing_element("URMetadata")
         )
-        self.id = os.path.splitext(
+        id = os.path.splitext(
             metadata.find_text_or_throw(
                 "ECSDataGranule/LocalGranuleID", missing_element("id")
             )
         )[0]
-        self.product = metadata.find_text_or_throw(
+        product = metadata.find_text_or_throw(
             "CollectionMetaData/ShortName", missing_element("product")
         )
         version = metadata.find_text_or_throw(
             "CollectionMetaData/VersionID", missing_element("version")
         )
         if version == "6":
-            self.version = "006"
+            version = "006"
         elif version == "61":
-            self.version = "061"
+            version = "061"
         else:
             raise ValueError(f"Unsupported MODIS version: {version}")
 
@@ -85,8 +108,8 @@ class Metadata:
             )
         ]
         polygon = Polygon(points)
-        self.geometry = shapely.geometry.mapping(polygon)
-        self.bbox = polygon.bounds
+        geometry = shapely.geometry.mapping(polygon)
+        bbox = polygon.bounds
 
         start_date = metadata.find_text_or_throw(
             "RangeDateTime/RangeBeginningDate", missing_element("start_date")
@@ -94,41 +117,39 @@ class Metadata:
         start_time = metadata.find_text_or_throw(
             "RangeDateTime/RangeBeginningTime", missing_element("start_time")
         )
-        self.start_datetime = datetime.datetime.fromisoformat(
-            f"{start_date}T{start_time}"
-        )
+        start_datetime = datetime.datetime.fromisoformat(f"{start_date}T{start_time}")
         end_date = metadata.find_text_or_throw(
             "RangeDateTime/RangeEndingDate", missing_element("end_date")
         )
         end_time = metadata.find_text_or_throw(
             "RangeDateTime/RangeEndingTime", missing_element("end_time")
         )
-        self.end_datetime = datetime.datetime.fromisoformat(f"{end_date}T{end_time}")
+        end_datetime = datetime.datetime.fromisoformat(f"{end_date}T{end_time}")
 
-        self.created = datetime.datetime.fromisoformat(
+        created = datetime.datetime.fromisoformat(
             metadata.find_text_or_throw(
                 "ECSDataGranule/ProductionDateTime", missing_element("created")
             )
         )
-        self.updated = datetime.datetime.fromisoformat(
+        updated = datetime.datetime.fromisoformat(
             metadata.find_text_or_throw("LastUpdate", missing_element("updated"))
         )
 
         psas = metadata.findall("PSAs/PSA")
-        self.qa_percent_not_produced_cloud = None
+        qa_percent_not_produced_cloud = None
         for psa in psas:
             name = psa.find_text_or_throw("PSAName", missing_element("PSAName"))
             value = psa.find_text_or_throw("PSAValue", missing_element("PSAValue"))
             if name == "HORIZONTALTILENUMBER":
-                self.horizontal_tile = int(value)
+                horizontal_tile = int(value)
             elif name == "VERTICALTILENUMBER":
-                self.vertical_tile = int(value)
+                vertical_tile = int(value)
             elif name == "TileID":
-                self.tile_id = value
+                tile_id = value
             elif name == "QAPERCENTNOTPRODUCEDCLOUD":
-                self.qa_percent_not_produced_cloud = int(value)
+                qa_percent_not_produced_cloud = int(value)
 
-        self.qa_percent_cloud_cover = {}
+        qa_percent_cloud_cover: Dict[str, int] = {}
         measured_parameters = metadata.findall(
             "MeasuredParameter/MeasuredParameterContainer"
         )
@@ -136,31 +157,45 @@ class Metadata:
             name = measured_parameter.find_text_or_throw(
                 "ParameterName", missing_element("ParameterName")
             ).replace(" ", "_")
-            qa_percent_cloud_cover = measured_parameter.find_text("QAPercentCloudCover")
+            band_qa_percent_cloud_cover = measured_parameter.find_text(
+                "QAPercentCloudCover"
+            )
             if qa_percent_cloud_cover:
-                self.qa_percent_cloud_cover[name] = int(qa_percent_cloud_cover)
+                qa_percent_cloud_cover[name] = int(band_qa_percent_cloud_cover)
 
-        platforms = metadata.findall("Platform")
-        # Per the discussion in
-        # https://github.com/radiantearth/stac-spec/issues/216, it seems like
-        # the recommendation for multi-platform datasets is to just include both
-        # and use a string separator.
-        self.platform = ",".join(
-            [
-                platform.find_text_or_throw(
-                    "PlatformShortName", missing_element("platform_short_name")
-                ).lower()
-                for platform in platforms
-            ]
-        )
-        self.instruments = list(
+        platform_elements = metadata.findall("Platform")
+        platforms = [
+            platform.find_text_or_throw(
+                "PlatformShortName", missing_element("platform_short_name")
+            ).lower()
+            for platform in platform_elements
+        ]
+        instruments = list(
             set(
                 platform.find_text_or_throw(
                     "Instrument/InstrumentShortName",
                     missing_element("instrument_short_name"),
                 ).lower()
-                for platform in platforms
+                for platform in platform_elements
             )
+        )
+        return Metadata(
+            id=id,
+            product=product,
+            version=version,
+            geometry=geometry,
+            bbox=bbox,
+            start_datetime=start_datetime,
+            end_datetime=end_datetime,
+            created=created,
+            updated=updated,
+            qa_percent_not_produced_cloud=qa_percent_not_produced_cloud,
+            qa_percent_cloud_cover=qa_percent_cloud_cover,
+            horizontal_tile=horizontal_tile,
+            vertical_tile=vertical_tile,
+            tile_id=tile_id,
+            platforms=platforms,
+            instruments=instruments,
         )
 
     @property
