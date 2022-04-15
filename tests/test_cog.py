@@ -7,7 +7,7 @@ from pystac import MediaType
 
 import stactools.modis.cog
 import stactools.modis.stac
-from tests import EXTERNAL_DATA_FILE_NAMES, test_data
+from tests import MICROSOFT_EXTERNAL_DATA_FILE_NAMES, test_data
 
 SUBDATASET_NAMES = ["Eight_Day_Snow_Cover", "Maximum_Snow_Extent"]
 
@@ -55,9 +55,9 @@ class CogTest(TestCase):
         self.assertEqual(set(file_names), set(expected_cog_names))
 
 
-@pytest.mark.parametrize("file_name", EXTERNAL_DATA_FILE_NAMES)
+@pytest.mark.parametrize("file_name", MICROSOFT_EXTERNAL_DATA_FILE_NAMES)
 @pytest.mark.slow
-def test_external_data(file_name: str) -> None:
+def test_microsoft_external_data(file_name: str) -> None:
     infile = test_data.get_external_data(file_name)
     _ = test_data.get_external_data(f"{file_name}.xml")
     with TemporaryDirectory() as temporary_directory:

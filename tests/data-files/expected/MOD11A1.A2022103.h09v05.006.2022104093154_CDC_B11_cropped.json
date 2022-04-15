@@ -1,0 +1,115 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD11A1.A2022103.h09v05.006.2022104093154",
+  "properties": {
+    "start_datetime": "2022-04-13T00:00:00Z",
+    "end_datetime": "2022-04-13T23:59:59Z",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "terra",
+    "modis:horizontal-tile": 9,
+    "modis:vertical-tile": 5,
+    "modis:tile-id": "51009005",
+    "proj:epsg": null,
+    "proj:wkt2": "PROJCS[\"unnamed\",GEOGCS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not_specified_based_on_custom_spheroid\",SPHEROID[\"Custom spheroid\",6371007.181,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Sinusoidal\"],PARAMETER[\"longitude_of_center\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -9450652.79258236,
+            3890900.1937498613
+          ],
+          [
+            -9450652.79258236,
+            3892753.444616138
+          ],
+          [
+            -9452506.043448638,
+            3892753.444616138
+          ],
+          [
+            -9452506.043448638,
+            3890900.1937498613
+          ],
+          [
+            -9450652.79258236,
+            3890900.1937498613
+          ]
+        ]
+      ]
+    },
+    "proj:shape": [
+      2,
+      2
+    ],
+    "proj:transform": [
+      926.6254331391661,
+      0.0,
+      -9452506.043448638,
+      0.0,
+      -926.6254331383334,
+      3892753.444616138
+    ],
+    "eo:cloud_cover": 40,
+    "datetime": null
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -103.745103,
+          34.991667
+        ],
+        [
+          -103.766236,
+          35.008333
+        ],
+        [
+          -103.786584,
+          35.008333
+        ],
+        [
+          -103.765447,
+          34.991667
+        ],
+        [
+          -103.745103,
+          34.991667
+        ]
+      ]
+    ]
+  },
+  "links": [],
+  "assets": {
+    "Clear_day_cov": {
+      "href": "../MOD11A1.A2022103.h09v05.006.2022104093154_CDC_B11_cropped.TIF",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Day clear-sky coverage",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000,
+          "scale": 0.0005
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "bbox": [
+    -103.786584,
+    34.991667,
+    -103.745103,
+    35.008333
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json"
+  ]
+}

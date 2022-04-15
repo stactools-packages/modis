@@ -229,7 +229,9 @@ class Builder:
             eo = EOExtension.ext(item, add_if_missing=True)
             eo.apply(**item_info.eo)
 
-        for key, asset in self._assets.items():
+        keys = sorted(list(self._assets.keys()))
+        for key in keys:
+            asset = self._assets[key]
             item.add_asset(key, asset)
             asset_info = item_info.asset_infos.get(key)
             if not asset_info:

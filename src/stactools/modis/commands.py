@@ -38,7 +38,9 @@ def create_modis_command(cli: Group) -> Command:
         default="MODIS STAC Catalog containing a subset of MODIS assets",
     )
     @click.option(
-        "--cogify/--no-cogify", help="Create COGs for each file", default=False
+        "--create-cogs/--no-create-cogs",
+        help="Create COGs for each file",
+        default=False,
     )
     def create_collection_command(
         infile: str,
@@ -46,20 +48,21 @@ def create_modis_command(cli: Group) -> Command:
         id: str,
         title: str,
         description: str,
-        cogify: bool,
+        create_cogs: bool,
     ) -> None:
         """Creates a STAC Catalog with collections and items defined by the URLs in INFILE.
-
-        If there are COGs alongside, they will be added.
 
         \b
         Args:
             infile (str): The input file. Should contain one href per line. The
-                hrefs can be to the .hdf files or .hdf.xml files
+                hrefs can be to the .hdf files, .hdf.xml files, or to tiffs. Any
+                tiffs listed on the same line, separated by commas, will be
+                added to the same item.
             outdir (str): The output directory that will contain the catalog.
             id (str): The ID of the output catalog.
             title (str): The title of the output catalog.
             description (str): The description of the output catalog.
+            create_cogs (str): Create cogs for all source HDF files?
         """
         with open(infile) as f:
             hrefs = [os.path.abspath(line.strip()) for line in f.readlines()]
@@ -68,9 +71,18 @@ def create_modis_command(cli: Group) -> Command:
         )
         collection_id_set = set()
         for href in hrefs:
-            indir = os.path.dirname(href)
-            builder = ModisBuilder()
-            builder.add_hdf_or_xml_href(href, cog_directory=indir, create_cogs=cogify)
+            builder = ModisBuilder(skip_creating_cogs_if_missing_hdf=True)
+            sub_hrefs = href.split(",")
+            for href in sub_hrefs:
+                indir = os.path.dirname(href)
+                if os.path.splitext(href)[1].lower() == ".tif":
+                    builder.add_cog_href(href)
+                else:
+                    builder.add_hdf_or_xml_href(
+                        href,
+                        cog_directory=indir,
+                        create_cogs=create_cogs,
+                    )
             item = builder.create_item()
             metadata = builder.metadata
             item.set_self_href(os.path.join(indir, f"{metadata.id}.json"))
@@ -115,26 +127,41 @@ def create_modis_command(cli: Group) -> Command:
     @modis.command(
         "create-item", short_help="Create a STAC Item from a MODIS metadata file"
     )
-    @click.argument("INFILE")
+    @click.argument("INFILES", nargs=-1)
     @click.argument("OUTDIR")
     @click.option(
-        "-c", "--cogify", is_flag=True, help="Convert the hdf into COGs.", default=False
+        "-c",
+        "--create-cogs",
+        is_flag=True,
+        help="Convert any hdfs into COGs.",
+        default=False,
     )
-    def create_item_command(infile: str, outdir: str, cogify: bool) -> None:
-        """Creates a STAC Item based on metadata from an .hdf.xml MODIS file.
+    @click.option(
+        "--validate/--no-validate",
+        help="Validate the item before saving",
+        default=True,
+    )
+    def create_item_command(
+        infiles: str, outdir: str, create_cogs: bool, validate: bool
+    ) -> None:
+        """Creates a STAC Item.
 
         \b
         Args:
-            infile (str): The source metadata xml file.
+            infiles (str): The source file(s). This can be one hdf file, one xml file,
+                or multiple tif files.
             outdir (str): Directory that will contain the STAC Item.
-            cogify (bool, optional): Convert the .hdf file into multiple
-                Cloud-Optimized GeoTIFFs, one per layer. The .hdf file is
-                expected to reside alongside the metadata xml file.
+            create_cogs (bool, optional): Create COGs in the output directory
+                from any .hdf files, one per subdataset.
         """
-        item = stac.create_item(infile, cog_directory=outdir, create_cogs=cogify)
+        builder = ModisBuilder()
+        for infile in infiles:
+            builder.add_href(infile, cog_directory=outdir, create_cogs=create_cogs)
+        item = builder.create_item()
         item_path = os.path.join(outdir, "{}.json".format(item.id))
         item.set_self_href(item_path)
-        item.validate()
+        if validate:
+            item.validate()
         item.save_object()
 
     @modis.command("cogify")

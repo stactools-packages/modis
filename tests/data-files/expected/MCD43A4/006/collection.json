@@ -27,6 +27,9 @@
     }
   ],
   "stac_extensions": [
+    "https://stac-extensions.github.io/classification/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"
   ],
   "item_assets": {
@@ -44,102 +47,361 @@
       ],
       "title": "Federal Geographic Data Committee (FGDC) Metadata"
     },
-    "Nadir_Reflectance_Band1": {
-      "title": "NBAR at local solar noon for band 1",
-      "roles": [
-        "data"
-      ],
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
-    },
-    "Nadir_Reflectance_Band2": {
-      "title": "NBAR at local solar noon for band 2",
-      "roles": [
-        "data"
-      ],
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
-    },
-    "Nadir_Reflectance_Band3": {
-      "title": "NBAR at local solar noon for band 3",
-      "roles": [
-        "data"
-      ],
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
-    },
-    "Nadir_Reflectance_Band4": {
-      "title": "NBAR at local solar noon for band 4",
-      "roles": [
-        "data"
-      ],
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
-    },
-    "Nadir_Reflectance_Band5": {
-      "title": "NBAR at local solar noon for band 5",
-      "roles": [
-        "data"
-      ],
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
-    },
-    "Nadir_Reflectance_Band6": {
-      "title": "NBAR at local solar noon for band 6",
-      "roles": [
-        "data"
-      ],
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
-    },
-    "Nadir_Reflectance_Band7": {
-      "title": "NBAR at local solar noon for band 7",
-      "roles": [
-        "data"
-      ],
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
-    },
     "BRDF_Albedo_Band_Mandatory_Quality_Band1": {
-      "title": "BRDF albedo mandatory quality for band 1",
+      "eo:bands": [
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band1"
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Processed, good quality (full BRDF inversions)"
+        },
+        {
+          "value": 1,
+          "description": "Processed, see other QA (magnitude BRDF inversions)"
+        }
+      ],
+      "title": "BRDF Albedo Mandatory Quality for Band 1",
       "roles": [
         "data"
       ],
       "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     },
     "BRDF_Albedo_Band_Mandatory_Quality_Band2": {
-      "title": "BRDF albedo mandatory quality for band 2",
+      "eo:bands": [
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band2"
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Processed, good quality (full BRDF inversions)"
+        },
+        {
+          "value": 1,
+          "description": "Processed, see other QA (magnitude BRDF inversions)"
+        }
+      ],
+      "title": "BRDF Albedo Mandatory Quality for Band 2",
       "roles": [
         "data"
       ],
       "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     },
     "BRDF_Albedo_Band_Mandatory_Quality_Band3": {
-      "title": "BRDF albedo mandatory quality for band 3",
+      "eo:bands": [
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band3"
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Processed, good quality (full BRDF inversions)"
+        },
+        {
+          "value": 1,
+          "description": "Processed, see other QA (magnitude BRDF inversions)"
+        }
+      ],
+      "title": "BRDF Albedo Mandatory Quality for Band 3",
       "roles": [
         "data"
       ],
       "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     },
     "BRDF_Albedo_Band_Mandatory_Quality_Band4": {
-      "title": "BRDF albedo mandatory quality for band 4",
+      "eo:bands": [
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band4"
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Processed, good quality (full BRDF inversions)"
+        },
+        {
+          "value": 1,
+          "description": "Processed, see other QA (magnitude BRDF inversions)"
+        }
+      ],
+      "title": "BRDF Albedo Mandatory Quality for Band 4",
       "roles": [
         "data"
       ],
       "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     },
     "BRDF_Albedo_Band_Mandatory_Quality_Band5": {
-      "title": "BRDF albedo mandatory quality for band 5",
+      "eo:bands": [
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band5"
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Processed, good quality (full BRDF inversions)"
+        },
+        {
+          "value": 1,
+          "description": "Processed, see other QA (magnitude BRDF inversions)"
+        }
+      ],
+      "title": "BRDF Albedo Mandatory Quality for Band 5",
       "roles": [
         "data"
       ],
       "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     },
     "BRDF_Albedo_Band_Mandatory_Quality_Band6": {
-      "title": "BRDF albedo mandatory quality for band 6",
+      "eo:bands": [
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band6"
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Processed, good quality (full BRDF inversions)"
+        },
+        {
+          "value": 1,
+          "description": "Processed, see other QA (magnitude BRDF inversions)"
+        }
+      ],
+      "title": "BRDF Albedo Mandatory Quality for Band 6",
       "roles": [
         "data"
       ],
       "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     },
     "BRDF_Albedo_Band_Mandatory_Quality_Band7": {
-      "title": "BRDF albedo mandatory quality for band 7",
+      "eo:bands": [
+        {
+          "name": "BRDF_Albedo_Band_Mandatory_Quality_Band7"
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Processed, good quality (full BRDF inversions)"
+        },
+        {
+          "value": 1,
+          "description": "Processed, see other QA (magnitude BRDF inversions)"
+        }
+      ],
+      "title": "BRDF Albedo Mandatory Quality for Band 7",
       "roles": [
         "data"
       ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Nadir_Reflectance_Band1": {
+      "roles": [
+        "data",
+        "reflectance"
+      ],
+      "eo:bands": [
+        {
+          "name": "Nadir_Reflectance_Band1",
+          "common_name": "red",
+          "center_wavelength": 0.645,
+          "full_width_half_max": 0.5
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "NBAR at local solar noon for Band 1",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Nadir_Reflectance_Band2": {
+      "roles": [
+        "data",
+        "reflectance"
+      ],
+      "eo:bands": [
+        {
+          "name": "Nadir_Reflectance_Band2",
+          "common_name": "nir08",
+          "center_wavelength": 0.8585,
+          "full_width_half_max": 0.35
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "NBAR at local solar noon for Band 2",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Nadir_Reflectance_Band3": {
+      "roles": [
+        "data",
+        "reflectance"
+      ],
+      "eo:bands": [
+        {
+          "name": "Nadir_Reflectance_Band3",
+          "common_name": "blue",
+          "center_wavelength": 0.469,
+          "full_width_half_max": 0.2
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "NBAR at local solar noon for Band 3",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Nadir_Reflectance_Band4": {
+      "roles": [
+        "data",
+        "reflectance"
+      ],
+      "eo:bands": [
+        {
+          "name": "Nadir_Reflectance_Band4",
+          "common_name": "green",
+          "center_wavelength": 0.555,
+          "full_width_half_max": 0.2
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "NBAR at local solar noon for Band 4",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Nadir_Reflectance_Band5": {
+      "roles": [
+        "data",
+        "reflectance"
+      ],
+      "eo:bands": [
+        {
+          "name": "Nadir_Reflectance_Band5",
+          "common_name": "lwir12",
+          "center_wavelength": 1.24,
+          "full_width_half_max": 0.2
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "NBAR at local solar noon for Band 5",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Nadir_Reflectance_Band6": {
+      "roles": [
+        "data",
+        "reflectance"
+      ],
+      "eo:bands": [
+        {
+          "name": "Nadir_Reflectance_Band6",
+          "common_name": "swir16",
+          "center_wavelength": 1.64,
+          "full_width_half_max": 0.24
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "NBAR at local solar noon for Band 6",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "Nadir_Reflectance_Band7": {
+      "roles": [
+        "data",
+        "reflectance"
+      ],
+      "eo:bands": [
+        {
+          "name": "Nadir_Reflectance_Band7",
+          "common_name": "swir22",
+          "center_wavelength": 2.13,
+          "full_width_half_max": 0.5
+        }
+      ],
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "scale": 0.0001,
+          "spatial_resolution": 500
+        }
+      ],
+      "title": "NBAR at local solar noon for Band 7",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },

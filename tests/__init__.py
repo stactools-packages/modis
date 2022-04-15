@@ -1,8 +1,8 @@
-from typing import Dict
+from typing import Any, Dict
 
 from stactools.testing.test_data import TestData
 
-EXTERNAL_DATA_FILE_NAMES = [
+MICROSOFT_EXTERNAL_DATA_FILE_NAMES = [
     "MCD15A2H.A2022025.h01v11.061.2022035062702.hdf",
     "MCD15A3H.A2022033.h12v10.061.2022039062215.hdf",
     "MCD43A4.A2022032.h14v10.061.2022041051831.hdf",
@@ -41,10 +41,66 @@ EXTERNAL_DATA_FILE_NAMES = [
     "MYD21A2.A2022025.h10v06.061.2022035072054.hdf",
 ]
 
+ASTRAEA_EXTERNAL_FILE_NAMES = {
+    "43A4": {
+        "prefix": "s3://astraea-opendata/MCD43A4.006/28/08/2022073/",
+        "file_names": [
+            "MCD43A4.A2022073.h28v08.006.2022082044758_B01.TIF",
+            "MCD43A4.A2022073.h28v08.006.2022082044758_B01qa.TIF",
+            "MCD43A4.A2022073.h28v08.006.2022082044758_B02.TIF",
+            "MCD43A4.A2022073.h28v08.006.2022082044758_B02qa.TIF",
+            "MCD43A4.A2022073.h28v08.006.2022082044758_B03.TIF",
+            "MCD43A4.A2022073.h28v08.006.2022082044758_B03qa.TIF",
+            "MCD43A4.A2022073.h28v08.006.2022082044758_B04.TIF",
+            "MCD43A4.A2022073.h28v08.006.2022082044758_B04qa.TIF",
+            "MCD43A4.A2022073.h28v08.006.2022082044758_B05.TIF",
+            "MCD43A4.A2022073.h28v08.006.2022082044758_B05qa.TIF",
+            "MCD43A4.A2022073.h28v08.006.2022082044758_B06.TIF",
+            "MCD43A4.A2022073.h28v08.006.2022082044758_B06qa.TIF",
+            "MCD43A4.A2022073.h28v08.006.2022082044758_B07.TIF",
+            "MCD43A4.A2022073.h28v08.006.2022082044758_B07qa.TIF",
+        ],
+    },
+    "11A1": {
+        "prefix": "s3://astraea-opendata/MOD11A1.006/09/05/2022103/",
+        "file_names": [
+            "MOD11A1.A2022103.h09v05.006.2022104093154_CDC_B11.TIF",
+            "MOD11A1.A2022103.h09v05.006.2022104093154_CNC_B12.TIF",
+            "MOD11A1.A2022103.h09v05.006.2022104093154_DVA_B04.TIF",
+            "MOD11A1.A2022103.h09v05.006.2022104093154_DVT_B03.TIF",
+            "MOD11A1.A2022103.h09v05.006.2022104093154_E31_B09.TIF",
+            "MOD11A1.A2022103.h09v05.006.2022104093154_E32_B10.TIF",
+            "MOD11A1.A2022103.h09v05.006.2022104093154_LSTD_B01.TIF",
+            "MOD11A1.A2022103.h09v05.006.2022104093154_LSTN_B05.TIF",
+            "MOD11A1.A2022103.h09v05.006.2022104093154_NVA_B08.TIF",
+            "MOD11A1.A2022103.h09v05.006.2022104093154_NVT_B07.TIF",
+            "MOD11A1.A2022103.h09v05.006.2022104093154_QCD_B02.TIF",
+            "MOD11A1.A2022103.h09v05.006.2022104093154_QCN_B06.TIF",
+        ],
+    },
+    "13A1": {
+        "prefix": "s3://astraea-opendata/MOD13A1.006/09/05/2022081/",
+        "file_names": [
+            "MOD13A1.A2022081.h09v05.006.2022101145817_BR_B06.TIF",
+            "MOD13A1.A2022081.h09v05.006.2022101145817_CDOY_B11.TIF",
+            "MOD13A1.A2022081.h09v05.006.2022101145817_EVI_B02.TIF",
+            "MOD13A1.A2022081.h09v05.006.2022101145817_MIRR_B07.TIF",
+            "MOD13A1.A2022081.h09v05.006.2022101145817_NDVI_B01.TIF",
+            "MOD13A1.A2022081.h09v05.006.2022101145817_NIRR_B05.TIF",
+            "MOD13A1.A2022081.h09v05.006.2022101145817_PR_B12.TIF",
+            "MOD13A1.A2022081.h09v05.006.2022101145817_RAA_B10.TIF",
+            "MOD13A1.A2022081.h09v05.006.2022101145817_RR_B04.TIF",
+            "MOD13A1.A2022081.h09v05.006.2022101145817_SZA_B09.TIF",
+            "MOD13A1.A2022081.h09v05.006.2022101145817_VIQ_B03.TIF",
+            "MOD13A1.A2022081.h09v05.006.2022101145817_VZA_B08.TIF",
+        ],
+    },
+}
 
-def create_external_data_dict() -> Dict[str, Dict[str, str]]:
-    external_data = dict()
-    for file_name in EXTERNAL_DATA_FILE_NAMES:
+
+def create_external_data_dict() -> Dict[str, Dict[str, Any]]:
+    external_data: Dict[str, Dict[str, Any]] = dict()
+    for file_name in MICROSOFT_EXTERNAL_DATA_FILE_NAMES:
         external_data[file_name] = {
             "url": "https://ai4epublictestdata.blob.core.windows.net/stactools/modis"
             f"/{file_name}"
@@ -53,7 +109,18 @@ def create_external_data_dict() -> Dict[str, Dict[str, str]]:
             "url": "https://ai4epublictestdata.blob.core.windows.net/stactools/modis"
             f"/{file_name}.xml"
         }
+
+    for values in ASTRAEA_EXTERNAL_FILE_NAMES.values():
+        prefix = values["prefix"]
+        for file_name in values["file_names"]:
+            external_data[file_name] = {
+                "url": f"{prefix}{file_name}",
+                "s3": {"requester_pays": True},
+            }
+
     return external_data
 
 
-test_data = TestData(__file__, create_external_data_dict())
+external_data = create_external_data_dict()
+
+test_data = TestData(__file__, external_data=external_data)
