@@ -106,26 +106,10 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
-      "roles": [
-        "metadata"
-      ]
-    },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
-    "Emis_32": {
-      "href": "../../../../tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733_Emis_32.tif",
+    "Emis_29": {
+      "href": "../../../../tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733_Emis_29.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Average Day/Night Band 32 emissivity",
+      "title": "Average Day/Night Band 29 emissivity",
       "raster:bands": [
         {
           "data_type": "uint8",
@@ -137,25 +121,25 @@
         "data"
       ]
     },
-    "View_Angle_Day": {
-      "href": "../../../../tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733_View_Angle_Day.tif",
+    "Emis_31": {
+      "href": "../../../../tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733_Emis_31.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Day view zenith angle",
+      "title": "Average Day/Night Band 31 emissivity",
       "raster:bands": [
         {
           "data_type": "uint8",
           "spatial_resolution": 1000,
-          "unit": "Degree"
+          "scale": 0.002
         }
       ],
       "roles": [
         "data"
       ]
     },
-    "Emis_31": {
-      "href": "../../../../tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733_Emis_31.tif",
+    "Emis_32": {
+      "href": "../../../../tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733_Emis_32.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Average Day/Night Band 31 emissivity",
+      "title": "Average Day/Night Band 32 emissivity",
       "raster:bands": [
         {
           "data_type": "uint8",
@@ -183,22 +167,6 @@
         "data"
       ]
     },
-    "View_Time_Day": {
-      "href": "../../../../tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733_View_Time_Day.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Day Time of Observation",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000,
-          "unit": "Hours",
-          "scale": 0.1
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
     "LST_Night_1KM": {
       "href": "../../../../tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733_LST_Night_1KM.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -209,20 +177,6 @@
           "spatial_resolution": 1000,
           "unit": "Kelvin",
           "scale": 0.02
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "QC_Night": {
-      "href": "../../../../tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733_QC_Night.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Night Quality Control",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
         }
       ],
       "roles": [
@@ -243,6 +197,35 @@
         "data"
       ]
     },
+    "QC_Night": {
+      "href": "../../../../tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733_QC_Night.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Night Quality Control",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "View_Angle_Day": {
+      "href": "../../../../tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733_View_Angle_Day.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Day view zenith angle",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000,
+          "unit": "Degree"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
     "View_Angle_Night": {
       "href": "../../../../tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733_View_Angle_Night.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -252,6 +235,22 @@
           "data_type": "uint8",
           "spatial_resolution": 1000,
           "unit": "Degree"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "View_Time_Day": {
+      "href": "../../../../tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733_View_Time_Day.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Day Time of Observation",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000,
+          "unit": "Hours",
+          "scale": 0.1
         }
       ],
       "roles": [
@@ -274,19 +273,20 @@
         "data"
       ]
     },
-    "Emis_29": {
-      "href": "../../../../tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733_Emis_29.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Average Day/Night Band 29 emissivity",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000,
-          "scale": 0.002
-        }
-      ],
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
       "roles": [
         "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
       ]
     }
   },

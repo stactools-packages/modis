@@ -105,14 +105,6 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MYD09Q1.A2022025.h02v08.061.2022035050917.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
-      "roles": [
-        "metadata"
-      ]
-    },
     "hdf": {
       "href": "../../../../tests/data-files/external/MYD09Q1.A2022025.h02v08.061.2022035050917.hdf",
       "type": "application/x-hdf",
@@ -121,18 +113,36 @@
         "data"
       ]
     },
-    "sur_refl_state_250m": {
-      "href": "../../../../tests/data-files/external/MYD09Q1.A2022025.h02v08.061.2022035050917_sur_refl_state_250m.tif",
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MYD09Q1.A2022025.h02v08.061.2022035050917.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "sur_refl_b01": {
+      "href": "../../../../tests/data-files/external/MYD09Q1.A2022025.h02v08.061.2022035050917_sur_refl_b01.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Surface Reflectance 250m State flags",
+      "title": "Surface Reflectance Band 1 (620-670 nm)",
       "raster:bands": [
         {
-          "data_type": "uint16",
-          "spatial_resolution": 250
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "scale": 0.0001
+        }
+      ],
+      "eo:bands": [
+        {
+          "name": "sur_refl_b01",
+          "common_name": "red",
+          "center_wavelength": 0.645,
+          "full_width_half_max": 0.5
         }
       ],
       "roles": [
-        "data"
+        "data",
+        "reflectance"
       ]
     },
     "sur_refl_b02": {
@@ -173,28 +183,18 @@
         "data"
       ]
     },
-    "sur_refl_b01": {
-      "href": "../../../../tests/data-files/external/MYD09Q1.A2022025.h02v08.061.2022035050917_sur_refl_b01.tif",
+    "sur_refl_state_250m": {
+      "href": "../../../../tests/data-files/external/MYD09Q1.A2022025.h02v08.061.2022035050917_sur_refl_state_250m.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Surface Reflectance Band 1 (620-670 nm)",
+      "title": "Surface Reflectance 250m State flags",
       "raster:bands": [
         {
-          "data_type": "int16",
-          "spatial_resolution": 250,
-          "scale": 0.0001
-        }
-      ],
-      "eo:bands": [
-        {
-          "name": "sur_refl_b01",
-          "common_name": "red",
-          "center_wavelength": 0.645,
-          "full_width_half_max": 0.5
+          "data_type": "uint16",
+          "spatial_resolution": 250
         }
       ],
       "roles": [
-        "data",
-        "reflectance"
+        "data"
       ]
     }
   },

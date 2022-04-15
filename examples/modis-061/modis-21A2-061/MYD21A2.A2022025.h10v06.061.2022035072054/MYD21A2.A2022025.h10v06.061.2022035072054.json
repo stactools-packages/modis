@@ -105,22 +105,6 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
-      "roles": [
-        "metadata"
-      ]
-    },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
     "Emis_29": {
       "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054_Emis_29.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -130,113 +114,6 @@
           "data_type": "uint8",
           "spatial_resolution": 1000,
           "scale": 0.002
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "View_Time_Day": {
-      "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054_View_Time_Day.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Day Time of Observation",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000,
-          "unit": "Hours",
-          "scale": 0.1
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "View_Angle_Day": {
-      "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054_View_Angle_Day.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Day view zenith angle",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000,
-          "unit": "Degree"
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "LST_Night_1KM": {
-      "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054_LST_Night_1KM.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Night Land Surface Temperature",
-      "raster:bands": [
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 1000,
-          "unit": "Kelvin",
-          "scale": 0.02
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "QC_Night": {
-      "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054_QC_Night.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Night Quality Control",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "View_Time_Night": {
-      "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054_View_Time_Night.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Night Time of Observation",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000,
-          "unit": "Hours",
-          "scale": 0.1
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "LST_Day_1KM": {
-      "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054_LST_Day_1KM.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Day Land Surface Temperature",
-      "raster:bands": [
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 1000,
-          "unit": "Kelvin",
-          "scale": 0.02
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "QC_Day": {
-      "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054_QC_Day.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Day Quality Control",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
         }
       ],
       "roles": [
@@ -273,6 +150,81 @@
         "data"
       ]
     },
+    "LST_Day_1KM": {
+      "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054_LST_Day_1KM.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Day Land Surface Temperature",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000,
+          "unit": "Kelvin",
+          "scale": 0.02
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "LST_Night_1KM": {
+      "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054_LST_Night_1KM.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Night Land Surface Temperature",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000,
+          "unit": "Kelvin",
+          "scale": 0.02
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "QC_Day": {
+      "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054_QC_Day.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Day Quality Control",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "QC_Night": {
+      "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054_QC_Night.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Night Quality Control",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "View_Angle_Day": {
+      "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054_View_Angle_Day.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Day view zenith angle",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000,
+          "unit": "Degree"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
     "View_Angle_Night": {
       "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054_View_Angle_Night.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -286,6 +238,54 @@
       ],
       "roles": [
         "data"
+      ]
+    },
+    "View_Time_Day": {
+      "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054_View_Time_Day.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Day Time of Observation",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000,
+          "unit": "Hours",
+          "scale": 0.1
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "View_Time_Night": {
+      "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054_View_Time_Night.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Night Time of Observation",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000,
+          "unit": "Hours",
+          "scale": 0.1
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MYD21A2.A2022025.h10v06.061.2022035072054.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
       ]
     }
   },

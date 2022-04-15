@@ -105,18 +105,18 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MOD17A2HGF.A2021361.h10v06.061.2022020134637.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
-      "roles": [
-        "metadata"
-      ]
-    },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MOD17A2HGF.A2021361.h10v06.061.2022020134637.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
+    "Gpp_500m": {
+      "href": "../../../../tests/data-files/external/MOD17A2HGF.A2021361.h10v06.061.2022020134637_Gpp_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Gross Primary Productivity",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "kg C/m^2",
+          "scale": 0.0001
+        }
+      ],
       "roles": [
         "data"
       ]
@@ -151,20 +151,20 @@
         "data"
       ]
     },
-    "Gpp_500m": {
-      "href": "../../../../tests/data-files/external/MOD17A2HGF.A2021361.h10v06.061.2022020134637_Gpp_500m.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Gross Primary Productivity",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "kg C/m^2",
-          "scale": 0.0001
-        }
-      ],
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MOD17A2HGF.A2021361.h10v06.061.2022020134637.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
       "roles": [
         "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MOD17A2HGF.A2021361.h10v06.061.2022020134637.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
       ]
     }
   },

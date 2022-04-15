@@ -105,32 +105,14 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
-      "roles": [
-        "metadata"
-      ]
-    },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
-    "FparStdDev_500m": {
-      "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937_FparStdDev_500m.tif",
+    "FparExtra_QC": {
+      "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937_FparExtra_QC.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Standard deviation of FPAR",
+      "title": "Extra detail Quality for FPAR and LAI",
       "raster:bands": [
         {
           "data_type": "uint8",
-          "spatial_resolution": 500,
-          "unit": "Percent",
-          "scale": 0.01
+          "spatial_resolution": 500
         }
       ],
       "roles": [
@@ -145,6 +127,22 @@
         {
           "data_type": "uint8",
           "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "FparStdDev_500m": {
+      "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937_FparStdDev_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Standard deviation of FPAR",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500,
+          "unit": "Percent",
+          "scale": 0.01
         }
       ],
       "roles": [
@@ -168,6 +166,22 @@
         "data"
       ]
     },
+    "LaiStdDev_500m": {
+      "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937_LaiStdDev_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Standard deviation of LAI",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500,
+          "unit": "m^2/m^2",
+          "scale": 0.1
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
     "Lai_500m": {
       "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937_Lai_500m.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -185,34 +199,20 @@
         "data"
       ]
     },
-    "FparExtra_QC": {
-      "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937_FparExtra_QC.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Extra detail Quality for FPAR and LAI",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 500
-        }
-      ],
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
       "roles": [
         "data"
       ]
     },
-    "LaiStdDev_500m": {
-      "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937_LaiStdDev_500m.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Standard deviation of LAI",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 500,
-          "unit": "m^2/m^2",
-          "scale": 0.1
-        }
-      ],
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
-        "data"
+        "metadata"
       ]
     }
   },

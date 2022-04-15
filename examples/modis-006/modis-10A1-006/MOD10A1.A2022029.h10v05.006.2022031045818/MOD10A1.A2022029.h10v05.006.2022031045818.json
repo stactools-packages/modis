@@ -64,20 +64,20 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/MOD10A1.A2022029.h10v05.006.2022031045818.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
-      "roles": [
-        "metadata"
-      ]
-    },
     "hdf": {
       "href": "../../../../tests/data-files/MOD10A1.A2022029.h10v05.006.2022031045818.hdf",
       "type": "application/x-hdf",
       "title": "Source data containing all bands",
       "roles": [
         "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/MOD10A1.A2022029.h10v05.006.2022031045818.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
       ]
     }
   },

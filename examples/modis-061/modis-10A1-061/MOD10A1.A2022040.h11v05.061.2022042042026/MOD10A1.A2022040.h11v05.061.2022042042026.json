@@ -105,26 +105,39 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
-      "roles": [
-        "metadata"
-      ]
-    },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
+    "NDSI": {
+      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026_NDSI.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Raw NDSI values (i.e. prior to screening).",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "scale": 0.0001
+        }
+      ],
       "roles": [
         "data"
       ]
     },
-    "granule_pnt": {
-      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026_granule_pnt.tif",
+    "NDSI_Snow_Cover": {
+      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026_NDSI_Snow_Cover.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Pointer for identifying the swath mapped into each grid cell.",
+      "title": "Gridded NDSI snow cover and data flag values.",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "NDSI_Snow_Cover_Algorithm_Flags_QA": {
+      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026_NDSI_Snow_Cover_Algorithm_Flags_QA.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Algorithm-specific bit flags set for data screens and for inland water.",
       "raster:bands": [
         {
           "data_type": "uint8",
@@ -171,21 +184,6 @@
         "data"
       ]
     },
-    "NDSI": {
-      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026_NDSI.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Raw NDSI values (i.e. prior to screening).",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "scale": 0.0001
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
     "Snow_Albedo_Daily_Tile": {
       "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026_Snow_Albedo_Daily_Tile.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -200,10 +198,10 @@
         "data"
       ]
     },
-    "NDSI_Snow_Cover_Algorithm_Flags_QA": {
-      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026_NDSI_Snow_Cover_Algorithm_Flags_QA.tif",
+    "granule_pnt": {
+      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026_granule_pnt.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Algorithm-specific bit flags set for data screens and for inland water.",
+      "title": "Pointer for identifying the swath mapped into each grid cell.",
       "raster:bands": [
         {
           "data_type": "uint8",
@@ -214,18 +212,20 @@
         "data"
       ]
     },
-    "NDSI_Snow_Cover": {
-      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026_NDSI_Snow_Cover.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Gridded NDSI snow cover and data flag values.",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 500
-        }
-      ],
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
       "roles": [
         "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
       ]
     },
     "orbit_pnt": {

@@ -105,22 +105,6 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MOD10A2.A2022033.h09v05.061.2022042050729.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
-      "roles": [
-        "metadata"
-      ]
-    },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MOD10A2.A2022033.h09v05.061.2022042050729.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
     "Eight_Day_Snow_Cover": {
       "href": "../../../../tests/data-files/external/MOD10A2.A2022033.h09v05.061.2022042050729_Eight_Day_Snow_Cover.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -189,6 +173,22 @@
       ],
       "roles": [
         "data"
+      ]
+    },
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MOD10A2.A2022033.h09v05.061.2022042050729.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MOD10A2.A2022033.h09v05.061.2022042050729.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
       ]
     }
   },

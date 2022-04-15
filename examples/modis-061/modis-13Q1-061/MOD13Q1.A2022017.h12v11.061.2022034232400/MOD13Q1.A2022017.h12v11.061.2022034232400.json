@@ -105,48 +105,16 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
-      "roles": [
-        "metadata"
-      ]
-    },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
-    "250m_16_days_NDVI": {
-      "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400_250m_16_days_NDVI.tif",
+    "250m_16_days_EVI": {
+      "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400_250m_16_days_EVI.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "16 day NDVI",
+      "title": "16 day EVI",
       "raster:bands": [
         {
           "data_type": "int16",
           "spatial_resolution": 250,
-          "unit": "NDVI",
+          "unit": "EVI",
           "scale": 0.0001
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "250m_16_days_sun_zenith_angle": {
-      "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400_250m_16_days_sun_zenith_angle.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Sun zenith angle of VI pixel",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 250,
-          "unit": "Degree",
-          "scale": 0.01
         }
       ],
       "roles": [
@@ -168,6 +136,22 @@
         "data"
       ]
     },
+    "250m_16_days_NDVI": {
+      "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400_250m_16_days_NDVI.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "16 day NDVI",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "unit": "NDVI",
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
     "250m_16_days_NIR_reflectance": {
       "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400_250m_16_days_NIR_reflectance.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -177,6 +161,50 @@
           "data_type": "int16",
           "spatial_resolution": 250,
           "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "250m_16_days_VI_Quality": {
+      "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400_250m_16_days_VI_Quality.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "VI quality indicators",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 250
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "250m_16_days_blue_reflectance": {
+      "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400_250m_16_days_blue_reflectance.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 3",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "250m_16_days_composite_day_of_the_year": {
+      "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400_250m_16_days_composite_day_of_the_year.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Day of year VI pixel",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "unit": "Julian Day"
         }
       ],
       "roles": [
@@ -231,45 +259,32 @@
         "data"
       ]
     },
-    "250m_16_days_blue_reflectance": {
-      "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400_250m_16_days_blue_reflectance.tif",
+    "250m_16_days_relative_azimuth_angle": {
+      "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400_250m_16_days_relative_azimuth_angle.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Surface Reflectance Band 3",
+      "title": "Relative azimuth angle of VI pixel",
       "raster:bands": [
         {
           "data_type": "int16",
           "spatial_resolution": 250,
-          "scale": 0.0001
+          "unit": "Degree",
+          "scale": 0.01
         }
       ],
       "roles": [
         "data"
       ]
     },
-    "250m_16_days_EVI": {
-      "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400_250m_16_days_EVI.tif",
+    "250m_16_days_sun_zenith_angle": {
+      "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400_250m_16_days_sun_zenith_angle.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "16 day EVI",
+      "title": "Sun zenith angle of VI pixel",
       "raster:bands": [
         {
           "data_type": "int16",
           "spatial_resolution": 250,
-          "unit": "EVI",
-          "scale": 0.0001
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "250m_16_days_VI_Quality": {
-      "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400_250m_16_days_VI_Quality.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "VI quality indicators",
-      "raster:bands": [
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 250
+          "unit": "Degree",
+          "scale": 0.01
         }
       ],
       "roles": [
@@ -292,35 +307,20 @@
         "data"
       ]
     },
-    "250m_16_days_composite_day_of_the_year": {
-      "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400_250m_16_days_composite_day_of_the_year.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Day of year VI pixel",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 250,
-          "unit": "Julian Day"
-        }
-      ],
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
       "roles": [
         "data"
       ]
     },
-    "250m_16_days_relative_azimuth_angle": {
-      "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400_250m_16_days_relative_azimuth_angle.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Relative azimuth angle of VI pixel",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 250,
-          "unit": "Degree",
-          "scale": 0.01
-        }
-      ],
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
-        "data"
+        "metadata"
       ]
     }
   },

@@ -105,64 +105,6 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MYD14A1.A2022049.h09v05.061.2022057234556.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
-      "roles": [
-        "metadata"
-      ]
-    },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MYD14A1.A2022049.h09v05.061.2022057234556.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
-    "QA": {
-      "href": "../../../../tests/data-files/external/MYD14A1.A2022049.h09v05.061.2022057234556_QA.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Pixel quality indicators",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
     "FireMask": {
       "href": "../../../../tests/data-files/external/MYD14A1.A2022049.h09v05.061.2022057234556_FireMask.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -247,48 +189,6 @@
         "data"
       ]
     },
-    "sample": {
-      "href": "../../../../tests/data-files/external/MYD14A1.A2022049.h09v05.061.2022057234556_sample.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Position of fire pixel within scan",
-      "raster:bands": [
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 1000
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
     "MaxFRP": {
       "href": "../../../../tests/data-files/external/MYD14A1.A2022049.h09v05.061.2022057234556_MaxFRP.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -341,6 +241,106 @@
           "spatial_resolution": 1000,
           "unit": "Megawatts",
           "scale": 0.1
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "QA": {
+      "href": "../../../../tests/data-files/external/MYD14A1.A2022049.h09v05.061.2022057234556_QA.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Pixel quality indicators",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MYD14A1.A2022049.h09v05.061.2022057234556.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MYD14A1.A2022049.h09v05.061.2022057234556.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "sample": {
+      "href": "../../../../tests/data-files/external/MYD14A1.A2022049.h09v05.061.2022057234556_sample.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Position of fire pixel within scan",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
         }
       ],
       "roles": [
