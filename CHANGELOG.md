@@ -6,16 +6,30 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
+### Added
+
+- Create items from COGs ([#81](https://github.com/stactools-packages/modis/pull/81))
+- `s3` extra_requires ([#81](https://github.com/stactools-packages/modis/pull/81))
+- The `--s3-requester-pays` pytest option ([#81](https://github.com/stactools-packages/modis/pull/81))
+
 ### Changed
 
 - Insert "data" role at the front of the roles list ([#75](https://github.com/stactools-packages/modis/pull/75))
 - Keywords ([#77](https://github.com/stactools-packages/modis/pull/77))
 - Metadata is now a dataclass ([#80](https://github.com/stactools-packages/modis/pull/80))
 - Refactor item creation to use the builder model ([#79](https://github.com/stactools-packages/modis/pull/79))
+- `--create-cogs` (instead of `--cogify`) for `stac modis create-catalog` ([#81](https://github.com/stactools-packages/modis/pull/81))
+- Method to create expected files for unit tests, it's now `python -m tests.create_expected` ([#81](https://github.com/stactools-packages/modis/pull/81))
+
+### Fixed
+
+- Removed spurious coverage reporting ([#81](https://github.com/stactools-packages/modis/pull/81))
+- Asset ordering is now deterministic ([#81](https://github.com/stactools-packages/modis/pull/81))
 
 ### Removed
 
 - `file:values` ([#76](https://github.com/stactools-packages/modis/pull/76))
+- Some unnecessary custom attributes for some 006 products ([#81](https://github.com/stactools-packages/modis/pull/81))
 
 ## [0.2.0] - 2022-03-30
 
