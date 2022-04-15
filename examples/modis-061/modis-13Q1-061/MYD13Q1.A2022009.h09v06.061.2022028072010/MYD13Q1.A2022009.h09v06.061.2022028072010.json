@@ -105,18 +105,78 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+    "250m_16_days_EVI": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_EVI.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "16 day EVI",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "unit": "EVI",
+          "scale": 0.0001
+        }
+      ],
       "roles": [
-        "metadata"
+        "data"
       ]
     },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
+    "250m_16_days_MIR_reflectance": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_MIR_reflectance.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 7",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "250m_16_days_NDVI": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_NDVI.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "16 day NDVI",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "unit": "NDVI",
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "250m_16_days_NIR_reflectance": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_NIR_reflectance.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 2",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "250m_16_days_VI_Quality": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_VI_Quality.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "VI quality indicators",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 250
+        }
+      ],
       "roles": [
         "data"
       ]
@@ -184,30 +244,15 @@
         "data"
       ]
     },
-    "250m_16_days_NDVI": {
-      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_NDVI.tif",
+    "250m_16_days_red_reflectance": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_red_reflectance.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "16 day NDVI",
+      "title": "Surface Reflectance Band 1",
       "raster:bands": [
         {
           "data_type": "int16",
           "spatial_resolution": 250,
-          "unit": "NDVI",
           "scale": 0.0001
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "250m_16_days_VI_Quality": {
-      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_VI_Quality.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "VI quality indicators",
-      "raster:bands": [
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 250
         }
       ],
       "roles": [
@@ -230,22 +275,6 @@
         "data"
       ]
     },
-    "250m_16_days_EVI": {
-      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_EVI.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "16 day EVI",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 250,
-          "unit": "EVI",
-          "scale": 0.0001
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
     "250m_16_days_sun_zenith_angle": {
       "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_sun_zenith_angle.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -256,21 +285,6 @@
           "spatial_resolution": 250,
           "unit": "Degree",
           "scale": 0.01
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "250m_16_days_MIR_reflectance": {
-      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_MIR_reflectance.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Surface Reflectance Band 7",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 250,
-          "scale": 0.0001
         }
       ],
       "roles": [
@@ -293,34 +307,20 @@
         "data"
       ]
     },
-    "250m_16_days_NIR_reflectance": {
-      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_NIR_reflectance.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Surface Reflectance Band 2",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 250,
-          "scale": 0.0001
-        }
-      ],
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
       "roles": [
         "data"
       ]
     },
-    "250m_16_days_red_reflectance": {
-      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010_250m_16_days_red_reflectance.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Surface Reflectance Band 1",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 250,
-          "scale": 0.0001
-        }
-      ],
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
-        "data"
+        "metadata"
       ]
     }
   },

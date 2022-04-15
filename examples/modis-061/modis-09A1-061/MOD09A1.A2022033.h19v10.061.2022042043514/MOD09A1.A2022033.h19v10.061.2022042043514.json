@@ -105,6 +105,14 @@
     }
   ],
   "assets": {
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MOD09A1.A2022033.h19v10.061.2022042043514.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
     "metadata": {
       "href": "../../../../tests/data-files/external/MOD09A1.A2022033.h19v10.061.2022042043514.hdf.xml",
       "type": "application/xml",
@@ -113,12 +121,76 @@
         "metadata"
       ]
     },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MOD09A1.A2022033.h19v10.061.2022042043514.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
+    "sur_refl_b01": {
+      "href": "../../../../tests/data-files/external/MOD09A1.A2022033.h19v10.061.2022042043514_sur_refl_b01.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 1 (620-670 nm)",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "scale": 0.0001
+        }
+      ],
+      "eo:bands": [
+        {
+          "name": "sur_refl_b01",
+          "common_name": "red",
+          "center_wavelength": 0.645,
+          "full_width_half_max": 0.5
+        }
+      ],
       "roles": [
-        "data"
+        "data",
+        "reflectance"
+      ]
+    },
+    "sur_refl_b02": {
+      "href": "../../../../tests/data-files/external/MOD09A1.A2022033.h19v10.061.2022042043514_sur_refl_b02.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 2 (841-876 nm)",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "scale": 0.0001
+        }
+      ],
+      "eo:bands": [
+        {
+          "name": "sur_refl_b02",
+          "common_name": "nir08",
+          "center_wavelength": 0.8585,
+          "full_width_half_max": 0.35
+        }
+      ],
+      "roles": [
+        "data",
+        "reflectance"
+      ]
+    },
+    "sur_refl_b03": {
+      "href": "../../../../tests/data-files/external/MOD09A1.A2022033.h19v10.061.2022042043514_sur_refl_b03.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 3 (459-479 nm)",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "scale": 0.0001
+        }
+      ],
+      "eo:bands": [
+        {
+          "name": "sur_refl_b03",
+          "common_name": "blue",
+          "center_wavelength": 0.469,
+          "full_width_half_max": 0.2
+        }
+      ],
+      "roles": [
+        "data",
+        "reflectance"
       ]
     },
     "sur_refl_b04": {
@@ -169,46 +241,6 @@
         "reflectance"
       ]
     },
-    "sur_refl_b07": {
-      "href": "../../../../tests/data-files/external/MOD09A1.A2022033.h19v10.061.2022042043514_sur_refl_b07.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Surface Reflectance Band 7 (2105-2155 nm)",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "scale": 0.0001
-        }
-      ],
-      "eo:bands": [
-        {
-          "name": "sur_refl_b07",
-          "common_name": "swir22",
-          "center_wavelength": 2.13,
-          "full_width_half_max": 0.5
-        }
-      ],
-      "roles": [
-        "data",
-        "reflectance"
-      ]
-    },
-    "sur_refl_szen": {
-      "href": "../../../../tests/data-files/external/MOD09A1.A2022033.h19v10.061.2022042043514_sur_refl_szen.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "MODIS solar zenith angle",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "Degree",
-          "scale": 0.01
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
     "sur_refl_b06": {
       "href": "../../../../tests/data-files/external/MOD09A1.A2022033.h19v10.061.2022042043514_sur_refl_b06.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -233,10 +265,10 @@
         "reflectance"
       ]
     },
-    "sur_refl_b02": {
-      "href": "../../../../tests/data-files/external/MOD09A1.A2022033.h19v10.061.2022042043514_sur_refl_b02.tif",
+    "sur_refl_b07": {
+      "href": "../../../../tests/data-files/external/MOD09A1.A2022033.h19v10.061.2022042043514_sur_refl_b07.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Surface Reflectance Band 2 (841-876 nm)",
+      "title": "Surface Reflectance Band 7 (2105-2155 nm)",
       "raster:bands": [
         {
           "data_type": "int16",
@@ -246,87 +278,9 @@
       ],
       "eo:bands": [
         {
-          "name": "sur_refl_b02",
-          "common_name": "nir08",
-          "center_wavelength": 0.8585,
-          "full_width_half_max": 0.35
-        }
-      ],
-      "roles": [
-        "data",
-        "reflectance"
-      ]
-    },
-    "sur_refl_state_500m": {
-      "href": "../../../../tests/data-files/external/MOD09A1.A2022033.h19v10.061.2022042043514_sur_refl_state_500m.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Surface reflectance 500m state flags",
-      "raster:bands": [
-        {
-          "data_type": "uint16",
-          "spatial_resolution": 500
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "sur_refl_b03": {
-      "href": "../../../../tests/data-files/external/MOD09A1.A2022033.h19v10.061.2022042043514_sur_refl_b03.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Surface Reflectance Band 3 (459-479 nm)",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "scale": 0.0001
-        }
-      ],
-      "eo:bands": [
-        {
-          "name": "sur_refl_b03",
-          "common_name": "blue",
-          "center_wavelength": 0.469,
-          "full_width_half_max": 0.2
-        }
-      ],
-      "roles": [
-        "data",
-        "reflectance"
-      ]
-    },
-    "sur_refl_raz": {
-      "href": "../../../../tests/data-files/external/MOD09A1.A2022033.h19v10.061.2022042043514_sur_refl_raz.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "MODIS relative azimuth angle",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "Degree",
-          "scale": 0.01
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "sur_refl_b01": {
-      "href": "../../../../tests/data-files/external/MOD09A1.A2022033.h19v10.061.2022042043514_sur_refl_b01.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Surface Reflectance Band 1 (620-670 nm)",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "scale": 0.0001
-        }
-      ],
-      "eo:bands": [
-        {
-          "name": "sur_refl_b01",
-          "common_name": "red",
-          "center_wavelength": 0.645,
+          "name": "sur_refl_b07",
+          "common_name": "swir22",
+          "center_wavelength": 2.13,
           "full_width_half_max": 0.5
         }
       ],
@@ -358,6 +312,52 @@
         {
           "data_type": "uint32",
           "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "sur_refl_raz": {
+      "href": "../../../../tests/data-files/external/MOD09A1.A2022033.h19v10.061.2022042043514_sur_refl_raz.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "MODIS relative azimuth angle",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "Degree",
+          "scale": 0.01
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "sur_refl_state_500m": {
+      "href": "../../../../tests/data-files/external/MOD09A1.A2022033.h19v10.061.2022042043514_sur_refl_state_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface reflectance 500m state flags",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "sur_refl_szen": {
+      "href": "../../../../tests/data-files/external/MOD09A1.A2022033.h19v10.061.2022042043514_sur_refl_szen.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "MODIS solar zenith angle",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "Degree",
+          "scale": 0.01
         }
       ],
       "roles": [

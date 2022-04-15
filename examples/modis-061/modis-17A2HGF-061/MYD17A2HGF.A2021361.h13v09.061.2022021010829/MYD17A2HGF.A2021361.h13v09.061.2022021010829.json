@@ -105,36 +105,6 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MYD17A2HGF.A2021361.h13v09.061.2022021010829.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
-      "roles": [
-        "metadata"
-      ]
-    },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MYD17A2HGF.A2021361.h13v09.061.2022021010829.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
-    "Psn_QC_500m": {
-      "href": "../../../../tests/data-files/external/MYD17A2HGF.A2021361.h13v09.061.2022021010829_Psn_QC_500m.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Quality control indicators",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 500
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
     "Gpp_500m": {
       "href": "../../../../tests/data-files/external/MYD17A2HGF.A2021361.h13v09.061.2022021010829_Gpp_500m.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -165,6 +135,36 @@
       ],
       "roles": [
         "data"
+      ]
+    },
+    "Psn_QC_500m": {
+      "href": "../../../../tests/data-files/external/MYD17A2HGF.A2021361.h13v09.061.2022021010829_Psn_QC_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Quality control indicators",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MYD17A2HGF.A2021361.h13v09.061.2022021010829.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MYD17A2HGF.A2021361.h13v09.061.2022021010829.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
       ]
     }
   },

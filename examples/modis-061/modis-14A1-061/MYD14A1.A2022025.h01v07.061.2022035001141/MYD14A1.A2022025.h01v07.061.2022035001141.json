@@ -131,18 +131,86 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MYD14A1.A2022025.h01v07.061.2022035001141.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
-      "roles": [
-        "metadata"
-      ]
-    },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MYD14A1.A2022025.h01v07.061.2022035001141.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
+    "FireMask": {
+      "href": "../../../../tests/data-files/external/MYD14A1.A2022025.h01v07.061.2022035001141_FireMask.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Confidence of fire",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Not processed (missing input data)"
+        },
+        {
+          "value": 1,
+          "description": "Not processed (obsolete; not used since Collection 1)"
+        },
+        {
+          "value": 2,
+          "description": "Not processed (other reason)"
+        },
+        {
+          "value": 3,
+          "description": "Non-fire water pixel"
+        },
+        {
+          "value": 4,
+          "description": "Cloud (land or water)"
+        },
+        {
+          "value": 5,
+          "description": "Non-fire land pixel"
+        },
+        {
+          "value": 6,
+          "description": "Unknown (land or water)"
+        },
+        {
+          "value": 7,
+          "description": "Fire (low confidence, land or water)"
+        },
+        {
+          "value": 8,
+          "description": "Fire (nominal confidence, land or water)"
+        },
+        {
+          "value": 9,
+          "description": "Fire (high confidence, land or water)"
+        }
+      ],
       "roles": [
         "data"
       ]
@@ -247,6 +315,22 @@
         "data"
       ]
     },
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MYD14A1.A2022025.h01v07.061.2022035001141.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MYD14A1.A2022025.h01v07.061.2022035001141.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    },
     "sample": {
       "href": "../../../../tests/data-files/external/MYD14A1.A2022025.h01v07.061.2022035001141_sample.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -283,90 +367,6 @@
         {
           "data_type": "uint16",
           "spatial_resolution": 1000
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "FireMask": {
-      "href": "../../../../tests/data-files/external/MYD14A1.A2022025.h01v07.061.2022035001141_FireMask.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Confidence of fire",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        },
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        }
-      ],
-      "classification:classes": [
-        {
-          "value": 0,
-          "description": "Not processed (missing input data)"
-        },
-        {
-          "value": 1,
-          "description": "Not processed (obsolete; not used since Collection 1)"
-        },
-        {
-          "value": 2,
-          "description": "Not processed (other reason)"
-        },
-        {
-          "value": 3,
-          "description": "Non-fire water pixel"
-        },
-        {
-          "value": 4,
-          "description": "Cloud (land or water)"
-        },
-        {
-          "value": 5,
-          "description": "Non-fire land pixel"
-        },
-        {
-          "value": 6,
-          "description": "Unknown (land or water)"
-        },
-        {
-          "value": 7,
-          "description": "Fire (low confidence, land or water)"
-        },
-        {
-          "value": 8,
-          "description": "Fire (nominal confidence, land or water)"
-        },
-        {
-          "value": 9,
-          "description": "Fire (high confidence, land or water)"
         }
       ],
       "roles": [

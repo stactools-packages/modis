@@ -105,80 +105,6 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MOD14A1.A2022049.h09v05.061.2022057235503.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
-      "roles": [
-        "metadata"
-      ]
-    },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MOD14A1.A2022049.h09v05.061.2022057235503.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
-    "MaxFRP": {
-      "href": "../../../../tests/data-files/external/MOD14A1.A2022049.h09v05.061.2022057235503_MaxFRP.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Maximum Fire Radiative Power",
-      "raster:bands": [
-        {
-          "data_type": "uint32",
-          "spatial_resolution": 1000,
-          "unit": "Megawatts",
-          "scale": 0.1
-        },
-        {
-          "data_type": "uint32",
-          "spatial_resolution": 1000,
-          "unit": "Megawatts",
-          "scale": 0.1
-        },
-        {
-          "data_type": "uint32",
-          "spatial_resolution": 1000,
-          "unit": "Megawatts",
-          "scale": 0.1
-        },
-        {
-          "data_type": "uint32",
-          "spatial_resolution": 1000,
-          "unit": "Megawatts",
-          "scale": 0.1
-        },
-        {
-          "data_type": "uint32",
-          "spatial_resolution": 1000,
-          "unit": "Megawatts",
-          "scale": 0.1
-        },
-        {
-          "data_type": "uint32",
-          "spatial_resolution": 1000,
-          "unit": "Megawatts",
-          "scale": 0.1
-        },
-        {
-          "data_type": "uint32",
-          "spatial_resolution": 1000,
-          "unit": "Megawatts",
-          "scale": 0.1
-        },
-        {
-          "data_type": "uint32",
-          "spatial_resolution": 1000,
-          "unit": "Megawatts",
-          "scale": 0.1
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
     "FireMask": {
       "href": "../../../../tests/data-files/external/MOD14A1.A2022049.h09v05.061.2022057235503_FireMask.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -263,6 +189,64 @@
         "data"
       ]
     },
+    "MaxFRP": {
+      "href": "../../../../tests/data-files/external/MOD14A1.A2022049.h09v05.061.2022057235503_MaxFRP.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Maximum Fire Radiative Power",
+      "raster:bands": [
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
     "QA": {
       "href": "../../../../tests/data-files/external/MOD14A1.A2022049.h09v05.061.2022057235503_QA.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -303,6 +287,22 @@
       ],
       "roles": [
         "data"
+      ]
+    },
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MOD14A1.A2022049.h09v05.061.2022057235503.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MOD14A1.A2022049.h09v05.061.2022057235503.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
       ]
     },
     "sample": {

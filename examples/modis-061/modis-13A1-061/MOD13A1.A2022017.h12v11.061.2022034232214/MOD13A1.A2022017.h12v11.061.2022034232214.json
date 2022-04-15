@@ -105,60 +105,15 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MOD13A1.A2022017.h12v11.061.2022034232214.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
-      "roles": [
-        "metadata"
-      ]
-    },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MOD13A1.A2022017.h12v11.061.2022034232214.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
-    "500m_16_days_composite_day_of_the_year": {
-      "href": "../../../../tests/data-files/external/MOD13A1.A2022017.h12v11.061.2022034232214_500m_16_days_composite_day_of_the_year.tif",
+    "500m_16_days_EVI": {
+      "href": "../../../../tests/data-files/external/MOD13A1.A2022017.h12v11.061.2022034232214_500m_16_days_EVI.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Day of year VI pixel",
+      "title": "500m 16 days EVI",
       "raster:bands": [
         {
           "data_type": "int16",
           "spatial_resolution": 500,
-          "unit": "Julian Day"
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "500m_16_days_NIR_reflectance": {
-      "href": "../../../../tests/data-files/external/MOD13A1.A2022017.h12v11.061.2022034232214_500m_16_days_NIR_reflectance.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Surface Reflectance Band 2",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "scale": 0.0001
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "500m_16_days_red_reflectance": {
-      "href": "../../../../tests/data-files/external/MOD13A1.A2022017.h12v11.061.2022034232214_500m_16_days_red_reflectance.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Surface Reflectance Band 1",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
+          "unit": "EVI",
           "scale": 0.0001
         }
       ],
@@ -181,6 +136,37 @@
         "data"
       ]
     },
+    "500m_16_days_NDVI": {
+      "href": "../../../../tests/data-files/external/MOD13A1.A2022017.h12v11.061.2022034232214_500m_16_days_NDVI.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "500m 16 days NDVI",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "NDVI",
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "500m_16_days_NIR_reflectance": {
+      "href": "../../../../tests/data-files/external/MOD13A1.A2022017.h12v11.061.2022034232214_500m_16_days_NIR_reflectance.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 2",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
     "500m_16_days_VI_Quality": {
       "href": "../../../../tests/data-files/external/MOD13A1.A2022017.h12v11.061.2022034232214_500m_16_days_VI_Quality.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -189,6 +175,36 @@
         {
           "data_type": "uint16",
           "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "500m_16_days_blue_reflectance": {
+      "href": "../../../../tests/data-files/external/MOD13A1.A2022017.h12v11.061.2022034232214_500m_16_days_blue_reflectance.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 3",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "500m_16_days_composite_day_of_the_year": {
+      "href": "../../../../tests/data-files/external/MOD13A1.A2022017.h12v11.061.2022034232214_500m_16_days_composite_day_of_the_year.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Day of year VI pixel",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "Julian Day"
         }
       ],
       "roles": [
@@ -222,6 +238,21 @@
         {
           "value": 3,
           "description": "Cloudy data"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "500m_16_days_red_reflectance": {
+      "href": "../../../../tests/data-files/external/MOD13A1.A2022017.h12v11.061.2022034232214_500m_16_days_red_reflectance.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 1",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "scale": 0.0001
         }
       ],
       "roles": [
@@ -276,51 +307,20 @@
         "data"
       ]
     },
-    "500m_16_days_blue_reflectance": {
-      "href": "../../../../tests/data-files/external/MOD13A1.A2022017.h12v11.061.2022034232214_500m_16_days_blue_reflectance.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Surface Reflectance Band 3",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "scale": 0.0001
-        }
-      ],
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MOD13A1.A2022017.h12v11.061.2022034232214.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
       "roles": [
         "data"
       ]
     },
-    "500m_16_days_NDVI": {
-      "href": "../../../../tests/data-files/external/MOD13A1.A2022017.h12v11.061.2022034232214_500m_16_days_NDVI.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "500m 16 days NDVI",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "NDVI",
-          "scale": 0.0001
-        }
-      ],
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MOD13A1.A2022017.h12v11.061.2022034232214.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
       "roles": [
-        "data"
-      ]
-    },
-    "500m_16_days_EVI": {
-      "href": "../../../../tests/data-files/external/MOD13A1.A2022017.h12v11.061.2022034232214_500m_16_days_EVI.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "500m 16 days EVI",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "EVI",
-          "scale": 0.0001
-        }
-      ],
-      "roles": [
-        "data"
+        "metadata"
       ]
     }
   },

@@ -105,18 +105,32 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MCD64A1.A2021335.h10v06.061.2022035055453.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+    "Burn_Date": {
+      "href": "../../../../tests/data-files/external/MCD64A1.A2021335.h10v06.061.2022035055453_Burn_Date.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Burn day of year",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "Day"
+        }
+      ],
       "roles": [
-        "metadata"
+        "data"
       ]
     },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MCD64A1.A2021335.h10v06.061.2022035055453.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
+    "Burn_Date_Uncertainty": {
+      "href": "../../../../tests/data-files/external/MCD64A1.A2021335.h10v06.061.2022035055453_Burn_Date_Uncertainty.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Estimated uncertainty in burn day",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500,
+          "unit": "Day"
+        }
+      ],
       "roles": [
         "data"
       ]
@@ -151,36 +165,6 @@
         "data"
       ]
     },
-    "Burn_Date": {
-      "href": "../../../../tests/data-files/external/MCD64A1.A2021335.h10v06.061.2022035055453_Burn_Date.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Burn day of year",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "Day"
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "Burn_Date_Uncertainty": {
-      "href": "../../../../tests/data-files/external/MCD64A1.A2021335.h10v06.061.2022035055453_Burn_Date_Uncertainty.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Estimated uncertainty in burn day",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 500,
-          "unit": "Day"
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
     "QA": {
       "href": "../../../../tests/data-files/external/MCD64A1.A2021335.h10v06.061.2022035055453_QA.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -193,6 +177,22 @@
       ],
       "roles": [
         "data"
+      ]
+    },
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MCD64A1.A2021335.h10v06.061.2022035055453.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MCD64A1.A2021335.h10v06.061.2022035055453.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
       ]
     }
   },

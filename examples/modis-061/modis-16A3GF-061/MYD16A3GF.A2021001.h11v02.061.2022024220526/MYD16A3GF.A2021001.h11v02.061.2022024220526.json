@@ -131,22 +131,6 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MYD16A3GF.A2021001.h11v02.061.2022024220526.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
-      "roles": [
-        "metadata"
-      ]
-    },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MYD16A3GF.A2021001.h11v02.061.2022024220526.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
     "ET_500m": {
       "href": "../../../../tests/data-files/external/MYD16A3GF.A2021001.h11v02.061.2022024220526_ET_500m.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -172,22 +156,6 @@
           "data_type": "uint8",
           "spatial_resolution": 500,
           "unit": "Percent"
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "PLE_500m": {
-      "href": "../../../../tests/data-files/external/MYD16A3GF.A2021001.h11v02.061.2022024220526_PLE_500m.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Average of Potential Latent Heat Flux",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "J/m^2/day",
-          "scale": 10000
         }
       ],
       "roles": [
@@ -224,6 +192,38 @@
       ],
       "roles": [
         "data"
+      ]
+    },
+    "PLE_500m": {
+      "href": "../../../../tests/data-files/external/MYD16A3GF.A2021001.h11v02.061.2022024220526_PLE_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Average of Potential Latent Heat Flux",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "J/m^2/day",
+          "scale": 10000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MYD16A3GF.A2021001.h11v02.061.2022024220526.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MYD16A3GF.A2021001.h11v02.061.2022024220526.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
       ]
     }
   },

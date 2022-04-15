@@ -106,71 +106,10 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
-      "roles": [
-        "metadata"
-      ]
-    },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
-    "Night_view_angl": {
-      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_Night_view_angl.tif",
+    "Clear_sky_days": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_Clear_sky_days.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "View zenith angle of nighttime Land-surface Temperature ",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000,
-          "unit": "Degree"
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "Night_view_time": {
-      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_Night_view_time.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Average view zenith angle of nighttime Land-surface Temperature",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000,
-          "unit": "Hours",
-          "scale": 0.1
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "QC_Night": {
-      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_QC_Night.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Quality control for nighttime LST and emissivity",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "QC_Day": {
-      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_QC_Day.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Quality control for daytime LST and emissivity",
+      "title": "the days in clear-sky conditions and with validate LSTs",
       "raster:bands": [
         {
           "data_type": "uint8",
@@ -210,15 +149,16 @@
         "data"
       ]
     },
-    "Emis_32": {
-      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_Emis_32.tif",
+    "Day_view_time": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_Day_view_time.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Band 32 emissivity",
+      "title": "Average time of daytime Landsurface Temperature observation",
       "raster:bands": [
         {
           "data_type": "uint8",
           "spatial_resolution": 1000,
-          "scale": 0.002
+          "unit": "Hours",
+          "scale": 0.1
         }
       ],
       "roles": [
@@ -240,16 +180,15 @@
         "data"
       ]
     },
-    "Day_view_time": {
-      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_Day_view_time.tif",
+    "Emis_32": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_Emis_32.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Average time of daytime Landsurface Temperature observation",
+      "title": "Band 32 emissivity",
       "raster:bands": [
         {
           "data_type": "uint8",
           "spatial_resolution": 1000,
-          "unit": "Hours",
-          "scale": 0.1
+          "scale": 0.002
         }
       ],
       "roles": [
@@ -273,20 +212,6 @@
         "temperature"
       ]
     },
-    "Clear_sky_days": {
-      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_Clear_sky_days.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "the days in clear-sky conditions and with validate LSTs",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 1000
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
     "LST_Night_1km": {
       "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_LST_Night_1km.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -302,6 +227,81 @@
       "roles": [
         "data",
         "temperature"
+      ]
+    },
+    "Night_view_angl": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_Night_view_angl.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "View zenith angle of nighttime Land-surface Temperature ",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000,
+          "unit": "Degree"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "Night_view_time": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_Night_view_time.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Average view zenith angle of nighttime Land-surface Temperature",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000,
+          "unit": "Hours",
+          "scale": 0.1
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "QC_Day": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_QC_Day.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Quality control for daytime LST and emissivity",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "QC_Night": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_QC_Night.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Quality control for nighttime LST and emissivity",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
       ]
     }
   },

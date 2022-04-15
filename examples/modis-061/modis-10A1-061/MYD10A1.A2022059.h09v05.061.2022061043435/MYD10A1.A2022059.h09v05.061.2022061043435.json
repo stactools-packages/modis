@@ -105,36 +105,6 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MYD10A1.A2022059.h09v05.061.2022061043435.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
-      "roles": [
-        "metadata"
-      ]
-    },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MYD10A1.A2022059.h09v05.061.2022061043435.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
-    "orbit_pnt": {
-      "href": "../../../../tests/data-files/external/MYD10A1.A2022059.h09v05.061.2022061043435_orbit_pnt.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Pointer to the orbit of the swath mapped into each grid cell.",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 500
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
     "NDSI": {
       "href": "../../../../tests/data-files/external/MYD10A1.A2022059.h09v05.061.2022061043435_NDSI.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -150,52 +120,24 @@
         "data"
       ]
     },
-    "NDSI_Snow_Cover_Algorithm_Flags_QA": {
-      "href": "../../../../tests/data-files/external/MYD10A1.A2022059.h09v05.061.2022061043435_NDSI_Snow_Cover_Algorithm_Flags_QA.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Algorithm-specific bit flags set for data screens and for inland water.",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 500
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "Snow_Albedo_Daily_Tile": {
-      "href": "../../../../tests/data-files/external/MYD10A1.A2022059.h09v05.061.2022061043435_Snow_Albedo_Daily_Tile.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Daily snow albedo corresponding to the NDSI_Snow_Cover parameter.",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 500
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
-    "granule_pnt": {
-      "href": "../../../../tests/data-files/external/MYD10A1.A2022059.h09v05.061.2022061043435_granule_pnt.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Pointer for identifying the swath mapped into each grid cell.",
-      "raster:bands": [
-        {
-          "data_type": "uint8",
-          "spatial_resolution": 500
-        }
-      ],
-      "roles": [
-        "data"
-      ]
-    },
     "NDSI_Snow_Cover": {
       "href": "../../../../tests/data-files/external/MYD10A1.A2022059.h09v05.061.2022061043435_NDSI_Snow_Cover.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Gridded NDSI snow cover and data flag values.",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "NDSI_Snow_Cover_Algorithm_Flags_QA": {
+      "href": "../../../../tests/data-files/external/MYD10A1.A2022059.h09v05.061.2022061043435_NDSI_Snow_Cover_Algorithm_Flags_QA.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Algorithm-specific bit flags set for data screens and for inland water.",
       "raster:bands": [
         {
           "data_type": "uint8",
@@ -236,6 +178,64 @@
         {
           "value": 4,
           "description": "other (not used)"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "Snow_Albedo_Daily_Tile": {
+      "href": "../../../../tests/data-files/external/MYD10A1.A2022059.h09v05.061.2022061043435_Snow_Albedo_Daily_Tile.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Daily snow albedo corresponding to the NDSI_Snow_Cover parameter.",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "granule_pnt": {
+      "href": "../../../../tests/data-files/external/MYD10A1.A2022059.h09v05.061.2022061043435_granule_pnt.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Pointer for identifying the swath mapped into each grid cell.",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MYD10A1.A2022059.h09v05.061.2022061043435.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MYD10A1.A2022059.h09v05.061.2022061043435.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "orbit_pnt": {
+      "href": "../../../../tests/data-files/external/MYD10A1.A2022059.h09v05.061.2022061043435_orbit_pnt.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Pointer to the orbit of the swath mapped into each grid cell.",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
         }
       ],
       "roles": [

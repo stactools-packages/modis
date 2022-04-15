@@ -105,22 +105,6 @@
     }
   ],
   "assets": {
-    "metadata": {
-      "href": "../../../../tests/data-files/external/MYD17A3HGF.A2021001.h13v09.061.2022021012736.hdf.xml",
-      "type": "application/xml",
-      "title": "Federal Geographic Data Committee (FGDC) Metadata",
-      "roles": [
-        "metadata"
-      ]
-    },
-    "hdf": {
-      "href": "../../../../tests/data-files/external/MYD17A3HGF.A2021001.h13v09.061.2022021012736.hdf",
-      "type": "application/x-hdf",
-      "title": "Source data containing all bands",
-      "roles": [
-        "data"
-      ]
-    },
     "Gpp_500m": {
       "href": "../../../../tests/data-files/external/MYD17A3HGF.A2021001.h13v09.061.2022021012736_Gpp_500m.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -128,6 +112,22 @@
       "raster:bands": [
         {
           "data_type": "uint16",
+          "spatial_resolution": 500,
+          "unit": "kg C/m^2",
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "Npp_500m": {
+      "href": "../../../../tests/data-files/external/MYD17A3HGF.A2021001.h13v09.061.2022021012736_Npp_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Net Primary Productivity",
+      "raster:bands": [
+        {
+          "data_type": "int16",
           "spatial_resolution": 500,
           "unit": "kg C/m^2",
           "scale": 0.0001
@@ -152,20 +152,20 @@
         "data"
       ]
     },
-    "Npp_500m": {
-      "href": "../../../../tests/data-files/external/MYD17A3HGF.A2021001.h13v09.061.2022021012736_Npp_500m.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
-      "title": "Net Primary Productivity",
-      "raster:bands": [
-        {
-          "data_type": "int16",
-          "spatial_resolution": 500,
-          "unit": "kg C/m^2",
-          "scale": 0.0001
-        }
-      ],
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MYD17A3HGF.A2021001.h13v09.061.2022021012736.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
       "roles": [
         "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MYD17A3HGF.A2021001.h13v09.061.2022021012736.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
       ]
     }
   },
