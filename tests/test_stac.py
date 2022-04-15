@@ -12,7 +12,7 @@ from stactools.core.utils.antimeridian import Strategy
 import stactools.modis.stac
 from stactools.modis.file import File
 
-from . import test_data
+from . import ASTRAEA_EXTERNAL_FILE_NAMES, test_data
 
 directory = test_data.get_path("data-files")
 args = []
@@ -37,6 +37,12 @@ for file_name in os.listdir(directory):
 
 cog_product = "MOD10A2"
 cog_version = "061"
+
+COG_FILE_NAMES = [
+    "MCD43A4.A2022073.h28v08.006.2022082044758_B01_cropped.TIF",
+    "MOD11A1.A2022103.h09v05.006.2022104093154_CDC_B11_cropped.TIF",
+    "MOD13A1.A2022081.h09v05.006.2022101145817_BR_B06_cropped.TIF",
+]
 
 
 @pytest.mark.parametrize("metadata_path,collection_path,item_path", args, ids=ids)
@@ -147,4 +153,40 @@ def test_antimeridian() -> None:
     print(bounds)
     assert bounds[0] == -180.26209861654
     assert bounds[2] == -169.997993708017
+    item.validate()
+
+
+@pytest.mark.parametrize("file_name", COG_FILE_NAMES)
+def test_cog(file_name: str) -> None:
+    href = test_data.get_path(f"data-files/{file_name}")
+    item_file_name = os.path.splitext(file_name)[0] + ".json"
+    expected_path = test_data.get_path(f"data-files/expected/{item_file_name}")
+    item = stactools.modis.stac.create_item_from_cogs([href])
+    item.set_self_href(expected_path)
+    item.make_asset_hrefs_relative()
+    item.validate()
+    with TemporaryDirectory() as temporary_directory:
+        path = os.path.join(temporary_directory, item_file_name)
+        item.save_object(
+            include_self_link=False,
+            dest_href=path,
+        )
+        with open(path) as file:
+            actual_item = json.load(file)
+    with open(expected_path) as file:
+        expected_item = json.load(file)
+    test_case = unittest.TestCase()
+    test_case.maxDiff = None
+    test_case.assertDictEqual(actual_item, expected_item)
+
+
+@pytest.mark.parametrize("key", ASTRAEA_EXTERNAL_FILE_NAMES.keys())
+@pytest.mark.s3_requester_pays
+def test_astraea(key: str) -> None:
+    value = ASTRAEA_EXTERNAL_FILE_NAMES[key]
+    file_names = value["file_names"]
+    paths = []
+    for file_name in file_names:
+        paths.append(test_data.get_external_data(file_name))
+    item = stactools.modis.stac.create_item_from_cogs(paths)
     item.validate()

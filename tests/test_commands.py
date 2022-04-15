@@ -20,7 +20,7 @@ class CreateItemTest(CliTestCase):
         )
 
         with TemporaryDirectory() as temporary_directory:
-            cmd = f"modis create-item --cogify {infile} {temporary_directory}"
+            cmd = f"modis create-item --create-cogs {infile} {temporary_directory}"
             self.run_command(cmd)
             item_path = os.path.join(
                 temporary_directory, "MOD10A2.A2022033.h09v05.061.2022042050729.json"

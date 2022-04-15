@@ -1,5 +1,6 @@
 import logging
-from typing import Optional
+import warnings
+from typing import List, Optional
 
 import pystac
 import pystac.utils
@@ -122,6 +123,32 @@ def create_item(
     return builder.create_item()
 
 
+def create_item_from_cogs(
+    hrefs: List[str],
+    read_href_modifier: Optional[ReadHrefModifier] = None,
+    antimeridian_strategy: Strategy = Strategy.SPLIT,
+) -> Item:
+    """Creates a STAC Item from COG paths.
+
+    Args:
+        hrefs (str): The hrefs to COGs.
+        read_href_modifier (Callable[[str], str]): An optional function to
+            modify the href (e.g. to add a token to a url)
+        antimeridian_strategy (AntimeridianStrategy): Either split on -180 or
+            normalize geometries so all longitudes are either positive or negative.
+
+    Returns:
+        pystac.Item: A STAC Item representing this MODIS image.
+    """
+    builder = ModisBuilder(
+        antimeridian_strategy=antimeridian_strategy,
+        read_href_modifier=read_href_modifier,
+    )
+    for href in hrefs:
+        builder.add_cog_href(href)
+    return builder.create_item()
+
+
 def collection_id(product: str, version: str) -> str:
     """Creates a collection id from a product and a version:
 
@@ -132,4 +159,8 @@ def collection_id(product: str, version: str) -> str:
     Returns:
         str: The collection id, e.g. "modis-MCD12Q1-006"
     """
+    warnings.warn(
+        "stactools.modis.stac.collection_id is deprecated, and will be removed in v0.4.0",
+        DeprecationWarning,
+    )
     return f"modis-{product}-{version}"

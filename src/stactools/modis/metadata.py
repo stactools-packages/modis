@@ -10,6 +10,7 @@ from shapely.geometry import Polygon
 from stactools.core.io import ReadHrefModifier
 from stactools.core.io.xml import XmlElement
 
+from stactools.modis import utils
 from stactools.modis.constants import TEMPORALLY_WEIGHTED_PRODUCTS
 
 
@@ -24,12 +25,12 @@ class Metadata:
     id: str
     product: str
     version: str
-    geometry: Dict[str, Any]
-    bbox: List[float]
+    geometry: Optional[Dict[str, Any]]
+    bbox: Optional[List[float]]
     start_datetime: datetime.datetime
     end_datetime: datetime.datetime
-    created: datetime.datetime
-    updated: datetime.datetime
+    created: Optional[datetime.datetime]
+    updated: Optional[datetime.datetime]
     qa_percent_not_produced_cloud: int
     qa_percent_cloud_cover: Dict[str, int]
     horizontal_tile: int
@@ -79,15 +80,11 @@ class Metadata:
         product = metadata.find_text_or_throw(
             "CollectionMetaData/ShortName", missing_element("product")
         )
-        version = metadata.find_text_or_throw(
-            "CollectionMetaData/VersionID", missing_element("version")
+        version = utils.version_string(
+            metadata.find_text_or_throw(
+                "CollectionMetaData/VersionID", missing_element("version")
+            )
         )
-        if version == "6":
-            version = "006"
-        elif version == "61":
-            version = "061"
-        else:
-            raise ValueError(f"Unsupported MODIS version: {version}")
 
         points = [
             (
@@ -196,6 +193,47 @@ class Metadata:
             tile_id=tile_id,
             platforms=platforms,
             instruments=instruments,
+        )
+
+    @classmethod
+    def from_cog_tags(self, cog_tags: Dict[str, str]) -> "Metadata":
+        start_datetime = datetime.datetime.fromisoformat(
+            f"{cog_tags['RANGEBEGINNINGDATE']} {cog_tags['RANGEBEGINNINGTIME']}"
+        )
+        end_datetime = datetime.datetime.fromisoformat(
+            f"{cog_tags['RANGEENDINGDATE']} {cog_tags['RANGEENDINGTIME']}"
+        )
+        platforms = set()
+        for key in (
+            key
+            for key in cog_tags.keys()
+            if key.startswith("ASSOCIATEDPLATFORMSHORTNAME")
+        ):
+            platforms.add(cog_tags[key].lower())
+        instruments = set()
+        for key in (
+            key
+            for key in cog_tags.keys()
+            if key.startswith("ASSOCIATEDINSTRUMENTSHORTNAME")
+        ):
+            instruments.add(cog_tags[key].lower())
+        return Metadata(
+            id=os.path.splitext(cog_tags["LOCALGRANULEID"])[0],
+            product=cog_tags["SHORTNAME"],
+            version=utils.version_string(cog_tags["VERSIONID"]),
+            geometry=None,
+            bbox=None,
+            start_datetime=start_datetime,
+            end_datetime=end_datetime,
+            created=None,
+            updated=None,
+            qa_percent_not_produced_cloud=int(cog_tags["QAPERCENTNOTPRODUCEDCLOUD"]),
+            qa_percent_cloud_cover=None,
+            horizontal_tile=int(cog_tags["HORIZONTALTILENUMBER"]),
+            vertical_tile=int(cog_tags["VERTICALTILENUMBER"]),
+            tile_id=cog_tags["TileID"],
+            platforms=sorted(list(platforms)),
+            instruments=sorted(list(instruments)),
         )
 
     @property

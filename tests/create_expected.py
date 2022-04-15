@@ -7,9 +7,9 @@ from pystac import CatalogType
 import stactools.modis.stac
 from stactools.modis.file import File
 
-data_files_directory = os.path.join(
-    os.path.dirname(os.path.dirname(__file__)), "tests", "data-files"
-)
+from .test_stac import COG_FILE_NAMES
+
+data_files_directory = os.path.join(os.path.dirname(__file__), "data-files")
 expected_directory = os.path.join(data_files_directory, "expected")
 
 cog_product = "MOD10A2"
@@ -37,3 +37,14 @@ for file_name in os.listdir(data_files_directory):
         collection.add_item(item)
         collection.make_all_asset_hrefs_relative()
         collection.save(catalog_type=CatalogType.SELF_CONTAINED)
+
+for file_name in COG_FILE_NAMES:
+    print(f"Creating from {file_name}")
+    path = os.path.join(data_files_directory, file_name)
+    item = stactools.modis.stac.create_item_from_cogs([path])
+    item.set_self_href(
+        os.path.join(expected_directory, os.path.splitext(file_name)[0] + ".json")
+    )
+    item.make_asset_hrefs_relative()
+    item.validate()
+    item.save_object(include_self_link=False)
