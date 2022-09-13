@@ -23,7 +23,7 @@ class CreateItemTest(CliTestCase):
             cmd = f"modis create-item --create-cogs {infile} {temporary_directory}"
             self.run_command(cmd)
             item_path = os.path.join(
-                temporary_directory, "MOD10A2.A2022033.h09v05.061.2022042050729.json"
+                temporary_directory, "MOD10A2.A2022033.h09v05.061.json"
             )
             item = pystac.read_file(item_path)
         item.validate()

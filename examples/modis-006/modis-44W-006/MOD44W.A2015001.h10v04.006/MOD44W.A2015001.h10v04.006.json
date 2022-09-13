@@ -1,0 +1,104 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD44W.A2015001.h10v04.006",
+  "properties": {
+    "Water_Mask_Class_0": "Land",
+    "Water_Mask_Class_1": "Water",
+    "Water_Mask_Class_250": "Outside of Projection",
+    "QA_1": "High confidence observation",
+    "QA_2": "Lower confidence water, but MOD44W V5 indicated water",
+    "QA_3": "Lower confidence land",
+    "QA_4": "Ocean mask",
+    "QA_5": "Ocean mask, but no water observations recorded",
+    "QA_6": "Burned area (MCD64A1)",
+    "QA_7": "Urban or impervious surface",
+    "QA_8": "No water detected, but MOD44W V5 shows inland water",
+    "QA_10": "Fill - outside of projected area",
+    "start_datetime": "2015-01-01T00:00:00Z",
+    "end_datetime": "2015-12-31T00:00:00Z",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "terra",
+    "created": "2018-02-02T15:02:44Z",
+    "updated": "2018-04-04T12:07:35.020000Z",
+    "modis:horizontal-tile": 10,
+    "modis:vertical-tile": 4,
+    "modis:tile-id": "51010004",
+    "datetime": null
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -104.520196,
+          39.755682
+        ],
+        [
+          -124.885362,
+          49.967694
+        ],
+        [
+          -109.002143,
+          50.104685
+        ],
+        [
+          -91.190961,
+          39.855422
+        ],
+        [
+          -104.520196,
+          39.755682
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Land Water Mask Derived from MODIS and SRTM L3 Yearly Global 250 m SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Land Water Mask Derived from MODIS and SRTM L3 Yearly Global 250 m SIN Grid"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../tests/data-files/MOD44W.A2015001.h10v04.006.2018033150244.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/MOD44W.A2015001.h10v04.006.2018033150244.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -124.885362,
+    39.755682,
+    -91.190961,
+    50.104685
+  ],
+  "stac_extensions": [],
+  "collection": "modis-44W-006"
+}

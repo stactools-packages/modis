@@ -1,0 +1,118 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MYD13A1.A2022009.h25v02.061",
+  "properties": {
+    "start_datetime": "2022-01-09T00:00:00Z",
+    "end_datetime": "2022-01-24T23:59:59Z",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "aqua",
+    "created": "2022-01-28T12:19:25Z",
+    "updated": "2022-01-28T06:24:44.574000Z",
+    "modis:horizontal-tile": 25,
+    "modis:vertical-tile": 2,
+    "modis:tile-id": "51025002",
+    "datetime": null
+  },
+  "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+      [
+        [
+          [
+            180.0,
+            62.95445955952884
+          ],
+          [
+            180.0,
+            66.5624791239083
+          ],
+          [
+            135.926980213043,
+            69.2113905326394
+          ],
+          [
+            140.110001024585,
+            59.6452506478332
+          ],
+          [
+            174.497006769159,
+            57.5564415970622
+          ],
+          [
+            180.0,
+            62.95445955952884
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            -180.0,
+            66.5624791239083
+          ],
+          [
+            -180.0,
+            62.95445955952884
+          ],
+          [
+            -176.534172118079,
+            66.3541732020201
+          ],
+          [
+            -180.0,
+            66.5624791239083
+          ]
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Vegetation Indices 16-Day (500m)"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Vegetation Indices 16-Day (500m)"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MYD13A1.A2022009.h25v02.061.2022028071925.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MYD13A1.A2022009.h25v02.061.2022028071925.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    135.926980213043,
+    57.5564415970622,
+    -176.534172118079,
+    69.2113905326394
+  ],
+  "stac_extensions": [],
+  "collection": "modis-13A1-061"
+}

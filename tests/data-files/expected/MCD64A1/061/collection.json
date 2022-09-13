@@ -32,12 +32,12 @@
     },
     {
       "rel": "item",
-      "href": "./MCD64A1.A2021335.h10v06.061.2022035055453/MCD64A1.A2021335.h10v06.061.2022035055453.json",
+      "href": "./MCD64A1.A2021335.h10v06.061/MCD64A1.A2021335.h10v06.061.json",
       "type": "application/json"
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
     "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],

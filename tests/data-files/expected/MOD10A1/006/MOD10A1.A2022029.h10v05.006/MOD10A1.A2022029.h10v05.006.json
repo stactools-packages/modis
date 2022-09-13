@@ -1,0 +1,92 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD10A1.A2022029.h10v05.006",
+  "properties": {
+    "start_datetime": "2022-01-29T00:00:00Z",
+    "end_datetime": "2022-01-29T23:59:59Z",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "terra",
+    "created": "2022-01-31T04:58:23Z",
+    "updated": "2022-01-30T22:03:40.097000Z",
+    "modis:horizontal-tile": 10,
+    "modis:vertical-tile": 5,
+    "modis:tile-id": "51010005",
+    "datetime": null
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -92.3012472028587,
+          29.8410878424102
+        ],
+        [
+          -104.43258313171,
+          39.9999999964079
+        ],
+        [
+          -91.1740859476425,
+          40.0637836759185
+        ],
+        [
+          -80.5775666708921,
+          29.8961896763571
+        ],
+        [
+          -92.3012472028587,
+          29.8410878424102
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Snow Cover Daily L3 Global 500m SIN Grid, Version 6"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Snow Cover Daily L3 Global 500m SIN Grid, Version 6"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Snow Cover Daily L3 Global 500m SIN Grid, Version 6"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../MOD10A1.A2022029.h10v05.006.2022031045818.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../MOD10A1.A2022029.h10v05.006.2022031045818.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -104.43258313171,
+    29.8410878424102,
+    -80.5775666708921,
+    40.0637836759185
+  ],
+  "stac_extensions": [],
+  "collection": "modis-10A1-006"
+}

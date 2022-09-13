@@ -1,0 +1,95 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD11A1.A2022030.h10v05.006",
+  "properties": {
+    "start_datetime": "2022-01-30T00:00:00Z",
+    "end_datetime": "2022-01-30T23:59:59Z",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "terra",
+    "created": "2022-01-31T09:48:27Z",
+    "updated": "2022-01-31T03:53:55.289000Z",
+    "modis:horizontal-tile": 10,
+    "modis:vertical-tile": 5,
+    "modis:tile-id": "51010005",
+    "eo:cloud_cover": 30,
+    "datetime": null
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -104.438013067114,
+          39.9958333333333
+        ],
+        [
+          -91.3839615039452,
+          39.9958333333333
+        ],
+        [
+          -80.8406494782854,
+          30.0041666666667
+        ],
+        [
+          -92.388605818441,
+          30.0041666666667
+        ],
+        [
+          -104.438013067114,
+          39.9958333333333
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Land Surface Temperature/Emissivity Daily L3 Global 1 km SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Land Surface Temperature/Emissivity Daily L3 Global 1 km SIN Grid"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../tests/data-files/MOD11A1.A2022030.h10v05.006.2022031094827.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/MOD11A1.A2022030.h10v05.006.2022031094827.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -104.438013067114,
+    30.0041666666667,
+    -80.8406494782854,
+    39.9958333333333
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+  ],
+  "collection": "modis-11A1-006"
+}

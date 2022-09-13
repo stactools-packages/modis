@@ -42,12 +42,12 @@
     },
     {
       "rel": "item",
-      "href": "./MOD16A3GF.A2021001.h11v02.061.2022024075208/MOD16A3GF.A2021001.h11v02.061.2022024075208.json",
+      "href": "./MOD16A3GF.A2021001.h11v02.061/MOD16A3GF.A2021001.h11v02.061.json",
       "type": "application/json"
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
     "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],
