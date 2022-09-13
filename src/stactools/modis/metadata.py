@@ -72,11 +72,13 @@ class Metadata:
         metadata = root.find_or_throw(
             "GranuleURMetaData", missing_element("URMetadata")
         )
-        id = os.path.splitext(
-            metadata.find_text_or_throw(
-                "ECSDataGranule/LocalGranuleID", missing_element("id")
-            )
-        )[0]
+        id = ".".join(
+            os.path.splitext(
+                metadata.find_text_or_throw(
+                    "ECSDataGranule/LocalGranuleID", missing_element("id")
+                )
+            )[0].split(".")[0:-1]
+        )
         product = metadata.find_text_or_throw(
             "CollectionMetaData/ShortName", missing_element("product")
         )

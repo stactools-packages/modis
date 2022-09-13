@@ -42,12 +42,12 @@
     },
     {
       "rel": "item",
-      "href": "./MOD11A1.A2022041.h19v02.061.2022042095544/MOD11A1.A2022041.h19v02.061.2022042095544.json",
+      "href": "./MOD11A1.A2022041.h19v02.061/MOD11A1.A2022041.h19v02.061.json",
       "type": "application/json"
     },
     {
       "rel": "item",
-      "href": "./MYD11A1.A2022039.h21v07.061.2022040192419/MYD11A1.A2022039.h21v07.061.2022040192419.json",
+      "href": "./MYD11A1.A2022039.h21v07.061/MYD11A1.A2022039.h21v07.061.json",
       "type": "application/json"
     },
     {
@@ -58,7 +58,7 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
     "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],

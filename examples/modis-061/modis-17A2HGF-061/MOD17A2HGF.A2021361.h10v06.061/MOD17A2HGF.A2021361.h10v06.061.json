@@ -1,0 +1,92 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD17A2HGF.A2021361.h10v06.061",
+  "properties": {
+    "start_datetime": "2021-12-27T00:00:00Z",
+    "end_datetime": "2021-12-31T23:59:59Z",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "terra",
+    "created": "2022-01-20T13:46:37Z",
+    "updated": "2022-01-20T07:50:11.257000Z",
+    "modis:horizontal-tile": 10,
+    "modis:vertical-tile": 6,
+    "modis:tile-id": "51010006",
+    "datetime": null
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -85.1199000270707,
+          19.8972839682412
+        ],
+        [
+          -92.3760430595367,
+          29.9999999973059
+        ],
+        [
+          -80.5352459184066,
+          30.0383760061888
+        ],
+        [
+          -74.2129537334706,
+          19.9339184091026
+        ],
+        [
+          -85.1199000270707,
+          19.8972839682412
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Gross Primary Productivity 8-Day Gap-Filled"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Gross Primary Productivity 8-Day Gap-Filled"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MOD17A2HGF.A2021361.h10v06.061.2022020134637.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MOD17A2HGF.A2021361.h10v06.061.2022020134637.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -92.3760430595367,
+    19.8972839682412,
+    -74.2129537334706,
+    30.0383760061888
+  ],
+  "stac_extensions": [],
+  "collection": "modis-17A2HGF-061"
+}

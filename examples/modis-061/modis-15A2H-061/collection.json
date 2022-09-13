@@ -52,17 +52,17 @@
     },
     {
       "rel": "item",
-      "href": "./MCD15A2H.A2022025.h01v11.061.2022035062702/MCD15A2H.A2022025.h01v11.061.2022035062702.json",
+      "href": "./MCD15A2H.A2022025.h01v11.061/MCD15A2H.A2022025.h01v11.061.json",
       "type": "application/json"
     },
     {
       "rel": "item",
-      "href": "./MOD15A2H.A2022033.h13v10.061.2022042045937/MOD15A2H.A2022033.h13v10.061.2022042045937.json",
+      "href": "./MOD15A2H.A2022033.h13v10.061/MOD15A2H.A2022033.h13v10.061.json",
       "type": "application/json"
     },
     {
       "rel": "item",
-      "href": "./MYD15A2H.A2022025.h22v08.061.2022035072026/MYD15A2H.A2022025.h22v08.061.2022035072026.json",
+      "href": "./MYD15A2H.A2022025.h22v08.061/MYD15A2H.A2022025.h22v08.061.json",
       "type": "application/json"
     },
     {
@@ -73,7 +73,7 @@
     }
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/raster/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
     "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
   ],

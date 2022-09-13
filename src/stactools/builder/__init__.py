@@ -17,6 +17,7 @@ from pystac.extensions.file import FileExtension
 from pystac.extensions.projection import AssetProjectionExtension, ProjectionExtension
 from pystac.extensions.raster import RasterBand, RasterExtension
 from rasterio.crs import CRSError
+from rasterio.enums import WktVersion
 from stactools.core.io import ReadHrefModifier
 from stactools.core.utils.antimeridian import Strategy
 
@@ -514,7 +515,7 @@ class RasterioBuilder(Builder):
         except CRSError:
             projection["epsg"] = None
         if projection["epsg"] is None:
-            projection["wkt2"] = crs.to_wkt("WKT2")
+            projection["wkt2"] = crs.to_wkt(version=WktVersion.WKT2)
         if projection["epsg"] == EPSG:
             geometry = projection["geometry"]
         else:
@@ -579,7 +580,9 @@ class SingleFileRasterioBuilder(RasterioBuilder):
         Returns:
             str: The id for the item.
         """
-        return os.path.splitext(os.path.basename(self.asset.href))[0]
+        return ".".join(
+            os.path.splitext(os.path.basename(self.asset.href))[0].split(".")[0:-1]
+        )
 
 
 class SingleCOGBuilder(SingleFileRasterioBuilder):

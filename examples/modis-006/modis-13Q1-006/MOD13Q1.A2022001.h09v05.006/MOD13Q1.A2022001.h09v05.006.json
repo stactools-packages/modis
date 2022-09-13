@@ -1,0 +1,133 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD13Q1.A2022001.h09v05.006",
+  "properties": {
+    "QA_SDS_VI_Quality_MODLAND_QA_Bits_00": "VI produced with good quality",
+    "QA_SDS_VI_Quality_MODLAND_QA_Bits_01": "VI produced, but check other QA",
+    "QA_SDS_VI_Quality_MODLAND_QA_Bits_10": "Pixel produced, but most probably cloudy",
+    "QA_SDS_VI_Quality_MODLAND_QA_Bits_11": "Pixel not produced due to other reasons than clouds",
+    "QA_SDS_VI_Usefulness_0000": "Highest quality",
+    "QA_SDS_VI_Usefulness_0001": "Lower quality",
+    "QA_SDS_VI_Usefulness_0010": "Decreasing quality",
+    "QA_SDS_VI_Usefulness_0100": "Decreasing quality",
+    "QA_SDS_VI_Usefulness_1000": "Decreasing quality",
+    "QA_SDS_VI_Usefulness_1001": "Decreasing quality",
+    "QA_SDS_VI_Usefulness_1010": "Decreasing quality",
+    "QA_SDS_VI_Usefulness_1100": "Lowest quality",
+    "QA_SDS_VI_Usefulness_1101": "Quality so low that it is not useful",
+    "QA_SDS_VI_Usefulness_1110": "L1B data faulty",
+    "QA_SDS_VI_Usefulness_1111": "Not useful for any other reason/not processed",
+    "QA_SDS_Aerosol_Quantity_00": "Climatology",
+    "QA_SDS_Aerosol_Quantity_01": "Low",
+    "QA_SDS_Aerosol_Quantity_10": "Intermediate",
+    "QA_SDS_Aerosol_Quantity_11": "High",
+    "QA_SDS_Adjacent_cloud_detected_0": "No",
+    "QA_SDS_Adjacent_cloud_detected_1": "Yes",
+    "QA_SDS_Atmosphere_BRDF_Correction_0": "No",
+    "QA_SDS_Atmosphere_BRDF_Correction_1": "Yes",
+    "QA_SDS_Mixed_Clouds_0": "No",
+    "QA_SDS_Mixed_Clouds_1": "Yes",
+    "QA_SDS_Land_Water_Mask_000": "Shallow ocean",
+    "QA_SDS_Land_Water_Mask_001": "Land - Nothing else but land",
+    "QA_SDS_Land_Water_Mask_010": "Ocean coastlines and lake shorelines",
+    "QA_SDS_Land_Water_Mask_011": "Shallow inland water",
+    "QA_SDS_Land_Water_Mask_100": "Ephemeral water",
+    "QA_SDS_Land_Water_Mask_101": "Deep inland water",
+    "QA_SDS_Land_Water_Mask_110": "Moderate or continental ocean",
+    "QA_SDS_Land_Water_Mask_111": "Deep ocean",
+    "QA_SDS_Possible_Snow_Ice_0": "No",
+    "QA_SDS_Possible_Snow_Ice_1": "Yes",
+    "QA_SDS_Possible_shadow_0": "No",
+    "QA_SDS_Possible_shadow_1": "Yes",
+    "Summary_QA_0": "Good Data - Use with confidence",
+    "Summary_QA_1": "Marginal data - Useful, but look at other QA information",
+    "Summary_QA_2": "Snow/Ice - Target covered with snow/ice",
+    "Summary_QA_3": "Cloudy - Target not visible, covered with cloud",
+    "start_datetime": "2022-01-01T00:00:00Z",
+    "end_datetime": "2022-01-16T23:59:59Z",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "terra",
+    "created": "2022-01-18T22:57:46Z",
+    "updated": "2022-01-18T17:05:27.039000Z",
+    "modis:horizontal-tile": 9,
+    "modis:vertical-tile": 5,
+    "modis:tile-id": "51009005",
+    "datetime": null
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -103.835851753394,
+          29.8360532722546
+        ],
+        [
+          -117.486656023174,
+          39.9999999964079
+        ],
+        [
+          -104.256722414513,
+          40.0742066197196
+        ],
+        [
+          -92.131858571552,
+          29.9009502428382
+        ],
+        [
+          -103.835851753394,
+          29.8360532722546
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Vegetation Indices 16-Day L3 Global 250 m SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS/Terra Vegetation Indices 16-Day L3 Global 250 m SIN Grid"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../tests/data-files/MOD13Q1.A2022001.h09v05.006.2022018175746.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/MOD13Q1.A2022001.h09v05.006.2022018175746.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -117.486656023174,
+    29.8360532722546,
+    -92.131858571552,
+    40.0742066197196
+  ],
+  "stac_extensions": [],
+  "collection": "modis-13Q1-006"
+}

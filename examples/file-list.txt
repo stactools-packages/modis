@@ -30,9 +30,7 @@ tests/data-files/external/MOD11A1.A2022041.h19v02.061.2022042095544.hdf.xml
 tests/data-files/external/MOD11A2.A2022033.h19v10.061.2022042044121.hdf.xml
 tests/data-files/external/MOD13A1.A2022017.h12v11.061.2022034232214.hdf.xml
 tests/data-files/external/MOD13Q1.A2022017.h12v11.061.2022034232400.hdf.xml
-tests/data-files/external/MOD13Q1.A2022033.h09v05.061.2022051005101.hdf.xml
 tests/data-files/external/MOD14A1.A2022033.h11v05.061.2022041234759.hdf.xml
-tests/data-files/external/MOD14A1.A2022049.h09v05.061.2022057235503.hdf.xml
 tests/data-files/external/MOD14A2.A2022033.h21v05.061.2022041234800.hdf.xml
 tests/data-files/external/MOD15A2H.A2022033.h13v10.061.2022042045937.hdf.xml
 tests/data-files/external/MOD16A3GF.A2021001.h11v02.061.2022024075208.hdf.xml
@@ -43,16 +41,12 @@ tests/data-files/external/MOD21A2.A2022033.h12v08.061.2022042050733.hdf.xml
 tests/data-files/external/MYD09A1.A2022025.h09v08.061.2022035070021.hdf.xml
 tests/data-files/external/MYD09Q1.A2022025.h02v08.061.2022035050917.hdf.xml
 tests/data-files/external/MYD10A1.A2022043.h21v04.061.2022045035657.hdf.xml
-tests/data-files/external/MYD10A1.A2022059.h09v05.061.2022061043435.hdf.xml
 tests/data-files/external/MYD10A2.A2022025.h10v05.061.2022035071201.hdf.xml
 tests/data-files/external/MYD11A1.A2022039.h21v07.061.2022040192419.hdf.xml
 tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130.hdf.xml
 tests/data-files/external/MYD13A1.A2022009.h25v02.061.2022028071925.hdf.xml
-tests/data-files/external/MYD13A1.A2022041.h09v05.061.2022059190534.hdf.xml
 tests/data-files/external/MYD13Q1.A2022009.h09v06.061.2022028072010.hdf.xml
-tests/data-files/external/MYD13Q1.A2022041.h09v05.061.2022059190716.hdf.xml
 tests/data-files/external/MYD14A1.A2022025.h01v07.061.2022035001141.hdf.xml
-tests/data-files/external/MYD14A1.A2022049.h09v05.061.2022057234556.hdf.xml
 tests/data-files/external/MYD14A2.A2022025.h03v09.061.2022035001140.hdf.xml
 tests/data-files/external/MYD15A2H.A2022025.h22v08.061.2022035072026.hdf.xml
 tests/data-files/external/MYD16A3GF.A2021001.h11v02.061.2022024220526.hdf.xml

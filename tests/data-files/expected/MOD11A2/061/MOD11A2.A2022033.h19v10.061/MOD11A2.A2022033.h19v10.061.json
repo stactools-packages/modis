@@ -1,0 +1,95 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD11A2.A2022033.h19v10.061",
+  "properties": {
+    "start_datetime": "2022-02-02T00:00:00Z",
+    "end_datetime": "2022-02-09T23:59:59Z",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "terra",
+    "created": "2022-02-11T04:41:21Z",
+    "updated": "2022-02-10T22:57:48.564000Z",
+    "modis:horizontal-tile": 19,
+    "modis:vertical-tile": 10,
+    "modis:tile-id": "51019010",
+    "eo:cloud_cover": 19,
+    "datetime": null
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          10.1503061244239,
+          -10.0041666666667
+        ],
+        [
+          20.3048161498421,
+          -10.0041666666667
+        ],
+        [
+          21.2790968650958,
+          -19.9958333333333
+        ],
+        [
+          10.6373373643085,
+          -19.9958333333333
+        ],
+        [
+          10.1503061244239,
+          -10.0041666666667
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Land Surface Temperature/Emissivity 8-Day"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Land Surface Temperature/Emissivity 8-Day"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Land Surface Temperature/Emissivity 8-Day"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../MOD11A2.A2022033.h19v10.061.2022042044121.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../MOD11A2.A2022033.h19v10.061.2022042044121.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    10.1503061244239,
+    -19.9958333333333,
+    21.2790968650958,
+    -10.0041666666667
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+  ],
+  "collection": "modis-11A2-061"
+}

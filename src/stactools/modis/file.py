@@ -71,7 +71,7 @@ class File:
             )
         self.product = Product(parts[0])
         self.version = parts[3]
-        self.id = os.path.splitext(file_name)[0]
+        self.id = ".".join(os.path.splitext(file_name)[0].split(".")[0:-1])
 
     def fragments(self) -> Fragments:
         """Returns the fragments for this file."""

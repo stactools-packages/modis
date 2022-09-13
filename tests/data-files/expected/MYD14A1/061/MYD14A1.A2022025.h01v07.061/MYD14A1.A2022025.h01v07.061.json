@@ -1,0 +1,118 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MYD14A1.A2022025.h01v07.061",
+  "properties": {
+    "start_datetime": "2022-01-25T00:00:00Z",
+    "end_datetime": "2022-02-01T23:59:59Z",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "aqua",
+    "created": "2022-02-04T05:11:41Z",
+    "updated": "2022-02-03T23:40:07.931000Z",
+    "modis:horizontal-tile": 1,
+    "modis:vertical-tile": 7,
+    "modis:tile-id": "51001007",
+    "datetime": null
+  },
+  "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+      [
+        [
+          [
+            -180.0,
+            19.99757449096751
+          ],
+          [
+            -180.0,
+            19.151982680224844
+          ],
+          [
+            -179.464544105346,
+            9.72439219646173
+          ],
+          [
+            -162.468655281243,
+            9.9829565925733
+          ],
+          [
+            -162.21824805558,
+            20.2678775712419
+          ],
+          [
+            -180.0,
+            19.99757449096751
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            180.0,
+            19.151982680224844
+          ],
+          [
+            180.0,
+            19.99757449096751
+          ],
+          [
+            179.952014616979,
+            19.9968450579578
+          ],
+          [
+            180.0,
+            19.151982680224844
+          ]
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Thermal Anomalies/Fire Daily"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Thermal Anomalies/Fire Daily"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Thermal Anomalies/Fire Daily"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../MYD14A1.A2022025.h01v07.061.2022035001141.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../MYD14A1.A2022025.h01v07.061.2022035001141.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    179.952014616979,
+    9.72439219646173,
+    -162.21824805558,
+    20.2678775712419
+  ],
+  "stac_extensions": [],
+  "collection": "modis-14A1-061"
+}

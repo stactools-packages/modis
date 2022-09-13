@@ -1,0 +1,118 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD16A3GF.A2021001.h11v02.061",
+  "properties": {
+    "start_datetime": "2021-01-01T00:00:00Z",
+    "end_datetime": "2021-12-31T23:59:59Z",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "terra",
+    "created": "2022-01-24T12:53:25Z",
+    "updated": "2022-01-24T06:56:49.574000Z",
+    "modis:horizontal-tile": 11,
+    "modis:vertical-tile": 2,
+    "modis:tile-id": "51011002",
+    "datetime": null
+  },
+  "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+      [
+        [
+          [
+            -180.0,
+            68.83060342862159
+          ],
+          [
+            -180.0,
+            66.21824055683585
+          ],
+          [
+            -161.99981886055,
+            55.5344815313793
+          ],
+          [
+            -120.101822308431,
+            59.6807024294448
+          ],
+          [
+            -109.906882828253,
+            75.55535641397
+          ],
+          [
+            -180.0,
+            68.83060342862159
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            180.0,
+            66.21824055683585
+          ],
+          [
+            180.0,
+            68.83060342862159
+          ],
+          [
+            176.211092064359,
+            68.4670945567165
+          ],
+          [
+            180.0,
+            66.21824055683585
+          ]
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Net Evapotranspiration Yearly Gap-Filled"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Net Evapotranspiration Yearly Gap-Filled"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Net Evapotranspiration Yearly Gap-Filled"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../MOD16A3GF.A2021001.h11v02.061.2022024075208.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../MOD16A3GF.A2021001.h11v02.061.2022024075208.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    176.211092064359,
+    55.5344815313793,
+    -109.906882828253,
+    75.55535641397
+  ],
+  "stac_extensions": [],
+  "collection": "modis-16A3GF-061"
+}

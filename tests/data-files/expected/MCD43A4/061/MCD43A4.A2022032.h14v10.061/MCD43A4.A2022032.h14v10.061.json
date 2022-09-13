@@ -1,0 +1,95 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MCD43A4.A2022032.h14v10.061",
+  "properties": {
+    "start_datetime": "2022-01-24T00:00:00Z",
+    "end_datetime": "2022-02-08T23:59:59.999999Z",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "terra,aqua",
+    "created": "2022-02-10T05:19:45Z",
+    "updated": "2022-02-09T23:25:46.095000Z",
+    "modis:horizontal-tile": 14,
+    "modis:vertical-tile": 10,
+    "modis:tile-id": "51014010",
+    "eo:cloud_cover": 10,
+    "datetime": "2022-02-01T00:00:00Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -42.5671108947282,
+          -19.9999999982039
+        ],
+        [
+          -40.6221556245858,
+          -9.95544626171462
+        ],
+        [
+          -30.3392715091937,
+          -9.96538589070631
+        ],
+        [
+          -31.788282014663,
+          -20.0096690902906
+        ],
+        [
+          -42.5671108947282,
+          -19.9999999982039
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Nadir BRDF-Adjusted Reflectance (NBAR) Daily"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Nadir BRDF-Adjusted Reflectance (NBAR) Daily"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Nadir BRDF-Adjusted Reflectance (NBAR) Daily"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../MCD43A4.A2022032.h14v10.061.2022041051831.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../MCD43A4.A2022032.h14v10.061.2022041051831.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -42.5671108947282,
+    -20.0096690902906,
+    -30.3392715091937,
+    -9.95544626171462
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+  ],
+  "collection": "modis-43A4-061"
+}

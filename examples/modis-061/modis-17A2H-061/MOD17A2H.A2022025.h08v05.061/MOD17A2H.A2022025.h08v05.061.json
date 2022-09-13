@@ -1,0 +1,92 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD17A2H.A2022025.h08v05.061",
+  "properties": {
+    "start_datetime": "2022-01-25T00:00:00Z",
+    "end_datetime": "2022-02-01T23:59:59Z",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "terra",
+    "created": "2022-02-04T06:50:02Z",
+    "updated": "2022-02-04T01:03:18.424000Z",
+    "modis:horizontal-tile": 8,
+    "modis:vertical-tile": 5,
+    "modis:tile-id": "51008005",
+    "datetime": null
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -115.369550008828,
+          29.8308028608368
+        ],
+        [
+          -130.540728914638,
+          39.9999999964079
+        ],
+        [
+          -117.360631853124,
+          40.0852255853565
+        ],
+        [
+          -103.699828723654,
+          29.9062514942912
+        ],
+        [
+          -115.369550008828,
+          29.8308028608368
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Gross Primary Productivity 8-Day"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Gross Primary Productivity 8-Day"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MOD17A2H.A2022025.h08v05.061.2022035065002.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MOD17A2H.A2022025.h08v05.061.2022035065002.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -130.540728914638,
+    29.8308028608368,
+    -103.699828723654,
+    40.0852255853565
+  ],
+  "stac_extensions": [],
+  "collection": "modis-17A2H-061"
+}

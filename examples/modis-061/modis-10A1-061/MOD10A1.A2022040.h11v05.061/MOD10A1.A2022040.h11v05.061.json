@@ -1,0 +1,92 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MOD10A1.A2022040.h11v05.061",
+  "properties": {
+    "start_datetime": "2022-02-09T00:00:00Z",
+    "end_datetime": "2022-02-09T23:59:59Z",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "terra",
+    "created": "2022-02-11T04:20:28Z",
+    "updated": "2022-02-10T21:25:29.136000Z",
+    "modis:horizontal-tile": 11,
+    "modis:vertical-tile": 5,
+    "modis:tile-id": "51011005",
+    "datetime": null
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -80.7657805985677,
+          29.8459315745197
+        ],
+        [
+          -91.3785102402463,
+          39.9999999964079
+        ],
+        [
+          -78.110571576758,
+          40.0539543997624
+        ],
+        [
+          -69.0368143977928,
+          29.8919942789078
+        ],
+        [
+          -80.7657805985677,
+          29.8459315745197
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Snow Cover Daily"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MODIS Snow Cover Daily"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -91.3785102402463,
+    29.8459315745197,
+    -69.0368143977928,
+    40.0539543997624
+  ],
+  "stac_extensions": [],
+  "collection": "modis-10A1-061"
+}

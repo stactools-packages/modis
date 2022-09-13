@@ -1,0 +1,95 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "MCD43A4.A2022019.h10v04.006",
+  "properties": {
+    "start_datetime": "2022-01-11T00:00:00Z",
+    "end_datetime": "2022-01-26T23:59:59.999999Z",
+    "instruments": [
+      "modis"
+    ],
+    "platform": "terra,aqua",
+    "created": "2022-01-28T11:20:24Z",
+    "updated": "2022-01-28T05:33:06.715000Z",
+    "modis:horizontal-tile": 10,
+    "modis:vertical-tile": 4,
+    "modis:tile-id": "51010004",
+    "eo:cloud_cover": 34,
+    "datetime": "2022-01-19T00:00:00Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -104.52019611598,
+          39.7556817203217
+        ],
+        [
+          -124.885362059179,
+          49.967693939585
+        ],
+        [
+          -109.002143160265,
+          50.1046853303771
+        ],
+        [
+          -91.1909609510465,
+          39.8554224326714
+        ],
+        [
+          -104.52019611598,
+          39.7556817203217
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "MODIS"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MCD43A4 v006 MODIS/Terra+Aqua Nadir BRDF-Adjusted Reflectance (NBAR) Daily L3 Global 500 m SIN Grid"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "MCD43A4 v006 MODIS/Terra+Aqua Nadir BRDF-Adjusted Reflectance (NBAR) Daily L3 Global 500 m SIN Grid"
+    }
+  ],
+  "assets": {
+    "hdf": {
+      "href": "../../../../tests/data-files/MCD43A4.A2022019.h10v04.006.2022028111747.hdf",
+      "type": "application/x-hdf",
+      "title": "Source data containing all bands",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "../../../../tests/data-files/MCD43A4.A2022019.h10v04.006.2022028111747.hdf.xml",
+      "type": "application/xml",
+      "title": "Federal Geographic Data Committee (FGDC) Metadata",
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
+  "bbox": [
+    -124.885362059179,
+    39.7556817203217,
+    -91.1909609510465,
+    50.1046853303771
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+  ],
+  "collection": "modis-43A4-006"
+}
