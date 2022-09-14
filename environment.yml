@@ -4,4 +4,4 @@ channels:
   - defaults
 dependencies:
   - python = 3.9
-  - gdal
+  - gdal >= 3.5.2
