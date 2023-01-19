@@ -14,6 +14,48 @@
     "modis:horizontal-tile": 2,
     "modis:vertical-tile": 8,
     "modis:tile-id": "51002008",
+    "proj:epsg": null,
+    "proj:wkt2": "PROJCRS[\"unnamed\",BASEGEOGCRS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",ELLIPSOID[\"Custom spheroid\",6371007.181,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],CONVERSION[\"unnamed\",METHOD[\"Sinusoidal\"],PARAMETER[\"Longitude of natural origin\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"False easting\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"easting\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"northing\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -16679257.795,
+            0.0
+          ],
+          [
+            -16679257.795,
+            1111950.519667
+          ],
+          [
+            -17791208.314667,
+            1111950.519667
+          ],
+          [
+            -17791208.314667,
+            0.0
+          ],
+          [
+            -16679257.795,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "proj:shape": [
+      4800,
+      4800
+    ],
+    "proj:transform": [
+      231.65635826395862,
+      0.0,
+      -17791208.314667,
+      0.0,
+      -231.65635826395834,
+      1111950.519667
+    ],
+    "eo:cloud_cover": 0,
     "datetime": null
   },
   "geometry": {
@@ -79,6 +121,82 @@
       "roles": [
         "metadata"
       ]
+    },
+    "sur_refl_b01": {
+      "href": "../../../../tests/data-files/external/MYD09Q1.A2022025.h02v08.061.2022035050917_sur_refl_b01.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 1 (620-670 nm)",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "scale": 0.0001
+        }
+      ],
+      "eo:bands": [
+        {
+          "name": "sur_refl_b01",
+          "common_name": "red",
+          "center_wavelength": 0.645,
+          "full_width_half_max": 0.5
+        }
+      ],
+      "roles": [
+        "data",
+        "reflectance"
+      ]
+    },
+    "sur_refl_b02": {
+      "href": "../../../../tests/data-files/external/MYD09Q1.A2022025.h02v08.061.2022035050917_sur_refl_b02.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 2 (841-876 nm)",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 250,
+          "scale": 0.0001
+        }
+      ],
+      "eo:bands": [
+        {
+          "name": "sur_refl_b02",
+          "common_name": "nir08",
+          "center_wavelength": 0.8585,
+          "full_width_half_max": 0.35
+        }
+      ],
+      "roles": [
+        "data",
+        "reflectance"
+      ]
+    },
+    "sur_refl_qc_250m": {
+      "href": "../../../../tests/data-files/external/MYD09Q1.A2022025.h02v08.061.2022035050917_sur_refl_qc_250m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance 250m Band Quality Control flags",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 250
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "sur_refl_state_250m": {
+      "href": "../../../../tests/data-files/external/MYD09Q1.A2022025.h02v08.061.2022035050917_sur_refl_state_250m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance 250m State flags",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 250
+        }
+      ],
+      "roles": [
+        "data"
+      ]
     }
   },
   "bbox": [
@@ -87,6 +205,10 @@
     -149.430892222897,
     10.0131469004655
   ],
-  "stac_extensions": [],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+  ],
   "collection": "modis-09Q1-061"
 }

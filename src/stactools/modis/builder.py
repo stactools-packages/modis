@@ -270,7 +270,7 @@ class ModisBuilder(RasterioBuilder):
         """
         assert self.metadata
         item_info = super().item_info(id)
-        if self.metadata.qa_percent_not_produced_cloud:
+        if self.metadata.qa_percent_not_produced_cloud is not None:
             item_info.eo = {"cloud_cover": self.metadata.qa_percent_not_produced_cloud}
         return item_info
 
@@ -289,7 +289,10 @@ class ModisBuilder(RasterioBuilder):
         if asset_info is None:
             return None
 
-        if self.metadata.qa_percent_cloud_cover:
+        if (
+            self.metadata.qa_percent_cloud_cover
+            and self.metadata.qa_percent_cloud_cover.get(key, None)
+        ):
             asset_info.eo = {"cloud_cover": self.metadata.qa_percent_cloud_cover[key]}
 
         band = self.bands().get(key)

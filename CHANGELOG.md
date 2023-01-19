@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Item IDs no longer contain the production datetime ([#88](https://github.com/stactools-packages/modis/pull/88))
 
+### Fixed
+
+- Added missing `eo:cloud_cover` values to Item properties and Assets ([#91](https://github.com/stactools-packages/modis/pull/91))
+
 ## [0.3.0a0] - 2022-04-15
 
 ### Added

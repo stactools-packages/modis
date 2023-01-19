@@ -14,6 +14,48 @@
     "modis:horizontal-tile": 11,
     "modis:vertical-tile": 2,
     "modis:tile-id": "51011002",
+    "proj:epsg": null,
+    "proj:wkt2": "PROJCRS[\"unnamed\",BASEGEOGCRS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",ELLIPSOID[\"Custom spheroid\",6371007.181,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],CONVERSION[\"unnamed\",METHOD[\"Sinusoidal\"],PARAMETER[\"Longitude of natural origin\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"False easting\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"easting\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"northing\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -6671703.118,
+            6671703.118
+          ],
+          [
+            -6671703.118,
+            7783653.637667
+          ],
+          [
+            -7783653.637667,
+            7783653.637667
+          ],
+          [
+            -7783653.637667,
+            6671703.118
+          ],
+          [
+            -6671703.118,
+            6671703.118
+          ]
+        ]
+      ]
+    },
+    "proj:shape": [
+      2400,
+      2400
+    ],
+    "proj:transform": [
+      463.3127165279169,
+      0.0,
+      -7783653.637667,
+      0.0,
+      -463.3127165279169,
+      7783653.637667
+    ],
+    "eo:cloud_cover": 0,
     "datetime": null
   },
   "geometry": {
@@ -90,6 +132,85 @@
     }
   ],
   "assets": {
+    "ET_500m": {
+      "href": "../../../../tests/data-files/external/MOD16A3GF.A2021001.h11v02.061.2022024075208_ET_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Total of Evapotranspiration",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 500,
+          "unit": "kg/m^2/year",
+          "scale": 0.1
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "ET_QC_500m": {
+      "href": "../../../../tests/data-files/external/MOD16A3GF.A2021001.h11v02.061.2022024075208_ET_QC_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Evapotranspiration Quality Assessment",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500,
+          "unit": "Percent"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "LE_500m": {
+      "href": "../../../../tests/data-files/external/MOD16A3GF.A2021001.h11v02.061.2022024075208_LE_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Average of Latent Heat Flux",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "J/m^2/day",
+          "scale": 10000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "PET_500m": {
+      "href": "../../../../tests/data-files/external/MOD16A3GF.A2021001.h11v02.061.2022024075208_PET_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Total Potential Evapotranspiration",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 500,
+          "unit": "kg/m^2/year",
+          "scale": 0.1
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "PLE_500m": {
+      "href": "../../../../tests/data-files/external/MOD16A3GF.A2021001.h11v02.061.2022024075208_PLE_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Average of Potential Latent Heat Flux",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "J/m^2/day",
+          "scale": 10000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
     "hdf": {
       "href": "../../../../tests/data-files/external/MOD16A3GF.A2021001.h11v02.061.2022024075208.hdf",
       "type": "application/x-hdf",
@@ -113,6 +234,10 @@
     -109.906882828253,
     75.55535641397
   ],
-  "stac_extensions": [],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+  ],
   "collection": "modis-16A3GF-061"
 }

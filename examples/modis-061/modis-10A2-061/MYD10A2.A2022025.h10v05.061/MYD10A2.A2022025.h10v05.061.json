@@ -14,6 +14,48 @@
     "modis:horizontal-tile": 10,
     "modis:vertical-tile": 5,
     "modis:tile-id": "51010005",
+    "proj:epsg": null,
+    "proj:wkt2": "PROJCRS[\"unnamed\",BASEGEOGCRS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",ELLIPSOID[\"Custom spheroid\",6371007.181,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],CONVERSION[\"unnamed\",METHOD[\"Sinusoidal\"],PARAMETER[\"Longitude of natural origin\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"False easting\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"easting\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"northing\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -7783653.637667,
+            3335851.559
+          ],
+          [
+            -7783653.637667,
+            4447802.078667
+          ],
+          [
+            -8895604.157333,
+            4447802.078667
+          ],
+          [
+            -8895604.157333,
+            3335851.559
+          ],
+          [
+            -7783653.637667,
+            3335851.559
+          ]
+        ]
+      ]
+    },
+    "proj:shape": [
+      2400,
+      2400
+    ],
+    "proj:transform": [
+      463.31271652749973,
+      0.0,
+      -8895604.157333,
+      0.0,
+      -463.3127165279167,
+      4447802.078667
+    ],
+    "eo:cloud_cover": 1,
     "datetime": null
   },
   "geometry": {
@@ -64,6 +106,77 @@
     }
   ],
   "assets": {
+    "Eight_Day_Snow_Cover": {
+      "href": "../../../../tests/data-files/external/MYD10A2.A2022025.h10v05.061.2022035071201_Eight_Day_Snow_Cover.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Snow chronology bit flags for each day in the eight-day observation period.",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "Maximum_Snow_Extent": {
+      "href": "../../../../tests/data-files/external/MYD10A2.A2022025.h10v05.061.2022035071201_Maximum_Snow_Extent.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Maximum snow extent over the 8-day period.",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "eo:cloud_cover": 1,
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "missing data"
+        },
+        {
+          "value": 1,
+          "description": "no decision"
+        },
+        {
+          "value": 11,
+          "description": "night"
+        },
+        {
+          "value": 25,
+          "description": "no snow"
+        },
+        {
+          "value": 37,
+          "description": "lake"
+        },
+        {
+          "value": 39,
+          "description": "ocean"
+        },
+        {
+          "value": 50,
+          "description": "cloud"
+        },
+        {
+          "value": 100,
+          "description": "lake ice"
+        },
+        {
+          "value": 200,
+          "description": "snow"
+        },
+        {
+          "value": 254,
+          "description": "detector saturated"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
     "hdf": {
       "href": "../../../../tests/data-files/external/MYD10A2.A2022025.h10v05.061.2022035071201.hdf",
       "type": "application/x-hdf",
@@ -87,6 +200,11 @@
     -80.5775666708921,
     40.0637836759185
   ],
-  "stac_extensions": [],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/classification/v1.0.0/schema.json"
+  ],
   "collection": "modis-10A2-061"
 }
