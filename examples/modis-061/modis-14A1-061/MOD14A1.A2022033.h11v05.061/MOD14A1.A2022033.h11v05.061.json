@@ -14,6 +14,47 @@
     "modis:horizontal-tile": 11,
     "modis:vertical-tile": 5,
     "modis:tile-id": "51011005",
+    "proj:epsg": null,
+    "proj:wkt2": "PROJCRS[\"unnamed\",BASEGEOGCRS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",ELLIPSOID[\"Custom spheroid\",6371007.181,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],CONVERSION[\"unnamed\",METHOD[\"Sinusoidal\"],PARAMETER[\"Longitude of natural origin\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"False easting\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"easting\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"northing\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -6671703.118,
+            3335851.559
+          ],
+          [
+            -6671703.118,
+            4447802.078667
+          ],
+          [
+            -7783653.637667,
+            4447802.078667
+          ],
+          [
+            -7783653.637667,
+            3335851.559
+          ],
+          [
+            -6671703.118,
+            3335851.559
+          ]
+        ]
+      ]
+    },
+    "proj:shape": [
+      1200,
+      1200
+    ],
+    "proj:transform": [
+      926.6254330558338,
+      0.0,
+      -7783653.637667,
+      0.0,
+      -926.6254330558334,
+      4447802.078667
+    ],
     "datetime": null
   },
   "geometry": {
@@ -64,6 +105,190 @@
     }
   ],
   "assets": {
+    "FireMask": {
+      "href": "../../../../tests/data-files/external/MOD14A1.A2022033.h11v05.061.2022041234759_FireMask.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Confidence of fire",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Not processed (missing input data)"
+        },
+        {
+          "value": 1,
+          "description": "Not processed (obsolete; not used since Collection 1)"
+        },
+        {
+          "value": 2,
+          "description": "Not processed (other reason)"
+        },
+        {
+          "value": 3,
+          "description": "Non-fire water pixel"
+        },
+        {
+          "value": 4,
+          "description": "Cloud (land or water)"
+        },
+        {
+          "value": 5,
+          "description": "Non-fire land pixel"
+        },
+        {
+          "value": 6,
+          "description": "Unknown (land or water)"
+        },
+        {
+          "value": 7,
+          "description": "Fire (low confidence, land or water)"
+        },
+        {
+          "value": 8,
+          "description": "Fire (nominal confidence, land or water)"
+        },
+        {
+          "value": 9,
+          "description": "Fire (high confidence, land or water)"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "MaxFRP": {
+      "href": "../../../../tests/data-files/external/MOD14A1.A2022033.h11v05.061.2022041234759_MaxFRP.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Maximum Fire Radiative Power",
+      "raster:bands": [
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        },
+        {
+          "data_type": "uint32",
+          "spatial_resolution": 1000,
+          "unit": "Megawatts",
+          "scale": 0.1
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "QA": {
+      "href": "../../../../tests/data-files/external/MOD14A1.A2022033.h11v05.061.2022041234759_QA.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Pixel quality indicators",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
     "hdf": {
       "href": "../../../../tests/data-files/external/MOD14A1.A2022033.h11v05.061.2022041234759.hdf",
       "type": "application/x-hdf",
@@ -79,6 +304,48 @@
       "roles": [
         "metadata"
       ]
+    },
+    "sample": {
+      "href": "../../../../tests/data-files/external/MOD14A1.A2022033.h11v05.061.2022041234759_sample.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Position of fire pixel within scan",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        },
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
     }
   },
   "bbox": [
@@ -87,6 +354,10 @@
     -69.0368143977928,
     40.0539543997624
   ],
-  "stac_extensions": [],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/classification/v1.0.0/schema.json"
+  ],
   "collection": "modis-14A1-061"
 }

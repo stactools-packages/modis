@@ -14,6 +14,47 @@
     "modis:horizontal-tile": 17,
     "modis:vertical-tile": 0,
     "modis:tile-id": "51017000",
+    "proj:epsg": null,
+    "proj:wkt2": "PROJCRS[\"unnamed\",BASEGEOGCRS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",ELLIPSOID[\"Custom spheroid\",6371007.181,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],CONVERSION[\"unnamed\",METHOD[\"Sinusoidal\"],PARAMETER[\"Longitude of natural origin\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"False easting\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"easting\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"northing\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            0.0,
+            8895604.158132
+          ],
+          [
+            0.0,
+            10007554.677899
+          ],
+          [
+            -1111950.519767,
+            10007554.677899
+          ],
+          [
+            -1111950.519767,
+            8895604.158132
+          ],
+          [
+            0.0,
+            8895604.158132
+          ]
+        ]
+      ]
+    },
+    "proj:shape": [
+      1200,
+      1200
+    ],
+    "proj:transform": [
+      926.6254331391667,
+      0.0,
+      -1111950.519767,
+      0.0,
+      -926.6254331391661,
+      10007554.677899
+    ],
     "eo:cloud_cover": 16,
     "datetime": null
   },
@@ -65,6 +106,188 @@
     }
   ],
   "assets": {
+    "Clear_sky_days": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_Clear_sky_days.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "the days in clear-sky conditions and with validate LSTs",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "Clear_sky_nights": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_Clear_sky_nights.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "the nights in clear-sky conditions and with validate LSTs",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "Day_view_angl": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_Day_view_angl.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Average view zenith angle of daytime Land-surface Temperature",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000,
+          "unit": "Degree"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "Day_view_time": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_Day_view_time.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Average time of daytime Landsurface Temperature observation",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000,
+          "unit": "Hours",
+          "scale": 0.1
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "Emis_31": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_Emis_31.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Band 31 emissivity",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000,
+          "scale": 0.002
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "Emis_32": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_Emis_32.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Band 32 emissivity",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000,
+          "scale": 0.002
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "LST_Day_1km": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_LST_Day_1km.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "8-day daytime 1km grid Landsurface Temperature",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000,
+          "unit": "Kelvin",
+          "scale": 0.02
+        }
+      ],
+      "roles": [
+        "data",
+        "temperature"
+      ]
+    },
+    "LST_Night_1km": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_LST_Night_1km.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "8-day nighttime 1km grid Landsurface Temperature",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 1000,
+          "unit": "Kelvin",
+          "scale": 0.02
+        }
+      ],
+      "roles": [
+        "data",
+        "temperature"
+      ]
+    },
+    "Night_view_angl": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_Night_view_angl.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "View zenith angle of nighttime Land-surface Temperature ",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000,
+          "unit": "Degree"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "Night_view_time": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_Night_view_time.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Average view zenith angle of nighttime Land-surface Temperature",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000,
+          "unit": "Hours",
+          "scale": 0.1
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "QC_Day": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_QC_Day.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Quality control for daytime LST and emissivity",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "QC_Night": {
+      "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130_QC_Night.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Quality control for nighttime LST and emissivity",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
     "hdf": {
       "href": "../../../../tests/data-files/external/MYD11A2.A2022025.h17v00.061.2022035054130.hdf",
       "type": "application/x-hdf",
@@ -89,7 +312,9 @@
     89.9875
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
   ],
   "collection": "modis-11A2-061"
 }

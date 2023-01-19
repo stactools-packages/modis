@@ -157,10 +157,14 @@ class Metadata:
                 "ParameterName", missing_element("ParameterName")
             ).replace(" ", "_")
             band_qa_percent_cloud_cover = measured_parameter.find_text(
-                "QAPercentCloudCover"
+                "QAStats/QAPercentCloudCover"
             )
-            if qa_percent_cloud_cover:
+            if band_qa_percent_cloud_cover:
                 qa_percent_cloud_cover[name] = int(band_qa_percent_cloud_cover)
+
+        if qa_percent_cloud_cover and not qa_percent_not_produced_cloud:
+            assert len(set(qa_percent_cloud_cover.values())) == 1
+            qa_percent_not_produced_cloud = next(iter(qa_percent_cloud_cover.values()))
 
         platform_elements = metadata.findall("Platform")
         platforms = [

@@ -14,6 +14,47 @@
     "modis:horizontal-tile": 21,
     "modis:vertical-tile": 5,
     "modis:tile-id": "51021005",
+    "proj:epsg": null,
+    "proj:wkt2": "PROJCRS[\"unnamed\",BASEGEOGCRS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",ELLIPSOID[\"Custom spheroid\",6371007.181,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],CONVERSION[\"unnamed\",METHOD[\"Sinusoidal\"],PARAMETER[\"Longitude of natural origin\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"False easting\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"easting\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"northing\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            4447802.078667,
+            3335851.559
+          ],
+          [
+            4447802.078667,
+            4447802.078667
+          ],
+          [
+            3335851.559,
+            4447802.078667
+          ],
+          [
+            3335851.559,
+            3335851.559
+          ],
+          [
+            4447802.078667,
+            3335851.559
+          ]
+        ]
+      ]
+    },
+    "proj:shape": [
+      1200,
+      1200
+    ],
+    "proj:transform": [
+      926.6254330558334,
+      0.0,
+      3335851.559,
+      0.0,
+      -926.6254330558334,
+      4447802.078667
+    ],
     "datetime": null
   },
   "geometry": {
@@ -64,6 +105,76 @@
     }
   ],
   "assets": {
+    "FireMask": {
+      "href": "../../../../tests/data-files/external/MOD14A2.A2022033.h21v05.061.2022041234800_FireMask.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Confidence of fire",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Not processed (missing input data)"
+        },
+        {
+          "value": 1,
+          "description": "Not processed (obsolete; not used since Collection 1)"
+        },
+        {
+          "value": 2,
+          "description": "Not processed (other reason)"
+        },
+        {
+          "value": 3,
+          "description": "Non-fire water pixel"
+        },
+        {
+          "value": 4,
+          "description": "Cloud (land or water)"
+        },
+        {
+          "value": 5,
+          "description": "Non-fire land pixel"
+        },
+        {
+          "value": 6,
+          "description": "Unknown (land or water)"
+        },
+        {
+          "value": 7,
+          "description": "Fire (low confidence, land or water)"
+        },
+        {
+          "value": 8,
+          "description": "Fire (nominal confidence, land or water)"
+        },
+        {
+          "value": 9,
+          "description": "Fire (high confidence, land or water)"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "QA": {
+      "href": "../../../../tests/data-files/external/MOD14A2.A2022033.h21v05.061.2022041234800_QA.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Pixel quality indicators",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 1000
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
     "hdf": {
       "href": "../../../../tests/data-files/external/MOD14A2.A2022033.h21v05.061.2022041234800.hdf",
       "type": "application/x-hdf",
@@ -87,6 +198,10 @@
     52.2322788546416,
     40.0278035903489
   ],
-  "stac_extensions": [],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/classification/v1.0.0/schema.json"
+  ],
   "collection": "modis-14A2-061"
 }

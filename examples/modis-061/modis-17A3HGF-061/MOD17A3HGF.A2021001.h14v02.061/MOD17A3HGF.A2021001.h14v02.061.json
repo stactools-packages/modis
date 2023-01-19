@@ -14,6 +14,48 @@
     "modis:horizontal-tile": 14,
     "modis:vertical-tile": 2,
     "modis:tile-id": "51014002",
+    "proj:epsg": null,
+    "proj:wkt2": "PROJCRS[\"unnamed\",BASEGEOGCRS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",ELLIPSOID[\"Custom spheroid\",6371007.181,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],CONVERSION[\"unnamed\",METHOD[\"Sinusoidal\"],PARAMETER[\"Longitude of natural origin\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"False easting\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"easting\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"northing\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -3335851.559,
+            6671703.118
+          ],
+          [
+            -3335851.559,
+            7783653.637667
+          ],
+          [
+            -4447802.078667,
+            7783653.637667
+          ],
+          [
+            -4447802.078667,
+            6671703.118
+          ],
+          [
+            -3335851.559,
+            6671703.118
+          ]
+        ]
+      ]
+    },
+    "proj:shape": [
+      2400,
+      2400
+    ],
+    "proj:transform": [
+      463.3127165279167,
+      0.0,
+      -4447802.078667,
+      0.0,
+      -463.3127165279169,
+      7783653.637667
+    ],
+    "eo:cloud_cover": 99,
     "datetime": null
   },
   "geometry": {
@@ -64,6 +106,53 @@
     }
   ],
   "assets": {
+    "Gpp_500m": {
+      "href": "../../../../tests/data-files/external/MOD17A3HGF.A2021001.h14v02.061.2022020135800_Gpp_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Gross Primary Productivity",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 500,
+          "unit": "kg C/m^2",
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "Npp_500m": {
+      "href": "../../../../tests/data-files/external/MOD17A3HGF.A2021001.h14v02.061.2022020135800_Npp_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Net Primary Productivity",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "kg C/m^2",
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "Npp_QC_500m": {
+      "href": "../../../../tests/data-files/external/MOD17A3HGF.A2021001.h14v02.061.2022020135800_Npp_QC_500m.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Quality control",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500,
+          "unit": "Percent"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
     "hdf": {
       "href": "../../../../tests/data-files/external/MOD17A3HGF.A2021001.h14v02.061.2022020135800.hdf",
       "type": "application/x-hdf",
@@ -87,6 +176,10 @@
     -59.4418379607338,
     70.1134921142962
   ],
-  "stac_extensions": [],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+  ],
   "collection": "modis-17A3HGF-061"
 }

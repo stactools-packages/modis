@@ -14,6 +14,48 @@
     "modis:horizontal-tile": 25,
     "modis:vertical-tile": 2,
     "modis:tile-id": "51025002",
+    "proj:epsg": null,
+    "proj:wkt2": "PROJCRS[\"unnamed\",BASEGEOGCRS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",ELLIPSOID[\"Custom spheroid\",6371007.181,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],CONVERSION[\"unnamed\",METHOD[\"Sinusoidal\"],PARAMETER[\"Longitude of natural origin\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"False easting\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"easting\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"northing\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            8895604.157333,
+            6671703.118
+          ],
+          [
+            8895604.157333,
+            7783653.637667
+          ],
+          [
+            7783653.637667,
+            7783653.637667
+          ],
+          [
+            7783653.637667,
+            6671703.118
+          ],
+          [
+            8895604.157333,
+            6671703.118
+          ]
+        ]
+      ]
+    },
+    "proj:shape": [
+      2400,
+      2400
+    ],
+    "proj:transform": [
+      463.31271652749973,
+      0.0,
+      7783653.637667,
+      0.0,
+      -463.3127165279169,
+      7783653.637667
+    ],
+    "eo:cloud_cover": 46,
     "datetime": null
   },
   "geometry": {
@@ -90,6 +132,220 @@
     }
   ],
   "assets": {
+    "500m_16_days_EVI": {
+      "href": "../../../../tests/data-files/external/MYD13A1.A2022009.h25v02.061.2022028071925_500m_16_days_EVI.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "500m 16 days EVI",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "EVI",
+          "scale": 0.0001
+        }
+      ],
+      "eo:cloud_cover": 46,
+      "roles": [
+        "data"
+      ]
+    },
+    "500m_16_days_MIR_reflectance": {
+      "href": "../../../../tests/data-files/external/MYD13A1.A2022009.h25v02.061.2022028071925_500m_16_days_MIR_reflectance.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 7",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "scale": 0.0001
+        }
+      ],
+      "eo:cloud_cover": 46,
+      "roles": [
+        "data"
+      ]
+    },
+    "500m_16_days_NDVI": {
+      "href": "../../../../tests/data-files/external/MYD13A1.A2022009.h25v02.061.2022028071925_500m_16_days_NDVI.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "500m 16 days NDVI",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "NDVI",
+          "scale": 0.0001
+        }
+      ],
+      "eo:cloud_cover": 46,
+      "roles": [
+        "data"
+      ]
+    },
+    "500m_16_days_NIR_reflectance": {
+      "href": "../../../../tests/data-files/external/MYD13A1.A2022009.h25v02.061.2022028071925_500m_16_days_NIR_reflectance.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 2",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "scale": 0.0001
+        }
+      ],
+      "eo:cloud_cover": 46,
+      "roles": [
+        "data"
+      ]
+    },
+    "500m_16_days_VI_Quality": {
+      "href": "../../../../tests/data-files/external/MYD13A1.A2022009.h25v02.061.2022028071925_500m_16_days_VI_Quality.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "VI quality indicators",
+      "raster:bands": [
+        {
+          "data_type": "uint16",
+          "spatial_resolution": 500
+        }
+      ],
+      "eo:cloud_cover": 46,
+      "roles": [
+        "data"
+      ]
+    },
+    "500m_16_days_blue_reflectance": {
+      "href": "../../../../tests/data-files/external/MYD13A1.A2022009.h25v02.061.2022028071925_500m_16_days_blue_reflectance.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 3",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "scale": 0.0001
+        }
+      ],
+      "eo:cloud_cover": 46,
+      "roles": [
+        "data"
+      ]
+    },
+    "500m_16_days_composite_day_of_the_year": {
+      "href": "../../../../tests/data-files/external/MYD13A1.A2022009.h25v02.061.2022028071925_500m_16_days_composite_day_of_the_year.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Day of year VI pixel",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "Julian Day"
+        }
+      ],
+      "eo:cloud_cover": 46,
+      "roles": [
+        "data"
+      ]
+    },
+    "500m_16_days_pixel_reliability": {
+      "href": "../../../../tests/data-files/external/MYD13A1.A2022009.h25v02.061.2022028071925_500m_16_days_pixel_reliability.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Quality reliability of VI pixel",
+      "raster:bands": [
+        {
+          "data_type": "int8",
+          "spatial_resolution": 500,
+          "unit": "Rank"
+        }
+      ],
+      "eo:cloud_cover": 46,
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "Good data, use with confidence"
+        },
+        {
+          "value": 1,
+          "description": "Marginal data, useful, but look at other QA information"
+        },
+        {
+          "value": 2,
+          "description": "Snow/Ice Target covered with snow/ice"
+        },
+        {
+          "value": 3,
+          "description": "Cloudy data"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "500m_16_days_red_reflectance": {
+      "href": "../../../../tests/data-files/external/MYD13A1.A2022009.h25v02.061.2022028071925_500m_16_days_red_reflectance.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Surface Reflectance Band 1",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "scale": 0.0001
+        }
+      ],
+      "eo:cloud_cover": 46,
+      "roles": [
+        "data"
+      ]
+    },
+    "500m_16_days_relative_azimuth_angle": {
+      "href": "../../../../tests/data-files/external/MYD13A1.A2022009.h25v02.061.2022028071925_500m_16_days_relative_azimuth_angle.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Relative azimuth angle of VI pixel",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "Degree",
+          "scale": 0.01
+        }
+      ],
+      "eo:cloud_cover": 46,
+      "roles": [
+        "data"
+      ]
+    },
+    "500m_16_days_sun_zenith_angle": {
+      "href": "../../../../tests/data-files/external/MYD13A1.A2022009.h25v02.061.2022028071925_500m_16_days_sun_zenith_angle.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Sun zenith angle of VI pixel",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "Degree",
+          "scale": 0.01
+        }
+      ],
+      "eo:cloud_cover": 46,
+      "roles": [
+        "data"
+      ]
+    },
+    "500m_16_days_view_zenith_angle": {
+      "href": "../../../../tests/data-files/external/MYD13A1.A2022009.h25v02.061.2022028071925_500m_16_days_view_zenith_angle.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "View zenith angle of VI Pixel",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "unit": "Degree",
+          "scale": 0.01
+        }
+      ],
+      "eo:cloud_cover": 46,
+      "roles": [
+        "data"
+      ]
+    },
     "hdf": {
       "href": "../../../../tests/data-files/external/MYD13A1.A2022009.h25v02.061.2022028071925.hdf",
       "type": "application/x-hdf",
@@ -113,6 +369,11 @@
     -176.534172118079,
     69.2113905326394
   ],
-  "stac_extensions": [],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/classification/v1.0.0/schema.json"
+  ],
   "collection": "modis-13A1-061"
 }

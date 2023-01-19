@@ -14,6 +14,48 @@
     "modis:horizontal-tile": 11,
     "modis:vertical-tile": 5,
     "modis:tile-id": "51011005",
+    "proj:epsg": null,
+    "proj:wkt2": "PROJCRS[\"unnamed\",BASEGEOGCRS[\"Unknown datum based upon the custom spheroid\",DATUM[\"Not specified (based on custom spheroid)\",ELLIPSOID[\"Custom spheroid\",6371007.181,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],CONVERSION[\"unnamed\",METHOD[\"Sinusoidal\"],PARAMETER[\"Longitude of natural origin\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"False easting\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"easting\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"northing\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -6671703.118,
+            3335851.559
+          ],
+          [
+            -6671703.118,
+            4447802.078667
+          ],
+          [
+            -7783653.637667,
+            4447802.078667
+          ],
+          [
+            -7783653.637667,
+            3335851.559
+          ],
+          [
+            -6671703.118,
+            3335851.559
+          ]
+        ]
+      ]
+    },
+    "proj:shape": [
+      2400,
+      2400
+    ],
+    "proj:transform": [
+      463.3127165279169,
+      0.0,
+      -7783653.637667,
+      0.0,
+      -463.3127165279167,
+      4447802.078667
+    ],
+    "eo:cloud_cover": 24,
     "datetime": null
   },
   "geometry": {
@@ -64,6 +106,115 @@
     }
   ],
   "assets": {
+    "NDSI": {
+      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026_NDSI.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Raw NDSI values (i.e. prior to screening).",
+      "raster:bands": [
+        {
+          "data_type": "int16",
+          "spatial_resolution": 500,
+          "scale": 0.0001
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "NDSI_Snow_Cover": {
+      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026_NDSI_Snow_Cover.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Gridded NDSI snow cover and data flag values.",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "eo:cloud_cover": 24,
+      "roles": [
+        "data"
+      ]
+    },
+    "NDSI_Snow_Cover_Algorithm_Flags_QA": {
+      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026_NDSI_Snow_Cover_Algorithm_Flags_QA.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Algorithm-specific bit flags set for data screens and for inland water.",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "NDSI_Snow_Cover_Basic_QA": {
+      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026_NDSI_Snow_Cover_Basic_QA.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "A general estimate of the quality of the algorithm result.",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "classification:classes": [
+        {
+          "value": 0,
+          "description": "best"
+        },
+        {
+          "value": 1,
+          "description": "good"
+        },
+        {
+          "value": 2,
+          "description": "ok"
+        },
+        {
+          "value": 3,
+          "description": "poor (not used)"
+        },
+        {
+          "value": 4,
+          "description": "other (not used)"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "Snow_Albedo_Daily_Tile": {
+      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026_Snow_Albedo_Daily_Tile.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Daily snow albedo corresponding to the NDSI_Snow_Cover parameter.",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "eo:cloud_cover": 24,
+      "roles": [
+        "data"
+      ]
+    },
+    "granule_pnt": {
+      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026_granule_pnt.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Pointer for identifying the swath mapped into each grid cell.",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
     "hdf": {
       "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026.hdf",
       "type": "application/x-hdf",
@@ -79,6 +230,20 @@
       "roles": [
         "metadata"
       ]
+    },
+    "orbit_pnt": {
+      "href": "../../../../tests/data-files/external/MOD10A1.A2022040.h11v05.061.2022042042026_orbit_pnt.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Pointer to the orbit of the swath mapped into each grid cell.",
+      "raster:bands": [
+        {
+          "data_type": "uint8",
+          "spatial_resolution": 500
+        }
+      ],
+      "roles": [
+        "data"
+      ]
     }
   },
   "bbox": [
@@ -87,6 +252,11 @@
     -69.0368143977928,
     40.0539543997624
   ],
-  "stac_extensions": [],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/classification/v1.0.0/schema.json"
+  ],
   "collection": "modis-10A1-061"
 }

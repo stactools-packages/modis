@@ -128,6 +128,7 @@
     "modis:horizontal-tile": 0,
     "modis:vertical-tile": 8,
     "modis:tile-id": "51000008",
+    "eo:cloud_cover": 0,
     "datetime": null
   },
   "geometry": {
@@ -227,6 +228,8 @@
     -169.920147,
     9.998978
   ],
-  "stac_extensions": [],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+  ],
   "collection": "modis-12Q1-006"
 }
