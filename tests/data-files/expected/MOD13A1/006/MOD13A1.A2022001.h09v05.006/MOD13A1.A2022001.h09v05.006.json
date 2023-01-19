@@ -14,7 +14,7 @@
     "modis:horizontal-tile": 9,
     "modis:vertical-tile": 5,
     "modis:tile-id": "51009005",
-    "eo:cloud_cover": 5,
+    "eo:cloud_cover": 0,
     "datetime": null
   },
   "geometry": {

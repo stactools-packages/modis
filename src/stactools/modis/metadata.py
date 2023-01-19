@@ -162,8 +162,11 @@ class Metadata:
             if band_qa_percent_cloud_cover:
                 qa_percent_cloud_cover[name] = int(band_qa_percent_cloud_cover)
 
-        if qa_percent_cloud_cover and not qa_percent_not_produced_cloud:
-            assert len(set(qa_percent_cloud_cover.values())) == 1
+        if qa_percent_cloud_cover and qa_percent_not_produced_cloud is None:
+            assert len(set(qa_percent_cloud_cover.values())) == 1, (
+                f"Mutiple, different 'qa_percent_cloud_cover' values exist "
+                f"in href={href}. This is not supported at this time."
+            )
             qa_percent_not_produced_cloud = next(iter(qa_percent_cloud_cover.values()))
 
         platform_elements = metadata.findall("Platform")
