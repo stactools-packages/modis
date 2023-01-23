@@ -101,8 +101,8 @@ def create_item(
     Args:
         href (str): The href to an HDF file or its metadata.
         cog_directory (str): The directory that will/does hold the COGs. Use
-            `cogify` to actually create COGs there.
-        create_cogs (str): Should we create cogs from the source data? If so, put
+            `create_cogs` to actually create COGs there.
+        create_cogs (bool): Should we create cogs from the source data? If so, put
             them in `cog_directory`, or if that is `None`, put them alongside the
             hdf file.
         read_href_modifier (Callable[[str], str]): An optional function to
