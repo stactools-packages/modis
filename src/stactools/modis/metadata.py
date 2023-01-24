@@ -315,7 +315,12 @@ class Metadata:
                     lon_lat.append([lon, lat])
             return lon_lat
 
-        tile_pixel_size = [k for k, v in SIN_TILE_PIXELS.items() if collection in v][0]
+        tile_pixel_size = next(
+            [k for k, v in SIN_TILE_PIXELS.items() if collection in v][0], None
+        )
+        if tile_pixel_size is None:
+            raise ValueError(f"Unsupported MODIS collection: {collection}")
+
         pixel_degrees = SIN_TILE_METERS / tile_pixel_size / 100000  # at equator
         pixel_coords = exterior_pixel_coords(tile_pixel_size)
         geo_coords = pixel_to_geodetic(pixel_coords, htile, vtile, tile_pixel_size)
