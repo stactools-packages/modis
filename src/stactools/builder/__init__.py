@@ -9,7 +9,6 @@ import multihash
 import rasterio
 import shapely.geometry
 import stactools.core.projection
-import stactools.core.utils.antimeridian
 import stactools.core.utils.convert
 from pystac import Asset, Item, MediaType
 from pystac.extensions.eo import AssetEOExtension, EOExtension
@@ -19,13 +18,11 @@ from pystac.extensions.raster import RasterBand, RasterExtension
 from rasterio.crs import CRSError
 from rasterio.enums import WktVersion
 from stactools.core.io import ReadHrefModifier
-from stactools.core.utils.antimeridian import Strategy
 
 EPSG = 4326
 CLASSIFICATION_EXTENSION_HREF = (
     "https://stac-extensions.github.io/classification/v1.0.0/schema.json"
 )
-DEFAULT_ANTIMERIDIAN_STRATEGY = Strategy.SPLIT
 Object = Dict[str, Any]
 
 
@@ -121,23 +118,12 @@ class FileInfo:
 class Builder:
     """Builds a STAC item from assets."""
 
-    antimeridian_strategy: Strategy
-    """The strategy used to fix geometries that cross the the antimeridian."""
-
     _assets: Dict[str, Asset]
 
     def __init__(
         self,
-        *,
-        antimeridian_strategy: Strategy = DEFAULT_ANTIMERIDIAN_STRATEGY,
     ) -> None:
-        """Creates a new builder with no assets.
-
-        Args:
-            antimeridian_strategy (optional, Strategy): The strategy to use to
-                fix polygons that cross the antimeridian.
-        """
-        self.antimeridian_strategy = antimeridian_strategy
+        """Creates a new builder with no assets."""
         self._assets = {}
 
     def get_asset(self, key: str) -> Optional[Asset]:
@@ -222,7 +208,6 @@ class Builder:
             datetime=item_info.datetime,
             properties=item_info.properties,
         )
-        stactools.core.utils.antimeridian.fix_item(item, self.antimeridian_strategy)
         if item_info.projection:
             projection = ProjectionExtension.ext(item, add_if_missing=True)
             projection.apply(**item_info.projection)
@@ -420,7 +405,6 @@ class RasterioBuilder(Builder):
         self,
         *,
         read_href_modifier: Optional[ReadHrefModifier] = None,
-        antimeridian_strategy: Strategy = DEFAULT_ANTIMERIDIAN_STRATEGY,
     ) -> None:
         """Creates a new rasterio builder with no assets.
 
@@ -428,14 +412,10 @@ class RasterioBuilder(Builder):
             read_href_modifier (optional, ReadHrefModifier): An optional
                 callable that will modify any asset hrefs before reading with
                 rasterio.
-            antimeridian_strategy (optional, Strategy): The strategy that will
-                be used to fix geometries that cross the antimeridian.
             include_projection_extension (optional, bool): Should the item
                 and/or assets include the projection extension?
         """
-        super().__init__(
-            antimeridian_strategy=antimeridian_strategy,
-        )
+        super().__init__()
         self.rasterio_keys = set()
         self.read_href_modifier = read_href_modifier
 

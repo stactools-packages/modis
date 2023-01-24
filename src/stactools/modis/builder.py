@@ -9,7 +9,6 @@ from pystac import Asset, Item, MediaType
 from pystac.extensions.eo import Band
 from pystac.extensions.raster import RasterBand
 from stactools.core.io import ReadHrefModifier
-from stactools.core.utils.antimeridian import Strategy
 
 import stactools.modis
 from stactools.builder import AssetInfo, ItemInfo, Object, RasterioBuilder
@@ -38,21 +37,18 @@ class ModisBuilder(RasterioBuilder):
     def __init__(
         self,
         read_href_modifier: Optional[ReadHrefModifier] = None,
-        antimeridian_strategy: Strategy = Strategy.SPLIT,
         skip_creating_cogs_if_missing_hdf: bool = False,
     ):
         """Creates a new modis builder.
 
         Args:
-            See `RasterioBuilder` for information about `read_href_modifier` and
-            and `antimeridian_strategy`.
+            See `RasterioBuilder` for information about `read_href_modifier`.
             skip_creating_cogs_if_missing_hdf (bool): If the HDF is not locally
                 available but COG creation is requested, should we skip creating
                 COGs?
         """
         super().__init__(
             read_href_modifier=read_href_modifier,
-            antimeridian_strategy=antimeridian_strategy,
         )
         self.metadata = None
         self.cog_tags = {}

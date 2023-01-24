@@ -10,7 +10,6 @@ from pystac.extensions.item_assets import AssetDefinition, ItemAssetsExtension
 from pystac.extensions.raster import RasterExtension
 from pystac.extensions.scientific import ScientificExtension
 from stactools.core.io import ReadHrefModifier
-from stactools.core.utils.antimeridian import Strategy
 
 from stactools.modis.builder import ModisBuilder
 from stactools.modis.constants import (
@@ -94,7 +93,6 @@ def create_item(
     cog_directory: Optional[str] = None,
     create_cogs: bool = False,
     read_href_modifier: Optional[ReadHrefModifier] = None,
-    antimeridian_strategy: Strategy = Strategy.SPLIT,
 ) -> Item:
     """Creates a STAC Item from MODIS data.
 
@@ -107,14 +105,11 @@ def create_item(
             hdf file.
         read_href_modifier (Callable[[str], str]): An optional function to
             modify the href (e.g. to add a token to a url)
-        antimeridian_strategy (AntimeridianStrategy): Either split on -180 or
-            normalize geometries so all longitudes are either positive or negative.
 
     Returns:
         pystac.Item: A STAC Item representing this MODIS image.
     """
     builder = ModisBuilder(
-        antimeridian_strategy=antimeridian_strategy,
         read_href_modifier=read_href_modifier,
     )
     builder.add_hdf_or_xml_href(
@@ -126,7 +121,6 @@ def create_item(
 def create_item_from_cogs(
     hrefs: List[str],
     read_href_modifier: Optional[ReadHrefModifier] = None,
-    antimeridian_strategy: Strategy = Strategy.SPLIT,
 ) -> Item:
     """Creates a STAC Item from COG paths.
 
@@ -134,14 +128,11 @@ def create_item_from_cogs(
         hrefs (str): The hrefs to COGs.
         read_href_modifier (Callable[[str], str]): An optional function to
             modify the href (e.g. to add a token to a url)
-        antimeridian_strategy (AntimeridianStrategy): Either split on -180 or
-            normalize geometries so all longitudes are either positive or negative.
 
     Returns:
         pystac.Item: A STAC Item representing this MODIS image.
     """
     builder = ModisBuilder(
-        antimeridian_strategy=antimeridian_strategy,
         read_href_modifier=read_href_modifier,
     )
     for href in hrefs:
