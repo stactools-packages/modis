@@ -319,5 +319,9 @@ class Metadata:
         pixel_coords = exterior_pixel_coords(tile_pixel_size)
         geo_coords = pixel_to_geodetic(pixel_coords, htile, vtile, tile_pixel_size)
         polygon = Polygon(geo_coords).simplify(tolerance=pixel_degrees / 2)
+        geometry = shapely.geometry.mapping(polygon)
 
-        return (shapely.geometry.mapping(polygon), list(polygon.bounds))
+        geometry["coordinates"] = utils.recursive_round(list(geometry["coordinates"]))
+        bbox = utils.recursive_round(list(polygon.bounds))
+
+        return (geometry, bbox)
