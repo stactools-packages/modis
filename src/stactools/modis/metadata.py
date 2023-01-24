@@ -14,11 +14,12 @@ from stactools.core.io.xml import XmlElement
 from stactools.modis import utils
 from stactools.modis.constants import TEMPORALLY_WEIGHTED_PRODUCTS
 
+# Sinusoidal projection parameters found in Appendix B of
+# https://modis-fire.umd.edu/files/MODIS_C6_BA_User_Guide_1.2.pdf
 SIN_SPHERE_RADIUS = 6371007.181
 SIN_TILE_METERS = 1111950
 SIN_X_MIN = -20015109
 SIN_Y_MAX = 10007555
-SIN_CRS = 'PROJCRS["unnamed",BASEGEOGCRS["Unknown datum based upon the custom spheroid",DATUM["Not specified (based on custom spheroid)",ELLIPSOID["Custom spheroid",6371007.181,0,LENGTHUNIT["metre",1,ID["EPSG",9001]]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433,ID["EPSG",9122]]]],CONVERSION["unnamed",METHOD["Sinusoidal"],PARAMETER["Longitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["easting",east,ORDER[1],LENGTHUNIT["metre",1,ID["EPSG",9001]]],AXIS["northing",north,ORDER[2],LENGTHUNIT["metre",1,ID["EPSG",9001]]]]'  # noqa
 SIN_TILE_PIXELS = {
     1200: ["11A1", "11A2", "14A1", "14A2", "21A2"],
     2400: [
@@ -35,7 +36,7 @@ SIN_TILE_PIXELS = {
         "17A3HGF",
         "43A4",
         "64A1",
-    ],  # noqa
+    ],
     4800: ["09Q1", "13Q1", "44B", "44W"],
 }
 
