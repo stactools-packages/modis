@@ -316,7 +316,7 @@ class Metadata:
             return lon_lat
 
         tile_pixel_size = next(
-            [k for k, v in SIN_TILE_PIXELS.items() if collection in v][0], None
+            iter([k for k, v in SIN_TILE_PIXELS.items() if collection in v]), None
         )
         if tile_pixel_size is None:
             raise ValueError(f"Unsupported MODIS collection: {collection}")
