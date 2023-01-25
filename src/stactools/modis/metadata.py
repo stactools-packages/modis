@@ -1,7 +1,8 @@
 import datetime
+import math
 import os.path
 from dataclasses import dataclass
-from typing import Any, Callable, Dict, List, Optional
+from typing import Any, Callable, Dict, List, Optional, Tuple
 
 import fsspec
 import shapely.geometry
@@ -12,6 +13,32 @@ from stactools.core.io.xml import XmlElement
 
 from stactools.modis import utils
 from stactools.modis.constants import TEMPORALLY_WEIGHTED_PRODUCTS
+
+# Sinusoidal projection parameters found in Appendix B of
+# https://modis-fire.umd.edu/files/MODIS_C6_BA_User_Guide_1.2.pdf
+SIN_SPHERE_RADIUS = 6371007.181
+SIN_TILE_METERS = 1111950
+SIN_X_MIN = -20015109
+SIN_Y_MAX = 10007555
+SIN_TILE_PIXELS = {
+    1200: ["11A1", "11A2", "14A1", "14A2", "21A2"],
+    2400: [
+        "09A1",
+        "10A1",
+        "10A2",
+        "12Q1",
+        "13A1",
+        "15A2H",
+        "15A3H",
+        "16A3GF",
+        "17A2H",
+        "17A2HGF",
+        "17A3HGF",
+        "43A4",
+        "64A1",
+    ],
+    4800: ["09Q1", "13Q1", "44B", "44W"],
+}
 
 
 class MissingElement(Exception):
@@ -38,6 +65,7 @@ class Metadata:
     tile_id: str
     platforms: List[str]
     instruments: List[str]
+    collection: str
 
     @classmethod
     def from_xml_href(
@@ -87,28 +115,6 @@ class Metadata:
                 "CollectionMetaData/VersionID", missing_element("version")
             )
         )
-
-        points = [
-            (
-                float(
-                    point.find_text_or_throw(
-                        "PointLongitude", missing_element("longitude")
-                    )
-                ),
-                float(
-                    point.find_text_or_throw(
-                        "PointLatitude", missing_element("latitude")
-                    )
-                ),
-            )
-            for point in metadata.findall(
-                "SpatialDomainContainer/HorizontalSpatialDomainContainer/"
-                "GPolygon/Boundary/Point"
-            )
-        ]
-        polygon = Polygon(points)
-        geometry = shapely.geometry.mapping(polygon)
-        bbox = polygon.bounds
 
         start_date = metadata.find_text_or_throw(
             "RangeDateTime/RangeBeginningDate", missing_element("start_date")
@@ -185,6 +191,12 @@ class Metadata:
                 for platform in platform_elements
             )
         )
+
+        collection = cls._collection(product)
+        geometry, bbox = cls._geometry_and_bbox(
+            collection, horizontal_tile, vertical_tile
+        )
+
         return Metadata(
             id=id,
             product=product,
@@ -202,10 +214,11 @@ class Metadata:
             tile_id=tile_id,
             platforms=platforms,
             instruments=instruments,
+            collection=collection,
         )
 
     @classmethod
-    def from_cog_tags(self, cog_tags: Dict[str, str]) -> "Metadata":
+    def from_cog_tags(cls, cog_tags: Dict[str, str]) -> "Metadata":
         start_datetime = datetime.datetime.fromisoformat(
             f"{cog_tags['RANGEBEGINNINGDATE']} {cog_tags['RANGEBEGINNINGTIME']}"
         )
@@ -226,23 +239,31 @@ class Metadata:
             if key.startswith("ASSOCIATEDINSTRUMENTSHORTNAME")
         ):
             instruments.add(cog_tags[key].lower())
+        product = cog_tags["SHORTNAME"]
+        horizontal_tile = int(cog_tags["HORIZONTALTILENUMBER"])
+        vertical_tile = int(cog_tags["VERTICALTILENUMBER"])
+        collection = cls._collection(product)
+        geometry, bbox = cls._geometry_and_bbox(
+            collection, horizontal_tile, vertical_tile
+        )
         return Metadata(
             id=os.path.splitext(cog_tags["LOCALGRANULEID"])[0],
-            product=cog_tags["SHORTNAME"],
+            product=product,
             version=utils.version_string(cog_tags["VERSIONID"]),
-            geometry=None,
-            bbox=None,
+            geometry=geometry,
+            bbox=bbox,
             start_datetime=start_datetime,
             end_datetime=end_datetime,
             created=None,
             updated=None,
             qa_percent_not_produced_cloud=int(cog_tags["QAPERCENTNOTPRODUCEDCLOUD"]),
             qa_percent_cloud_cover=None,
-            horizontal_tile=int(cog_tags["HORIZONTALTILENUMBER"]),
-            vertical_tile=int(cog_tags["VERTICALTILENUMBER"]),
+            horizontal_tile=horizontal_tile,
+            vertical_tile=vertical_tile,
             tile_id=cog_tags["TileID"],
             platforms=sorted(list(platforms)),
             instruments=sorted(list(instruments)),
+            collection=collection,
         )
 
     @property
@@ -260,6 +281,53 @@ class Metadata:
         else:
             return None
 
-    @property
-    def collection(self) -> str:
-        return self.product[3:]
+    @classmethod
+    def _collection(cls, product: str) -> str:
+        return product[3:]
+
+    @classmethod
+    def _geometry_and_bbox(
+        cls, collection: str, htile: int, vtile: int
+    ) -> Tuple[Dict[str, Any], List[float]]:
+        def exterior_pixel_coords(pixels: int) -> List[List[int]]:
+            col_row = []
+            col_row.extend([[0, row] for row in range(pixels)])  # left
+            col_row.extend([[col, pixels - 1] for col in range(pixels)])  # bottom
+            col_row.extend(
+                [[pixels - 1, row] for row in range(pixels).__reversed__()]
+            )  # right
+            col_row.extend([[col, 0] for col in range(pixels).__reversed__()])  # top
+            return col_row
+
+        def pixel_to_geodetic(
+            pixel_coords: List[List[int]], htile: int, vtile: int, pixels: int
+        ) -> List[List[float]]:
+            pixel_width = SIN_TILE_METERS / pixels
+            lon_lat = []
+            for col, row in pixel_coords:
+                x = (col + 0.5) * pixel_width + htile * SIN_TILE_METERS + SIN_X_MIN
+                y = SIN_Y_MAX - (row + 0.5) * pixel_width - vtile * SIN_TILE_METERS
+                lat = math.degrees(y / SIN_SPHERE_RADIUS)
+                lon = math.degrees(
+                    x / (SIN_SPHERE_RADIUS * math.cos(math.radians(lat)))
+                )
+                if lat >= -90 and lat <= 90 and lon >= -180 and lon <= 180:
+                    lon_lat.append([lon, lat])
+            return lon_lat
+
+        tile_pixel_size = next(
+            iter([k for k, v in SIN_TILE_PIXELS.items() if collection in v]), None
+        )
+        if tile_pixel_size is None:
+            raise ValueError(f"Unsupported MODIS collection: {collection}")
+
+        pixel_degrees = SIN_TILE_METERS / tile_pixel_size / 100000  # at equator
+        pixel_coords = exterior_pixel_coords(tile_pixel_size)
+        geo_coords = pixel_to_geodetic(pixel_coords, htile, vtile, tile_pixel_size)
+        polygon = Polygon(geo_coords).simplify(tolerance=pixel_degrees / 2)
+        geometry = shapely.geometry.mapping(polygon)
+
+        geometry["coordinates"] = utils.recursive_round(list(geometry["coordinates"]))
+        bbox = utils.recursive_round(list(polygon.bounds))
+
+        return (geometry, bbox)

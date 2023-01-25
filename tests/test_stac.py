@@ -5,9 +5,7 @@ import unittest
 from tempfile import TemporaryDirectory
 
 import pytest
-import shapely.geometry
 from pystac import CatalogType, MediaType
-from stactools.core.utils.antimeridian import Strategy
 
 import stactools.modis.stac
 from stactools.modis.file import File
@@ -140,20 +138,6 @@ def test_cog_directory() -> None:
         asset for asset in item.assets.values() if asset.media_type == MediaType.COG
     ]
     assert len(cog_assets) == 2
-
-
-def test_antimeridian() -> None:
-    href = test_data.get_path(
-        "data-files/MCD15A2H.A2022025.h01v11.061.2022035062702.hdf.xml"
-    )
-    item = stactools.modis.stac.create_item(
-        href, antimeridian_strategy=Strategy.NORMALIZE
-    )
-    bounds = shapely.geometry.shape(item.geometry).bounds
-    print(bounds)
-    assert bounds[0] == -180.26209861654
-    assert bounds[2] == -169.997993708017
-    item.validate()
 
 
 @pytest.mark.parametrize("file_name", COG_FILE_NAMES)
