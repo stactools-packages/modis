@@ -9,6 +9,7 @@ from pystac import Catalog, CatalogType, Item, Summaries
 
 from stactools.modis import cog, stac
 from stactools.modis.builder import ModisBuilder
+from stactools.modis.utils import raster_data_footprint_geometry
 
 logger = logging.getLogger(__name__)
 
@@ -42,6 +43,13 @@ def create_modis_command(cli: Group) -> Command:
         help="Create COGs for each file",
         default=False,
     )
+    @click.option(
+        "-r",
+        "--raster-footprint",
+        is_flag=True,
+        help="Use raster data footprint for geometry",
+        default=False,
+    )
     def create_collection_command(
         infile: str,
         outdir: str,
@@ -49,6 +57,7 @@ def create_modis_command(cli: Group) -> Command:
         title: str,
         description: str,
         create_cogs: bool,
+        raster_footprint: bool,
     ) -> None:
         """Creates a STAC Catalog with collections and items defined by the URLs in INFILE.
 
@@ -63,6 +72,8 @@ def create_modis_command(cli: Group) -> Command:
             title (str): The title of the output catalog.
             description (str): The description of the output catalog.
             create_cogs (str): Create cogs for all source HDF files?
+            raster_footprint (bool): Use raster data footprint from
+                COGs to create Item geometry. Default is False.
         """
         with open(infile) as f:
             hrefs = [os.path.abspath(line.strip()) for line in f.readlines()]
@@ -75,17 +86,16 @@ def create_modis_command(cli: Group) -> Command:
             sub_hrefs = href.split(",")
             for href in sub_hrefs:
                 indir = os.path.dirname(href)
-                if os.path.splitext(href)[1].lower() == ".tif":
-                    builder.add_cog_href(href)
-                else:
-                    builder.add_hdf_or_xml_href(
-                        href,
-                        cog_directory=indir,
-                        create_cogs=create_cogs,
-                    )
+                builder.add_href(
+                    href,
+                    cog_directory=indir,
+                    create_cogs=create_cogs,
+                )
             item = builder.create_item()
             metadata = builder.metadata
             item.set_self_href(os.path.join(indir, f"{metadata.id}.json"))
+            if raster_footprint:
+                item = raster_data_footprint_geometry(item, metadata.collection)
             item_dict[metadata.version][metadata.collection].append(item)
             collection_id_set.add(metadata.collection)
         collection_ids = list(collection_id_set)
@@ -137,12 +147,23 @@ def create_modis_command(cli: Group) -> Command:
         default=False,
     )
     @click.option(
+        "-r",
+        "--raster-footprint",
+        is_flag=True,
+        help="Use raster data footprint for geometry",
+        default=False,
+    )
+    @click.option(
         "--validate/--no-validate",
         help="Validate the item before saving",
         default=True,
     )
     def create_item_command(
-        infiles: str, outdir: str, create_cogs: bool, validate: bool
+        infiles: str,
+        outdir: str,
+        create_cogs: bool,
+        raster_footprint: bool,
+        validate: bool,
     ) -> None:
         """Creates a STAC Item.
 
@@ -151,8 +172,12 @@ def create_modis_command(cli: Group) -> Command:
             infiles (str): The source file(s). This can be one hdf file, one xml file,
                 or multiple tif files.
             outdir (str): Directory that will contain the STAC Item.
-            create_cogs (bool, optional): Create COGs in the output directory
-                from any .hdf files, one per subdataset.
+            create_cogs (bool): Create COGs in the output directory
+                from any .hdf files, one per subdataset. Default is False.
+            raster_footprint (bool): Use raster data footprint from
+                COGs to create Item geometry. Default is False.
+            validate (bool): Validate the item before saving. Default
+                is True.
         """
         builder = ModisBuilder()
         for infile in infiles:
@@ -160,6 +185,8 @@ def create_modis_command(cli: Group) -> Command:
         item = builder.create_item()
         item_path = os.path.join(outdir, "{}.json".format(item.id))
         item.set_self_href(item_path)
+        if raster_footprint:
+            item = raster_data_footprint_geometry(item, builder.metadata.collection)
         if validate:
             item.validate()
         item.save_object()

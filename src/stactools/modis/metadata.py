@@ -12,33 +12,13 @@ from stactools.core.io import ReadHrefModifier
 from stactools.core.io.xml import XmlElement
 
 from stactools.modis import utils
-from stactools.modis.constants import TEMPORALLY_WEIGHTED_PRODUCTS
-
-# Sinusoidal projection parameters found in Appendix B of
-# https://modis-fire.umd.edu/files/MODIS_C6_BA_User_Guide_1.2.pdf
-SIN_SPHERE_RADIUS = 6371007.181
-SIN_TILE_METERS = 1111950
-SIN_X_MIN = -20015109
-SIN_Y_MAX = 10007555
-SIN_TILE_PIXELS = {
-    1200: ["11A1", "11A2", "14A1", "14A2", "21A2"],
-    2400: [
-        "09A1",
-        "10A1",
-        "10A2",
-        "12Q1",
-        "13A1",
-        "15A2H",
-        "15A3H",
-        "16A3GF",
-        "17A2H",
-        "17A2HGF",
-        "17A3HGF",
-        "43A4",
-        "64A1",
-    ],
-    4800: ["09Q1", "13Q1", "44B", "44W"],
-}
+from stactools.modis.constants import (
+    SIN_SPHERE_RADIUS,
+    SIN_TILE_METERS,
+    SIN_X_MIN,
+    SIN_Y_MAX,
+    TEMPORALLY_WEIGHTED_PRODUCTS,
+)
 
 
 class MissingElement(Exception):
@@ -315,13 +295,8 @@ class Metadata:
                     lon_lat.append([lon, lat])
             return lon_lat
 
-        tile_pixel_size = next(
-            iter([k for k, v in SIN_TILE_PIXELS.items() if collection in v]), None
-        )
-        if tile_pixel_size is None:
-            raise ValueError(f"Unsupported MODIS collection: {collection}")
-
-        pixel_degrees = SIN_TILE_METERS / tile_pixel_size / 100000  # at equator
+        tile_pixel_size = utils.tile_pixel_size(collection)
+        pixel_degrees = utils.pixel_degrees(tile_pixel_size)
         pixel_coords = exterior_pixel_coords(tile_pixel_size)
         geo_coords = pixel_to_geodetic(pixel_coords, htile, vtile, tile_pixel_size)
         polygon = Polygon(geo_coords).simplify(tolerance=pixel_degrees / 2)
