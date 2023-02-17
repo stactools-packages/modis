@@ -15,6 +15,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Added missing `eo:cloud_cover` values to Item properties and Assets ([#91](https://github.com/stactools-packages/modis/pull/91))
 - Use tile index and projection parameters for tighter Item geometries ([#92](https://github.com/stactools-packages/modis/pull/92))
 
+### Added
+
+- `raster_footprint` argument to generate Item geometry from the raster data footprint ([#95](https://github.com/stactools-packages/modis/pull/95))
+
 ## [0.3.0a0] - 2022-04-15
 
 ### Added
@@ -79,6 +83,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 Initial release.
 
 [Unreleased]: <http://github.com/stactools-packages/modis/compare/v0.3.0a0..main>
-[0.3.0a0]: <http://github.com/stactools-packages/modis/compare/v0.2.0..v0.3.0a0>
-[0.2.0]: <http://github.com/stactools-packages/modis/compare/v0.1.0..v0.2.0>
 [0.1.0]: <https://github.com/stactools-packages/modis/releases/tag/v0.1.0>
