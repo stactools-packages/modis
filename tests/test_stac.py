@@ -42,6 +42,14 @@ COG_FILE_NAMES = [
     "MOD13A1.A2022081.h09v05.006.2022101145817_BR_B06_cropped.TIF",
 ]
 
+PROJECTION_EDGE_FILES = [
+    "MYD11A2.A2022025.h17v00.061.2022035054130.hdf",
+    "MYD13A1.A2022009.h25v02.061.2022028071925.hdf",
+    "MYD14A1.A2022025.h01v07.061.2022035001141.hdf",
+    "MCD15A2H.A2022025.h01v11.061.2022035062702.hdf",
+    "MYD16A3GF.A2021001.h11v02.061.2022024220526.hdf",
+]
+
 
 @pytest.mark.parametrize("metadata_path,collection_path,item_path", args, ids=ids)
 def test_metadata_files(
@@ -174,3 +182,43 @@ def test_astraea(key: str) -> None:
         paths.append(test_data.get_external_data(file_name))
     item = stactools.modis.stac.create_item_from_cogs(paths)
     item.validate()
+
+
+def test_raster_footprint_geometry() -> None:
+    href = test_data.get_path(
+        "data-files/external/MYD10A2.A2022025.h10v05.061.2022035071201.hdf"
+    )
+    with TemporaryDirectory() as temporary_directory:
+        item = stactools.modis.stac.create_item(
+            href=href,
+            cog_directory=temporary_directory,
+            create_cogs=True,
+            raster_data_footprint=True,
+        )
+        assert len(item.geometry["coordinates"][0]) == 35
+        item.validate()
+
+
+@pytest.mark.parametrize("file_name", PROJECTION_EDGE_FILES)
+def test_raster_footprint_at_projection_edge(file_name: str) -> None:
+    href = test_data.get_path(f"data-files/external/{file_name}")
+    with TemporaryDirectory() as temporary_directory:
+        # Tile Footprint
+        item = stactools.modis.stac.create_item(
+            href=href,
+            cog_directory=temporary_directory,
+            create_cogs=True,
+            raster_data_footprint=False,
+        )
+        assert item.geometry["type"] == "Polygon"  # not MultiPolygon
+        item.validate()
+
+        # Data Footprint
+        item = stactools.modis.stac.create_item(
+            href=href,
+            cog_directory=temporary_directory,
+            create_cogs=True,
+            raster_data_footprint=True,
+        )
+        assert item.geometry["type"] == "Polygon"  # not MultiPolygon
+        item.validate()

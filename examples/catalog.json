@@ -15,12 +15,6 @@
       "href": "./modis-006/catalog.json",
       "type": "application/json",
       "title": "MODIS, version 006"
-    },
-    {
-      "rel": "child",
-      "href": "./modis-061/catalog.json",
-      "type": "application/json",
-      "title": "MODIS, version 061"
     }
   ],
   "stac_extensions": [],

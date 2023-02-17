@@ -19,36 +19,19 @@ METADATA_ASSET_PROPERTIES = {
 }
 TEMPORALLY_WEIGHTED_PRODUCTS = ["MCD43A4"]
 
-# Sinusoidal projection parameters found in Appendix B of
-# https://modis-fire.umd.edu/files/MODIS_C6_BA_User_Guide_1.2.pdf
-SIN_SPHERE_RADIUS = 6371007.181
-SIN_TILE_METERS = 1111950
-SIN_X_MIN = -20015109
-SIN_Y_MAX = 10007555
-SIN_TILE_PIXELS = {
-    1200: ["11A1", "11A2", "14A1", "14A2", "21A2"],
-    2400: [
-        "09A1",
-        "10A1",
-        "10A2",
-        "12Q1",
-        "13A1",
-        "15A2H",
-        "15A3H",
-        "16A3GF",
-        "17A2H",
-        "17A2HGF",
-        "17A3HGF",
-        "43A4",
-        "64A1",
-    ],
-    4800: ["09Q1", "13Q1", "44B", "44W"],
-}
-
 PRECISION = 6
 
+# Sinusoidal projection parameters derived from Appendix 2, Section 13.1 in:
+# https://modis-fire.umd.edu/files/MODIS_Burned_Area_Collection51_User_Guide_3.1.0.pdf
+# All parameters specified to 12 significant digits so we can round to 11
+# significant digits after using them in computations. This assures we retain
+# millimeter precision at the projection extremeties.
+SINUSOIDAL_SPHERE_RADIUS = 6371007.18100
+SINUSOIDAL_TILE_METERS = 1111950.51977
+SINUSOIDAL_X_MIN = -20015109.3558
+SINUSOIDAL_Y_MAX = 10007554.6779
 # fmt: off
-COLLECTIONS: Dict[str, Dict[str, Any]] = {  # only collecton 061 products
+COLLECTION_FOOTPRINT_METADATA: Dict[str, Dict[str, Any]] = {
     "11A1": {
         "sin_tile_pixels": 1200,
         "footprint_assets": ["LST_Day_1km", "LST_Night_1km", "Emis_31", "Emis_32"],

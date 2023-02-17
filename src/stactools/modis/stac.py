@@ -20,7 +20,7 @@ from stactools.modis.constants import (
     METADATA_ASSET_PROPERTIES,
 )
 from stactools.modis.product import Product
-from stactools.modis.utils import raster_data_footprint_geometry
+from stactools.modis.sinusoidal import update_geometry
 
 logger = logging.getLogger(__name__)
 
@@ -122,7 +122,7 @@ def create_item(
     item = builder.create_item()
     if raster_data_footprint:
         if create_cogs:
-            item = raster_data_footprint_geometry(item, builder.metadata.collection)
+            update_geometry(item, builder.metadata.collection)
         else:
             raise ValueError(
                 "The 'create_cogs' option must be True to use "
@@ -155,7 +155,7 @@ def create_item_from_cogs(
         builder.add_cog_href(href)
     item = builder.create_item()
     if raster_data_footprint:
-        item = raster_data_footprint_geometry(item, builder.metadata.collection)
+        update_geometry(item, builder.metadata.collection)
     return item
 
 

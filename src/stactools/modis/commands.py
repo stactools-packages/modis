@@ -9,7 +9,7 @@ from pystac import Catalog, CatalogType, Item, Summaries
 
 from stactools.modis import cog, stac
 from stactools.modis.builder import ModisBuilder
-from stactools.modis.utils import raster_data_footprint_geometry
+from stactools.modis.sinusoidal import update_geometry
 
 logger = logging.getLogger(__name__)
 
@@ -71,9 +71,10 @@ def create_modis_command(cli: Group) -> Command:
             id (str): The ID of the output catalog.
             title (str): The title of the output catalog.
             description (str): The description of the output catalog.
-            create_cogs (str): Create cogs for all source HDF files?
+            create_cogs (bool): Create cogs for all source HDF files?
             raster_footprint (bool): Use raster data footprint from
-                COGs to create Item geometry. Default is False.
+                COGs to create Item geometry. Default is False. Has no effect
+                if `create_cogs` is False.
         """
         with open(infile) as f:
             hrefs = [os.path.abspath(line.strip()) for line in f.readlines()]
@@ -94,8 +95,8 @@ def create_modis_command(cli: Group) -> Command:
             item = builder.create_item()
             metadata = builder.metadata
             item.set_self_href(os.path.join(indir, f"{metadata.id}.json"))
-            if raster_footprint:
-                item = raster_data_footprint_geometry(item, metadata.collection)
+            if raster_footprint and create_cogs:
+                update_geometry(item, metadata.collection)
             item_dict[metadata.version][metadata.collection].append(item)
             collection_id_set.add(metadata.collection)
         collection_ids = list(collection_id_set)
@@ -175,7 +176,8 @@ def create_modis_command(cli: Group) -> Command:
             create_cogs (bool): Create COGs in the output directory
                 from any .hdf files, one per subdataset. Default is False.
             raster_footprint (bool): Use raster data footprint from
-                COGs to create Item geometry. Default is False.
+                COGs to create Item geometry. Default is False. Has no effect
+                if `create_cogs` is False.
             validate (bool): Validate the item before saving. Default
                 is True.
         """
@@ -185,8 +187,8 @@ def create_modis_command(cli: Group) -> Command:
         item = builder.create_item()
         item_path = os.path.join(outdir, "{}.json".format(item.id))
         item.set_self_href(item_path)
-        if raster_footprint:
-            item = raster_data_footprint_geometry(item, builder.metadata.collection)
+        if raster_footprint and create_cogs:
+            update_geometry(item, builder.metadata.collection)
         if validate:
             item.validate()
         item.save_object()
