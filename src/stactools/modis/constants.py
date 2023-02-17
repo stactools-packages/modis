@@ -23,8 +23,7 @@ PRECISION = 6
 
 # Sinusoidal projection parameters derived from Appendix 2, Section 13.1 in:
 # https://modis-fire.umd.edu/files/MODIS_Burned_Area_Collection51_User_Guide_3.1.0.pdf
-# All parameters specified to 12 significant digits so we can round to 11
-# significant digits after using them in computations. This assures we retain
+# All parameters specified to 12 significant digits. This assures we retain
 # millimeter precision at the projection extremeties.
 SINUSOIDAL_SPHERE_RADIUS = 6371007.18100
 SINUSOIDAL_TILE_METERS = 1111950.51977

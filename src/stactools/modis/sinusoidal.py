@@ -48,25 +48,20 @@ def sinusoidal_grid_to_lonlat(
     spherical longitude and latitude.
 
     Args:
-        grid_coords (List[Tuple[float, float]]): List of sinusoidal projection grid
-            coordinate tuples in (x, y) order.
+        grid_coords (List[Tuple[float, float]]): List of sinusoidal projection
+            grid coordinate tuples in (x, y) order.
 
     Returns:
         List[Tuple[float, float]]: List of spherical longitude and latitude
             coordinate tuples in (longitude, latitude) order.
     """
-
-    def _sigfigs(x: float, n: int) -> float:
-        # https://discuss.python.org/t/rounding-to-significant-figures-feature-request-for-math-library/16395/82  # noqa
-        return float(f"{x:.{n}g}")
-
     lonlat = []
     for x, y in grid_coords:
         latitude = math.degrees(y / SINUSOIDAL_SPHERE_RADIUS)
         longitude = math.degrees(
             x / (SINUSOIDAL_SPHERE_RADIUS * math.cos(y / SINUSOIDAL_SPHERE_RADIUS))
         )
-        lonlat.append((_sigfigs(longitude, 11), _sigfigs(latitude, 11)))
+        lonlat.append((longitude, latitude))
     return lonlat
 
 
