@@ -65,7 +65,7 @@ def sinusoidal_grid_to_lonlat(
     return lonlat
 
 
-def _get_collection_footprint_metadata(collection: str) -> Dict[str, Any]:
+def get_collection_footprint_metadata(collection: str) -> Dict[str, Any]:
     footprint_metadata = COLLECTION_FOOTPRINT_METADATA.get(collection, None)
     if footprint_metadata is None:
         raise ValueError(f"Unsupported MODIS collection: {collection}")
@@ -83,7 +83,7 @@ def tile_pixel_size(collection: str) -> int:
     Returns:
         int: Number of pixels along the tile edge.
     """
-    footprint_metadata = _get_collection_footprint_metadata(collection)
+    footprint_metadata = get_collection_footprint_metadata(collection)
     tile_pixel_size: int = footprint_metadata["sin_tile_pixels"]
     return tile_pixel_size
 
@@ -108,7 +108,7 @@ def update_geometry(item: Item, collection: str) -> None:
         item (Item): PySTAC Item to be updated.
         collection (str): MODIS collection (aka product) string.
     """
-    footprint_metadata = _get_collection_footprint_metadata(collection)
+    footprint_metadata = get_collection_footprint_metadata(collection)
     asset_names = footprint_metadata.get("footprint_assets", None)
     if asset_names is None:
         raise ValueError(

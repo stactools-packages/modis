@@ -9,7 +9,10 @@ from pystac import Catalog, CatalogType, Item, Summaries
 
 from stactools.modis import cog, stac
 from stactools.modis.builder import ModisBuilder
-from stactools.modis.sinusoidal import update_geometry
+from stactools.modis.sinusoidal import (
+    get_collection_footprint_metadata,
+    update_geometry,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -96,7 +99,19 @@ def create_modis_command(cli: Group) -> Command:
             metadata = builder.metadata
             item.set_self_href(os.path.join(indir, f"{metadata.id}.json"))
             if raster_footprint and create_cogs:
-                update_geometry(item, metadata.collection)
+                if (
+                    get_collection_footprint_metadata(builder.metadata.collection).get(
+                        "footprint_assets", None
+                    )
+                    is None
+                ):
+                    logger.warning(
+                        f"Raster data footprint geometry not supported for "
+                        f"collection '{builder.metadata.collection}'. Default "
+                        f"tile geometry will be used instead."
+                    )
+                else:
+                    update_geometry(item, metadata.collection)
             item_dict[metadata.version][metadata.collection].append(item)
             collection_id_set.add(metadata.collection)
         collection_ids = list(collection_id_set)
