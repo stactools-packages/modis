@@ -185,12 +185,13 @@ def test_astraea(key: str) -> None:
 
 
 def test_raster_footprint_geometry() -> None:
-    href = test_data.get_path(
-        "data-files/external/MYD10A2.A2022025.h10v05.061.2022035071201.hdf"
+    hdf_href = test_data.get_external_data(
+        "MYD10A2.A2022025.h10v05.061.2022035071201.hdf"
     )
+    _ = test_data.get_external_data("MYD10A2.A2022025.h10v05.061.2022035071201.hdf.xml")
     with TemporaryDirectory() as temporary_directory:
         item = stactools.modis.stac.create_item(
-            href=href,
+            href=hdf_href,
             cog_directory=temporary_directory,
             create_cogs=True,
             raster_footprint=True,
@@ -201,11 +202,12 @@ def test_raster_footprint_geometry() -> None:
 
 @pytest.mark.parametrize("file_name", PROJECTION_EDGE_FILES)
 def test_raster_footprint_at_projection_edge(file_name: str) -> None:
-    href = test_data.get_path(f"data-files/external/{file_name}")
+    hdf_href = test_data.get_external_data(file_name)
+    _ = test_data.get_external_data(f"{file_name}.xml")
     with TemporaryDirectory() as temporary_directory:
         # Tile Footprint
         item = stactools.modis.stac.create_item(
-            href=href,
+            href=hdf_href,
             cog_directory=temporary_directory,
             create_cogs=True,
             raster_footprint=False,
@@ -215,7 +217,7 @@ def test_raster_footprint_at_projection_edge(file_name: str) -> None:
 
         # Data Footprint
         item = stactools.modis.stac.create_item(
-            href=href,
+            href=hdf_href,
             cog_directory=temporary_directory,
             create_cogs=True,
             raster_footprint=True,
