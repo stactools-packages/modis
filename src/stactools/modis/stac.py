@@ -106,7 +106,7 @@ def create_item(
             them in `cog_directory`, or if that is `None`, put them alongside the
             hdf file.
         raster_footprint (bool): Create the Item geometry from the convex
-            hull of valid raster data?
+            hull of valid raster data. Has no effect if `create_cogs` is False.
         read_href_modifier (Callable[[str], str]): An optional function to
             modify the href (e.g. to add a token to a url)
 
