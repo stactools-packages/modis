@@ -193,7 +193,7 @@ def test_raster_footprint_geometry() -> None:
             href=href,
             cog_directory=temporary_directory,
             create_cogs=True,
-            raster_data_footprint=True,
+            raster_footprint=True,
         )
         assert len(item.geometry["coordinates"][0]) == 35
         item.validate()
@@ -208,7 +208,7 @@ def test_raster_footprint_at_projection_edge(file_name: str) -> None:
             href=href,
             cog_directory=temporary_directory,
             create_cogs=True,
-            raster_data_footprint=False,
+            raster_footprint=False,
         )
         assert item.geometry["type"] == "Polygon"  # not MultiPolygon
         item.validate()
@@ -218,7 +218,7 @@ def test_raster_footprint_at_projection_edge(file_name: str) -> None:
             href=href,
             cog_directory=temporary_directory,
             create_cogs=True,
-            raster_data_footprint=True,
+            raster_footprint=True,
         )
         assert item.geometry["type"] == "Polygon"  # not MultiPolygon
         item.validate()
