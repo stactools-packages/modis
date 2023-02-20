@@ -20,6 +20,7 @@ from stactools.modis.constants import (
     METADATA_ASSET_PROPERTIES,
 )
 from stactools.modis.product import Product
+from stactools.modis.sinusoidal import update_geometry
 
 logger = logging.getLogger(__name__)
 
@@ -92,6 +93,7 @@ def create_item(
     href: str,
     cog_directory: Optional[str] = None,
     create_cogs: bool = False,
+    raster_footprint: bool = False,
     read_href_modifier: Optional[ReadHrefModifier] = None,
 ) -> Item:
     """Creates a STAC Item from MODIS data.
@@ -103,6 +105,8 @@ def create_item(
         create_cogs (bool): Should we create cogs from the source data? If so, put
             them in `cog_directory`, or if that is `None`, put them alongside the
             hdf file.
+        raster_footprint (bool): Create the Item geometry from the convex
+            hull of valid raster data. Has no effect if `create_cogs` is False.
         read_href_modifier (Callable[[str], str]): An optional function to
             modify the href (e.g. to add a token to a url)
 
@@ -115,17 +119,29 @@ def create_item(
     builder.add_hdf_or_xml_href(
         href, cog_directory=cog_directory, create_cogs=create_cogs
     )
-    return builder.create_item()
+    item = builder.create_item()
+    if raster_footprint:
+        if create_cogs:
+            update_geometry(item, builder.metadata.collection)
+        else:
+            raise ValueError(
+                "The 'create_cogs' option must be True to use "
+                "the 'raster_footprint' option."
+            )
+    return item
 
 
 def create_item_from_cogs(
     hrefs: List[str],
+    raster_footprint: bool = False,
     read_href_modifier: Optional[ReadHrefModifier] = None,
 ) -> Item:
     """Creates a STAC Item from COG paths.
 
     Args:
         hrefs (str): The hrefs to COGs.
+        raster_footprint (bool): Create the Item geometry from the convex
+            hull of valid raster data?
         read_href_modifier (Callable[[str], str]): An optional function to
             modify the href (e.g. to add a token to a url)
 
@@ -137,7 +153,10 @@ def create_item_from_cogs(
     )
     for href in hrefs:
         builder.add_cog_href(href)
-    return builder.create_item()
+    item = builder.create_item()
+    if raster_footprint:
+        update_geometry(item, builder.metadata.collection)
+    return item
 
 
 def collection_id(product: str, version: str) -> str:

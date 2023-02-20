@@ -1,8 +1,15 @@
+import logging
 import warnings
-from typing import Any, List, cast
+from typing import List, cast
 
 import rasterio
 from rasterio.errors import NotGeoreferencedWarning
+
+logger = logging.getLogger(__name__)
+
+
+class FootprintError(Exception):
+    """Raster data footprint failure."""
 
 
 def subdatasets(href: str) -> List[str]:
@@ -29,13 +36,3 @@ def version_string(version: str) -> str:
         return "061"
     else:
         raise ValueError(f"Unsupported MODIS version: {version}")
-
-
-def recursive_round(coordinates: List[Any], precision: int = 6) -> List[Any]:
-    for idx, value in enumerate(coordinates):
-        if isinstance(value, (int, float)):
-            coordinates[idx] = round(value, precision)
-        else:
-            coordinates[idx] = list(value)  # handle any tuples
-            coordinates[idx] = recursive_round(coordinates[idx], precision)
-    return coordinates

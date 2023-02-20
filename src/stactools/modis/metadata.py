@@ -1,44 +1,30 @@
 import datetime
-import math
 import os.path
 from dataclasses import dataclass
 from typing import Any, Callable, Dict, List, Optional, Tuple
 
 import fsspec
-import shapely.geometry
+import numpy as np
 from lxml import etree
-from shapely.geometry import Polygon
+from rasterio import Affine
+from rasterio.crs import CRS
+from shapely.geometry import shape
 from stactools.core.io import ReadHrefModifier
 from stactools.core.io.xml import XmlElement
 
 from stactools.modis import utils
-from stactools.modis.constants import TEMPORALLY_WEIGHTED_PRODUCTS
-
-# Sinusoidal projection parameters found in Appendix B of
-# https://modis-fire.umd.edu/files/MODIS_C6_BA_User_Guide_1.2.pdf
-SIN_SPHERE_RADIUS = 6371007.181
-SIN_TILE_METERS = 1111950
-SIN_X_MIN = -20015109
-SIN_Y_MAX = 10007555
-SIN_TILE_PIXELS = {
-    1200: ["11A1", "11A2", "14A1", "14A2", "21A2"],
-    2400: [
-        "09A1",
-        "10A1",
-        "10A2",
-        "12Q1",
-        "13A1",
-        "15A2H",
-        "15A3H",
-        "16A3GF",
-        "17A2H",
-        "17A2HGF",
-        "17A3HGF",
-        "43A4",
-        "64A1",
-    ],
-    4800: ["09Q1", "13Q1", "44B", "44W"],
-}
+from stactools.modis.constants import (
+    PRECISION,
+    SINUSOIDAL_TILE_METERS,
+    SINUSOIDAL_X_MIN,
+    SINUSOIDAL_Y_MAX,
+    TEMPORALLY_WEIGHTED_PRODUCTS,
+)
+from stactools.modis.sinusoidal import (
+    SinusoidalFootprint,
+    pixel_degree_size,
+    tile_pixel_size,
+)
 
 
 class MissingElement(Exception):
@@ -289,45 +275,23 @@ class Metadata:
     def _geometry_and_bbox(
         cls, collection: str, htile: int, vtile: int
     ) -> Tuple[Dict[str, Any], List[float]]:
-        def exterior_pixel_coords(pixels: int) -> List[List[int]]:
-            col_row = []
-            col_row.extend([[0, row] for row in range(pixels)])  # left
-            col_row.extend([[col, pixels - 1] for col in range(pixels)])  # bottom
-            col_row.extend(
-                [[pixels - 1, row] for row in range(pixels).__reversed__()]
-            )  # right
-            col_row.extend([[col, 0] for col in range(pixels).__reversed__()])  # top
-            return col_row
+        tile_size_pixels = tile_pixel_size(collection)
+        data_array = np.full((tile_size_pixels, tile_size_pixels), 1, dtype=np.uint8)
 
-        def pixel_to_geodetic(
-            pixel_coords: List[List[int]], htile: int, vtile: int, pixels: int
-        ) -> List[List[float]]:
-            pixel_width = SIN_TILE_METERS / pixels
-            lon_lat = []
-            for col, row in pixel_coords:
-                x = (col + 0.5) * pixel_width + htile * SIN_TILE_METERS + SIN_X_MIN
-                y = SIN_Y_MAX - (row + 0.5) * pixel_width - vtile * SIN_TILE_METERS
-                lat = math.degrees(y / SIN_SPHERE_RADIUS)
-                lon = math.degrees(
-                    x / (SIN_SPHERE_RADIUS * math.cos(math.radians(lat)))
-                )
-                if lat >= -90 and lat <= 90 and lon >= -180 and lon <= 180:
-                    lon_lat.append([lon, lat])
-            return lon_lat
-
-        tile_pixel_size = next(
-            iter([k for k, v in SIN_TILE_PIXELS.items() if collection in v]), None
+        pixel_size_meters = SINUSOIDAL_TILE_METERS / tile_size_pixels
+        x_offset = htile * SINUSOIDAL_TILE_METERS + SINUSOIDAL_X_MIN
+        y_offset = SINUSOIDAL_Y_MAX - vtile * SINUSOIDAL_TILE_METERS
+        transform = Affine(
+            pixel_size_meters, 0, x_offset, 0, -pixel_size_meters, y_offset
         )
-        if tile_pixel_size is None:
-            raise ValueError(f"Unsupported MODIS collection: {collection}")
 
-        pixel_degrees = SIN_TILE_METERS / tile_pixel_size / 100000  # at equator
-        pixel_coords = exterior_pixel_coords(tile_pixel_size)
-        geo_coords = pixel_to_geodetic(pixel_coords, htile, vtile, tile_pixel_size)
-        polygon = Polygon(geo_coords).simplify(tolerance=pixel_degrees / 2)
-        geometry = shapely.geometry.mapping(polygon)
+        footprint_geometry = SinusoidalFootprint(
+            data_array=data_array,
+            crs=CRS.from_epsg(4326),  # unused
+            transform=transform,
+            precision=PRECISION,
+            simplify_tolerance=pixel_degree_size(collection),
+        ).footprint()
+        footprint_bbox = shape(footprint_geometry).bounds
 
-        geometry["coordinates"] = utils.recursive_round(list(geometry["coordinates"]))
-        bbox = utils.recursive_round(list(polygon.bounds))
-
-        return (geometry, bbox)
+        return (footprint_geometry, footprint_bbox)

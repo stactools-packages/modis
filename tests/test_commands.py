@@ -28,6 +28,23 @@ class CreateItemTest(CliTestCase):
             item = pystac.read_file(item_path)
         item.validate()
 
+    def test_create_item_raster_footprint(self) -> None:
+        infile = test_data.get_path(
+            "data-files/MOD10A2.A2022033.h09v05.061.2022042050729.hdf.xml"
+        )
+
+        with TemporaryDirectory() as temporary_directory:
+            cmd = (
+                f"modis create-item --create-cogs --raster-footprint {infile} "
+                f"{temporary_directory}"
+            )
+            self.run_command(cmd)
+            item_path = os.path.join(
+                temporary_directory, "MOD10A2.A2022033.h09v05.061.json"
+            )
+            item = pystac.read_file(item_path)
+        item.validate()
+
     def test_cogify(self) -> None:
         infile = test_data.get_path(
             "data-files/MOD10A2.A2022033.h09v05.061.2022042050729.hdf"
