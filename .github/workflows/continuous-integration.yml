@@ -7,7 +7,6 @@ on:
   pull_request:
 
 jobs:
-  build:
   python-matrix:
     name: python-matrix
     runs-on: ubuntu-latest
