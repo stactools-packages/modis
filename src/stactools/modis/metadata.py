@@ -235,6 +235,8 @@ class Metadata:
         geometry, bbox = cls._geometry_and_bbox(
             collection, horizontal_tile, vertical_tile
         )
+        qa_percent = cog_tags.get("QAPERCENTNOTPRODUCEDCLOUD")
+        qa_percent_not_produced_cloud = int(qa_percent) if qa_percent else None
         return Metadata(
             id=os.path.splitext(cog_tags["LOCALGRANULEID"])[0],
             product=product,
@@ -245,11 +247,11 @@ class Metadata:
             end_datetime=end_datetime,
             created=None,
             updated=None,
-            qa_percent_not_produced_cloud=int(cog_tags["QAPERCENTNOTPRODUCEDCLOUD"]),
+            qa_percent_not_produced_cloud=qa_percent_not_produced_cloud,
             qa_percent_cloud_cover=None,
             horizontal_tile=horizontal_tile,
             vertical_tile=vertical_tile,
-            tile_id=cog_tags["TileID"],
+            tile_id=cog_tags.get("TileID", ""),
             platforms=sorted(list(platforms)),
             instruments=sorted(list(instruments)),
             collection=collection,
