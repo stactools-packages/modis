@@ -123,4 +123,4 @@ def create_external_data_dict() -> Dict[str, Dict[str, Any]]:
 
 external_data = create_external_data_dict()
 
-test_data = TestData(__file__, external_data=external_data)
+test_data = TestData(__file__, external_data=external_data)  # type: ignore
