@@ -1,13 +1,16 @@
 import datetime
 import os.path
+import warnings
 from dataclasses import dataclass
 from typing import Any, Callable, Dict, List, Optional, Tuple
 
 import fsspec
 import numpy as np
+import rasterio
 from lxml import etree
 from rasterio import Affine
 from rasterio.crs import CRS
+from rasterio.errors import NotGeoreferencedWarning
 from shapely.geometry import shape
 from stactools.core.io import ReadHrefModifier
 from stactools.core.io.xml import XmlElement
@@ -251,6 +254,32 @@ class Metadata:
             instruments=sorted(list(instruments)),
             collection=collection,
         )
+
+    @classmethod
+    def from_hdf_href(
+        cls, href: str, read_href_modifier: Optional[ReadHrefModifier] = None
+    ) -> "Metadata":
+        """Reads metadata from an HDF file when XML is not available.
+
+        Args:
+            href (str): The href of the HDF file
+            read_href_modifier (Optional[Callable[[str], str]]): Optional
+                function to modify the read href
+
+        Returns:
+            Metadata: Information that will map to Item attributes.
+        """
+        if read_href_modifier:
+            read_href = read_href_modifier(href)
+        else:
+            read_href = href
+
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", category=NotGeoreferencedWarning)
+            with rasterio.open(read_href) as dataset:
+                hdf_tags = dataset.tags()
+
+        return cls.from_cog_tags(hdf_tags)
 
     @property
     def datetime(self) -> Optional[datetime.datetime]:

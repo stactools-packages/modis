@@ -110,7 +110,13 @@ class ModisBuilder(RasterioBuilder):
             xml_href = f"{href}.xml"
         else:
             raise ValueError(f"Invalid HDF or XML href: {href}")
-        self.add_xml_asset(xml_href)
+
+        # Add XML asset if it exists, otherwise extract metadata from HDF
+        if os.path.exists(xml_href):
+            self.add_xml_asset(xml_href)
+        else:
+            self.metadata = Metadata.from_hdf_href(hdf_href, self.read_href_modifier)
+
         self.add_hdf_asset(
             hdf_href, cog_directory=cog_directory, create_cogs=create_cogs
         )
