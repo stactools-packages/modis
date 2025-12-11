@@ -7,3 +7,5 @@ pre-commit
 pytest
 pytest-cov
 types-setuptools
+requests
+setuptools
