@@ -2,6 +2,7 @@ import json
 import os.path
 import shutil
 import unittest
+from pathlib import Path
 from tempfile import TemporaryDirectory
 
 import pytest
@@ -185,6 +186,12 @@ def test_astraea(key: str) -> None:
 
 
 def test_raster_footprint_geometry() -> None:
+    path = test_data.get_path("MYD10A2.A2022025.h10v05.061.2022035071201.hdf")
+    if not Path(path).exists():
+        pytest.skip(
+            f"Skipping {path} because it does not exist and we can't fetch "
+            "it from Microsoft anymore"
+        )
     hdf_href = test_data.get_external_data(
         "MYD10A2.A2022025.h10v05.061.2022035071201.hdf"
     )
@@ -202,6 +209,12 @@ def test_raster_footprint_geometry() -> None:
 
 @pytest.mark.parametrize("file_name", PROJECTION_EDGE_FILES)
 def test_raster_footprint_at_projection_edge(file_name: str) -> None:
+    path = test_data.get_path(file_name)
+    if not Path(path).exists():
+        pytest.skip(
+            f"Skipping {file_name} because it does not exist and we can't "
+            "fetch it from Microsoft anymore"
+        )
     hdf_href = test_data.get_external_data(file_name)
     _ = test_data.get_external_data(f"{file_name}.xml")
     with TemporaryDirectory() as temporary_directory:
