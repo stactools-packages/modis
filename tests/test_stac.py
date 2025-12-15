@@ -207,33 +207,23 @@ def test_raster_footprint_geometry() -> None:
         item.validate()
 
 
-def test_create_item_from_hdf_without_xml() -> None:
-    """Test that an item can be created from an HDF file when XML is not available.
-
-    This tests the fallback to extracting metadata directly from the HDF file
-    when the accompanying XML metadata file is not present.
-    """
+def test_create_item_from_hdf_without_xml(tmp_path: Path) -> None:
     hdf_file = "MOD10A2.A2022033.h09v05.061.2022042050729.hdf"
     source_hdf_path = test_data.get_path(f"data-files/{hdf_file}")
 
-    with TemporaryDirectory() as temporary_directory:
-        # Copy only the HDF file (not the XML) to ensure XML is not available
-        temp_hdf_path = os.path.join(temporary_directory, hdf_file)
-        shutil.copyfile(source_hdf_path, temp_hdf_path)
+    temp_hdf_path = tmp_path / hdf_file
+    shutil.copyfile(source_hdf_path, temp_hdf_path)
 
-        # Verify XML does not exist in temp directory
-        temp_xml_path = f"{temp_hdf_path}.xml"
-        assert not os.path.exists(temp_xml_path), "XML file should not exist"
+    temp_xml_path = tmp_path / f"{hdf_file}.xml"
+    assert not temp_xml_path.exists()
 
-        # Create item from HDF only - should extract metadata from HDF
-        item = stactools.modis.stac.create_item(temp_hdf_path)
+    item = stactools.modis.stac.create_item(str(temp_hdf_path))
 
-        # Verify item was created with correct metadata
-        assert item is not None
-        assert item.id.startswith("MOD10A2.A2022033.h09v05")
-        assert "hdf" in item.assets
-        assert "metadata" not in item.assets  # XML asset should not be present
-        item.validate()
+    assert item is not None
+    assert item.id.startswith("MOD10A2.A2022033.h09v05")
+    assert "hdf" in item.assets
+    assert "metadata" not in item.assets
+    item.validate()
 
 
 @pytest.mark.parametrize("file_name", PROJECTION_EDGE_FILES)

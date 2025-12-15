@@ -1,6 +1,5 @@
 import datetime
 import os.path
-import warnings
 from dataclasses import dataclass
 from typing import Any, Callable, Dict, List, Optional, Tuple
 
@@ -10,7 +9,6 @@ import rasterio
 from lxml import etree
 from rasterio import Affine
 from rasterio.crs import CRS
-from rasterio.errors import NotGeoreferencedWarning
 from shapely.geometry import shape
 from stactools.core.io import ReadHrefModifier
 from stactools.core.io.xml import XmlElement
@@ -251,7 +249,7 @@ class Metadata:
             qa_percent_cloud_cover=None,
             horizontal_tile=horizontal_tile,
             vertical_tile=vertical_tile,
-            tile_id=cog_tags.get("TileID", ""),
+            tile_id=cog_tags["TileID"],
             platforms=sorted(list(platforms)),
             instruments=sorted(list(instruments)),
             collection=collection,
@@ -276,10 +274,8 @@ class Metadata:
         else:
             read_href = href
 
-        with warnings.catch_warnings():
-            warnings.simplefilter("ignore", category=NotGeoreferencedWarning)
-            with rasterio.open(read_href) as dataset:
-                hdf_tags = dataset.tags()
+        with rasterio.open(read_href) as dataset:
+            hdf_tags = dataset.tags()
 
         return cls.from_cog_tags(hdf_tags)
 
