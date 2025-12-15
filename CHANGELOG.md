@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Changed
 
 - Item IDs no longer contain the production datetime ([#88](https://github.com/stactools-packages/modis/pull/88))
+- Make XML metadata optional - extract metadata from HDF file if XML is not available ([#XX](https://github.com/stactools-packages/modis/pull/XX))
 
 ### Fixed
 

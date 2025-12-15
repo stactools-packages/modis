@@ -5,6 +5,7 @@ from typing import Any, Callable, Dict, List, Optional, Tuple
 
 import fsspec
 import numpy as np
+import rasterio
 from lxml import etree
 from rasterio import Affine
 from rasterio.crs import CRS
@@ -232,6 +233,8 @@ class Metadata:
         geometry, bbox = cls._geometry_and_bbox(
             collection, horizontal_tile, vertical_tile
         )
+        qa_percent = cog_tags.get("QAPERCENTNOTPRODUCEDCLOUD")
+        qa_percent_not_produced_cloud = int(qa_percent) if qa_percent else None
         return Metadata(
             id=os.path.splitext(cog_tags["LOCALGRANULEID"])[0],
             product=product,
@@ -242,7 +245,7 @@ class Metadata:
             end_datetime=end_datetime,
             created=None,
             updated=None,
-            qa_percent_not_produced_cloud=int(cog_tags["QAPERCENTNOTPRODUCEDCLOUD"]),
+            qa_percent_not_produced_cloud=qa_percent_not_produced_cloud,
             qa_percent_cloud_cover=None,
             horizontal_tile=horizontal_tile,
             vertical_tile=vertical_tile,
@@ -251,6 +254,30 @@ class Metadata:
             instruments=sorted(list(instruments)),
             collection=collection,
         )
+
+    @classmethod
+    def from_hdf_href(
+        cls, href: str, read_href_modifier: Optional[ReadHrefModifier] = None
+    ) -> "Metadata":
+        """Reads metadata from an HDF file when XML is not available.
+
+        Args:
+            href (str): The href of the HDF file
+            read_href_modifier (Optional[Callable[[str], str]]): Optional
+                function to modify the read href
+
+        Returns:
+            Metadata: Information that will map to Item attributes.
+        """
+        if read_href_modifier:
+            read_href = read_href_modifier(href)
+        else:
+            read_href = href
+
+        with rasterio.open(read_href) as dataset:
+            hdf_tags = dataset.tags()
+
+        return cls.from_cog_tags(hdf_tags)
 
     @property
     def datetime(self) -> Optional[datetime.datetime]:

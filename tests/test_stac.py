@@ -207,6 +207,25 @@ def test_raster_footprint_geometry() -> None:
         item.validate()
 
 
+def test_create_item_from_hdf_without_xml(tmp_path: Path) -> None:
+    hdf_file = "MOD10A2.A2022033.h09v05.061.2022042050729.hdf"
+    source_hdf_path = test_data.get_path(f"data-files/{hdf_file}")
+
+    temp_hdf_path = tmp_path / hdf_file
+    shutil.copyfile(source_hdf_path, temp_hdf_path)
+
+    temp_xml_path = tmp_path / f"{hdf_file}.xml"
+    assert not temp_xml_path.exists()
+
+    item = stactools.modis.stac.create_item(str(temp_hdf_path))
+
+    assert item is not None
+    assert item.id.startswith("MOD10A2.A2022033.h09v05")
+    assert "hdf" in item.assets
+    assert "metadata" not in item.assets
+    item.validate()
+
+
 @pytest.mark.parametrize("file_name", PROJECTION_EDGE_FILES)
 def test_raster_footprint_at_projection_edge(file_name: str) -> None:
     path = test_data.get_path(file_name)
